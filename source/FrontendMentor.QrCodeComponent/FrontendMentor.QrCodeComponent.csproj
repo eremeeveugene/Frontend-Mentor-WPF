@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Properties\Icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,11 +22,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Properties\Icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FrontendMentor.Assets\FrontendMentor.Assets.csproj" />
     <ProjectReference Include="..\FrontendMentor.Core\FrontendMentor.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="NewFolder\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
 

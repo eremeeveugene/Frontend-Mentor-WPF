@@ -3,6 +3,11 @@
                          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                          xmlns:dryIoc="http://prismlibrary.com/">
     <dryIoc:PrismApplication.Resources>
-        <ResourceDictionary Source="Themes/Custom.xaml" />
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Themes/Custom.xaml" />
+                <ResourceDictionary Source="Themes/Custom.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </dryIoc:PrismApplication.Resources>
 </dryIoc:PrismApplication>

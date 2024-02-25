@@ -37,6 +37,7 @@
                         <Canvas.OpacityMask>
                             <VisualBrush Visual="{Binding ElementName=Mask}" />
                         </Canvas.OpacityMask>
+
                         <Ellipse Canvas.Right="91.5"
                                  Canvas.Bottom="124.5"
                                  Width="328"
