@@ -5,39 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:properties="clr-namespace:FrontendMentor.QrCodeComponent.Properties"
         Title="{x:Static properties:Resources.QrComponentWindowTitle}"
+        Width="1440"
+        Height="800"
         x:ClassModifier="internal"
         Background="{StaticResource LightGrey}"
+        UseLayoutRounding="True"
         WindowState="Maximized"
+        WindowStyle="None"
         mc:Ignorable="d">
     <Border Width="320"
-            Height="497"
             Padding="16"
+            VerticalAlignment="Center"
             Background="{StaticResource White}"
             CornerRadius="20">
         <Border.Effect>
             <DropShadowEffect BlurRadius="25"
                               Direction="270"
-                              Opacity="0.477"
+                              Opacity="0.0477"
+                              RenderingBias="Quality"
                               ShadowDepth="0"
                               Color="#000000" />
         </Border.Effect>
 
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <Border x:Name="Mask"
-                    Grid.Row="0"
-                    Background="{StaticResource Blue}"
-                    CornerRadius="10">
-                <Grid>
-                    <Canvas ClipToBounds="True">
-                        <Canvas.OpacityMask>
-                            <VisualBrush Visual="{Binding ElementName=Mask}" />
-                        </Canvas.OpacityMask>
+            <Grid Grid.Row="0" Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}">
+                <Border x:Name="BackgroundRectangle"
+                        Grid.Row="0"
+                        Background="{StaticResource Blue}"
+                        CornerRadius="10" />
 
+                <Grid>
+                    <Grid.OpacityMask>
+                        <VisualBrush Visual="{Binding ElementName=BackgroundRectangle}" />
+                    </Grid.OpacityMask>
+
+                    <Canvas ClipToBounds="True">
                         <Ellipse Canvas.Right="91.5"
                                  Canvas.Bottom="124.5"
                                  Width="328"
@@ -56,24 +63,20 @@
                            RenderOptions.EdgeMode="Aliased"
                            Source="{StaticResource QrCode.Image}" />
 
-
-
-
                 </Grid>
+            </Grid>
 
-            </Border>
-
-            <StackPanel Grid.Row="1" Margin="0,0,0,24">
-                <TextBlock Margin="0,24,0,0"
-                           Foreground="{StaticResource DarkNavy}"
+            <StackPanel Grid.Row="1" Margin="0,24">
+                <TextBlock Foreground="{StaticResource DarkNavy}"
                            Style="{StaticResource Heading.TextBlock.Style}"
-                           Text="Improve your front-end skills by building projects" />
+                           Text="Improve your front-end skills by building projects"
+                           TextOptions.TextFormattingMode="Display"
+                           TextOptions.TextRenderingMode="ClearType" />
 
                 <TextBlock Margin="16,16,16,0"
                            Foreground="{StaticResource Grey}"
-                           Text="Scan the QR code to visit Frontend Mentor and take your coding skills to the next level"
-                           TextAlignment="Center"
-                           TextWrapping="Wrap" />
+                           Style="{StaticResource Body.TextBlock.Style}"
+                           Text="Scan the QR code to visit Frontend Mentor and take your coding skills to the next level" />
             </StackPanel>
         </Grid>
     </Border>
