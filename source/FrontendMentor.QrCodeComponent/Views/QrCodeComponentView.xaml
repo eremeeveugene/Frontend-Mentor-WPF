@@ -28,11 +28,15 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <Border Grid.Row="0"
+            <Border x:Name="Mask"
+                    Grid.Row="0"
                     Background="{StaticResource Blue}"
                     CornerRadius="10">
                 <Grid>
                     <Canvas ClipToBounds="True">
+                        <Canvas.OpacityMask>
+                            <VisualBrush Visual="{Binding ElementName=Mask}" />
+                        </Canvas.OpacityMask>
                         <Ellipse Canvas.Right="91.5"
                                  Canvas.Bottom="124.5"
                                  Width="328"
@@ -48,6 +52,7 @@
 
                     <Image Width="160"
                            Height="160"
+                           RenderOptions.EdgeMode="Aliased"
                            Source="{StaticResource QrCode.Image}" />
 
 
