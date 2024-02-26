@@ -9,20 +9,12 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using System.Windows;
-using FrontendMentor.QrCodeComponent.Views;
-using Prism.Ioc;
+namespace FrontendMentor.QrCodeComponent.Views;
 
-namespace FrontendMentor.QrCodeComponent;
-
-public partial class App
+internal partial class QrCodeComponentWindowView
 {
-    protected override void RegisterTypes(IContainerRegistry containerRegistry)
+    public QrCodeComponentWindowView()
     {
-    }
-
-    protected override Window CreateShell()
-    {
-        return Container.Resolve<QrCodeComponentWindowView>();
+        InitializeComponent();
     }
 }

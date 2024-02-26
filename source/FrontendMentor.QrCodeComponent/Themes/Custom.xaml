@@ -1,8 +1,11 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="../Brushes/Brushes.xaml" />
-        <ResourceDictionary Source="../Images/Images.xaml" />
-        <ResourceDictionary Source="../Fonts/Fonts.xaml" />
-        <ResourceDictionary Source="../Styles/TextBlocks/TextBlockStyles.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.QrCodeComponent;component/Colors/Colors.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.QrCodeComponent;component/Brushes/Brushes.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.QrCodeComponent;component/Effects/Effects.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.QrCodeComponent;component/Images/Images.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.QrCodeComponent;component/Fonts/Fonts.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.QrCodeComponent;component/Styles/Controls/TextBlocks/TextBlockStyles.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.QrCodeComponent;component/Styles/Controls/Windows/WindowStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

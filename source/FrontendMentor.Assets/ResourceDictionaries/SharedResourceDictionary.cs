@@ -9,12 +9,34 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-namespace FrontendMentor.QrCodeComponent.Views;
+using System.Windows;
 
-internal partial class QrCodeComponentView
+namespace FrontendMentor.Assets.ResourceDictionaries;
+
+public class SharedResourceDictionary : ResourceDictionary
 {
-    public QrCodeComponentView()
+    private static readonly Dictionary<Uri, ResourceDictionary> SharedDictionaries = new();
+    private Uri? _sourceUri;
+
+    public new Uri? Source
     {
-        InitializeComponent();
+        get => _sourceUri;
+        set
+        {
+            _sourceUri = value;
+
+            if (value == null) return;
+
+            if (!SharedDictionaries.ContainsKey(value))
+            {
+                base.Source = value;
+
+                SharedDictionaries.Add(value, this);
+            }
+            else
+            {
+                MergedDictionaries.Add(SharedDictionaries[value]);
+            }
+        }
     }
 }

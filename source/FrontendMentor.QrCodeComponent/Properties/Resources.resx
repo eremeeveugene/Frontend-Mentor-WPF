@@ -117,7 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="QrComponentWindowTitle" xml:space="preserve">
-    <value>QRComponent</value>
+  <data name="QrCodeComponentWindowTitle" xml:space="preserve">
+    <value>QR Code Component</value>
+  </data>
+  <data name="QrCodeComponentHeading" xml:space="preserve">
+    <value>Improve your front-end skills by building projects</value>
+  </data>
+  <data name="QrCodeComponentBody" xml:space="preserve">
+    <value>Scan the QR code to visit Frontend Mentor and take your coding skills to the next level</value>
   </data>
 </root>
