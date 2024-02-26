@@ -6,7 +6,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Themes/Custom.xaml" />
-                <ResourceDictionary Source="Themes/Custom.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/FrontendMentor.QrCodeComponent;component/Themes/Custom.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </dryIoc:PrismApplication.Resources>

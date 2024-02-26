@@ -9,8 +9,9 @@
         Height="800"
         x:ClassModifier="internal"
         Background="{StaticResource LightGrey}"
+        ResizeMode="NoResize"
         UseLayoutRounding="True"
-        WindowState="Maximized"
+        WindowState="Normal"
         WindowStyle="None"
         mc:Ignorable="d">
     <Border Width="320"
@@ -23,11 +24,12 @@
                               Direction="270"
                               Opacity="0.0477"
                               RenderingBias="Quality"
-                              ShadowDepth="0"
+                              ShadowDepth="25"
                               Color="#000000" />
         </Border.Effect>
 
         <Grid>
+
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
@@ -69,9 +71,7 @@
             <StackPanel Grid.Row="1" Margin="0,24">
                 <TextBlock Foreground="{StaticResource DarkNavy}"
                            Style="{StaticResource Heading.TextBlock.Style}"
-                           Text="Improve your front-end skills by building projects"
-                           TextOptions.TextFormattingMode="Display"
-                           TextOptions.TextRenderingMode="ClearType" />
+                           Text="Improve your front-end skills by building projects" />
 
                 <TextBlock Margin="16,16,16,0"
                            Foreground="{StaticResource Grey}"
@@ -80,4 +80,5 @@
             </StackPanel>
         </Grid>
     </Border>
+
 </Window>

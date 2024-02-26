@@ -1,8 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="../Assets/Brushes/Brushes.xaml" />
-        <ResourceDictionary Source="../Assets/Images/Images.xaml" />
-        <ResourceDictionary Source="../Assets/Fonts/Fonts.xaml" />
-        <ResourceDictionary Source="../Assets/Styles/TextBlocks/TextBlockStyles.xaml" />
+        <ResourceDictionary Source="../Brushes/Brushes.xaml" />
+        <ResourceDictionary Source="../Images/Images.xaml" />
+        <ResourceDictionary Source="../Fonts/Fonts.xaml" />
+        <ResourceDictionary Source="../Styles/TextBlocks/TextBlockStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
