@@ -4,18 +4,15 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:properties="clr-namespace:FrontendMentor.QrCodeComponent.Properties"
-        xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets"
         Title="{x:Static properties:Resources.QrCodeComponentWindowTitle}"
+        MinWidth="1400"
+        MinHeight="800"
         x:ClassModifier="internal"
-        ResizeMode="NoResize"
-        Style="{StaticResource QrCodeComponentWindow.Style}"
-        WindowStartupLocation="CenterScreen"
-        WindowStyle="None"
+        Background="{StaticResource QrCodeComponentWindowView.Background.Brush}"
+        Foreground="{StaticResource QrCodeComponentWindowView.Foreground.Brush}"
+        UseLayoutRounding="True"
+        WindowState="Maximized"
         mc:Ignorable="d">
-
-    <Window.Resources>
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.QrCodeComponent;component/Styles/Views/QrCodeComponentWindowViewStyles.xaml" />
-    </Window.Resources>
 
     <Border Width="320"
             Padding="16"
@@ -23,24 +20,24 @@
             Background="{StaticResource QrCodeComponentWindowView.QrCodeOuterBorder.Background.Brush}"
             CornerRadius="20"
             Effect="{StaticResource QrCodeComponentWindowView.QrCodeOuterBorder.DropShadowEffect}">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
+        <StackPanel>
+            <Grid Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}">
+                <Rectangle x:Name="InnerBorder"
+                           Grid.Row="0"
+                           Fill="{StaticResource QrCodeComponentWindowView.QrCodeInnerRectangle.Background.Brush}"
+                           RadiusX="10"
+                           RadiusY="10" />
 
-            <Grid Grid.Row="0" Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}">
-                <Border x:Name="InnerBorder"
-                        Grid.Row="0"
-                        Background="{StaticResource QrCodeComponentWindowView.QrCodeInnerBorder.Background.Brush}"
-                        CornerRadius="10" />
-
-                <Grid>
-                    <Grid.OpacityMask>
+                <Decorator>
+                    <Decorator.OpacityMask>
                         <VisualBrush Visual="{Binding ElementName=InnerBorder}" />
-                    </Grid.OpacityMask>
+                    </Decorator.OpacityMask>
 
                     <Canvas ClipToBounds="True">
+                        <Canvas.OpacityMask>
+                            <VisualBrush Visual="{Binding ElementName=InnerBorder}" />
+                        </Canvas.OpacityMask>
+
                         <Ellipse Canvas.Right="91.5"
                                  Canvas.Bottom="124.5"
                                  Width="328"
@@ -53,15 +50,14 @@
                                  Height="270"
                                  Fill="{StaticResource QrCodeComponentWindowView.QrCodeEllipse.Fill.Brush}" />
                     </Canvas>
+                </Decorator>
 
-                    <Image Width="160"
-                           Height="160"
-                           Source="{StaticResource QrCode.Image}" />
-
-                </Grid>
+                <Image Width="160"
+                       Height="160"
+                       Source="{StaticResource QrCode.Image}" />
             </Grid>
 
-            <StackPanel Grid.Row="1" Margin="0,24">
+            <StackPanel Margin="0,24">
                 <TextBlock Style="{StaticResource Heading.TextBlock.Style}" Text="{x:Static properties:Resources.QrCodeComponentHeading}" />
 
                 <TextBlock Margin="16,16,16,0"
@@ -69,6 +65,6 @@
                            Style="{StaticResource Body.TextBlock.Style}"
                            Text="{x:Static properties:Resources.QrCodeComponentBody}" />
             </StackPanel>
-        </Grid>
+        </StackPanel>
     </Border>
 </Window>

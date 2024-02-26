@@ -7,17 +7,12 @@
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.QrCodeComponent;component/Colors/Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <!--#region QrCodeComponentWindowView-->
-
     <DropShadowEffect x:Key="QrCodeComponentWindowView.QrCodeOuterBorder.DropShadowEffect"
                       po:Freeze="True"
                       BlurRadius="25"
                       Direction="270"
                       Opacity="0.0477"
-                      RenderingBias="Quality"
                       ShadowDepth="25"
                       Color="{StaticResource Black.Color}" />
-
-    <!--#endregion-->
 
 </ResourceDictionary>
