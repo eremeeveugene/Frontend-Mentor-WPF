@@ -12,8 +12,9 @@
         ResizeMode="NoResize"
         UseLayoutRounding="True"
         WindowState="Normal"
-        WindowStyle="None"
         mc:Ignorable="d">
+    <!--  WindowStyle="None"  -->
+
     <Border Width="320"
             Padding="16"
             VerticalAlignment="Center"
@@ -36,14 +37,14 @@
             </Grid.RowDefinitions>
 
             <Grid Grid.Row="0" Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}">
-                <Border x:Name="BackgroundRectangle"
+                <Border x:Name="BackgroundBorder"
                         Grid.Row="0"
                         Background="{StaticResource Blue}"
                         CornerRadius="10" />
 
                 <Grid>
                     <Grid.OpacityMask>
-                        <VisualBrush Visual="{Binding ElementName=BackgroundRectangle}" />
+                        <VisualBrush Visual="{Binding ElementName=BackgroundBorder}" />
                     </Grid.OpacityMask>
 
                     <Canvas ClipToBounds="True">
@@ -69,7 +70,8 @@
             </Grid>
 
             <StackPanel Grid.Row="1" Margin="0,24">
-                <TextBlock Foreground="{StaticResource DarkNavy}"
+                <TextBlock Height="56"
+                           Foreground="{StaticResource DarkNavy}"
                            Style="{StaticResource Heading.TextBlock.Style}"
                            Text="Improve your front-end skills by building projects" />
 

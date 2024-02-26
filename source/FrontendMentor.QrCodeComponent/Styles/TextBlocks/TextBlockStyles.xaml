@@ -14,6 +14,7 @@
     <Style x:Key="Body.TextBlock.Style" TargetType="{x:Type TextBlock}">
         <Setter Property="FontFamily" Value="{StaticResource Outfit}" />
         <Setter Property="FontSize" Value="15" />
+        <Setter Property="FontWeight" Value="Regular" />
         <Setter Property="TextAlignment" Value="Center" />
         <Setter Property="TextWrapping" Value="Wrap" />
     </Style>
