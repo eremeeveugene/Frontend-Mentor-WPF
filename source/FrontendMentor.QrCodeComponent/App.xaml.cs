@@ -9,9 +9,9 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using System.Windows;
 using FrontendMentor.QrCodeComponent.Views;
 using Prism.Ioc;
+using System.Windows;
 
 namespace FrontendMentor.QrCodeComponent;
 
