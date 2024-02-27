@@ -12,5 +12,23 @@
         UseLayoutRounding="True"
         WindowState="Maximized"
         mc:Ignorable="d">
-    <Grid />
+    <Border Padding="40"
+            Background="{StaticResource SocialLinksProfileWindowView.CardOuterBorder.Background.Brush}"
+            CornerRadius="12">
+        <StackPanel>
+            <Image Width="88" HorizontalAlignment="Center" />
+
+            <TextBlock Margin="0,24,0,0"
+                       Text="{x:Static properties:Resources.SocialLinksProfileFullName}"
+                       TextAlignment="Center" />
+
+            <TextBlock Margin="0,4,0,0"
+                       Text="{x:Static properties:Resources.SocialLinksProfileLocation}"
+                       TextAlignment="Center" />
+
+            <TextBlock Margin="0,24,0,0"
+                       Text="{x:Static properties:Resources.SocialLinksProfileProfessionalTitleAndInterest}"
+                       TextAlignment="Center" />
+        </StackPanel>
+    </Border>
 </Window>

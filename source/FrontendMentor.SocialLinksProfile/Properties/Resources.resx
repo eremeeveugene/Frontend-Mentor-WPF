@@ -120,4 +120,13 @@
   <data name="SocialLinksProfileWindowTitle" xml:space="preserve">
     <value>Social Links Profile</value>
   </data>
+  <data name="SocialLinksProfileFullName" xml:space="preserve">
+    <value>Jessica Randall</value>
+  </data>
+  <data name="SocialLinksProfileLocation" xml:space="preserve">
+    <value>London, United Kingdom</value>
+  </data>
+  <data name="SocialLinksProfileProfessionalTitleAndInterest" xml:space="preserve">
+    <value>"Front-end developer and avid reader."</value>
+  </data>
 </root>

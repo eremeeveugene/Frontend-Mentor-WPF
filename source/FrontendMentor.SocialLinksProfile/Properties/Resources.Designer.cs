@@ -61,6 +61,33 @@ namespace FrontendMentor.SocialLinksProfile.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Jessica Randall.
+        /// </summary>
+        public static string SocialLinksProfileFullName {
+            get {
+                return ResourceManager.GetString("SocialLinksProfileFullName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to London, United Kingdom.
+        /// </summary>
+        public static string SocialLinksProfileLocation {
+            get {
+                return ResourceManager.GetString("SocialLinksProfileLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;Front-end developer and avid reader.&quot;.
+        /// </summary>
+        public static string SocialLinksProfileProfessionalTitleAndInterest {
+            get {
+                return ResourceManager.GetString("SocialLinksProfileProfessionalTitleAndInterest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Social Links Profile.
         /// </summary>
         public static string SocialLinksProfileWindowTitle {
