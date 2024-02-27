@@ -7,6 +7,8 @@
         Title="{x:Static properties:Resources.SocialLinksProfileWindowTitle}"
         MinWidth="1440"
         MinHeight="960"
+        Background="{StaticResource SocialLinksProfileWindowView.Background.Brush}"
+        Foreground="{StaticResource SocialLinksProfileWindowView.Foreground.Brush}"
         UseLayoutRounding="True"
         WindowState="Maximized"
         mc:Ignorable="d">
