@@ -13,6 +13,8 @@
         WindowState="Maximized"
         mc:Ignorable="d">
     <Window.Resources>
+        <SolidColorBrush x:Key="SocialLinksProfileLocationTextBlock.Foreground.Brush" Color="{StaticResource NeonGreen.Color}" />
+
         <ControlTemplate x:Key="SocialLinkButtonTemplate" TargetType="{x:Type Button}">
             <Border Padding="{TemplateBinding Padding}"
                     Background="{TemplateBinding Background}"
@@ -46,33 +48,37 @@
             <Image Width="88" HorizontalAlignment="Center" />
 
             <TextBlock Margin="0,24,0,0"
-                       Text="{x:Static properties:Resources.SocialLinksProfileFullName}"
-                       TextAlignment="Center" />
+                       Style="{StaticResource Heading.TextBlock.Style}"
+                       Text="{x:Static properties:Resources.SocialLinksProfileFullName}" />
 
             <TextBlock Margin="0,4,0,0"
-                       Text="{x:Static properties:Resources.SocialLinksProfileLocation}"
-                       TextAlignment="Center" />
+                       Foreground="{StaticResource SocialLinksProfileLocationTextBlock.Foreground.Brush}"
+                       Style="{StaticResource Body.Bold.TextBlock.Style}"
+                       Text="{x:Static properties:Resources.SocialLinksProfileLocation}" />
 
             <TextBlock Margin="0,24,0,0"
-                       Text="{x:Static properties:Resources.SocialLinksProfileProfessionalTitleAndInterest}"
-                       TextAlignment="Center" />
+                       Style="{StaticResource Body.Regular.TextBlock.Style}"
+                       Text="{x:Static properties:Resources.SocialLinksProfileProfessionalTitleAndInterest}" />
 
             <Button Margin="0,24,0,0" Style="{StaticResource SocialLinkButtonStyle}">
-                <TextBlock Text="GitHub" />
+                <TextBlock Style="{StaticResource Body.Bold.TextBlock.Style}" Text="GitHub" />
             </Button>
 
-            <Button Margin="0,16,0,0"
-                    Content="Frontend Mentor"
-                    Style="{StaticResource SocialLinkButtonStyle}" />
-            <Button Margin="0,16,0,0"
-                    Content="LinkedIn"
-                    Style="{StaticResource SocialLinkButtonStyle}" />
-            <Button Margin="0,16,0,0"
-                    Content="Twitter"
-                    Style="{StaticResource SocialLinkButtonStyle}" />
-            <Button Margin="0,16,0,0"
-                    Content="Instagram"
-                    Style="{StaticResource SocialLinkButtonStyle}" />
+            <Button Margin="0,16,0,0" Style="{StaticResource SocialLinkButtonStyle}">
+                <TextBlock Style="{StaticResource Body.Bold.TextBlock.Style}" Text="Frontend Mentor" />
+            </Button>
+
+            <Button Margin="0,16,0,0" Style="{StaticResource SocialLinkButtonStyle}">
+                <TextBlock Style="{StaticResource Body.Bold.TextBlock.Style}" Text="LinkedIn" />
+            </Button>
+
+            <Button Margin="0,16,0,0" Style="{StaticResource SocialLinkButtonStyle}">
+                <TextBlock Style="{StaticResource Body.Bold.TextBlock.Style}" Text="Twitter" />
+            </Button>
+
+            <Button Margin="0,16,0,0" Style="{StaticResource SocialLinkButtonStyle}">
+                <TextBlock Style="{StaticResource Body.Bold.TextBlock.Style}" Text="Instagram" />
+            </Button>
         </StackPanel>
     </Border>
 </Window>
