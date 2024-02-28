@@ -8,6 +8,7 @@
         MinWidth="1440"
         MinHeight="960"
         Background="{StaticResource SocialLinksProfileWindowView.Background.Brush}"
+        FontFamily="{StaticResource Inter}"
         Foreground="{StaticResource SocialLinksProfileWindowView.Foreground.Brush}"
         UseLayoutRounding="True"
         WindowState="Maximized"
