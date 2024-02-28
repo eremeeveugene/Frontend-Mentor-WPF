@@ -12,7 +12,34 @@
         UseLayoutRounding="True"
         WindowState="Maximized"
         mc:Ignorable="d">
+    <Window.Resources>
+        <ControlTemplate x:Key="SocialLinkButtonTemplate" TargetType="{x:Type Button}">
+            <Border Padding="{TemplateBinding Padding}"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="8">
+                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+            </Border>
+
+        </ControlTemplate>
+
+        <SolidColorBrush x:Key="SocialLinkButton.Background.Brush" Color="{StaticResource Grey.Color}" />
+
+        <Style x:Key="SocialLinkButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="{StaticResource SocialLinkButton.Background.Brush}" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Padding" Value="12" />
+            <Setter Property="Template" Value="{StaticResource SocialLinkButtonTemplate}" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+
+    </Window.Resources>
+
     <Border Padding="40"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
             Background="{StaticResource SocialLinksProfileWindowView.CardOuterBorder.Background.Brush}"
             CornerRadius="12">
         <StackPanel>
@@ -29,6 +56,23 @@
             <TextBlock Margin="0,24,0,0"
                        Text="{x:Static properties:Resources.SocialLinksProfileProfessionalTitleAndInterest}"
                        TextAlignment="Center" />
+
+            <Button Margin="0,24,0,0" Style="{StaticResource SocialLinkButtonStyle}">
+                <TextBlock Text="GitHub" />
+            </Button>
+
+            <Button Margin="0,16,0,0"
+                    Content="Frontend Mentor"
+                    Style="{StaticResource SocialLinkButtonStyle}" />
+            <Button Margin="0,16,0,0"
+                    Content="LinkedIn"
+                    Style="{StaticResource SocialLinkButtonStyle}" />
+            <Button Margin="0,16,0,0"
+                    Content="Twitter"
+                    Style="{StaticResource SocialLinkButtonStyle}" />
+            <Button Margin="0,16,0,0"
+                    Content="Instagram"
+                    Style="{StaticResource SocialLinkButtonStyle}" />
         </StackPanel>
     </Border>
 </Window>
