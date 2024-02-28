@@ -40,7 +40,8 @@
 
     </Window.Resources>
 
-    <Border Padding="40"
+    <Border Width="384"
+            Padding="40"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Background="{StaticResource SocialLinksProfileWindowView.CardOuterBorder.Background.Brush}"
