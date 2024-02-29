@@ -47,9 +47,13 @@
             Background="{StaticResource SocialLinksProfileWindowView.CardOuterBorder.Background.Brush}"
             CornerRadius="12">
         <StackPanel>
-            <Image Width="88"
-                   HorizontalAlignment="Center"
-                   Source="{StaticResource Profile.Image}" />
+            <Ellipse Width="88"
+                     Height="88"
+                     HorizontalAlignment="Center">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="{StaticResource Profile.Image}" />
+                </Ellipse.Fill>
+            </Ellipse>
 
             <TextBlock Margin="0,24,0,0"
                        Style="{StaticResource Heading.TextBlock.Style}"

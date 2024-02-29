@@ -3,5 +3,5 @@
                     xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
     <BitmapImage x:Key="Profile.Image"
                  po:Freeze="True"
-                 UriSource="ProfileImage.png" />
+                 UriSource="ProfileImage.jpeg" />
 </ResourceDictionary>
