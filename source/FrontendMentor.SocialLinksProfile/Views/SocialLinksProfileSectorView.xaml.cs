@@ -9,10 +9,12 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-namespace FrontendMentor.SocialLinksProfile.Models;
+namespace FrontendMentor.SocialLinksProfile.Views;
 
-internal class SocialLinkProfileModel
+internal sealed partial class SocialLinksProfileSectorView
 {
-    public string Link { get; set; } = null!;
-    public string Name { get; set; } = null!;
+    public SocialLinksProfileSectorView()
+    {
+        InitializeComponent();
+    }
 }

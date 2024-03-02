@@ -9,12 +9,9 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-namespace FrontendMentor.QrCodeComponent.Views;
+namespace FrontendMentor.QrCodeComponent.Constants;
 
-internal partial class QrCodeComponentWindowView
+internal static class QrCodeComponentSectorNames
 {
-    public QrCodeComponentWindowView()
-    {
-        InitializeComponent();
-    }
+    public const string QrCodeComponentSector = nameof(QrCodeComponentSector);
 }

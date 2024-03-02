@@ -9,11 +9,11 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-namespace FrontendMentor.SocialLinksProfile.Views;
+namespace FrontendMentor.QrCodeComponent.Views;
 
-internal sealed partial class SocialLinksProfileView
+internal partial class QrCodeComponentSectorView
 {
-    public SocialLinksProfileView()
+    public QrCodeComponentSectorView()
     {
         InitializeComponent();
     }

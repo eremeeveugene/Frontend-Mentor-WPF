@@ -20,7 +20,7 @@ using System.Windows;
 
 namespace FrontendMentor.SocialLinksProfile;
 
-public partial class App
+internal partial class App
 {
     protected override void RegisterTypes(IContainerRegistry containerRegistry)
     {
@@ -28,7 +28,7 @@ public partial class App
 
         containerRegistry.Register<ISocialLinksProfilesService, SocialLinksProfilesService>();
 
-        containerRegistry.RegisterSector<SocialLinksProfileView>(SocialLinksProfileSectorNames
+        containerRegistry.RegisterSector<SocialLinksProfileSectorView>(SocialLinksProfileSectorNames
             .SocialLinksProfileSector);
     }
 

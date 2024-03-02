@@ -16,7 +16,7 @@ using System.Collections.ObjectModel;
 
 namespace FrontendMentor.SocialLinksProfile.ViewModels;
 
-internal sealed class SocialLinksProfileViewModel(
+internal sealed class SocialLinksProfileSectorViewModel(
     ISocialLinksProfilesService socialLinksProfilesService,
     IContainerExtension containerExtension)
     : ViewModelBase

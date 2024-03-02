@@ -9,10 +9,18 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-namespace FrontendMentor.SocialLinksProfile.Models;
+using FrontendMentor.Assets.Controls.Windows;
+using FrontendMentor.Assets.Controls.Windows.Dependencies;
+using System.Windows;
 
-internal class SocialLinkProfileModel
+namespace FrontendMentor.QrCodeComponent.Controls;
+
+internal class QrCodeComponentWindow(FrontendMentorWindowDependencies frontendMentorWindowDependencies)
+    : FrontendMentorWindow(frontendMentorWindowDependencies)
 {
-    public string Link { get; set; } = null!;
-    public string Name { get; set; } = null!;
+    static QrCodeComponentWindow()
+    {
+        DefaultStyleKeyProperty.OverrideMetadata(typeof(QrCodeComponentWindow),
+            new FrameworkPropertyMetadata(typeof(QrCodeComponentWindow)));
+    }
 }
