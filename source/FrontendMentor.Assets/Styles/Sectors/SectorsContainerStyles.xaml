@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sectors="clr-namespace:FrontendMentor.Assets.Controls.Sectors">
+
+    <ControlTemplate x:Key="SectorContainerTemplate" TargetType="{x:Type sectors:SectorsContainer}">
+        <ContentPresenter />
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type sectors:SectorsContainer}">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Template" Value="{StaticResource SectorContainerTemplate}" />
+    </Style>
+
+</ResourceDictionary>

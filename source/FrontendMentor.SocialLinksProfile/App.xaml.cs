@@ -9,6 +9,11 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
+using FrontendMentor.Core.Services.Sectors;
+using FrontendMentor.Core.Services.SectorsContainerRegistry;
+using FrontendMentor.SocialLinksProfile.Constants;
+using FrontendMentor.SocialLinksProfile.Controls.Windows;
+using FrontendMentor.SocialLinksProfile.Services.SocialLinksProfiles;
 using FrontendMentor.SocialLinksProfile.Views;
 using Prism.Ioc;
 using System.Windows;
@@ -19,10 +24,25 @@ public partial class App
 {
     protected override void RegisterTypes(IContainerRegistry containerRegistry)
     {
+        base.RegisterTypes(containerRegistry);
+
+        containerRegistry.Register<ISocialLinksProfilesService, SocialLinksProfilesService>();
+
+        containerRegistry.RegisterSector<SocialLinksProfileView>(SocialLinksProfileSectorNames
+            .SocialLinksProfileSector);
     }
 
     protected override Window CreateShell()
     {
-        return Container.Resolve<SocialLinksProfileWindowView>();
+        return Container.Resolve<SocialLinksProfileWindow>();
+    }
+
+    protected override void OnInitialized()
+    {
+        var sectorsService = Container.Resolve<ISectorsService>();
+
+        sectorsService.NavigateToSector(SocialLinksProfileSectorNames.SocialLinksProfileSector);
+
+        base.OnInitialized();
     }
 }
