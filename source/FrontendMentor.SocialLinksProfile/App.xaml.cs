@@ -10,7 +10,6 @@
 // --------------------------------------------------------------------------------
 
 using FrontendMentor.Core.Services.Sectors;
-using FrontendMentor.Core.Services.SectorsContainerRegistry;
 using FrontendMentor.SocialLinksProfile.Constants;
 using FrontendMentor.SocialLinksProfile.Controls.Windows;
 using FrontendMentor.SocialLinksProfile.Services.SocialLinksProfiles;
@@ -27,9 +26,6 @@ internal partial class App
         base.RegisterTypes(containerRegistry);
 
         containerRegistry.Register<ISocialLinksProfilesService, SocialLinksProfilesService>();
-
-        containerRegistry.RegisterSector<SocialLinksProfileSectorView>(SocialLinksProfileSectorNames
-            .SocialLinksProfileSector);
     }
 
     protected override Window CreateShell()
@@ -41,8 +37,16 @@ internal partial class App
     {
         var sectorsService = Container.Resolve<ISectorsService>();
 
-        sectorsService.NavigateToSector(SocialLinksProfileSectorNames.SocialLinksProfileSector);
+        sectorsService.NavigateToSectorView(SocialLinksProfileSectorNames.SocialLinksProfileSector);
 
         base.OnInitialized();
+    }
+
+    protected override void RegisterSectors(ISectorsService sectorsService)
+    {
+        base.RegisterSectors(sectorsService);
+
+        sectorsService.RegisterSectorView<SocialLinksProfileSectorView>(SocialLinksProfileSectorNames
+            .SocialLinksProfileSector);
     }
 }

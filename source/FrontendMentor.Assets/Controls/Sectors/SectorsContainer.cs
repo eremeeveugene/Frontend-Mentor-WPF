@@ -10,20 +10,16 @@
 // --------------------------------------------------------------------------------
 
 using FrontendMentor.Core.Services.Sectors;
-using Prism.Ioc;
 using Prism.Regions;
 using System.Windows;
 using System.Windows.Controls;
 
 namespace FrontendMentor.Assets.Controls.Sectors;
 
-internal sealed class SectorsContainer : ContentControl, ISectorsContainer
+internal sealed class SectorsContainer : Control, ISectorsContainer
 {
-    public static readonly DependencyProperty SectorNameProperty = DependencyProperty.Register(
-        nameof(SectorName), typeof(string), typeof(SectorsContainer),
-        new PropertyMetadata(default(string), SectorPropertyChangedCallback));
-
-    private readonly IContainerExtension _containerExtension;
+    public static readonly DependencyProperty SectorViewProperty = DependencyProperty.Register(
+        nameof(SectorView), typeof(ISectorView), typeof(SectorsContainer), new PropertyMetadata(default(ISectorView?)));
 
     static SectorsContainer()
     {
@@ -31,29 +27,14 @@ internal sealed class SectorsContainer : ContentControl, ISectorsContainer
             new FrameworkPropertyMetadata(typeof(SectorsContainer)));
     }
 
-    public SectorsContainer(IContainerExtension containerExtension, IRegionManager regionManager)
+    public SectorsContainer(IRegionManager regionManager)
     {
-        _containerExtension = containerExtension;
-
         RegionManager.SetRegionManager(this, regionManager);
     }
 
-    public string? SectorName
+    public ISectorView? SectorView
     {
-        get => (string)GetValue(SectorNameProperty);
-        set => SetValue(SectorNameProperty, value);
-    }
-
-    private static void SectorPropertyChangedCallback(DependencyObject d, DependencyPropertyChangedEventArgs e)
-    {
-        if (d is SectorsContainer windowRegionControl)
-        {
-            windowRegionControl.OnSectorChanged();
-        }
-    }
-
-    private void OnSectorChanged()
-    {
-        Content = SectorName == null ? null : _containerExtension.Resolve<ISectorView>(SectorName);
+        get => (ISectorView?)GetValue(SectorViewProperty);
+        set => SetValue(SectorViewProperty, value);
     }
 }

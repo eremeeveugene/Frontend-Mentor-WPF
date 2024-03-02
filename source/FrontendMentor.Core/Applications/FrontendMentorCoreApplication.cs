@@ -11,7 +11,6 @@
 
 using FrontendMentor.Core.Services.Processes;
 using FrontendMentor.Core.Services.Sectors;
-using FrontendMentor.Core.Services.SectorsContainerRegistry;
 using Prism.DryIoc;
 using Prism.Ioc;
 
@@ -23,15 +22,16 @@ public abstract class FrontendMentorCoreApplication : PrismApplication
     {
         containerRegistry.RegisterSingleton<IProcessesService, ProcessesService>();
         containerRegistry.RegisterSingleton<ISectorsService, SectorsService>();
-        //containerRegistry.RegisterSingleton<ISectorsContainerRegistry, SectorsContainerRegistry>();
     }
 
-    //protected override void Initialize()
-    //{
-    //    base.Initialize();
+    protected override void Initialize()
+    {
+        base.Initialize();
 
-    //    RegisterSectors(Container.Resolve<ISectorsContainerRegistry>());
-    //}
+        RegisterSectors(Container.Resolve<ISectorsService>());
+    }
 
-
+    protected virtual void RegisterSectors(ISectorsService sectorsService)
+    {
+    }
 }

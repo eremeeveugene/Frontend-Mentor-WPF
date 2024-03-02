@@ -13,5 +13,5 @@ namespace FrontendMentor.Core.Services.Sectors;
 
 public interface ISectorsContainer
 {
-    string? SectorName { get; set; }
+    ISectorView? SectorView { get; set; }
 }

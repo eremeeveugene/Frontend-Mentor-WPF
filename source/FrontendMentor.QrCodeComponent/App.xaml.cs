@@ -10,7 +10,6 @@
 // --------------------------------------------------------------------------------
 
 using FrontendMentor.Core.Services.Sectors;
-using FrontendMentor.Core.Services.SectorsContainerRegistry;
 using FrontendMentor.QrCodeComponent.Constants;
 using FrontendMentor.QrCodeComponent.Controls;
 using FrontendMentor.QrCodeComponent.Views;
@@ -21,11 +20,11 @@ namespace FrontendMentor.QrCodeComponent;
 
 internal partial class App
 {
-    protected override void RegisterTypes(IContainerRegistry containerRegistry)
+    protected override void RegisterSectors(ISectorsService sectorsService)
     {
-        base.RegisterTypes(containerRegistry);
+        base.RegisterSectors(sectorsService);
 
-        containerRegistry.RegisterSector<QrCodeComponentSectorView>(QrCodeComponentSectorNames
+        sectorsService.RegisterSectorView<QrCodeComponentSectorView>(QrCodeComponentSectorNames
             .QrCodeComponentSector);
     }
 
@@ -38,7 +37,7 @@ internal partial class App
     {
         var sectorsService = Container.Resolve<ISectorsService>();
 
-        sectorsService.NavigateToSector(QrCodeComponentSectorNames.QrCodeComponentSector);
+        sectorsService.NavigateToSectorView(QrCodeComponentSectorNames.QrCodeComponentSector);
 
         base.OnInitialized();
     }

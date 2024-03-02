@@ -13,8 +13,25 @@ namespace FrontendMentor.Core.Services.Sectors;
 
 internal class SectorsService(ISectorsContainer sectorContainer) : ISectorsService
 {
-    public void NavigateToSector(string sectorRegion)
+    private readonly Dictionary<string, Type> _sectors = [];
+
+    public void NavigateToSectorView(string sectorRegion)
     {
-        sectorContainer.SectorName = sectorRegion;
+        sectorContainer.SectorView = GetSectorView(sectorRegion);
+    }
+
+    public void RegisterSectorView<T>(string sectorName) where T : ISectorView
+    {
+        _sectors[sectorName] = typeof(T);
+    }
+
+    public ISectorView GetSectorView(string sectorName)
+    {
+        if (_sectors.TryGetValue(sectorName, out var sectorType))
+        {
+            return Activator.CreateInstance(sectorType) as ISectorView ?? throw new InvalidOperationException();
+        }
+
+        throw new InvalidOperationException($"No sector registered with name: {sectorName}");
     }
 }

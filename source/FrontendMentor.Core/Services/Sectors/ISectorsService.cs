@@ -13,5 +13,7 @@ namespace FrontendMentor.Core.Services.Sectors;
 
 public interface ISectorsService
 {
-    void NavigateToSector(string sectorName);
+    void NavigateToSectorView(string sectorName);
+    void RegisterSectorView<T>(string sectorName) where T : ISectorView;
+    ISectorView GetSectorView(string sectorName);
 }
