@@ -3,7 +3,7 @@
                     xmlns:sectors="clr-namespace:FrontendMentor.Assets.Controls.Sectors">
 
     <ControlTemplate x:Key="SectorContainerTemplate" TargetType="{x:Type sectors:SectorsContainer}">
-        <ContentControl Content="{TemplateBinding SectorView}" />
+        <ContentControl Content="{TemplateBinding SectorView}" Focusable="False" />
     </ControlTemplate>
 
     <Style TargetType="{x:Type sectors:SectorsContainer}">
