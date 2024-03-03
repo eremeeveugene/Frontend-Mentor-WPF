@@ -30,6 +30,36 @@
 
         </ControlTemplate>
 
+        <Storyboard x:Key="MouseOverStoryboard">
+            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                            To="{StaticResource NeonGreen.Color}"
+                            Duration="0:0:0.3" />
+
+            <ColorAnimation Storyboard.TargetProperty="(Button.Foreground).(SolidColorBrush.Color)"
+                            To="{StaticResource Grey.Color}"
+                            Duration="0:0:0.3" />
+        </Storyboard>
+
+        <Storyboard x:Key="PressedStoryboard">
+            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                            To="Green"
+                            Duration="0:0:0.3" />
+
+            <ColorAnimation Storyboard.TargetProperty="(Button.Foreground).(SolidColorBrush.Color)"
+                            To="{StaticResource Grey.Color}"
+                            Duration="0:0:0.3" />
+        </Storyboard>
+
+        <Storyboard x:Key="NormalStoryboard">
+            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                            To="{StaticResource Grey.Color}"
+                            Duration="0:0:0.3" />
+
+            <ColorAnimation Storyboard.TargetProperty="(Button.Foreground).(SolidColorBrush.Color)"
+                            To="{StaticResource White.Color}"
+                            Duration="0:0:0.3" />
+        </Storyboard>
+
         <SolidColorBrush x:Key="SocialLinkButton.Background.Brush" Color="{StaticResource Grey.Color}" />
         <SolidColorBrush x:Key="SocialLinkButton.Foreground.Brush" Color="{StaticResource White.Color}" />
         <SolidColorBrush x:Key="SocialLinkButton.Background.MouseOver.Brush" Color="{StaticResource NeonGreen.Color}" />
@@ -45,14 +75,54 @@
             <Setter Property="Template" Value="{StaticResource SocialLinkButtonTemplate}" />
             <Setter Property="VerticalContentAlignment" Value="Center" />
             <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="{StaticResource SocialLinkButton.Background.MouseOver.Brush}" />
-                    <Setter Property="Foreground" Value="{StaticResource SocialLinkButton.Foreground.MouseOver.Brush}" />
+                <EventTrigger RoutedEvent="Button.MouseEnter">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard Storyboard="{StaticResource MouseOverStoryboard}" />
+                    </EventTrigger.Actions>
+                </EventTrigger>
+
+                <EventTrigger RoutedEvent="Button.GotFocus">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard Storyboard="{StaticResource MouseOverStoryboard}" />
+                    </EventTrigger.Actions>
+                </EventTrigger>
+
+                <EventTrigger RoutedEvent="Button.LostFocus">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard Storyboard="{StaticResource NormalStoryboard}" />
+                    </EventTrigger.Actions>
+                </EventTrigger>
+
+                <EventTrigger RoutedEvent="Button.MouseLeave">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard Storyboard="{StaticResource NormalStoryboard}" />
+                    </EventTrigger.Actions>
+                </EventTrigger>
+
+                <!--<Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard Storyboard="{StaticResource MouseOverStoryboard}" />
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard Storyboard="{StaticResource NormalStoryboard}" />
+                    </Trigger.ExitActions>
                 </Trigger>
-                <Trigger Property="IsFocused" Value="True">
-                    <Setter Property="Background" Value="{StaticResource SocialLinkButton.Background.MouseOver.Brush}" />
-                    <Setter Property="Foreground" Value="{StaticResource SocialLinkButton.Foreground.MouseOver.Brush}" />
-                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard Storyboard="{StaticResource PressedStoryboard}" />
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard Storyboard="{StaticResource NormalStoryboard}" />
+                    </Trigger.ExitActions>
+                </Trigger>-->
+                <!--<Trigger Property="IsFocused" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard Storyboard="{StaticResource MouseOverStoryboard}" />
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard Storyboard="{StaticResource NormalStoryboard}" />
+                    </Trigger.ExitActions>
+                </Trigger>-->
             </Style.Triggers>
         </Style>
     </views:SectorView.Resources>
@@ -96,14 +166,13 @@
                                     <Setter Property="ContentTemplate">
                                         <Setter.Value>
                                             <DataTemplate DataType="{x:Type viewModels:SocialLinkProfileViewModel}">
-                                                <Button Margin="0,16,0,0"
-                                                        Command="{Binding OpenLinkCommand}"
-                                                        Style="{StaticResource SocialLinkButtonStyle}">
+                                                <Button Command="{Binding OpenLinkCommand}" Style="{StaticResource SocialLinkButtonStyle}">
                                                     <TextBlock Style="{StaticResource Body.Bold.TextBlock.Style}" Text="{Binding Name}" />
                                                 </Button>
                                             </DataTemplate>
                                         </Setter.Value>
                                     </Setter>
+                                    <Setter Property="Margin" Value="0,16,0,0" />
                                 </Style>
                             </Setter.Value>
                         </Setter>
