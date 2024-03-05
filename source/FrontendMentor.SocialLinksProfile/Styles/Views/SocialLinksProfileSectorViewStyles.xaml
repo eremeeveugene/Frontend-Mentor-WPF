@@ -1,0 +1,67 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:viewModels="clr-namespace:FrontendMentor.SocialLinksProfile.ViewModels">
+
+    <ControlTemplate x:Key="SocialLinkButtonTemplate" TargetType="{x:Type Button}">
+        <Border Padding="{TemplateBinding Padding}"
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                CornerRadius="8">
+            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+        </Border>
+    </ControlTemplate>
+
+    <Style x:Key="SocialLinkProfileButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{StaticResource SocialLinkButton.Background.Brush}" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Foreground" Value="{StaticResource SocialLinkButton.Foreground.Brush}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Padding" Value="12" />
+        <Setter Property="Template" Value="{StaticResource SocialLinkButtonTemplate}" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="Button.MouseEnter">
+                <EventTrigger.Actions>
+                    <BeginStoryboard Storyboard="{StaticResource SocialLinkProfileButton.MouseOver.Storyboard}" />
+                </EventTrigger.Actions>
+            </EventTrigger>
+
+            <EventTrigger RoutedEvent="Button.GotFocus">
+                <EventTrigger.Actions>
+                    <BeginStoryboard Storyboard="{StaticResource SocialLinkProfileButton.MouseOver.Storyboard}" />
+                </EventTrigger.Actions>
+            </EventTrigger>
+
+            <EventTrigger RoutedEvent="Button.LostFocus">
+                <EventTrigger.Actions>
+                    <BeginStoryboard Storyboard="{StaticResource SocialLinkProfileButton.Normal.Storyboard}" />
+                </EventTrigger.Actions>
+            </EventTrigger>
+
+            <EventTrigger RoutedEvent="Button.MouseLeave">
+                <EventTrigger.Actions>
+                    <BeginStoryboard Storyboard="{StaticResource SocialLinkProfileButton.Normal.Storyboard}" />
+                </EventTrigger.Actions>
+            </EventTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <DataTemplate x:Key="SocialLinksProfilesItemsControlItemContentTemplate" DataType="{x:Type viewModels:SocialLinkProfileViewModel}">
+        <Button Command="{Binding OpenLinkCommand}" Style="{StaticResource SocialLinkProfileButtonStyle}">
+            <TextBlock Style="{StaticResource Body.Bold.TextBlock.Style}" Text="{Binding Name}" />
+        </Button>
+    </DataTemplate>
+
+    <Style x:Key="SocialLinksProfilesItemsControlItemContainerStyle" TargetType="{x:Type ContentPresenter}">
+        <Setter Property="ContentTemplate" Value="{StaticResource SocialLinksProfilesItemsControlItemContentTemplate}" />
+        <Setter Property="Margin" Value="0,16,0,0" />
+    </Style>
+
+    <Style x:Key="SocialLinksProfilesItemsControlStyle" TargetType="{x:Type ItemsControl}">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="ItemContainerStyle" Value="{StaticResource SocialLinksProfilesItemsControlItemContainerStyle}" />
+    </Style>
+
+</ResourceDictionary>

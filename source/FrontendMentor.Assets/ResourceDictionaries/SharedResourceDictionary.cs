@@ -39,7 +39,10 @@ public class SharedResourceDictionary : ResourceDictionary
         {
             _sourceUri = value;
 
-            if (value == null) return;
+            if (value == null)
+            {
+                return;
+            }
 
             if (SharedDictionaries.TryGetValue(value, out var dictionary))
             {
