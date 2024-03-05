@@ -1,0 +1,80 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Properties\Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Cursors\cursor.cur" />
+    <None Remove="Cursors\Cursor1.cur" />
+    <None Remove="Cursors\CustomCursor.cur" />
+    <None Remove="Cursors\HandCursor.cur" />
+    <None Remove="Fonts\Inter\Inter-Black.ttf" />
+    <None Remove="Fonts\Inter\Inter-Bold.ttf" />
+    <None Remove="Fonts\Inter\Inter-ExtraBold.ttf" />
+    <None Remove="Fonts\Inter\Inter-ExtraLight.ttf" />
+    <None Remove="Fonts\Inter\Inter-Light.ttf" />
+    <None Remove="Fonts\Inter\Inter-Medium.ttf" />
+    <None Remove="Fonts\Inter\Inter-Regular.ttf" />
+    <None Remove="Fonts\Inter\Inter-SemiBold.ttf" />
+    <None Remove="Fonts\Inter\Inter-Thin.ttf" />
+    <None Remove="Images\ProfileImage.jpeg" />
+    <None Remove="Images\ProfileImage.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Properties\Icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FrontendMentor.Assets\FrontendMentor.Assets.csproj" />
+    <ProjectReference Include="..\FrontendMentor.Core\FrontendMentor.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Cursors\HandCursor.cur" />
+    <Resource Include="Fonts\Inter\Inter-Black.ttf" />
+    <Resource Include="Fonts\Inter\Inter-Bold.ttf" />
+    <Resource Include="Fonts\Inter\Inter-ExtraBold.ttf" />
+    <Resource Include="Fonts\Inter\Inter-ExtraLight.ttf" />
+    <Resource Include="Fonts\Inter\Inter-Light.ttf" />
+    <Resource Include="Fonts\Inter\Inter-Medium.ttf" />
+    <Resource Include="Fonts\Inter\Inter-Regular.ttf" />
+    <Resource Include="Fonts\Inter\Inter-SemiBold.ttf" />
+    <Resource Include="Fonts\Inter\Inter-Thin.ttf" />
+    <Resource Include="Images\ProfileImage.jpeg" />
+  </ItemGroup>
+
+</Project>

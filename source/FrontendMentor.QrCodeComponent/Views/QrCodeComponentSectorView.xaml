@@ -1,18 +1,12 @@
-﻿<Window x:Class="FrontendMentor.QrCodeComponent.Views.QrCodeComponentWindowView"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:properties="clr-namespace:FrontendMentor.QrCodeComponent.Properties"
-        Title="{x:Static properties:Resources.QrCodeComponentWindowTitle}"
-        MinWidth="1400"
-        MinHeight="800"
-        x:ClassModifier="internal"
-        Background="{StaticResource QrCodeComponentWindowView.Background.Brush}"
-        Foreground="{StaticResource QrCodeComponentWindowView.Foreground.Brush}"
-        UseLayoutRounding="True"
-        WindowState="Maximized"
-        mc:Ignorable="d">
+﻿<views:SectorView x:Class="FrontendMentor.QrCodeComponent.Views.QrCodeComponentSectorView"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                  xmlns:properties="clr-namespace:FrontendMentor.QrCodeComponent.Properties"
+                  xmlns:views="clr-namespace:FrontendMentor.Assets.Controls.Views;assembly=FrontendMentor.Assets"
+                  x:ClassModifier="internal"
+                  mc:Ignorable="d">
 
     <Border Width="320"
             Padding="16"
@@ -67,4 +61,4 @@
             </StackPanel>
         </StackPanel>
     </Border>
-</Window>
+</views:SectorView>
