@@ -27,7 +27,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FrontendMentor.Assets\FrontendMentor.Assets.csproj" />
-    <ProjectReference Include="..\FrontendMentor.Core\FrontendMentor.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
