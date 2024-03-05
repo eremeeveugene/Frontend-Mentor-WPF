@@ -9,30 +9,18 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.Core.Helpers;
-using System.Windows.Input;
+using FrontendMentor.Assets.Controls.Windows;
+using FrontendMentor.Assets.Controls.Windows.Dependencies;
+using System.Windows;
 
-namespace FrontendMentor.SocialLinksProfile.Cursors;
+namespace FrontendMentor.BlogPreviewCard.Controls.Windows;
 
-internal static class Cursors
+internal class BlogPreviewCardWindow(FrontendMentorWindowDependencies frontendMentorWindowDependencies)
+    : FrontendMentorWindow(frontendMentorWindowDependencies)
 {
-    private const string HandCursorUriString =
-        "pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Cursors/HandCursor.cur";
-
-    private static Cursor? _handCursor;
-
-    public static Cursor HandCursor
+    static BlogPreviewCardWindow()
     {
-        get
-        {
-            if (_handCursor != null)
-            {
-                return _handCursor;
-            }
-
-            _handCursor = CursorsHelper.LoadCursor(new Uri(HandCursorUriString));
-
-            return _handCursor;
-        }
+        DefaultStyleKeyProperty.OverrideMetadata(typeof(BlogPreviewCardWindow),
+            new FrameworkPropertyMetadata(typeof(BlogPreviewCardWindow)));
     }
 }

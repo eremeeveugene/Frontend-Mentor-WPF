@@ -9,16 +9,30 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.BlogPreviewCard.Controls.Windows;
-using Prism.Ioc;
-using System.Windows;
+using FrontendMentor.Core.Helpers;
+using System.Windows.Input;
 
-namespace FrontendMentor.BlogPreviewCard;
+namespace FrontendMentor.Assets.Cursors;
 
-internal sealed partial class App
+public static class Cursors
 {
-    protected override Window CreateShell()
+    private const string HandCursorUriString =
+        "pack://application:,,,/FrontendMentor.Assets;component/Cursors/HandCursor.cur";
+
+    private static Cursor? _handCursor;
+
+    public static Cursor HandCursor
     {
-        return Container.Resolve<BlogPreviewCardWindow>();
+        get
+        {
+            if (_handCursor != null)
+            {
+                return _handCursor;
+            }
+
+            _handCursor = CursorsHelper.LoadCursor(new Uri(HandCursorUriString));
+
+            return _handCursor;
+        }
     }
 }

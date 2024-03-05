@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:cursors="clr-namespace:FrontendMentor.SocialLinksProfile.Cursors"
+                    xmlns:cursors="clr-namespace:FrontendMentor.Assets.Cursors;assembly=FrontendMentor.Assets"
                     xmlns:properties="clr-namespace:FrontendMentor.SocialLinksProfile.Properties"
                     xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets"
                     xmlns:windows="clr-namespace:FrontendMentor.Assets.Controls.Windows;assembly=FrontendMentor.Assets"
