@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrontendMentor.Assets", "Fr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrontendMentor.Core", "FrontendMentor.Core\FrontendMentor.Core.csproj", "{2F771E07-7EC7-4CFB-891D-14E132A352DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontendMentor.SocialLinksProfile", "FrontendMentor.SocialLinksProfile\FrontendMentor.SocialLinksProfile.csproj", "{D58B90AE-8E4D-4027-85E9-75732F4BC684}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrontendMentor.SocialLinksProfile", "FrontendMentor.SocialLinksProfile\FrontendMentor.SocialLinksProfile.csproj", "{D58B90AE-8E4D-4027-85E9-75732F4BC684}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontendMentor.BlogPreviewCard", "FrontendMentor.BlogPreviewCard\FrontendMentor.BlogPreviewCard.csproj", "{5C4E0269-E5FC-43FF-95D9-1E142739CEA8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{D58B90AE-8E4D-4027-85E9-75732F4BC684}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D58B90AE-8E4D-4027-85E9-75732F4BC684}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D58B90AE-8E4D-4027-85E9-75732F4BC684}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C4E0269-E5FC-43FF-95D9-1E142739CEA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C4E0269-E5FC-43FF-95D9-1E142739CEA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C4E0269-E5FC-43FF-95D9-1E142739CEA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C4E0269-E5FC-43FF-95D9-1E142739CEA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
