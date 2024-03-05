@@ -4,19 +4,47 @@
                     xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
 
     <ResourceDictionary.MergedDictionaries>
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Colors/Colors.xaml" />
+        <resourceDictionaries:SharedResourceDictionary
+            Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Colors/Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <SolidColorBrush x:Key="SocialLinksProfileWindowView.Foreground.Brush"
+    <!--#region SocialLinksProfileWindow-->
+
+    <SolidColorBrush x:Key="SocialLinksProfileWindow.Foreground.Brush"
                      po:Freeze="True"
                      Color="{StaticResource White.Color}" />
 
-    <SolidColorBrush x:Key="SocialLinksProfileWindowView.Background.Brush"
+    <SolidColorBrush x:Key="SocialLinksProfileWindow.Background.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Black.Color}" />
 
-    <SolidColorBrush x:Key="SocialLinksProfileWindowView.CardOuterBorder.Background.Brush"
+    <!--#endregion-->
+
+    <!--#region SocialLinksProfileView-->
+
+    <SolidColorBrush x:Key="SocialLinksProfileView.CardOuterBorder.Background.Brush"
                      po:Freeze="True"
                      Color="{StaticResource DarkGrey.Color}" />
+    <!--#endregion-->
+
+    <!--#region SocialLinksProfileLocationTextBlock-->
+
+    <SolidColorBrush x:Key="SocialLinksProfileLocationTextBlock.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource NeonGreen.Color}" />
+
+    <!--#endregion-->
+
+    <!--#region SocialLinkButton-->
+
+    <SolidColorBrush x:Key="SocialLinkButton.Background.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Grey.Color}" />
+
+    <SolidColorBrush x:Key="SocialLinkButton.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource White.Color}" />
+
+    <!--#endregion-->
 
 </ResourceDictionary>

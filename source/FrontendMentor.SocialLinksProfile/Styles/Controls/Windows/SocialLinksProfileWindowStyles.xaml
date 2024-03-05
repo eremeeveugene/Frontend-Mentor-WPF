@@ -7,16 +7,20 @@
                     xmlns:windows1="clr-namespace:FrontendMentor.SocialLinksProfile.Controls.Windows">
 
     <ResourceDictionary.MergedDictionaries>
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Windows/FrontendMentorWindowStyles.xaml" />
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Brushes/Brushes.xaml" />
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Fonts/Fonts.xaml" />
+        <resourceDictionaries:SharedResourceDictionary
+            Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Windows/FrontendMentorWindowStyles.xaml" />
+        <resourceDictionaries:SharedResourceDictionary
+            Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Brushes/Brushes.xaml" />
+        <resourceDictionaries:SharedResourceDictionary
+            Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Fonts/Fonts.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style BasedOn="{StaticResource {x:Type windows:FrontendMentorWindow}}" TargetType="{x:Type windows1:SocialLinksProfileWindow}">
-        <Setter Property="Background" Value="{StaticResource SocialLinksProfileWindowView.Background.Brush}" />
+    <Style BasedOn="{StaticResource {x:Type windows:FrontendMentorWindow}}"
+           TargetType="{x:Type windows1:SocialLinksProfileWindow}">
+        <Setter Property="Background" Value="{StaticResource SocialLinksProfileWindow.Background.Brush}" />
         <Setter Property="Cursor" Value="{x:Static cursors:Cursors.HandCursor}" />
         <Setter Property="FontFamily" Value="{StaticResource Inter}" />
-        <Setter Property="Foreground" Value="{StaticResource SocialLinksProfileWindowView.Foreground.Brush}" />
+        <Setter Property="Foreground" Value="{StaticResource SocialLinksProfileWindow.Foreground.Brush}" />
         <Setter Property="MinHeight" Value="960" />
         <Setter Property="MinWidth" Value="1440" />
         <Setter Property="Title" Value="{x:Static properties:Resources.SocialLinksProfileWindowTitle}" />

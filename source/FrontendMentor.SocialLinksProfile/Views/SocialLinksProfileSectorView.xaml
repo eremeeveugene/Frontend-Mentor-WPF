@@ -5,6 +5,7 @@
                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                   xmlns:mvvm="http://prismlibrary.com/"
                   xmlns:properties="clr-namespace:FrontendMentor.SocialLinksProfile.Properties"
+                  xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets"
                   xmlns:viewModels="clr-namespace:FrontendMentor.SocialLinksProfile.ViewModels"
                   xmlns:views="clr-namespace:FrontendMentor.Assets.Controls.Views;assembly=FrontendMentor.Assets"
                   d:DataContext="{d:DesignInstance viewModels:SocialLinksProfileSectorViewModel}"
@@ -15,84 +16,15 @@
                   mc:Ignorable="d">
 
     <views:SectorView.Resources>
-        <SolidColorBrush x:Key="SocialLinksProfileLocationTextBlock.Foreground.Brush" Color="{StaticResource NeonGreen.Color}" />
-
-        <ControlTemplate x:Key="SocialLinkButtonTemplate" TargetType="{x:Type Button}">
-            <Border Padding="{TemplateBinding Padding}"
-                    Background="{TemplateBinding Background}"
-                    BorderBrush="{TemplateBinding BorderBrush}"
-                    BorderThickness="{TemplateBinding BorderThickness}"
-                    CornerRadius="8">
-                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-            </Border>
-
-        </ControlTemplate>
-
-        <Storyboard x:Key="MouseOverStoryboard">
-            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
-                            To="{StaticResource NeonGreen.Color}"
-                            Duration="0:0:0.3" />
-
-            <ColorAnimation Storyboard.TargetProperty="(Button.Foreground).(SolidColorBrush.Color)"
-                            To="{StaticResource Grey.Color}"
-                            Duration="0:0:0.3" />
-        </Storyboard>
-
-        <Storyboard x:Key="NormalStoryboard">
-            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
-                            To="{StaticResource Grey.Color}"
-                            Duration="0:0:0.3" />
-
-            <ColorAnimation Storyboard.TargetProperty="(Button.Foreground).(SolidColorBrush.Color)"
-                            To="{StaticResource White.Color}"
-                            Duration="0:0:0.3" />
-        </Storyboard>
-
-        <SolidColorBrush x:Key="SocialLinkButton.Background.Brush" Color="{StaticResource Grey.Color}" />
-        <SolidColorBrush x:Key="SocialLinkButton.Foreground.Brush" Color="{StaticResource White.Color}" />
-
-        <Style x:Key="SocialLinkButtonStyle" TargetType="{x:Type Button}">
-            <Setter Property="Background" Value="{StaticResource SocialLinkButton.Background.Brush}" />
-            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-            <Setter Property="Foreground" Value="{StaticResource SocialLinkButton.Foreground.Brush}" />
-            <Setter Property="HorizontalContentAlignment" Value="Center" />
-            <Setter Property="OverridesDefaultStyle" Value="True" />
-            <Setter Property="Padding" Value="12" />
-            <Setter Property="Template" Value="{StaticResource SocialLinkButtonTemplate}" />
-            <Setter Property="VerticalContentAlignment" Value="Center" />
-            <Style.Triggers>
-                <EventTrigger RoutedEvent="Button.MouseEnter">
-                    <EventTrigger.Actions>
-                        <BeginStoryboard Storyboard="{StaticResource MouseOverStoryboard}" />
-                    </EventTrigger.Actions>
-                </EventTrigger>
-
-                <EventTrigger RoutedEvent="Button.GotFocus">
-                    <EventTrigger.Actions>
-                        <BeginStoryboard Storyboard="{StaticResource MouseOverStoryboard}" />
-                    </EventTrigger.Actions>
-                </EventTrigger>
-
-                <EventTrigger RoutedEvent="Button.LostFocus">
-                    <EventTrigger.Actions>
-                        <BeginStoryboard Storyboard="{StaticResource NormalStoryboard}" />
-                    </EventTrigger.Actions>
-                </EventTrigger>
-
-                <EventTrigger RoutedEvent="Button.MouseLeave">
-                    <EventTrigger.Actions>
-                        <BeginStoryboard Storyboard="{StaticResource NormalStoryboard}" />
-                    </EventTrigger.Actions>
-                </EventTrigger>
-            </Style.Triggers>
-        </Style>
+        <resourceDictionaries:SharedResourceDictionary
+            Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Styles/Views/SocialLinksProfileSectorViewStyles.xaml" />
     </views:SectorView.Resources>
 
     <Border Width="384"
             Padding="40"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            Background="{StaticResource SocialLinksProfileWindowView.CardOuterBorder.Background.Brush}"
+            Background="{StaticResource SocialLinksProfileView.CardOuterBorder.Background.Brush}"
             CornerRadius="12">
         <StackPanel>
             <Ellipse Width="88"
@@ -117,29 +49,8 @@
                        Text="{x:Static properties:Resources.SocialLinksProfileProfessionalTitleAndInterest}" />
 
             <ItemsControl Margin="0,8,0,0"
-                          Focusable="False"
-                          ItemsSource="{Binding SocialLinksProfiles}">
-                <ItemsControl.Style>
-                    <Style TargetType="{x:Type ItemsControl}">
-                        <Setter Property="ItemContainerStyle">
-                            <Setter.Value>
-                                <Style TargetType="{x:Type ContentPresenter}">
-                                    <Setter Property="ContentTemplate">
-                                        <Setter.Value>
-                                            <DataTemplate DataType="{x:Type viewModels:SocialLinkProfileViewModel}">
-                                                <Button Command="{Binding OpenLinkCommand}" Style="{StaticResource SocialLinkButtonStyle}">
-                                                    <TextBlock Style="{StaticResource Body.Bold.TextBlock.Style}" Text="{Binding Name}" />
-                                                </Button>
-                                            </DataTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                    <Setter Property="Margin" Value="0,16,0,0" />
-                                </Style>
-                            </Setter.Value>
-                        </Setter>
-                    </Style>
-                </ItemsControl.Style>
-            </ItemsControl>
+                          ItemsSource="{Binding SocialLinksProfiles}"
+                          Style="{StaticResource SocialLinksProfilesItemsControlStyle}" />
         </StackPanel>
     </Border>
 </views:SectorView>

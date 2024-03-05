@@ -31,6 +31,4 @@ public abstract class FrontendMentorApplication : FrontendMentorCoreApplication
 
         containerRegistry.RegisterSingleton<ISectorsContainer, SectorsContainer>();
     }
-
-
 }
