@@ -4,7 +4,6 @@
                                         xmlns:applications="clr-namespace:FrontendMentor.Assets.Applications;assembly=FrontendMentor.Assets"
                                         x:ClassModifier="internal">
     <applications:FrontendMentorApplication.Resources>
-        <ResourceDictionary
-            Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Themes/Custom.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Themes/Custom.xaml" />
     </applications:FrontendMentorApplication.Resources>
 </applications:FrontendMentorApplication>

@@ -16,8 +16,7 @@
                   mc:Ignorable="d">
 
     <views:SectorView.Resources>
-        <resourceDictionaries:SharedResourceDictionary
-            Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Styles/Views/SocialLinksProfileSectorViewStyles.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Styles/Views/SocialLinksProfileSectorViewStyles.xaml" />
     </views:SectorView.Resources>
 
     <Border Width="384"

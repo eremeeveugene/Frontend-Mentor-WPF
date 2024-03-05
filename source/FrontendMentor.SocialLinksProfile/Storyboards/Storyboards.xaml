@@ -4,8 +4,7 @@
                     xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
 
     <ResourceDictionary.MergedDictionaries>
-        <resourceDictionaries:SharedResourceDictionary
-            Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Brushes/Brushes.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Brushes/Brushes.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Duration x:Key="SocialLinkProfileButton.Animation.Duration">0:0:0.3</Duration>

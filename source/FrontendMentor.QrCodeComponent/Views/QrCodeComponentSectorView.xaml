@@ -52,8 +52,7 @@
             </Grid>
 
             <StackPanel Margin="0,24">
-                <TextBlock Style="{StaticResource Heading.TextBlock.Style}"
-                           Text="{x:Static properties:Resources.QrCodeComponentHeading}" />
+                <TextBlock Style="{StaticResource Heading.TextBlock.Style}" Text="{x:Static properties:Resources.QrCodeComponentHeading}" />
 
                 <TextBlock Margin="16,16,16,0"
                            Foreground="{StaticResource QrCodeComponentWindowView.BodyTextBlock.Foreground.Brush}"
