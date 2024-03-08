@@ -12,14 +12,125 @@
                   x:ClassModifier="internal"
                   mc:Ignorable="d">
 
+    <views:SectorView.Resources>
+        <Duration x:Key="SocialLinkProfileButton.Animation.Duration">0:0:0.3</Duration>
+
+        <Storyboard x:Key="Grid.MouseOver.Storyboard">
+            <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
+                             To="-24"
+                             Duration="{StaticResource SocialLinkProfileButton.Animation.Duration}" />
+
+            <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                             To="-24"
+                             Duration="{StaticResource SocialLinkProfileButton.Animation.Duration}" />
+        </Storyboard>
+
+        <Storyboard x:Key="Grid.Normal.Storyboard">
+            <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
+                             To="0"
+                             Duration="{StaticResource SocialLinkProfileButton.Animation.Duration}" />
+
+            <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                             To="0"
+                             Duration="{StaticResource SocialLinkProfileButton.Animation.Duration}" />
+        </Storyboard>
+
+        <Storyboard x:Key="Border.MouseOver.Storyboard">
+
+            <DoubleAnimation Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.ShadowDepth)"
+                             To="22.62"
+                             Duration="{StaticResource SocialLinkProfileButton.Animation.Duration}" />
+        </Storyboard>
+
+        <Storyboard x:Key="Border.Normal.Storyboard">
+
+            <DoubleAnimation Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.ShadowDepth)"
+                             To="11.31"
+                             Duration="{StaticResource SocialLinkProfileButton.Animation.Duration}" />
+        </Storyboard>
+
+    </views:SectorView.Resources>
+
     <Grid Width="384"
           HorizontalAlignment="Center"
           VerticalAlignment="Center">
+        <Grid.Style>
+            <Style TargetType="{x:Type Grid}">
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <TranslateTransform />
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="RenderTransformOrigin" Value="0.5, 0.5" />
+                <Style.Triggers>
+                    <EventTrigger RoutedEvent="Button.MouseEnter">
+                        <EventTrigger.Actions>
+                            <BeginStoryboard Storyboard="{StaticResource Grid.MouseOver.Storyboard}" />
+                        </EventTrigger.Actions>
+                    </EventTrigger>
+
+                    <EventTrigger RoutedEvent="Button.GotFocus">
+                        <EventTrigger.Actions>
+                            <BeginStoryboard Storyboard="{StaticResource Grid.MouseOver.Storyboard}" />
+                        </EventTrigger.Actions>
+                    </EventTrigger>
+
+                    <EventTrigger RoutedEvent="Button.LostFocus">
+                        <EventTrigger.Actions>
+                            <BeginStoryboard Storyboard="{StaticResource Grid.Normal.Storyboard}" />
+                        </EventTrigger.Actions>
+                    </EventTrigger>
+
+                    <EventTrigger RoutedEvent="Button.MouseLeave">
+                        <EventTrigger.Actions>
+                            <BeginStoryboard Storyboard="{StaticResource Grid.Normal.Storyboard}" />
+                        </EventTrigger.Actions>
+                    </EventTrigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Style>
+
         <Border Background="{StaticResource BlogCardBorder.Background.Brush}"
                 BorderBrush="{StaticResource BlogCardBorder.Border.Brush}"
                 BorderThickness="1"
                 CornerRadius="20"
-                Effect="{StaticResource BlogCardBorder.DropShadow.Effect}" />
+                Effect="{StaticResource BlogCardBorder.DropShadow.Effect}">
+            <Border.Style>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="RenderTransform">
+                        <Setter.Value>
+                            <TranslateTransform />
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="RenderTransformOrigin" Value="0.5, 0.5" />
+                    <Style.Triggers>
+                        <EventTrigger RoutedEvent="Button.MouseEnter">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard Storyboard="{StaticResource Border.MouseOver.Storyboard}" />
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+
+                        <EventTrigger RoutedEvent="Button.GotFocus">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard Storyboard="{StaticResource Border.MouseOver.Storyboard}" />
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+
+                        <EventTrigger RoutedEvent="Button.LostFocus">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard Storyboard="{StaticResource Border.Normal.Storyboard}" />
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+
+                        <EventTrigger RoutedEvent="Button.MouseLeave">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard Storyboard="{StaticResource Border.Normal.Storyboard}" />
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+        </Border>
 
         <StackPanel Margin="24">
             <Rectangle Height="200"
