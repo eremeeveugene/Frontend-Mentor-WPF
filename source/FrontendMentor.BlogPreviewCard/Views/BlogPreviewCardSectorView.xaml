@@ -32,25 +32,30 @@
                        RadiusY="10" />
 
             <StackPanel>
-                <Border CornerRadius="4">
+                <Border Padding="12,4"
+                        HorizontalAlignment="Left"
+                        CornerRadius="4">
                     <Border.Background>
                         <SolidColorBrush Color="{StaticResource Yellow.Color}" />
                     </Border.Background>
 
-                    <TextBlock Text="Learning" />
+                    <TextBlock Style="{StaticResource Body.S.Bold.TextBlock.Style}" Text="Learning" />
                 </Border>
 
-                <TextBlock Text="Published 21 Dec 2023" />
+                <TextBlock Style="{StaticResource Body.S.Regular.TextBlock.Style}" Text="Published 21 Dec 2023" />
 
-                <TextBlock Text="HTML &amp; CSS foundations" />
+                <TextBlock Style="{StaticResource Heading.TextBlock.Style}" Text="HTML &amp; CSS foundations" />
 
-                <TextBlock Text="These languages are the backbone of every website, defining structure, content, and presentation." />
+                <TextBlock Style="{StaticResource Body.M.TextBlock.Style}" Text="These languages are the backbone of every website, defining structure, content, and presentation.">
+                    <TextBlock.Foreground>
+                        <SolidColorBrush Color="{StaticResource Grey.Color}" />
+                    </TextBlock.Foreground>
+                </TextBlock>
 
                 <StackPanel Orientation="Horizontal">
                     <Ellipse />
 
-
-                    <TextBlock Text="Greg Hooper" />
+                    <TextBlock Style="{StaticResource Body.S.Bold.TextBlock.Style}" Text="Greg Hooper" />
                 </StackPanel>
             </StackPanel>
         </StackPanel>
