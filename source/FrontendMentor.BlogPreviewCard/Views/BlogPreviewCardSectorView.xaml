@@ -12,19 +12,19 @@
                   x:ClassModifier="internal"
                   mc:Ignorable="d">
 
-    <Border Width="384"
-            Padding="24"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Background="{StaticResource BlogCardBorder.Background.Brush}"
-            BorderBrush="{StaticResource BlogCardBorder.Border.Brush}"
-            BorderThickness="1"
-            CornerRadius="20">
-        <Border.Effect>
-            <DropShadowEffect ShadowDepth="8" />
-        </Border.Effect>
+    <Grid Width="384"
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center">
+        <Border Background="{StaticResource BlogCardBorder.Background.Brush}"
+                BorderBrush="{StaticResource BlogCardBorder.Border.Brush}"
+                BorderThickness="1"
+                CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="8" />
+            </Border.Effect>
+        </Border>
 
-        <StackPanel>
+        <StackPanel Margin="24">
             <Rectangle Height="200"
                        Fill="Black"
                        RadiusX="10"
@@ -65,5 +65,6 @@
                            Text="{x:Static properties:Resources.BlogAuthor}" />
             </StackPanel>
         </StackPanel>
-    </Border>
+    </Grid>
+
 </views:SectorView>
