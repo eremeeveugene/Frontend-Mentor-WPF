@@ -4,17 +4,20 @@
                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                   xmlns:mvvm="http://prismlibrary.com/"
+                  xmlns:properties="clr-namespace:FrontendMentor.BlogPreviewCard.Properties"
                   xmlns:viewModels="clr-namespace:FrontendMentor.BlogPreviewCard.ViewModels"
                   xmlns:views="clr-namespace:FrontendMentor.Assets.Controls.Views;assembly=FrontendMentor.Assets"
                   d:DataContext="{d:DesignInstance viewModels:BlogPreviewCardSectorViewModel}"
                   mvvm:ViewModelLocator.AutoWireViewModel="True"
                   x:ClassModifier="internal"
                   mc:Ignorable="d">
+
     <views:SectorView.Resources>
         <ResourceDictionary>
-            <SolidColorBrush x:Key="CardBorder.Border.Brush" Color="{StaticResource Black.Color}" />
-            <SolidColorBrush x:Key="CardBorder.Background.Brush" Color="{StaticResource PureWhite.Color}" />
-
+            <SolidColorBrush x:Key="BlogCardBorder.Border.Brush" Color="{StaticResource Black.Color}" />
+            <SolidColorBrush x:Key="BlogCardBorder.Background.Brush" Color="{StaticResource PureWhite.Color}" />
+            <SolidColorBrush x:Key="BlogCategoryBorder.Background.Brush" Color="{StaticResource Yellow.Color}" />
+            <SolidColorBrush x:Key="BlogAuthorTextBlock.Foreground.Brush" Color="{StaticResource Grey.Color}" />
         </ResourceDictionary>
     </views:SectorView.Resources>
 
@@ -22,41 +25,53 @@
             Padding="24"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            Background="{StaticResource CardBorder.Background.Brush}"
-            BorderBrush="{StaticResource CardBorder.Border.Brush}"
+            Background="{StaticResource BlogCardBorder.Background.Brush}"
+            BorderBrush="{StaticResource BlogCardBorder.Border.Brush}"
             BorderThickness="1"
             CornerRadius="20">
+        <Border.Effect>
+            <DropShadowEffect ShadowDepth="8" />
+        </Border.Effect>
+
         <StackPanel>
             <Rectangle Height="200"
+                       Fill="Black"
                        RadiusX="10"
                        RadiusY="10" />
 
-            <StackPanel>
-                <Border Padding="12,4"
-                        HorizontalAlignment="Left"
-                        CornerRadius="4">
-                    <Border.Background>
-                        <SolidColorBrush Color="{StaticResource Yellow.Color}" />
-                    </Border.Background>
+            <Border Margin="0,24,0,0"
+                    Padding="12,4"
+                    HorizontalAlignment="Left"
+                    Background="{StaticResource BlogCategoryBorder.Background.Brush}"
+                    CornerRadius="4">
+                <TextBlock Style="{StaticResource Body.S.Bold.TextBlock.Style}" Text="{x:Static properties:Resources.BlogCategory}" />
+            </Border>
 
-                    <TextBlock Style="{StaticResource Body.S.Bold.TextBlock.Style}" Text="Learning" />
-                </Border>
+            <TextBlock Margin="0,12,0,0"
+                       Style="{StaticResource Body.S.Regular.TextBlock.Style}"
+                       Text="{x:Static properties:Resources.BlogPublishedDate}" />
 
-                <TextBlock Style="{StaticResource Body.S.Regular.TextBlock.Style}" Text="Published 21 Dec 2023" />
+            <TextBlock Margin="0,12,0,0"
+                       Style="{StaticResource Heading.TextBlock.Style}"
+                       Text="{x:Static properties:Resources.BlogTitle}" />
 
-                <TextBlock Style="{StaticResource Heading.TextBlock.Style}" Text="HTML &amp; CSS foundations" />
+            <TextBlock Margin="0,12,0,0"
+                       Foreground="{StaticResource BlogAuthorTextBlock.Foreground.Brush}"
+                       Style="{StaticResource Body.M.TextBlock.Style}"
+                       Text="{x:Static properties:Resources.BlogDescription}"
+                       TextWrapping="Wrap" />
 
-                <TextBlock Style="{StaticResource Body.M.TextBlock.Style}" Text="These languages are the backbone of every website, defining structure, content, and presentation.">
-                    <TextBlock.Foreground>
-                        <SolidColorBrush Color="{StaticResource Grey.Color}" />
-                    </TextBlock.Foreground>
-                </TextBlock>
+            <StackPanel Margin="0,24,0,0" Orientation="Horizontal">
+                <Ellipse Width="32" Height="32">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="{StaticResource User.Image}" />
+                    </Ellipse.Fill>
+                </Ellipse>
 
-                <StackPanel Orientation="Horizontal">
-                    <Ellipse />
-
-                    <TextBlock Style="{StaticResource Body.S.Bold.TextBlock.Style}" Text="Greg Hooper" />
-                </StackPanel>
+                <TextBlock Margin="12,0,0,0"
+                           VerticalAlignment="Center"
+                           Style="{StaticResource Body.S.Bold.TextBlock.Style}"
+                           Text="{x:Static properties:Resources.BlogAuthor}" />
             </StackPanel>
         </StackPanel>
     </Border>

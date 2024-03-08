@@ -117,7 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BlogAuthor" xml:space="preserve">
+    <value>Greg Hooper</value>
+  </data>
+  <data name="BlogCategory" xml:space="preserve">
+    <value>Learning</value>
+  </data>
+  <data name="BlogDescription" xml:space="preserve">
+    <value>These languages are the backbone of every website, defining structure, content, and presentation.</value>
+  </data>
   <data name="BlogPreviewCardWindowTitle" xml:space="preserve">
     <value>Blog Preview Card</value>
+  </data>
+  <data name="BlogPublishedDate" xml:space="preserve">
+    <value>Published 21 Dec 2023</value>
+  </data>
+  <data name="BlogTitle" xml:space="preserve">
+    <value>HTML &amp; CSS foundations</value>
   </data>
 </root>

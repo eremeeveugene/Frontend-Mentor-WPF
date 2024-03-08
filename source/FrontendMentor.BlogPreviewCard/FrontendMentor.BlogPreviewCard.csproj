@@ -24,6 +24,7 @@
     <None Remove="Fonts\Figtree\Figtree-Regular.ttf" />
     <None Remove="Fonts\Figtree\Figtree-SemiBold.ttf" />
     <None Remove="Fonts\Figtree\Figtree-SemiBoldItalic.ttf" />
+    <None Remove="Images\UserImage.webp" />
   </ItemGroup>
 
   <ItemGroup>
@@ -49,6 +50,7 @@
     <Resource Include="Fonts\Figtree\Figtree-Regular.ttf" />
     <Resource Include="Fonts\Figtree\Figtree-SemiBold.ttf" />
     <Resource Include="Fonts\Figtree\Figtree-SemiBoldItalic.ttf" />
+    <Resource Include="Images\UserImage.webp" />
   </ItemGroup>
 
   <ItemGroup>
