@@ -10,11 +10,45 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Fonts\Figtree\Figtree-Black.ttf" />
+    <None Remove="Fonts\Figtree\Figtree-BlackItalic.ttf" />
+    <None Remove="Fonts\Figtree\Figtree-Bold.ttf" />
+    <None Remove="Fonts\Figtree\Figtree-BoldItalic.ttf" />
+    <None Remove="Fonts\Figtree\Figtree-ExtraBold.ttf" />
+    <None Remove="Fonts\Figtree\Figtree-ExtraBoldItalic.ttf" />
+    <None Remove="Fonts\Figtree\Figtree-Italic.ttf" />
+    <None Remove="Fonts\Figtree\Figtree-Light.ttf" />
+    <None Remove="Fonts\Figtree\Figtree-LightItalic.ttf" />
+    <None Remove="Fonts\Figtree\Figtree-Medium.ttf" />
+    <None Remove="Fonts\Figtree\Figtree-MediumItalic.ttf" />
+    <None Remove="Fonts\Figtree\Figtree-Regular.ttf" />
+    <None Remove="Fonts\Figtree\Figtree-SemiBold.ttf" />
+    <None Remove="Fonts\Figtree\Figtree-SemiBoldItalic.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="Properties\Icon.ico" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\FrontendMentor.Assets\FrontendMentor.Assets.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\Figtree\Figtree-Black.ttf" />
+    <Resource Include="Fonts\Figtree\Figtree-BlackItalic.ttf" />
+    <Resource Include="Fonts\Figtree\Figtree-Bold.ttf" />
+    <Resource Include="Fonts\Figtree\Figtree-BoldItalic.ttf" />
+    <Resource Include="Fonts\Figtree\Figtree-ExtraBold.ttf" />
+    <Resource Include="Fonts\Figtree\Figtree-ExtraBoldItalic.ttf" />
+    <Resource Include="Fonts\Figtree\Figtree-Italic.ttf" />
+    <Resource Include="Fonts\Figtree\Figtree-Light.ttf" />
+    <Resource Include="Fonts\Figtree\Figtree-LightItalic.ttf" />
+    <Resource Include="Fonts\Figtree\Figtree-Medium.ttf" />
+    <Resource Include="Fonts\Figtree\Figtree-MediumItalic.ttf" />
+    <Resource Include="Fonts\Figtree\Figtree-Regular.ttf" />
+    <Resource Include="Fonts\Figtree\Figtree-SemiBold.ttf" />
+    <Resource Include="Fonts\Figtree\Figtree-SemiBoldItalic.ttf" />
   </ItemGroup>
 
   <ItemGroup>

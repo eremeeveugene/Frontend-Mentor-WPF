@@ -2,5 +2,6 @@
     <ResourceDictionary.MergedDictionaries>
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Colors/Colors.xaml" />
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Brushes/Brushes.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Fonts/Fonts.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
