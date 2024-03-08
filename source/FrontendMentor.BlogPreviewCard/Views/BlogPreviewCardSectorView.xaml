@@ -18,39 +18,42 @@
         <Border Background="{StaticResource BlogCardBorder.Background.Brush}"
                 BorderBrush="{StaticResource BlogCardBorder.Border.Brush}"
                 BorderThickness="1"
-                CornerRadius="20">
-            <Border.Effect>
-                <DropShadowEffect ShadowDepth="8" />
-            </Border.Effect>
-        </Border>
+                CornerRadius="20"
+                Effect="{StaticResource BlogCardBorder.DropShadow.Effect}" />
 
         <StackPanel Margin="24">
             <Rectangle Height="200"
-                       Fill="Black"
                        RadiusX="10"
-                       RadiusY="10" />
+                       RadiusY="10">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="{StaticResource Blog.Image}" />
+                </Rectangle.Fill>
+            </Rectangle>
 
             <Border Margin="0,24,0,0"
                     Padding="12,4"
                     HorizontalAlignment="Left"
                     Background="{StaticResource BlogCategoryBorder.Background.Brush}"
                     CornerRadius="4">
-                <TextBlock Style="{StaticResource Body.S.Bold.TextBlock.Style}" Text="{x:Static properties:Resources.BlogCategory}" />
+                <TextBlock Style="{StaticResource Body.S.Bold.TextBlock.Style}">
+                    <Run BaselineAlignment="Center" Text="{x:Static properties:Resources.BlogCategory}" />
+                </TextBlock>
             </Border>
 
-            <TextBlock Margin="0,12,0,0"
-                       Style="{StaticResource Body.S.Regular.TextBlock.Style}"
-                       Text="{x:Static properties:Resources.BlogPublishedDate}" />
+            <TextBlock Margin="0,12,0,0" Style="{StaticResource Body.S.Regular.TextBlock.Style}">
+                <Run BaselineAlignment="Center" Text="{x:Static properties:Resources.BlogPublishedDate}" />
+            </TextBlock>
 
-            <TextBlock Margin="0,12,0,0"
-                       Style="{StaticResource Heading.TextBlock.Style}"
-                       Text="{x:Static properties:Resources.BlogTitle}" />
+            <TextBlock Margin="0,12,0,0" Style="{StaticResource Heading.TextBlock.Style}">
+                <Run BaselineAlignment="Center" Text="{x:Static properties:Resources.BlogTitle}" />
+            </TextBlock>
 
             <TextBlock Margin="0,12,0,0"
                        Foreground="{StaticResource BlogAuthorTextBlock.Foreground.Brush}"
                        Style="{StaticResource Body.M.TextBlock.Style}"
-                       Text="{x:Static properties:Resources.BlogDescription}"
-                       TextWrapping="Wrap" />
+                       TextWrapping="Wrap">
+                <Run BaselineAlignment="Center" Text="{x:Static properties:Resources.BlogDescription}" />
+            </TextBlock>
 
             <StackPanel Margin="0,24,0,0" Orientation="Horizontal">
                 <Ellipse Width="32" Height="32">
@@ -61,8 +64,9 @@
 
                 <TextBlock Margin="12,0,0,0"
                            VerticalAlignment="Center"
-                           Style="{StaticResource Body.S.Bold.TextBlock.Style}"
-                           Text="{x:Static properties:Resources.BlogAuthor}" />
+                           Style="{StaticResource Body.S.Bold.TextBlock.Style}">
+                    <Run BaselineAlignment="Center" Text="{x:Static properties:Resources.BlogAuthor}" />
+                </TextBlock>
             </StackPanel>
         </StackPanel>
     </Grid>
