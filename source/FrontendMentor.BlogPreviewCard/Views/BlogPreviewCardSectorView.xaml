@@ -12,15 +12,6 @@
                   x:ClassModifier="internal"
                   mc:Ignorable="d">
 
-    <views:SectorView.Resources>
-        <ResourceDictionary>
-            <SolidColorBrush x:Key="BlogCardBorder.Border.Brush" Color="{StaticResource Black.Color}" />
-            <SolidColorBrush x:Key="BlogCardBorder.Background.Brush" Color="{StaticResource PureWhite.Color}" />
-            <SolidColorBrush x:Key="BlogCategoryBorder.Background.Brush" Color="{StaticResource Yellow.Color}" />
-            <SolidColorBrush x:Key="BlogAuthorTextBlock.Foreground.Brush" Color="{StaticResource Grey.Color}" />
-        </ResourceDictionary>
-    </views:SectorView.Resources>
-
     <Border Width="384"
             Padding="24"
             HorizontalAlignment="Center"

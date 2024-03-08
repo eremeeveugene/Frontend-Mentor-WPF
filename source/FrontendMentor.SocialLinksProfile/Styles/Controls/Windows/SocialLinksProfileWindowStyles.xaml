@@ -15,7 +15,7 @@
     <Style BasedOn="{StaticResource {x:Type windows:FrontendMentorWindow}}" TargetType="{x:Type windows1:SocialLinksProfileWindow}">
         <Setter Property="Background" Value="{StaticResource SocialLinksProfileWindow.Background.Brush}" />
         <Setter Property="Cursor" Value="{x:Static cursors:Cursors.HandCursor}" />
-        <Setter Property="FontFamily" Value="{StaticResource Inter}" />
+        <Setter Property="FontFamily" Value="{StaticResource InterFontFamily}" />
         <Setter Property="Foreground" Value="{StaticResource SocialLinksProfileWindow.Foreground.Brush}" />
         <Setter Property="MinHeight" Value="960" />
         <Setter Property="MinWidth" Value="1440" />
