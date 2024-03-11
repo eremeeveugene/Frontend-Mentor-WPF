@@ -1,0 +1,9 @@
+﻿<applications:FrontendMentorApplication x:Class="FrontendMentor.ResultsSummaryComponent.App"
+                                        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                        xmlns:applications="clr-namespace:FrontendMentor.Assets.Applications;assembly=FrontendMentor.Assets"
+                                        x:ClassModifier="internal">
+    <applications:FrontendMentorApplication.Resources>
+        <ResourceDictionary Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Themes/Custom.xaml" />
+    </applications:FrontendMentorApplication.Resources>
+</applications:FrontendMentorApplication>
