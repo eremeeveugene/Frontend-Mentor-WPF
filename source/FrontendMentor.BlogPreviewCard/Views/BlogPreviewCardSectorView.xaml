@@ -14,8 +14,8 @@
 
     <Control>
         <Control.Template>
-            <ControlTemplate>
-                <Border x:Name="Border"
+            <ControlTemplate TargetType="{x:Type Control}">
+                <Border x:Name="BlogCardBorder"
                         Width="384"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
@@ -24,6 +24,7 @@
                         BorderThickness="1"
                         CornerRadius="20"
                         Effect="{StaticResource BlogCardBorder.DropShadow.Effect}">
+
                     <StackPanel Margin="24">
                         <Rectangle Height="200"
                                    RadiusX="10"
@@ -79,28 +80,28 @@
                 <ControlTemplate.Triggers>
                     <EventTrigger RoutedEvent="{x:Static UIElement.MouseEnterEvent}">
                         <EventTrigger.Actions>
-                            <BeginStoryboard Storyboard="{StaticResource Border.MouseOver.Storyboard}" />
+                            <BeginStoryboard Storyboard="{StaticResource BlogCardBorder.MouseOver.Storyboard}" />
                             <BeginStoryboard Storyboard="{StaticResource BlogTitleTextBlock.MouseOver.Storyboard}" />
                         </EventTrigger.Actions>
                     </EventTrigger>
 
                     <EventTrigger RoutedEvent="{x:Static UIElement.GotFocusEvent}">
                         <EventTrigger.Actions>
-                            <BeginStoryboard Storyboard="{StaticResource Border.MouseOver.Storyboard}" />
+                            <BeginStoryboard Storyboard="{StaticResource BlogCardBorder.MouseOver.Storyboard}" />
                             <BeginStoryboard Storyboard="{StaticResource BlogTitleTextBlock.MouseOver.Storyboard}" />
                         </EventTrigger.Actions>
                     </EventTrigger>
 
                     <EventTrigger RoutedEvent="{x:Static UIElement.LostFocusEvent}">
                         <EventTrigger.Actions>
-                            <BeginStoryboard Storyboard="{StaticResource Border.Normal.Storyboard}" />
+                            <BeginStoryboard Storyboard="{StaticResource BlogCardBorder.Normal.Storyboard}" />
                             <BeginStoryboard Storyboard="{StaticResource BlogTitleTextBlock.Normal.Storyboard}" />
                         </EventTrigger.Actions>
                     </EventTrigger>
 
                     <EventTrigger RoutedEvent="{x:Static UIElement.MouseLeaveEvent}">
                         <EventTrigger.Actions>
-                            <BeginStoryboard Storyboard="{StaticResource Border.Normal.Storyboard}" />
+                            <BeginStoryboard Storyboard="{StaticResource BlogCardBorder.Normal.Storyboard}" />
                             <BeginStoryboard Storyboard="{StaticResource BlogTitleTextBlock.Normal.Storyboard}" />
                         </EventTrigger.Actions>
                     </EventTrigger>

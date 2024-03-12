@@ -15,7 +15,7 @@ namespace FrontendMentor.Assets.Constants;
 
 public static class AnimationConstants
 {
-    private const double GenericAnimationDurationMilliseconds = 30;
+    private const double GenericAnimationDurationMilliseconds = 300;
 
     private static TimeSpan GenericAnimationDurationTimeSpan =>
         TimeSpan.FromMilliseconds(GenericAnimationDurationMilliseconds);

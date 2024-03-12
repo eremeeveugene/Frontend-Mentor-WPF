@@ -9,18 +9,18 @@
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Colors/Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Storyboard x:Key="Border.MouseOver.Storyboard"
+    <Storyboard x:Key="BlogCardBorder.MouseOver.Storyboard"
                 po:Freeze="True"
-                TargetName="Border">
+                TargetName="BlogCardBorder">
         <DoubleAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                          Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.ShadowDepth)"
                          To="22.62"
                          Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 
-    <Storyboard x:Key="Border.Normal.Storyboard"
+    <Storyboard x:Key="BlogCardBorder.Normal.Storyboard"
                 po:Freeze="True"
-                TargetName="Border">
+                TargetName="BlogCardBorder">
         <DoubleAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                          Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.ShadowDepth)"
                          To="11.31"
