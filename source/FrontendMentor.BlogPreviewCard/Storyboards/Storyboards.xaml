@@ -9,36 +9,28 @@
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Colors/Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Storyboard x:Key="BlogCardBorder.MouseOver.Storyboard"
-                po:Freeze="True"
-                TargetName="BlogCardBorder">
+    <Storyboard x:Key="BlogPreviewCardBorder.MouseOver.Storyboard" po:Freeze="True">
         <DoubleAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                          Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.ShadowDepth)"
                          To="22.62"
                          Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 
-    <Storyboard x:Key="BlogCardBorder.Normal.Storyboard"
-                po:Freeze="True"
-                TargetName="BlogCardBorder">
+    <Storyboard x:Key="BlogPreviewCardBorder.Normal.Storyboard" po:Freeze="True">
         <DoubleAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                          Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.ShadowDepth)"
                          To="11.31"
                          Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 
-    <Storyboard x:Key="BlogTitleTextBlock.MouseOver.Storyboard"
-                po:Freeze="True"
-                TargetName="BlogTitleTextBlock">
+    <Storyboard x:Key="BlogPreviewCardTitleTextBlock.MouseOver.Storyboard" po:Freeze="True">
         <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                         Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
                         To="{StaticResource Yellow.Color}"
                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 
-    <Storyboard x:Key="BlogTitleTextBlock.Normal.Storyboard"
-                po:Freeze="True"
-                TargetName="BlogTitleTextBlock">
+    <Storyboard x:Key="BlogPreviewCardTitleTextBlock.Normal.Storyboard" po:Freeze="True">
         <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                         Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
                         To="{StaticResource Black.Color}"

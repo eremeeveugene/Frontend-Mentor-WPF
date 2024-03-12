@@ -19,29 +19,29 @@
 
     <!--#endregion-->
 
-    <!--#region BlogCardBorder-->
+    <!--#region BlogPreviewCard-->
 
-    <SolidColorBrush x:Key="BlogCardBorder.Border.Brush"
+    <SolidColorBrush x:Key="BlogPreviewCard.Border.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Black.Color}" />
 
-    <SolidColorBrush x:Key="BlogCardBorder.Background.Brush"
+    <SolidColorBrush x:Key="BlogPreviewCard.Background.Brush"
                      po:Freeze="True"
                      Color="{StaticResource PureWhite.Color}" />
 
     <!--#endregion-->
 
-    <!--#region BlogCategoryBorder-->
+    <!--#region BlogPreviewCard.CategoryBorder-->
 
-    <SolidColorBrush x:Key="BlogCategoryBorder.Background.Brush"
+    <SolidColorBrush x:Key="BlogPreviewCard.CategoryBorder.Background.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Yellow.Color}" />
 
     <!--#endregion-->
 
-    <!--#region BlogAuthorTextBlock-->
+    <!--#region BlogPreviewCard.BlogAuthorTextBlock-->
 
-    <SolidColorBrush x:Key="BlogAuthorTextBlock.Foreground.Brush"
+    <SolidColorBrush x:Key="BlogPreviewCard.AuthorTextBlock.Foreground.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Grey.Color}" />
 

@@ -14,6 +14,34 @@
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Styles/Controls/TextBlocks/TextBlockStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
+    <Style x:Key="BlogPreviewCardTitleTextBlockStyle"
+           BasedOn="{StaticResource Heading.TextBlock.Style}"
+           TargetType="{x:Type TextBlock}">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type blogPreviewCards:BlogPreviewCard}}}" Value="True">
+                <DataTrigger.EnterActions>
+                    <BeginStoryboard Storyboard="{StaticResource BlogPreviewCardTitleTextBlock.MouseOver.Storyboard}" />
+                </DataTrigger.EnterActions>
+                <DataTrigger.ExitActions>
+                    <BeginStoryboard Storyboard="{StaticResource BlogPreviewCardTitleTextBlock.Normal.Storyboard}" />
+                </DataTrigger.ExitActions>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="BlogPreviewCardBorderStyle" TargetType="{x:Type Border}">
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Trigger.EnterActions>
+                    <BeginStoryboard Storyboard="{StaticResource BlogPreviewCardBorder.MouseOver.Storyboard}" />
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard Storyboard="{StaticResource BlogPreviewCardBorder.Normal.Storyboard}" />
+                </Trigger.ExitActions>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
     <DataTemplate x:Key="BlogPreviewCardContentTemplate" DataType="{x:Type bindableModels:BlogBindableModel}">
         <StackPanel>
             <Rectangle Height="200"
@@ -27,7 +55,7 @@
             <Border Margin="0,24,0,0"
                     Padding="12,4"
                     HorizontalAlignment="Left"
-                    Background="{StaticResource BlogCategoryBorder.Background.Brush}"
+                    Background="{StaticResource BlogPreviewCard.CategoryBorder.Background.Brush}"
                     CornerRadius="4">
                 <TextBlock Style="{StaticResource Body.S.Bold.TextBlock.Style}">
                     <Run BaselineAlignment="Center" Text="{Binding Category, Mode=OneWay}" />
@@ -39,14 +67,12 @@
                 <Run BaselineAlignment="Center" Text="{Binding PublishedDate, Mode=OneWay, StringFormat={x:Static constants:DateTimeFormatConstants.DayMonthAbbrYear}}" />
             </TextBlock>
 
-            <TextBlock x:Name="BlogTitleTextBlock"
-                       Margin="0,12,0,0"
-                       Style="{StaticResource Heading.TextBlock.Style}">
+            <TextBlock Margin="0,12,0,0" Style="{StaticResource BlogPreviewCardTitleTextBlockStyle}">
                 <Run BaselineAlignment="Center" Text="{Binding Title, Mode=OneWay}" />
             </TextBlock>
 
             <TextBlock Margin="0,12,0,0"
-                       Foreground="{StaticResource BlogAuthorTextBlock.Foreground.Brush}"
+                       Foreground="{StaticResource BlogPreviewCard.AuthorTextBlock.Foreground.Brush}"
                        Style="{StaticResource Body.M.TextBlock.Style}"
                        TextWrapping="Wrap">
                 <Run BaselineAlignment="Center" Text="{Binding Description, Mode=OneWay}" />
@@ -70,50 +96,20 @@
     </DataTemplate>
 
     <ControlTemplate x:Key="BlogPreviewCardTemplate" TargetType="{x:Type blogPreviewCards:BlogPreviewCard}">
-        <Border x:Name="BlogCardBorder"
-                Padding="{TemplateBinding Padding}"
+        <Border Padding="{TemplateBinding Padding}"
                 Background="{TemplateBinding Background}"
                 BorderBrush="{TemplateBinding BorderBrush}"
                 BorderThickness="{TemplateBinding BorderThickness}"
                 CornerRadius="{TemplateBinding CornerRadius}"
-                Effect="{StaticResource BlogCardBorder.DropShadow.Effect}">
-            <ContentPresenter />
+                Effect="{StaticResource BlogCardBorder.DropShadow.Effect}"
+                Style="{StaticResource BlogPreviewCardBorderStyle}">
+            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
         </Border>
-
-        <ControlTemplate.Triggers>
-            <EventTrigger RoutedEvent="{x:Static UIElement.MouseEnterEvent}">
-                <EventTrigger.Actions>
-                    <BeginStoryboard Storyboard="{StaticResource BlogCardBorder.MouseOver.Storyboard}" />
-                    <!--<BeginStoryboard Storyboard="{StaticResource BlogTitleTextBlock.MouseOver.Storyboard}" />-->
-                </EventTrigger.Actions>
-            </EventTrigger>
-
-            <EventTrigger RoutedEvent="{x:Static UIElement.GotFocusEvent}">
-                <EventTrigger.Actions>
-                    <BeginStoryboard Storyboard="{StaticResource BlogCardBorder.MouseOver.Storyboard}" />
-                    <!--<BeginStoryboard Storyboard="{StaticResource BlogTitleTextBlock.MouseOver.Storyboard}" />-->
-                </EventTrigger.Actions>
-            </EventTrigger>
-
-            <EventTrigger RoutedEvent="{x:Static UIElement.LostFocusEvent}">
-                <EventTrigger.Actions>
-                    <BeginStoryboard Storyboard="{StaticResource BlogCardBorder.Normal.Storyboard}" />
-                    <!--<BeginStoryboard Storyboard="{StaticResource BlogTitleTextBlock.Normal.Storyboard}" />-->
-                </EventTrigger.Actions>
-            </EventTrigger>
-
-            <EventTrigger RoutedEvent="{x:Static UIElement.MouseLeaveEvent}">
-                <EventTrigger.Actions>
-                    <BeginStoryboard Storyboard="{StaticResource BlogCardBorder.Normal.Storyboard}" />
-                    <!--<BeginStoryboard Storyboard="{StaticResource BlogTitleTextBlock.Normal.Storyboard}" />-->
-                </EventTrigger.Actions>
-            </EventTrigger>
-        </ControlTemplate.Triggers>
     </ControlTemplate>
 
     <Style TargetType="{x:Type blogPreviewCards:BlogPreviewCard}">
-        <Setter Property="Background" Value="{StaticResource BlogCardBorder.Background.Brush}" />
-        <Setter Property="BorderBrush" Value="{StaticResource BlogCardBorder.Border.Brush}" />
+        <Setter Property="Background" Value="{StaticResource BlogPreviewCard.Background.Brush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource BlogPreviewCard.Border.Brush}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="ContentTemplate" Value="{StaticResource BlogPreviewCardContentTemplate}" />
         <Setter Property="CornerRadius" Value="20" />
