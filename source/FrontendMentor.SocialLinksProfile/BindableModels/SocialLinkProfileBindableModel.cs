@@ -16,9 +16,9 @@ using Prism.Ioc;
 using Prism.Mvvm;
 using System.Windows.Input;
 
-namespace FrontendMentor.SocialLinksProfile.ViewModels;
+namespace FrontendMentor.SocialLinksProfile.BindableModels;
 
-internal class SocialLinkProfileViewModel(
+internal class SocialLinkProfileBindableModel(
     IProcessesService processesService,
     SocialLinkProfileModel socialLinkProfile) : BindableBase
 {
@@ -33,10 +33,10 @@ internal class SocialLinkProfileViewModel(
         processesService.StartProcess(socialLinkProfile.Link);
     }
 
-    public static SocialLinkProfileViewModel Create(IContainerExtension containerExtension,
+    public static SocialLinkProfileBindableModel Create(IContainerExtension containerExtension,
         SocialLinkProfileModel socialLinkProfile)
     {
-        return containerExtension.Resolve<SocialLinkProfileViewModel>((typeof(SocialLinkProfileModel),
+        return containerExtension.Resolve<SocialLinkProfileBindableModel>((typeof(SocialLinkProfileModel),
             socialLinkProfile));
     }
 }
