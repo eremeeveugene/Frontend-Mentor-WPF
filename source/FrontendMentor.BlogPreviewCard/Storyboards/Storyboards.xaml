@@ -1,0 +1,52 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
+                    xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
+
+    <ResourceDictionary.MergedDictionaries>
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Colors/Colors.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Duration x:Key="Border.Animation.Duration">0:0:0.3</Duration>
+
+    <ExponentialEase x:Key="Border.Animation.EasingFunction"
+                     po:Freeze="True"
+                     EasingMode="{x:Static EasingMode.EaseOut}" />
+
+    <Storyboard x:Key="Border.MouseOver.Storyboard"
+                po:Freeze="True"
+                TargetName="Border">
+        <DoubleAnimation EasingFunction="{StaticResource Border.Animation.EasingFunction}"
+                         Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.ShadowDepth)"
+                         To="22.62"
+                         Duration="{StaticResource Border.Animation.Duration}" />
+    </Storyboard>
+
+    <Storyboard x:Key="Border.Normal.Storyboard"
+                po:Freeze="True"
+                TargetName="Border">
+        <DoubleAnimation EasingFunction="{StaticResource Border.Animation.EasingFunction}"
+                         Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.ShadowDepth)"
+                         To="11.31"
+                         Duration="{StaticResource Border.Animation.Duration}" />
+    </Storyboard>
+
+    <Storyboard x:Key="BlogTitleTextBlock.MouseOver.Storyboard"
+                po:Freeze="True"
+                TargetName="BlogTitleTextBlock">
+        <ColorAnimation EasingFunction="{StaticResource Border.Animation.EasingFunction}"
+                        Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
+                        To="{StaticResource Yellow.Color}"
+                        Duration="{StaticResource Border.Animation.Duration}" />
+    </Storyboard>
+
+    <Storyboard x:Key="BlogTitleTextBlock.Normal.Storyboard"
+                po:Freeze="True"
+                TargetName="BlogTitleTextBlock">
+        <ColorAnimation EasingFunction="{StaticResource Border.Animation.EasingFunction}"
+                        Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
+                        To="{StaticResource Black.Color}"
+                        Duration="{StaticResource Border.Animation.Duration}" />
+    </Storyboard>
+
+</ResourceDictionary>

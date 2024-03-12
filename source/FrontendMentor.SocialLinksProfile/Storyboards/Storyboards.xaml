@@ -9,22 +9,30 @@
 
     <Duration x:Key="SocialLinkProfileButton.Animation.Duration">0:0:0.3</Duration>
 
+    <ExponentialEase x:Key="SocialLinkProfileButton.Animation.EasingFunction"
+                     po:Freeze="True"
+                     EasingMode="{x:Static EasingMode.EaseOut}" />
+
     <Storyboard x:Key="SocialLinkProfileButton.MouseOver.Storyboard" po:Freeze="True">
-        <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+        <ColorAnimation EasingFunction="{StaticResource SocialLinkProfileButton.Animation.EasingFunction}"
+                        Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
                         To="{StaticResource NeonGreen.Color}"
                         Duration="{StaticResource SocialLinkProfileButton.Animation.Duration}" />
 
-        <ColorAnimation Storyboard.TargetProperty="(Button.Foreground).(SolidColorBrush.Color)"
+        <ColorAnimation EasingFunction="{StaticResource SocialLinkProfileButton.Animation.EasingFunction}"
+                        Storyboard.TargetProperty="(Button.Foreground).(SolidColorBrush.Color)"
                         To="{StaticResource Grey.Color}"
                         Duration="{StaticResource SocialLinkProfileButton.Animation.Duration}" />
     </Storyboard>
 
     <Storyboard x:Key="SocialLinkProfileButton.Normal.Storyboard" po:Freeze="True">
-        <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+        <ColorAnimation EasingFunction="{StaticResource SocialLinkProfileButton.Animation.EasingFunction}"
+                        Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
                         To="{StaticResource Grey.Color}"
                         Duration="{StaticResource SocialLinkProfileButton.Animation.Duration}" />
 
-        <ColorAnimation Storyboard.TargetProperty="(Button.Foreground).(SolidColorBrush.Color)"
+        <ColorAnimation EasingFunction="{StaticResource SocialLinkProfileButton.Animation.EasingFunction}"
+                        Storyboard.TargetProperty="(Button.Foreground).(SolidColorBrush.Color)"
                         To="{StaticResource White.Color}"
                         Duration="{StaticResource SocialLinkProfileButton.Animation.Duration}" />
     </Storyboard>

@@ -12,40 +12,6 @@
                   x:ClassModifier="internal"
                   mc:Ignorable="d">
 
-    <views:SectorView.Resources>
-        <Duration x:Key="Border.Animation.Duration">0:0:0.3</Duration>
-        <ExponentialEase x:Key="Border.Animation.EasingFunction" EasingMode="EaseOut" />
-
-        <Storyboard x:Key="Border.MouseOver.Storyboard" TargetName="Border">
-            <DoubleAnimation EasingFunction="{StaticResource Border.Animation.EasingFunction}"
-                             Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.ShadowDepth)"
-                             To="22.62"
-                             Duration="{StaticResource Border.Animation.Duration}" />
-        </Storyboard>
-
-        <Storyboard x:Key="Border.Normal.Storyboard" TargetName="Border">
-            <DoubleAnimation EasingFunction="{StaticResource Border.Animation.EasingFunction}"
-                             Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.ShadowDepth)"
-                             To="11.31"
-                             Duration="{StaticResource Border.Animation.Duration}" />
-        </Storyboard>
-
-        <Storyboard x:Key="BlogTitleTextBlock.MouseOver.Storyboard" TargetName="BlogTitleTextBlock">
-            <ColorAnimation EasingFunction="{StaticResource Border.Animation.EasingFunction}"
-                            Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
-                            To="{StaticResource Yellow.Color}"
-                            Duration="{StaticResource Border.Animation.Duration}" />
-        </Storyboard>
-
-        <Storyboard x:Key="BlogTitleTextBlock.Normal.Storyboard" TargetName="BlogTitleTextBlock">
-            <ColorAnimation EasingFunction="{StaticResource Border.Animation.EasingFunction}"
-                            Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
-                            To="{StaticResource Black.Color}"
-                            Duration="{StaticResource Border.Animation.Duration}" />
-        </Storyboard>
-
-    </views:SectorView.Resources>
-
     <Control>
         <Control.Template>
             <ControlTemplate>
