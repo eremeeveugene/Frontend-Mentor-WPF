@@ -13,11 +13,11 @@ using System.Windows;
 
 namespace FrontendMentor.Assets.Constants;
 
-public static class Class
+public static class AnimationConstants
 {
-    public const double GenericAnimationDurationMilliseconds = 30;
+    private const double GenericAnimationDurationMilliseconds = 30;
 
-    public static TimeSpan GenericAnimationDurationTimeSpan =>
+    private static TimeSpan GenericAnimationDurationTimeSpan =>
         TimeSpan.FromMilliseconds(GenericAnimationDurationMilliseconds);
 
     public static Duration GenericAnimationDuration => new(GenericAnimationDurationTimeSpan);

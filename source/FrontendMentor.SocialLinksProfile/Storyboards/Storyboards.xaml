@@ -1,5 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:constants="clr-namespace:FrontendMentor.Assets.Constants;assembly=FrontendMentor.Assets"
                     xmlns:helpers="clr-namespace:FrontendMentor.Assets.Helpers;assembly=FrontendMentor.Assets"
                     xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
                     xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
@@ -8,30 +9,28 @@
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Brushes/Brushes.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Duration x:Key="SocialLinkProfileButton.Animation.Duration">0:0:0.3</Duration>
-
     <Storyboard x:Key="SocialLinkProfileButton.MouseOver.Storyboard" po:Freeze="True">
         <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                         Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
                         To="{StaticResource NeonGreen.Color}"
-                        Duration="{StaticResource SocialLinkProfileButton.Animation.Duration}" />
+                        Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
 
         <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                         Storyboard.TargetProperty="(Button.Foreground).(SolidColorBrush.Color)"
                         To="{StaticResource Grey.Color}"
-                        Duration="{StaticResource SocialLinkProfileButton.Animation.Duration}" />
+                        Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 
     <Storyboard x:Key="SocialLinkProfileButton.Normal.Storyboard" po:Freeze="True">
         <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                         Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
                         To="{StaticResource Grey.Color}"
-                        Duration="{StaticResource SocialLinkProfileButton.Animation.Duration}" />
+                        Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
 
         <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                         Storyboard.TargetProperty="(Button.Foreground).(SolidColorBrush.Color)"
                         To="{StaticResource White.Color}"
-                        Duration="{StaticResource SocialLinkProfileButton.Animation.Duration}" />
+                        Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 
 </ResourceDictionary>
