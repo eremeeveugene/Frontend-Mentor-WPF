@@ -9,13 +9,16 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using System.Globalization;
-using System.Windows.Data;
+using System.Windows;
 
-namespace FrontendMentor.Assets.MarkupExtensions;
+namespace FrontendMentor.Assets.Constants;
 
-public abstract class ConverterMarkupExtension<T> : LazyMarkupExtension<T>, IValueConverter where T : class, new()
+public static class Class
 {
-    public abstract object Convert(object? value, Type targetType, object? parameter, CultureInfo culture);
-    public abstract object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture);
+    public const double GenericAnimationDurationMilliseconds = 30;
+
+    public static TimeSpan GenericAnimationDurationTimeSpan =>
+        TimeSpan.FromMilliseconds(GenericAnimationDurationMilliseconds);
+
+    public static Duration GenericAnimationDuration => new(GenericAnimationDurationTimeSpan);
 }

@@ -15,10 +15,10 @@ namespace FrontendMentor.Assets.MarkupExtensions;
 
 public abstract class LazyMarkupExtension<T> : MarkupExtension where T : class, new()
 {
-    private static readonly Lazy<T> Instance = new(() => new T());
+    private static readonly Lazy<T> LazyInstance = new(() => new T());
 
     public override object ProvideValue(IServiceProvider serviceProvider)
     {
-        return Instance.Value;
+        return LazyInstance.Value;
     }
 }

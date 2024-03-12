@@ -9,16 +9,22 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using System.Windows.Markup;
+using System.Windows.Media.Animation;
 
-namespace FrontendMentor.Assets.MarkupExtensions;
+namespace FrontendMentor.Assets.Helpers;
 
-public abstract class FrontendMentorMarkupExtension<T> : MarkupExtension where T : class, new()
+public static class EasingFunctionsHelper
 {
-    private static readonly Lazy<T> MarkupExtension = new(() => new T());
+    private static readonly Lazy<IEasingFunction> LazyGenericEasingFunction = new(GetGenericEasingFunction);
 
-    public override object ProvideValue(IServiceProvider serviceProvider)
+    public static IEasingFunction GenericEasingFunction => LazyGenericEasingFunction.Value;
+
+    private static ExponentialEase GetGenericEasingFunction()
     {
-        return MarkupExtension.Value;
+        var exponentialEase = new ExponentialEase { EasingMode = EasingMode.EaseOut };
+
+        exponentialEase.Freeze();
+
+        return exponentialEase;
     }
 }
