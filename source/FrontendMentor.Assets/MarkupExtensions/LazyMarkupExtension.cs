@@ -9,14 +9,16 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using System.Globalization;
-using System.Windows.Data;
+using System.Windows.Markup;
 
 namespace FrontendMentor.Assets.MarkupExtensions;
 
-public abstract class ConverterMarkupExtension<T> : LazyMarkupExtension<T>, IValueConverter
-    where T : class, new()
+public abstract class LazyMarkupExtension<T> : MarkupExtension where T : class, new()
 {
-    public abstract object Convert(object? value, Type targetType, object? parameter, CultureInfo culture);
-    public abstract object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture);
+    private static readonly Lazy<T> Instance = new(() => new T());
+
+    public override object ProvideValue(IServiceProvider serviceProvider)
+    {
+        return Instance.Value;
+    }
 }
