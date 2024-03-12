@@ -11,6 +11,7 @@
 
 using FrontendMentor.BlogPreviewCard.Constants;
 using FrontendMentor.BlogPreviewCard.Controls.Windows;
+using FrontendMentor.BlogPreviewCard.Services.Blogs;
 using FrontendMentor.BlogPreviewCard.Views;
 using FrontendMentor.Core.Services.Sectors;
 using Prism.Ioc;
@@ -32,6 +33,13 @@ internal sealed partial class App
         sectorsService.NavigateToSectorView(BlogPreviewCardSectorNames.BlogPreviewCardSector);
 
         base.OnInitialized();
+    }
+
+    protected override void RegisterTypes(IContainerRegistry containerRegistry)
+    {
+        base.RegisterTypes(containerRegistry);
+
+        containerRegistry.RegisterSingleton<IBlogsService, BlogsService>();
     }
 
     protected override void RegisterSectors(ISectorsService sectorsService)

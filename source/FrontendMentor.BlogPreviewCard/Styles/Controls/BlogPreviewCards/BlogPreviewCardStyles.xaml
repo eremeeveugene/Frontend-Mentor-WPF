@@ -1,0 +1,124 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:bindableModels="clr-namespace:FrontendMentor.BlogPreviewCard.BindableModels"
+                    xmlns:blogPreviewCards="clr-namespace:FrontendMentor.BlogPreviewCard.Controls.BlogPreviewCards"
+                    xmlns:constants="clr-namespace:FrontendMentor.Core.Constants;assembly=FrontendMentor.Core"
+                    xmlns:properties="clr-namespace:FrontendMentor.BlogPreviewCard.Properties"
+                    xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
+
+    <ResourceDictionary.MergedDictionaries>
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Brushes/Brushes.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Images/Images.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Effects/Effects.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Storyboards/Storyboards.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Styles/Controls/TextBlocks/TextBlockStyles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <DataTemplate x:Key="BlogPreviewCardContentTemplate" DataType="{x:Type bindableModels:BlogBindableModel}">
+        <StackPanel>
+            <Rectangle Height="200"
+                       RadiusX="10"
+                       RadiusY="10">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="{StaticResource Blog.Image}" />
+                </Rectangle.Fill>
+            </Rectangle>
+
+            <Border Margin="0,24,0,0"
+                    Padding="12,4"
+                    HorizontalAlignment="Left"
+                    Background="{StaticResource BlogCategoryBorder.Background.Brush}"
+                    CornerRadius="4">
+                <TextBlock Style="{StaticResource Body.S.Bold.TextBlock.Style}">
+                    <Run BaselineAlignment="Center" Text="{Binding Category, Mode=OneWay}" />
+                </TextBlock>
+            </Border>
+
+            <TextBlock Margin="0,12,0,0" Style="{StaticResource Body.S.Regular.TextBlock.Style}">
+                <Run BaselineAlignment="Center" Text="{x:Static properties:Resources.BlogPreviewCardPublishedCaption}" />
+                <Run BaselineAlignment="Center" Text="{Binding PublishedDate, Mode=OneWay, StringFormat={x:Static constants:DateTimeFormatConstants.DayMonthAbbrYear}}" />
+            </TextBlock>
+
+            <TextBlock x:Name="BlogTitleTextBlock"
+                       Margin="0,12,0,0"
+                       Style="{StaticResource Heading.TextBlock.Style}">
+                <Run BaselineAlignment="Center" Text="{Binding Title, Mode=OneWay}" />
+            </TextBlock>
+
+            <TextBlock Margin="0,12,0,0"
+                       Foreground="{StaticResource BlogAuthorTextBlock.Foreground.Brush}"
+                       Style="{StaticResource Body.M.TextBlock.Style}"
+                       TextWrapping="Wrap">
+                <Run BaselineAlignment="Center" Text="{Binding Description, Mode=OneWay}" />
+            </TextBlock>
+
+            <StackPanel Margin="0,24,0,0" Orientation="Horizontal">
+                <Ellipse Width="32" Height="32">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="{Binding UserImage}" />
+                    </Ellipse.Fill>
+                </Ellipse>
+
+                <TextBlock Margin="12,0,0,0"
+                           VerticalAlignment="Center"
+                           Style="{StaticResource Body.S.Bold.TextBlock.Style}">
+                    <Run BaselineAlignment="Center" Text="{Binding FirstName, Mode=OneWay}" />
+                    <Run BaselineAlignment="Center" Text="{Binding LastName, Mode=OneWay}" />
+                </TextBlock>
+            </StackPanel>
+        </StackPanel>
+    </DataTemplate>
+
+    <ControlTemplate x:Key="BlogPreviewCardTemplate" TargetType="{x:Type blogPreviewCards:BlogPreviewCard}">
+        <Border x:Name="BlogCardBorder"
+                Padding="{TemplateBinding Padding}"
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                CornerRadius="{TemplateBinding CornerRadius}"
+                Effect="{StaticResource BlogCardBorder.DropShadow.Effect}">
+            <ContentPresenter />
+        </Border>
+
+        <ControlTemplate.Triggers>
+            <EventTrigger RoutedEvent="{x:Static UIElement.MouseEnterEvent}">
+                <EventTrigger.Actions>
+                    <BeginStoryboard Storyboard="{StaticResource BlogCardBorder.MouseOver.Storyboard}" />
+                    <!--<BeginStoryboard Storyboard="{StaticResource BlogTitleTextBlock.MouseOver.Storyboard}" />-->
+                </EventTrigger.Actions>
+            </EventTrigger>
+
+            <EventTrigger RoutedEvent="{x:Static UIElement.GotFocusEvent}">
+                <EventTrigger.Actions>
+                    <BeginStoryboard Storyboard="{StaticResource BlogCardBorder.MouseOver.Storyboard}" />
+                    <!--<BeginStoryboard Storyboard="{StaticResource BlogTitleTextBlock.MouseOver.Storyboard}" />-->
+                </EventTrigger.Actions>
+            </EventTrigger>
+
+            <EventTrigger RoutedEvent="{x:Static UIElement.LostFocusEvent}">
+                <EventTrigger.Actions>
+                    <BeginStoryboard Storyboard="{StaticResource BlogCardBorder.Normal.Storyboard}" />
+                    <!--<BeginStoryboard Storyboard="{StaticResource BlogTitleTextBlock.Normal.Storyboard}" />-->
+                </EventTrigger.Actions>
+            </EventTrigger>
+
+            <EventTrigger RoutedEvent="{x:Static UIElement.MouseLeaveEvent}">
+                <EventTrigger.Actions>
+                    <BeginStoryboard Storyboard="{StaticResource BlogCardBorder.Normal.Storyboard}" />
+                    <!--<BeginStoryboard Storyboard="{StaticResource BlogTitleTextBlock.Normal.Storyboard}" />-->
+                </EventTrigger.Actions>
+            </EventTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type blogPreviewCards:BlogPreviewCard}">
+        <Setter Property="Background" Value="{StaticResource BlogCardBorder.Background.Brush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource BlogCardBorder.Border.Brush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="ContentTemplate" Value="{StaticResource BlogPreviewCardContentTemplate}" />
+        <Setter Property="CornerRadius" Value="20" />
+        <Setter Property="Padding" Value="24" />
+        <Setter Property="Template" Value="{StaticResource BlogPreviewCardTemplate}" />
+    </Style>
+
+</ResourceDictionary>

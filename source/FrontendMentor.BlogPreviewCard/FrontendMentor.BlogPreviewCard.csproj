@@ -50,7 +50,9 @@
     <Resource Include="Fonts\Figtree\Figtree-Regular.ttf" />
     <Resource Include="Fonts\Figtree\Figtree-SemiBold.ttf" />
     <Resource Include="Fonts\Figtree\Figtree-SemiBoldItalic.ttf" />
-    <Resource Include="Images\UserImage.webp" />
+    <Content Include="Images\UserImage.webp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

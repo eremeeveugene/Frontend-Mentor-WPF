@@ -61,29 +61,11 @@ namespace FrontendMentor.BlogPreviewCard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Greg Hooper.
+        ///   Looks up a localized string similar to Published.
         /// </summary>
-        public static string BlogAuthor {
+        public static string BlogPreviewCardPublishedCaption {
             get {
-                return ResourceManager.GetString("BlogAuthor", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Learning.
-        /// </summary>
-        public static string BlogCategory {
-            get {
-                return ResourceManager.GetString("BlogCategory", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to These languages are the backbone of every website, defining structure, content, and presentation..
-        /// </summary>
-        public static string BlogDescription {
-            get {
-                return ResourceManager.GetString("BlogDescription", resourceCulture);
+                return ResourceManager.GetString("BlogPreviewCardPublishedCaption", resourceCulture);
             }
         }
         
@@ -93,24 +75,6 @@ namespace FrontendMentor.BlogPreviewCard.Properties {
         public static string BlogPreviewCardWindowTitle {
             get {
                 return ResourceManager.GetString("BlogPreviewCardWindowTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Published 21 Dec 2023.
-        /// </summary>
-        public static string BlogPublishedDate {
-            get {
-                return ResourceManager.GetString("BlogPublishedDate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to HTML &amp; CSS foundations.
-        /// </summary>
-        public static string BlogTitle {
-            get {
-                return ResourceManager.GetString("BlogTitle", resourceCulture);
             }
         }
     }

@@ -33,10 +33,10 @@ internal class SocialLinkProfileBindableModel(
         processesService.StartProcess(socialLinkProfile.Link);
     }
 
-    public static SocialLinkProfileBindableModel Create(IContainerExtension containerExtension,
+    public static SocialLinkProfileBindableModel Create(IContainerProvider containerProvider,
         SocialLinkProfileModel socialLinkProfile)
     {
-        return containerExtension.Resolve<SocialLinkProfileBindableModel>((typeof(SocialLinkProfileModel),
+        return containerProvider.Resolve<SocialLinkProfileBindableModel>((typeof(SocialLinkProfileModel),
             socialLinkProfile));
     }
 }

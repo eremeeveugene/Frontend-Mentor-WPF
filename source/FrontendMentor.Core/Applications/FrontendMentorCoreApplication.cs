@@ -9,6 +9,7 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
+using FrontendMentor.Core.Services.BitmapImages;
 using FrontendMentor.Core.Services.Processes;
 using FrontendMentor.Core.Services.Sectors;
 using Prism.DryIoc;
@@ -22,6 +23,7 @@ public abstract class FrontendMentorCoreApplication : PrismApplication
     {
         containerRegistry.RegisterSingleton<IProcessesService, ProcessesService>();
         containerRegistry.RegisterSingleton<ISectorsService, SectorsService>();
+        containerRegistry.RegisterSingleton<IBitmapImagesService, BitmapImagesService>();
     }
 
     protected override void Initialize()

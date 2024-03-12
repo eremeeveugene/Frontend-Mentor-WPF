@@ -19,7 +19,7 @@ namespace FrontendMentor.SocialLinksProfile.ViewModels;
 
 internal sealed class SocialLinksProfileSectorViewModel(
     ISocialLinksProfilesService socialLinksProfilesService,
-    IContainerExtension containerExtension)
+    IContainerProvider containerProvider)
     : ViewModelBase
 {
     private ObservableCollection<SocialLinkProfileBindableModel>? _socialLinksProfiles;
@@ -42,7 +42,7 @@ internal sealed class SocialLinksProfileSectorViewModel(
         var socialLinkProfiles = socialLinksProfilesService.GetSocialLinkProfiles();
 
         var socialLinkProfilesViewModels = socialLinkProfiles
-            .Select(socialLinkProfile => SocialLinkProfileBindableModel.Create(containerExtension, socialLinkProfile));
+            .Select(socialLinkProfile => SocialLinkProfileBindableModel.Create(containerProvider, socialLinkProfile));
 
         SocialLinksProfiles = new ObservableCollection<SocialLinkProfileBindableModel>(socialLinkProfilesViewModels);
     }
