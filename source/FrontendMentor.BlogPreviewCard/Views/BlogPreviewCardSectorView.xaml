@@ -18,16 +18,6 @@
 
         <Storyboard x:Key="Border.MouseOver.Storyboard" TargetName="Border">
             <DoubleAnimation EasingFunction="{StaticResource Border.Animation.EasingFunction}"
-                             Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
-                             To="-24"
-                             Duration="{StaticResource Border.Animation.Duration}" />
-
-            <DoubleAnimation EasingFunction="{StaticResource Border.Animation.EasingFunction}"
-                             Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
-                             To="-24"
-                             Duration="{StaticResource Border.Animation.Duration}" />
-
-            <DoubleAnimation EasingFunction="{StaticResource Border.Animation.EasingFunction}"
                              Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.ShadowDepth)"
                              To="22.62"
                              Duration="{StaticResource Border.Animation.Duration}" />
@@ -35,19 +25,23 @@
 
         <Storyboard x:Key="Border.Normal.Storyboard" TargetName="Border">
             <DoubleAnimation EasingFunction="{StaticResource Border.Animation.EasingFunction}"
-                             Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
-                             To="0"
-                             Duration="{StaticResource Border.Animation.Duration}" />
-
-            <DoubleAnimation EasingFunction="{StaticResource Border.Animation.EasingFunction}"
-                             Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
-                             To="0"
-                             Duration="{StaticResource Border.Animation.Duration}" />
-
-            <DoubleAnimation EasingFunction="{StaticResource Border.Animation.EasingFunction}"
                              Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.ShadowDepth)"
                              To="11.31"
                              Duration="{StaticResource Border.Animation.Duration}" />
+        </Storyboard>
+
+        <Storyboard x:Key="BlogTitleTextBlock.MouseOver.Storyboard" TargetName="BlogTitleTextBlock">
+            <ColorAnimation EasingFunction="{StaticResource Border.Animation.EasingFunction}"
+                            Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
+                            To="{StaticResource Yellow.Color}"
+                            Duration="{StaticResource Border.Animation.Duration}" />
+        </Storyboard>
+
+        <Storyboard x:Key="BlogTitleTextBlock.Normal.Storyboard" TargetName="BlogTitleTextBlock">
+            <ColorAnimation EasingFunction="{StaticResource Border.Animation.EasingFunction}"
+                            Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
+                            To="{StaticResource Black.Color}"
+                            Duration="{StaticResource Border.Animation.Duration}" />
         </Storyboard>
 
     </views:SectorView.Resources>
@@ -55,98 +49,93 @@
     <Control>
         <Control.Template>
             <ControlTemplate>
-                <Grid Width="384"
-                      HorizontalAlignment="Center"
-                      VerticalAlignment="Center"
-                      Background="Transparent">
-                    <Border x:Name="Border"
-                            Background="{StaticResource BlogCardBorder.Background.Brush}"
-                            CornerRadius="20"
-                            Effect="{StaticResource BlogCardBorder.DropShadow.Effect}"
-                            RenderTransformOrigin="0.5, 0.5">
+                <Border x:Name="Border"
+                        Width="384"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Background="{StaticResource BlogCardBorder.Background.Brush}"
+                        BorderBrush="{StaticResource BlogCardBorder.Border.Brush}"
+                        BorderThickness="1"
+                        CornerRadius="20"
+                        Effect="{StaticResource BlogCardBorder.DropShadow.Effect}">
+                    <StackPanel Margin="24">
+                        <Rectangle Height="200"
+                                   RadiusX="10"
+                                   RadiusY="10">
+                            <Rectangle.Fill>
+                                <ImageBrush ImageSource="{StaticResource Blog.Image}" />
+                            </Rectangle.Fill>
+                        </Rectangle>
 
-                        <Border.RenderTransform>
-                            <TranslateTransform />
-                        </Border.RenderTransform>
-                        <Grid>
-                            <Border BorderBrush="{StaticResource BlogCardBorder.Border.Brush}"
-                                    BorderThickness="1"
-                                    CornerRadius="20" />
+                        <Border Margin="0,24,0,0"
+                                Padding="12,4"
+                                HorizontalAlignment="Left"
+                                Background="{StaticResource BlogCategoryBorder.Background.Brush}"
+                                CornerRadius="4">
+                            <TextBlock Style="{StaticResource Body.S.Bold.TextBlock.Style}">
+                                <Run BaselineAlignment="Center" Text="{x:Static properties:Resources.BlogCategory}" />
+                            </TextBlock>
+                        </Border>
 
-                            <StackPanel Margin="24">
-                                <Rectangle Height="200"
-                                           RadiusX="10"
-                                           RadiusY="10">
-                                    <Rectangle.Fill>
-                                        <ImageBrush ImageSource="{StaticResource Blog.Image}" />
-                                    </Rectangle.Fill>
-                                </Rectangle>
+                        <TextBlock Margin="0,12,0,0" Style="{StaticResource Body.S.Regular.TextBlock.Style}">
+                            <Run BaselineAlignment="Center" Text="{x:Static properties:Resources.BlogPublishedDate}" />
+                        </TextBlock>
 
-                                <Border Margin="0,24,0,0"
-                                        Padding="12,4"
-                                        HorizontalAlignment="Left"
-                                        Background="{StaticResource BlogCategoryBorder.Background.Brush}"
-                                        CornerRadius="4">
-                                    <TextBlock Style="{StaticResource Body.S.Bold.TextBlock.Style}">
-                                        <Run BaselineAlignment="Center" Text="{x:Static properties:Resources.BlogCategory}" />
-                                    </TextBlock>
-                                </Border>
+                        <TextBlock x:Name="BlogTitleTextBlock"
+                                   Margin="0,12,0,0"
+                                   Style="{StaticResource Heading.TextBlock.Style}">
+                            <Run BaselineAlignment="Center" Text="{x:Static properties:Resources.BlogTitle}" />
+                        </TextBlock>
 
-                                <TextBlock Margin="0,12,0,0" Style="{StaticResource Body.S.Regular.TextBlock.Style}">
-                                    <Run BaselineAlignment="Center" Text="{x:Static properties:Resources.BlogPublishedDate}" />
-                                </TextBlock>
+                        <TextBlock Margin="0,12,0,0"
+                                   Foreground="{StaticResource BlogAuthorTextBlock.Foreground.Brush}"
+                                   Style="{StaticResource Body.M.TextBlock.Style}"
+                                   TextWrapping="Wrap">
+                            <Run BaselineAlignment="Center" Text="{x:Static properties:Resources.BlogDescription}" />
+                        </TextBlock>
 
-                                <TextBlock Margin="0,12,0,0" Style="{StaticResource Heading.TextBlock.Style}">
-                                    <Run BaselineAlignment="Center" Text="{x:Static properties:Resources.BlogTitle}" />
-                                </TextBlock>
+                        <StackPanel Margin="0,24,0,0" Orientation="Horizontal">
+                            <Ellipse Width="32" Height="32">
+                                <Ellipse.Fill>
+                                    <ImageBrush ImageSource="{StaticResource User.Image}" />
+                                </Ellipse.Fill>
+                            </Ellipse>
 
-                                <TextBlock Margin="0,12,0,0"
-                                           Foreground="{StaticResource BlogAuthorTextBlock.Foreground.Brush}"
-                                           Style="{StaticResource Body.M.TextBlock.Style}"
-                                           TextWrapping="Wrap">
-                                    <Run BaselineAlignment="Center" Text="{x:Static properties:Resources.BlogDescription}" />
-                                </TextBlock>
-
-                                <StackPanel Margin="0,24,0,0" Orientation="Horizontal">
-                                    <Ellipse Width="32" Height="32">
-                                        <Ellipse.Fill>
-                                            <ImageBrush ImageSource="{StaticResource User.Image}" />
-                                        </Ellipse.Fill>
-                                    </Ellipse>
-
-                                    <TextBlock Margin="12,0,0,0"
-                                               VerticalAlignment="Center"
-                                               Style="{StaticResource Body.S.Bold.TextBlock.Style}">
-                                        <Run BaselineAlignment="Center" Text="{x:Static properties:Resources.BlogAuthor}" />
-                                    </TextBlock>
-                                </StackPanel>
-                            </StackPanel>
-                        </Grid>
-                    </Border>
-                </Grid>
+                            <TextBlock Margin="12,0,0,0"
+                                       VerticalAlignment="Center"
+                                       Style="{StaticResource Body.S.Bold.TextBlock.Style}">
+                                <Run BaselineAlignment="Center" Text="{x:Static properties:Resources.BlogAuthor}" />
+                            </TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
 
                 <ControlTemplate.Triggers>
-                    <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                    <EventTrigger RoutedEvent="{x:Static UIElement.MouseEnterEvent}">
                         <EventTrigger.Actions>
                             <BeginStoryboard Storyboard="{StaticResource Border.MouseOver.Storyboard}" />
+                            <BeginStoryboard Storyboard="{StaticResource BlogTitleTextBlock.MouseOver.Storyboard}" />
                         </EventTrigger.Actions>
                     </EventTrigger>
 
-                    <EventTrigger RoutedEvent="UIElement.GotFocus">
+                    <EventTrigger RoutedEvent="{x:Static UIElement.GotFocusEvent}">
                         <EventTrigger.Actions>
                             <BeginStoryboard Storyboard="{StaticResource Border.MouseOver.Storyboard}" />
+                            <BeginStoryboard Storyboard="{StaticResource BlogTitleTextBlock.MouseOver.Storyboard}" />
                         </EventTrigger.Actions>
                     </EventTrigger>
 
-                    <EventTrigger RoutedEvent="UIElement.LostFocus">
+                    <EventTrigger RoutedEvent="{x:Static UIElement.LostFocusEvent}">
                         <EventTrigger.Actions>
                             <BeginStoryboard Storyboard="{StaticResource Border.Normal.Storyboard}" />
+                            <BeginStoryboard Storyboard="{StaticResource BlogTitleTextBlock.Normal.Storyboard}" />
                         </EventTrigger.Actions>
                     </EventTrigger>
 
-                    <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                    <EventTrigger RoutedEvent="{x:Static UIElement.MouseLeaveEvent}">
                         <EventTrigger.Actions>
                             <BeginStoryboard Storyboard="{StaticResource Border.Normal.Storyboard}" />
+                            <BeginStoryboard Storyboard="{StaticResource BlogTitleTextBlock.Normal.Storyboard}" />
                         </EventTrigger.Actions>
                     </EventTrigger>
                 </ControlTemplate.Triggers>
