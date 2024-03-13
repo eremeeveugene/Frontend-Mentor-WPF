@@ -13,7 +13,7 @@
 
     <Style BasedOn="{StaticResource {x:Type windows:FrontendMentorWindow}}" TargetType="{x:Type windows1:QrCodeComponentWindow}">
         <Setter Property="Background" Value="{StaticResource QrCodeComponentWindowView.Background.Brush}" />
-        <Setter Property="FontFamily" Value="{StaticResource Outfit}" />
+        <Setter Property="FontFamily" Value="{StaticResource OutfitFontFamily}" />
         <Setter Property="Foreground" Value="{StaticResource QrCodeComponentWindowView.Foreground.Brush}" />
         <Setter Property="MinHeight" Value="800" />
         <Setter Property="MinWidth" Value="1400" />
