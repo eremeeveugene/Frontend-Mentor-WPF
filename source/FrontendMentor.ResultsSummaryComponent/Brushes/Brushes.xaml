@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
+
+    <ResourceDictionary.MergedDictionaries>
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Colors/Colors.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <SolidColorBrush x:Key="ResultsSummaryComponentWindow.Background.Brush" Color="{StaticResource VeryLightBlue.Color}" />
+    <SolidColorBrush x:Key="ResultsSummaryComponentWindow.Foreground.Brush" Color="{StaticResource DarkNavy.Color}" />
+
+</ResourceDictionary>

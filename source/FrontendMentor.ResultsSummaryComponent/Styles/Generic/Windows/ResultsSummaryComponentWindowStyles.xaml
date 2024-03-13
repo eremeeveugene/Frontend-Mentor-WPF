@@ -6,14 +6,13 @@
 
     <ResourceDictionary.MergedDictionaries>
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Windows/FrontendMentorWindowStyles.xaml" />
-        <!--<resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.QrCodeComponent;component/Brushes/Brushes.xaml" />-->
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Brushes/Brushes.xaml" />
         <!--<resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.QrCodeComponent;component/Fonts/Fonts.xaml" />-->
     </ResourceDictionary.MergedDictionaries>
 
     <Style BasedOn="{StaticResource {x:Type windows:FrontendMentorWindow}}" TargetType="{x:Type windows1:ResultsSummaryComponentWindow}">
-        <!--<Setter Property="Background" Value="{StaticResource QrCodeComponentWindowView.Background.Brush}" />
-        <Setter Property="FontFamily" Value="{StaticResource Outfit}" />-->
-        <!--<Setter Property="Foreground" Value="{StaticResource QrCodeComponentWindowView.Foreground.Brush}" />-->
+        <Setter Property="Background" Value="{StaticResource ResultsSummaryComponentWindow.Background.Brush}" />
+        <Setter Property="Foreground" Value="{StaticResource ResultsSummaryComponentWindow.Foreground.Brush}" />
         <Setter Property="MinHeight" Value="1080" />
         <Setter Property="MinWidth" Value="1400" />
         <!--<Setter Property="Title" Value="{x:Static properties:Resources.QrCodeComponentWindowTitle}" />-->
