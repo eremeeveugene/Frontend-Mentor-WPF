@@ -27,7 +27,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FrontendMentor.Assets\FrontendMentor.Assets.csproj" />
-    <ProjectReference Include="..\FrontendMentor.Core\FrontendMentor.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -91,10 +90,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Styles\Views\" />
   </ItemGroup>
 
 </Project>

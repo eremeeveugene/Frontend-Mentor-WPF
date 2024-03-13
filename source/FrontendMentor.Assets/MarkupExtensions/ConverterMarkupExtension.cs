@@ -14,8 +14,7 @@ using System.Windows.Data;
 
 namespace FrontendMentor.Assets.MarkupExtensions;
 
-public abstract class ConverterMarkupExtension<T> : FrontendMentorMarkupExtension<T>, IValueConverter
-    where T : class, new()
+public abstract class ConverterMarkupExtension<T> : LazyMarkupExtension<T>, IValueConverter where T : class, new()
 {
     public abstract object Convert(object? value, Type targetType, object? parameter, CultureInfo culture);
     public abstract object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture);

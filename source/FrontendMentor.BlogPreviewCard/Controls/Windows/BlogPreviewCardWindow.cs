@@ -9,16 +9,18 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using System.Windows.Markup;
+using FrontendMentor.Assets.Controls.Windows;
+using FrontendMentor.Assets.Controls.Windows.Dependencies;
+using System.Windows;
 
-namespace FrontendMentor.Assets.MarkupExtensions;
+namespace FrontendMentor.BlogPreviewCard.Controls.Windows;
 
-public abstract class FrontendMentorMarkupExtension<T> : MarkupExtension where T : class, new()
+internal class BlogPreviewCardWindow(FrontendMentorWindowDependencies frontendMentorWindowDependencies)
+    : FrontendMentorWindow(frontendMentorWindowDependencies)
 {
-    private static readonly Lazy<T> MarkupExtension = new(() => new T());
-
-    public override object ProvideValue(IServiceProvider serviceProvider)
+    static BlogPreviewCardWindow()
     {
-        return MarkupExtension.Value;
+        DefaultStyleKeyProperty.OverrideMetadata(typeof(BlogPreviewCardWindow),
+            new FrameworkPropertyMetadata(typeof(BlogPreviewCardWindow)));
     }
 }
