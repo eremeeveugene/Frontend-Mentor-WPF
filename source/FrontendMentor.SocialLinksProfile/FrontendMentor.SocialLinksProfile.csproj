@@ -10,10 +10,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Cursors\cursor.cur" />
-    <None Remove="Cursors\Cursor1.cur" />
-    <None Remove="Cursors\CustomCursor.cur" />
-    <None Remove="Cursors\HandCursor.cur" />
     <None Remove="Fonts\Inter\Inter-Black.ttf" />
     <None Remove="Fonts\Inter\Inter-Bold.ttf" />
     <None Remove="Fonts\Inter\Inter-ExtraBold.ttf" />
@@ -33,7 +29,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FrontendMentor.Assets\FrontendMentor.Assets.csproj" />
-    <ProjectReference Include="..\FrontendMentor.Core\FrontendMentor.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -64,7 +59,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Cursors\HandCursor.cur" />
     <Resource Include="Fonts\Inter\Inter-Black.ttf" />
     <Resource Include="Fonts\Inter\Inter-Bold.ttf" />
     <Resource Include="Fonts\Inter\Inter-ExtraBold.ttf" />
