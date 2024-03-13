@@ -9,7 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Cursors\HandCursor.cur" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\FrontendMentor.Core\FrontendMentor.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Cursors\HandCursor.cur" />
   </ItemGroup>
 
   <ItemGroup>

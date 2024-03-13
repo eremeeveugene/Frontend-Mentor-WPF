@@ -9,30 +9,22 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.Core.Helpers;
-using System.Windows.Input;
+using System.Windows.Media.Animation;
 
-namespace FrontendMentor.SocialLinksProfile.Cursors;
+namespace FrontendMentor.Assets.Helpers;
 
-internal static class Cursors
+public static class EasingFunctionsHelper
 {
-    private const string HandCursorUriString =
-        "pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Cursors/HandCursor.cur";
+    private static readonly Lazy<IEasingFunction> LazyGenericEasingFunction = new(GetGenericEasingFunction);
 
-    private static Cursor? _handCursor;
+    public static IEasingFunction GenericEasingFunction => LazyGenericEasingFunction.Value;
 
-    public static Cursor HandCursor
+    private static ExponentialEase GetGenericEasingFunction()
     {
-        get
-        {
-            if (_handCursor != null)
-            {
-                return _handCursor;
-            }
+        var exponentialEase = new ExponentialEase { EasingMode = EasingMode.EaseOut };
 
-            _handCursor = CursorsHelper.LoadCursor(new Uri(HandCursorUriString));
+        exponentialEase.Freeze();
 
-            return _handCursor;
-        }
+        return exponentialEase;
     }
 }

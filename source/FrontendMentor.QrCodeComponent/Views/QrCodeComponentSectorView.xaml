@@ -52,12 +52,17 @@
             </Grid>
 
             <StackPanel Margin="0,24">
-                <TextBlock Style="{StaticResource Heading.TextBlock.Style}" Text="{x:Static properties:Resources.QrCodeComponentHeading}" />
+                <TextBlock Style="{StaticResource Heading.TextBlock.Style}"
+                           Text="{x:Static properties:Resources.QrCodeComponentHeading}"
+                           TextAlignment="Center"
+                           TextWrapping="Wrap" />
 
                 <TextBlock Margin="16,16,16,0"
                            Foreground="{StaticResource QrCodeComponentWindowView.BodyTextBlock.Foreground.Brush}"
                            Style="{StaticResource Body.TextBlock.Style}"
-                           Text="{x:Static properties:Resources.QrCodeComponentBody}" />
+                           Text="{x:Static properties:Resources.QrCodeComponentBody}"
+                           TextAlignment="Center"
+                           TextWrapping="Wrap" />
             </StackPanel>
         </StackPanel>
     </Border>

@@ -10,6 +10,7 @@
 // --------------------------------------------------------------------------------
 
 using FrontendMentor.Core.ViewModels;
+using FrontendMentor.SocialLinksProfile.BindableModels;
 using FrontendMentor.SocialLinksProfile.Services.SocialLinksProfiles;
 using Prism.Ioc;
 using System.Collections.ObjectModel;
@@ -18,12 +19,12 @@ namespace FrontendMentor.SocialLinksProfile.ViewModels;
 
 internal sealed class SocialLinksProfileSectorViewModel(
     ISocialLinksProfilesService socialLinksProfilesService,
-    IContainerExtension containerExtension)
+    IContainerProvider containerProvider)
     : ViewModelBase
 {
-    private ObservableCollection<SocialLinkProfileViewModel>? _socialLinksProfiles;
+    private ObservableCollection<SocialLinkProfileBindableModel>? _socialLinksProfiles;
 
-    public ObservableCollection<SocialLinkProfileViewModel>? SocialLinksProfiles
+    public ObservableCollection<SocialLinkProfileBindableModel>? SocialLinksProfiles
     {
         get => _socialLinksProfiles;
         private set => SetProperty(ref _socialLinksProfiles, value);
@@ -41,8 +42,8 @@ internal sealed class SocialLinksProfileSectorViewModel(
         var socialLinkProfiles = socialLinksProfilesService.GetSocialLinkProfiles();
 
         var socialLinkProfilesViewModels = socialLinkProfiles
-            .Select(socialLinkProfile => SocialLinkProfileViewModel.Create(containerExtension, socialLinkProfile));
+            .Select(socialLinkProfile => SocialLinkProfileBindableModel.Create(containerProvider, socialLinkProfile));
 
-        SocialLinksProfiles = new ObservableCollection<SocialLinkProfileViewModel>(socialLinkProfilesViewModels);
+        SocialLinksProfiles = new ObservableCollection<SocialLinkProfileBindableModel>(socialLinkProfilesViewModels);
     }
 }
