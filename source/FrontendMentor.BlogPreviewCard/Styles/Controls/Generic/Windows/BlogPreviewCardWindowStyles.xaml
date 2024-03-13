@@ -17,14 +17,9 @@
         <Setter Property="Cursor" Value="{x:Static cursors:Cursors.HandCursor}" />
         <Setter Property="FontFamily" Value="{StaticResource FigtreeFontFamily}" />
         <Setter Property="Foreground" Value="{StaticResource BlogPreviewCardWindow.Foreground.Brush}" />
-        <Setter Property="MaxHeight" Value="960" />
-        <Setter Property="MaxWidth" Value="1440" />
         <Setter Property="MinHeight" Value="960" />
         <Setter Property="MinWidth" Value="1440" />
-        <Setter Property="ResizeMode" Value="NoResize" />
         <Setter Property="Title" Value="{x:Static properties:Resources.BlogPreviewCardWindowTitle}" />
-        <Setter Property="WindowState" Value="Normal" />
-        <Setter Property="WindowStyle" Value="None" />
     </Style>
 
 </ResourceDictionary>
