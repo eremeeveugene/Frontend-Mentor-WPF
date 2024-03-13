@@ -6,5 +6,69 @@
                   xmlns:views="clr-namespace:FrontendMentor.Assets.Controls.Views;assembly=FrontendMentor.Assets"
                   x:ClassModifier="internal"
                   mc:Ignorable="d">
-    <Grid />
+    <Border Width="736"
+            Height="512"
+            CornerRadius="32">
+        <Border.Background>
+            <SolidColorBrush Color="{StaticResource White.Color}" />
+        </Border.Background>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0" CornerRadius="32">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0.5 0" EndPoint="0.5 1">
+                        <GradientStop Color="#6943FF" />
+                        <GradientStop Offset="1" Color="#2F2CE9" />
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+
+            <StackPanel Grid.Column="1" Margin="40,0">
+                <TextBlock Text="Summary" />
+
+                <Border Height="56"
+                        Margin="0,28,0,0"
+                        CornerRadius="12">
+                    <Border.Background>
+                        <SolidColorBrush Color="#FFE0E0" />
+                    </Border.Background>
+                    <TextBlock Text="Reaction" />
+                </Border>
+
+                <Border Height="56"
+                        Margin="0,16,0,0"
+                        CornerRadius="12">
+                    <Border.Background>
+                        <SolidColorBrush Color="#FFF7E5" />
+                    </Border.Background>
+                    <TextBlock Text="Memory" />
+                </Border>
+
+                <Border Height="56"
+                        Margin="0,16,0,0"
+                        CornerRadius="12">
+                    <Border.Background>
+                        <SolidColorBrush Color="#F0FAF4" />
+                    </Border.Background>
+                    <TextBlock Text="Verbal" />
+                </Border>
+
+                <Border Height="56"
+                        Margin="0,16,0,0"
+                        CornerRadius="12">
+                    <Border.Background>
+                        <SolidColorBrush Color="#EBF4FF" />
+                    </Border.Background>
+                    <TextBlock Text="Visual" />
+                </Border>
+
+                <Button Margin="0,41,0,0" />
+            </StackPanel>
+        </Grid>
+    </Border>
 </views:SectorView>
