@@ -12,9 +12,9 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style BasedOn="{StaticResource {x:Type windows:FrontendMentorWindow}}" TargetType="{x:Type windows1:QrCodeComponentWindow}">
-        <Setter Property="Background" Value="{StaticResource QrCodeComponentWindowView.Background.Brush}" />
+        <Setter Property="Background" Value="{StaticResource QrCodeComponentWindow.Background.Brush}" />
         <Setter Property="FontFamily" Value="{StaticResource OutfitFontFamily}" />
-        <Setter Property="Foreground" Value="{StaticResource QrCodeComponentWindowView.Foreground.Brush}" />
+        <Setter Property="Foreground" Value="{StaticResource QrCodeComponentWindow.Foreground.Brush}" />
         <Setter Property="MinHeight" Value="800" />
         <Setter Property="MinWidth" Value="1400" />
         <Setter Property="Title" Value="{x:Static properties:Resources.QrCodeComponentWindowTitle}" />

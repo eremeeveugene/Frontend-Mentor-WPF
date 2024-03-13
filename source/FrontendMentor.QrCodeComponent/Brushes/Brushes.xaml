@@ -7,13 +7,19 @@
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.QrCodeComponent;component/Colors/Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <SolidColorBrush x:Key="QrCodeComponentWindowView.Foreground.Brush"
+    <!--#region QrCodeComponentWindow-->
+
+    <SolidColorBrush x:Key="QrCodeComponentWindow.Foreground.Brush"
                      po:Freeze="True"
                      Color="{StaticResource DarkNavy.Color}" />
 
-    <SolidColorBrush x:Key="QrCodeComponentWindowView.Background.Brush"
+    <SolidColorBrush x:Key="QrCodeComponentWindow.Background.Brush"
                      po:Freeze="True"
                      Color="{StaticResource LightGrey.Color}" />
+
+    <!--#endregion-->
+
+    <!--#region QrCodeComponentWindowView-->
 
     <SolidColorBrush x:Key="QrCodeComponentWindowView.BodyTextBlock.Foreground.Brush"
                      po:Freeze="True"
@@ -30,5 +36,7 @@
     <SolidColorBrush x:Key="QrCodeComponentWindowView.QrCodeInnerRectangle.Background.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Blue.Color}" />
+
+    <!--#endregion-->
 
 </ResourceDictionary>
