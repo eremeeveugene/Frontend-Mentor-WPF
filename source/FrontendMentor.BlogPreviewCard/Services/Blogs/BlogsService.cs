@@ -24,6 +24,7 @@ internal class BlogsService : IBlogsService
             Title = "HTML & CSS foundations",
             Description =
                 "These languages are the backbone of every website, defining structure, content, and presentation.",
+            ImageUriString = "Images/BlogImage.png",
             PublishedDate =
                 DateTime.ParseExact("21.12.2023", "dd.MM.yyyy", CultureInfo.CurrentUICulture, DateTimeStyles.None),
             BlogAuthor = new BlogAuthorModel

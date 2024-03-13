@@ -20,7 +20,11 @@ namespace FrontendMentor.BlogPreviewCard.BindableModels;
 internal class BlogBindableModel(IBitmapImagesService bitmapImagesService, BlogModel blogModel)
     : BindableBase
 {
-    private readonly Lazy<BitmapSource> _userImage = new(() => bitmapImagesService.GetBitmapImage(blogModel.BlogAuthor.ImageUriString));
+    private readonly Lazy<BitmapSource> _blogImage =
+        new(() => bitmapImagesService.GetBitmapImage(blogModel.ImageUriString));
+
+    private readonly Lazy<BitmapSource> _userImage =
+        new(() => bitmapImagesService.GetBitmapImage(blogModel.BlogAuthor.ImageUriString));
 
     public string Title => blogModel.Title;
     public string Description => blogModel.Description;
@@ -28,6 +32,7 @@ internal class BlogBindableModel(IBitmapImagesService bitmapImagesService, BlogM
     public DateTime PublishedDate => blogModel.PublishedDate;
     public string FirstName => blogModel.BlogAuthor.FirstName;
     public string LastName => blogModel.BlogAuthor.LastName;
+    public BitmapSource BlogImage => _blogImage.Value;
     public BitmapSource UserImage => _userImage.Value;
 
     public static BlogBindableModel Create(IContainerProvider containerProvider, BlogModel blogModel)

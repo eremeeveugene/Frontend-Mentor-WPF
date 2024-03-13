@@ -5,6 +5,7 @@
                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                   xmlns:mvvm="http://prismlibrary.com/"
+                  xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets"
                   xmlns:viewModels="clr-namespace:FrontendMentor.BlogPreviewCard.ViewModels"
                   xmlns:views="clr-namespace:FrontendMentor.Assets.Controls.Views;assembly=FrontendMentor.Assets"
                   d:DataContext="{d:DesignInstance viewModels:BlogPreviewCardSectorViewModel}"
@@ -14,9 +15,14 @@
                   UnloadedCommand="{Binding UnloadedCommand}"
                   mc:Ignorable="d">
 
+    <views:SectorView.Resources>
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Styles/Views/BlogPreviewCardSectorViewStyles.xaml" />
+    </views:SectorView.Resources>
+
     <blogPreviewCards:BlogPreviewCard Width="384"
                                       HorizontalAlignment="Center"
                                       VerticalAlignment="Center"
-                                      Content="{Binding BlogBindableModel}" />
+                                      Content="{Binding BlogBindableModel}"
+                                      ContentTemplate="{StaticResource BlogPreviewCardContentTemplate}" />
 
 </views:SectorView>

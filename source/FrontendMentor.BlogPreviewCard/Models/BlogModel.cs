@@ -16,6 +16,7 @@ internal class BlogModel
     public string Title { get; set; } = null!;
     public string Description { get; set; } = null!;
     public string Category { get; set; } = null!;
+    public string ImageUriString { get; set; } = null!;
     public DateTime PublishedDate { get; set; }
     public BlogAuthorModel BlogAuthor { get; set; } = null!;
 }
