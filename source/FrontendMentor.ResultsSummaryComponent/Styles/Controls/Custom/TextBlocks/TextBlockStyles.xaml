@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="HeadingM.TextBlock.Style" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="FontWeight" Value="{x:Static FontWeights.Bold}" />
+    </Style>
+
+    <Style x:Key="Body.TextBlock.Style" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontWeight" Value="{x:Static FontWeights.Medium}" />
+    </Style>
+
+</ResourceDictionary>

@@ -3,12 +3,6 @@
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Colors/Colors.xaml" />
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Brushes/Brushes.xaml" />
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Fonts/Fonts.xaml" />
-
-
-        <!--
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.QrCodeComponent;component/Effects/Effects.xaml" />
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.QrCodeComponent;component/Images/Images.xaml" />
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.QrCodeComponent;component/Fonts/Fonts.xaml" />
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.QrCodeComponent;component/Styles/TextBlocks/TextBlockStyles.xaml" />-->
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Styles/Controls/Custom/TextBlocks/TextBlockStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

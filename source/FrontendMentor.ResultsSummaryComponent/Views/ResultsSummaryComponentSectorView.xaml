@@ -28,8 +28,10 @@
                 </Border.Background>
             </Border>
 
-            <StackPanel Grid.Column="1" Margin="40,0">
-                <TextBlock Text="Summary" />
+            <StackPanel Grid.Column="1"
+                        Margin="40,0"
+                        VerticalAlignment="Center">
+                <TextBlock Style="{StaticResource HeadingM.TextBlock.Style}" Text="Summary" />
 
                 <Border Height="56"
                         Margin="0,28,0,0"
@@ -37,7 +39,8 @@
                     <Border.Background>
                         <SolidColorBrush Color="#FFE0E0" />
                     </Border.Background>
-                    <TextBlock Text="Reaction" />
+
+                    <TextBlock Style="{StaticResource Body.TextBlock.Style}" Text="Reaction" />
                 </Border>
 
                 <Border Height="56"
@@ -46,7 +49,7 @@
                     <Border.Background>
                         <SolidColorBrush Color="#FFF7E5" />
                     </Border.Background>
-                    <TextBlock Text="Memory" />
+                    <TextBlock Style="{StaticResource Body.TextBlock.Style}" Text="Memory" />
                 </Border>
 
                 <Border Height="56"
@@ -55,7 +58,7 @@
                     <Border.Background>
                         <SolidColorBrush Color="#F0FAF4" />
                     </Border.Background>
-                    <TextBlock Text="Verbal" />
+                    <TextBlock Style="{StaticResource Body.TextBlock.Style}" Text="Verbal" />
                 </Border>
 
                 <Border Height="56"
@@ -64,7 +67,7 @@
                     <Border.Background>
                         <SolidColorBrush Color="#EBF4FF" />
                     </Border.Background>
-                    <TextBlock Text="Visual" />
+                    <TextBlock Style="{StaticResource Body.TextBlock.Style}" Text="Visual" />
                 </Border>
 
                 <Button Margin="0,41,0,0" />
