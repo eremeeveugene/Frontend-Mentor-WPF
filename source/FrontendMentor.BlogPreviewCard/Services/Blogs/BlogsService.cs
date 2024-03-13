@@ -29,7 +29,9 @@ internal class BlogsService : IBlogsService
                 DateTime.ParseExact("21.12.2023", "dd.MM.yyyy", CultureInfo.CurrentUICulture, DateTimeStyles.None),
             BlogAuthor = new BlogAuthorModel
             {
-                FirstName = "Greg", LastName = "Hooper", ImageUriString = "Images/UserImage.webp"
+                FirstName = "Greg",
+                LastName = "Hooper",
+                ImageUriString = "Images/UserImage.webp"
             }
         };
     }
