@@ -19,41 +19,75 @@
                   mc:Ignorable="d">
 
     <views:SectorView.Resources>
+
         <DataTemplate x:Key="SummaryItemsControlItemContentTemplate" DataType="{x:Type models:SummaryItemModel}">
-            <Border x:Name="SummaryItemBorder" CornerRadius="12">
-                <TextBlock x:Name="SummaryItemTextBlock"
-                           Style="{StaticResource Body.TextBlock.Style}"
-                           Text="{Binding SummaryItemType, Converter={converters:EnumToDescriptionConverter}}" />
-            </Border>
+            <Grid>
+                <Rectangle x:Name="SummaryItemBorder" />
+
+                <Rectangle x:Name="SummaryItemBorderOverlay" Fill="{StaticResource ResultsSummaryComponentSectorView.SummaryItemsControl.SummaryItemBorder.Overlay.Background.Brush}" />
+
+                <Grid Margin="16,0" VerticalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Path x:Name="SummaryItemIconPath"
+                              Grid.Column="0"
+                              VerticalAlignment="Center" />
+
+                        <TextBlock x:Name="SummaryItemTextBlock"
+                                   Grid.Column="1"
+                                   Margin="12,0,0,0"
+                                   Style="{StaticResource Body.TextBlock.Style}"
+                                   Text="{Binding SummaryItemType, Converter={converters:EnumToDescriptionConverter}}" />
+
+                    </Grid>
+
+                    <StackPanel Grid.Column="1" Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource Body.Bold.TextBlock.Style}" Text="{Binding Value}" />
+
+                        <TextBlock Margin="8,0,0,0" Style="{StaticResource Body.Bold.TextBlock.Style}">
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Opacity="0.5" Color="{StaticResource DarkNavy.Color}" />
+                            </TextBlock.Foreground>
+                            <Run Text="/" />
+                            <Run Text="100" />
+                        </TextBlock>
+                    </StackPanel>
+                </Grid>
+            </Grid>
 
             <DataTemplate.Triggers>
                 <DataTrigger Binding="{Binding SummaryItemType}" Value="{x:Static enums:SummaryItemType.Memory}">
-                    <Setter TargetName="SummaryItemBorder" Property="Background">
-                        <Setter.Value>
-                            <SolidColorBrush Color="#F0FAF4" />
-                        </Setter.Value>
-                    </Setter>
+                    <Setter TargetName="SummaryItemIconPath" Property="Data" Value="F1 M4.8333 10.6667C4.46954 10.6672 4.11028 10.7471 3.78059 10.9008C3.4509 11.0546 3.15873 11.2784 2.92446 11.5567C2.6902 11.835 2.51949 12.161 2.42424 12.5121C2.329 12.8632 2.31151 13.2308 2.37301 13.5893C2.43451 13.9478 2.5735 14.2886 2.7803 14.5879C2.9871 14.8872 3.25671 15.1377 3.57032 15.322C3.88393 15.5063 4.23399 15.62 4.59606 15.655C4.95813 15.6901 5.32349 15.6457 5.66664 15.525M2.5533 12.0042C2.0546 11.7641 1.62354 11.4036 1.29901 10.9552C0.974483 10.5069 0.766707 9.98477 0.694434 9.43603C0.622162 8.88729 0.687668 8.32918 0.885041 7.81209C1.08241 7.295 1.40544 6.83519 1.82497 6.47417M1.84997 6.40667C1.57667 5.99771 1.45689 5.50524 1.51182 5.01644C1.56675 4.52765 1.79286 4.07405 2.15012 3.73596C2.50737 3.39786 2.97273 3.19707 3.46381 3.16914C3.95489 3.14121 4.44001 3.28793 4.8333 3.58333M5.03164 3.6375C4.8987 3.35504 4.83094 3.04631 4.83336 2.73414C4.83579 2.42196 4.90835 2.11433 5.04566 1.83397C5.18298 1.55361 5.38155 1.30769 5.62669 1.11439C5.87183 0.921099 6.15728 0.785367 6.46194 0.717232C6.7666 0.649097 7.08267 0.650301 7.3868 0.720754C7.69093 0.791207 7.97534 0.929108 8.219 1.12426C8.46266 1.31942 8.65935 1.56684 8.79453 1.84824C8.92971 2.12964 8.99992 2.43782 8.99997 2.75M8.99997 2.75L8.99997 15.6667M8.99997 2.75C9.00002 2.43782 9.07023 2.12964 9.20541 1.84824C9.34058 1.56684 9.53727 1.31942 9.78094 1.12426C10.0246 0.929108 10.309 0.791207 10.6131 0.720754C10.9173 0.650301 11.2333 0.649097 11.538 0.717232C11.8427 0.785367 12.1281 0.921099 12.3732 1.11439C12.6184 1.30769 12.817 1.55361 12.9543 1.83397C13.0916 2.11433 13.1641 2.42196 13.1666 2.73414C13.169 3.04631 13.1012 3.35504 12.9683 3.6375M8.99997 15.6667C8.99997 16.1087 8.82437 16.5326 8.51181 16.8452C8.19925 17.1577 7.77533 17.3333 7.3333 17.3333C6.89127 17.3333 6.46735 17.1577 6.15479 16.8452C5.84223 16.5326 5.66664 16.1087 5.66664 15.6667M8.99997 15.6667C8.99997 16.1087 9.17556 16.5326 9.48812 16.8452C9.80068 17.1577 10.2246 17.3333 10.6666 17.3333C11.1087 17.3333 11.5326 17.1577 11.8451 16.8452C12.1577 16.5326 12.3333 16.1087 12.3333 15.6667M8.99997 4.83333C8.99997 5.49638 9.26336 6.13226 9.7322 6.6011C10.201 7.06994 10.8369 7.33333 11.5 7.33333M13.1666 10.6667C13.5304 10.6672 13.8897 10.7471 14.2193 10.9008C14.549 11.0546 14.8412 11.2784 15.0755 11.5567C15.3097 11.835 15.4804 12.161 15.5757 12.5121C15.6709 12.8632 15.6884 13.2308 15.6269 13.5893C15.5654 13.9478 15.4264 14.2886 15.2196 14.5879C15.0128 14.8872 14.7432 15.1377 14.4296 15.322C14.116 15.5063 13.7659 15.62 13.4039 15.655C13.0418 15.6901 12.6765 15.6457 12.3333 15.525M15.4466 12.0042C15.9453 11.7641 16.3764 11.4036 16.7009 10.9552C17.0255 10.5069 17.2332 9.98477 17.3055 9.43603C17.3778 8.88729 17.3123 8.32918 17.1149 7.81209C16.9175 7.295 16.5945 6.83519 16.175 6.47417M16.15 6.40667C16.4233 5.99771 16.5431 5.50524 16.4881 5.01644C16.4332 4.52765 16.2071 4.07405 15.8498 3.73596C15.4926 3.39786 15.0272 3.19707 14.5361 3.16914C14.045 3.14121 13.5599 3.28793 13.1666 3.58333" />
+                    <Setter TargetName="SummaryItemBorder" Property="Fill" Value="{StaticResource ResultsSummaryComponentSectorView.SummaryItemsControl.SummaryItemBorder.Memory.Background.Brush}" />
+                    <Setter TargetName="SummaryItemTextBlock" Property="Foreground" Value="{StaticResource ResultsSummaryComponentSectorView.SummaryItemsControl.SummaryItemBorder.Memory.Background.Brush}" />
+                    <Setter TargetName="SummaryItemIconPath" Property="Stroke" Value="{StaticResource ResultsSummaryComponentSectorView.SummaryItemsControl.SummaryItemIconPath.Memory.Stroke.Brush}" />
                 </DataTrigger>
                 <DataTrigger Binding="{Binding SummaryItemType}" Value="{x:Static enums:SummaryItemType.Reaction}">
-                    <Setter TargetName="SummaryItemBorder" Property="Background">
-                        <Setter.Value>
-                            <SolidColorBrush Color="#F0FAF4" />
-                        </Setter.Value>
-                    </Setter>
+                    <Setter TargetName="SummaryItemIconPath" Property="Data" Value="F1 M7.83329 7.33333L7.83329 1.5L1.16663 10.6667L6.16663 10.6667L6.16663 16.5L12.8333 7.33333L7.83329 7.33333Z" />
+                    <Setter TargetName="SummaryItemBorder" Property="Fill" Value="{StaticResource ResultsSummaryComponentSectorView.SummaryItemsControl.SummaryItemBorder.Reaction.Background.Brush}" />
+                    <Setter TargetName="SummaryItemTextBlock" Property="Foreground" Value="{StaticResource ResultsSummaryComponentSectorView.SummaryItemsControl.SummaryItemBorder.Reaction.Background.Brush}" />
+                    <Setter TargetName="SummaryItemIconPath" Property="Stroke" Value="{StaticResource ResultsSummaryComponentSectorView.SummaryItemsControl.SummaryItemIconPath.Reaction.Stroke.Brush}" />
                 </DataTrigger>
                 <DataTrigger Binding="{Binding SummaryItemType}" Value="{x:Static enums:SummaryItemType.Verbal}">
-                    <Setter TargetName="SummaryItemBorder" Property="Background">
-                        <Setter.Value>
-                            <SolidColorBrush Color="#F0FAF4" />
-                        </Setter.Value>
-                    </Setter>
+                    <Setter TargetName="SummaryItemIconPath" Property="Data" Value="F1 M6.49996 9L11.5 9M8.99996 17.3333C13.6025 17.3333 17.3333 13.6025 17.3333 9C17.3333 4.3975 13.6025 0.666667 8.99996 0.666667C4.39746 0.666667 0.666626 4.3975 0.666626 9C0.666626 10.5175 1.07246 11.9417 1.78163 13.1667L1.08329 16.9167L4.83329 16.2183C6.09958 16.9509 7.53705 17.3355 8.99996 17.3333Z" />
+                    <Setter TargetName="SummaryItemBorder" Property="Fill" Value="{StaticResource ResultsSummaryComponentSectorView.SummaryItemsControl.SummaryItemBorder.Verbal.Background.Brush}" />
+                    <Setter TargetName="SummaryItemTextBlock" Property="Foreground" Value="{StaticResource ResultsSummaryComponentSectorView.SummaryItemsControl.SummaryItemBorder.Verbal.Background.Brush}" />
+                    <Setter TargetName="SummaryItemIconPath" Property="Stroke" Value="{StaticResource ResultsSummaryComponentSectorView.SummaryItemsControl.SummaryItemIconPath.Verbal.Stroke.Brush}" />
                 </DataTrigger>
                 <DataTrigger Binding="{Binding SummaryItemType}" Value="{x:Static enums:SummaryItemType.Visual}">
-                    <Setter TargetName="SummaryItemBorder" Property="Background">
-                        <Setter.Value>
-                            <SolidColorBrush Color="#F0FAF4" />
-                        </Setter.Value>
-                    </Setter>
+                    <Setter TargetName="SummaryItemIconPath" Property="Data" Value="M9 7.66667C9.44203 7.66667 9.86595 7.49107 10.1785 7.17851C10.4911 6.86595 10.6667 6.44203 10.6667 6C10.6667 5.55797 10.4911 5.13405 10.1785 4.82149C9.86595 4.50893 9.44203 4.33333 9 4.33333C8.55797 4.33333 8.13405 4.50893 7.82149 4.82149C7.50893 5.13405 7.33333 5.55797 7.33333 6C7.33333 6.44203 7.50893 6.86595 7.82149 7.17851C8.13405 7.49107 8.55797 7.66667 9 7.66667Z M16.5 6C14.9258 8.4925 12.0983 11 9 11C5.90167 11 3.07417 8.4925 1.5 6C3.41583 3.63167 5.66 1 9 1C12.34 1 14.5842 3.63167 16.5 6Z" />
+                    <Setter TargetName="SummaryItemBorder" Property="Fill" Value="{StaticResource ResultsSummaryComponentSectorView.SummaryItemsControl.SummaryItemBorder.Visual.Background.Brush}" />
+                    <Setter TargetName="SummaryItemTextBlock" Property="Foreground" Value="{StaticResource ResultsSummaryComponentSectorView.SummaryItemsControl.SummaryItemBorder.Visual.Background.Brush}" />
+                    <Setter TargetName="SummaryItemIconPath" Property="Stroke" Value="{StaticResource ResultsSummaryComponentSectorView.SummaryItemsControl.SummaryItemIconPath.Visual.Stroke.Brush}" />
                 </DataTrigger>
             </DataTemplate.Triggers>
         </DataTemplate>
@@ -80,7 +114,7 @@
     </views:SectorView.Resources>
 
     <Border Width="736"
-            Height="512"
+            VerticalAlignment="Center"
             CornerRadius="32">
         <Border.Background>
             <SolidColorBrush Color="{StaticResource White.Color}" />
@@ -101,12 +135,11 @@
                 </Border.Background>
 
                 <StackPanel>
-
                     <TextBlock Margin="0,38,0,0"
-                               HorizontalAlignment="Center"
                                Foreground="{StaticResource ResultsSummaryComponentSectorView.YourResultTextBlock.Foreground.Brush}"
                                Style="{StaticResource Heading.M.TextBlock.Style}"
-                               Text="{x:Static resx:Resources.ResultsSummaryComponentSectorView_ResultTextBlock_Text}" />
+                               Text="{x:Static resx:Resources.ResultsSummaryComponentSectorView_ResultTextBlock_Text}"
+                               TextAlignment="Center" />
 
                     <Grid Width="200"
                           Height="200"
@@ -121,24 +154,35 @@
                         </Ellipse>
 
                         <StackPanel VerticalAlignment="Center">
-                            <TextBlock HorizontalAlignment="Center"
-                                       Style="{StaticResource Heading.XL.TextBlock.Style}"
-                                       Text="{Binding ResultSummary.ResultSummary.Result, FallbackValue={x:Static resx:Resources.TextBlock_Fallback_Text}}" />
+                            <TextBlock Style="{StaticResource Heading.XL.TextBlock.Style}"
+                                       Text="{Binding ResultSummary.ResultSummary.Result, FallbackValue={x:Static resx:Resources.TextBlock_Fallback_Text}}"
+                                       TextAlignment="Center" />
 
-                            <TextBlock HorizontalAlignment="Center"
-                                       Style="{StaticResource Body.Bold.TextBlock.Style}"
-                                       Text="of 100" />
+                            <TextBlock Style="{StaticResource Body.Bold.TextBlock.Style}"
+                                       Text="of 100"
+                                       TextAlignment="Center" />
                         </StackPanel>
                     </Grid>
 
-                    <TextBlock HorizontalAlignment="Center"
-                               Style="{StaticResource Heading.L.TextBlock.Style}"
-                               Text="Great" />
+                    <StackPanel Margin="54,28,54,55">
+                        <TextBlock Style="{StaticResource Heading.L.TextBlock.Style}"
+                                   Text="Great"
+                                   TextAlignment="Center">
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="{StaticResource White.Color}" />
+                            </TextBlock.Foreground>
+                        </TextBlock>
 
-                    <TextBlock HorizontalAlignment="Center"
-                               Style="{StaticResource Body.TextBlock.Style}"
-                               Text="Your performance exceed 65% of the people conducting the test here!"
-                               TextWrapping="Wrap" />
+                        <TextBlock Margin="0,14,0,0"
+                                   Style="{StaticResource Body.TextBlock.Style}"
+                                   Text="Your performance exceed 65% of the people conducting the test here!"
+                                   TextAlignment="Center"
+                                   TextWrapping="Wrap">
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="{StaticResource LightBlue.Color}" />
+                            </TextBlock.Foreground>
+                        </TextBlock>
+                    </StackPanel>
                 </StackPanel>
             </Border>
 

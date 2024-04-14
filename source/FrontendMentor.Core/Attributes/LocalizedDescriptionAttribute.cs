@@ -18,7 +18,7 @@ public class LocalizedDescriptionAttribute(string resourceKey, Type resourceType
 {
     private readonly ResourceManager _resourceManager = new(resourceType);
 
-    public override string? Description
+    public override string Description
     {
         get
         {

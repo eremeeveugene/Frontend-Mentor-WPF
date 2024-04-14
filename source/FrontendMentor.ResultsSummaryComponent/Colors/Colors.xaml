@@ -2,6 +2,8 @@
 
     <Color x:Key="Yellow.Color">#FFB21E</Color>
     <Color x:Key="Red.Color">#FF5555</Color>
+    <Color x:Key="Green.Color">#00BB8F</Color>
+    <Color x:Key="Blue.Color">#1125D6</Color>
     <Color x:Key="DarkNavy.Color">#303B59</Color>
     <Color x:Key="LightBlue.Color">#CAC9FF</Color>
     <Color x:Key="VeryLightBlue.Color">#ECF2FF</Color>
