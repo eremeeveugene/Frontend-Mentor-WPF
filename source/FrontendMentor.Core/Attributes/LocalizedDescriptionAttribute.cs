@@ -9,13 +9,22 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using System.Globalization;
-using System.Windows.Data;
+using System.ComponentModel;
+using System.Resources;
 
-namespace FrontendMentor.Assets.MarkupExtensions;
+namespace FrontendMentor.Core.Attributes;
 
-public abstract class ConverterMarkupExtension<T> : LazyMarkupExtension<T>, IValueConverter where T : class, new()
+public class LocalizedDescriptionAttribute(string resourceKey, Type resourceType) : DescriptionAttribute
 {
-    public abstract object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture);
-    public abstract object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture);
+    private readonly ResourceManager _resourceManager = new(resourceType);
+
+    public override string? Description
+    {
+        get
+        {
+            var description = _resourceManager.GetString(resourceKey);
+
+            return string.IsNullOrWhiteSpace(description) ? $"[[{resourceKey}]]" : description;
+        }
+    }
 }

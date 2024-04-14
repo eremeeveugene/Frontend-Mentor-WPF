@@ -70,6 +70,42 @@ namespace FrontendMentor.ResultsSummaryComponent.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Memory.
+        /// </summary>
+        public static string SummaryItemType_Memory {
+            get {
+                return ResourceManager.GetString("SummaryItemType_Memory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reaction.
+        /// </summary>
+        public static string SummaryItemType_Reaction {
+            get {
+                return ResourceManager.GetString("SummaryItemType_Reaction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Verbal.
+        /// </summary>
+        public static string SummaryItemType_Verbal {
+            get {
+                return ResourceManager.GetString("SummaryItemType_Verbal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Visual.
+        /// </summary>
+        public static string SummaryItemType_Visual {
+            get {
+                return ResourceManager.GetString("SummaryItemType_Visual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to -.
         /// </summary>
         public static string TextBlock_Fallback_Text {

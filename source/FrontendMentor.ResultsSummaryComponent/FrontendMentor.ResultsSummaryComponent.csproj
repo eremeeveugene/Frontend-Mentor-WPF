@@ -6,6 +6,7 @@
     <UseWPF>true</UseWPF>
     <ImplicitUsings>enable</ImplicitUsings>
     <OutputType>WinExe</OutputType>
+    <ApplicationIcon>Properties\Icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,6 +28,10 @@
     <None Remove="Fonts\HankenGrotesk\HankenGrotesk-SemiBoldItalic.ttf" />
     <None Remove="Fonts\HankenGrotesk\HankenGrotesk-Thin.ttf" />
     <None Remove="Fonts\HankenGrotesk\HankenGrotesk-ThinItalic.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Properties\Icon.ico" />
   </ItemGroup>
 
   <ItemGroup>

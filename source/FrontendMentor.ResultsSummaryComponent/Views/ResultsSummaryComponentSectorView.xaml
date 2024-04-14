@@ -1,6 +1,7 @@
 ﻿<views:SectorView x:Class="FrontendMentor.ResultsSummaryComponent.Views.ResultsSummaryComponentSectorView"
                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:converters="clr-namespace:FrontendMentor.Assets.Converters;assembly=FrontendMentor.Assets"
                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                   xmlns:enums="clr-namespace:FrontendMentor.ResultsSummaryComponent.Enums"
                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -22,7 +23,7 @@
             <Border x:Name="SummaryItemBorder" CornerRadius="12">
                 <TextBlock x:Name="SummaryItemTextBlock"
                            Style="{StaticResource Body.TextBlock.Style}"
-                           Text="Verbal" />
+                           Text="{Binding SummaryItemType, Converter={converters:EnumToDescriptionConverter}}" />
             </Border>
 
             <DataTemplate.Triggers>
@@ -32,7 +33,6 @@
                             <SolidColorBrush Color="#F0FAF4" />
                         </Setter.Value>
                     </Setter>
-                    <Setter TargetName="SummaryItemTextBlock" Property="Text" Value="Memory" />
                 </DataTrigger>
                 <DataTrigger Binding="{Binding SummaryItemType}" Value="{x:Static enums:SummaryItemType.Reaction}">
                     <Setter TargetName="SummaryItemBorder" Property="Background">
@@ -40,7 +40,6 @@
                             <SolidColorBrush Color="#F0FAF4" />
                         </Setter.Value>
                     </Setter>
-                    <Setter TargetName="SummaryItemTextBlock" Property="Text" Value="Reaction" />
                 </DataTrigger>
                 <DataTrigger Binding="{Binding SummaryItemType}" Value="{x:Static enums:SummaryItemType.Verbal}">
                     <Setter TargetName="SummaryItemBorder" Property="Background">
@@ -48,7 +47,6 @@
                             <SolidColorBrush Color="#F0FAF4" />
                         </Setter.Value>
                     </Setter>
-                    <Setter TargetName="SummaryItemTextBlock" Property="Text" Value="Verbal" />
                 </DataTrigger>
                 <DataTrigger Binding="{Binding SummaryItemType}" Value="{x:Static enums:SummaryItemType.Visual}">
                     <Setter TargetName="SummaryItemBorder" Property="Background">
@@ -56,7 +54,6 @@
                             <SolidColorBrush Color="#F0FAF4" />
                         </Setter.Value>
                     </Setter>
-                    <Setter TargetName="SummaryItemTextBlock" Property="Text" Value="Visual" />
                 </DataTrigger>
             </DataTemplate.Triggers>
         </DataTemplate>
