@@ -12,6 +12,8 @@
 using FrontendMentor.Core.Services.Sectors;
 using FrontendMentor.ResultsSummaryComponent.Constants;
 using FrontendMentor.ResultsSummaryComponent.Controls.Windows;
+using FrontendMentor.ResultsSummaryComponent.Services;
+using FrontendMentor.ResultsSummaryComponent.Services.ResultSummary;
 using FrontendMentor.ResultsSummaryComponent.Views;
 using Prism.Ioc;
 using System.Windows;
@@ -26,6 +28,13 @@ internal partial class App
 
         sectorsService.RegisterSectorView<ResultsSummaryComponentSectorView>(ResultsSummaryComponentSectorNames
             .ResultsSummaryComponentSector);
+    }
+
+    protected override void RegisterTypes(IContainerRegistry containerRegistry)
+    {
+        base.RegisterTypes(containerRegistry);
+
+        containerRegistry.RegisterSingleton<IResultSummaryService, ResultSummaryService>();
     }
 
     protected override Window CreateShell()

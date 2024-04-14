@@ -120,4 +120,7 @@
   <data name="ResultsSummaryComponentSectorView_ResultTextBlock_Text" xml:space="preserve">
     <value>Your Result</value>
   </data>
+  <data name="TextBlock_Fallback_Text" xml:space="preserve">
+    <value>-</value>
+  </data>
 </root>
