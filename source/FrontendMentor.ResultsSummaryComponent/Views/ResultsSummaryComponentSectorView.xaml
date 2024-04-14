@@ -3,6 +3,7 @@
                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                  xmlns:resx="clr-namespace:FrontendMentor.ResultsSummaryComponent.Properties"
                   xmlns:views="clr-namespace:FrontendMentor.Assets.Controls.Views;assembly=FrontendMentor.Assets"
                   x:ClassModifier="internal"
                   mc:Ignorable="d">
@@ -26,12 +27,53 @@
                         <GradientStop Offset="1" Color="#2F2CE9" />
                     </LinearGradientBrush>
                 </Border.Background>
+
+                <StackPanel>
+
+                    <TextBlock Margin="0,38,0,0"
+                               HorizontalAlignment="Center"
+                               Foreground="{StaticResource ResultsSummaryComponentSectorView.YourResultTextBlock.Foreground.Brush}"
+                               Style="{StaticResource Heading.M.TextBlock.Style}"
+                               Text="{x:Static resx:Resources.ResultsSummaryComponentSectorView_ResultTextBlock_Text}" />
+
+                    <Grid Width="200"
+                          Height="200"
+                          Margin="0,35,0,0">
+                        <Ellipse>
+                            <Ellipse.Fill>
+                                <LinearGradientBrush StartPoint="0.5 0" EndPoint="0.5 1">
+                                    <GradientStop Color="#6943FF" />
+                                    <GradientStop Offset="1" Color="#2F2CE9" />
+                                </LinearGradientBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+
+                        <StackPanel VerticalAlignment="Center">
+                            <TextBlock HorizontalAlignment="Center"
+                                       Style="{StaticResource Heading.XL.TextBlock.Style}"
+                                       Text="76" />
+
+                            <TextBlock HorizontalAlignment="Center"
+                                       Style="{StaticResource Body.Bold.TextBlock.Style}"
+                                       Text="of 100" />
+                        </StackPanel>
+                    </Grid>
+
+                    <TextBlock HorizontalAlignment="Center"
+                               Style="{StaticResource Heading.L.TextBlock.Style}"
+                               Text="Great" />
+
+                    <TextBlock HorizontalAlignment="Center"
+                               Style="{StaticResource Body.TextBlock.Style}"
+                               Text="Your performance exceed 65% of the people conducting the test here!"
+                               TextWrapping="Wrap" />
+                </StackPanel>
             </Border>
 
             <StackPanel Grid.Column="1"
                         Margin="40,0"
                         VerticalAlignment="Center">
-                <TextBlock Style="{StaticResource HeadingM.TextBlock.Style}" Text="Summary" />
+                <TextBlock Style="{StaticResource Heading.M.TextBlock.Style}" Text="Summary" />
 
                 <Border Height="56"
                         Margin="0,28,0,0"
