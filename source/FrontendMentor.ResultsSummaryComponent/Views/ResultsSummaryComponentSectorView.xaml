@@ -1,11 +1,9 @@
 ﻿<views:SectorView x:Class="FrontendMentor.ResultsSummaryComponent.Views.ResultsSummaryComponentSectorView"
                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                  xmlns:constants="clr-namespace:FrontendMentor.Assets.Constants;assembly=FrontendMentor.Assets"
                   xmlns:converters="clr-namespace:FrontendMentor.Assets.Converters;assembly=FrontendMentor.Assets"
                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                   xmlns:enums="clr-namespace:FrontendMentor.ResultsSummaryComponent.Enums"
-                  xmlns:helpers="clr-namespace:FrontendMentor.Assets.Helpers;assembly=FrontendMentor.Assets"
                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                   xmlns:models="clr-namespace:FrontendMentor.ResultsSummaryComponent.Models"
                   xmlns:mvvm="http://prismlibrary.com/"
@@ -24,9 +22,21 @@
 
         <DataTemplate x:Key="SummaryItemsControlItemContentTemplate" DataType="{x:Type models:SummaryItemModel}">
             <Grid>
-                <Rectangle x:Name="SummaryItemBorder" />
 
-                <Rectangle x:Name="SummaryItemBorderOverlay" Fill="{StaticResource ResultsSummaryComponentSectorView.SummaryItemsControl.SummaryItemBorder.Overlay.Background.Brush}" />
+                <Rectangle x:Name="SummaryItemBorder"
+                           Width="{Binding ActualWidth, ElementName=Canvas}"
+                           Height="{Binding ActualHeight, ElementName=Canvas}"
+                           RadiusX="12"
+                           RadiusY="12"
+                           RenderOptions.EdgeMode="Aliased" />
+
+                <Rectangle x:Name="SummaryItemBorderOverlay"
+                           Width="{Binding ActualWidth, ElementName=Canvas}"
+                           Height="{Binding ActualHeight, ElementName=Canvas}"
+                           Fill="{StaticResource ResultsSummaryComponentSectorView.SummaryItemsControl.SummaryItemBorder.Overlay.Background.Brush}"
+                           RadiusX="12"
+                           RadiusY="12"
+                           RenderOptions.EdgeMode="Aliased" />
 
                 <Grid Margin="16,0" VerticalAlignment="Center">
                     <Grid.ColumnDefinitions>
@@ -132,9 +142,11 @@
 
             <Border Grid.Column="0" CornerRadius="32">
                 <Border.Background>
-                    <LinearGradientBrush StartPoint="0.5 0" EndPoint="0.5 1">
-                        <GradientStop Color="#6943FF" />
-                        <GradientStop Offset="1" Color="#2F2CE9" />
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Color="{StaticResource Lotus.Blue.Color}" />
+                            <GradientStop Offset="1" Color="{StaticResource Palatinate.Blue.Color}" />
+                        </LinearGradientBrush.GradientStops>
                     </LinearGradientBrush>
                 </Border.Background>
 
@@ -150,9 +162,11 @@
                           Margin="0,35,0,0">
                         <Ellipse>
                             <Ellipse.Fill>
-                                <LinearGradientBrush StartPoint="0.5 0" EndPoint="0.5 1">
-                                    <GradientStop Color="#6943FF" />
-                                    <GradientStop Offset="1" Color="#2F2CE9" />
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStop Color="#4D21C9" />
+                                        <GradientStop Offset="1" Color="#002521C9" />
+                                    </LinearGradientBrush.GradientStops>
                                 </LinearGradientBrush>
                             </Ellipse.Fill>
                         </Ellipse>
@@ -160,11 +174,19 @@
                         <StackPanel VerticalAlignment="Center">
                             <TextBlock Style="{StaticResource Heading.XL.TextBlock.Style}"
                                        Text="{Binding ResultSummary.ResultSummary.Result, FallbackValue={x:Static resx:Resources.TextBlock_Fallback_Text}}"
-                                       TextAlignment="Center" />
+                                       TextAlignment="Center">
+                                <TextBlock.Foreground>
+                                    <SolidColorBrush Color="{StaticResource White.Color}" />
+                                </TextBlock.Foreground>
+                            </TextBlock>
 
                             <TextBlock Style="{StaticResource Body.Bold.TextBlock.Style}"
                                        Text="of 100"
-                                       TextAlignment="Center" />
+                                       TextAlignment="Center">
+                                <TextBlock.Foreground>
+                                    <SolidColorBrush Color="{StaticResource LightBlue.Color}" />
+                                </TextBlock.Foreground>
+                            </TextBlock>
                         </StackPanel>
                     </Grid>
 
