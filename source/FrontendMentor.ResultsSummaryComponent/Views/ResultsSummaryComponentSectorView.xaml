@@ -130,6 +130,13 @@
     <Border Width="736"
             VerticalAlignment="Center"
             CornerRadius="32">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="60"
+                              Direction="90"
+                              Opacity="0.15"
+                              ShadowDepth="0"
+                              Color="#3D6CEC" />
+        </Border.Effect>
         <Border.Background>
             <SolidColorBrush Color="{StaticResource White.Color}" />
         </Border.Background>
