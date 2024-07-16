@@ -12,7 +12,6 @@
     <blogPreviewCards:BlogPreviewCard Width="384"
                                       HorizontalAlignment="Center"
                                       VerticalAlignment="Center"
-                                      Content="{Binding Blog}"
-                                      ContentTemplate="{StaticResource BlogPreviewCardContentTemplate}" />
+                                      Blog="{Binding Blog}" />
 
 </UserControl>

@@ -14,11 +14,14 @@ using System.Windows.Controls;
 
 namespace FrontendMentor.BlogPreviewCard.Controls.BlogPreviewCards;
 
-internal class BlogPreviewCard : ContentControl
+internal class BlogPreviewCard : Control
 {
     public static readonly DependencyProperty CornerRadiusProperty = DependencyProperty.Register(
         nameof(CornerRadius), typeof(CornerRadius), typeof(BlogPreviewCard),
         new PropertyMetadata(default(CornerRadius)));
+
+    public static readonly DependencyProperty BlogProperty = DependencyProperty.Register(
+        nameof(Blog), typeof(IBlog), typeof(BlogPreviewCard), new PropertyMetadata(default(IBlog)));
 
     static BlogPreviewCard()
     {
@@ -30,5 +33,11 @@ internal class BlogPreviewCard : ContentControl
     {
         get => (CornerRadius)GetValue(CornerRadiusProperty);
         set => SetValue(CornerRadiusProperty, value);
+    }
+
+    public IBlog Blog
+    {
+        get => (IBlog)GetValue(BlogProperty);
+        set => SetValue(BlogProperty, value);
     }
 }

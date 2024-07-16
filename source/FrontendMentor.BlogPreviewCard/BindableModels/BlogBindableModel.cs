@@ -9,6 +9,7 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
+using FrontendMentor.BlogPreviewCard.Controls.BlogPreviewCards;
 using FrontendMentor.BlogPreviewCard.Models;
 using FrontendMentor.Core.Services.BitmapImages;
 using Prism.Ioc;
@@ -18,7 +19,7 @@ using System.Windows.Media.Imaging;
 namespace FrontendMentor.BlogPreviewCard.BindableModels;
 
 internal class BlogBindableModel(IBitmapImagesService bitmapImagesService, BlogModel blogModel)
-    : BindableBase
+    : BindableBase, IBlog
 {
     private readonly Lazy<BitmapSource> _blogImage =
         new(() => bitmapImagesService.GetBitmapImage(blogModel.ImageUriString));
