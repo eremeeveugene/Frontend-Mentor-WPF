@@ -12,10 +12,13 @@
 using FrontendMentor.Core.ViewModels;
 using FrontendMentor.ResultsSummaryComponent.BindableModels;
 using FrontendMentor.ResultsSummaryComponent.Services.ResultSummary;
+using Prism.Regions;
 
 namespace FrontendMentor.ResultsSummaryComponent.ViewModels;
 
-internal sealed class ResultsSummaryComponentSectorViewModel(IResultSummaryService resultSummaryService) : ViewModelBase
+internal sealed class ResultsSummaryComponentViewModel(
+    IResultSummaryService resultSummaryService)
+    : NavigationViewModelBase
 {
     private ResultSummaryBindableModel? _resultSummary;
 
@@ -25,15 +28,10 @@ internal sealed class ResultsSummaryComponentSectorViewModel(IResultSummaryServi
         private set => SetProperty(ref _resultSummary, value);
     }
 
-    protected override Task LoadedOnceAsync()
+    public override void OnNavigatedTo(NavigationContext navigationContext)
     {
-        LoadResultSummary();
+        base.OnNavigatedTo(navigationContext);
 
-        return base.LoadedOnceAsync();
-    }
-
-    private void LoadResultSummary()
-    {
         var resultSummary = resultSummaryService.GetResultSummary();
 
         ResultSummary = new ResultSummaryBindableModel(resultSummary);

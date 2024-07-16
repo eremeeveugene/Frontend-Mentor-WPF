@@ -11,7 +11,7 @@
 
 namespace FrontendMentor.SocialLinksProfile.Constants;
 
-internal static class SocialLinksProfileSectorNames
+internal static class SocialLinksProfileViewNames
 {
-    public const string SocialLinksProfileSector = nameof(SocialLinksProfileSector);
+    public const string SocialLinksProfile = nameof(SocialLinksProfile);
 }

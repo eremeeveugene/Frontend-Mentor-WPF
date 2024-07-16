@@ -9,11 +9,11 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-namespace FrontendMentor.BlogPreviewCard.Views;
+namespace FrontendMentor.SocialLinksProfile.Views;
 
-internal sealed partial class BlogPreviewCardSectorView
+internal sealed partial class SocialLinksProfileView
 {
-    public BlogPreviewCardSectorView()
+    public SocialLinksProfileView()
     {
         InitializeComponent();
     }

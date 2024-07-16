@@ -9,32 +9,22 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.Assets.Controls.Windows.Dependencies;
-using FrontendMentor.Core.Services.Sectors;
+using FrontendMentor.Assets.Constants;
+using Prism.Regions;
 using System.Windows;
 
 namespace FrontendMentor.Assets.Controls.Windows;
 
 public class FrontendMentorWindow : Window
 {
-    public static readonly DependencyProperty SectorsContainerProperty = DependencyProperty.Register(
-        nameof(SectorsContainer), typeof(ISectorsContainer), typeof(FrontendMentorWindow),
-        new PropertyMetadata(default(ISectorsContainer)));
-
     static FrontendMentorWindow()
     {
         DefaultStyleKeyProperty.OverrideMetadata(typeof(FrontendMentorWindow),
             new FrameworkPropertyMetadata(typeof(FrontendMentorWindow)));
     }
 
-    public FrontendMentorWindow(FrontendMentorWindowDependencies frontendMentorWindowDependencies)
+    public FrontendMentorWindow()
     {
-        SectorsContainer = frontendMentorWindowDependencies.SectorsContainer;
-    }
-
-    public ISectorsContainer SectorsContainer
-    {
-        get => (ISectorsContainer)GetValue(SectorsContainerProperty);
-        private set => SetValue(SectorsContainerProperty, value);
+        RegionManager.SetRegionName(this, FrontedMentorRegionNames.Shell);
     }
 }

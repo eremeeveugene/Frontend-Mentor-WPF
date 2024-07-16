@@ -13,9 +13,9 @@
     </ControlTemplate>
 
     <Style x:Key="SocialLinkProfileButtonStyle" TargetType="{x:Type Button}">
-        <Setter Property="Background" Value="{StaticResource SocialLinkButton.Background.Brush}" />
+        <Setter Property="Background" Value="{StaticResource SocialLinksProfileView.SocialLinkButton.Background.Brush}" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-        <Setter Property="Foreground" Value="{StaticResource SocialLinkButton.Foreground.Brush}" />
+        <Setter Property="Foreground" Value="{StaticResource SocialLinksProfileView.SocialLinkButton.Foreground.Brush}" />
         <Setter Property="HorizontalContentAlignment" Value="{x:Static HorizontalAlignment.Center}" />
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="Padding" Value="12" />

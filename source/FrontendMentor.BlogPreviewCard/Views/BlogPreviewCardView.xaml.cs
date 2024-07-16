@@ -9,9 +9,12 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-namespace FrontendMentor.ResultsSummaryComponent.Constants;
+namespace FrontendMentor.BlogPreviewCard.Views;
 
-internal static class ResultsSummaryComponentSectorNames
+internal sealed partial class BlogPreviewCardView
 {
-    public const string ResultsSummaryComponentSector = nameof(ResultsSummaryComponentSector);
+    public BlogPreviewCardView()
+    {
+        InitializeComponent();
+    }
 }

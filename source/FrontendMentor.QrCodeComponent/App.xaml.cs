@@ -9,7 +9,6 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.Core.Services.Sectors;
 using FrontendMentor.QrCodeComponent.Constants;
 using FrontendMentor.QrCodeComponent.Controls;
 using FrontendMentor.QrCodeComponent.Views;
@@ -20,25 +19,22 @@ namespace FrontendMentor.QrCodeComponent;
 
 internal partial class App
 {
-    protected override void RegisterSectors(ISectorsService sectorsService)
-    {
-        base.RegisterSectors(sectorsService);
-
-        sectorsService.RegisterSectorView<QrCodeComponentSectorView>(QrCodeComponentSectorNames
-            .QrCodeComponentSector);
-    }
-
     protected override Window CreateShell()
     {
         return Container.Resolve<QrCodeComponentWindow>();
     }
 
+    protected override void RegisterTypes(IContainerRegistry containerRegistry)
+    {
+        base.RegisterTypes(containerRegistry);
+
+        containerRegistry.RegisterForNavigation<QrCodeComponentView>(QrCodeComponentViewNames.QrCodeComponent);
+    }
+
     protected override void OnInitialized()
     {
-        var sectorsService = Container.Resolve<ISectorsService>();
-
-        sectorsService.NavigateToSectorView(QrCodeComponentSectorNames.QrCodeComponentSector);
-
         base.OnInitialized();
+
+        NavigateToShellRegion(QrCodeComponentViewNames.QrCodeComponent);
     }
 }

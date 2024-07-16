@@ -10,13 +10,11 @@
 // --------------------------------------------------------------------------------
 
 using FrontendMentor.Assets.Controls.Windows;
-using FrontendMentor.Assets.Controls.Windows.Dependencies;
 using System.Windows;
 
 namespace FrontendMentor.QrCodeComponent.Controls;
 
-internal class QrCodeComponentWindow(FrontendMentorWindowDependencies frontendMentorWindowDependencies)
-    : FrontendMentorWindow(frontendMentorWindowDependencies)
+internal class QrCodeComponentWindow : FrontendMentorWindow
 {
     static QrCodeComponentWindow()
     {

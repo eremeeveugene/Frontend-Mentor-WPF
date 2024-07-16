@@ -9,7 +9,6 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.Core.Services.Sectors;
 using FrontendMentor.SocialLinksProfile.Constants;
 using FrontendMentor.SocialLinksProfile.Controls.Windows;
 using FrontendMentor.SocialLinksProfile.Services.SocialLinksProfiles;
@@ -26,6 +25,8 @@ internal partial class App
         base.RegisterTypes(containerRegistry);
 
         containerRegistry.Register<ISocialLinksProfilesService, SocialLinksProfilesService>();
+        containerRegistry.RegisterForNavigation<SocialLinksProfileView>(SocialLinksProfileViewNames
+            .SocialLinksProfile);
     }
 
     protected override Window CreateShell()
@@ -35,18 +36,8 @@ internal partial class App
 
     protected override void OnInitialized()
     {
-        var sectorsService = Container.Resolve<ISectorsService>();
-
-        sectorsService.NavigateToSectorView(SocialLinksProfileSectorNames.SocialLinksProfileSector);
-
         base.OnInitialized();
-    }
 
-    protected override void RegisterSectors(ISectorsService sectorsService)
-    {
-        base.RegisterSectors(sectorsService);
-
-        sectorsService.RegisterSectorView<SocialLinksProfileSectorView>(SocialLinksProfileSectorNames
-            .SocialLinksProfileSector);
+        NavigateToShellRegion(SocialLinksProfileViewNames.SocialLinksProfile);
     }
 }

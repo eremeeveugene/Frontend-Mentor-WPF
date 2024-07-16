@@ -10,13 +10,11 @@
 // --------------------------------------------------------------------------------
 
 using FrontendMentor.Assets.Controls.Windows;
-using FrontendMentor.Assets.Controls.Windows.Dependencies;
 using System.Windows;
 
 namespace FrontendMentor.ResultsSummaryComponent.Controls.Windows;
 
-internal class ResultsSummaryComponentWindow(FrontendMentorWindowDependencies frontendMentorWindowDependencies)
-    : FrontendMentorWindow(frontendMentorWindowDependencies)
+internal class ResultsSummaryComponentWindow : FrontendMentorWindow
 {
     static ResultsSummaryComponentWindow()
     {

@@ -13,14 +13,15 @@ using FrontendMentor.Core.ViewModels;
 using FrontendMentor.SocialLinksProfile.BindableModels;
 using FrontendMentor.SocialLinksProfile.Services.SocialLinksProfiles;
 using Prism.Ioc;
+using Prism.Regions;
 using System.Collections.ObjectModel;
 
 namespace FrontendMentor.SocialLinksProfile.ViewModels;
 
-internal sealed class SocialLinksProfileSectorViewModel(
+internal sealed class SocialLinksProfileViewModel(
     ISocialLinksProfilesService socialLinksProfilesService,
-    IContainerProvider containerProvider)
-    : ViewModelBase
+    IContainerProvider containerProvider) :
+    NavigationViewModelBase
 {
     private ObservableCollection<SocialLinkProfileBindableModel>? _socialLinksProfiles;
 
@@ -30,15 +31,10 @@ internal sealed class SocialLinksProfileSectorViewModel(
         private set => SetProperty(ref _socialLinksProfiles, value);
     }
 
-    protected override Task LoadedOnceAsync()
+    public override void OnNavigatedTo(NavigationContext navigationContext)
     {
-        LoadSocialLinksProfiles();
+        base.OnNavigatedTo(navigationContext);
 
-        return base.LoadedOnceAsync();
-    }
-
-    private void LoadSocialLinksProfiles()
-    {
         var socialLinkProfiles = socialLinksProfilesService.GetSocialLinkProfiles();
 
         var socialLinkProfilesViewModels = socialLinkProfiles

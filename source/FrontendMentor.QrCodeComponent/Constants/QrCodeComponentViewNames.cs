@@ -11,7 +11,7 @@
 
 namespace FrontendMentor.QrCodeComponent.Constants;
 
-internal static class QrCodeComponentSectorNames
+internal static class QrCodeComponentViewNames
 {
-    public const string QrCodeComponentSector = nameof(QrCodeComponentSector);
+    public const string QrCodeComponent = nameof(QrCodeComponent);
 }

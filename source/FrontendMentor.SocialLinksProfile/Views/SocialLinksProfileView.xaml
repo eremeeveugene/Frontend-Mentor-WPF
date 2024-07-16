@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="FrontendMentor.SocialLinksProfile.Views.SocialLinksProfileView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:properties="clr-namespace:FrontendMentor.SocialLinksProfile.Properties"
+             xmlns:viewModels="clr-namespace:FrontendMentor.SocialLinksProfile.ViewModels"
+             d:DataContext="{d:DesignInstance viewModels:SocialLinksProfileViewModel}"
+             x:ClassModifier="internal"
+             mc:Ignorable="d">
+
+    <Border Width="384"
+            Padding="40"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Background="{StaticResource SocialLinksProfileView.CardOuterBorder.Background.Brush}"
+            CornerRadius="12">
+        <StackPanel>
+            <Ellipse Width="88"
+                     Height="88"
+                     HorizontalAlignment="Center">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="{StaticResource Profile.Image}" />
+                </Ellipse.Fill>
+            </Ellipse>
+
+            <TextBlock Margin="0,24,0,0"
+                       Style="{StaticResource Heading.TextBlock.Style}"
+                       Text="{x:Static properties:Resources.SocialLinksProfileFullName}"
+                       TextAlignment="Center" />
+
+            <TextBlock Margin="0,4,0,0"
+                       Foreground="{StaticResource SocialLinksProfileView.LocationTextBlock.Foreground.Brush}"
+                       Style="{StaticResource Body.Bold.TextBlock.Style}"
+                       Text="{x:Static properties:Resources.SocialLinksProfileLocation}"
+                       TextAlignment="Center" />
+
+            <TextBlock Margin="0,24,0,0"
+                       Style="{StaticResource Body.Regular.TextBlock.Style}"
+                       Text="{x:Static properties:Resources.SocialLinksProfileProfessionalTitleAndInterest}"
+                       TextAlignment="Center" />
+
+            <ItemsControl Margin="0,8,0,0"
+                          ItemsSource="{Binding SocialLinksProfiles}"
+                          Style="{StaticResource SocialLinksProfilesItemsControlStyle}" />
+        </StackPanel>
+    </Border>
+</UserControl>

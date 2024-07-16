@@ -63,9 +63,9 @@ namespace FrontendMentor.ResultsSummaryComponent.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Your Result.
         /// </summary>
-        public static string ResultsSummaryComponentSectorView_ResultTextBlock_Text {
+        public static string ResultsSummaryComponentView_ResultTextBlock_Text {
             get {
-                return ResourceManager.GetString("ResultsSummaryComponentSectorView_ResultTextBlock_Text", resourceCulture);
+                return ResourceManager.GetString("ResultsSummaryComponentView_ResultTextBlock_Text", resourceCulture);
             }
         }
         

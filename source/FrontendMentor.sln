@@ -11,9 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrontendMentor.Core", "Fron
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrontendMentor.SocialLinksProfile", "FrontendMentor.SocialLinksProfile\FrontendMentor.SocialLinksProfile.csproj", "{D58B90AE-8E4D-4027-85E9-75732F4BC684}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontendMentor.BlogPreviewCard", "FrontendMentor.BlogPreviewCard\FrontendMentor.BlogPreviewCard.csproj", "{5C4E0269-E5FC-43FF-95D9-1E142739CEA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrontendMentor.BlogPreviewCard", "FrontendMentor.BlogPreviewCard\FrontendMentor.BlogPreviewCard.csproj", "{5C4E0269-E5FC-43FF-95D9-1E142739CEA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontendMentor.ResultsSummaryComponent", "FrontendMentor.ResultsSummaryComponent\FrontendMentor.ResultsSummaryComponent.csproj", "{04FD1768-52A8-410D-9549-03003DEE7867}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrontendMentor.ResultsSummaryComponent", "FrontendMentor.ResultsSummaryComponent\FrontendMentor.ResultsSummaryComponent.csproj", "{04FD1768-52A8-410D-9549-03003DEE7867}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apps", "Apps", "{5EAFD35D-2691-45AF-AA3A-227BE86402B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +50,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{581AEC62-97CE-4B9E-86E0-C97A02FC715C} = {5EAFD35D-2691-45AF-AA3A-227BE86402B8}
+		{D58B90AE-8E4D-4027-85E9-75732F4BC684} = {5EAFD35D-2691-45AF-AA3A-227BE86402B8}
+		{5C4E0269-E5FC-43FF-95D9-1E142739CEA8} = {5EAFD35D-2691-45AF-AA3A-227BE86402B8}
+		{04FD1768-52A8-410D-9549-03003DEE7867} = {5EAFD35D-2691-45AF-AA3A-227BE86402B8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {595C463F-8E9C-40B9-B872-0B34D6E89BBA}

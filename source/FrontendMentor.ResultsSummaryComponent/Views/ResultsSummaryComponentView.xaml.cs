@@ -9,11 +9,12 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.Core.Services.Sectors;
+namespace FrontendMentor.ResultsSummaryComponent.Views;
 
-namespace FrontendMentor.Assets.Controls.Windows.Dependencies;
-
-public class FrontendMentorWindowDependencies(ISectorsContainer sectorsContainer)
+internal sealed partial class ResultsSummaryComponentView
 {
-    public ISectorsContainer SectorsContainer { get; } = sectorsContainer;
+    public ResultsSummaryComponentView()
+    {
+        InitializeComponent();
+    }
 }

@@ -21,14 +21,16 @@
 
     <!--#region SocialLinksProfileView-->
 
+    <!--#region CardOuterBorder-->
+
     <SolidColorBrush x:Key="SocialLinksProfileView.CardOuterBorder.Background.Brush"
                      po:Freeze="True"
                      Color="{StaticResource DarkGrey.Color}" />
     <!--#endregion-->
 
-    <!--#region SocialLinksProfileLocationTextBlock-->
+    <!--#region LocationTextBlock-->
 
-    <SolidColorBrush x:Key="SocialLinksProfileLocationTextBlock.Foreground.Brush"
+    <SolidColorBrush x:Key="SocialLinksProfileView.LocationTextBlock.Foreground.Brush"
                      po:Freeze="True"
                      Color="{StaticResource NeonGreen.Color}" />
 
@@ -36,11 +38,11 @@
 
     <!--#region SocialLinkButton-->
 
-    <SolidColorBrush x:Key="SocialLinkButton.Background.Brush"
+    <SolidColorBrush x:Key="SocialLinksProfileView.SocialLinkButton.Background.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Grey.Color}" />
 
-    <SolidColorBrush x:Key="SocialLinkButton.Foreground.Brush"
+    <SolidColorBrush x:Key="SocialLinksProfileView.SocialLinkButton.Foreground.Brush"
                      po:Freeze="True"
                      Color="{StaticResource White.Color}" />
 

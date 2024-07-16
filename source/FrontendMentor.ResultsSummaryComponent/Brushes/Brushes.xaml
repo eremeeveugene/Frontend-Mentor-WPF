@@ -27,78 +27,82 @@
 
     <LinearGradientBrush x:Key="Button.Background.MouseOver.Brush" po:Freeze="True" StartPoint="0,0" EndPoint="0,1">
         <LinearGradientBrush.GradientStops>
-            <GradientStop Color="{StaticResource Lotus.Blue.Color}" />
+            <GradientStop Color="#6943FF" />
             <GradientStop Offset="1" Color="{StaticResource Palatinate.Blue.Color}" />
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
 
     <!--#endregion-->
 
-    <!--#region ResultsSummaryComponentSectorView-->
+    <!--#region ResultsSummaryComponentView-->
 
-    <SolidColorBrush x:Key="ResultsSummaryComponentSectorView.YourResultTextBlock.Foreground.Brush"
+    <!--#region ResultsSummaryComponentView.YourResultTextBlock-->
+
+    <SolidColorBrush x:Key="ResultsSummaryComponentView.YourResultTextBlock.Foreground.Brush"
                      po:Freeze="True"
                      Color="{StaticResource LightBlue.Color}" />
 
     <!--#endregion-->
 
-    <!--#region ResultsSummaryComponentSectorView-->
+    <!--#region ResultsSummaryComponentView.SummaryItemsControl-->
 
-    <SolidColorBrush x:Key="ResultsSummaryComponentSectorView.SummaryItemsControl.SummaryItemBorder.Overlay.Background.Brush"
+    <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemBorder.Overlay.Background.Brush"
                      po:Freeze="True"
                      Opacity="0.95"
                      Color="{StaticResource White.Color}" />
 
-    <SolidColorBrush x:Key="ResultsSummaryComponentSectorView.SummaryItemsControl.SummaryItemBorder.Memory.Background.Brush"
+    <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemBorder.Memory.Background.Brush"
                      po:Freeze="True"
                      Opacity="95"
                      Color="{StaticResource Yellow.Color}" />
 
-    <SolidColorBrush x:Key="ResultsSummaryComponentSectorView.SummaryItemsControl.SummaryItemIconPath.Memory.Stroke.Brush"
+    <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemIconPath.Memory.Stroke.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Yellow.Color}" />
 
-    <SolidColorBrush x:Key="ResultsSummaryComponentSectorView.SummaryItemsControl.SummaryItemTextBlock.Memory.Foreground.Brush"
+    <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemTextBlock.Memory.Foreground.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Yellow.Color}" />
 
-    <SolidColorBrush x:Key="ResultsSummaryComponentSectorView.SummaryItemsControl.SummaryItemBorder.Reaction.Background.Brush"
+    <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemBorder.Reaction.Background.Brush"
                      po:Freeze="True"
                      Opacity="95"
                      Color="{StaticResource Red.Color}" />
 
-    <SolidColorBrush x:Key="ResultsSummaryComponentSectorView.SummaryItemsControl.SummaryItemTextBlock.Reaction.Foreground.Brush"
+    <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemTextBlock.Reaction.Foreground.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Red.Color}" />
 
-    <SolidColorBrush x:Key="ResultsSummaryComponentSectorView.SummaryItemsControl.SummaryItemIconPath.Reaction.Stroke.Brush"
+    <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemIconPath.Reaction.Stroke.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Red.Color}" />
 
-    <SolidColorBrush x:Key="ResultsSummaryComponentSectorView.SummaryItemsControl.SummaryItemBorder.Verbal.Background.Brush"
+    <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemBorder.Verbal.Background.Brush"
                      po:Freeze="True"
                      Opacity="95"
                      Color="{StaticResource Green.Color}" />
 
-    <SolidColorBrush x:Key="ResultsSummaryComponentSectorView.SummaryItemsControl.SummaryItemTextBlock.Verbal.Foreground.Brush"
+    <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemTextBlock.Verbal.Foreground.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Green.Color}" />
 
-    <SolidColorBrush x:Key="ResultsSummaryComponentSectorView.SummaryItemsControl.SummaryItemIconPath.Verbal.Stroke.Brush"
+    <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemIconPath.Verbal.Stroke.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Green.Color}" />
 
-    <SolidColorBrush x:Key="ResultsSummaryComponentSectorView.SummaryItemsControl.SummaryItemBorder.Visual.Background.Brush"
+    <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemBorder.Visual.Background.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Blue.Color}" />
 
-    <SolidColorBrush x:Key="ResultsSummaryComponentSectorView.SummaryItemsControl.SummaryItemTextBlock.Visual.Foreground.Brush"
+    <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemTextBlock.Visual.Foreground.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Blue.Color}" />
 
-    <SolidColorBrush x:Key="ResultsSummaryComponentSectorView.SummaryItemsControl.SummaryItemIconPath.Visual.Stroke.Brush"
+    <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemIconPath.Visual.Stroke.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Blue.Color}" />
+
+    <!--#endregion-->
 
     <!--#endregion-->
 

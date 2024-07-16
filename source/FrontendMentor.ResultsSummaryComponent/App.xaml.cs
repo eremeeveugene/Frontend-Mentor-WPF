@@ -9,10 +9,8 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.Core.Services.Sectors;
 using FrontendMentor.ResultsSummaryComponent.Constants;
 using FrontendMentor.ResultsSummaryComponent.Controls.Windows;
-using FrontendMentor.ResultsSummaryComponent.Services;
 using FrontendMentor.ResultsSummaryComponent.Services.ResultSummary;
 using FrontendMentor.ResultsSummaryComponent.Views;
 using Prism.Ioc;
@@ -22,19 +20,13 @@ namespace FrontendMentor.ResultsSummaryComponent;
 
 internal partial class App
 {
-    protected override void RegisterSectors(ISectorsService sectorsService)
-    {
-        base.RegisterSectors(sectorsService);
-
-        sectorsService.RegisterSectorView<ResultsSummaryComponentSectorView>(ResultsSummaryComponentSectorNames
-            .ResultsSummaryComponentSector);
-    }
-
     protected override void RegisterTypes(IContainerRegistry containerRegistry)
     {
         base.RegisterTypes(containerRegistry);
 
         containerRegistry.RegisterSingleton<IResultSummaryService, ResultSummaryService>();
+        containerRegistry.RegisterForNavigation<ResultsSummaryComponentView>(ResultsSummaryComponentViewNames
+            .ResultsSummaryComponent);
     }
 
     protected override Window CreateShell()
@@ -44,10 +36,8 @@ internal partial class App
 
     protected override void OnInitialized()
     {
-        var sectorsService = Container.Resolve<ISectorsService>();
-
-        sectorsService.NavigateToSectorView(ResultsSummaryComponentSectorNames.ResultsSummaryComponentSector);
-
         base.OnInitialized();
+
+        NavigateToShellRegion(ResultsSummaryComponentViewNames.ResultsSummaryComponent);
     }
 }

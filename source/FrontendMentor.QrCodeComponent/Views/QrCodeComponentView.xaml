@@ -1,12 +1,11 @@
-﻿<views:SectorView x:Class="FrontendMentor.QrCodeComponent.Views.QrCodeComponentSectorView"
-                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                  xmlns:properties="clr-namespace:FrontendMentor.QrCodeComponent.Properties"
-                  xmlns:views="clr-namespace:FrontendMentor.Assets.Controls.Views;assembly=FrontendMentor.Assets"
-                  x:ClassModifier="internal"
-                  mc:Ignorable="d">
+﻿<UserControl x:Class="FrontendMentor.QrCodeComponent.Views.QrCodeComponentView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:properties="clr-namespace:FrontendMentor.QrCodeComponent.Properties"
+             x:ClassModifier="internal"
+             mc:Ignorable="d">
 
     <Border Width="320"
             Padding="16"
@@ -66,4 +65,4 @@
             </StackPanel>
         </StackPanel>
     </Border>
-</views:SectorView>
+</UserControl>

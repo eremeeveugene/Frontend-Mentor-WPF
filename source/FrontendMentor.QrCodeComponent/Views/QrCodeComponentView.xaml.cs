@@ -9,9 +9,12 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-namespace FrontendMentor.Core.Services.Sectors;
+namespace FrontendMentor.QrCodeComponent.Views;
 
-public interface ISectorsContainer
+internal partial class QrCodeComponentView
 {
-    ISectorView? SectorView { get; set; }
+    public QrCodeComponentView()
+    {
+        InitializeComponent();
+    }
 }

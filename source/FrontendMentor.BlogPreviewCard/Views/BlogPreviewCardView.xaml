@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="FrontendMentor.BlogPreviewCard.Views.BlogPreviewCardView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:blogPreviewCards="clr-namespace:FrontendMentor.BlogPreviewCard.Controls.BlogPreviewCards"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:FrontendMentor.BlogPreviewCard.ViewModels"
+             d:DataContext="{d:DesignInstance viewModels:BlogPreviewCardViewModel}"
+             x:ClassModifier="internal"
+             mc:Ignorable="d">
+
+    <blogPreviewCards:BlogPreviewCard Width="384"
+                                      HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"
+                                      Content="{Binding Blog}"
+                                      ContentTemplate="{StaticResource BlogPreviewCardContentTemplate}" />
+
+</UserControl>

@@ -9,10 +9,9 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.Core.Services.Sectors;
+namespace FrontendMentor.BlogPreviewCard.Constants;
 
-namespace FrontendMentor.Assets.Controls.Views;
-
-public abstract class SectorView : View, ISectorView
+internal static class BlogPreviewCardViewNames
 {
+    public const string BlogPreviewCard = nameof(BlogPreviewCard);
 }

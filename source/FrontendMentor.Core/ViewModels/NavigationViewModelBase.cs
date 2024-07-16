@@ -9,9 +9,22 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-namespace FrontendMentor.BlogPreviewCard.Constants;
+using Prism.Regions;
 
-internal static class BlogPreviewCardSectorNames
+namespace FrontendMentor.Core.ViewModels;
+
+public abstract class NavigationViewModelBase : ViewModelBase, INavigationAware
 {
-    public const string BlogPreviewCardSector = nameof(BlogPreviewCardSector);
+    public virtual void OnNavigatedTo(NavigationContext navigationContext)
+    {
+    }
+
+    public virtual bool IsNavigationTarget(NavigationContext navigationContext)
+    {
+        return false;
+    }
+
+    public virtual void OnNavigatedFrom(NavigationContext navigationContext)
+    {
+    }
 }

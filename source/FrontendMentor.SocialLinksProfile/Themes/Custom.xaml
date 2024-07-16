@@ -6,5 +6,6 @@
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Images/Images.xaml" />
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Storyboards/Storyboards.xaml" />
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Styles/Controls/TextBlocks/TextBlockStyles.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Styles/Views/SocialLinksProfileViewStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

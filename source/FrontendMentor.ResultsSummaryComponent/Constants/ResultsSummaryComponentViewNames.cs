@@ -9,11 +9,9 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-namespace FrontendMentor.Core.Services.Sectors;
+namespace FrontendMentor.ResultsSummaryComponent.Constants;
 
-public interface ISectorsService
+internal static class ResultsSummaryComponentViewNames
 {
-    void NavigateToSectorView(string sectorName);
-    void RegisterSectorView<T>(string sectorName) where T : ISectorView;
-    ISectorView GetSectorView(string sectorName);
+    public const string ResultsSummaryComponent = nameof(ResultsSummaryComponent);
 }

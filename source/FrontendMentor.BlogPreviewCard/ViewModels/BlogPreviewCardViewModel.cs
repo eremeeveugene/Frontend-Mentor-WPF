@@ -13,26 +13,29 @@ using FrontendMentor.BlogPreviewCard.BindableModels;
 using FrontendMentor.BlogPreviewCard.Services.Blogs;
 using FrontendMentor.Core.ViewModels;
 using Prism.Ioc;
+using Prism.Regions;
 
 namespace FrontendMentor.BlogPreviewCard.ViewModels;
 
-internal sealed class BlogPreviewCardSectorViewModel(IContainerProvider containerProvider, IBlogsService blogsService)
-    : ViewModelBase
+internal sealed class BlogPreviewCardViewModel(
+    IContainerProvider containerProvider,
+    IBlogsService blogsService)
+    : NavigationViewModelBase
 {
-    private BlogBindableModel? _blogBindableModel;
+    private BlogBindableModel? _blog;
 
-    public BlogBindableModel? BlogBindableModel
+    public BlogBindableModel? Blog
     {
-        get => _blogBindableModel;
-        private set => SetProperty(ref _blogBindableModel, value);
+        get => _blog;
+        private set => SetProperty(ref _blog, value);
     }
 
-    protected override Task LoadedOnceAsync()
+    public override void OnNavigatedTo(NavigationContext navigationContext)
     {
+        base.OnNavigatedTo(navigationContext);
+
         var blogModel = blogsService.GetBlog();
 
-        BlogBindableModel = BlogBindableModel.Create(containerProvider, blogModel);
-
-        return base.LoadedOnceAsync();
+        Blog = BlogBindableModel.Create(containerProvider, blogModel);
     }
 }

@@ -11,7 +11,6 @@
 
 using FrontendMentor.Core.Services.BitmapImages;
 using FrontendMentor.Core.Services.Processes;
-using FrontendMentor.Core.Services.Sectors;
 using Prism.DryIoc;
 using Prism.Ioc;
 
@@ -22,18 +21,6 @@ public abstract class FrontendMentorCoreApplication : PrismApplication
     protected override void RegisterTypes(IContainerRegistry containerRegistry)
     {
         containerRegistry.RegisterSingleton<IProcessesService, ProcessesService>();
-        containerRegistry.RegisterSingleton<ISectorsService, SectorsService>();
         containerRegistry.RegisterSingleton<IBitmapImagesService, BitmapImagesService>();
-    }
-
-    protected override void Initialize()
-    {
-        base.Initialize();
-
-        RegisterSectors(Container.Resolve<ISectorsService>());
-    }
-
-    protected virtual void RegisterSectors(ISectorsService sectorsService)
-    {
     }
 }
