@@ -10,14 +10,14 @@
     <Border Width="320"
             Padding="16"
             VerticalAlignment="Center"
-            Background="{StaticResource QrCodeComponentWindowView.QrCodeOuterBorder.Background.Brush}"
+            Background="{StaticResource QrCodeComponentView.QrCodeOuterBorder.Background.Brush}"
             CornerRadius="20"
             Effect="{StaticResource QrCodeComponentWindowView.QrCodeOuterBorder.DropShadowEffect}">
         <StackPanel>
             <Grid Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}">
                 <Rectangle x:Name="InnerBorder"
                            Grid.Row="0"
-                           Fill="{StaticResource QrCodeComponentWindowView.QrCodeInnerRectangle.Background.Brush}"
+                           Fill="{StaticResource QrCodeComponentView.QrCodeInnerRectangle.Background.Brush}"
                            RadiusX="10"
                            RadiusY="10" />
 
@@ -35,13 +35,13 @@
                                  Canvas.Bottom="124.5"
                                  Width="328"
                                  Height="328"
-                                 Fill="{StaticResource QrCodeComponentWindowView.QrCodeEllipse.Fill.Brush}" />
+                                 Fill="{StaticResource QrCodeComponentView.QrCodeEllipse.Fill.Brush}" />
 
                         <Ellipse Canvas.Left="131.5"
                                  Canvas.Top="204.5"
                                  Width="270"
                                  Height="270"
-                                 Fill="{StaticResource QrCodeComponentWindowView.QrCodeEllipse.Fill.Brush}" />
+                                 Fill="{StaticResource QrCodeComponentView.QrCodeEllipse.Fill.Brush}" />
                     </Canvas>
                 </Decorator>
 
@@ -57,7 +57,7 @@
                            TextWrapping="Wrap" />
 
                 <TextBlock Margin="16,16,16,0"
-                           Foreground="{StaticResource QrCodeComponentWindowView.BodyTextBlock.Foreground.Brush}"
+                           Foreground="{StaticResource QrCodeComponentView.BodyTextBlock.Foreground.Brush}"
                            Style="{StaticResource Body.TextBlock.Style}"
                            Text="{x:Static properties:Resources.QrCodeComponentBody}"
                            TextAlignment="Center"

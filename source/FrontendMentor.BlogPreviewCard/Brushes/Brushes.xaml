@@ -29,17 +29,9 @@
                      po:Freeze="True"
                      Color="{StaticResource PureWhite.Color}" />
 
-    <!--#endregion-->
-
-    <!--#region BlogPreviewCard.CategoryBorder-->
-
     <SolidColorBrush x:Key="BlogPreviewCard.CategoryBorder.Background.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Yellow.Color}" />
-
-    <!--#endregion-->
-
-    <!--#region BlogPreviewCard.BlogAuthorTextBlock-->
 
     <SolidColorBrush x:Key="BlogPreviewCard.AuthorTextBlock.Foreground.Brush"
                      po:Freeze="True"

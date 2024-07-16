@@ -99,7 +99,7 @@
                     BorderBrush="{TemplateBinding BorderBrush}"
                     BorderThickness="{TemplateBinding BorderThickness}"
                     CornerRadius="{TemplateBinding CornerRadius}"
-                    Effect="{StaticResource BlogCardBorder.DropShadow.Effect}"
+                    Effect="{StaticResource BlogPreviewCard.DropShadow.Effect}"
                     Style="{StaticResource BlogPreviewCardBorderStyle}" />
 
             <ContentControl Margin="{TemplateBinding Padding}"

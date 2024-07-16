@@ -9,7 +9,9 @@
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Brushes/Brushes.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Storyboard x:Key="SocialLinkProfileButton.MouseOver.Storyboard" po:Freeze="True">
+    <!--#region SocialLinksProfileView-->
+
+    <Storyboard x:Key="SocialLinksProfileView.SocialLinkButton.MouseOver.Storyboard" po:Freeze="True">
         <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                         Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
                         To="{StaticResource NeonGreen.Color}"
@@ -21,7 +23,7 @@
                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 
-    <Storyboard x:Key="SocialLinkProfileButton.Normal.Storyboard" po:Freeze="True">
+    <Storyboard x:Key="SocialLinksProfileView.SocialLinkButton.Normal.Storyboard" po:Freeze="True">
         <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                         Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
                         To="{StaticResource Grey.Color}"
@@ -32,5 +34,7 @@
                         To="{StaticResource White.Color}"
                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
+
+    <!--#endregion-->
 
 </ResourceDictionary>

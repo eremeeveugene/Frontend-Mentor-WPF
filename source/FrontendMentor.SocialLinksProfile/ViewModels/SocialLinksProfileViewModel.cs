@@ -23,12 +23,12 @@ internal sealed class SocialLinksProfileViewModel(
     IContainerProvider containerProvider) :
     NavigationViewModelBase
 {
-    private ObservableCollection<SocialLinkProfileBindableModel>? _socialLinksProfiles;
+    private ObservableCollection<SocialLinkProfileBindableModel>? _socialLinkProfiles;
 
-    public ObservableCollection<SocialLinkProfileBindableModel>? SocialLinksProfiles
+    public ObservableCollection<SocialLinkProfileBindableModel>? SocialLinkProfiles
     {
-        get => _socialLinksProfiles;
-        private set => SetProperty(ref _socialLinksProfiles, value);
+        get => _socialLinkProfiles;
+        private set => SetProperty(ref _socialLinkProfiles, value);
     }
 
     public override void OnNavigatedTo(NavigationContext navigationContext)
@@ -40,6 +40,6 @@ internal sealed class SocialLinksProfileViewModel(
         var socialLinkProfilesViewModels = socialLinkProfiles
             .Select(socialLinkProfile => SocialLinkProfileBindableModel.Create(containerProvider, socialLinkProfile));
 
-        SocialLinksProfiles = new ObservableCollection<SocialLinkProfileBindableModel>(socialLinkProfilesViewModels);
+        SocialLinkProfiles = new ObservableCollection<SocialLinkProfileBindableModel>(socialLinkProfilesViewModels);
     }
 }

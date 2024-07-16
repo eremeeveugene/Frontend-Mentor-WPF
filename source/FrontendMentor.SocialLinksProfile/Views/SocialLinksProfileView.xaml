@@ -41,7 +41,7 @@
                        TextAlignment="Center" />
 
             <ItemsControl Margin="0,8,0,0"
-                          ItemsSource="{Binding SocialLinksProfiles}"
+                          ItemsSource="{Binding SocialLinkProfiles}"
                           Style="{StaticResource SocialLinksProfilesItemsControlStyle}" />
         </StackPanel>
     </Border>

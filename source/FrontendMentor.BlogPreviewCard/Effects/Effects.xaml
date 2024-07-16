@@ -2,9 +2,13 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
 
-    <DropShadowEffect x:Key="BlogCardBorder.DropShadow.Effect"
+    <!--#region BlogPreviewCard-->
+
+    <DropShadowEffect x:Key="BlogPreviewCard.DropShadow.Effect"
                       po:Freeze="True"
                       BlurRadius="0"
                       ShadowDepth="11.31" />
+
+    <!--#endregion-->
 
 </ResourceDictionary>

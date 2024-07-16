@@ -19,21 +19,21 @@
 
     <!--#endregion-->
 
-    <!--#region QrCodeComponentWindowView-->
+    <!--#region QrCodeComponentView-->
 
-    <SolidColorBrush x:Key="QrCodeComponentWindowView.BodyTextBlock.Foreground.Brush"
+    <SolidColorBrush x:Key="QrCodeComponentView.BodyTextBlock.Foreground.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Grey.Color}" />
 
-    <SolidColorBrush x:Key="QrCodeComponentWindowView.QrCodeEllipse.Fill.Brush"
+    <SolidColorBrush x:Key="QrCodeComponentView.QrCodeEllipse.Fill.Brush"
                      po:Freeze="True"
                      Color="{StaticResource BlueShade.Color}" />
 
-    <SolidColorBrush x:Key="QrCodeComponentWindowView.QrCodeOuterBorder.Background.Brush"
+    <SolidColorBrush x:Key="QrCodeComponentView.QrCodeOuterBorder.Background.Brush"
                      po:Freeze="True"
                      Color="{StaticResource White.Color}" />
 
-    <SolidColorBrush x:Key="QrCodeComponentWindowView.QrCodeInnerRectangle.Background.Brush"
+    <SolidColorBrush x:Key="QrCodeComponentView.QrCodeInnerRectangle.Background.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Blue.Color}" />
 
