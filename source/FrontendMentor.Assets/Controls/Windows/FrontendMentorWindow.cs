@@ -9,8 +9,6 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.Assets.Constants;
-using Prism.Regions;
 using System.Windows;
 
 namespace FrontendMentor.Assets.Controls.Windows;
@@ -21,10 +19,5 @@ public class FrontendMentorWindow : Window
     {
         DefaultStyleKeyProperty.OverrideMetadata(typeof(FrontendMentorWindow),
             new FrameworkPropertyMetadata(typeof(FrontendMentorWindow)));
-    }
-
-    public FrontendMentorWindow()
-    {
-        RegionManager.SetRegionName(this, FrontedMentorRegionNames.Shell);
     }
 }

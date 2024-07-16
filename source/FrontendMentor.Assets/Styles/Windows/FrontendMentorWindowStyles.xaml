@@ -10,7 +10,6 @@
                 BorderThickness="{TemplateBinding BorderThickness}">
             <AdornerDecorator>
                 <ContentPresenter />
-                <!--<ContentControl regions:RegionManager.RegionName="{x:Static constants:FrontedMentorRegionNames.Shell}" />-->
             </AdornerDecorator>
         </Border>
     </ControlTemplate>
@@ -19,6 +18,7 @@
         <Setter Property="Template" Value="{StaticResource FrontendMentorWindowTemplate}" />
         <Setter Property="UseLayoutRounding" Value="True" />
         <Setter Property="WindowState" Value="Maximized" />
+        <Setter Property="regions:RegionManager.RegionName" Value="{x:Static constants:FrontedMentorRegionNames.Shell}" />
     </Style>
 
 </ResourceDictionary>

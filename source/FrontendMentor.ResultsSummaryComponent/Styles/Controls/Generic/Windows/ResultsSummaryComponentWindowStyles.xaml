@@ -14,8 +14,6 @@
         <Setter Property="Background" Value="{StaticResource ResultsSummaryComponentWindow.Background.Brush}" />
         <Setter Property="FontFamily" Value="{StaticResource HankenGroteskFontFamily}" />
         <Setter Property="Foreground" Value="{StaticResource ResultsSummaryComponentWindow.Foreground.Brush}" />
-        <Setter Property="MaxHeight" Value="1080" />
-        <Setter Property="MaxWidth" Value="1440" />
         <Setter Property="MinHeight" Value="1080" />
         <Setter Property="MinWidth" Value="1440" />
         <!--<Setter Property="ResizeMode" Value="NoResize" />

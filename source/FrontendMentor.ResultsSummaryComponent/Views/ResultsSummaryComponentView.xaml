@@ -17,7 +17,6 @@
 
         <DataTemplate x:Key="SummaryItemsControlItemContentTemplate" DataType="{x:Type models:SummaryItemModel}">
             <Grid>
-
                 <Rectangle x:Name="SummaryItemBorder"
                            Width="{Binding ActualWidth, ElementName=Canvas}"
                            Height="{Binding ActualHeight, ElementName=Canvas}"
