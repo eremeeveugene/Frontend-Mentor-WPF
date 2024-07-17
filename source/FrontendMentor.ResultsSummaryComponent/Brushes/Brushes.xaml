@@ -36,15 +36,28 @@
 
     <!--#region ResultsSummaryComponentView-->
 
-    <!--#region ResultsSummaryComponentView.YourResultTextBlock-->
-
     <SolidColorBrush x:Key="ResultsSummaryComponentView.YourResultTextBlock.Foreground.Brush"
                      po:Freeze="True"
                      Color="{StaticResource LightBlue.Color}" />
 
-    <!--#endregion-->
+    <SolidColorBrush x:Key="ResultsSummaryComponentView.NumberScoreTextBlock.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource White.Color}" />
 
-    <!--#region ResultsSummaryComponentView.SummaryItemsControl-->
+    <SolidColorBrush x:Key="ResultsSummaryComponentView.NumberScoreOf100TextBlock.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource LightBlue.Color}" />
+
+    <SolidColorBrush x:Key="ResultsSummaryComponentView.TextScoreTextBlock.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource White.Color}" />
+
+    <LinearGradientBrush x:Key="ResultsSummaryComponentView.NumberScoreEllipse.Fill.Brush" po:Freeze="True" StartPoint="0,0" EndPoint="0,1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#4D21C9" />
+            <GradientStop Offset="1" Color="#002521C9" />
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
 
     <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemBorder.Overlay.Background.Brush"
                      po:Freeze="True"
@@ -101,8 +114,6 @@
     <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemIconPath.Visual.Stroke.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Blue.Color}" />
-
-    <!--#endregion-->
 
     <!--#endregion-->
 

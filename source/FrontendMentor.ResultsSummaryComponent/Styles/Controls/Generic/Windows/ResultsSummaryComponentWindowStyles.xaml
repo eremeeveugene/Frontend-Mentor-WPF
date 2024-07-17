@@ -16,10 +16,7 @@
         <Setter Property="Foreground" Value="{StaticResource ResultsSummaryComponentWindow.Foreground.Brush}" />
         <Setter Property="MinHeight" Value="1080" />
         <Setter Property="MinWidth" Value="1440" />
-        <!--<Setter Property="ResizeMode" Value="NoResize" />
-        <Setter Property="WindowState" Value="Normal" />
-        <Setter Property="WindowStyle" Value="None" />-->
-        <!--<Setter Property="Title" Value="{x:Static properties:Resources.QrCodeComponentWindowTitle}" />-->
+        <Setter Property="Title" Value="Result Summary Component" />
     </Style>
 
 </ResourceDictionary>

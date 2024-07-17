@@ -20,7 +20,8 @@ internal class ResultSummaryService : IResultSummaryService
     {
         return new ResultSummaryModel
         {
-            Result = 76,
+            NumberScore = 76,
+            TextScore = "Great",
             ExceededPercent = 65,
             SummaryItems = new List<SummaryItemModel>
             {

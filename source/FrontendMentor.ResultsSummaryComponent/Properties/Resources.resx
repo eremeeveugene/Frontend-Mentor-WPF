@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ResultsSummaryComponentView_NumberScoreOf100TextBlock_Text" xml:space="preserve">
+    <value>of 100</value>
+  </data>
   <data name="ResultsSummaryComponentView_ResultTextBlock_Text" xml:space="preserve">
     <value>Your Result</value>
   </data>

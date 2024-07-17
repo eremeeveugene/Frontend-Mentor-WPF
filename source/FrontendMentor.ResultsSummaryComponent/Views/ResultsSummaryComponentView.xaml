@@ -128,8 +128,9 @@
             </Border.Background>
 
             <Border.Effect>
-                <DropShadowEffect BlurRadius="0"
+                <DropShadowEffect BlurRadius="60"
                                   Direction="270"
+                                  Opacity="0.15"
                                   ShadowDepth="30"
                                   Color="#3D6CEC" />
             </Border.Effect>
@@ -161,47 +162,27 @@
                     <Grid Width="200"
                           Height="200"
                           Margin="0,35,0,0">
-                        <Ellipse>
-                            <Ellipse.Fill>
-                                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                                    <LinearGradientBrush.GradientStops>
-                                        <GradientStop Color="#4D21C9" />
-                                        <GradientStop Offset="1" Color="#002521C9" />
-                                    </LinearGradientBrush.GradientStops>
-                                </LinearGradientBrush>
-                            </Ellipse.Fill>
-                        </Ellipse>
+                        <Ellipse Fill="{StaticResource ResultsSummaryComponentView.NumberScoreEllipse.Fill.Brush}" />
 
                         <StackPanel VerticalAlignment="Center">
-                            <TextBlock Style="{StaticResource Heading.XL.TextBlock.Style}"
-                                       Text="{Binding ResultSummary.ResultSummary.Result, FallbackValue={x:Static resx:Resources.TextBlock_Fallback_Text}, Mode=OneWay}"
-                                       TextAlignment="Center">
-                                <TextBlock.Foreground>
-                                    <SolidColorBrush Color="{StaticResource White.Color}" />
-                                </TextBlock.Foreground>
-
-                                <!--<Run BaselineAlignment="Bottom" Text="{Binding ResultSummary.ResultSummary.Result, FallbackValue={x:Static resx:Resources.TextBlock_Fallback_Text}, Mode=OneWay}" />-->
-                            </TextBlock>
+                            <TextBlock Foreground="{StaticResource ResultsSummaryComponentView.NumberScoreTextBlock.Foreground.Brush}"
+                                       Style="{StaticResource Heading.XL.TextBlock.Style}"
+                                       Text="{Binding ResultSummary.ResultSummary.NumberScore, FallbackValue={x:Static resx:Resources.TextBlock_Fallback_Text}, Mode=OneWay}"
+                                       TextAlignment="Center" />
 
                             <TextBlock Margin="0,4,0,0"
+                                       Foreground="{StaticResource ResultsSummaryComponentView.NumberScoreOf100TextBlock.Foreground.Brush}"
                                        Style="{StaticResource Body.Bold.TextBlock.Style}"
-                                       Text="of 100"
-                                       TextAlignment="Center">
-                                <TextBlock.Foreground>
-                                    <SolidColorBrush Color="{StaticResource LightBlue.Color}" />
-                                </TextBlock.Foreground>
-                            </TextBlock>
+                                       Text="{x:Static resx:Resources.ResultsSummaryComponentView_NumberScoreOf100TextBlock_Text}"
+                                       TextAlignment="Center" />
                         </StackPanel>
                     </Grid>
 
                     <StackPanel Margin="54,28,54,55">
-                        <TextBlock Style="{StaticResource Heading.L.TextBlock.Style}"
-                                   Text="Great"
-                                   TextAlignment="Center">
-                            <TextBlock.Foreground>
-                                <SolidColorBrush Color="{StaticResource White.Color}" />
-                            </TextBlock.Foreground>
-                        </TextBlock>
+                        <TextBlock Foreground="{StaticResource ResultsSummaryComponentView.TextScoreTextBlock.Foreground.Brush}"
+                                   Style="{StaticResource Heading.L.TextBlock.Style}"
+                                   Text="{Binding ResultSummary.ResultSummary.TextScore, FallbackValue={x:Static resx:Resources.TextBlock_Fallback_Text}}"
+                                   TextAlignment="Center" />
 
                         <TextBlock Margin="0,14,0,0"
                                    Style="{StaticResource Body.TextBlock.Style}"
@@ -235,6 +216,5 @@
             </StackPanel>
         </Grid>
     </Grid>
-
 
 </UserControl>
