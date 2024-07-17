@@ -27,7 +27,7 @@
 
     <LinearGradientBrush x:Key="Button.Background.MouseOver.Brush" po:Freeze="True" StartPoint="0,0" EndPoint="0,1">
         <LinearGradientBrush.GradientStops>
-            <GradientStop Color="#6943FF" />
+            <GradientStop Color="{StaticResource ElectricIndigo.Color}" />
             <GradientStop Offset="1" Color="{StaticResource Palatinate.Blue.Color}" />
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
@@ -35,6 +35,17 @@
     <!--#endregion-->
 
     <!--#region ResultsSummaryComponentView-->
+
+    <SolidColorBrush x:Key="ResultsSummaryComponentView.OuterBorder.Background.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource White.Color}" />
+
+    <LinearGradientBrush x:Key="ResultsSummaryComponentView.ResultBorder.Background.Brush" po:Freeze="True" StartPoint="0,0" EndPoint="0,1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="{StaticResource ElectricIndigo.Color}" />
+            <GradientStop Offset="1" Color="{StaticResource Palatinate.Blue.Color}" />
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
 
     <SolidColorBrush x:Key="ResultsSummaryComponentView.YourResultTextBlock.Foreground.Brush"
                      po:Freeze="True"
@@ -52,22 +63,24 @@
                      po:Freeze="True"
                      Color="{StaticResource White.Color}" />
 
+    <SolidColorBrush x:Key="ResultsSummaryComponentView.ContinueTextBlock.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource White.Color}" />
+
+    <SolidColorBrush x:Key="ResultsSummaryComponentView.PerformancePercentTextBlock.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource LightBlue.Color}" />
+
     <LinearGradientBrush x:Key="ResultsSummaryComponentView.NumberScoreEllipse.Fill.Brush" po:Freeze="True" StartPoint="0,0" EndPoint="0,1">
         <LinearGradientBrush.GradientStops>
-            <GradientStop Color="#4D21C9" />
-            <GradientStop Offset="1" Color="#002521C9" />
+            <GradientStop Color="{StaticResource Deep.Violet.Color}" />
+            <GradientStop Offset="1" Color="{StaticResource Transparent.Persian.Blue.Color}" />
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
 
-    <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemBorder.Overlay.Background.Brush"
-                     po:Freeze="True"
-                     Opacity="0.95"
-                     Color="{StaticResource White.Color}" />
-
     <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemBorder.Memory.Background.Brush"
                      po:Freeze="True"
-                     Opacity="95"
-                     Color="{StaticResource Yellow.Color}" />
+                     Color="#fefbf4" />
 
     <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemIconPath.Memory.Stroke.Brush"
                      po:Freeze="True"
@@ -79,8 +92,7 @@
 
     <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemBorder.Reaction.Background.Brush"
                      po:Freeze="True"
-                     Opacity="95"
-                     Color="{StaticResource Red.Color}" />
+                     Color="#fdf6f6" />
 
     <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemTextBlock.Reaction.Foreground.Brush"
                      po:Freeze="True"
@@ -92,8 +104,7 @@
 
     <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemBorder.Verbal.Background.Brush"
                      po:Freeze="True"
-                     Opacity="95"
-                     Color="{StaticResource Green.Color}" />
+                     Color="#f4fcf9" />
 
     <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemTextBlock.Verbal.Foreground.Brush"
                      po:Freeze="True"
@@ -105,7 +116,7 @@
 
     <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemBorder.Visual.Background.Brush"
                      po:Freeze="True"
-                     Color="{StaticResource Blue.Color}" />
+                     Color="#f3f4fd" />
 
     <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemTextBlock.Visual.Foreground.Brush"
                      po:Freeze="True"

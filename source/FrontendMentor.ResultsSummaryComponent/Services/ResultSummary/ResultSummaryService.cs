@@ -22,7 +22,7 @@ internal class ResultSummaryService : IResultSummaryService
         {
             NumberScore = 76,
             TextScore = "Great",
-            ExceededPercent = 65,
+            PerformancePercent = 65,
             SummaryItems = new List<SummaryItemModel>
             {
                 new() { SummaryItemType = SummaryItemType.Reaction, Value = 80 },

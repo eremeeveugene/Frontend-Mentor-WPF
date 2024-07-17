@@ -61,6 +61,15 @@ namespace FrontendMentor.ResultsSummaryComponent.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Continue.
+        /// </summary>
+        public static string ResultsSummaryComponentView_ContinueTextBlock_Text {
+            get {
+                return ResourceManager.GetString("ResultsSummaryComponentView_ContinueTextBlock_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to of 100.
         /// </summary>
         public static string ResultsSummaryComponentView_NumberScoreOf100TextBlock_Text {
@@ -70,11 +79,29 @@ namespace FrontendMentor.ResultsSummaryComponent.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your performance exceed {0}% of the people conducting the test here!.
+        /// </summary>
+        public static string ResultsSummaryComponentView_PerformanceTextBlock_StringFormat {
+            get {
+                return ResourceManager.GetString("ResultsSummaryComponentView_PerformanceTextBlock_StringFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your Result.
         /// </summary>
         public static string ResultsSummaryComponentView_ResultTextBlock_Text {
             get {
                 return ResourceManager.GetString("ResultsSummaryComponentView_ResultTextBlock_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Summary.
+        /// </summary>
+        public static string ResultsSummaryComponentView_SummaryTextBlock_Text {
+            get {
+                return ResourceManager.GetString("ResultsSummaryComponentView_SummaryTextBlock_Text", resourceCulture);
             }
         }
         

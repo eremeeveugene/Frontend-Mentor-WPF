@@ -15,6 +15,6 @@ internal class ResultSummaryModel
 {
     public int NumberScore { get; set; }
     public string TextScore { get; set; } = null!;
-    public int ExceededPercent { get; set; }
+    public int PerformancePercent { get; set; }
     public IEnumerable<SummaryItemModel> SummaryItems { get; set; } = null!;
 }
