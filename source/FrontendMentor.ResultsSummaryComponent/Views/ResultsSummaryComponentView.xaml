@@ -23,9 +23,8 @@
             <Border Grid.Column="0"
                     Background="{StaticResource ResultsSummaryComponentView.ResultBorder.Background.Brush}"
                     CornerRadius="32">
-                <StackPanel>
-                    <TextBlock Margin="0,38,0,0"
-                               Foreground="{StaticResource ResultsSummaryComponentView.YourResultTextBlock.Foreground.Brush}"
+                <StackPanel Margin="0,38,0,0">
+                    <TextBlock Foreground="{StaticResource ResultsSummaryComponentView.YourResultTextBlock.Foreground.Brush}"
                                Style="{StaticResource Heading.M.TextBlock.Style}"
                                Text="{x:Static properties:Resources.ResultsSummaryComponentView_ResultTextBlock_Text}"
                                TextAlignment="Center" />
@@ -49,7 +48,7 @@
                         </StackPanel>
                     </Grid>
 
-                    <StackPanel Margin="54,28,54,55">
+                    <StackPanel Margin="54,28,54,54">
                         <TextBlock Foreground="{StaticResource ResultsSummaryComponentView.TextScoreTextBlock.Foreground.Brush}"
                                    Style="{StaticResource Heading.L.TextBlock.Style}"
                                    Text="{Binding ResultSummary.ResultSummary.TextScore, FallbackValue={x:Static properties:Resources.TextBlock_Fallback_Text}}"
@@ -65,10 +64,8 @@
                 </StackPanel>
             </Border>
 
-            <StackPanel Grid.Column="1" Margin="40,0">
-                <TextBlock Margin="0,38,0,0"
-                           Style="{StaticResource Heading.M.TextBlock.Style}"
-                           Text="{x:Static properties:Resources.ResultsSummaryComponentView_SummaryTextBlock_Text}" />
+            <StackPanel Grid.Column="1" Margin="40,38,40,0">
+                <TextBlock Style="{StaticResource Heading.M.TextBlock.Style}" Text="{x:Static properties:Resources.ResultsSummaryComponentView_SummaryTextBlock_Text}" />
 
                 <ItemsControl Margin="0,28,0,0"
                               ItemsSource="{Binding ResultSummary.ResultSummary.SummaryItems, FallbackValue={x:Null}}"

@@ -57,6 +57,7 @@
 
     <SolidColorBrush x:Key="ResultsSummaryComponentView.NumberScoreOf100TextBlock.Foreground.Brush"
                      po:Freeze="True"
+                     Opacity="0.5168"
                      Color="{StaticResource LightBlue.Color}" />
 
     <SolidColorBrush x:Key="ResultsSummaryComponentView.TextScoreTextBlock.Foreground.Brush"

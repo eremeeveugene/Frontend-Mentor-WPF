@@ -13,13 +13,7 @@
     </ResourceDictionary.MergedDictionaries>
 
     <DataTemplate x:Key="SummaryItemsControlItemContentTemplate" DataType="{x:Type models:SummaryItemModel}">
-        <Grid>
-            <Rectangle x:Name="SummaryItemBorder"
-                       Width="{Binding ActualWidth, ElementName=Canvas}"
-                       Height="{Binding ActualHeight, ElementName=Canvas}"
-                       RadiusX="12"
-                       RadiusY="12" />
-
+        <Border x:Name="SummaryItemBorder" CornerRadius="12">
             <Grid Margin="16,0" VerticalAlignment="Center">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -32,9 +26,14 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <Path x:Name="SummaryItemIconPath"
-                          Grid.Column="0"
-                          VerticalAlignment="Center" />
+                    <Border Grid.Column="0"
+                            Width="20"
+                            Height="20">
+                        <Path x:Name="SummaryItemIconPath"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
+                              StrokeThickness="1.25" />
+                    </Border>
 
                     <TextBlock x:Name="SummaryItemTextBlock"
                                Grid.Column="1"
@@ -56,30 +55,30 @@
                     </TextBlock>
                 </StackPanel>
             </Grid>
-        </Grid>
+        </Border>
 
         <DataTemplate.Triggers>
             <DataTrigger Binding="{Binding SummaryItemType}" Value="{x:Static enums:SummaryItemType.Memory}">
+                <Setter TargetName="SummaryItemBorder" Property="Background" Value="{StaticResource ResultsSummaryComponentView.SummaryItemsControl.SummaryItemBorder.Memory.Background.Brush}" />
                 <Setter TargetName="SummaryItemIconPath" Property="Data" Value="{StaticResource Memory.Geometry}" />
-                <Setter TargetName="SummaryItemBorder" Property="Fill" Value="{StaticResource ResultsSummaryComponentView.SummaryItemsControl.SummaryItemBorder.Memory.Background.Brush}" />
                 <Setter TargetName="SummaryItemTextBlock" Property="Foreground" Value="{StaticResource ResultsSummaryComponentView.SummaryItemsControl.SummaryItemTextBlock.Memory.Foreground.Brush}" />
                 <Setter TargetName="SummaryItemIconPath" Property="Stroke" Value="{StaticResource ResultsSummaryComponentView.SummaryItemsControl.SummaryItemIconPath.Memory.Stroke.Brush}" />
             </DataTrigger>
             <DataTrigger Binding="{Binding SummaryItemType}" Value="{x:Static enums:SummaryItemType.Reaction}">
+                <Setter TargetName="SummaryItemBorder" Property="Background" Value="{StaticResource ResultsSummaryComponentView.SummaryItemsControl.SummaryItemBorder.Reaction.Background.Brush}" />
                 <Setter TargetName="SummaryItemIconPath" Property="Data" Value="{StaticResource Reaction.Geometry}" />
-                <Setter TargetName="SummaryItemBorder" Property="Fill" Value="{StaticResource ResultsSummaryComponentView.SummaryItemsControl.SummaryItemBorder.Reaction.Background.Brush}" />
                 <Setter TargetName="SummaryItemTextBlock" Property="Foreground" Value="{StaticResource ResultsSummaryComponentView.SummaryItemsControl.SummaryItemTextBlock.Reaction.Foreground.Brush}" />
                 <Setter TargetName="SummaryItemIconPath" Property="Stroke" Value="{StaticResource ResultsSummaryComponentView.SummaryItemsControl.SummaryItemIconPath.Reaction.Stroke.Brush}" />
             </DataTrigger>
             <DataTrigger Binding="{Binding SummaryItemType}" Value="{x:Static enums:SummaryItemType.Verbal}">
+                <Setter TargetName="SummaryItemBorder" Property="Background" Value="{StaticResource ResultsSummaryComponentView.SummaryItemsControl.SummaryItemBorder.Verbal.Background.Brush}" />
                 <Setter TargetName="SummaryItemIconPath" Property="Data" Value="{StaticResource Verbal.Geometry}" />
-                <Setter TargetName="SummaryItemBorder" Property="Fill" Value="{StaticResource ResultsSummaryComponentView.SummaryItemsControl.SummaryItemBorder.Verbal.Background.Brush}" />
                 <Setter TargetName="SummaryItemTextBlock" Property="Foreground" Value="{StaticResource ResultsSummaryComponentView.SummaryItemsControl.SummaryItemTextBlock.Verbal.Foreground.Brush}" />
                 <Setter TargetName="SummaryItemIconPath" Property="Stroke" Value="{StaticResource ResultsSummaryComponentView.SummaryItemsControl.SummaryItemIconPath.Verbal.Stroke.Brush}" />
             </DataTrigger>
             <DataTrigger Binding="{Binding SummaryItemType}" Value="{x:Static enums:SummaryItemType.Visual}">
+                <Setter TargetName="SummaryItemBorder" Property="Background" Value="{StaticResource ResultsSummaryComponentView.SummaryItemsControl.SummaryItemBorder.Visual.Background.Brush}" />
                 <Setter TargetName="SummaryItemIconPath" Property="Data" Value="{StaticResource Visual.Geometry}" />
-                <Setter TargetName="SummaryItemBorder" Property="Fill" Value="{StaticResource ResultsSummaryComponentView.SummaryItemsControl.SummaryItemBorder.Visual.Background.Brush}" />
                 <Setter TargetName="SummaryItemTextBlock" Property="Foreground" Value="{StaticResource ResultsSummaryComponentView.SummaryItemsControl.SummaryItemTextBlock.Visual.Foreground.Brush}" />
                 <Setter TargetName="SummaryItemIconPath" Property="Stroke" Value="{StaticResource ResultsSummaryComponentView.SummaryItemsControl.SummaryItemIconPath.Visual.Stroke.Brush}" />
             </DataTrigger>

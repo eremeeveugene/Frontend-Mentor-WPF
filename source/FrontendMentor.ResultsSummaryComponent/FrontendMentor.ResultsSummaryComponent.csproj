@@ -10,24 +10,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Fonts\HankenGrotesk\HankenGrotesk-Black.ttf" />
-    <None Remove="Fonts\HankenGrotesk\HankenGrotesk-BlackItalic.ttf" />
     <None Remove="Fonts\HankenGrotesk\HankenGrotesk-Bold.ttf" />
-    <None Remove="Fonts\HankenGrotesk\HankenGrotesk-BoldItalic.ttf" />
     <None Remove="Fonts\HankenGrotesk\HankenGrotesk-ExtraBold.ttf" />
-    <None Remove="Fonts\HankenGrotesk\HankenGrotesk-ExtraBoldItalic.ttf" />
-    <None Remove="Fonts\HankenGrotesk\HankenGrotesk-ExtraLight.ttf" />
-    <None Remove="Fonts\HankenGrotesk\HankenGrotesk-ExtraLightItalic.ttf" />
-    <None Remove="Fonts\HankenGrotesk\HankenGrotesk-Italic.ttf" />
-    <None Remove="Fonts\HankenGrotesk\HankenGrotesk-Light.ttf" />
-    <None Remove="Fonts\HankenGrotesk\HankenGrotesk-LightItalic.ttf" />
     <None Remove="Fonts\HankenGrotesk\HankenGrotesk-Medium.ttf" />
-    <None Remove="Fonts\HankenGrotesk\HankenGrotesk-MediumItalic.ttf" />
-    <None Remove="Fonts\HankenGrotesk\HankenGrotesk-Regular.ttf" />
-    <None Remove="Fonts\HankenGrotesk\HankenGrotesk-SemiBold.ttf" />
-    <None Remove="Fonts\HankenGrotesk\HankenGrotesk-SemiBoldItalic.ttf" />
-    <None Remove="Fonts\HankenGrotesk\HankenGrotesk-Thin.ttf" />
-    <None Remove="Fonts\HankenGrotesk\HankenGrotesk-ThinItalic.ttf" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,60 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-Black.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-BlackItalic.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-Bold.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-BoldItalic.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-ExtraBold.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-ExtraBoldItalic.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-ExtraLight.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-ExtraLightItalic.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-Italic.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-Light.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-LightItalic.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-Medium.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-MediumItalic.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-Regular.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-SemiBold.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-SemiBoldItalic.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-Thin.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-ThinItalic.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
+    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-Bold.ttf" />
+    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-ExtraBold.ttf" />
+    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-Medium.ttf" />
   </ItemGroup>
 
   <ItemGroup>
