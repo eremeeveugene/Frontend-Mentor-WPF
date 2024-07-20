@@ -44,6 +44,20 @@
         <Setter Property="Template" Value="{StaticResource ButtonTemplate}" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="helpers:BorderPropertiesHelper.CornerRadius" Value="28" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <DropShadowEffect 
+                                          BlurRadius="60"
+                                          Direction="270"
+                                          Opacity="0.15"
+                                          ShadowDepth="30"
+                                          Color="{StaticResource Steel.Blue.Color}" />
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
 </ResourceDictionary>

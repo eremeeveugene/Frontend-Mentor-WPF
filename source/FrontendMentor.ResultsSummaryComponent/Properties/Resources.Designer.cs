@@ -106,6 +106,15 @@ namespace FrontendMentor.ResultsSummaryComponent.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Result Summary Component.
+        /// </summary>
+        public static string ResultSummaryComponentWindow_Title {
+            get {
+                return ResourceManager.GetString("ResultSummaryComponentWindow_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Memory.
         /// </summary>
         public static string SummaryItemType_Memory {
