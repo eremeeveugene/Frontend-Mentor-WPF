@@ -35,13 +35,13 @@
                         <Ellipse Fill="{StaticResource ResultsSummaryComponentView.NumberScoreEllipse.Fill.Brush}" />
 
                         <StackPanel VerticalAlignment="Center">
-                            <TextBlock Foreground="{StaticResource ResultsSummaryComponentView.NumberScoreTextBlock.Foreground.Brush}"
+                            <TextBlock Margin="0,12,0,0"
+                                       Foreground="{StaticResource ResultsSummaryComponentView.NumberScoreTextBlock.Foreground.Brush}"
                                        Style="{StaticResource Heading.XL.TextBlock.Style}"
                                        Text="{Binding ResultSummary.ResultSummary.NumberScore, FallbackValue={x:Static properties:Resources.TextBlock_Fallback_Text}, Mode=OneWay}"
                                        TextAlignment="Center" />
 
-                            <TextBlock Margin="0,4,0,0"
-                                       Foreground="{StaticResource ResultsSummaryComponentView.NumberScoreOf100TextBlock.Foreground.Brush}"
+                            <TextBlock Foreground="{StaticResource ResultsSummaryComponentView.NumberScoreOf100TextBlock.Foreground.Brush}"
                                        Style="{StaticResource Body.Bold.TextBlock.Style}"
                                        Text="{x:Static properties:Resources.ResultsSummaryComponentView_NumberScoreOf100TextBlock_Text}"
                                        TextAlignment="Center" />

@@ -15,8 +15,9 @@
            BasedOn="{StaticResource Heading.L.TextBlock.Style}"
            TargetType="{x:Type TextBlock}">
         <Setter Property="FontSize" Value="72" />
-        <!--<Setter Property="LineHeight" Value="72" />
-        <Setter Property="LineStackingStrategy" Value="MaxHeight" />-->
+        <Setter Property="FontWeight" Value="ExtraBold" />
+        <Setter Property="LineHeight" Value="72" />
+        <Setter Property="LineStackingStrategy" Value="BlockLineHeight" />
     </Style>
 
     <Style x:Key="Body.TextBlock.Style" TargetType="{x:Type TextBlock}">
