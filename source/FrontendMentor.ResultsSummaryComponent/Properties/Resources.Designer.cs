@@ -97,6 +97,15 @@ namespace FrontendMentor.ResultsSummaryComponent.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to / 100.
+        /// </summary>
+        public static string ResultsSummaryComponentView_SummaryItemsControl_NumberScoreOf100TextBlock_Text {
+            get {
+                return ResourceManager.GetString("ResultsSummaryComponentView_SummaryItemsControl_NumberScoreOf100TextBlock_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Summary.
         /// </summary>
         public static string ResultsSummaryComponentView_SummaryTextBlock_Text {

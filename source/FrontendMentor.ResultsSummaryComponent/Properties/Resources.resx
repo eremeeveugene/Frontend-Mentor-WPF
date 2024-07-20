@@ -129,6 +129,9 @@
   <data name="ResultsSummaryComponentView_ResultTextBlock_Text" xml:space="preserve">
     <value>Your Result</value>
   </data>
+  <data name="ResultsSummaryComponentView_SummaryItemsControl_NumberScoreOf100TextBlock_Text" xml:space="preserve">
+    <value>/ 100</value>
+  </data>
   <data name="ResultsSummaryComponentView_SummaryTextBlock_Text" xml:space="preserve">
     <value>Summary</value>
   </data>

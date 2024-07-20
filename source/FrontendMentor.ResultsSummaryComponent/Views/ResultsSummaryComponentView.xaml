@@ -69,7 +69,7 @@
 
                 <ItemsControl Margin="0,28,0,0"
                               ItemsSource="{Binding ResultSummary.ResultSummary.SummaryItems, FallbackValue={x:Null}}"
-                              Style="{StaticResource SummaryItemsControlStyle}" />
+                              Style="{StaticResource ResultsSummaryComponentView.SummaryItemsControl.Style}" />
 
                 <Button Margin="0,41,0,0">
                     <TextBlock Foreground="{StaticResource ResultsSummaryComponentView.ContinueTextBlock.Foreground.Brush}"

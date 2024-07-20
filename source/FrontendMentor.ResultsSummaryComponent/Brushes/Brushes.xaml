@@ -83,7 +83,7 @@
                      po:Freeze="True"
                      Color="#fefbf4" />
 
-    <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemIconPath.Memory.Stroke.Brush"
+    <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemIcon.Memory.Stroke.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Yellow.Color}" />
 
@@ -99,7 +99,7 @@
                      po:Freeze="True"
                      Color="{StaticResource Red.Color}" />
 
-    <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemIconPath.Reaction.Stroke.Brush"
+    <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemIcon.Reaction.Stroke.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Red.Color}" />
 
@@ -111,7 +111,7 @@
                      po:Freeze="True"
                      Color="{StaticResource Green.Color}" />
 
-    <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemIconPath.Verbal.Stroke.Brush"
+    <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemIcon.Verbal.Stroke.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Green.Color}" />
 
@@ -123,9 +123,14 @@
                      po:Freeze="True"
                      Color="{StaticResource Blue.Color}" />
 
-    <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemIconPath.Visual.Stroke.Brush"
+    <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemIcon.Visual.Stroke.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Blue.Color}" />
+
+    <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.NumberScoreOf100TextBlock.Foreground"
+                     po:Freeze="True"
+                     Opacity="0.5"
+                     Color="{StaticResource DarkNavy.Color}" />
 
     <!--#endregion-->
 
