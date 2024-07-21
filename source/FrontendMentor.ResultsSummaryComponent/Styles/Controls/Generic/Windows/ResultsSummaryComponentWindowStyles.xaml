@@ -17,7 +17,7 @@
         <Setter Property="Foreground" Value="{StaticResource ResultsSummaryComponentWindow.Foreground.Brush}" />
         <Setter Property="MinHeight" Value="1080" />
         <Setter Property="MinWidth" Value="1440" />
-        <Setter Property="Title" Value="{x:Static properties:Resources.ResultSummaryComponentWindow_Title}" />
+        <Setter Property="Title" Value="{x:Static properties:Resources.ResultsSummaryComponentWindow_Title}" />
     </Style>
 
 </ResourceDictionary>

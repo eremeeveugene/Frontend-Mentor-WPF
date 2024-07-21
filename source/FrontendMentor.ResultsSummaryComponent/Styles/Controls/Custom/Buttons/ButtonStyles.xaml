@@ -9,12 +9,6 @@
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Effects/Effects.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="Button.MouseOverBorder.Style" TargetType="{x:Type Border}">
-        <Setter Property="Background" Value="{StaticResource Button.Background.MouseOver.Brush}" />
-        <Setter Property="Effect" Value="{StaticResource Button.DropShadowEffect}" />
-        <Setter Property="Opacity" Value="0" />
-    </Style>
-
     <ControlTemplate x:Key="Button.Template" TargetType="{x:Type Button}">
         <Grid>
             <Border Background="{TemplateBinding Background}"
@@ -22,18 +16,24 @@
                     BorderThickness="{TemplateBinding BorderThickness}"
                     CornerRadius="{TemplateBinding helpers:BorderPropertiesHelper.CornerRadius}" />
 
-            <Border x:Name="MouseOverBorder"
+            <Border x:Name="ActiveBorder"
+                    Background="{StaticResource Button.Background.MouseOver.Brush}"
                     CornerRadius="{TemplateBinding helpers:BorderPropertiesHelper.CornerRadius}"
-                    Style="{StaticResource Button.MouseOverBorder.Style}" />
+                    Effect="{StaticResource Button.DropShadowEffect}"
+                    Opacity="0" />
 
             <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
 
             <VisualStateManager.VisualStateGroups>
-                <VisualStateGroup>
-                    <VisualState x:Name="Normal" Storyboard="{StaticResource ButtonMouseOverBorder.Normal.Storyboard}" />
-                    <VisualState x:Name="MouseOver" Storyboard="{StaticResource ButtonMouseOverBorder.MouseOver.Storyboard}" />
-                    <VisualState x:Name="Unfocused" Storyboard="{StaticResource ButtonMouseOverBorder.Normal.Storyboard}" />
-                    <VisualState x:Name="Focused" Storyboard="{StaticResource ButtonMouseOverBorder.Focused.Storyboard}" />
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" Storyboard="{StaticResource Button.ActiveBorder.Normal.Storyboard}" />
+                    <VisualState x:Name="MouseOver" Storyboard="{StaticResource Button.ActiveBorder.MouseOver.Storyboard}" />
+                    <VisualState x:Name="Pressed" Storyboard="{StaticResource Button.ActiveBorder.Pressed.Storyboard}" />
+                    <VisualState x:Name="Disabled" />
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="FocusStates">
+                    <VisualState x:Name="Unfocused" Storyboard="{StaticResource Button.ActiveBorder.Unfocused.Storyboard}" />
+                    <VisualState x:Name="Focused" Storyboard="{StaticResource Button.ActiveBorder.Focused.Storyboard}" />
                 </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
         </Grid>

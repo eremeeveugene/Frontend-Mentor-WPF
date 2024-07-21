@@ -117,9 +117,9 @@ namespace FrontendMentor.ResultsSummaryComponent.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Result Summary Component.
         /// </summary>
-        public static string ResultSummaryComponentWindow_Title {
+        public static string ResultsSummaryComponentWindow_Title {
             get {
-                return ResourceManager.GetString("ResultSummaryComponentWindow_Title", resourceCulture);
+                return ResourceManager.GetString("ResultsSummaryComponentWindow_Title", resourceCulture);
             }
         }
         
