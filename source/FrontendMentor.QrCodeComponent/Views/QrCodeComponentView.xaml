@@ -4,15 +4,17 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:properties="clr-namespace:FrontendMentor.QrCodeComponent.Properties"
+             xmlns:viewModels="clr-namespace:FrontendMentor.QrCodeComponent.ViewModels"
+             d:DataContext="{d:DesignInstance viewModels:QrCodeComponentViewModel}"
              x:ClassModifier="internal"
              mc:Ignorable="d">
 
     <Border Width="320"
-            Padding="16"
+            Padding="16,16,16,40"
             VerticalAlignment="Center"
             Background="{StaticResource QrCodeComponentView.QrCodeOuterBorder.Background.Brush}"
             CornerRadius="20"
-            Effect="{StaticResource QrCodeComponentWindowView.QrCodeOuterBorder.DropShadowEffect}">
+            Effect="{StaticResource QrCodeComponentView.QrCodeOuterBorder.DropShadowEffect}">
         <StackPanel>
             <Grid Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}">
                 <Rectangle x:Name="InnerBorder"
@@ -50,16 +52,16 @@
                        Source="{StaticResource QrCode.Image}" />
             </Grid>
 
-            <StackPanel Margin="0,24">
+            <StackPanel Margin="16,24,16,0">
                 <TextBlock Style="{StaticResource Heading.TextBlock.Style}"
-                           Text="{x:Static properties:Resources.QrCodeComponentHeading}"
+                           Text="{x:Static properties:Resources.QrCodeComponentView_HeadingTextBlock_Text}"
                            TextAlignment="Center"
                            TextWrapping="Wrap" />
 
-                <TextBlock Margin="16,16,16,0"
+                <TextBlock Margin="0,16,0,0"
                            Foreground="{StaticResource QrCodeComponentView.BodyTextBlock.Foreground.Brush}"
                            Style="{StaticResource Body.TextBlock.Style}"
-                           Text="{x:Static properties:Resources.QrCodeComponentBody}"
+                           Text="{x:Static properties:Resources.QrCodeComponentView_CaptionTextBlock_Text}"
                            TextAlignment="Center"
                            TextWrapping="Wrap" />
             </StackPanel>

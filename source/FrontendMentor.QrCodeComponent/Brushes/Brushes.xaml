@@ -11,11 +11,11 @@
 
     <SolidColorBrush x:Key="QrCodeComponentWindow.Foreground.Brush"
                      po:Freeze="True"
-                     Color="{StaticResource DarkNavy.Color}" />
+                     Color="{StaticResource Slate.900.Color}" />
 
     <SolidColorBrush x:Key="QrCodeComponentWindow.Background.Brush"
                      po:Freeze="True"
-                     Color="{StaticResource LightGrey.Color}" />
+                     Color="{StaticResource Slate.300.Color}" />
 
     <!--#endregion-->
 
@@ -23,7 +23,7 @@
 
     <SolidColorBrush x:Key="QrCodeComponentView.BodyTextBlock.Foreground.Brush"
                      po:Freeze="True"
-                     Color="{StaticResource Grey.Color}" />
+                     Color="{StaticResource Slate.500.Color}" />
 
     <SolidColorBrush x:Key="QrCodeComponentView.QrCodeEllipse.Fill.Brush"
                      po:Freeze="True"
@@ -36,6 +36,14 @@
     <SolidColorBrush x:Key="QrCodeComponentView.QrCodeInnerRectangle.Background.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Blue.Color}" />
+
+    <!--#endregion-->
+
+    <!--#region Images-->
+
+    <SolidColorBrush x:Key="QrCode.Image.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource White.Color}" />
 
     <!--#endregion-->
 

@@ -10,15 +10,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Fonts\Outfit\Outfit-Black.ttf" />
     <None Remove="Fonts\Outfit\Outfit-Bold.ttf" />
-    <None Remove="Fonts\Outfit\Outfit-ExtraBold.ttf" />
-    <None Remove="Fonts\Outfit\Outfit-ExtraLight.ttf" />
-    <None Remove="Fonts\Outfit\Outfit-Light.ttf" />
-    <None Remove="Fonts\Outfit\Outfit-Medium.ttf" />
     <None Remove="Fonts\Outfit\Outfit-Regular.ttf" />
-    <None Remove="Fonts\Outfit\Outfit-SemiBold.ttf" />
-    <None Remove="Fonts\Outfit\Outfit-Thin.ttf" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,31 +29,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Fonts\Outfit\Outfit-Black.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="Fonts\Outfit\Outfit-Bold.ttf">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Fonts\Outfit\Outfit-ExtraBold.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Fonts\Outfit\Outfit-ExtraLight.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Fonts\Outfit\Outfit-Light.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Fonts\Outfit\Outfit-Medium.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="Fonts\Outfit\Outfit-Regular.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Fonts\Outfit\Outfit-SemiBold.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Fonts\Outfit\Outfit-Thin.ttf">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
