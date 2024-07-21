@@ -12,7 +12,7 @@
     <Storyboard x:Key="ResultsSummaryComponentView.ContinueButton.ActiveBorder.Normal.Storyboard" po:Freeze="True">
         <DoubleAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                          Storyboard.TargetName="ActiveBorder"
-                         Storyboard.TargetProperty="(UIElement.Opacity)"
+                         Storyboard.TargetProperty="(Border.Opacity)"
                          To="0"
                          Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
@@ -20,7 +20,7 @@
     <Storyboard x:Key="ResultsSummaryComponentView.ContinueButton.ActiveBorder.MouseOver.Storyboard" po:Freeze="True">
         <DoubleAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                          Storyboard.TargetName="ActiveBorder"
-                         Storyboard.TargetProperty="(UIElement.Opacity)"
+                         Storyboard.TargetProperty="(Border.Opacity)"
                          To="1"
                          Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
@@ -28,7 +28,7 @@
     <Storyboard x:Key="ResultsSummaryComponentView.ContinueButton.ActiveBorder.Pressed.Storyboard" po:Freeze="True">
         <DoubleAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                          Storyboard.TargetName="ActiveBorder"
-                         Storyboard.TargetProperty="(UIElement.Opacity)"
+                         Storyboard.TargetProperty="(Border.Opacity)"
                          To="1"
                          Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
@@ -36,7 +36,7 @@
     <Storyboard x:Key="ResultsSummaryComponentView.ContinueButton.ActiveBorder.Unfocused.Storyboard" po:Freeze="True">
         <DoubleAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                          Storyboard.TargetName="ActiveBorder"
-                         Storyboard.TargetProperty="(UIElement.Opacity)"
+                         Storyboard.TargetProperty="(Border.Opacity)"
                          To="0"
                          Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
@@ -44,7 +44,7 @@
     <Storyboard x:Key="ResultsSummaryComponentView.ContinueButton.ActiveBorder.Focused.Storyboard" po:Freeze="True">
         <DoubleAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                          Storyboard.TargetName="ActiveBorder"
-                         Storyboard.TargetProperty="(UIElement.Opacity)"
+                         Storyboard.TargetProperty="(Border.Opacity)"
                          To="1"
                          Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
