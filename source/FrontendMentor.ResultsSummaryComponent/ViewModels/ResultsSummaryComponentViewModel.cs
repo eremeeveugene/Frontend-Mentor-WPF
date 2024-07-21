@@ -12,11 +12,13 @@
 using FrontendMentor.Core.ViewModels;
 using FrontendMentor.ResultsSummaryComponent.BindableModels;
 using FrontendMentor.ResultsSummaryComponent.Services.ResultSummary;
+using Prism.Ioc;
 using Prism.Regions;
 
 namespace FrontendMentor.ResultsSummaryComponent.ViewModels;
 
 internal sealed class ResultsSummaryComponentViewModel(
+    IContainerProvider containerProvider,
     IResultSummaryService resultSummaryService)
     : NavigationViewModelBase
 {
@@ -34,6 +36,7 @@ internal sealed class ResultsSummaryComponentViewModel(
 
         var resultSummary = resultSummaryService.GetResultSummary();
 
-        ResultSummary = new ResultSummaryBindableModel(resultSummary);
+        ResultSummary = ResultSummaryBindableModel.Create(containerProvider,
+            new ResultSummaryBindableModel.Parameters { ResultSummary = resultSummary });
     }
 }

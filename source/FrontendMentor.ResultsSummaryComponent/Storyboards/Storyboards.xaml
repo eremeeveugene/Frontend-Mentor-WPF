@@ -9,14 +9,27 @@
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Colors/Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Storyboard x:Key="ButtonMouseOverBorder.MouseOver.Storyboard" po:Freeze="True">
+    <Storyboard x:Key="ButtonMouseOverBorder.MouseOver.Storyboard"
+                po:Freeze="True"
+                TargetName="MouseOverBorder">
         <DoubleAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                          Storyboard.TargetProperty="(UIElement.Opacity)"
                          To="1"
                          Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 
-    <Storyboard x:Key="ButtonMouseOverBorder.Normal.Storyboard" po:Freeze="True">
+    <Storyboard x:Key="ButtonMouseOverBorder.Focused.Storyboard"
+                po:Freeze="True"
+                TargetName="MouseOverBorder">
+        <DoubleAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
+                         Storyboard.TargetProperty="(UIElement.Opacity)"
+                         To="1"
+                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
+    </Storyboard>
+
+    <Storyboard x:Key="ButtonMouseOverBorder.Normal.Storyboard"
+                po:Freeze="True"
+                TargetName="MouseOverBorder">
         <DoubleAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                          Storyboard.TargetProperty="(UIElement.Opacity)"
                          To="0"

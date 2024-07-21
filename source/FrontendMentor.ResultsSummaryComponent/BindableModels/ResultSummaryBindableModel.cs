@@ -10,11 +10,38 @@
 // --------------------------------------------------------------------------------
 
 using FrontendMentor.ResultsSummaryComponent.Models;
+using Prism.Ioc;
 using Prism.Mvvm;
 
 namespace FrontendMentor.ResultsSummaryComponent.BindableModels;
 
-internal sealed class ResultSummaryBindableModel(ResultSummaryModel resultSummary) : BindableBase
+internal sealed class ResultSummaryBindableModel(
+    IContainerProvider containerProvider,
+    ResultSummaryBindableModel.Parameters parameters) : BindableBase
 {
-    public ResultSummaryModel ResultSummary { get; } = resultSummary;
+    public int NumberScore { get; } = parameters.ResultSummary.NumberScore;
+
+    public string TextScore { get; } = parameters.ResultSummary.TextScore;
+
+    public int PerformancePercent { get; } = parameters.ResultSummary.PerformancePercent;
+
+    public List<SummaryItemBindableModel> SummaryItems { get; } =
+        GetSummaryItems(containerProvider, parameters.ResultSummary.SummaryItems);
+
+    private static List<SummaryItemBindableModel> GetSummaryItems(IContainerProvider containerProvider,
+        IEnumerable<SummaryItemModel> summaryItems)
+    {
+        return summaryItems.Select(summaryItem => SummaryItemBindableModel.Create(containerProvider,
+            new SummaryItemBindableModel.Parameters { SummaryItem = summaryItem })).ToList();
+    }
+
+    public static ResultSummaryBindableModel Create(IContainerProvider containerProvider, Parameters parameters)
+    {
+        return containerProvider.Resolve<ResultSummaryBindableModel>((typeof(Parameters), parameters));
+    }
+
+    public class Parameters
+    {
+        public ResultSummaryModel ResultSummary { get; set; } = null!;
+    }
 }

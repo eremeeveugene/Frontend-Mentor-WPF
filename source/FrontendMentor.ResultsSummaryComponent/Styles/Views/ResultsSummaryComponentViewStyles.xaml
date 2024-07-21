@@ -1,9 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:bindableModels="clr-namespace:FrontendMentor.ResultsSummaryComponent.BindableModels"
                     xmlns:converters="clr-namespace:FrontendMentor.Assets.Converters;assembly=FrontendMentor.Assets"
                     xmlns:converters1="clr-namespace:FrontendMentor.ResultsSummaryComponent.Converters"
                     xmlns:icons="clr-namespace:FrontendMentor.Assets.Controls.Icons;assembly=FrontendMentor.Assets"
-                    xmlns:models="clr-namespace:FrontendMentor.ResultsSummaryComponent.Models"
                     xmlns:panels="clr-namespace:FrontendMentor.Assets.Controls.Panels;assembly=FrontendMentor.Assets"
                     xmlns:properties="clr-namespace:FrontendMentor.ResultsSummaryComponent.Properties"
                     xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
@@ -14,7 +14,7 @@
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Styles/Controls/Custom/TextBlocks/TextBlockStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <DataTemplate x:Key="ResultsSummaryComponentView.SummaryItemsControl.ItemContentTemplate" DataType="{x:Type models:SummaryItemModel}">
+    <DataTemplate x:Key="ResultsSummaryComponentView.SummaryItemsControl.ItemContentTemplate" DataType="{x:Type bindableModels:SummaryItemBindableModel}">
         <Border Padding="16,0"
                 Background="{Binding SummaryItemType, Converter={converters1:SummaryItemTypeToValueConverter MemoryValue={StaticResource ResultsSummaryComponentView.SummaryItemsControl.SummaryItemBorder.Memory.Background.Brush}, ReactionValue={StaticResource ResultsSummaryComponentView.SummaryItemsControl.SummaryItemBorder.Reaction.Background.Brush}, VerbalValue={StaticResource ResultsSummaryComponentView.SummaryItemsControl.SummaryItemBorder.Verbal.Background.Brush}, VisualValue={StaticResource ResultsSummaryComponentView.SummaryItemsControl.SummaryItemBorder.Visual.Background.Brush}}}"
                 CornerRadius="12">

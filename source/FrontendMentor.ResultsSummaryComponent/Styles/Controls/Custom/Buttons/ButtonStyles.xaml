@@ -6,58 +6,48 @@
     <ResourceDictionary.MergedDictionaries>
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Brushes/Brushes.xaml" />
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Storyboards/Storyboards.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Effects/Effects.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="ButtonMouseOverBorderStyle" TargetType="{x:Type Border}">
+    <Style x:Key="Button.MouseOverBorder.Style" TargetType="{x:Type Border}">
         <Setter Property="Background" Value="{StaticResource Button.Background.MouseOver.Brush}" />
+        <Setter Property="Effect" Value="{StaticResource Button.DropShadowEffect}" />
         <Setter Property="Opacity" Value="0" />
-        <Style.Triggers>
-            <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}" Value="True">
-                <DataTrigger.EnterActions>
-                    <BeginStoryboard Storyboard="{StaticResource ButtonMouseOverBorder.MouseOver.Storyboard}" />
-                </DataTrigger.EnterActions>
-                <DataTrigger.ExitActions>
-                    <BeginStoryboard Storyboard="{StaticResource ButtonMouseOverBorder.Normal.Storyboard}" />
-                </DataTrigger.ExitActions>
-            </DataTrigger>
-        </Style.Triggers>
     </Style>
 
-    <ControlTemplate x:Key="ButtonTemplate" TargetType="{x:Type Button}">
+    <ControlTemplate x:Key="Button.Template" TargetType="{x:Type Button}">
         <Grid>
             <Border Background="{TemplateBinding Background}"
                     BorderBrush="{TemplateBinding BorderBrush}"
                     BorderThickness="{TemplateBinding BorderThickness}"
                     CornerRadius="{TemplateBinding helpers:BorderPropertiesHelper.CornerRadius}" />
 
-            <Border CornerRadius="{TemplateBinding helpers:BorderPropertiesHelper.CornerRadius}" Style="{StaticResource ButtonMouseOverBorderStyle}" />
+            <Border x:Name="MouseOverBorder"
+                    CornerRadius="{TemplateBinding helpers:BorderPropertiesHelper.CornerRadius}"
+                    Style="{StaticResource Button.MouseOverBorder.Style}" />
 
             <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup>
+                    <VisualState x:Name="Normal" Storyboard="{StaticResource ButtonMouseOverBorder.Normal.Storyboard}" />
+                    <VisualState x:Name="MouseOver" Storyboard="{StaticResource ButtonMouseOverBorder.MouseOver.Storyboard}" />
+                    <VisualState x:Name="Unfocused" Storyboard="{StaticResource ButtonMouseOverBorder.Normal.Storyboard}" />
+                    <VisualState x:Name="Focused" Storyboard="{StaticResource ButtonMouseOverBorder.Focused.Storyboard}" />
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
         </Grid>
     </ControlTemplate>
 
     <Style TargetType="{x:Type Button}">
         <Setter Property="Background" Value="{StaticResource Button.Background.Brush}" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Height" Value="56" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="OverridesDefaultStyle" Value="True" />
-        <Setter Property="Template" Value="{StaticResource ButtonTemplate}" />
+        <Setter Property="Template" Value="{StaticResource Button.Template}" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="helpers:BorderPropertiesHelper.CornerRadius" Value="28" />
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Effect">
-                    <Setter.Value>
-                        <DropShadowEffect 
-                                          BlurRadius="60"
-                                          Direction="270"
-                                          Opacity="0.15"
-                                          ShadowDepth="30"
-                                          Color="{StaticResource Steel.Blue.Color}" />
-                    </Setter.Value>
-                </Setter>
-            </Trigger>
-        </Style.Triggers>
     </Style>
 
 </ResourceDictionary>

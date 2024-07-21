@@ -38,7 +38,7 @@
                             <TextBlock Margin="0,12,0,0"
                                        Foreground="{StaticResource ResultsSummaryComponentView.NumberScoreTextBlock.Foreground.Brush}"
                                        Style="{StaticResource Heading.XL.TextBlock.Style}"
-                                       Text="{Binding ResultSummary.ResultSummary.NumberScore, FallbackValue={x:Static properties:Resources.TextBlock_Fallback_Text}, Mode=OneWay}"
+                                       Text="{Binding ResultSummary.NumberScore, FallbackValue={x:Static properties:Resources.TextBlock_Fallback_Text}, Mode=OneWay}"
                                        TextAlignment="Center" />
 
                             <TextBlock Foreground="{StaticResource ResultsSummaryComponentView.NumberScoreOf100TextBlock.Foreground.Brush}"
@@ -51,13 +51,13 @@
                     <StackPanel Margin="54,28,54,54">
                         <TextBlock Foreground="{StaticResource ResultsSummaryComponentView.TextScoreTextBlock.Foreground.Brush}"
                                    Style="{StaticResource Heading.L.TextBlock.Style}"
-                                   Text="{Binding ResultSummary.ResultSummary.TextScore, FallbackValue={x:Static properties:Resources.TextBlock_Fallback_Text}}"
+                                   Text="{Binding ResultSummary.TextScore, FallbackValue={x:Static properties:Resources.TextBlock_Fallback_Text}}"
                                    TextAlignment="Center" />
 
                         <TextBlock Margin="0,14,0,0"
                                    Foreground="{StaticResource ResultsSummaryComponentView.PerformancePercentTextBlock.Foreground.Brush}"
                                    Style="{StaticResource Body.TextBlock.Style}"
-                                   Text="{Binding ResultSummary.ResultSummary.PerformancePercent, StringFormat={x:Static properties:Resources.ResultsSummaryComponentView_PerformanceTextBlock_StringFormat}, FallbackValue={x:Static properties:Resources.TextBlock_Fallback_Text}}"
+                                   Text="{Binding ResultSummary.PerformancePercent, StringFormat={x:Static properties:Resources.ResultsSummaryComponentView_PerformanceTextBlock_StringFormat}, FallbackValue={x:Static properties:Resources.TextBlock_Fallback_Text}}"
                                    TextAlignment="Center"
                                    TextWrapping="Wrap" />
                     </StackPanel>
@@ -68,7 +68,7 @@
                 <TextBlock Style="{StaticResource Heading.M.TextBlock.Style}" Text="{x:Static properties:Resources.ResultsSummaryComponentView_SummaryTextBlock_Text}" />
 
                 <ItemsControl Margin="0,28,0,0"
-                              ItemsSource="{Binding ResultSummary.ResultSummary.SummaryItems, FallbackValue={x:Null}}"
+                              ItemsSource="{Binding ResultSummary.SummaryItems, FallbackValue={x:Null}}"
                               Style="{StaticResource ResultsSummaryComponentView.SummaryItemsControl.Style}" />
 
                 <Button Margin="0,41,0,0">

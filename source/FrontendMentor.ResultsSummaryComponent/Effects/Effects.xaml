@@ -7,6 +7,14 @@
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Colors/Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
+    <DropShadowEffect x:Key="Button.DropShadowEffect"
+                      po:Freeze="True"
+                      BlurRadius="60"
+                      Direction="270"
+                      Opacity="0.15"
+                      ShadowDepth="30"
+                      Color="{StaticResource Steel.Blue.Color}" />
+
     <DropShadowEffect x:Key="ResultsSummaryComponentView.OuterBorder.DropShadowEffect"
                       po:Freeze="True"
                       BlurRadius="60"
