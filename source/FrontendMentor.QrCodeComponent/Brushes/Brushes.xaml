@@ -41,7 +41,7 @@
 
     <!--#region Images-->
 
-    <SolidColorBrush x:Key="QrCode.Image.Brush"
+    <SolidColorBrush x:Key="QrCodeImage.Brush"
                      po:Freeze="True"
                      Color="{StaticResource White.Color}" />
 

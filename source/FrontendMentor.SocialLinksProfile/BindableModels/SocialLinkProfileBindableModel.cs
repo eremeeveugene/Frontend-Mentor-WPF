@@ -9,34 +9,47 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.Core.Services.Processes;
+using FrontendMentor.Core.Services.BitmapImages;
 using FrontendMentor.SocialLinksProfile.Models;
-using Prism.Commands;
 using Prism.Ioc;
 using Prism.Mvvm;
-using System.Windows.Input;
+using System.Windows.Media.Imaging;
 
 namespace FrontendMentor.SocialLinksProfile.BindableModels;
 
 internal class SocialLinkProfileBindableModel(
-    IProcessesService processesService,
-    SocialLinkProfileModel socialLinkProfile) : BindableBase
+    IContainerProvider containerProvider,
+    IBitmapImagesService bitmapImagesService,
+    SocialLinkProfileBindableModel.Parameters parameters) : BindableBase
 {
-    private ICommand? _openLinkCommand;
+    public string FirstName { get; } = parameters.SocialLinkProfile.FirstName;
 
-    public string Name => socialLinkProfile.Name;
+    public string LastName { get; } = parameters.SocialLinkProfile.LastName;
 
-    public ICommand OpenLinkCommand => _openLinkCommand ??= new DelegateCommand(OpenLink);
+    public string Title { get; } = parameters.SocialLinkProfile.Title;
 
-    private void OpenLink()
+    public string Location { get; } = parameters.SocialLinkProfile.Location;
+
+    public BitmapImage ProfileImage { get; } =
+        bitmapImagesService.GetBitmapImageFromBase64String(parameters.SocialLinkProfile.ProfileImageBase64);
+
+    public List<SocialLinkBindableModel> SocialLinks { get; } =
+        GetSocialLinks(containerProvider, parameters.SocialLinkProfile.SocialLinks);
+
+    private static List<SocialLinkBindableModel> GetSocialLinks(IContainerProvider containerProvider,
+        IEnumerable<SocialLinkModel> socialLinks)
     {
-        processesService.StartProcess(socialLinkProfile.Link);
+        return socialLinks.Select(socialLink => SocialLinkBindableModel.Create(containerProvider,
+            new SocialLinkBindableModel.Parameters { SocialLink = socialLink })).ToList();
     }
 
-    public static SocialLinkProfileBindableModel Create(IContainerProvider containerProvider,
-        SocialLinkProfileModel socialLinkProfile)
+    public static SocialLinkProfileBindableModel Create(IContainerProvider containerProvider, Parameters parameters)
     {
-        return containerProvider.Resolve<SocialLinkProfileBindableModel>((typeof(SocialLinkProfileModel),
-            socialLinkProfile));
+        return containerProvider.Resolve<SocialLinkProfileBindableModel>((typeof(Parameters), parameters));
+    }
+
+    public class Parameters
+    {
+        public SocialLinkProfileModel SocialLinkProfile { get; set; } = null!;
     }
 }

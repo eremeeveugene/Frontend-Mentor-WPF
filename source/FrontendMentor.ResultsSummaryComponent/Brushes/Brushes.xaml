@@ -19,21 +19,6 @@
 
     <!--#endregion-->
 
-    <!--#region Button-->
-
-    <SolidColorBrush x:Key="Button.Background.Brush"
-                     po:Freeze="True"
-                     Color="{StaticResource DarkNavy.Color}" />
-
-    <LinearGradientBrush x:Key="Button.Background.MouseOver.Brush" po:Freeze="True" StartPoint="0,0" EndPoint="0,1">
-        <LinearGradientBrush.GradientStops>
-            <GradientStop Color="{StaticResource ElectricIndigo.Color}" />
-            <GradientStop Offset="1" Color="{StaticResource Palatinate.Blue.Color}" />
-        </LinearGradientBrush.GradientStops>
-    </LinearGradientBrush>
-
-    <!--#endregion-->
-
     <!--#region ResultsSummaryComponentView-->
 
     <SolidColorBrush x:Key="ResultsSummaryComponentView.OuterBorder.Background.Brush"
@@ -76,6 +61,17 @@
         <LinearGradientBrush.GradientStops>
             <GradientStop Color="{StaticResource Deep.Violet.Color}" />
             <GradientStop Offset="1" Color="{StaticResource Transparent.Persian.Blue.Color}" />
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="ResultsSummaryComponentView.ContinueButton.Background.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource DarkNavy.Color}" />
+
+    <LinearGradientBrush x:Key="ResultsSummaryComponentView.ContinueButton.Background.MouseOver.Brush" po:Freeze="True" StartPoint="0,0" EndPoint="0,1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="{StaticResource ElectricIndigo.Color}" />
+            <GradientStop Offset="1" Color="{StaticResource Palatinate.Blue.Color}" />
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
 

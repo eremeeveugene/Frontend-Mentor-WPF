@@ -1,9 +1,9 @@
 ﻿<UserControl x:Class="FrontendMentor.SocialLinksProfile.Views.SocialLinksProfileView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:constants="clr-namespace:FrontendMentor.Core.Constants;assembly=FrontendMentor.Core"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:properties="clr-namespace:FrontendMentor.SocialLinksProfile.Properties"
              xmlns:viewModels="clr-namespace:FrontendMentor.SocialLinksProfile.ViewModels"
              d:DataContext="{d:DesignInstance viewModels:SocialLinksProfileViewModel}"
              x:ClassModifier="internal"
@@ -20,29 +20,31 @@
                      Height="88"
                      HorizontalAlignment="Center">
                 <Ellipse.Fill>
-                    <ImageBrush ImageSource="{StaticResource Profile.Image}" />
+                    <ImageBrush ImageSource="{Binding SocialLinkProfile.ProfileImage, FallbackValue={x:Null}}" />
                 </Ellipse.Fill>
             </Ellipse>
 
             <TextBlock Margin="0,24,0,0"
                        Style="{StaticResource Heading.TextBlock.Style}"
-                       Text="{x:Static properties:Resources.SocialLinksProfileFullName}"
-                       TextAlignment="Center" />
+                       TextAlignment="Center">
+                <Run Text="{Binding SocialLinkProfile.FirstName, Mode=OneWay, FallbackValue={x:Static constants:Signs.Minus}}" />
+                <Run Text="{Binding SocialLinkProfile.LastName, Mode=OneWay, FallbackValue={x:Static constants:Signs.Minus}}" />
+            </TextBlock>
 
             <TextBlock Margin="0,4,0,0"
                        Foreground="{StaticResource SocialLinksProfileView.LocationTextBlock.Foreground.Brush}"
                        Style="{StaticResource Body.Bold.TextBlock.Style}"
-                       Text="{x:Static properties:Resources.SocialLinksProfileLocation}"
+                       Text="{Binding SocialLinkProfile.Location, FallbackValue={x:Static constants:Signs.Minus}}"
                        TextAlignment="Center" />
 
             <TextBlock Margin="0,24,0,0"
                        Style="{StaticResource Body.Regular.TextBlock.Style}"
-                       Text="{x:Static properties:Resources.SocialLinksProfileProfessionalTitleAndInterest}"
+                       Text="{Binding SocialLinkProfile.Title, FallbackValue={x:Static constants:Signs.Minus}}"
                        TextAlignment="Center" />
 
-            <ItemsControl Margin="0,8,0,0"
-                          ItemsSource="{Binding SocialLinkProfiles}"
-                          Style="{StaticResource SocialLinksProfilesItemsControlStyle}" />
+            <ItemsControl Margin="0,24,0,0"
+                          ItemsSource="{Binding SocialLinkProfile.SocialLinks, FallbackValue={x:Null}}"
+                          Style="{StaticResource SocialLinksProfileView.SocialLinksItemsControl.Style}" />
         </StackPanel>
     </Border>
 </UserControl>

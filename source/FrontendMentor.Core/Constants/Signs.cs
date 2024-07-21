@@ -9,13 +9,9 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using System.Windows.Media.Imaging;
+namespace FrontendMentor.Core.Constants;
 
-namespace FrontendMentor.Core.Services.BitmapImages;
-
-public interface IBitmapImagesService
+public static class Signs
 {
-    BitmapImage GetBitmapImage(Uri uri);
-    BitmapImage GetBitmapImage(string uriString);
-    BitmapImage GetBitmapImageFromBase64String(string base64String);
+    public const string Minus = "-";
 }

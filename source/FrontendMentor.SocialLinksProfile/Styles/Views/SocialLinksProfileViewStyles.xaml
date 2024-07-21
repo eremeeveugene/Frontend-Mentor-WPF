@@ -10,7 +10,7 @@
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Styles/Controls/TextBlocks/TextBlockStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <ControlTemplate x:Key="SocialLinkButtonTemplate" TargetType="{x:Type Button}">
+    <ControlTemplate x:Key="SocialLinksProfileView.SocialLinkButton.Template" TargetType="{x:Type Button}">
         <Border Padding="{TemplateBinding Padding}"
                 Background="{TemplateBinding Background}"
                 BorderBrush="{TemplateBinding BorderBrush}"
@@ -20,15 +20,15 @@
         </Border>
     </ControlTemplate>
 
-    <Style x:Key="SocialLinkProfileButtonStyle" TargetType="{x:Type Button}">
+    <Style x:Key="SocialLinksProfileView.SocialLinkButton.Style" TargetType="{x:Type Button}">
         <Setter Property="Background" Value="{StaticResource SocialLinksProfileView.SocialLinkButton.Background.Brush}" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Foreground" Value="{StaticResource SocialLinksProfileView.SocialLinkButton.Foreground.Brush}" />
-        <Setter Property="HorizontalContentAlignment" Value="{x:Static HorizontalAlignment.Center}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="Padding" Value="12" />
-        <Setter Property="Template" Value="{StaticResource SocialLinkButtonTemplate}" />
-        <Setter Property="VerticalContentAlignment" Value="{x:Static VerticalAlignment.Center}" />
+        <Setter Property="Template" Value="{StaticResource SocialLinksProfileView.SocialLinkButton.Template}" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="helpers:BorderPropertiesHelper.CornerRadius" Value="8" />
         <Style.Triggers>
             <EventTrigger RoutedEvent="{x:Static Button.MouseEnterEvent}">
@@ -36,19 +36,16 @@
                     <BeginStoryboard Storyboard="{StaticResource SocialLinksProfileView.SocialLinkButton.MouseOver.Storyboard}" />
                 </EventTrigger.Actions>
             </EventTrigger>
-
             <EventTrigger RoutedEvent="{x:Static Button.GotFocusEvent}">
                 <EventTrigger.Actions>
-                    <BeginStoryboard Storyboard="{StaticResource SocialLinksProfileView.SocialLinkButton.MouseOver.Storyboard}" />
+                    <BeginStoryboard Storyboard="{StaticResource SocialLinksProfileView.SocialLinkButton.Focused.Storyboard}" />
                 </EventTrigger.Actions>
             </EventTrigger>
-
             <EventTrigger RoutedEvent="{x:Static Button.LostFocusEvent}">
                 <EventTrigger.Actions>
                     <BeginStoryboard Storyboard="{StaticResource SocialLinksProfileView.SocialLinkButton.Normal.Storyboard}" />
                 </EventTrigger.Actions>
             </EventTrigger>
-
             <EventTrigger RoutedEvent="{x:Static Button.MouseLeaveEvent}">
                 <EventTrigger.Actions>
                     <BeginStoryboard Storyboard="{StaticResource SocialLinksProfileView.SocialLinkButton.Normal.Storyboard}" />
@@ -57,24 +54,24 @@
         </Style.Triggers>
     </Style>
 
-    <DataTemplate x:Key="SocialLinksProfilesItemsControlItemContentTemplate" DataType="{x:Type bindableModels:SocialLinkProfileBindableModel}">
-        <Button Command="{Binding OpenLinkCommand}" Style="{StaticResource SocialLinkProfileButtonStyle}">
+    <DataTemplate x:Key="SocialLinksProfileView.SocialLinksItemsControl.ItemContentTemplate" DataType="{x:Type bindableModels:SocialLinkBindableModel}">
+        <Button Command="{Binding OpenLinkCommand}" Style="{StaticResource SocialLinksProfileView.SocialLinkButton.Style}">
             <TextBlock Style="{StaticResource Body.Bold.TextBlock.Style}" Text="{Binding Name}" />
         </Button>
     </DataTemplate>
 
-    <Style x:Key="SocialLinksProfilesItemsControlItemContainerStyle" TargetType="{x:Type ContentPresenter}">
-        <Setter Property="ContentTemplate" Value="{StaticResource SocialLinksProfilesItemsControlItemContentTemplate}" />
+    <Style x:Key="SocialLinksProfileView.SocialLinksItemsControl.ItemContainerStyle" TargetType="{x:Type ContentPresenter}">
+        <Setter Property="ContentTemplate" Value="{StaticResource SocialLinksProfileView.SocialLinksItemsControl.ItemContentTemplate}" />
     </Style>
 
-    <ItemsPanelTemplate x:Key="SocialLinksProfilesItemsControlItemsPanelTemplate">
+    <ItemsPanelTemplate x:Key="SocialLinksProfileView.SocialLinksItemsControl.ItemsPanelTemplate">
         <panels:SpacingStackPanel Spacing="16" />
     </ItemsPanelTemplate>
 
-    <Style x:Key="SocialLinksProfilesItemsControlStyle" TargetType="{x:Type ItemsControl}">
+    <Style x:Key="SocialLinksProfileView.SocialLinksItemsControl.Style" TargetType="{x:Type ItemsControl}">
         <Setter Property="Focusable" Value="False" />
-        <Setter Property="ItemContainerStyle" Value="{StaticResource SocialLinksProfilesItemsControlItemContainerStyle}" />
-        <Setter Property="ItemsPanel" Value="{StaticResource SocialLinksProfilesItemsControlItemsPanelTemplate}" />
+        <Setter Property="ItemContainerStyle" Value="{StaticResource SocialLinksProfileView.SocialLinksItemsControl.ItemContainerStyle}" />
+        <Setter Property="ItemsPanel" Value="{StaticResource SocialLinksProfileView.SocialLinksItemsControl.ItemsPanelTemplate}" />
     </Style>
 
 </ResourceDictionary>

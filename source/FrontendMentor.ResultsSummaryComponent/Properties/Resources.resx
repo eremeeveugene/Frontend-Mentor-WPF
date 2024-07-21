@@ -150,7 +150,4 @@
   <data name="SummaryItemType_Visual" xml:space="preserve">
     <value>Visual</value>
   </data>
-  <data name="TextBlock_Fallback_Text" xml:space="preserve">
-    <value>-</value>
-  </data>
 </root>

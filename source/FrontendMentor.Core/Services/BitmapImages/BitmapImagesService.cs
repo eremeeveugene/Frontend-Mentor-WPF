@@ -9,6 +9,7 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
+using System.IO;
 using System.Windows.Media.Imaging;
 
 namespace FrontendMentor.Core.Services.BitmapImages;
@@ -27,5 +28,22 @@ internal class BitmapImagesService : IBitmapImagesService
     public BitmapImage GetBitmapImage(string uriString)
     {
         return GetBitmapImage(new Uri(uriString, UriKind.RelativeOrAbsolute));
+    }
+
+    public BitmapImage GetBitmapImageFromBase64String(string base64String)
+    {
+        var imageBytes = Convert.FromBase64String(base64String);
+
+        using var memoryStream = new MemoryStream(imageBytes);
+
+        var bitmapImage = new BitmapImage();
+
+        bitmapImage.BeginInit();
+        bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
+        bitmapImage.StreamSource = memoryStream;
+        bitmapImage.EndInit();
+        bitmapImage.Freeze();
+
+        return bitmapImage;
     }
 }

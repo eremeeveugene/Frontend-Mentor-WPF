@@ -11,7 +11,7 @@
 
 using FrontendMentor.SocialLinksProfile.Constants;
 using FrontendMentor.SocialLinksProfile.Controls.Windows;
-using FrontendMentor.SocialLinksProfile.Services.SocialLinksProfiles;
+using FrontendMentor.SocialLinksProfile.Services.SocialLinkProfiles;
 using FrontendMentor.SocialLinksProfile.Views;
 using Prism.Ioc;
 using System.Windows;
@@ -24,7 +24,7 @@ internal partial class App
     {
         base.RegisterTypes(containerRegistry);
 
-        containerRegistry.Register<ISocialLinksProfilesService, SocialLinksProfilesService>();
+        containerRegistry.Register<ISocialLinkProfilesService, SocialLinkProfilesService>();
         containerRegistry.RegisterForNavigation<SocialLinksProfileView>(SocialLinksProfileViewNames
             .SocialLinksProfile);
     }

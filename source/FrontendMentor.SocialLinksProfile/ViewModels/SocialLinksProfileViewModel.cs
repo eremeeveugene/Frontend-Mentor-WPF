@@ -11,35 +11,32 @@
 
 using FrontendMentor.Core.ViewModels;
 using FrontendMentor.SocialLinksProfile.BindableModels;
-using FrontendMentor.SocialLinksProfile.Services.SocialLinksProfiles;
+using FrontendMentor.SocialLinksProfile.Services.SocialLinkProfiles;
 using Prism.Ioc;
 using Prism.Regions;
-using System.Collections.ObjectModel;
 
 namespace FrontendMentor.SocialLinksProfile.ViewModels;
 
 internal sealed class SocialLinksProfileViewModel(
-    ISocialLinksProfilesService socialLinksProfilesService,
+    ISocialLinkProfilesService socialLinksProfilesService,
     IContainerProvider containerProvider) :
     NavigationViewModelBase
 {
-    private ObservableCollection<SocialLinkProfileBindableModel>? _socialLinkProfiles;
+    private SocialLinkProfileBindableModel? _socialLinkProfile;
 
-    public ObservableCollection<SocialLinkProfileBindableModel>? SocialLinkProfiles
+    public SocialLinkProfileBindableModel? SocialLinkProfile
     {
-        get => _socialLinkProfiles;
-        private set => SetProperty(ref _socialLinkProfiles, value);
+        get => _socialLinkProfile;
+        private set => SetProperty(ref _socialLinkProfile, value);
     }
 
     public override void OnNavigatedTo(NavigationContext navigationContext)
     {
         base.OnNavigatedTo(navigationContext);
 
-        var socialLinkProfiles = socialLinksProfilesService.GetSocialLinkProfiles();
+        var socialLinkProfile = socialLinksProfilesService.GetSocialLinkProfile();
 
-        var socialLinkProfilesViewModels = socialLinkProfiles
-            .Select(socialLinkProfile => SocialLinkProfileBindableModel.Create(containerProvider, socialLinkProfile));
-
-        SocialLinkProfiles = new ObservableCollection<SocialLinkProfileBindableModel>(socialLinkProfilesViewModels);
+        SocialLinkProfile = SocialLinkProfileBindableModel.Create(containerProvider,
+            new SocialLinkProfileBindableModel.Parameters { SocialLinkProfile = socialLinkProfile });
     }
 }

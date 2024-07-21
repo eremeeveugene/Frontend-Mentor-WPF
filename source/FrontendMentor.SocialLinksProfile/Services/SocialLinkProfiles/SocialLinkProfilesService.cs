@@ -11,9 +11,22 @@
 
 using FrontendMentor.SocialLinksProfile.Models;
 
-namespace FrontendMentor.SocialLinksProfile.Services.SocialLinksProfiles;
+namespace FrontendMentor.SocialLinksProfile.Services.SocialLinkProfiles;
 
-internal interface ISocialLinksProfilesService
+internal class SocialLinkProfilesService : ISocialLinkProfilesService
 {
-    IEnumerable<SocialLinkProfileModel> GetSocialLinkProfiles();
+    public SocialLinkProfileModel GetSocialLinkProfile()
+    {
+        return new SocialLinkProfileModel
+        {
+            SocialLinks = new List<SocialLinkModel>
+            {
+                new() { Name = "GitHub", Link = "https://github.com/" },
+                new() { Name = "Frontend Mentor", Link = "https://frontendmentor.io/" },
+                new() { Name = "LinkedIn", Link = "https://linkedin.com/" },
+                new() { Name = "Twitter", Link = "https://twitter.com/" },
+                new() { Name = "Instagram", Link = "https://instagram.com/" }
+            }
+        };
+    }
 }

@@ -158,14 +158,5 @@ namespace FrontendMentor.ResultsSummaryComponent.Properties {
                 return ResourceManager.GetString("SummaryItemType_Visual", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to -.
-        /// </summary>
-        public static string TextBlock_Fallback_Text {
-            get {
-                return ResourceManager.GetString("TextBlock_Fallback_Text", resourceCulture);
-            }
-        }
     }
 }

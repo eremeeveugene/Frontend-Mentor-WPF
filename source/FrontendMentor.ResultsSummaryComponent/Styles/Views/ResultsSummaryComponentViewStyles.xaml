@@ -3,6 +3,7 @@
                     xmlns:bindableModels="clr-namespace:FrontendMentor.ResultsSummaryComponent.BindableModels"
                     xmlns:converters="clr-namespace:FrontendMentor.Assets.Converters;assembly=FrontendMentor.Assets"
                     xmlns:converters1="clr-namespace:FrontendMentor.ResultsSummaryComponent.Converters"
+                    xmlns:helpers="clr-namespace:FrontendMentor.Assets.Helpers;assembly=FrontendMentor.Assets"
                     xmlns:icons="clr-namespace:FrontendMentor.Assets.Controls.Icons;assembly=FrontendMentor.Assets"
                     xmlns:panels="clr-namespace:FrontendMentor.Assets.Controls.Panels;assembly=FrontendMentor.Assets"
                     xmlns:properties="clr-namespace:FrontendMentor.ResultsSummaryComponent.Properties"
@@ -11,8 +12,51 @@
     <ResourceDictionary.MergedDictionaries>
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Brushes/Brushes.xaml" />
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Geometries/Geometries.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Effects/Effects.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Storyboards/Storyboards.xaml" />
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Styles/Controls/Custom/TextBlocks/TextBlockStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
+
+    <ControlTemplate x:Key="ResultsSummaryComponentView.ContinueButton.Template" TargetType="{x:Type Button}">
+        <Grid>
+            <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding helpers:BorderPropertiesHelper.CornerRadius}" />
+
+            <Border x:Name="ActiveBorder"
+                    Background="{StaticResource ResultsSummaryComponentView.ContinueButton.Background.MouseOver.Brush}"
+                    CornerRadius="{TemplateBinding helpers:BorderPropertiesHelper.CornerRadius}"
+                    Effect="{StaticResource Button.DropShadowEffect}"
+                    Opacity="0" />
+
+            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" Storyboard="{StaticResource ResultsSummaryComponentView.ContinueButton.ActiveBorder.Normal.Storyboard}" />
+                    <VisualState x:Name="MouseOver" Storyboard="{StaticResource ResultsSummaryComponentView.ContinueButton.ActiveBorder.MouseOver.Storyboard}" />
+                    <VisualState x:Name="Pressed" Storyboard="{StaticResource ResultsSummaryComponentView.ContinueButton.ActiveBorder.Pressed.Storyboard}" />
+                    <VisualState x:Name="Disabled" />
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="FocusStates">
+                    <VisualState x:Name="Unfocused" Storyboard="{StaticResource ResultsSummaryComponentView.ContinueButton.ActiveBorder.Unfocused.Storyboard}" />
+                    <VisualState x:Name="Focused" Storyboard="{StaticResource ResultsSummaryComponentView.ContinueButton.ActiveBorder.Focused.Storyboard}" />
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Grid>
+    </ControlTemplate>
+
+    <Style x:Key="ResultsSummaryComponentView.ContinueButton.Style" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{StaticResource ResultsSummaryComponentView.ContinueButton.Background.Brush}" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Height" Value="56" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Template" Value="{StaticResource ResultsSummaryComponentView.ContinueButton.Template}" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="helpers:BorderPropertiesHelper.CornerRadius" Value="28" />
+    </Style>
 
     <DataTemplate x:Key="ResultsSummaryComponentView.SummaryItemsControl.ItemContentTemplate" DataType="{x:Type bindableModels:SummaryItemBindableModel}">
         <Border Padding="16,0"

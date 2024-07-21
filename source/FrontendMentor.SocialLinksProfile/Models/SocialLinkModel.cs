@@ -9,13 +9,10 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using System.Windows.Media.Imaging;
+namespace FrontendMentor.SocialLinksProfile.Models;
 
-namespace FrontendMentor.Core.Services.BitmapImages;
-
-public interface IBitmapImagesService
+internal class SocialLinkModel
 {
-    BitmapImage GetBitmapImage(Uri uri);
-    BitmapImage GetBitmapImage(string uriString);
-    BitmapImage GetBitmapImageFromBase64String(string base64String);
+    public string Link { get; set; } = null!;
+    public string Name { get; set; } = null!;
 }
