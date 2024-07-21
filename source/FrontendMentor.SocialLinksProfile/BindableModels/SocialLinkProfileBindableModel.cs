@@ -31,7 +31,7 @@ internal class SocialLinkProfileBindableModel(
     public string Location { get; } = parameters.SocialLinkProfile.Location;
 
     public BitmapImage ProfileImage { get; } =
-        bitmapImagesService.GetBitmapImageFromBase64String(parameters.SocialLinkProfile.ProfileImageBase64);
+        bitmapImagesService.GetBitmapImageFromBase64String(parameters.SocialLinkProfile.ProfileImageBase64String);
 
     public List<SocialLinkBindableModel> SocialLinks { get; } =
         GetSocialLinks(containerProvider, parameters.SocialLinkProfile.SocialLinks);

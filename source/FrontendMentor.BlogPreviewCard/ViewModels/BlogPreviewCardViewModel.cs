@@ -34,8 +34,8 @@ internal sealed class BlogPreviewCardViewModel(
     {
         base.OnNavigatedTo(navigationContext);
 
-        var blogModel = blogsService.GetBlog();
+        var blog = blogsService.GetBlog();
 
-        Blog = BlogBindableModel.Create(containerProvider, blogModel);
+        Blog = BlogBindableModel.Create(containerProvider, new BlogBindableModel.Parameters { Blog = blog });
     }
 }

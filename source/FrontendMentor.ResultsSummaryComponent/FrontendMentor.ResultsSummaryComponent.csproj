@@ -10,9 +10,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Fonts\HankenGrotesk\HankenGrotesk-Black.ttf" />
+    <None Remove="Fonts\HankenGrotesk\HankenGrotesk-BlackItalic.ttf" />
     <None Remove="Fonts\HankenGrotesk\HankenGrotesk-Bold.ttf" />
+    <None Remove="Fonts\HankenGrotesk\HankenGrotesk-BoldItalic.ttf" />
     <None Remove="Fonts\HankenGrotesk\HankenGrotesk-ExtraBold.ttf" />
+    <None Remove="Fonts\HankenGrotesk\HankenGrotesk-ExtraBoldItalic.ttf" />
+    <None Remove="Fonts\HankenGrotesk\HankenGrotesk-ExtraLight.ttf" />
+    <None Remove="Fonts\HankenGrotesk\HankenGrotesk-ExtraLightItalic.ttf" />
+    <None Remove="Fonts\HankenGrotesk\HankenGrotesk-Italic.ttf" />
+    <None Remove="Fonts\HankenGrotesk\HankenGrotesk-Light.ttf" />
+    <None Remove="Fonts\HankenGrotesk\HankenGrotesk-LightItalic.ttf" />
     <None Remove="Fonts\HankenGrotesk\HankenGrotesk-Medium.ttf" />
+    <None Remove="Fonts\HankenGrotesk\HankenGrotesk-MediumItalic.ttf" />
+    <None Remove="Fonts\HankenGrotesk\HankenGrotesk-Regular.ttf" />
+    <None Remove="Fonts\HankenGrotesk\HankenGrotesk-SemiBold.ttf" />
+    <None Remove="Fonts\HankenGrotesk\HankenGrotesk-SemiBoldItalic.ttf" />
+    <None Remove="Fonts\HankenGrotesk\HankenGrotesk-Thin.ttf" />
+    <None Remove="Fonts\HankenGrotesk\HankenGrotesk-ThinItalic.ttf" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,9 +39,24 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-Black.ttf" />
+    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-BlackItalic.ttf" />
     <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-Bold.ttf" />
+    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-BoldItalic.ttf" />
     <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-ExtraBold.ttf" />
+    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-ExtraBoldItalic.ttf" />
+    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-ExtraLight.ttf" />
+    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-ExtraLightItalic.ttf" />
+    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-Italic.ttf" />
+    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-Light.ttf" />
+    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-LightItalic.ttf" />
     <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-Medium.ttf" />
+    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-MediumItalic.ttf" />
+    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-Regular.ttf" />
+    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-SemiBold.ttf" />
+    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-SemiBoldItalic.ttf" />
+    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-Thin.ttf" />
+    <Resource Include="Fonts\HankenGrotesk\HankenGrotesk-ThinItalic.ttf" />
   </ItemGroup>
 
   <ItemGroup>

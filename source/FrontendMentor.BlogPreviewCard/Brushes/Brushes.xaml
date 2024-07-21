@@ -11,7 +11,7 @@
 
     <SolidColorBrush x:Key="BlogPreviewCardWindow.Foreground.Brush"
                      po:Freeze="True"
-                     Color="{StaticResource Black.Color}" />
+                     Color="{StaticResource Grey.950.Color}" />
 
     <SolidColorBrush x:Key="BlogPreviewCardWindow.Background.Brush"
                      po:Freeze="True"
@@ -19,23 +19,27 @@
 
     <!--#endregion-->
 
-    <!--#region BlogPreviewCard-->
+    <!--#region BlogPreviewCardView-->
 
-    <SolidColorBrush x:Key="BlogPreviewCard.Border.Brush"
+    <SolidColorBrush x:Key="BlogPreviewCardView.RootBorder.Border.Brush"
                      po:Freeze="True"
-                     Color="{StaticResource Black.Color}" />
+                     Color="{StaticResource Grey.950.Color}" />
 
-    <SolidColorBrush x:Key="BlogPreviewCard.Background.Brush"
+    <SolidColorBrush x:Key="BlogPreviewCardView.RootBorder.Background.Brush"
                      po:Freeze="True"
-                     Color="{StaticResource PureWhite.Color}" />
+                     Color="{StaticResource White.Color}" />
 
-    <SolidColorBrush x:Key="BlogPreviewCard.CategoryBorder.Background.Brush"
+    <SolidColorBrush x:Key="BlogPreviewCardView.TitleTextBlock.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Grey.950.Color}" />
+
+    <SolidColorBrush x:Key="BlogPreviewCardView.CategoryBorder.Background.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Yellow.Color}" />
 
-    <SolidColorBrush x:Key="BlogPreviewCard.AuthorTextBlock.Foreground.Brush"
+    <SolidColorBrush x:Key="BlogPreviewCardView.AuthorTextBlock.Foreground.Brush"
                      po:Freeze="True"
-                     Color="{StaticResource Grey.Color}" />
+                     Color="{StaticResource Grey.500.Color}" />
 
     <!--#endregion-->
 

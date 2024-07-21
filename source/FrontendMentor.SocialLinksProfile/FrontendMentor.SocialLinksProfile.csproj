@@ -10,9 +10,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Fonts\Inter\Inter-Black.ttf" />
     <None Remove="Fonts\Inter\Inter-Bold.ttf" />
+    <None Remove="Fonts\Inter\Inter-ExtraBold.ttf" />
+    <None Remove="Fonts\Inter\Inter-ExtraLight.ttf" />
+    <None Remove="Fonts\Inter\Inter-Light.ttf" />
+    <None Remove="Fonts\Inter\Inter-Medium.ttf" />
     <None Remove="Fonts\Inter\Inter-Regular.ttf" />
     <None Remove="Fonts\Inter\Inter-SemiBold.ttf" />
+    <None Remove="Fonts\Inter\Inter-Thin.ttf" />
   </ItemGroup>
 
   <ItemGroup>
@@ -51,9 +57,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Fonts\Inter\Inter-Black.ttf" />
     <Resource Include="Fonts\Inter\Inter-Bold.ttf" />
+    <Resource Include="Fonts\Inter\Inter-ExtraBold.ttf" />
+    <Resource Include="Fonts\Inter\Inter-ExtraLight.ttf" />
+    <Resource Include="Fonts\Inter\Inter-Light.ttf" />
+    <Resource Include="Fonts\Inter\Inter-Medium.ttf" />
     <Resource Include="Fonts\Inter\Inter-Regular.ttf" />
     <Resource Include="Fonts\Inter\Inter-SemiBold.ttf" />
+    <Resource Include="Fonts\Inter\Inter-Thin.ttf" />
   </ItemGroup>
 
 </Project>

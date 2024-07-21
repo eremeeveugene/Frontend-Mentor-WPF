@@ -1,17 +1,82 @@
 ﻿<UserControl x:Class="FrontendMentor.BlogPreviewCard.Views.BlogPreviewCardView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:blogPreviewCards="clr-namespace:FrontendMentor.BlogPreviewCard.Controls.BlogPreviewCards"
+             xmlns:constants="clr-namespace:FrontendMentor.Core.Constants;assembly=FrontendMentor.Core"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:properties="clr-namespace:FrontendMentor.BlogPreviewCard.Properties"
              xmlns:viewModels="clr-namespace:FrontendMentor.BlogPreviewCard.ViewModels"
              d:DataContext="{d:DesignInstance viewModels:BlogPreviewCardViewModel}"
              x:ClassModifier="internal"
              mc:Ignorable="d">
 
-    <blogPreviewCards:BlogPreviewCard Width="384"
-                                      HorizontalAlignment="Center"
-                                      VerticalAlignment="Center"
-                                      Blog="{Binding Blog}" />
+    <Border Width="384"
+            Padding="24"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Background="{StaticResource BlogPreviewCardView.RootBorder.Background.Brush}"
+            BorderBrush="{StaticResource BlogPreviewCardView.RootBorder.Border.Brush}"
+            BorderThickness="1"
+            CornerRadius="20"
+            Effect="{StaticResource BlogPreviewCardView.RootBorder.DropShadow.Effect}">
+        <Border.Triggers>
+            <EventTrigger RoutedEvent="{x:Static Button.MouseEnterEvent}">
+                <BeginStoryboard Storyboard="{StaticResource BlogPreviewCardView.RootBorder.MouseOver.Storyboard}" />
+            </EventTrigger>
+            <EventTrigger RoutedEvent="{x:Static Button.MouseLeaveEvent}">
+                <BeginStoryboard Storyboard="{StaticResource BlogPreviewCardView.RootBorder.Normal.Storyboard}" />
+            </EventTrigger>
+        </Border.Triggers>
+
+        <StackPanel>
+            <Rectangle Height="200"
+                       RadiusX="10"
+                       RadiusY="10">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="{Binding Blog.BlogImage, FallbackValue={x:Null}}" Stretch="Fill" />
+                </Rectangle.Fill>
+            </Rectangle>
+
+            <Border Margin="0,24,0,0"
+                    Padding="12,4"
+                    HorizontalAlignment="Left"
+                    Background="{StaticResource BlogPreviewCardView.CategoryBorder.Background.Brush}"
+                    CornerRadius="4">
+                <TextBlock Style="{StaticResource Body.S.Bold.TextBlock.Style}" Text="{Binding Blog.Category, FallbackValue={x:Static constants:Signs.Minus}}" />
+            </Border>
+
+            <TextBlock Margin="0,12,0,0" Style="{StaticResource Body.S.Regular.TextBlock.Style}">
+                <Run Text="{x:Static properties:Resources.BlogPreviewCardView_PublishedTextBlock_Text}" />
+                <Run Text="{Binding Blog.PublishedDate, Mode=OneWay, StringFormat={x:Static constants:DateTimeFormatConstants.DayMonthAbbrYear}, FallbackValue={x:Static constants:Signs.Minus}}" />
+            </TextBlock>
+
+            <TextBlock x:Name="TitleTextBlock"
+                       Margin="0,12,0,0"
+                       Foreground="{StaticResource BlogPreviewCardView.TitleTextBlock.Foreground.Brush}"
+                       Style="{StaticResource Heading.TextBlock.Style}"
+                       Text="{Binding Blog.Title, FallbackValue={x:Static constants:Signs.Minus}}" />
+
+            <TextBlock Margin="0,12,0,0"
+                       Foreground="{StaticResource BlogPreviewCardView.AuthorTextBlock.Foreground.Brush}"
+                       Style="{StaticResource Body.M.TextBlock.Style}"
+                       Text="{Binding Blog.Description, FallbackValue={x:Static constants:Signs.Minus}}"
+                       TextWrapping="Wrap" />
+
+            <StackPanel Margin="0,24,0,0" Orientation="Horizontal">
+                <Ellipse Width="32" Height="32">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="{Binding Blog.BlogAuthor.UserImage, FallbackValue={x:Null}}" />
+                    </Ellipse.Fill>
+                </Ellipse>
+
+                <TextBlock Margin="12,0,0,0"
+                           VerticalAlignment="Center"
+                           Style="{StaticResource Body.S.Bold.TextBlock.Style}">
+                    <Run Text="{Binding Blog.BlogAuthor.FirstName, Mode=OneWay, FallbackValue={x:Static constants:Signs.Minus}}" />
+                    <Run Text="{Binding Blog.BlogAuthor.LastName, Mode=OneWay, FallbackValue={x:Static constants:Signs.Minus}}" />
+                </TextBlock>
+            </StackPanel>
+        </StackPanel>
+    </Border>
 
 </UserControl>
