@@ -14,17 +14,29 @@ using System.Resources;
 
 namespace FrontendMentor.Core.Attributes;
 
-public class LocalizedDescriptionAttribute(string resourceKey, Type resourceType) : DescriptionAttribute
+/// <summary>
+///     An attribute to provide localized descriptions for enum values.
+/// </summary>
+public class LocalizedDescriptionAttribute(string resourceKey, Type resourceType, string fallbackDescription)
+    : DescriptionAttribute(fallbackDescription)
 {
+    private static readonly Dictionary<(Type, string), string> DescriptionCache = [];
     private readonly ResourceManager _resourceManager = new(resourceType);
 
     public override string Description
     {
         get
         {
-            var description = _resourceManager.GetString(resourceKey);
+            if (DescriptionCache.TryGetValue((_resourceManager.GetType(), resourceKey), out var description))
+            {
+                return description;
+            }
 
-            return string.IsNullOrWhiteSpace(description) ? $"[[{resourceKey}]]" : description;
+            description = _resourceManager.GetString(resourceKey) ?? base.Description;
+
+            DescriptionCache[(_resourceManager.GetType(), resourceKey)] = description;
+
+            return description;
         }
     }
 }
