@@ -1,4 +1,28 @@
-# Frontend-Mentor-WPF
+# Frontend Mentor WPF Solutions
+
+## Overview
+
+I am solving Frontend Mentor challenges using .NET, C#, WPF, and the Prism library. This repository serves as a showcase of my ability to create pixel-perfect and efficient UI solutions using these technologies. Through these projects, I aim to enhance my skills in .NET and WPF development while adhering to best practices and design principles.
+
+## Purpose
+
+The primary goal of this repository is to improve my own skills and demonstrate my capabilities. I am focused on my growth and learning by providing efficient and pixel-perfect UI solutions.
+
+## Technologies Used
+
+- **.NET 8**: The latest version of the .NET framework for building and running applications.
+- **C#**: The programming language used to implement the solutions.
+- **WPF**: Windows Presentation Foundation, used for creating rich desktop applications.
+- **Prism Library**: A framework for building loosely coupled, maintainable, and testable XAML applications.
+
+## Tools for Comparison
+
+- **[Diffchecker](https://www.diffchecker.com/image-compare/)**: I am using this tool to compare expected result screenshots with actual results.
+- **[ImgOnline](https://www.imgonline.com.ua/eng/similarity-percent-result.php)**: I am using this tool to verify the percentage of similarity between images.
+
+## Automation Jobs
+
+I've created automation jobs for this repository to streamline the development process. These jobs are defined in the dotnet.yml file and include steps for building the project, running tests with coverage, checking code style, and generating and uploading coverage reports. The jobs run on every push and pull request to the develop branch.
 
 ## QR Code Component
 
