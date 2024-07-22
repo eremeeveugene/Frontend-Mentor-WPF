@@ -47,20 +47,20 @@ https://www.frontendmentor.io/challenges/blog-preview-card-ckPaj01IcS
 <details>
     <summary>Screenshots</summary>
   
-### Expected result
-![Expected result](https://github.com/user-attachments/assets/9d93e35d-57da-4cf9-9047-1984fc066d6a)
+### Expected Result
+![Expected Result](https://github.com/user-attachments/assets/4893d4a5-3604-46fb-926e-dbe601b89ae2)
 
-### Actual result
+### Actual Result
 
-![Actual result](https://github.com/user-attachments/assets/e22a37c4-4032-4e74-aaed-58f643f2c4b6)
+![Actual Result](https://github.com/user-attachments/assets/90a433e1-82fc-45bc-9954-37131f85cc21)
 
-### Expected result - Active
+### Expected Result - Active
 
-![Expected result - Active ](https://github.com/user-attachments/assets/880f7b6f-6c1e-4193-8722-774795285804)
+![Expected Result - Active](https://github.com/user-attachments/assets/32da64f7-745e-4de5-96d1-ef218e9ae0b7)
 
-### Actual result - Active
+### Actual Result - Active
 
-![Actual result - Active](https://github.com/user-attachments/assets/7aeaf44a-cc42-4e62-993e-1440fc60fde0)
+![Actual Result - Active](https://github.com/user-attachments/assets/61173279-2753-45b8-bb2f-c2d826ae41e6)
 
 </details>
 

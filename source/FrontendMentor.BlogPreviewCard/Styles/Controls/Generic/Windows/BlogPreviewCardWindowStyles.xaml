@@ -15,11 +15,11 @@
     <Style BasedOn="{StaticResource {x:Type windows:FrontendMentorWindow}}" TargetType="{x:Type windows1:BlogPreviewCardWindow}">
         <Setter Property="Background" Value="{StaticResource BlogPreviewCardWindow.Background.Brush}" />
         <Setter Property="Cursor" Value="{x:Static cursors:Cursors.HandCursor}" />
-        <Setter Property="FontFamily" Value="{StaticResource FigtreeFontFamily}" />
+        <Setter Property="FontFamily" Value="{StaticResource Figtree.FontFamily}" />
         <Setter Property="Foreground" Value="{StaticResource BlogPreviewCardWindow.Foreground.Brush}" />
         <Setter Property="MinHeight" Value="960" />
         <Setter Property="MinWidth" Value="1440" />
-        <Setter Property="Title" Value="{x:Static properties:Resources.BlogPreviewCardWindowTitle}" />
+        <Setter Property="Title" Value="{x:Static properties:Resources.BlogPreviewCardWindow_Title}" />
     </Style>
 
 </ResourceDictionary>
