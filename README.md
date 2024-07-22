@@ -72,9 +72,10 @@ https://www.frontendmentor.io/challenges/results-summary-component-CE_K6s0maV
     <summary>Screenshots</summary>
   
 ### Expected Result
+
 ![Expected Result](https://github.com/user-attachments/assets/86364aa8-e278-424b-a52c-e5e8658ac9c2)
 
-### Actual Result - 99.69%
+### Actual Result (99.69%)
 
 ![Actual Result](https://github.com/user-attachments/assets/86cbd786-fdb1-4853-b0e9-c89acee1bfe9)
 
@@ -82,7 +83,7 @@ https://www.frontendmentor.io/challenges/results-summary-component-CE_K6s0maV
 
 ![Expected Result - Active](https://github.com/user-attachments/assets/537dc955-73ef-4f17-84f5-50a21432444a)
 
-### Actual Result - Active - 99.15%
+### Actual Result - Active (99.15%)
 
 ![Actual Result - Active](https://github.com/user-attachments/assets/3ab7d3f5-9e6a-4de7-8863-b70c35017852)
 
