@@ -28,7 +28,7 @@ https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ
 
 ### Actual Result
 
-![Actual Result](https://github.com/user-attachments/assets/42e219ea-3634-461c-820a-8c544a16e4e4)
+![Actual Result](https://github.com/user-attachments/assets/435957fa-0cf8-48e8-9266-a3bd22731319)
 
 ### Expected Result - Active
 
@@ -36,7 +36,7 @@ https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ
 
 ### Actual Result - Active
 
-![Actual Result - Active](https://github.com/user-attachments/assets/fc51da49-7b69-4c31-9599-fd915da6db22)
+![Actual Result - Active](https://github.com/user-attachments/assets/8645161f-431d-4f3e-8b05-9d59f7db6e95)
 
 </details>
 
