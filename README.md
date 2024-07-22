@@ -10,7 +10,7 @@ The primary goal of this repository is to improve my own skills and demonstrate 
 
 ## Technologies Used
 
-- **[.NET 8](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)**: The latest version of the .NET framework for building and running applications.
+- **[.NET 8](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)**: The latest version of the .NET platform for building and running applications.
 - **[C# 12](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-12)**: The programming language used to implement the solutions.
 - **[WPF](https://learn.microsoft.com/en-us/dotnet/desktop/wpf/overview/?view=netdesktop-8.0)**: Windows Presentation Foundation, used for creating rich desktop applications.
 - **[XAML](https://learn.microsoft.com/en-us/dotnet/desktop/wpf/xaml/?view=netdesktop-8.0)**: Extensible Application Markup Language, used for designing the UI in WPF applications.
