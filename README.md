@@ -4,7 +4,7 @@
 
 ## Overview
 
-I am solving Frontend Mentor challenges using **.NET**, **C#**, **WPF**, and the **Prism library**. This repository showcases my ability to create pixel-perfect and efficient UI solutions using these technologies. Through these projects, I aim to enhance my skills in .NET and WPF development while adhering to best practices and design principles.
+I am solving Frontend Mentor challenges using **.NET**, **C#**, **WPF**, and the **Prism library**. This repository showcases my ability to create pixel-perfect and efficient UI solutions using these technologies. I aim to enhance my development skills through these projects while adhering to best practices and design principles.
 
 ## Purpose
 
@@ -25,14 +25,14 @@ The primary goal of this repository is to improve my own skills and demonstrate 
 
 ## Automation Jobs
 
-I've created automation jobs for this repository to streamline the development process. These jobs are defined in the dotnet.yml file and include steps for building the project, running tests with coverage, checking code style, and generating and uploading coverage reports. The jobs run on every push and pull request to the 'develop' branch.
+I've created automation jobs for this repository to streamline the development process. These jobs are defined in the `dotnet.yml` file and include steps for building the project and checking code style. The jobs run on every push and pull request to the `develop` branch.
 
 ## QR Code Component
 
 https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H
 
 <details>
-    <summary>Screenshots</summary>
+    <summary><strong>Screenshots</strong></summary>
   
 ### Expected Result
 ![Expected Result](https://github.com/user-attachments/assets/43b27cfc-be88-40d5-b96a-e08882f3debc)
@@ -48,8 +48,8 @@ https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H
 https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ
 
 <details>
-    <summary>Screenshots</summary>
-  
+    <summary><strong>Screenshots</strong></summary>
+    
 ### Expected Result
 ![Expected Result](https://github.com/user-attachments/assets/62f75f8a-23d9-4517-a0e6-99a13cf58fe0)
 
@@ -72,7 +72,7 @@ https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ
 https://www.frontendmentor.io/challenges/blog-preview-card-ckPaj01IcS
 
 <details>
-    <summary>Screenshots</summary>
+    <summary><strong>Screenshots</strong></summary>
   
 ### Expected Result
 ![Expected Result](https://github.com/user-attachments/assets/4893d4a5-3604-46fb-926e-dbe601b89ae2)
@@ -96,7 +96,7 @@ https://www.frontendmentor.io/challenges/blog-preview-card-ckPaj01IcS
 https://www.frontendmentor.io/challenges/results-summary-component-CE_K6s0maV
 
 <details>
-    <summary>Screenshots</summary>
+    <summary><strong>Screenshots</strong></summary>
   
 ### Expected Result
 
@@ -115,3 +115,7 @@ https://www.frontendmentor.io/challenges/results-summary-component-CE_K6s0maV
 ![Actual Result - Active](https://github.com/user-attachments/assets/3ab7d3f5-9e6a-4de7-8863-b70c35017852)
 
 </details>
+
+## License
+
+This project is licensed under a custom license. See the [LICENSE](LICENSE) file for details.
