@@ -35,9 +35,8 @@
                           Margin="0,35,0,0">
                         <Ellipse Fill="{StaticResource ResultsSummaryComponentView.NumberScoreEllipse.Fill.Brush}" />
 
-                        <StackPanel VerticalAlignment="Center">
-                            <TextBlock Margin="0,12,0,0"
-                                       Foreground="{StaticResource ResultsSummaryComponentView.NumberScoreTextBlock.Foreground.Brush}"
+                        <StackPanel Margin="0,60,0,0">
+                            <TextBlock Foreground="{StaticResource ResultsSummaryComponentView.NumberScoreTextBlock.Foreground.Brush}"
                                        Style="{StaticResource Heading.XL.TextBlock.Style}"
                                        Text="{Binding ResultSummary.NumberScore, FallbackValue={x:Static constants:Signs.Minus}}"
                                        TextAlignment="Center" />

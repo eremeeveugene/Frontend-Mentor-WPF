@@ -72,18 +72,18 @@ https://www.frontendmentor.io/challenges/results-summary-component-CE_K6s0maV
     <summary>Screenshots</summary>
   
 ### Expected Result
-![Expected Result](https://github.com/user-attachments/assets/9d93e35d-57da-4cf9-9047-1984fc066d6a)
+![Expected Result](https://github.com/user-attachments/assets/86364aa8-e278-424b-a52c-e5e8658ac9c2)
 
 ### Actual Result
 
-![Actual Result](https://github.com/user-attachments/assets/e22a37c4-4032-4e74-aaed-58f643f2c4b6)
+![Actual Result](https://github.com/user-attachments/assets/86cbd786-fdb1-4853-b0e9-c89acee1bfe9)
 
 ### Expected Result - Active
 
-![Expected Result - Active ](https://github.com/user-attachments/assets/880f7b6f-6c1e-4193-8722-774795285804)
+![Expected Result - Active](https://github.com/user-attachments/assets/537dc955-73ef-4f17-84f5-50a21432444a)
 
 ### Actual Result - Active
 
-![Actual Result - Active](https://github.com/user-attachments/assets/7aeaf44a-cc42-4e62-993e-1440fc60fde0)
+![Actual Result - Active](https://github.com/user-attachments/assets/3ab7d3f5-9e6a-4de7-8863-b70c35017852)
 
 </details>
