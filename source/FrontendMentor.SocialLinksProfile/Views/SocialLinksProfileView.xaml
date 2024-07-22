@@ -24,7 +24,7 @@
                 </Ellipse.Fill>
             </Ellipse>
 
-            <TextBlock Margin="0,24,0,0"
+            <TextBlock Margin="0,23,0,1"
                        Style="{StaticResource Heading.TextBlock.Style}"
                        TextAlignment="Center">
                 <Run Text="{Binding SocialLinkProfile.FirstName, Mode=OneWay, FallbackValue={x:Static constants:Signs.Minus}}" />
