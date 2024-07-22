@@ -1,8 +1,10 @@
 # Frontend Mentor WPF Solutions
 
+[![.NET](https://github.com/eremeeveugene/Frontend-Mentor-WPF/actions/workflows/dotnet.yml/badge.svg)](https://github.com/eremeeveugene/Frontend-Mentor-WPF)
+
 ## Overview
 
-I am solving Frontend Mentor challenges using .NET, C#, WPF, and the Prism library. This repository serves as a showcase of my ability to create pixel-perfect and efficient UI solutions using these technologies. Through these projects, I aim to enhance my skills in .NET and WPF development while adhering to best practices and design principles.
+I am solving Frontend Mentor challenges using **.NET**, **C#**, **WPF**, and the **Prism library**. This repository showcases my ability to create pixel-perfect and efficient UI solutions using these technologies. Through these projects, I aim to enhance my skills in .NET and WPF development while adhering to best practices and design principles.
 
 ## Purpose
 
@@ -23,7 +25,7 @@ The primary goal of this repository is to improve my own skills and demonstrate 
 
 ## Automation Jobs
 
-I've created automation jobs for this repository to streamline the development process. These jobs are defined in the dotnet.yml file and include steps for building the project, running tests with coverage, checking code style, and generating and uploading coverage reports. The jobs run on every push and pull request to the develop branch.
+I've created automation jobs for this repository to streamline the development process. These jobs are defined in the dotnet.yml file and include steps for building the project, running tests with coverage, checking code style, and generating and uploading coverage reports. The jobs run on every push and pull request to the 'develop' branch.
 
 ## QR Code Component
 
