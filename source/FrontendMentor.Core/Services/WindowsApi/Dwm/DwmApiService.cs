@@ -9,22 +9,26 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.Core.Services.BitmapImages;
-using FrontendMentor.Core.Services.Processes;
-using FrontendMentor.Core.Services.WindowsApi.Dwm;
 using FrontendMentor.Core.Services.WindowsVersion;
-using Prism.DryIoc;
-using Prism.Ioc;
+using System.Windows.Media;
 
-namespace FrontendMentor.Core.Applications;
+namespace FrontendMentor.Core.Services.WindowsApi.Dwm;
 
-public abstract class FrontendMentorCoreApplication : PrismApplication
+internal class DwmApiService(IWindowsVersionService windowsVersionService) : IDwmApiService
 {
-    protected override void RegisterTypes(IContainerRegistry containerRegistry)
+    public bool SetWindowCaptionColor(nint windowHandle, Color color)
     {
-        containerRegistry.RegisterSingleton<IProcessesService, ProcessesService>();
-        containerRegistry.RegisterSingleton<IBitmapImagesService, BitmapImagesService>();
-        containerRegistry.RegisterSingleton<IDwmApiService, DwmApiService>();
-        containerRegistry.RegisterSingleton<IWindowsVersionService, WindowsVersionService>();
+        if (!windowsVersionService.IsWindows11OrHigher())
+        {
+            return false;
+        }
+
+        var dwmApiColor = new DwmApiColor(color).ColorDWORD;
+
+        var result = DwmApi.DwmSetWindowAttribute(windowHandle,
+            (int)DwmApiWindowAttribute.DWMWA_CAPTION_COLOR,
+            ref dwmApiColor, sizeof(uint));
+
+        return result == 0;
     }
 }

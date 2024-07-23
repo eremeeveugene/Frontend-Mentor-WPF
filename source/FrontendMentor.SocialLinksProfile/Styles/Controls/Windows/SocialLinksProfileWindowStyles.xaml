@@ -20,6 +20,7 @@
         <Setter Property="MinHeight" Value="960" />
         <Setter Property="MinWidth" Value="1440" />
         <Setter Property="Title" Value="{x:Static properties:Resources.SocialLinksProfileWindow_Title}" />
+        <Setter Property="WindowCaptionColor" Value="{StaticResource Grey.900.Color}" />
     </Style>
 
 </ResourceDictionary>

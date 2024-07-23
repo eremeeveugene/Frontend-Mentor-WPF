@@ -9,17 +9,12 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.Assets.Controls.Windows;
-using System.Windows;
+namespace FrontendMentor.Core.Services.WindowsVersion;
 
-namespace FrontendMentor.SocialLinksProfile.Controls.Windows;
-
-internal class SocialLinksProfileWindow(FrontendMentorWindow.Dependencies dependencies)
-    : FrontendMentorWindow(dependencies)
+public interface IWindowsVersionService
 {
-    static SocialLinksProfileWindow()
-    {
-        DefaultStyleKeyProperty.OverrideMetadata(typeof(SocialLinksProfileWindow),
-            new FrameworkPropertyMetadata(typeof(SocialLinksProfileWindow)));
-    }
+    bool IsWindows7OrHigher();
+    bool IsWindows10OrHigher();
+    bool IsWindows11OrHigher();
+    bool IsWindowsVersionOrGreater(int major, int minor, int build);
 }

@@ -9,17 +9,24 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.Assets.Controls.Windows;
-using System.Windows;
+using System.Runtime.InteropServices;
+using System.Windows.Media;
 
-namespace FrontendMentor.SocialLinksProfile.Controls.Windows;
+namespace FrontendMentor.Core.Services.WindowsApi.Dwm;
 
-internal class SocialLinksProfileWindow(FrontendMentorWindow.Dependencies dependencies)
-    : FrontendMentorWindow(dependencies)
+[StructLayout(LayoutKind.Sequential)]
+internal struct DwmApiColor(Color color)
 {
-    static SocialLinksProfileWindow()
+    public int ColorDWORD = color.R + (color.G << 8) + (color.B << 16);
+
+    public Color GetColor()
     {
-        DefaultStyleKeyProperty.OverrideMetadata(typeof(SocialLinksProfileWindow),
-            new FrameworkPropertyMetadata(typeof(SocialLinksProfileWindow)));
+        return Color.FromRgb((byte)(0x000000FFU & ColorDWORD), (byte)((0x0000FF00U & ColorDWORD) >> 8),
+            (byte)((0x00FF0000U & ColorDWORD) >> 16));
+    }
+
+    public void SetColor(Color color)
+    {
+        ColorDWORD = color.R + (color.G << 8) + (color.B << 16);
     }
 }

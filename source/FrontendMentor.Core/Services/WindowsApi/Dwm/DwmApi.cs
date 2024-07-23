@@ -9,17 +9,15 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.Assets.Controls.Windows;
-using System.Windows;
+using System.Runtime.InteropServices;
 
-namespace FrontendMentor.SocialLinksProfile.Controls.Windows;
+namespace FrontendMentor.Core.Services.WindowsApi.Dwm;
 
-internal class SocialLinksProfileWindow(FrontendMentorWindow.Dependencies dependencies)
-    : FrontendMentorWindow(dependencies)
+internal static class DwmApi
 {
-    static SocialLinksProfileWindow()
-    {
-        DefaultStyleKeyProperty.OverrideMetadata(typeof(SocialLinksProfileWindow),
-            new FrameworkPropertyMetadata(typeof(SocialLinksProfileWindow)));
-    }
+    private const string DwmApiDllName = "dwmapi.dll";
+
+    [DllImport(DwmApiDllName, CharSet = CharSet.Unicode, SetLastError = true)]
+    internal static extern long DwmSetWindowAttribute(IntPtr windowHandle, int attribute, ref int pvAttribute,
+        uint cbAttribute);
 }
