@@ -9,26 +9,14 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.Core.Services.WindowsVersion;
-using System.Windows.Media;
+using System.Runtime.InteropServices;
 
-namespace FrontendMentor.Core.Services.WindowsApi.Dwm;
+namespace FrontendMentor.Core.Services.WindowsApi.User32;
 
-internal class DwmApiService(IWindowsVersionService windowsVersionService) : IDwmApiService
+internal static class User32Api
 {
-    public bool SetWindowCaptionColor(IntPtr windowHandle, Color color)
-    {
-        if (!windowsVersionService.IsWindows11OrHigher())
-        {
-            return false;
-        }
+    private const string DwmApiDllName = "user32.dll";
 
-        var dwmApiColor = new DwmApiColor(color).ColorDWORD;
-
-        var result = DwmApi.DwmSetWindowAttribute(windowHandle,
-            (int)DwmApiWindowAttribute.DWMWA_CAPTION_COLOR,
-            ref dwmApiColor, sizeof(uint));
-
-        return result == 0;
-    }
+    [DllImport(DwmApiDllName, CharSet = CharSet.Unicode, SetLastError = true)]
+    public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
 }

@@ -18,6 +18,6 @@ internal static class DwmApi
     private const string DwmApiDllName = "dwmapi.dll";
 
     [DllImport(DwmApiDllName, CharSet = CharSet.Unicode, SetLastError = true)]
-    internal static extern long DwmSetWindowAttribute(IntPtr windowHandle, int attribute, ref int pvAttribute,
+    public static extern long DwmSetWindowAttribute(IntPtr windowHandle, int attribute, ref int pvAttribute,
         uint cbAttribute);
 }

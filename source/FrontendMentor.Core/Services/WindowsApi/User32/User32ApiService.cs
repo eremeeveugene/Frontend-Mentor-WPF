@@ -9,30 +9,21 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.Core.Helpers;
-using System.Windows.Input;
+namespace FrontendMentor.Core.Services.WindowsApi.User32;
 
-namespace FrontendMentor.Assets.Cursors;
-
-public static class Cursors
+internal class User32ApiService : IUser32ApiService
 {
-    private const string HandCursorUriString =
-        "pack://application:,,,/FrontendMentor.Assets;component/Cursors/HandCursor.cur";
-
-    private static Cursor? _handCursor;
-
-    public static Cursor HandCursor
+    public void MinimizeWindow(IntPtr windowHandle)
     {
-        get
-        {
-            if (_handCursor != null)
-            {
-                return _handCursor;
-            }
+        User32Api.ShowWindow(windowHandle, (int)ShowWindowCommands.SW_MINIMIZE);
+    }
 
-            _handCursor = CursorsHelper.LoadCursor(new Uri(HandCursorUriString));
-
-            return _handCursor;
-        }
+    public void MaximizeWindow(IntPtr windowHandle)
+    {
+        User32Api.ShowWindow(windowHandle, (int)ShowWindowCommands.SW_MAXIMIZE);
+    }
+    public void ShowWindowNormal(IntPtr windowHandle)
+    {
+        User32Api.ShowWindow(windowHandle, (int)ShowWindowCommands.SW_NORMAL);
     }
 }

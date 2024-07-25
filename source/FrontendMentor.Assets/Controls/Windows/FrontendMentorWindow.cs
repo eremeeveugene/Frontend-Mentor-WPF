@@ -9,22 +9,22 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.Core.Services.WindowsApi.Dwm;
+using FrontendMentor.Core.Services.WindowsApi.User32;
+using Prism.Commands;
 using System.Windows;
-using System.Windows.Interop;
+using System.Windows.Input;
 using System.Windows.Media;
 
 namespace FrontendMentor.Assets.Controls.Windows;
 
 public class FrontendMentorWindow : Window
 {
-    public static readonly DependencyProperty WindowCaptionColorProperty = DependencyProperty.Register(
-        nameof(WindowCaptionColor), typeof(Color), typeof(FrontendMentorWindow),
-        new PropertyMetadata(default(Color),
-            (o, _) => ((FrontendMentorWindow)o).OnWindowCaptionColorPropertyChanged()));
+    public static readonly DependencyProperty TitleBarBackgroundProperty = DependencyProperty.Register(
+        nameof(TitleBarBackground), typeof(Brush), typeof(FrontendMentorWindow), new PropertyMetadata(default(Brush)));
 
-    private readonly IDwmApiService _dwmApiService;
-    private readonly IntPtr _windowHandle;
+    private ICommand? _closeCommand;
+    private ICommand? _minimizeCommand;
+    private ICommand? _toggleMaximizeCommand;
 
     static FrontendMentorWindow()
     {
@@ -34,23 +34,39 @@ public class FrontendMentorWindow : Window
 
     public FrontendMentorWindow(Dependencies dependencies)
     {
-        _dwmApiService = dependencies.DwmApiService;
-        _windowHandle = new WindowInteropHelper(this).EnsureHandle();
     }
 
-    public Color WindowCaptionColor
+    public static readonly DependencyProperty TitleBarHeightProperty = DependencyProperty.Register(
+        nameof(TitleBarHeight), typeof(double), typeof(FrontendMentorWindow), new PropertyMetadata(default(double)));
+
+    public double TitleBarHeight
     {
-        get => (Color)GetValue(WindowCaptionColorProperty);
-        set => SetValue(WindowCaptionColorProperty, value);
+        get { return (double)GetValue(TitleBarHeightProperty); }
+        set { SetValue(TitleBarHeightProperty, value); }
     }
 
-    private void OnWindowCaptionColorPropertyChanged()
+    public Brush TitleBarBackground
     {
-        _dwmApiService.SetWindowCaptionColor(_windowHandle, WindowCaptionColor);
+        get => (Brush)GetValue(TitleBarBackgroundProperty);
+        set => SetValue(TitleBarBackgroundProperty, value);
     }
 
-    public class Dependencies(IDwmApiService dwmApiService)
+    public ICommand MinimizeCommand => _minimizeCommand ??= new DelegateCommand(Minimize);
+    public ICommand ToggleMaximizeCommand => _toggleMaximizeCommand ??= new DelegateCommand(ToggleMaximize);
+    public ICommand CloseCommand => _closeCommand ??= new DelegateCommand(Close);
+
+    private void ToggleMaximize()
     {
-        public IDwmApiService DwmApiService { get; } = dwmApiService;
+        WindowState = WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
+    }
+
+    private void Minimize()
+    {
+        WindowState = WindowState.Minimized;
+    }
+
+    public class Dependencies(IUser32ApiService user32ApiService)
+    {
+        public IUser32ApiService User32ApiService { get; } = user32ApiService;
     }
 }
