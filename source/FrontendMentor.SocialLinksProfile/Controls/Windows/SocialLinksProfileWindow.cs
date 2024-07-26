@@ -14,8 +14,7 @@ using System.Windows;
 
 namespace FrontendMentor.SocialLinksProfile.Controls.Windows;
 
-internal class SocialLinksProfileWindow(FrontendMentorWindow.Dependencies dependencies)
-    : FrontendMentorWindow(dependencies)
+internal class SocialLinksProfileWindow : FrontendMentorWindow
 {
     static SocialLinksProfileWindow()
     {

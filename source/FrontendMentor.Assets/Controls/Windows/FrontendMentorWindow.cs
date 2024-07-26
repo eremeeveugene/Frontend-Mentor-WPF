@@ -9,7 +9,6 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.Core.Services.WindowsApi.User32;
 using Prism.Commands;
 using System.Windows;
 using System.Windows.Input;
@@ -22,6 +21,9 @@ public class FrontendMentorWindow : Window
     public static readonly DependencyProperty TitleBarBackgroundProperty = DependencyProperty.Register(
         nameof(TitleBarBackground), typeof(Brush), typeof(FrontendMentorWindow), new PropertyMetadata(default(Brush)));
 
+    public static readonly DependencyProperty TitleBarHeightProperty = DependencyProperty.Register(
+        nameof(TitleBarHeight), typeof(double), typeof(FrontendMentorWindow), new PropertyMetadata(default(double)));
+
     private ICommand? _closeCommand;
     private ICommand? _minimizeCommand;
     private ICommand? _toggleMaximizeCommand;
@@ -32,17 +34,10 @@ public class FrontendMentorWindow : Window
             new FrameworkPropertyMetadata(typeof(FrontendMentorWindow)));
     }
 
-    public FrontendMentorWindow(Dependencies dependencies)
-    {
-    }
-
-    public static readonly DependencyProperty TitleBarHeightProperty = DependencyProperty.Register(
-        nameof(TitleBarHeight), typeof(double), typeof(FrontendMentorWindow), new PropertyMetadata(default(double)));
-
     public double TitleBarHeight
     {
-        get { return (double)GetValue(TitleBarHeightProperty); }
-        set { SetValue(TitleBarHeightProperty, value); }
+        get => (double)GetValue(TitleBarHeightProperty);
+        set => SetValue(TitleBarHeightProperty, value);
     }
 
     public Brush TitleBarBackground
@@ -63,10 +58,5 @@ public class FrontendMentorWindow : Window
     private void Minimize()
     {
         WindowState = WindowState.Minimized;
-    }
-
-    public class Dependencies(IUser32ApiService user32ApiService)
-    {
-        public IUser32ApiService User32ApiService { get; } = user32ApiService;
     }
 }

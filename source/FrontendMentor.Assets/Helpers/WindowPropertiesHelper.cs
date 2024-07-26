@@ -9,21 +9,23 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-namespace FrontendMentor.Core.Services.WindowsApi.User32;
+using System.Windows;
 
-internal class User32ApiService : IUser32ApiService
+namespace FrontendMentor.Assets.Helpers;
+
+public static class WindowPropertiesHelper
 {
-    public void MinimizeWindow(IntPtr windowHandle)
+    public static readonly DependencyProperty IsActiveProperty = DependencyProperty.RegisterAttached(
+        "IsActive", typeof(bool), typeof(WindowPropertiesHelper),
+        new PropertyMetadata(default(bool)));
+
+    public static void SetIsActive(DependencyObject element, bool value)
     {
-        User32Api.ShowWindow(windowHandle, (int)ShowWindowCommands.SW_MINIMIZE);
+        element.SetValue(IsActiveProperty, value);
     }
 
-    public void MaximizeWindow(IntPtr windowHandle)
+    public static bool GetIsActive(DependencyObject element)
     {
-        User32Api.ShowWindow(windowHandle, (int)ShowWindowCommands.SW_MAXIMIZE);
-    }
-    public void ShowWindowNormal(IntPtr windowHandle)
-    {
-        User32Api.ShowWindow(windowHandle, (int)ShowWindowCommands.SW_NORMAL);
+        return (bool)element.GetValue(IsActiveProperty);
     }
 }

@@ -14,8 +14,7 @@ using System.Windows;
 
 namespace FrontendMentor.BlogPreviewCard.Controls.Windows;
 
-internal class BlogPreviewCardWindow(FrontendMentorWindow.Dependencies dependencies)
-    : FrontendMentorWindow(dependencies)
+internal class BlogPreviewCardWindow : FrontendMentorWindow
 {
     static BlogPreviewCardWindow()
     {

@@ -11,9 +11,6 @@
 
 using FrontendMentor.Core.Services.BitmapImages;
 using FrontendMentor.Core.Services.Processes;
-using FrontendMentor.Core.Services.WindowsApi.Dwm;
-using FrontendMentor.Core.Services.WindowsApi.User32;
-using FrontendMentor.Core.Services.WindowsVersion;
 using Prism.DryIoc;
 using Prism.Ioc;
 
@@ -25,8 +22,5 @@ public abstract class FrontendMentorCoreApplication : PrismApplication
     {
         containerRegistry.RegisterSingleton<IProcessesService, ProcessesService>();
         containerRegistry.RegisterSingleton<IBitmapImagesService, BitmapImagesService>();
-        containerRegistry.RegisterSingleton<IDwmApiService, DwmApiService>();
-        containerRegistry.RegisterSingleton<IWindowsVersionService, WindowsVersionService>();
-        containerRegistry.RegisterSingleton<IUser32ApiService, User32ApiService>();
     }
 }

@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
+                    xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries">
+
+    <ResourceDictionary.MergedDictionaries>
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Colors/Colors.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <!--#region FrontendMentorWindow-->
+
+    <SolidColorBrush x:Key="FrontendMentorWindow.TitleBarButton.Background.Brush"
+                     po:Freeze="True"
+                     Opacity="0"
+                     Color="{StaticResource Arsenic.Color}" />
+
+    <SolidColorBrush x:Key="FrontendMentorWindow.TitleBarButton.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Gray.Color}" />
+
+    <SolidColorBrush x:Key="FrontendMentorWindow.CloseTitleBarButton.Background.Brush"
+                     po:Freeze="True"
+                     Opacity="0"
+                     Color="{StaticResource Persian.Red.Color}" />
+
+    <!--#endregion-->
+
+</ResourceDictionary>
