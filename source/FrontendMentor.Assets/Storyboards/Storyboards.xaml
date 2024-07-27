@@ -3,27 +3,44 @@
                     xmlns:constants="clr-namespace:FrontendMentor.Assets.Constants"
                     xmlns:helpers="clr-namespace:FrontendMentor.Assets.Helpers"
                     xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
-                    xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries">
+                    xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries"
+                    xmlns:windows="clr-namespace:FrontendMentor.Assets.Controls.Windows">
 
     <ResourceDictionary.MergedDictionaries>
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Colors/Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Storyboard x:Key="FrontendMentorWindow.TitleBarTextBlock.Active.Storyboard" po:Freeze="True">
+    <!--#region FrontendMentorWindow-->
+
+    <Storyboard x:Key="FrontendMentorWindow.ToActive.Storyboard" po:Freeze="True">
+        <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
+                        Storyboard.TargetProperty="(windows:FrontendMentorWindow.TitleBarBackground).(SolidColorBrush.Color)"
+                        To="{StaticResource Swamp.Color}"
+                        Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
+    </Storyboard>
+
+    <Storyboard x:Key="FrontendMentorWindow.FromActive.Storyboard" po:Freeze="True">
+        <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
+                        Storyboard.TargetProperty="(windows:FrontendMentorWindow.TitleBarBackground).(SolidColorBrush.Color)"
+                        To="{StaticResource Dark.Charcoal.Color}"
+                        Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
+    </Storyboard>
+
+    <Storyboard x:Key="FrontendMentorWindow.TitleBarTextBlock.ToActive.Storyboard" po:Freeze="True">
         <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                         Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
                         To="{StaticResource White.Color}"
                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 
-    <Storyboard x:Key="FrontendMentorWindow.TitleBarTextBlock.InActive.Storyboard" po:Freeze="True">
+    <Storyboard x:Key="FrontendMentorWindow.TitleBarTextBlock.FromActive.Storyboard" po:Freeze="True">
         <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                         Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
                         From="{StaticResource White.Color}"
                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 
-    <Storyboard x:Key="FrontendMentorWindow.TitleBarButton.MouseOver.Storyboard" po:Freeze="True">
+    <Storyboard x:Key="FrontendMentorWindow.TitleBarButton.ToMouseOver.Storyboard" po:Freeze="True">
         <DoubleAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                          Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Opacity)"
                          To="1"
@@ -35,7 +52,7 @@
                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 
-    <Storyboard x:Key="FrontendMentorWindow.TitleBarButton.MouseOut.Storyboard" po:Freeze="True">
+    <Storyboard x:Key="FrontendMentorWindow.TitleBarButton.FromMouseOver.Storyboard" po:Freeze="True">
         <DoubleAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                          Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Opacity)"
                          From="1"
@@ -47,35 +64,35 @@
                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 
-    <Storyboard x:Key="FrontendMentorWindow.TitleBarButton.Pressed.Storyboard" po:Freeze="True">
+    <Storyboard x:Key="FrontendMentorWindow.TitleBarButton.ToPressed.Storyboard" po:Freeze="True">
         <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                         Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
                         To="{StaticResource Quartz.Color}"
                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 
-    <Storyboard x:Key="FrontendMentorWindow.TitleBarButton.Released.Storyboard" po:Freeze="True">
+    <Storyboard x:Key="FrontendMentorWindow.TitleBarButton.FromPressed.Storyboard" po:Freeze="True">
         <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                         Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
                         From="{StaticResource Quartz.Color}"
                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 
-    <Storyboard x:Key="FrontendMentorWindow.TitleBarButton.Active.Storyboard" po:Freeze="True">
+    <Storyboard x:Key="FrontendMentorWindow.TitleBarButton.ToActive.Storyboard" po:Freeze="True">
         <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                         Storyboard.TargetProperty="(helpers:IconPropertiesHelper.Fill).(SolidColorBrush.Color)"
                         To="{StaticResource White.Color}"
                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 
-    <Storyboard x:Key="FrontendMentorWindow.TitleBarButton.InActive.Storyboard" po:Freeze="True">
+    <Storyboard x:Key="FrontendMentorWindow.TitleBarButton.FromActive.Storyboard" po:Freeze="True">
         <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                         Storyboard.TargetProperty="(helpers:IconPropertiesHelper.Fill).(SolidColorBrush.Color)"
                         From="{StaticResource White.Color}"
                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 
-    <Storyboard x:Key="FrontendMentorWindow.CloseTitleBarButton.MouseOver.Storyboard" po:Freeze="True">
+    <Storyboard x:Key="FrontendMentorWindow.CloseTitleBarButton.ToMouseOver.Storyboard" po:Freeze="True">
         <DoubleAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                          Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Opacity)"
                          To="1"
@@ -87,7 +104,7 @@
                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 
-    <Storyboard x:Key="FrontendMentorWindow.CloseTitleBarButton.MouseOut.Storyboard" po:Freeze="True">
+    <Storyboard x:Key="FrontendMentorWindow.CloseTitleBarButton.FromMouseOver.Storyboard" po:Freeze="True">
         <DoubleAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                          Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Opacity)"
                          From="1"
@@ -99,18 +116,20 @@
                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 
-    <Storyboard x:Key="FrontendMentorWindow.CloseTitleBarButton.Pressed.Storyboard" po:Freeze="True">
+    <Storyboard x:Key="FrontendMentorWindow.CloseTitleBarButton.ToPressed.Storyboard" po:Freeze="True">
         <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                         Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
                         To="{StaticResource Burnt.Umber.Color}"
                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 
-    <Storyboard x:Key="FrontendMentorWindow.CloseTitleBarButton.Released.Storyboard" po:Freeze="True">
+    <Storyboard x:Key="FrontendMentorWindow.CloseTitleBarButton.FromPressed.Storyboard" po:Freeze="True">
         <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                         Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
                         From="{StaticResource Burnt.Umber.Color}"
                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
+
+    <!--#endregion-->
 
 </ResourceDictionary>

@@ -3,7 +3,6 @@
                     xmlns:constants="clr-namespace:FrontendMentor.Assets.Constants"
                     xmlns:converters="clr-namespace:FrontendMentor.Assets.Converters"
                     xmlns:helpers="clr-namespace:FrontendMentor.Assets.Helpers"
-                    xmlns:icons="clr-namespace:FrontendMentor.Assets.Controls.Icons"
                     xmlns:panels="clr-namespace:FrontendMentor.Assets.Controls.Panels"
                     xmlns:regions="http://prismlibrary.com/"
                     xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries"
@@ -64,10 +63,10 @@
                                         Command="{Binding MinimizeCommand, RelativeSource={RelativeSource TemplatedParent}}"
                                         Style="{StaticResource FrontendMentorWindow.MinimizeTitleBarButton.Style}" />
 
-                                <ToggleButton helpers:WindowPropertiesHelper.IsActive="{TemplateBinding IsActive}"
-                                              Command="{Binding ToggleMaximizeCommand, RelativeSource={RelativeSource TemplatedParent}}"
-                                              IsChecked="{Binding WindowState, RelativeSource={RelativeSource TemplatedParent}, Converter={converters:EqualityParameterToValueConverter TrueValue={x:Static system:Boolean.TrueString}, FalseValue={x:Static system:Boolean.FalseString}}, ConverterParameter={x:Static WindowState.Maximized}, Mode=OneWay}"
-                                              Style="{StaticResource FrontendMentorWindow.MaximizeTitleBarToggleButton.Style}" />
+                                <Button helpers:WindowPropertiesHelper.IsActive="{TemplateBinding IsActive}"
+                                        helpers:WindowPropertiesHelper.WindowState="{TemplateBinding WindowState}"
+                                        Command="{Binding ToggleMaximizeCommand, RelativeSource={RelativeSource TemplatedParent}}"
+                                        Style="{StaticResource FrontendMentorWindow.MaximizeTitleBarButton.Style}" />
 
                                 <Button helpers:WindowPropertiesHelper.IsActive="{TemplateBinding IsActive}"
                                         Command="{Binding CloseCommand, RelativeSource={RelativeSource TemplatedParent}}"
@@ -85,11 +84,11 @@
     </ControlTemplate>
 
     <Style TargetType="{x:Type windows:FrontendMentorWindow}">
-        <Setter Property="BorderBrush" Value="#2f2f2f" />
+        <Setter Property="BorderBrush" Value="{StaticResource FrontendMentorWindow.Border.Brush}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="Template" Value="{StaticResource FrontendMentorWindow.Template}" />
-        <Setter Property="TitleBarBackground" Value="#2b2b2b" />
+        <Setter Property="TitleBarBackground" Value="{StaticResource FrontendMentorWindow.TitleBarBackground.Brush}" />
         <Setter Property="TitleBarHeight" Value="40" />
         <Setter Property="TitleBarImageHeight" Value="20" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
@@ -101,27 +100,12 @@
                 <Setter Property="BorderThickness" Value="0" />
                 <Setter Property="Padding" Value="8" />
             </Trigger>
-            <!--<Trigger Property="IsActive" Value="True">
-                <Setter Property="TitleBarBackground" Value="#1f2020" />
-            </Trigger>-->
             <Trigger Property="IsActive" Value="True">
                 <Trigger.EnterActions>
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <ColorAnimation Storyboard.TargetProperty="(windows:FrontendMentorWindow.TitleBarBackground).(SolidColorBrush.Color)"
-                                            To="#1f2020"
-                                            Duration="0:0:0.3" />
-                        </Storyboard>
-                    </BeginStoryboard>
+                    <BeginStoryboard Storyboard="{StaticResource FrontendMentorWindow.ToActive.Storyboard}" />
                 </Trigger.EnterActions>
                 <Trigger.ExitActions>
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <ColorAnimation Storyboard.TargetProperty="(windows:FrontendMentorWindow.TitleBarBackground).(SolidColorBrush.Color)"
-                                            To="#2b2b2b"
-                                            Duration="0:0:0.3" />
-                        </Storyboard>
-                    </BeginStoryboard>
+                    <BeginStoryboard Storyboard="{StaticResource FrontendMentorWindow.FromActive.Storyboard}" />
                 </Trigger.ExitActions>
             </Trigger>
         </Style.Triggers>

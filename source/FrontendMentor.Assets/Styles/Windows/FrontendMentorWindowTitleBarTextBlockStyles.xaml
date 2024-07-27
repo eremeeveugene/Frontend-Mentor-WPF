@@ -16,10 +16,10 @@
         <Style.Triggers>
             <Trigger Property="helpers:WindowPropertiesHelper.IsActive" Value="True">
                 <Trigger.EnterActions>
-                    <BeginStoryboard Storyboard="{StaticResource FrontendMentorWindow.TitleBarTextBlock.Active.Storyboard}" />
+                    <BeginStoryboard Storyboard="{StaticResource FrontendMentorWindow.TitleBarTextBlock.ToActive.Storyboard}" />
                 </Trigger.EnterActions>
                 <Trigger.ExitActions>
-                    <BeginStoryboard Storyboard="{StaticResource FrontendMentorWindow.TitleBarTextBlock.InActive.Storyboard}" />
+                    <BeginStoryboard Storyboard="{StaticResource FrontendMentorWindow.TitleBarTextBlock.FromActive.Storyboard}" />
                 </Trigger.ExitActions>
             </Trigger>
         </Style.Triggers>

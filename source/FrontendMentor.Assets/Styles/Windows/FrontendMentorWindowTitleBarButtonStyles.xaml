@@ -35,26 +35,26 @@
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Trigger.EnterActions>
-                    <BeginStoryboard Storyboard="{StaticResource FrontendMentorWindow.TitleBarButton.MouseOver.Storyboard}" />
+                    <BeginStoryboard Storyboard="{StaticResource FrontendMentorWindow.TitleBarButton.ToMouseOver.Storyboard}" />
                 </Trigger.EnterActions>
                 <Trigger.ExitActions>
-                    <BeginStoryboard Storyboard="{StaticResource FrontendMentorWindow.TitleBarButton.MouseOut.Storyboard}" />
+                    <BeginStoryboard Storyboard="{StaticResource FrontendMentorWindow.TitleBarButton.FromMouseOver.Storyboard}" />
                 </Trigger.ExitActions>
             </Trigger>
             <Trigger Property="IsPressed" Value="True">
                 <Trigger.EnterActions>
-                    <BeginStoryboard Storyboard="{StaticResource FrontendMentorWindow.TitleBarButton.Pressed.Storyboard}" />
+                    <BeginStoryboard Storyboard="{StaticResource FrontendMentorWindow.TitleBarButton.ToPressed.Storyboard}" />
                 </Trigger.EnterActions>
                 <Trigger.ExitActions>
-                    <BeginStoryboard Storyboard="{StaticResource FrontendMentorWindow.TitleBarButton.Released.Storyboard}" />
+                    <BeginStoryboard Storyboard="{StaticResource FrontendMentorWindow.TitleBarButton.FromPressed.Storyboard}" />
                 </Trigger.ExitActions>
             </Trigger>
             <Trigger Property="helpers:WindowPropertiesHelper.IsActive" Value="True">
                 <Trigger.EnterActions>
-                    <BeginStoryboard Storyboard="{StaticResource FrontendMentorWindow.TitleBarButton.Active.Storyboard}" />
+                    <BeginStoryboard Storyboard="{StaticResource FrontendMentorWindow.TitleBarButton.ToActive.Storyboard}" />
                 </Trigger.EnterActions>
                 <Trigger.ExitActions>
-                    <BeginStoryboard Storyboard="{StaticResource FrontendMentorWindow.TitleBarButton.InActive.Storyboard}" />
+                    <BeginStoryboard Storyboard="{StaticResource FrontendMentorWindow.TitleBarButton.FromActive.Storyboard}" />
                 </Trigger.ExitActions>
             </Trigger>
         </Style.Triggers>
@@ -66,6 +66,17 @@
         <Setter Property="helpers:IconPropertiesHelper.Data" Value="{StaticResource Minimize.Geometry}" />
     </Style>
 
+    <Style x:Key="FrontendMentorWindow.MaximizeTitleBarButton.Style"
+           BasedOn="{StaticResource FrontendMentorWindow.TitleBarButton.Style}"
+           TargetType="{x:Type Button}">
+        <Setter Property="helpers:IconPropertiesHelper.Data" Value="{StaticResource Restore.Geometry}" />
+        <Style.Triggers>
+            <Trigger Property="helpers:WindowPropertiesHelper.WindowState" Value="Maximized">
+                <Setter Property="helpers:IconPropertiesHelper.Data" Value="{StaticResource Maximize.Geometry}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
     <Style x:Key="FrontendMentorWindow.CloseTitleBarButton.Style"
            BasedOn="{StaticResource FrontendMentorWindow.TitleBarButton.Style}"
            TargetType="{x:Type Button}">
@@ -74,18 +85,18 @@
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Trigger.EnterActions>
-                    <BeginStoryboard Storyboard="{StaticResource FrontendMentorWindow.CloseTitleBarButton.MouseOver.Storyboard}" />
+                    <BeginStoryboard Storyboard="{StaticResource FrontendMentorWindow.CloseTitleBarButton.ToMouseOver.Storyboard}" />
                 </Trigger.EnterActions>
                 <Trigger.ExitActions>
-                    <BeginStoryboard Storyboard="{StaticResource FrontendMentorWindow.CloseTitleBarButton.MouseOut.Storyboard}" />
+                    <BeginStoryboard Storyboard="{StaticResource FrontendMentorWindow.CloseTitleBarButton.FromMouseOver.Storyboard}" />
                 </Trigger.ExitActions>
             </Trigger>
             <Trigger Property="IsPressed" Value="True">
                 <Trigger.EnterActions>
-                    <BeginStoryboard Storyboard="{StaticResource FrontendMentorWindow.CloseTitleBarButton.Pressed.Storyboard}" />
+                    <BeginStoryboard Storyboard="{StaticResource FrontendMentorWindow.CloseTitleBarButton.ToPressed.Storyboard}" />
                 </Trigger.EnterActions>
                 <Trigger.ExitActions>
-                    <BeginStoryboard Storyboard="{StaticResource FrontendMentorWindow.CloseTitleBarButton.Released.Storyboard}" />
+                    <BeginStoryboard Storyboard="{StaticResource FrontendMentorWindow.CloseTitleBarButton.FromPressed.Storyboard}" />
                 </Trigger.ExitActions>
             </Trigger>
         </Style.Triggers>

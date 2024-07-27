@@ -9,6 +9,14 @@
 
     <!--#region FrontendMentorWindow-->
 
+    <SolidColorBrush x:Key="FrontendMentorWindow.TitleBarBackground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Dark.Charcoal.Color}" />
+
+    <SolidColorBrush x:Key="FrontendMentorWindow.Border.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Gunmetal.Color}" />
+
     <SolidColorBrush x:Key="FrontendMentorWindow.TitleBarTextBlock.Foreground.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Gray.Color}" />
