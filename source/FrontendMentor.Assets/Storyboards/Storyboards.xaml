@@ -22,7 +22,7 @@
     <Storyboard x:Key="FrontendMentorWindow.FromActive.Storyboard" po:Freeze="True">
         <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                         Storyboard.TargetProperty="(windows:FrontendMentorWindow.TitleBarBackground).(SolidColorBrush.Color)"
-                        To="{StaticResource Dark.Charcoal.Color}"
+                        From="{StaticResource Swamp.Color}"
                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 
