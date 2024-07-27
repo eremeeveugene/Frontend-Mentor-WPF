@@ -24,6 +24,10 @@ public class FrontendMentorWindow : Window
     public static readonly DependencyProperty TitleBarHeightProperty = DependencyProperty.Register(
         nameof(TitleBarHeight), typeof(double), typeof(FrontendMentorWindow), new PropertyMetadata(default(double)));
 
+    public static readonly DependencyProperty TitleBarImageHeightProperty = DependencyProperty.Register(
+        nameof(TitleBarImageHeight), typeof(double), typeof(FrontendMentorWindow),
+        new PropertyMetadata(default(double)));
+
     private ICommand? _closeCommand;
     private ICommand? _minimizeCommand;
     private ICommand? _toggleMaximizeCommand;
@@ -32,6 +36,12 @@ public class FrontendMentorWindow : Window
     {
         DefaultStyleKeyProperty.OverrideMetadata(typeof(FrontendMentorWindow),
             new FrameworkPropertyMetadata(typeof(FrontendMentorWindow)));
+    }
+
+    public double TitleBarImageHeight
+    {
+        get => (double)GetValue(TitleBarImageHeightProperty);
+        set => SetValue(TitleBarImageHeightProperty, value);
     }
 
     public double TitleBarHeight

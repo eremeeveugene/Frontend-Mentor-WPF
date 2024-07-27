@@ -9,6 +9,10 @@
 
     <!--#region FrontendMentorWindow-->
 
+    <SolidColorBrush x:Key="FrontendMentorWindow.TitleBarTextBlock.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Gray.Color}" />
+
     <SolidColorBrush x:Key="FrontendMentorWindow.TitleBarButton.Background.Brush"
                      po:Freeze="True"
                      Opacity="0"

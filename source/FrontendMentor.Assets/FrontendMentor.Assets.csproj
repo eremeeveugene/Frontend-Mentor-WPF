@@ -9,7 +9,43 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Fonts\SegoeUIVariableStaticSmall\Segoe-UI-Variable-Static-Display-Bold.ttf" />
+    <None Remove="Fonts\SegoeUIVariableStaticSmall\Segoe-UI-Variable-Static-Display-Light.ttf" />
+    <None Remove="Fonts\SegoeUIVariableStaticSmall\Segoe-UI-Variable-Static-Display-Semibold.ttf" />
+    <None Remove="Fonts\SegoeUIVariableStaticSmall\Segoe-UI-Variable-Static-Display-Semilight.ttf" />
+    <None Remove="Fonts\SegoeUIVariableStaticSmall\Segoe-UI-Variable-Static-Display.ttf" />
+    <None Remove="Fonts\SegoeUIVariableStaticSmall\Segoe-UI-Variable-Static-Small-Bold.ttf" />
+    <None Remove="Fonts\SegoeUIVariableStaticSmall\Segoe-UI-Variable-Static-Small-Light.ttf" />
+    <None Remove="Fonts\SegoeUIVariableStaticSmall\Segoe-UI-Variable-Static-Small-Semibold.ttf" />
+    <None Remove="Fonts\SegoeUIVariableStaticSmall\Segoe-UI-Variable-Static-Small-Semilight.ttf" />
+    <None Remove="Fonts\SegoeUIVariableStaticSmall\Segoe-UI-Variable-Static-Small.ttf" />
+    <None Remove="Fonts\SegoeUIVariableStaticSmall\Segoe-UI-Variable-Static-Text-Bold.ttf" />
+    <None Remove="Fonts\SegoeUIVariableStaticSmall\Segoe-UI-Variable-Static-Text-Light.ttf" />
+    <None Remove="Fonts\SegoeUIVariableStaticSmall\Segoe-UI-Variable-Static-Text-Semibold.ttf" />
+    <None Remove="Fonts\SegoeUIVariableStaticSmall\Segoe-UI-Variable-Static-Text-Semilight.ttf" />
+    <None Remove="Fonts\SegoeUIVariableStaticSmall\Segoe-UI-Variable-Static-Text.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\FrontendMentor.Core\FrontendMentor.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\SegoeUIVariableStaticDisplay\Segoe-UI-Variable-Static-Display-Bold.ttf" />
+    <Resource Include="Fonts\SegoeUIVariableStaticDisplay\Segoe-UI-Variable-Static-Display-Light.ttf" />
+    <Resource Include="Fonts\SegoeUIVariableStaticDisplay\Segoe-UI-Variable-Static-Display-Semibold.ttf" />
+    <Resource Include="Fonts\SegoeUIVariableStaticDisplay\Segoe-UI-Variable-Static-Display-Semilight.ttf" />
+    <Resource Include="Fonts\SegoeUIVariableStaticDisplay\Segoe-UI-Variable-Static-Display.ttf" />
+    <Resource Include="Fonts\SegoeUIVariableStaticSmall\Segoe-UI-Variable-Static-Small-Bold.ttf" />
+    <Resource Include="Fonts\SegoeUIVariableStaticSmall\Segoe-UI-Variable-Static-Small-Light.ttf" />
+    <Resource Include="Fonts\SegoeUIVariableStaticSmall\Segoe-UI-Variable-Static-Small-Semibold.ttf" />
+    <Resource Include="Fonts\SegoeUIVariableStaticSmall\Segoe-UI-Variable-Static-Small-Semilight.ttf" />
+    <Resource Include="Fonts\SegoeUIVariableStaticSmall\Segoe-UI-Variable-Static-Small.ttf" />
+    <Resource Include="Fonts\SegoeUIVariableStaticText\Segoe-UI-Variable-Static-Text-Bold.ttf" />
+    <Resource Include="Fonts\SegoeUIVariableStaticText\Segoe-UI-Variable-Static-Text-Light.ttf" />
+    <Resource Include="Fonts\SegoeUIVariableStaticText\Segoe-UI-Variable-Static-Text-Semibold.ttf" />
+    <Resource Include="Fonts\SegoeUIVariableStaticText\Segoe-UI-Variable-Static-Text-Semilight.ttf" />
+    <Resource Include="Fonts\SegoeUIVariableStaticText\Segoe-UI-Variable-Static-Text.ttf" />
   </ItemGroup>
 
   <ItemGroup>

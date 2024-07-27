@@ -10,47 +10,34 @@
 // --------------------------------------------------------------------------------
 
 using FrontendMentor.Assets.MarkupExtensions;
-using FrontendMentor.Core.Attributes;
-using System.ComponentModel;
 using System.Globalization;
+using System.Windows.Data;
 
 namespace FrontendMentor.Assets.Converters;
 
-public class EnumToDescriptionConverter : ConverterMarkupExtension<EnumToDescriptionConverter>
+[ValueConversion(typeof(object), typeof(object))]
+public class EqualityParameterToValueConverter : ConverterMarkupExtension<EqualityParameterToValueConverter>
 {
+    public object? TrueValue { get; set; }
+    public object? FalseValue { get; set; }
+
     public override object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
-        if (value == null)
+        if (value != null && value.Equals(parameter))
         {
-            return null;
+            return TrueValue;
         }
 
-        var fieldName = value.ToString() ?? throw new InvalidOperationException();
-
-        var fieldInfo = value.GetType().GetField(fieldName);
-
-        if (fieldInfo == null)
-        {
-            return value.ToString();
-        }
-
-        if (fieldInfo.GetCustomAttributes(typeof(LocalizedDescriptionAttribute), false)
-                .FirstOrDefault() is LocalizedDescriptionAttribute localizedDescription)
-        {
-            return localizedDescription.Description;
-        }
-
-        if (fieldInfo.GetCustomAttributes(typeof(DescriptionAttribute), false)
-                .FirstOrDefault() is DescriptionAttribute description)
-        {
-            return description.Description;
-        }
-
-        return value.ToString();
+        return FalseValue;
     }
 
     public override object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
         throw new NotSupportedException();
+    }
+
+    public override object ProvideValue(IServiceProvider serviceProvider)
+    {
+        return this;
     }
 }

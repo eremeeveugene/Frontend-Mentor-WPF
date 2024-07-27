@@ -26,6 +26,12 @@ public class Icon : Control
     public static readonly DependencyProperty StrokeProperty = DependencyProperty.Register(
         nameof(Stroke), typeof(Brush), typeof(Icon), new PropertyMetadata(default(Brush)));
 
+    public static readonly DependencyProperty StretchProperty = DependencyProperty.Register(
+        nameof(Stretch), typeof(Stretch), typeof(Icon), new PropertyMetadata(default(Stretch)));
+
+    public static readonly DependencyProperty FillProperty = DependencyProperty.Register(
+        nameof(Fill), typeof(Brush), typeof(Icon), new PropertyMetadata(default(Brush)));
+
     static Icon()
     {
         DefaultStyleKeyProperty.OverrideMetadata(typeof(Icon),
@@ -38,6 +44,12 @@ public class Icon : Control
         set => SetValue(DataProperty, value);
     }
 
+    public Brush Fill
+    {
+        get => (Brush)GetValue(FillProperty);
+        set => SetValue(FillProperty, value);
+    }
+
     public Brush Stroke
     {
         get => (Brush)GetValue(StrokeProperty);
@@ -48,5 +60,11 @@ public class Icon : Control
     {
         get => (double)GetValue(StrokeThicknessProperty);
         set => SetValue(StrokeThicknessProperty, value);
+    }
+
+    public Stretch Stretch
+    {
+        get => (Stretch)GetValue(StretchProperty);
+        set => SetValue(StretchProperty, value);
     }
 }

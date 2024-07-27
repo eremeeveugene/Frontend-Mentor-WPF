@@ -40,7 +40,7 @@ internal class SummaryItemTypeToValueConverter : ConverterMarkupExtension<Summar
         };
     }
 
-    public override object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
+    public override object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
         throw new NotSupportedException();
     }

@@ -23,7 +23,7 @@ public class LocalizedDescriptionAttribute(string resourceKey, Type resourceType
     private static readonly Dictionary<(Type, string), string> DescriptionCache = [];
     private readonly ResourceManager _resourceManager = new(resourceType);
 
-    public override string Description
+    public override string? Description
     {
         get
         {
