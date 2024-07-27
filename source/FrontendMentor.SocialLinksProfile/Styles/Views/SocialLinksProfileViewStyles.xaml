@@ -10,14 +10,36 @@
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Styles/Controls/TextBlocks/TextBlockStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
+    <Style x:Key="SocialLinksProfileView.SocialLinkButton.FocusBorder.Style" TargetType="{x:Type Border}">
+        <Setter Property="BorderBrush" Value="{StaticResource SocialLinksProfileView.SocialLinkButton.FocusBorder.Border.Brush}" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="Opacity" Value="0" />
+        <Style.Triggers>
+            <Trigger Property="helpers:UIElementPropertiesHelper.IsFocusedParent" Value="True">
+                <Trigger.EnterActions>
+                    <BeginStoryboard Storyboard="{StaticResource SocialLinksProfileView.SocialLinkButton.FocusBorder.ToFocused.Storyboard}" />
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard Storyboard="{StaticResource SocialLinksProfileView.SocialLinkButton.FocusBorder.FromFocused.Storyboard}" />
+                </Trigger.ExitActions>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
     <ControlTemplate x:Key="SocialLinksProfileView.SocialLinkButton.Template" TargetType="{x:Type Button}">
-        <Border Padding="{TemplateBinding Padding}"
-                Background="{TemplateBinding Background}"
-                BorderBrush="{TemplateBinding BorderBrush}"
-                BorderThickness="{TemplateBinding BorderThickness}"
-                CornerRadius="{TemplateBinding helpers:BorderPropertiesHelper.CornerRadius}">
-            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-        </Border>
+        <Grid Background="Transparent">
+            <Border Padding="{TemplateBinding Padding}"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding helpers:BorderPropertiesHelper.CornerRadius}">
+                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+            </Border>
+
+            <Border helpers:UIElementPropertiesHelper.IsFocusedParent="{TemplateBinding IsFocused}"
+                    CornerRadius="{TemplateBinding helpers:BorderPropertiesHelper.CornerRadius}"
+                    Style="{StaticResource SocialLinksProfileView.SocialLinkButton.FocusBorder.Style}" />
+        </Grid>
     </ControlTemplate>
 
     <Style x:Key="SocialLinksProfileView.SocialLinkButton.Style" TargetType="{x:Type Button}">
@@ -31,26 +53,14 @@
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="helpers:BorderPropertiesHelper.CornerRadius" Value="8" />
         <Style.Triggers>
-            <EventTrigger RoutedEvent="{x:Static Button.MouseEnterEvent}">
-                <EventTrigger.Actions>
-                    <BeginStoryboard Storyboard="{StaticResource SocialLinksProfileView.SocialLinkButton.MouseOver.Storyboard}" />
-                </EventTrigger.Actions>
-            </EventTrigger>
-            <EventTrigger RoutedEvent="{x:Static Button.GotFocusEvent}">
-                <EventTrigger.Actions>
-                    <BeginStoryboard Storyboard="{StaticResource SocialLinksProfileView.SocialLinkButton.Focused.Storyboard}" />
-                </EventTrigger.Actions>
-            </EventTrigger>
-            <EventTrigger RoutedEvent="{x:Static Button.LostFocusEvent}">
-                <EventTrigger.Actions>
-                    <BeginStoryboard Storyboard="{StaticResource SocialLinksProfileView.SocialLinkButton.Normal.Storyboard}" />
-                </EventTrigger.Actions>
-            </EventTrigger>
-            <EventTrigger RoutedEvent="{x:Static Button.MouseLeaveEvent}">
-                <EventTrigger.Actions>
-                    <BeginStoryboard Storyboard="{StaticResource SocialLinksProfileView.SocialLinkButton.Normal.Storyboard}" />
-                </EventTrigger.Actions>
-            </EventTrigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Trigger.EnterActions>
+                    <BeginStoryboard Storyboard="{StaticResource SocialLinksProfileView.SocialLinkButton.ToMouseOver.Storyboard}" />
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard Storyboard="{StaticResource SocialLinksProfileView.SocialLinkButton.FromMouseOver.Storyboard}" />
+                </Trigger.ExitActions>
+            </Trigger>
         </Style.Triggers>
     </Style>
 

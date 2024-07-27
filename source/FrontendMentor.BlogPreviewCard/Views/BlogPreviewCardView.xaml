@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:constants="clr-namespace:FrontendMentor.Core.Constants;assembly=FrontendMentor.Core"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:helpers="clr-namespace:FrontendMentor.Assets.Helpers;assembly=FrontendMentor.Assets"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:properties="clr-namespace:FrontendMentor.BlogPreviewCard.Properties"
              xmlns:viewModels="clr-namespace:FrontendMentor.BlogPreviewCard.ViewModels"
@@ -10,24 +11,7 @@
              x:ClassModifier="internal"
              mc:Ignorable="d">
 
-    <Border Width="384"
-            Padding="23"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Background="{StaticResource BlogPreviewCardView.RootBorder.Background.Brush}"
-            BorderBrush="{StaticResource BlogPreviewCardView.RootBorder.Border.Brush}"
-            BorderThickness="1"
-            CornerRadius="20"
-            Effect="{StaticResource BlogPreviewCardView.RootBorder.DropShadow.Effect}">
-        <Border.Triggers>
-            <EventTrigger RoutedEvent="{x:Static UIElement.MouseEnterEvent}">
-                <BeginStoryboard Storyboard="{StaticResource BlogPreviewCardView.RootBorder.MouseOver.Storyboard}" />
-            </EventTrigger>
-            <EventTrigger RoutedEvent="{x:Static UIElement.MouseLeaveEvent}">
-                <BeginStoryboard Storyboard="{StaticResource BlogPreviewCardView.RootBorder.Normal.Storyboard}" />
-            </EventTrigger>
-        </Border.Triggers>
-
+    <Border x:Name="RootBorder" Style="{StaticResource BlogPreviewCardView.RootBorder.Style}">
         <StackPanel>
             <Rectangle Height="200"
                        RadiusX="10"
@@ -38,10 +22,7 @@
             </Rectangle>
 
             <StackPanel Margin="0,25,0,0">
-                <Border Padding="12,2,12,6"
-                        HorizontalAlignment="Left"
-                        Background="{StaticResource BlogPreviewCardView.CategoryBorder.Background.Brush}"
-                        CornerRadius="4">
+                <Border Style="{StaticResource BlogPreviewCardView.CategoryBorder.Style}">
                     <TextBlock Style="{StaticResource Body.S.Bold.TextBlock.Style}" Text="{Binding Blog.Category, FallbackValue={x:Static constants:Signs.Minus}}" />
                 </Border>
 
@@ -50,10 +31,9 @@
                     <Run Text="{Binding Blog.PublishedDate, Mode=OneWay, StringFormat={x:Static constants:DateTimeFormatConstants.DayMonthAbbrYear}, FallbackValue={x:Static constants:Signs.Minus}}" />
                 </TextBlock>
 
-                <TextBlock x:Name="TitleTextBlock"
-                           Margin="0,11,0,0"
-                           Foreground="{StaticResource BlogPreviewCardView.TitleTextBlock.Foreground.Brush}"
-                           Style="{StaticResource Heading.TextBlock.Style}"
+                <TextBlock Margin="0,11,0,0"
+                           helpers:UIElementPropertiesHelper.IsMouseOverParent="{Binding IsMouseOver, ElementName=RootBorder}"
+                           Style="{StaticResource BlogPreviewCardView.TitleTextBlock.Style}"
                            Text="{Binding Blog.Title, FallbackValue={x:Static constants:Signs.Minus}}" />
 
                 <TextBlock Margin="0,14,0,0"

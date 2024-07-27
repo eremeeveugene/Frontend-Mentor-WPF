@@ -11,19 +11,7 @@
 
     <!--#region SocialLinksProfileView-->
 
-    <Storyboard x:Key="SocialLinksProfileView.SocialLinkButton.Normal.Storyboard" po:Freeze="True">
-        <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
-                        Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
-                        To="{StaticResource Grey.700.Color}"
-                        Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
-
-        <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
-                        Storyboard.TargetProperty="(Button.Foreground).(SolidColorBrush.Color)"
-                        To="{StaticResource White.Color}"
-                        Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
-    </Storyboard>
-
-    <Storyboard x:Key="SocialLinksProfileView.SocialLinkButton.MouseOver.Storyboard" po:Freeze="True">
+    <Storyboard x:Key="SocialLinksProfileView.SocialLinkButton.ToMouseOver.Storyboard" po:Freeze="True">
         <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                         Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
                         To="{StaticResource Green.Color}"
@@ -35,16 +23,30 @@
                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 
-    <Storyboard x:Key="SocialLinksProfileView.SocialLinkButton.Focused.Storyboard" po:Freeze="True">
+    <Storyboard x:Key="SocialLinksProfileView.SocialLinkButton.FromMouseOver.Storyboard" po:Freeze="True">
         <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                         Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
-                        To="{StaticResource Green.Color}"
+                        From="{StaticResource Green.Color}"
                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
 
         <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                         Storyboard.TargetProperty="(Button.Foreground).(SolidColorBrush.Color)"
-                        To="{StaticResource Grey.700.Color}"
+                        From="{StaticResource Grey.700.Color}"
                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
+    </Storyboard>
+
+    <Storyboard x:Key="SocialLinksProfileView.SocialLinkButton.FocusBorder.ToFocused.Storyboard" po:Freeze="True">
+        <DoubleAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
+                         Storyboard.TargetProperty="(Button.Opacity)"
+                         To="1"
+                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
+    </Storyboard>
+
+    <Storyboard x:Key="SocialLinksProfileView.SocialLinkButton.FocusBorder.FromFocused.Storyboard" po:Freeze="True">
+        <DoubleAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
+                         Storyboard.TargetProperty="(Button.Opacity)"
+                         From="1"
+                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 
     <!--#endregion-->

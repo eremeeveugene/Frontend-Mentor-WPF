@@ -10,21 +10,42 @@
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Storyboards/Storyboards.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
+    <Style x:Key="FrontendMentorWindow.TitleBarButton.FocusBorder.Style" TargetType="{x:Type Border}">
+        <Setter Property="BorderBrush" Value="{StaticResource FrontendMentorWindow.TitleBarButton.FocusBorder.Border.Brush}" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="Opacity" Value="0" />
+        <Style.Triggers>
+            <Trigger Property="helpers:UIElementPropertiesHelper.IsFocusedParent" Value="True">
+                <Trigger.EnterActions>
+                    <BeginStoryboard Storyboard="{StaticResource FrontendMentorWindow.TitleBarButton.FocusBorder.ToFocused.Storyboard}" />
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard Storyboard="{StaticResource FrontendMentorWindow.TitleBarButton.FocusBorder.FromFocused.Storyboard}" />
+                </Trigger.ExitActions>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
     <ControlTemplate x:Key="FrontendMentorWindow.TitleBarButton.Template" TargetType="{x:Type Button}">
-        <Border Padding="{TemplateBinding Padding}"
-                Background="{TemplateBinding Background}"
-                BorderBrush="{TemplateBinding BorderBrush}"
-                BorderThickness="{TemplateBinding BorderThickness}">
-            <icons:Icon Width="{TemplateBinding helpers:IconPropertiesHelper.Width}"
-                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                        Data="{TemplateBinding helpers:IconPropertiesHelper.Data}"
-                        Fill="{TemplateBinding helpers:IconPropertiesHelper.Fill}" />
-        </Border>
+        <Grid Background="Transparent">
+            <Border Padding="{TemplateBinding Padding}"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                <icons:Icon Width="{TemplateBinding helpers:IconPropertiesHelper.Width}"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            Data="{TemplateBinding helpers:IconPropertiesHelper.Data}"
+                            Fill="{TemplateBinding helpers:IconPropertiesHelper.Fill}" />
+            </Border>
+
+            <Border helpers:UIElementPropertiesHelper.IsFocusedParent="{TemplateBinding IsFocused}" Style="{StaticResource FrontendMentorWindow.TitleBarButton.FocusBorder.Style}" />
+        </Grid>
     </ControlTemplate>
 
     <Style x:Key="FrontendMentorWindow.TitleBarButton.Style" TargetType="{x:Type Button}">
         <Setter Property="Background" Value="{StaticResource FrontendMentorWindow.TitleBarButton.Background.Brush}" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="Template" Value="{StaticResource FrontendMentorWindow.TitleBarButton.Template}" />

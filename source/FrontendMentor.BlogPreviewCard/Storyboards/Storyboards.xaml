@@ -9,19 +9,17 @@
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Colors/Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Storyboard x:Key="BlogPreviewCardView.RootBorder.MouseOver.Storyboard" po:Freeze="True">
+    <Storyboard x:Key="BlogPreviewCardView.TitleTextBlock.ToMouseOverParent.Storyboard" po:Freeze="True">
         <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
-                        Storyboard.TargetName="TitleTextBlock"
                         Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
                         To="{StaticResource Yellow.Color}"
                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 
-    <Storyboard x:Key="BlogPreviewCardView.RootBorder.Normal.Storyboard" po:Freeze="True">
+    <Storyboard x:Key="BlogPreviewCardView.TitleTextBlock.FromMouseOverParent.Storyboard" po:Freeze="True">
         <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
-                        Storyboard.TargetName="TitleTextBlock"
                         Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
-                        To="{StaticResource Grey.950.Color}"
+                        From="{StaticResource Yellow.Color}"
                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 

@@ -17,33 +17,54 @@
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Styles/Controls/Custom/TextBlocks/TextBlockStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
+    <Style x:Key="SocialLinksProfileView.SocialLinkButton.FocusBorder.Style" TargetType="{x:Type Border}">
+        <Setter Property="BorderBrush" Value="{StaticResource ResultsSummaryComponentView.ContinueButton.FocusBorder.Border.Brush}" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="Opacity" Value="0" />
+        <Style.Triggers>
+            <Trigger Property="helpers:UIElementPropertiesHelper.IsFocusedParent" Value="True">
+                <Trigger.EnterActions>
+                    <BeginStoryboard Storyboard="{StaticResource ResultsSummaryComponentView.ContinueButton.FocusBorder.ToFocused.Storyboard}" />
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard Storyboard="{StaticResource ResultsSummaryComponentView.ContinueButton.FocusBorder.FromFocused.Storyboard}" />
+                </Trigger.ExitActions>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ResultsSummaryComponentView.ContinueButton.ActiveBorder.Style" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="{StaticResource ResultsSummaryComponentView.ContinueButton.Background.MouseOver.Brush}" />
+        <Setter Property="Effect" Value="{StaticResource Button.DropShadowEffect}" />
+        <Setter Property="Opacity" Value="0" />
+        <Style.Triggers>
+            <Trigger Property="helpers:UIElementPropertiesHelper.IsMouseOverParent" Value="True">
+                <Trigger.EnterActions>
+                    <BeginStoryboard Storyboard="{StaticResource ResultsSummaryComponentView.ContinueButton.ActiveBorder.ToMouseOver.Storyboard}" />
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard Storyboard="{StaticResource ResultsSummaryComponentView.ContinueButton.ActiveBorder.FromMouseOver.Storyboard}" />
+                </Trigger.ExitActions>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
     <ControlTemplate x:Key="ResultsSummaryComponentView.ContinueButton.Template" TargetType="{x:Type Button}">
-        <Grid>
+        <Grid Background="Transparent">
             <Border Background="{TemplateBinding Background}"
                     BorderBrush="{TemplateBinding BorderBrush}"
                     BorderThickness="{TemplateBinding BorderThickness}"
                     CornerRadius="{TemplateBinding helpers:BorderPropertiesHelper.CornerRadius}" />
 
-            <Border x:Name="ActiveBorder"
-                    Background="{StaticResource ResultsSummaryComponentView.ContinueButton.Background.MouseOver.Brush}"
+            <Border helpers:UIElementPropertiesHelper.IsMouseOverParent="{TemplateBinding IsMouseOver}"
                     CornerRadius="{TemplateBinding helpers:BorderPropertiesHelper.CornerRadius}"
-                    Effect="{StaticResource Button.DropShadowEffect}"
-                    Opacity="0" />
+                    Style="{StaticResource ResultsSummaryComponentView.ContinueButton.ActiveBorder.Style}" />
 
             <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
 
-            <VisualStateManager.VisualStateGroups>
-                <VisualStateGroup x:Name="CommonStates">
-                    <VisualState x:Name="Normal" Storyboard="{StaticResource ResultsSummaryComponentView.ContinueButton.ActiveBorder.Normal.Storyboard}" />
-                    <VisualState x:Name="MouseOver" Storyboard="{StaticResource ResultsSummaryComponentView.ContinueButton.ActiveBorder.MouseOver.Storyboard}" />
-                    <VisualState x:Name="Pressed" Storyboard="{StaticResource ResultsSummaryComponentView.ContinueButton.ActiveBorder.Pressed.Storyboard}" />
-                    <VisualState x:Name="Disabled" />
-                </VisualStateGroup>
-                <VisualStateGroup x:Name="FocusStates">
-                    <VisualState x:Name="Unfocused" Storyboard="{StaticResource ResultsSummaryComponentView.ContinueButton.ActiveBorder.Unfocused.Storyboard}" />
-                    <VisualState x:Name="Focused" Storyboard="{StaticResource ResultsSummaryComponentView.ContinueButton.ActiveBorder.Focused.Storyboard}" />
-                </VisualStateGroup>
-            </VisualStateManager.VisualStateGroups>
+            <Border helpers:UIElementPropertiesHelper.IsFocusedParent="{TemplateBinding IsFocused}"
+                    CornerRadius="{TemplateBinding helpers:BorderPropertiesHelper.CornerRadius}"
+                    Style="{StaticResource SocialLinksProfileView.SocialLinkButton.FocusBorder.Style}" />
         </Grid>
     </ControlTemplate>
 

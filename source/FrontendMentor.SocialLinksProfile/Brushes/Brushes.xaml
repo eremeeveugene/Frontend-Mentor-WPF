@@ -4,6 +4,7 @@
                     xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
 
     <ResourceDictionary.MergedDictionaries>
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Colors/Colors.xaml" />
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Colors/Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
@@ -36,6 +37,10 @@
     <SolidColorBrush x:Key="SocialLinksProfileView.SocialLinkButton.Foreground.Brush"
                      po:Freeze="True"
                      Color="{StaticResource White.Color}" />
+
+    <SolidColorBrush x:Key="SocialLinksProfileView.SocialLinkButton.FocusBorder.Border.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Cyan.Cornflower.Blue.Color}" />
 
     <!--#endregion-->
 
