@@ -17,8 +17,8 @@
     </ResourceDictionary.MergedDictionaries>
 
     <WindowChrome x:Key="FrontendMentorWindowChrome"
-                  po:Freeze="True"
-                  CaptionHeight="40"
+                  po:Freeze="True" 
+                  CaptionHeight="40" 
                   UseAeroCaptionButtons="False" />
 
     <ControlTemplate x:Key="FrontendMentorWindow.Template" TargetType="{x:Type windows:FrontendMentorWindow}">
@@ -83,6 +83,7 @@
     </ControlTemplate>
 
     <Style TargetType="{x:Type windows:FrontendMentorWindow}">
+        <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderBrush" Value="{StaticResource FrontendMentorWindow.Border.Brush}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />

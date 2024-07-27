@@ -30,10 +30,6 @@
                      po:Freeze="True"
                      Color="{StaticResource Gray.Color}" />
 
-    <SolidColorBrush x:Key="FrontendMentorWindow.TitleBarButton.FocusBorder.Border.Brush"
-                     po:Freeze="True"
-                     Color="{StaticResource Cyan.Cornflower.Blue.Color}" />
-
     <SolidColorBrush x:Key="FrontendMentorWindow.CloseTitleBarButton.Background.Brush"
                      po:Freeze="True"
                      Opacity="0"

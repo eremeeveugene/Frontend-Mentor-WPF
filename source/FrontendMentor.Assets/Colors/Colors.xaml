@@ -9,6 +9,5 @@
     <Color x:Key="Swamp.Color">#1f2020</Color>
     <Color x:Key="Persian.Red.Color">#d3362b</Color>
     <Color x:Key="Burnt.Umber.Color">#8b2d26</Color>
-    <Color x:Key="Cyan.Cornflower.Blue.Color">#2980b9</Color>
 
 </ResourceDictionary>

@@ -13,5 +13,6 @@
     <Color x:Key="LightBlue.Color">#CAC9FF</Color>
     <Color x:Key="VeryLightBlue.Color">#ECF2FF</Color>
     <Color x:Key="White.Color">#FFFFFF</Color>
+    <Color x:Key="Cyan.Cornflower.Blue.Color">#2980b9</Color>
 
 </ResourceDictionary>

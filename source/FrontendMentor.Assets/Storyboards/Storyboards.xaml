@@ -92,20 +92,6 @@
                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 
-    <Storyboard x:Key="FrontendMentorWindow.TitleBarButton.FocusBorder.ToFocused.Storyboard" po:Freeze="True">
-        <DoubleAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
-                         Storyboard.TargetProperty="(Button.Opacity)"
-                         To="1"
-                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
-    </Storyboard>
-
-    <Storyboard x:Key="FrontendMentorWindow.TitleBarButton.FocusBorder.FromFocused.Storyboard" po:Freeze="True">
-        <DoubleAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
-                         Storyboard.TargetProperty="(Button.Opacity)"
-                         From="1"
-                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
-    </Storyboard>
-
     <Storyboard x:Key="FrontendMentorWindow.CloseTitleBarButton.ToMouseOver.Storyboard" po:Freeze="True">
         <DoubleAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                          Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Opacity)"
