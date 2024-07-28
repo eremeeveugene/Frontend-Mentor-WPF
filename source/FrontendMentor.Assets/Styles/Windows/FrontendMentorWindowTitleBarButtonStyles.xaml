@@ -70,10 +70,10 @@
     <Style x:Key="FrontendMentorWindow.MaximizeTitleBarButton.Style"
            BasedOn="{StaticResource FrontendMentorWindow.TitleBarButton.Style}"
            TargetType="{x:Type Button}">
-        <Setter Property="helpers:IconPropertiesHelper.Data" Value="{StaticResource Restore.Geometry}" />
+        <Setter Property="helpers:IconPropertiesHelper.Data" Value="{StaticResource Maximize.Geometry}" />
         <Style.Triggers>
             <Trigger Property="helpers:WindowPropertiesHelper.WindowState" Value="Maximized">
-                <Setter Property="helpers:IconPropertiesHelper.Data" Value="{StaticResource Maximize.Geometry}" />
+                <Setter Property="helpers:IconPropertiesHelper.Data" Value="{StaticResource Restore.Geometry}" />
             </Trigger>
         </Style.Triggers>
     </Style>
