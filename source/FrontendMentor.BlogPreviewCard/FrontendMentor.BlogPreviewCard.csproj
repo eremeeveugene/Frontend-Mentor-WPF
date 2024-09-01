@@ -7,6 +7,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>Properties\Icon.ico</ApplicationIcon>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,14 +25,9 @@
     <None Remove="Fonts\Figtree\Figtree-Regular.ttf" />
     <None Remove="Fonts\Figtree\Figtree-SemiBold.ttf" />
     <None Remove="Fonts\Figtree\Figtree-SemiBoldItalic.ttf" />
-    <None Remove="Images\BlogImage.png" />
-    <None Remove="Images\UserImage.webp" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Images\BlogImage.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Properties\Icon.ico" />
   </ItemGroup>
 
@@ -54,9 +50,6 @@
     <Resource Include="Fonts\Figtree\Figtree-Regular.ttf" />
     <Resource Include="Fonts\Figtree\Figtree-SemiBold.ttf" />
     <Resource Include="Fonts\Figtree\Figtree-SemiBoldItalic.ttf" />
-    <Content Include="Images\UserImage.webp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
 
   <ItemGroup>

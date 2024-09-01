@@ -1,0 +1,26 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
+                    xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
+
+    <ResourceDictionary.MergedDictionaries>
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Colors/Colors.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <DropShadowEffect x:Key="Button.DropShadowEffect"
+                      po:Freeze="True"
+                      BlurRadius="60"
+                      Direction="270"
+                      Opacity="0.15"
+                      ShadowDepth="30"
+                      Color="{StaticResource Steel.Blue.Color}" />
+
+    <DropShadowEffect x:Key="ResultsSummaryComponentView.OuterBorder.DropShadowEffect"
+                      po:Freeze="True"
+                      BlurRadius="60"
+                      Direction="270"
+                      Opacity="0.15"
+                      ShadowDepth="30"
+                      Color="{StaticResource Steel.Blue.Color}" />
+
+</ResourceDictionary>
