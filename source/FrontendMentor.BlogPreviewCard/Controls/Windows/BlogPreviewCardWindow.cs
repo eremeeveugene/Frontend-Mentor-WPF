@@ -10,13 +10,11 @@
 // --------------------------------------------------------------------------------
 
 using FrontendMentor.Assets.Controls.Windows;
-using FrontendMentor.Assets.Controls.Windows.Dependencies;
 using System.Windows;
 
 namespace FrontendMentor.BlogPreviewCard.Controls.Windows;
 
-internal class BlogPreviewCardWindow(FrontendMentorWindowDependencies frontendMentorWindowDependencies)
-    : FrontendMentorWindow(frontendMentorWindowDependencies)
+internal class BlogPreviewCardWindow : FrontendMentorWindow
 {
     static BlogPreviewCardWindow()
     {

@@ -9,17 +9,27 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.Assets.Controls.Windows.Dependencies;
-using FrontendMentor.Core.Services.Sectors;
 using System.Windows;
+using System.Windows.Input;
+using System.Windows.Media;
 
 namespace FrontendMentor.Assets.Controls.Windows;
 
 public class FrontendMentorWindow : Window
 {
-    public static readonly DependencyProperty SectorsContainerProperty = DependencyProperty.Register(
-        nameof(SectorsContainer), typeof(ISectorsContainer), typeof(FrontendMentorWindow),
-        new PropertyMetadata(default(ISectorsContainer)));
+    public static readonly DependencyProperty TitleBarBackgroundProperty = DependencyProperty.Register(
+        nameof(TitleBarBackground), typeof(Brush), typeof(FrontendMentorWindow), new PropertyMetadata(default(Brush)));
+
+    public static readonly DependencyProperty TitleBarHeightProperty = DependencyProperty.Register(
+        nameof(TitleBarHeight), typeof(double), typeof(FrontendMentorWindow), new PropertyMetadata(default(double)));
+
+    public static readonly DependencyProperty TitleBarImageHeightProperty = DependencyProperty.Register(
+        nameof(TitleBarImageHeight), typeof(double), typeof(FrontendMentorWindow),
+        new PropertyMetadata(default(double)));
+
+    private ICommand? _closeCommand;
+    private ICommand? _minimizeCommand;
+    private ICommand? _toggleMaximizeCommand;
 
     static FrontendMentorWindow()
     {
@@ -27,14 +37,35 @@ public class FrontendMentorWindow : Window
             new FrameworkPropertyMetadata(typeof(FrontendMentorWindow)));
     }
 
-    public FrontendMentorWindow(FrontendMentorWindowDependencies frontendMentorWindowDependencies)
+    public double TitleBarImageHeight
     {
-        SectorsContainer = frontendMentorWindowDependencies.SectorsContainer;
+        get => (double)GetValue(TitleBarImageHeightProperty);
+        set => SetValue(TitleBarImageHeightProperty, value);
     }
 
-    public ISectorsContainer SectorsContainer
+    public double TitleBarHeight
     {
-        get => (ISectorsContainer)GetValue(SectorsContainerProperty);
-        private set => SetValue(SectorsContainerProperty, value);
+        get => (double)GetValue(TitleBarHeightProperty);
+        set => SetValue(TitleBarHeightProperty, value);
+    }
+
+    public Brush TitleBarBackground
+    {
+        get => (Brush)GetValue(TitleBarBackgroundProperty);
+        set => SetValue(TitleBarBackgroundProperty, value);
+    }
+
+    public ICommand MinimizeCommand => _minimizeCommand ??= new DelegateCommand(Minimize);
+    public ICommand ToggleMaximizeCommand => _toggleMaximizeCommand ??= new DelegateCommand(ToggleMaximize);
+    public ICommand CloseCommand => _closeCommand ??= new DelegateCommand(Close);
+
+    private void ToggleMaximize()
+    {
+        WindowState = WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
+    }
+
+    private void Minimize()
+    {
+        WindowState = WindowState.Minimized;
     }
 }

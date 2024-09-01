@@ -1,2 +1,34 @@
-# Auto detect text files and perform LF normalization
+# Set default behavior to automatically normalize line endings.
 * text=auto
+
+# Explicitly declare text files you want to always be normalized and converted to native line endings on checkout.
+*.ts     text
+*.html   text
+*.css    text
+*.scss   text
+*.md     text
+
+# Declare binary files to ensure they are handled correctly.
+*.png    binary
+*.jpg    binary
+*.gif    binary
+*.svg    binary
+*.ico    binary
+
+# Special handling for JavaScript files, if needed.
+*.js     text
+
+# Ensure package lock and yarn lock files use LF line endings.
+package-lock.json text eol=lf
+yarn.lock text eol=lf
+
+# Handle environments files (if using them).
+*.env    text
+
+# IDE-specific files, if needed.
+*.iml    text
+*.sublime-project text
+*.sublime-workspace text
+
+# GitHub Actions files, if using GitHub CI/CD.
+*.yml    text

@@ -117,10 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BlogPreviewCardPublishedCaption" xml:space="preserve">
+  <data name="BlogPreviewCardView_PublishedTextBlock_Text" xml:space="preserve">
     <value>Published</value>
   </data>
-  <data name="BlogPreviewCardWindowTitle" xml:space="preserve">
+  <data name="BlogPreviewCardWindow_Title" xml:space="preserve">
     <value>Blog Preview Card</value>
   </data>
 </root>

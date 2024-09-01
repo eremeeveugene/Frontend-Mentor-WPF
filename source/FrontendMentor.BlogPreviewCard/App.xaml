@@ -4,6 +4,11 @@
                                         xmlns:applications="clr-namespace:FrontendMentor.Assets.Applications;assembly=FrontendMentor.Assets"
                                         x:ClassModifier="internal">
     <applications:FrontendMentorApplication.Resources>
-        <ResourceDictionary Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Themes/Custom.xaml" />
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Themes/Custom.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Themes/Custom.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </applications:FrontendMentorApplication.Resources>
 </applications:FrontendMentorApplication>

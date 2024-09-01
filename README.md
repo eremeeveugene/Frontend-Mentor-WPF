@@ -1,88 +1,121 @@
-# Frontend-Mentor-WPF
+# Frontend Mentor WPF Solutions
 
-## QR code component
+[![.NET](https://github.com/eremeeveugene/Frontend-Mentor-WPF/actions/workflows/dotnet.yml/badge.svg)](https://github.com/eremeeveugene/Frontend-Mentor-WPF)
+
+## Overview
+
+I am solving Frontend Mentor challenges using **.NET**, **C#**, **WPF**, and the **Prism library**. This repository showcases my ability to create pixel-perfect and efficient UI solutions using these technologies. I aim to enhance my development skills through these projects while adhering to best practices and design principles.
+
+## Purpose
+
+The primary goal of this repository is to improve my own skills and demonstrate my capabilities. I am focused on my growth and learning by providing efficient and pixel-perfect UI solutions.
+
+## Technologies Used
+
+- **[.NET 8](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)**: The latest version of the .NET platform for building and running applications.
+- **[C# 12](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-12)**: The programming language used to implement the solutions.
+- **[WPF](https://learn.microsoft.com/en-us/dotnet/desktop/wpf/overview/?view=netdesktop-8.0)**: Windows Presentation Foundation, used for creating rich desktop applications.
+- **[XAML](https://learn.microsoft.com/en-us/dotnet/desktop/wpf/xaml/?view=netdesktop-8.0)**: Extensible Application Markup Language, used for designing the UI in WPF applications.
+- **[Prism Library](https://prismlibrary.com/)**: A framework for building loosely coupled, maintainable, and testable XAML applications.
+
+## Tools for Comparison
+
+- **[Diffchecker](https://www.diffchecker.com/image-compare/)**: I am using this tool to compare expected result screenshots with actual results.
+- **[ImgOnline](https://www.imgonline.com.ua/eng/similarity-percent-result.php)**: I am using this tool to verify the percentage of similarity between images.
+
+## Automation Jobs
+
+I've created automation jobs for this repository to streamline the development process. These jobs are defined in the `dotnet.yml` file and include steps for building the project and checking code style. The jobs run on every push and pull request to the `develop` branch.
+
+## QR Code Component
 
 https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H
 
 <details>
-    <summary>Screenshots</summary>
+    <summary><strong>Screenshots</strong></summary>
   
-### Expected result 1400x800
-![Expected result 1440x800](https://github.com/eremeeveugene/Frontend-Mentor-WPF/assets/59287893/b668e08f-3ba1-4239-96d8-b9047478d965)
+### Expected Result
+![Expected Result](https://github.com/user-attachments/assets/43b27cfc-be88-40d5-b96a-e08882f3debc)
 
-### Actual result 1400x800
-![Actual result 1440x800](https://github.com/eremeeveugene/Frontend-Mentor-WPF/assets/59287893/d3538758-c03d-4e50-a402-1de3757d56e9)
+### Actual Result (96.87%)
 
-### Expected result 1920x1080
-![Expected - 1920x1080](https://github.com/eremeeveugene/Frontend-Mentor-WPF/assets/59287893/a1896d15-8c67-4b63-93ce-0a5f35522e54)
-
-### Actual result 1920x1080
-![Actual - 1920x1080](https://github.com/eremeeveugene/Frontend-Mentor-WPF/assets/59287893/2ef96457-f5eb-43c8-8a9d-1c5dfd6d5461)
+![Actual Result](https://github.com/user-attachments/assets/1be65699-e68c-4fc0-af27-e8052a375296)
 
 </details>
 
-## Social links profile
+## Social Links Profile
 
 https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ
 
 <details>
-    <summary>Screenshots</summary>
-  
-### Expected result 1440x960
-![Expected result 1440x960](https://github.com/eremeeveugene/Frontend-Mentor-WPF/assets/59287893/96525103-6a2c-4c7c-93d4-99e8bc8dc336)
+    <summary><strong>Screenshots</strong></summary>
+    
+### Expected Result
+![Expected Result](https://github.com/user-attachments/assets/62f75f8a-23d9-4517-a0e6-99a13cf58fe0)
 
-### Actual result 1440x960
-![Actual result 1440x960](https://github.com/eremeeveugene/Frontend-Mentor-WPF/assets/59287893/84f3b88e-4e92-4c91-b5dc-3ad4e4b404f8)
+### Actual Result (95.56%)
 
-### Expected result 1920x1080
-![Expected - 1920x1080](https://github.com/eremeeveugene/Frontend-Mentor-WPF/assets/59287893/9f1a6eaf-2993-41dd-9bff-391c6e1f41cf)
+![Actual Result](https://github.com/user-attachments/assets/435957fa-0cf8-48e8-9266-a3bd22731319)
 
-### Actual result 1920x1080
-![Actual - 1920x1080](https://github.com/eremeeveugene/Frontend-Mentor-WPF/assets/59287893/40cb2715-6751-46f6-84a0-b7f457ca5d19)
+### Expected Result - Active
 
-### Expected result - Active 1440x960
-![Expected result - Active 1440x960](https://github.com/eremeeveugene/Frontend-Mentor-WPF/assets/59287893/c9717cb7-dad6-4a88-b744-f024c6d2ff06)
+![Expected Result - Active](https://github.com/user-attachments/assets/d08d9c58-227f-44b6-95c1-40efdd46e8e1)
 
-### Actual result - Active 1440x960
-![Actual result - Active 1440x960](https://github.com/eremeeveugene/Frontend-Mentor-WPF/assets/59287893/3d78d9ef-28c4-4d5c-87e9-7e75d314a430)
+### Actual Result - Active (97.38%)
 
-### Expected result - Active 1920x1080
-![Expected - Active 1920x1080](https://github.com/eremeeveugene/Frontend-Mentor-WPF/assets/59287893/5a5525a1-fd97-49d3-84d0-553f50f4d041)
-
-### Actual result - Active 1920x1080
-![Actual - Active 1920x1080](https://github.com/eremeeveugene/Frontend-Mentor-WPF/assets/59287893/e6b36cbf-d818-4afb-b317-133afbf11662)
+![Actual Result - Active](https://github.com/user-attachments/assets/8645161f-431d-4f3e-8b05-9d59f7db6e95)
 
 </details>
 
-## Blog preview card
+## Blog Preview Card
 
-https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ
+https://www.frontendmentor.io/challenges/blog-preview-card-ckPaj01IcS
 
 <details>
-    <summary>Screenshots</summary>
+    <summary><strong>Screenshots</strong></summary>
   
-### Expected result 1440x960
-![Expected 1440x960](https://github.com/eremeeveugene/Frontend-Mentor-WPF/assets/59287893/3342326f-9af6-4798-85ed-59c24e5f3150)
+### Expected Result
+![Expected Result](https://github.com/user-attachments/assets/4893d4a5-3604-46fb-926e-dbe601b89ae2)
 
-### Actual result 1440x960
-![Actual 1440x960](https://github.com/eremeeveugene/Frontend-Mentor-WPF/assets/59287893/7ca232e0-040f-4bca-b360-35ea6ad8d92a)
+### Actual Result (99.33%)
 
-### Expected result - Active 1440x960
-![Expected - Active 1440x960](https://github.com/eremeeveugene/Frontend-Mentor-WPF/assets/59287893/df9b6bfa-2e5a-4215-b532-970819d68d37)
+![Actual Result](https://github.com/user-attachments/assets/90a433e1-82fc-45bc-9954-37131f85cc21)
 
-### Actual result - Active 1440x960
-![Actual - Active 1440x960](https://github.com/eremeeveugene/Frontend-Mentor-WPF/assets/59287893/83d32c25-bec6-465e-900d-0ff61530fa7f)
+### Expected Result - Active
 
-### Expected result 1920x1080
-![Expected -1920x1080](https://github.com/eremeeveugene/Frontend-Mentor-WPF/assets/59287893/e00bbad7-0a34-45c4-86e3-3631ec88bb64)
+![Expected Result - Active](https://github.com/user-attachments/assets/32da64f7-745e-4de5-96d1-ef218e9ae0b7)
 
-### Actual result 1920x1080
-![Actual - 1920x1080](https://github.com/eremeeveugene/Frontend-Mentor-WPF/assets/59287893/9bfe8f9e-c5f9-41c5-bde5-b8fbcdd44e4a)
+### Actual Result - Active (99.53%)
 
-### Expected result - Active 1920x1080
-![Expected - Active 1920x1080](https://github.com/eremeeveugene/Frontend-Mentor-WPF/assets/59287893/4dd31943-d5bc-476f-924d-82d16b7acfd1)
-
-### Actual result - Active 1920x1080
-![Actual - Active 1920x1080](https://github.com/eremeeveugene/Frontend-Mentor-WPF/assets/59287893/2d27f1b8-e987-4ea9-b184-546cd8a34351)
+![Actual Result - Active](https://github.com/user-attachments/assets/61173279-2753-45b8-bb2f-c2d826ae41e6)
 
 </details>
+
+## Results Summary Component
+
+https://www.frontendmentor.io/challenges/results-summary-component-CE_K6s0maV
+
+<details>
+    <summary><strong>Screenshots</strong></summary>
+  
+### Expected Result
+
+![Expected Result](https://github.com/user-attachments/assets/86364aa8-e278-424b-a52c-e5e8658ac9c2)
+
+### Actual Result (99.69%)
+
+![Actual Result](https://github.com/user-attachments/assets/86cbd786-fdb1-4853-b0e9-c89acee1bfe9)
+
+### Expected Result - Active
+
+![Expected Result - Active](https://github.com/user-attachments/assets/537dc955-73ef-4f17-84f5-50a21432444a)
+
+### Actual Result - Active (99.15%)
+
+![Actual Result - Active](https://github.com/user-attachments/assets/3ab7d3f5-9e6a-4de7-8863-b70c35017852)
+
+</details>
+
+## License
+
+This project is licensed under a custom license. See the [LICENSE](LICENSE) file for details.
