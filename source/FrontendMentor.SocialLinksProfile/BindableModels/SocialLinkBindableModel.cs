@@ -9,14 +9,14 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.Core.Services.Process;
+using FrontendMentor.Core.Services.Processes;
 using FrontendMentor.SocialLinksProfile.Models;
 using System.Windows.Input;
 
 namespace FrontendMentor.SocialLinksProfile.BindableModels;
 
 internal class SocialLinkBindableModel(
-    IProcessService processService,
+    IProcessesService processesService,
     SocialLinkBindableModel.Parameters parameters) : BindableBase
 {
     private ICommand? _openLinkCommand;
@@ -27,7 +27,7 @@ internal class SocialLinkBindableModel(
 
     private void OpenLink()
     {
-        processService.StartProcess(parameters.SocialLink.Link);
+        processesService.StartProcess(parameters.SocialLink.Link);
     }
 
     public static SocialLinkBindableModel Create(IContainerProvider containerProvider, Parameters parameters)

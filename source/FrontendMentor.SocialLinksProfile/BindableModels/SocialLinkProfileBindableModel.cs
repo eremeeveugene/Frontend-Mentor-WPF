@@ -17,7 +17,7 @@ namespace FrontendMentor.SocialLinksProfile.BindableModels;
 
 internal class SocialLinkProfileBindableModel(
     IContainerProvider containerProvider,
-    IBitmapImagesService bitmapImagesService,
+    IBitmapImageService bitmapImagesService,
     SocialLinkProfileBindableModel.Parameters parameters) : BindableBase
 {
     public string FirstName { get; } = parameters.SocialLinkProfile.FirstName;

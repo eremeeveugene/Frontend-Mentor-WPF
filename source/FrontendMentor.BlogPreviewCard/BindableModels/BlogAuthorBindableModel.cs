@@ -16,7 +16,7 @@ using System.Windows.Media.Imaging;
 namespace FrontendMentor.BlogPreviewCard.BindableModels;
 
 internal class BlogAuthorBindableModel(
-    IBitmapImagesService bitmapImagesService,
+    IBitmapImageService bitmapImagesService,
     BlogAuthorBindableModel.Parameters parameters) : BindableBase
 {
     public string FirstName { get; } = parameters.BlogAuthor.FirstName;

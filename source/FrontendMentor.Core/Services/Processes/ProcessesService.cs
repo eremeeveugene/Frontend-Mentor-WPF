@@ -10,14 +10,13 @@
 // --------------------------------------------------------------------------------
 
 using System.Diagnostics;
-using static System.Diagnostics.Process;
 
-namespace FrontendMentor.Core.Services.Process;
+namespace FrontendMentor.Core.Services.Processes;
 
 internal class ProcessService : IProcessService
 {
     public void StartProcess(string fileName)
     {
-        Start(new ProcessStartInfo { FileName = fileName, UseShellExecute = true });
+        Process.Start(new ProcessStartInfo { FileName = fileName, UseShellExecute = true });
     }
 }

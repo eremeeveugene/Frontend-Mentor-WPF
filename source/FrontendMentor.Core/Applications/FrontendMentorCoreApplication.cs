@@ -19,6 +19,6 @@ public abstract class FrontendMentorCoreApplication : PrismApplication
     protected override void RegisterTypes(IContainerRegistry containerRegistry)
     {
         containerRegistry.RegisterSingleton<IProcessService, ProcessService>();
-        containerRegistry.RegisterSingleton<IBitmapImagesService, BitmapImagesService>();
+        containerRegistry.RegisterSingleton<IBitmapImageService, BitmapImageService>();
     }
 }

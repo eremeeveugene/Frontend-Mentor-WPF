@@ -17,7 +17,7 @@ namespace FrontendMentor.BlogPreviewCard.BindableModels;
 
 internal class BlogBindableModel(
     IContainerProvider containerProvider,
-    IBitmapImagesService bitmapImagesService,
+    IBitmapImageService bitmapImagesService,
     BlogBindableModel.Parameters parameters)
     : BindableBase
 {

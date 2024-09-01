@@ -9,7 +9,7 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-namespace FrontendMentor.Core.Services.Process;
+namespace FrontendMentor.Core.Services.Processes;
 
 public interface IProcessService
 {
