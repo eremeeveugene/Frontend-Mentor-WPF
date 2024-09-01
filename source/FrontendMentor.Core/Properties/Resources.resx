@@ -117,7 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CursorLoadErrorMessageStringFormat" xml:space="preserve">
-    <value>Failed to load cursor from URI: {0}. Ensure the cursor file is included as a Resource in your project.</value>
-  </data>
 </root>

@@ -19,8 +19,6 @@
     <None Remove="Fonts\Inter\Inter-Regular.ttf" />
     <None Remove="Fonts\Inter\Inter-SemiBold.ttf" />
     <None Remove="Fonts\Inter\Inter-Thin.ttf" />
-    <None Remove="Images\ProfileImage.jpeg" />
-    <None Remove="Images\ProfileImage.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -68,7 +66,6 @@
     <Resource Include="Fonts\Inter\Inter-Regular.ttf" />
     <Resource Include="Fonts\Inter\Inter-SemiBold.ttf" />
     <Resource Include="Fonts\Inter\Inter-Thin.ttf" />
-    <Resource Include="Images\ProfileImage.jpeg" />
   </ItemGroup>
 
 </Project>

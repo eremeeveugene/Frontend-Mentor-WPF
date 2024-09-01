@@ -17,4 +17,5 @@ public interface IBitmapImagesService
 {
     BitmapImage GetBitmapImage(Uri uri);
     BitmapImage GetBitmapImage(string uriString);
+    BitmapImage GetBitmapImageFromBase64String(string base64String);
 }

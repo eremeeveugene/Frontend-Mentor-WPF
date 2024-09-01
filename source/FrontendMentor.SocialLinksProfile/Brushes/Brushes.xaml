@@ -15,7 +15,7 @@
 
     <SolidColorBrush x:Key="SocialLinksProfileWindow.Background.Brush"
                      po:Freeze="True"
-                     Color="{StaticResource Black.Color}" />
+                     Color="{StaticResource Grey.900.Color}" />
 
     <!--#endregion-->
 
@@ -23,26 +23,23 @@
 
     <SolidColorBrush x:Key="SocialLinksProfileView.CardOuterBorder.Background.Brush"
                      po:Freeze="True"
-                     Color="{StaticResource DarkGrey.Color}" />
-    <!--#endregion-->
+                     Color="{StaticResource Grey.800.Color}" />
 
-    <!--#region SocialLinksProfileLocationTextBlock-->
-
-    <SolidColorBrush x:Key="SocialLinksProfileLocationTextBlock.Foreground.Brush"
+    <SolidColorBrush x:Key="SocialLinksProfileView.LocationTextBlock.Foreground.Brush"
                      po:Freeze="True"
-                     Color="{StaticResource NeonGreen.Color}" />
+                     Color="{StaticResource Green.Color}" />
 
-    <!--#endregion-->
-
-    <!--#region SocialLinkButton-->
-
-    <SolidColorBrush x:Key="SocialLinkButton.Background.Brush"
+    <SolidColorBrush x:Key="SocialLinksProfileView.SocialLinkButton.Background.Brush"
                      po:Freeze="True"
-                     Color="{StaticResource Grey.Color}" />
+                     Color="{StaticResource Grey.700.Color}" />
 
-    <SolidColorBrush x:Key="SocialLinkButton.Foreground.Brush"
+    <SolidColorBrush x:Key="SocialLinksProfileView.SocialLinkButton.Foreground.Brush"
                      po:Freeze="True"
                      Color="{StaticResource White.Color}" />
+
+    <SolidColorBrush x:Key="SocialLinksProfileView.SocialLinkButton.FocusBorder.Border.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Cyan.Cornflower.Blue.Color}" />
 
     <!--#endregion-->
 

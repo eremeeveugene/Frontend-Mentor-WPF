@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:icons="clr-namespace:FrontendMentor.Assets.Controls.Icons">
+
+    <ControlTemplate x:Key="Icon.Template" TargetType="{x:Type icons:Icon}">
+        <Border Padding="{TemplateBinding Padding}"
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}">
+            <Path HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                  Data="{TemplateBinding Data}"
+                  Fill="{TemplateBinding Fill}"
+                  Stretch="{TemplateBinding Stretch}"
+                  Stroke="{TemplateBinding Stroke}"
+                  StrokeThickness="{TemplateBinding StrokeThickness}" />
+        </Border>
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type icons:Icon}">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="Stretch" Value="Uniform" />
+        <Setter Property="Template" Value="{StaticResource Icon.Template}" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
+
+</ResourceDictionary>
