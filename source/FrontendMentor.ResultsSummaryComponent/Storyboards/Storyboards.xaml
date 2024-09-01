@@ -6,8 +6,7 @@
                     xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
 
     <ResourceDictionary.MergedDictionaries>
-        <resourceDictionaries:SharedResourceDictionary
-            Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Colors/Colors.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Colors/Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Storyboard x:Key="ResultsSummaryComponentView.ContinueButton.ActiveBorder.ToMouseOver.Storyboard" po:Freeze="True">
@@ -17,8 +16,7 @@
                          Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 
-    <Storyboard x:Key="ResultsSummaryComponentView.ContinueButton.ActiveBorder.FromMouseOver.Storyboard"
-                po:Freeze="True">
+    <Storyboard x:Key="ResultsSummaryComponentView.ContinueButton.ActiveBorder.FromMouseOver.Storyboard" po:Freeze="True">
         <DoubleAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                          Storyboard.TargetProperty="(Border.Opacity)"
                          From="1"

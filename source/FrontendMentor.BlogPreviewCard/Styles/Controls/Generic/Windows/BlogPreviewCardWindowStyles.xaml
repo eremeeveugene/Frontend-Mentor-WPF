@@ -6,16 +6,12 @@
                     xmlns:windows1="clr-namespace:FrontendMentor.BlogPreviewCard.Controls.Windows">
 
     <ResourceDictionary.MergedDictionaries>
-        <resourceDictionaries:SharedResourceDictionary
-            Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Windows/FrontendMentorWindowStyles.xaml" />
-        <resourceDictionaries:SharedResourceDictionary
-            Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Brushes/Brushes.xaml" />
-        <resourceDictionaries:SharedResourceDictionary
-            Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Fonts/Fonts.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Windows/FrontendMentorWindowStyles.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Brushes/Brushes.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Fonts/Fonts.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style BasedOn="{StaticResource {x:Type windows:FrontendMentorWindow}}"
-           TargetType="{x:Type windows1:BlogPreviewCardWindow}">
+    <Style BasedOn="{StaticResource {x:Type windows:FrontendMentorWindow}}" TargetType="{x:Type windows1:BlogPreviewCardWindow}">
         <Setter Property="Background" Value="{StaticResource BlogPreviewCardWindow.Background.Brush}" />
         <Setter Property="FontFamily" Value="{StaticResource Figtree.FontFamily}" />
         <Setter Property="Foreground" Value="{StaticResource BlogPreviewCardWindow.Foreground.Brush}" />

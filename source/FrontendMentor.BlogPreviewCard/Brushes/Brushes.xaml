@@ -4,8 +4,7 @@
                     xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
 
     <ResourceDictionary.MergedDictionaries>
-        <resourceDictionaries:SharedResourceDictionary
-            Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Colors/Colors.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Colors/Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <!--#region BlogPreviewCardWindow-->
