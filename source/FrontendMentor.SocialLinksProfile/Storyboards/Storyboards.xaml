@@ -6,7 +6,8 @@
                     xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
 
     <ResourceDictionary.MergedDictionaries>
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Brushes/Brushes.xaml" />
+        <resourceDictionaries:SharedResourceDictionary
+            Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Brushes/Brushes.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <!--#region SocialLinksProfileView-->

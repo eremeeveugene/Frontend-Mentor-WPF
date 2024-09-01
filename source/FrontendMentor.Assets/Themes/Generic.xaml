@@ -1,6 +1,9 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries">
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries">
     <ResourceDictionary.MergedDictionaries>
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Icons/IconStyles.xaml" />
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Windows/FrontendMentorWindowStyles.xaml" />
+        <resourceDictionaries:SharedResourceDictionary
+            Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Icons/IconStyles.xaml" />
+        <resourceDictionaries:SharedResourceDictionary
+            Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Windows/FrontendMentorWindowStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

@@ -9,10 +9,6 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using Prism.Mvvm;
-using Prism.Navigation;
-using Prism.Regions;
-
 namespace FrontendMentor.Core.ViewModels;
 
 public abstract class ViewModelBase : BindableBase, IRegionMemberLifetime, IDestructible

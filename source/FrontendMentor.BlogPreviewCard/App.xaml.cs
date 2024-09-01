@@ -13,7 +13,6 @@ using FrontendMentor.BlogPreviewCard.Constants;
 using FrontendMentor.BlogPreviewCard.Controls.Windows;
 using FrontendMentor.BlogPreviewCard.Services.Blogs;
 using FrontendMentor.BlogPreviewCard.Views;
-using Prism.Ioc;
 using System.Windows;
 
 namespace FrontendMentor.BlogPreviewCard;

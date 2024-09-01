@@ -6,12 +6,16 @@
                     xmlns:windows1="clr-namespace:FrontendMentor.SocialLinksProfile.Controls.Windows">
 
     <ResourceDictionary.MergedDictionaries>
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Windows/FrontendMentorWindowStyles.xaml" />
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Brushes/Brushes.xaml" />
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Fonts/Fonts.xaml" />
+        <resourceDictionaries:SharedResourceDictionary
+            Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Windows/FrontendMentorWindowStyles.xaml" />
+        <resourceDictionaries:SharedResourceDictionary
+            Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Brushes/Brushes.xaml" />
+        <resourceDictionaries:SharedResourceDictionary
+            Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Fonts/Fonts.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style BasedOn="{StaticResource {x:Type windows:FrontendMentorWindow}}" TargetType="{x:Type windows1:SocialLinksProfileWindow}">
+    <Style BasedOn="{StaticResource {x:Type windows:FrontendMentorWindow}}"
+           TargetType="{x:Type windows1:SocialLinksProfileWindow}">
         <Setter Property="Background" Value="{StaticResource SocialLinksProfileWindow.Background.Brush}" />
         <Setter Property="FontFamily" Value="{StaticResource Inter.FontFamily}" />
         <Setter Property="Foreground" Value="{StaticResource SocialLinksProfileWindow.Foreground.Brush}" />

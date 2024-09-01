@@ -11,8 +11,6 @@
 
 using FrontendMentor.Core.Services.BitmapImages;
 using FrontendMentor.SocialLinksProfile.Models;
-using Prism.Ioc;
-using Prism.Mvvm;
 using System.Windows.Media.Imaging;
 
 namespace FrontendMentor.SocialLinksProfile.BindableModels;
@@ -40,7 +38,7 @@ internal class SocialLinkProfileBindableModel(
         IEnumerable<SocialLinkModel> socialLinks)
     {
         return socialLinks.Select(socialLink => SocialLinkBindableModel.Create(containerProvider,
-            new SocialLinkBindableModel.Parameters { SocialLink = socialLink })).ToList();
+            new SocialLinkBindableModel.Parameters(socialLink))).ToList();
     }
 
     public static SocialLinkProfileBindableModel Create(IContainerProvider containerProvider, Parameters parameters)
@@ -48,8 +46,5 @@ internal class SocialLinkProfileBindableModel(
         return containerProvider.Resolve<SocialLinkProfileBindableModel>((typeof(Parameters), parameters));
     }
 
-    public class Parameters
-    {
-        public SocialLinkProfileModel SocialLinkProfile { get; set; } = null!;
-    }
+    public record Parameters(SocialLinkProfileModel SocialLinkProfile);
 }

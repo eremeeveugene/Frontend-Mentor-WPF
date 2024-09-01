@@ -13,7 +13,6 @@ using FrontendMentor.SocialLinksProfile.Constants;
 using FrontendMentor.SocialLinksProfile.Controls.Windows;
 using FrontendMentor.SocialLinksProfile.Services.SocialLinkProfiles;
 using FrontendMentor.SocialLinksProfile.Views;
-using Prism.Ioc;
 using System.Windows;
 
 namespace FrontendMentor.SocialLinksProfile;

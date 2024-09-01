@@ -11,8 +11,6 @@
 
 using FrontendMentor.ResultsSummaryComponent.Enums;
 using FrontendMentor.ResultsSummaryComponent.Models;
-using Prism.Ioc;
-using Prism.Mvvm;
 
 namespace FrontendMentor.ResultsSummaryComponent.BindableModels;
 
@@ -27,8 +25,5 @@ internal sealed class SummaryItemBindableModel(SummaryItemBindableModel.Paramete
         return containerProvider.Resolve<SummaryItemBindableModel>((typeof(Parameters), parameters));
     }
 
-    public class Parameters
-    {
-        public SummaryItemModel SummaryItem { get; set; } = null!;
-    }
+    public record Parameters(SummaryItemModel SummaryItem);
 }

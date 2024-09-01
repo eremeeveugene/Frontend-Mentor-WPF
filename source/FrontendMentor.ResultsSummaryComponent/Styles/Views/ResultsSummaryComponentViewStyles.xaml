@@ -10,40 +10,51 @@
                     xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
 
     <ResourceDictionary.MergedDictionaries>
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Brushes/Brushes.xaml" />
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Geometries/Geometries.xaml" />
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Effects/Effects.xaml" />
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Storyboards/Storyboards.xaml" />
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Styles/Controls/Custom/TextBlocks/TextBlockStyles.xaml" />
+        <resourceDictionaries:SharedResourceDictionary
+            Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Brushes/Brushes.xaml" />
+        <resourceDictionaries:SharedResourceDictionary
+            Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Geometries/Geometries.xaml" />
+        <resourceDictionaries:SharedResourceDictionary
+            Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Effects/Effects.xaml" />
+        <resourceDictionaries:SharedResourceDictionary
+            Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Storyboards/Storyboards.xaml" />
+        <resourceDictionaries:SharedResourceDictionary
+            Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Styles/Controls/Custom/TextBlocks/TextBlockStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="SocialLinksProfileView.SocialLinkButton.FocusBorder.Style" TargetType="{x:Type Border}">
-        <Setter Property="BorderBrush" Value="{StaticResource ResultsSummaryComponentView.ContinueButton.FocusBorder.Border.Brush}" />
+        <Setter Property="BorderBrush"
+                Value="{StaticResource ResultsSummaryComponentView.ContinueButton.FocusBorder.Border.Brush}" />
         <Setter Property="BorderThickness" Value="2" />
         <Setter Property="Opacity" Value="0" />
         <Style.Triggers>
             <Trigger Property="helpers:UIElementPropertiesHelper.IsFocusedParent" Value="True">
                 <Trigger.EnterActions>
-                    <BeginStoryboard Storyboard="{StaticResource ResultsSummaryComponentView.ContinueButton.FocusBorder.ToFocused.Storyboard}" />
+                    <BeginStoryboard
+                        Storyboard="{StaticResource ResultsSummaryComponentView.ContinueButton.FocusBorder.ToFocused.Storyboard}" />
                 </Trigger.EnterActions>
                 <Trigger.ExitActions>
-                    <BeginStoryboard Storyboard="{StaticResource ResultsSummaryComponentView.ContinueButton.FocusBorder.FromFocused.Storyboard}" />
+                    <BeginStoryboard
+                        Storyboard="{StaticResource ResultsSummaryComponentView.ContinueButton.FocusBorder.FromFocused.Storyboard}" />
                 </Trigger.ExitActions>
             </Trigger>
         </Style.Triggers>
     </Style>
 
     <Style x:Key="ResultsSummaryComponentView.ContinueButton.ActiveBorder.Style" TargetType="{x:Type Border}">
-        <Setter Property="Background" Value="{StaticResource ResultsSummaryComponentView.ContinueButton.Background.MouseOver.Brush}" />
+        <Setter Property="Background"
+                Value="{StaticResource ResultsSummaryComponentView.ContinueButton.Background.MouseOver.Brush}" />
         <Setter Property="Effect" Value="{StaticResource Button.DropShadowEffect}" />
         <Setter Property="Opacity" Value="0" />
         <Style.Triggers>
             <Trigger Property="helpers:UIElementPropertiesHelper.IsMouseOverParent" Value="True">
                 <Trigger.EnterActions>
-                    <BeginStoryboard Storyboard="{StaticResource ResultsSummaryComponentView.ContinueButton.ActiveBorder.ToMouseOver.Storyboard}" />
+                    <BeginStoryboard
+                        Storyboard="{StaticResource ResultsSummaryComponentView.ContinueButton.ActiveBorder.ToMouseOver.Storyboard}" />
                 </Trigger.EnterActions>
                 <Trigger.ExitActions>
-                    <BeginStoryboard Storyboard="{StaticResource ResultsSummaryComponentView.ContinueButton.ActiveBorder.FromMouseOver.Storyboard}" />
+                    <BeginStoryboard
+                        Storyboard="{StaticResource ResultsSummaryComponentView.ContinueButton.ActiveBorder.FromMouseOver.Storyboard}" />
                 </Trigger.ExitActions>
             </Trigger>
         </Style.Triggers>
@@ -60,7 +71,8 @@
                     CornerRadius="{TemplateBinding helpers:BorderPropertiesHelper.CornerRadius}"
                     Style="{StaticResource ResultsSummaryComponentView.ContinueButton.ActiveBorder.Style}" />
 
-            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
 
             <Border helpers:UIElementPropertiesHelper.IsFocusedParent="{TemplateBinding IsFocused}"
                     CornerRadius="{TemplateBinding helpers:BorderPropertiesHelper.CornerRadius}"
@@ -69,7 +81,8 @@
     </ControlTemplate>
 
     <Style x:Key="ResultsSummaryComponentView.ContinueButton.Style" TargetType="{x:Type Button}">
-        <Setter Property="Background" Value="{StaticResource ResultsSummaryComponentView.ContinueButton.Background.Brush}" />
+        <Setter Property="Background"
+                Value="{StaticResource ResultsSummaryComponentView.ContinueButton.Background.Brush}" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Height" Value="56" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
@@ -79,7 +92,8 @@
         <Setter Property="helpers:BorderPropertiesHelper.CornerRadius" Value="28" />
     </Style>
 
-    <DataTemplate x:Key="ResultsSummaryComponentView.SummaryItemsControl.ItemContentTemplate" DataType="{x:Type bindableModels:SummaryItemBindableModel}">
+    <DataTemplate x:Key="ResultsSummaryComponentView.SummaryItemsControl.ItemContentTemplate"
+                  DataType="{x:Type bindableModels:SummaryItemBindableModel}">
         <Border Padding="16,0"
                 Background="{Binding SummaryItemType, Converter={converters1:SummaryItemTypeToValueConverter MemoryValue={StaticResource ResultsSummaryComponentView.SummaryItemsControl.SummaryItemBorder.Memory.Background.Brush}, ReactionValue={StaticResource ResultsSummaryComponentView.SummaryItemsControl.SummaryItemBorder.Reaction.Background.Brush}, VerbalValue={StaticResource ResultsSummaryComponentView.SummaryItemsControl.SummaryItemBorder.Verbal.Background.Brush}, VisualValue={StaticResource ResultsSummaryComponentView.SummaryItemsControl.SummaryItemBorder.Visual.Background.Brush}}}"
                 CornerRadius="12">
@@ -122,8 +136,10 @@
         </Border>
     </DataTemplate>
 
-    <Style x:Key="ResultsSummaryComponentView.SummaryItemsControl.ItemContainerStyle" TargetType="{x:Type ContentPresenter}">
-        <Setter Property="ContentTemplate" Value="{StaticResource ResultsSummaryComponentView.SummaryItemsControl.ItemContentTemplate}" />
+    <Style x:Key="ResultsSummaryComponentView.SummaryItemsControl.ItemContainerStyle"
+           TargetType="{x:Type ContentPresenter}">
+        <Setter Property="ContentTemplate"
+                Value="{StaticResource ResultsSummaryComponentView.SummaryItemsControl.ItemContentTemplate}" />
         <Setter Property="Height" Value="56" />
     </Style>
 
@@ -131,14 +147,17 @@
         <panels:SpacingStackPanel Spacing="16" />
     </ItemsPanelTemplate>
 
-    <ControlTemplate x:Key="ResultsSummaryComponentView.SummaryItemsControl.Template" TargetType="{x:Type ItemsControl}">
+    <ControlTemplate x:Key="ResultsSummaryComponentView.SummaryItemsControl.Template"
+                     TargetType="{x:Type ItemsControl}">
         <ItemsPresenter />
     </ControlTemplate>
 
     <Style x:Key="ResultsSummaryComponentView.SummaryItemsControl.Style" TargetType="{x:Type ItemsControl}">
         <Setter Property="Focusable" Value="False" />
-        <Setter Property="ItemContainerStyle" Value="{StaticResource ResultsSummaryComponentView.SummaryItemsControl.ItemContainerStyle}" />
-        <Setter Property="ItemsPanel" Value="{StaticResource ResultsSummaryComponentView.SummaryItemsControl.ItemsPanel}" />
+        <Setter Property="ItemContainerStyle"
+                Value="{StaticResource ResultsSummaryComponentView.SummaryItemsControl.ItemContainerStyle}" />
+        <Setter Property="ItemsPanel"
+                Value="{StaticResource ResultsSummaryComponentView.SummaryItemsControl.ItemsPanel}" />
         <Setter Property="Template" Value="{StaticResource ResultsSummaryComponentView.SummaryItemsControl.Template}" />
     </Style>
 

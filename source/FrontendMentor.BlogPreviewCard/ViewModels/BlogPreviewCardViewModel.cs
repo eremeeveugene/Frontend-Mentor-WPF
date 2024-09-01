@@ -12,8 +12,6 @@
 using FrontendMentor.BlogPreviewCard.BindableModels;
 using FrontendMentor.BlogPreviewCard.Services.Blogs;
 using FrontendMentor.Core.ViewModels;
-using Prism.Ioc;
-using Prism.Regions;
 
 namespace FrontendMentor.BlogPreviewCard.ViewModels;
 
@@ -36,6 +34,6 @@ internal sealed class BlogPreviewCardViewModel(
 
         var blog = blogsService.GetBlog();
 
-        Blog = BlogBindableModel.Create(containerProvider, new BlogBindableModel.Parameters { Blog = blog });
+        Blog = BlogBindableModel.Create(containerProvider, new BlogBindableModel.Parameters(blog));
     }
 }

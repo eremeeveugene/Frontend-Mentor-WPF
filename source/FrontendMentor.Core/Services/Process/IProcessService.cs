@@ -9,14 +9,9 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using System.Diagnostics;
+namespace FrontendMentor.Core.Services.Process;
 
-namespace FrontendMentor.Core.Services.Processes;
-
-internal class ProcessesService : IProcessesService
+public interface IProcessService
 {
-    public void StartProcess(string fileName)
-    {
-        Process.Start(new ProcessStartInfo { FileName = fileName, UseShellExecute = true });
-    }
+    void StartProcess(string fileName);
 }

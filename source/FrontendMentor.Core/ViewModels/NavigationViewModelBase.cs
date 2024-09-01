@@ -9,8 +9,6 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using Prism.Regions;
-
 namespace FrontendMentor.Core.ViewModels;
 
 public abstract class NavigationViewModelBase : ViewModelBase, INavigationAware

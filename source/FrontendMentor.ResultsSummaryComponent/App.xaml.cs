@@ -13,7 +13,6 @@ using FrontendMentor.ResultsSummaryComponent.Constants;
 using FrontendMentor.ResultsSummaryComponent.Controls.Windows;
 using FrontendMentor.ResultsSummaryComponent.Services.ResultSummary;
 using FrontendMentor.ResultsSummaryComponent.Views;
-using Prism.Ioc;
 using System.Windows;
 
 namespace FrontendMentor.ResultsSummaryComponent;

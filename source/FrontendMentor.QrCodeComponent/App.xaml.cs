@@ -12,7 +12,6 @@
 using FrontendMentor.QrCodeComponent.Constants;
 using FrontendMentor.QrCodeComponent.Controls;
 using FrontendMentor.QrCodeComponent.Views;
-using Prism.Ioc;
 using System.Windows;
 
 namespace FrontendMentor.QrCodeComponent;

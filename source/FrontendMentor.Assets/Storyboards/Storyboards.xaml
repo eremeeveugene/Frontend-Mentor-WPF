@@ -7,7 +7,8 @@
                     xmlns:windows="clr-namespace:FrontendMentor.Assets.Controls.Windows">
 
     <ResourceDictionary.MergedDictionaries>
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Colors/Colors.xaml" />
+        <resourceDictionaries:SharedResourceDictionary
+            Source="pack://application:,,,/FrontendMentor.Assets;component/Colors/Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <!--#region FrontendMentorWindow-->

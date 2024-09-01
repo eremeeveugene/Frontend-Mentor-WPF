@@ -23,12 +23,14 @@
 
             <StackPanel Margin="0,25,0,0">
                 <Border Style="{StaticResource BlogPreviewCardView.CategoryBorder.Style}">
-                    <TextBlock Style="{StaticResource Body.S.Bold.TextBlock.Style}" Text="{Binding Blog.Category, FallbackValue={x:Static constants:Signs.Minus}}" />
+                    <TextBlock Style="{StaticResource Body.S.Bold.TextBlock.Style}"
+                               Text="{Binding Blog.Category, FallbackValue={x:Static constants:Signs.Minus}}" />
                 </Border>
 
                 <TextBlock Margin="0,9,0,0" Style="{StaticResource Body.S.Regular.TextBlock.Style}">
                     <Run Text="{x:Static properties:Resources.BlogPreviewCardView_PublishedTextBlock_Text}" />
-                    <Run Text="{Binding Blog.PublishedDate, Mode=OneWay, StringFormat={x:Static constants:DateTimeFormatConstants.DayMonthAbbrYear}, FallbackValue={x:Static constants:Signs.Minus}}" />
+                    <Run
+                        Text="{Binding Blog.PublishedDate, Mode=OneWay, StringFormat={x:Static constants:DateTimeFormatConstants.DayMonthAbbrYear}, FallbackValue={x:Static constants:Signs.Minus}}" />
                 </TextBlock>
 
                 <TextBlock Margin="0,11,0,0"
@@ -53,8 +55,10 @@
                 <TextBlock Margin="12,0,0,2"
                            VerticalAlignment="Center"
                            Style="{StaticResource Body.S.Bold.TextBlock.Style}">
-                    <Run Text="{Binding Blog.BlogAuthor.FirstName, Mode=OneWay, FallbackValue={x:Static constants:Signs.Minus}}" />
-                    <Run Text="{Binding Blog.BlogAuthor.LastName, Mode=OneWay, FallbackValue={x:Static constants:Signs.Minus}}" />
+                    <Run
+                        Text="{Binding Blog.BlogAuthor.FirstName, Mode=OneWay, FallbackValue={x:Static constants:Signs.Minus}}" />
+                    <Run
+                        Text="{Binding Blog.BlogAuthor.LastName, Mode=OneWay, FallbackValue={x:Static constants:Signs.Minus}}" />
                 </TextBlock>
             </StackPanel>
         </StackPanel>

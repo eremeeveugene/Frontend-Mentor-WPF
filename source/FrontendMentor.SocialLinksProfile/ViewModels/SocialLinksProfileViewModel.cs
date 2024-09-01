@@ -12,8 +12,6 @@
 using FrontendMentor.Core.ViewModels;
 using FrontendMentor.SocialLinksProfile.BindableModels;
 using FrontendMentor.SocialLinksProfile.Services.SocialLinkProfiles;
-using Prism.Ioc;
-using Prism.Regions;
 
 namespace FrontendMentor.SocialLinksProfile.ViewModels;
 

@@ -11,8 +11,6 @@
 
 using FrontendMentor.Core.Services.BitmapImages;
 using FrontendMentor.Core.Services.Processes;
-using Prism.DryIoc;
-using Prism.Ioc;
 
 namespace FrontendMentor.Core.Applications;
 

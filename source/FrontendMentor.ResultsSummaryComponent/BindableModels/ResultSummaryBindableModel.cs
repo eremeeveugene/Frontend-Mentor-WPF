@@ -10,8 +10,6 @@
 // --------------------------------------------------------------------------------
 
 using FrontendMentor.ResultsSummaryComponent.Models;
-using Prism.Ioc;
-using Prism.Mvvm;
 
 namespace FrontendMentor.ResultsSummaryComponent.BindableModels;
 
@@ -32,7 +30,7 @@ internal sealed class ResultSummaryBindableModel(
         IEnumerable<SummaryItemModel> summaryItems)
     {
         return summaryItems.Select(summaryItem => SummaryItemBindableModel.Create(containerProvider,
-            new SummaryItemBindableModel.Parameters { SummaryItem = summaryItem })).ToList();
+            new SummaryItemBindableModel.Parameters(summaryItem))).ToList();
     }
 
     public static ResultSummaryBindableModel Create(IContainerProvider containerProvider, Parameters parameters)
@@ -40,8 +38,5 @@ internal sealed class ResultSummaryBindableModel(
         return containerProvider.Resolve<ResultSummaryBindableModel>((typeof(Parameters), parameters));
     }
 
-    public class Parameters
-    {
-        public ResultSummaryModel ResultSummary { get; set; } = null!;
-    }
+    public record Parameters(ResultSummaryModel ResultSummary);
 }

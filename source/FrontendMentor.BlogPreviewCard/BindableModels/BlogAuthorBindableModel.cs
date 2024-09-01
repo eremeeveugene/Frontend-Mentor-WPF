@@ -11,8 +11,6 @@
 
 using FrontendMentor.BlogPreviewCard.Models;
 using FrontendMentor.Core.Services.BitmapImages;
-using Prism.Ioc;
-using Prism.Mvvm;
 using System.Windows.Media.Imaging;
 
 namespace FrontendMentor.BlogPreviewCard.BindableModels;
@@ -32,8 +30,5 @@ internal class BlogAuthorBindableModel(
         return containerProvider.Resolve<BlogAuthorBindableModel>((typeof(Parameters), parameters));
     }
 
-    public class Parameters
-    {
-        public BlogAuthorModel BlogAuthor { get; set; } = null!;
-    }
+    public record Parameters(BlogAuthorModel BlogAuthor);
 }
