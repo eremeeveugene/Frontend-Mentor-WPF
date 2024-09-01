@@ -2,15 +2,15 @@
 
     <Style x:Key="Heading.TextBlock.Style" TargetType="{x:Type TextBlock}">
         <Setter Property="FontSize" Value="22" />
-        <Setter Property="FontWeight" Value="{x:Static FontWeights.Bold}" />
-        <Setter Property="LineHeight" Value="28" />
-        <Setter Property="LineStackingStrategy" Value="{x:Static LineStackingStrategy.BlockLineHeight}" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="LineHeight" Value="26.4" />
+        <Setter Property="LineStackingStrategy" Value="BlockLineHeight" />
     </Style>
 
     <Style x:Key="Body.TextBlock.Style" TargetType="{x:Type TextBlock}">
         <Setter Property="FontSize" Value="15" />
-        <Setter Property="LineHeight" Value="19" />
-        <Setter Property="LineStackingStrategy" Value="{x:Static LineStackingStrategy.BlockLineHeight}" />
+        <Setter Property="LineHeight" Value="21" />
+        <Setter Property="LineStackingStrategy" Value="BlockLineHeight" />
     </Style>
 
 </ResourceDictionary>

@@ -11,32 +11,31 @@
 
 using FrontendMentor.BlogPreviewCard.Models;
 using FrontendMentor.Core.Services.BitmapImages;
-using Prism.Ioc;
-using Prism.Mvvm;
 using System.Windows.Media.Imaging;
 
 namespace FrontendMentor.BlogPreviewCard.BindableModels;
 
-internal class BlogBindableModel(IBitmapImagesService bitmapImagesService, BlogModel blogModel)
+internal class BlogBindableModel(
+    IContainerProvider containerProvider,
+    IBitmapImagesService bitmapImagesService,
+    BlogBindableModel.Parameters parameters)
     : BindableBase
 {
-    private readonly Lazy<BitmapSource> _blogImage =
-        new(() => bitmapImagesService.GetBitmapImage(blogModel.ImageUriString));
+    public string Title { get; } = parameters.Blog.Title;
+    public string Description { get; } = parameters.Blog.Description;
+    public string Category { get; } = parameters.Blog.Category;
+    public DateTime PublishedDate { get; } = parameters.Blog.PublishedDate;
 
-    private readonly Lazy<BitmapSource> _userImage =
-        new(() => bitmapImagesService.GetBitmapImage(blogModel.BlogAuthor.ImageUriString));
+    public BitmapImage BlogImage { get; } =
+        bitmapImagesService.GetBitmapImageFromBase64String(parameters.Blog.ImageBase64String);
 
-    public string Title => blogModel.Title;
-    public string Description => blogModel.Description;
-    public string Category => blogModel.Category;
-    public DateTime PublishedDate => blogModel.PublishedDate;
-    public string FirstName => blogModel.BlogAuthor.FirstName;
-    public string LastName => blogModel.BlogAuthor.LastName;
-    public BitmapSource BlogImage => _blogImage.Value;
-    public BitmapSource UserImage => _userImage.Value;
+    public BlogAuthorBindableModel BlogAuthor { get; } = BlogAuthorBindableModel.Create(containerProvider,
+        new BlogAuthorBindableModel.Parameters(parameters.Blog.BlogAuthor));
 
-    public static BlogBindableModel Create(IContainerProvider containerProvider, BlogModel blogModel)
+    public static BlogBindableModel Create(IContainerProvider containerProvider, Parameters parameters)
     {
-        return containerProvider.Resolve<BlogBindableModel>((typeof(BlogModel), blogModel));
+        return containerProvider.Resolve<BlogBindableModel>((typeof(Parameters), parameters));
     }
+
+    public record Parameters(BlogModel Blog);
 }

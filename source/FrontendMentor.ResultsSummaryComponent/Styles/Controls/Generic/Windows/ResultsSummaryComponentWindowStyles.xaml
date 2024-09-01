@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:properties="clr-namespace:FrontendMentor.ResultsSummaryComponent.Properties"
+                    xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets"
+                    xmlns:windows="clr-namespace:FrontendMentor.Assets.Controls.Windows;assembly=FrontendMentor.Assets"
+                    xmlns:windows1="clr-namespace:FrontendMentor.ResultsSummaryComponent.Controls.Windows">
+
+    <ResourceDictionary.MergedDictionaries>
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Windows/FrontendMentorWindowStyles.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Brushes/Brushes.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Fonts/Fonts.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style BasedOn="{StaticResource {x:Type windows:FrontendMentorWindow}}" TargetType="{x:Type windows1:ResultsSummaryComponentWindow}">
+        <Setter Property="Background" Value="{StaticResource ResultsSummaryComponentWindow.Background.Brush}" />
+        <Setter Property="FontFamily" Value="{StaticResource HankenGrotesk.FontFamily}" />
+        <Setter Property="Foreground" Value="{StaticResource ResultsSummaryComponentWindow.Foreground.Brush}" />
+        <Setter Property="MinHeight" Value="1080" />
+        <Setter Property="MinWidth" Value="1440" />
+        <Setter Property="Title" Value="{x:Static properties:Resources.ResultsSummaryComponentWindow_Title}" />
+    </Style>
+
+</ResourceDictionary>

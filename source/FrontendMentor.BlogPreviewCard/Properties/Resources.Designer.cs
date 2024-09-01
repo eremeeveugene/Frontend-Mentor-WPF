@@ -63,18 +63,18 @@ namespace FrontendMentor.BlogPreviewCard.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Published.
         /// </summary>
-        public static string BlogPreviewCardPublishedCaption {
+        public static string BlogPreviewCardView_PublishedTextBlock_Text {
             get {
-                return ResourceManager.GetString("BlogPreviewCardPublishedCaption", resourceCulture);
+                return ResourceManager.GetString("BlogPreviewCardView_PublishedTextBlock_Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Blog Preview Card.
         /// </summary>
-        public static string BlogPreviewCardWindowTitle {
+        public static string BlogPreviewCardWindow_Title {
             get {
-                return ResourceManager.GetString("BlogPreviewCardWindowTitle", resourceCulture);
+                return ResourceManager.GetString("BlogPreviewCardWindow_Title", resourceCulture);
             }
         }
     }

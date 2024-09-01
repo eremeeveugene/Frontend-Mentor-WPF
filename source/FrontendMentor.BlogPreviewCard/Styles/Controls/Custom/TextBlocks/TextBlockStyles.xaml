@@ -2,15 +2,15 @@
 
     <Style x:Key="Body.S.Regular.TextBlock.Style" TargetType="{x:Type TextBlock}">
         <Setter Property="FontSize" Value="14" />
-        <Setter Property="FontWeight" Value="{x:Static FontWeights.Medium}" />
+        <Setter Property="FontWeight" Value="Medium" />
         <Setter Property="LineHeight" Value="21" />
-        <Setter Property="LineStackingStrategy" Value="{x:Static LineStackingStrategy.BlockLineHeight}" />
+        <Setter Property="LineStackingStrategy" Value="BlockLineHeight" />
     </Style>
 
     <Style x:Key="Body.S.Bold.TextBlock.Style"
            BasedOn="{StaticResource Body.S.Regular.TextBlock.Style}"
            TargetType="{x:Type TextBlock}">
-        <Setter Property="FontWeight" Value="{x:Static FontWeights.ExtraBold}" />
+        <Setter Property="FontWeight" Value="ExtraBold" />
     </Style>
 
     <Style x:Key="Body.M.TextBlock.Style"
@@ -22,9 +22,9 @@
 
     <Style x:Key="Heading.TextBlock.Style" TargetType="{x:Type TextBlock}">
         <Setter Property="FontSize" Value="24" />
-        <Setter Property="FontWeight" Value="{x:Static FontWeights.ExtraBold}" />
+        <Setter Property="FontWeight" Value="ExtraBold" />
         <Setter Property="LineHeight" Value="36" />
-        <Setter Property="LineStackingStrategy" Value="{x:Static LineStackingStrategy.BlockLineHeight}" />
+        <Setter Property="LineStackingStrategy" Value="BlockLineHeight" />
     </Style>
 
 </ResourceDictionary>

@@ -63,27 +63,27 @@ namespace FrontendMentor.QrCodeComponent.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Scan the QR code to visit Frontend Mentor and take your coding skills to the next level.
         /// </summary>
-        public static string QrCodeComponentBody {
+        public static string QrCodeComponentView_CaptionTextBlock_Text {
             get {
-                return ResourceManager.GetString("QrCodeComponentBody", resourceCulture);
+                return ResourceManager.GetString("QrCodeComponentView_CaptionTextBlock_Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Improve your front-end skills by building projects.
         /// </summary>
-        public static string QrCodeComponentHeading {
+        public static string QrCodeComponentView_HeadingTextBlock_Text {
             get {
-                return ResourceManager.GetString("QrCodeComponentHeading", resourceCulture);
+                return ResourceManager.GetString("QrCodeComponentView_HeadingTextBlock_Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to QR Code Component.
         /// </summary>
-        public static string QrCodeComponentWindowTitle {
+        public static string QrCodeComponentWindow_Title {
             get {
-                return ResourceManager.GetString("QrCodeComponentWindowTitle", resourceCulture);
+                return ResourceManager.GetString("QrCodeComponentWindow_Title", resourceCulture);
             }
         }
     }
