@@ -13,7 +13,7 @@ using System.Diagnostics;
 
 namespace FrontendMentor.Core.Services.Processes;
 
-internal class ProcessService : IProcessService
+internal class ProcessesService : IProcessesService
 {
     public void StartProcess(string fileName)
     {

@@ -11,7 +11,7 @@
 
 namespace FrontendMentor.Core.Services.Processes;
 
-public interface IProcessService
+public interface IProcessesService
 {
     void StartProcess(string fileName);
 }

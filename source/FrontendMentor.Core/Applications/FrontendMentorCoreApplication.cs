@@ -10,7 +10,7 @@
 // --------------------------------------------------------------------------------
 
 using FrontendMentor.Core.Services.BitmapImages;
-using FrontendMentor.Core.Services.Process;
+using FrontendMentor.Core.Services.Processes;
 
 namespace FrontendMentor.Core.Applications;
 
@@ -18,7 +18,7 @@ public abstract class FrontendMentorCoreApplication : PrismApplication
 {
     protected override void RegisterTypes(IContainerRegistry containerRegistry)
     {
-        containerRegistry.RegisterSingleton<IProcessService, ProcessService>();
-        containerRegistry.RegisterSingleton<IBitmapImageService, BitmapImageService>();
+        containerRegistry.RegisterSingleton<IProcessesService, ProcessesService>();
+        containerRegistry.RegisterSingleton<IBitmapImagesService, BitmapImagesService>();
     }
 }
