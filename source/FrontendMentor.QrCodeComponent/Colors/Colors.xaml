@@ -2,10 +2,10 @@
 
     <Color x:Key="Blue.Color">#2C7DFA</Color>
     <Color x:Key="BlueShade.Color">#3685FF</Color>
-    <Color x:Key="DarkNavy.Color">#1F314F</Color>
-    <Color x:Key="Grey.Color">#7D889E</Color>
-    <Color x:Key="LightGrey.Color">#D5E1EF</Color>
     <Color x:Key="White.Color">#FFFFFF</Color>
     <Color x:Key="Black.Color">#000000</Color>
+    <Color x:Key="Slate.900.Color">#1F314F</Color>
+    <Color x:Key="Slate.500.Color">#68778D</Color>
+    <Color x:Key="Slate.300.Color">#D5E1EF</Color>
 
 </ResourceDictionary>

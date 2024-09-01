@@ -59,14 +59,5 @@ namespace FrontendMentor.Core.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Failed to load cursor from URI: {0}. Ensure the cursor file is included as a Resource in your project..
-        /// </summary>
-        internal static string CursorLoadErrorMessageStringFormat {
-            get {
-                return ResourceManager.GetString("CursorLoadErrorMessageStringFormat", resourceCulture);
-            }
-        }
     }
 }

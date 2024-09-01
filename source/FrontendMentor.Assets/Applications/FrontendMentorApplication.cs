@@ -9,26 +9,31 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.Assets.Controls.Sectors;
+using FrontendMentor.Assets.Constants;
 using FrontendMentor.Assets.Controls.Windows;
 using FrontendMentor.Core.Applications;
-using FrontendMentor.Core.Services.Sectors;
-using Prism.Ioc;
 using System.Windows;
 
 namespace FrontendMentor.Assets.Applications;
 
 public abstract class FrontendMentorApplication : FrontendMentorCoreApplication
 {
+    private IRegionManager _regionManager = null!;
+
     protected override Window CreateShell()
     {
         return Container.Resolve<FrontendMentorWindow>();
     }
 
-    protected override void RegisterTypes(IContainerRegistry containerRegistry)
+    protected override void OnInitialized()
     {
-        base.RegisterTypes(containerRegistry);
+        base.OnInitialized();
 
-        containerRegistry.RegisterSingleton<ISectorsContainer, SectorsContainer>();
+        _regionManager = Container.Resolve<IRegionManager>();
+    }
+
+    protected void NavigateToShellRegion(string viewName)
+    {
+        _regionManager.RequestNavigate(FrontedMentorRegionNames.Shell, viewName);
     }
 }

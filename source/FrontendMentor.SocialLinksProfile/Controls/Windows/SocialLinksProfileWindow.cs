@@ -10,13 +10,11 @@
 // --------------------------------------------------------------------------------
 
 using FrontendMentor.Assets.Controls.Windows;
-using FrontendMentor.Assets.Controls.Windows.Dependencies;
 using System.Windows;
 
 namespace FrontendMentor.SocialLinksProfile.Controls.Windows;
 
-internal class SocialLinksProfileWindow(FrontendMentorWindowDependencies frontendMentorWindowDependencies)
-    : FrontendMentorWindow(frontendMentorWindowDependencies)
+internal class SocialLinksProfileWindow : FrontendMentorWindow
 {
     static SocialLinksProfileWindow()
     {
