@@ -6,7 +6,6 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
-    <ApplicationIcon>Frontend Mentor Logo v1.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,10 +24,6 @@
     <None Remove="Fonts\SegoeUIVariableStaticSmall\Segoe-UI-Variable-Static-Text-Semibold.ttf" />
     <None Remove="Fonts\SegoeUIVariableStaticSmall\Segoe-UI-Variable-Static-Text-Semilight.ttf" />
     <None Remove="Fonts\SegoeUIVariableStaticSmall\Segoe-UI-Variable-Static-Text.ttf" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Frontend Mentor Logo v1.ico" />
   </ItemGroup>
 
   <ItemGroup>

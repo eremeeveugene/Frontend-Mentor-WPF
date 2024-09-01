@@ -17,8 +17,8 @@
     </ResourceDictionary.MergedDictionaries>
 
     <WindowChrome x:Key="FrontendMentorWindowChrome"
-                  po:Freeze="True" 
-                  CaptionHeight="40" 
+                  po:Freeze="True"
+                  CaptionHeight="40"
                   UseAeroCaptionButtons="False" />
 
     <ControlTemplate x:Key="FrontendMentorWindow.Template" TargetType="{x:Type windows:FrontendMentorWindow}">

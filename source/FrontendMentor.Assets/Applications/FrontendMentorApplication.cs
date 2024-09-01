@@ -12,8 +12,6 @@
 using FrontendMentor.Assets.Constants;
 using FrontendMentor.Assets.Controls.Windows;
 using FrontendMentor.Core.Applications;
-using Prism.Ioc;
-using Prism.Regions;
 using System.Windows;
 
 namespace FrontendMentor.Assets.Applications;

@@ -35,6 +35,6 @@ internal sealed class SocialLinksProfileViewModel(
         var socialLinkProfile = socialLinksProfilesService.GetSocialLinkProfile();
 
         SocialLinkProfile = SocialLinkProfileBindableModel.Create(containerProvider,
-            new SocialLinkProfileBindableModel.Parameters { SocialLinkProfile = socialLinkProfile });
+            new SocialLinkProfileBindableModel.Parameters(socialLinkProfile));
     }
 }
