@@ -32,7 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FrontendMentor.Assets\FrontendMentor.Assets.csproj" />
+    <ProjectReference Include="..\..\FrontendMentor.Assets\FrontendMentor.Assets.csproj" />
   </ItemGroup>
 
   <ItemGroup>
