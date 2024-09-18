@@ -28,6 +28,13 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel>
+                    <Grid HorizontalAlignment="Left">
+                        <Ellipse Width="40"
+                                 Height="40"
+                                 Fill="#000000 "
+                                 Opacity="0.2" />
+                    </Grid>
+
                     <TextBlock Margin="0,35,0,0"
                                Style="{StaticResource Heading.TextBlock.Style}"
                                Text="SEDANS" />
@@ -53,6 +60,13 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel Grid.Row="0">
+                    <Grid HorizontalAlignment="Left">
+                        <Ellipse Width="40"
+                                 Height="40"
+                                 Fill="#000000 "
+                                 Opacity="0.2" />
+                    </Grid>
+
                     <TextBlock Margin="0,35,0,0"
                                Style="{StaticResource Heading.TextBlock.Style}"
                                Text="SUVS" />
@@ -79,6 +93,13 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel Grid.Row="0">
+                    <Grid HorizontalAlignment="Left">
+                        <Ellipse Width="40"
+                                 Height="40"
+                                 Fill="#000000 "
+                                 Opacity="0.2" />
+                    </Grid>
+
                     <TextBlock Margin="0,35,0,0"
                                Style="{StaticResource Heading.TextBlock.Style}"
                                Text="LUXURY" />
