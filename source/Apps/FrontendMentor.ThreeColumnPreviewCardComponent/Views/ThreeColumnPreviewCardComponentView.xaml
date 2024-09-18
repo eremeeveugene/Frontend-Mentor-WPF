@@ -36,8 +36,7 @@
                                  Fill="#000000 "
                                  Opacity="0.2" />
 
-                        <icons:Icon Height="20"
-                                    Margin="20,0,0,0"
+                        <icons:Icon Margin="20,0,0,0"
                                     Data="{StaticResource Sedan.Geometry}"
                                     Fill="#FFD473" />
                     </Grid>
@@ -47,13 +46,12 @@
                                Text="SEDANS" />
 
                     <TextBlock Margin="0,25,0,0"
+                               Opacity="0.75"
                                Style="{StaticResource Body.TextBlock.Style}"
                                Text="Choose a sedan for its affordability and excellent fuel economy. Ideal for cruising in the city or on your next road trip." />
                 </StackPanel>
 
-                <Button Grid.Row="1">
-                    <TextBlock Text="Learn More" />
-                </Button>
+                <Button Grid.Row="1" Style="{StaticResource Sedan.LearnMore.Button.Style}" />
             </Grid>
         </Border>
 
@@ -74,8 +72,7 @@
                                  Fill="#000000 "
                                  Opacity="0.2" />
 
-                        <icons:Icon Height="20"
-                                    Margin="20,0,0,0"
+                        <icons:Icon Margin="20,0,0,0"
                                     Data="{StaticResource Suv.Geometry}"
                                     Fill="#26B5C0" />
                     </Grid>
@@ -85,13 +82,12 @@
                                Text="SUVS" />
 
                     <TextBlock Margin="0,25,0,0"
+                               Opacity="0.75"
                                Style="{StaticResource Body.TextBlock.Style}"
                                Text="Take an SUV for its spacious interior, power, and versatility. Perfect for your next family vacation and off-road adventures." />
                 </StackPanel>
 
-                <Button Grid.Row="1">
-                    <TextBlock Text="Learn More" />
-                </Button>
+                <Button Grid.Row="1" Style="{StaticResource Suv.LearnMore.Button.Style}" />
             </Grid>
         </Border>
 
@@ -113,8 +109,7 @@
                                  Fill="#000000 "
                                  Opacity="0.2" />
 
-                        <icons:Icon Height="20"
-                                    Margin="20,0,0,0"
+                        <icons:Icon Margin="20,0,0,0"
                                     Data="{StaticResource Luxury.Geometry}"
                                     Fill="#19B89D" />
                     </Grid>
@@ -124,13 +119,12 @@
                                Text="LUXURY" />
 
                     <TextBlock Margin="0,25,0,0"
+                               Opacity="0.75"
                                Style="{StaticResource Body.TextBlock.Style}"
                                Text="Cruise in the best car brands without the bloated prices. Enjoy the enhanced comfort of a luxury rental and arrive in style. " />
                 </StackPanel>
 
-                <Button Grid.Row="1">
-                    <TextBlock Text="Learn More" />
-                </Button>
+                <Button Grid.Row="1" Style="{StaticResource Luxury.LearnMore.Button.Style}" />
             </Grid>
         </Border>
     </Grid>
