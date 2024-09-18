@@ -7,15 +7,15 @@
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ThreeColumnPreviewCardComponent;component/Colors/Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <!--#region SocialLinksProfileWindow-->
+    <!--#region ThreeColumnPreviewCardComponentWindow-->
 
-    <!--<SolidColorBrush x:Key="SocialLinksProfileWindow.Foreground.Brush"
+    <SolidColorBrush x:Key="ThreeColumnPreviewCardComponentWindow.Foreground.Brush"
                      po:Freeze="True"
-                     Color="{StaticResource White.Color}" />
+                     Color="{StaticResource Flight.White.Color}" />
 
-    <SolidColorBrush x:Key="SocialLinksProfileWindow.Background.Brush"
+    <SolidColorBrush x:Key="ThreeColumnPreviewCardComponentWindow.Background.Brush"
                      po:Freeze="True"
-                     Color="{StaticResource Grey.900.Color}" />-->
+                     Color="{StaticResource Flight.White.Color}" />
 
     <!--#endregion-->
 

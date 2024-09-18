@@ -10,15 +10,24 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Fonts\Inter\Inter-Black.ttf" />
-    <None Remove="Fonts\Inter\Inter-Bold.ttf" />
-    <None Remove="Fonts\Inter\Inter-ExtraBold.ttf" />
-    <None Remove="Fonts\Inter\Inter-ExtraLight.ttf" />
-    <None Remove="Fonts\Inter\Inter-Light.ttf" />
-    <None Remove="Fonts\Inter\Inter-Medium.ttf" />
-    <None Remove="Fonts\Inter\Inter-Regular.ttf" />
-    <None Remove="Fonts\Inter\Inter-SemiBold.ttf" />
-    <None Remove="Fonts\Inter\Inter-Thin.ttf" />
+    <None Remove="Fonts\BigShouldersDisplay\BigShouldersDisplay-Black.ttf" />
+    <None Remove="Fonts\BigShouldersDisplay\BigShouldersDisplay-Bold.ttf" />
+    <None Remove="Fonts\BigShouldersDisplay\BigShouldersDisplay-ExtraBold.ttf" />
+    <None Remove="Fonts\BigShouldersDisplay\BigShouldersDisplay-ExtraLight.ttf" />
+    <None Remove="Fonts\BigShouldersDisplay\BigShouldersDisplay-Light.ttf" />
+    <None Remove="Fonts\BigShouldersDisplay\BigShouldersDisplay-Medium.ttf" />
+    <None Remove="Fonts\BigShouldersDisplay\BigShouldersDisplay-Regular.ttf" />
+    <None Remove="Fonts\BigShouldersDisplay\BigShouldersDisplay-SemiBold.ttf" />
+    <None Remove="Fonts\BigShouldersDisplay\BigShouldersDisplay-Thin.ttf" />
+    <None Remove="Fonts\LexendDeca\LexendDeca-Black.ttf" />
+    <None Remove="Fonts\LexendDeca\LexendDeca-Bold.ttf" />
+    <None Remove="Fonts\LexendDeca\LexendDeca-ExtraBold.ttf" />
+    <None Remove="Fonts\LexendDeca\LexendDeca-ExtraLight.ttf" />
+    <None Remove="Fonts\LexendDeca\LexendDeca-Light.ttf" />
+    <None Remove="Fonts\LexendDeca\LexendDeca-Medium.ttf" />
+    <None Remove="Fonts\LexendDeca\LexendDeca-Regular.ttf" />
+    <None Remove="Fonts\LexendDeca\LexendDeca-SemiBold.ttf" />
+    <None Remove="Fonts\LexendDeca\LexendDeca-Thin.ttf" />
   </ItemGroup>
 
   <ItemGroup>
@@ -61,15 +70,24 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Fonts\Inter\Inter-Black.ttf" />
-    <Resource Include="Fonts\Inter\Inter-Bold.ttf" />
-    <Resource Include="Fonts\Inter\Inter-ExtraBold.ttf" />
-    <Resource Include="Fonts\Inter\Inter-ExtraLight.ttf" />
-    <Resource Include="Fonts\Inter\Inter-Light.ttf" />
-    <Resource Include="Fonts\Inter\Inter-Medium.ttf" />
-    <Resource Include="Fonts\Inter\Inter-Regular.ttf" />
-    <Resource Include="Fonts\Inter\Inter-SemiBold.ttf" />
-    <Resource Include="Fonts\Inter\Inter-Thin.ttf" />
+    <Resource Include="Fonts\BigShouldersDisplay\BigShouldersDisplay-Black.ttf" />
+    <Resource Include="Fonts\BigShouldersDisplay\BigShouldersDisplay-Bold.ttf" />
+    <Resource Include="Fonts\BigShouldersDisplay\BigShouldersDisplay-ExtraBold.ttf" />
+    <Resource Include="Fonts\BigShouldersDisplay\BigShouldersDisplay-ExtraLight.ttf" />
+    <Resource Include="Fonts\BigShouldersDisplay\BigShouldersDisplay-Light.ttf" />
+    <Resource Include="Fonts\BigShouldersDisplay\BigShouldersDisplay-Medium.ttf" />
+    <Resource Include="Fonts\BigShouldersDisplay\BigShouldersDisplay-Regular.ttf" />
+    <Resource Include="Fonts\BigShouldersDisplay\BigShouldersDisplay-SemiBold.ttf" />
+    <Resource Include="Fonts\BigShouldersDisplay\BigShouldersDisplay-Thin.ttf" />
+    <Resource Include="Fonts\LexendDeca\LexendDeca-Black.ttf" />
+    <Resource Include="Fonts\LexendDeca\LexendDeca-Bold.ttf" />
+    <Resource Include="Fonts\LexendDeca\LexendDeca-ExtraBold.ttf" />
+    <Resource Include="Fonts\LexendDeca\LexendDeca-ExtraLight.ttf" />
+    <Resource Include="Fonts\LexendDeca\LexendDeca-Light.ttf" />
+    <Resource Include="Fonts\LexendDeca\LexendDeca-Medium.ttf" />
+    <Resource Include="Fonts\LexendDeca\LexendDeca-Regular.ttf" />
+    <Resource Include="Fonts\LexendDeca\LexendDeca-SemiBold.ttf" />
+    <Resource Include="Fonts\LexendDeca\LexendDeca-Thin.ttf" />
   </ItemGroup>
 
 </Project>
