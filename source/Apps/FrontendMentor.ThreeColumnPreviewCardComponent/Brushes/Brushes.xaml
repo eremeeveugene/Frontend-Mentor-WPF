@@ -11,7 +11,7 @@
 
     <SolidColorBrush x:Key="ThreeColumnPreviewCardComponentWindow.Foreground.Brush"
                      po:Freeze="True"
-                     Color="{StaticResource Flight.White.Color}" />
+                     Color="{StaticResource White.Color}" />
 
     <SolidColorBrush x:Key="ThreeColumnPreviewCardComponentWindow.Background.Brush"
                      po:Freeze="True"
