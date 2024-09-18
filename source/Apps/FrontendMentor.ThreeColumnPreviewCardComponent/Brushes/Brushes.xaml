@@ -19,6 +19,14 @@
 
     <!--#endregion-->
 
+    <!--#region TextBlock-->
+
+    <SolidColorBrush x:Key="Heading.TextBlock.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Flight.White.Color}" />
+
+    <!--#endregion-->
+
     <!--#region SocialLinksProfileView-->
 
     <!--<SolidColorBrush x:Key="SocialLinksProfileView.CardOuterBorder.Background.Brush"

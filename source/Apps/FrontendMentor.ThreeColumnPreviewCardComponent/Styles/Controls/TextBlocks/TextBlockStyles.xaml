@@ -3,6 +3,7 @@
                     xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
 
     <ResourceDictionary.MergedDictionaries>
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ThreeColumnPreviewCardComponent;component/Brushes/Brushes.xaml" />
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ThreeColumnPreviewCardComponent;component/Fonts/Fonts.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
@@ -10,6 +11,11 @@
         <Setter Property="FontSize" Value="15" />
         <Setter Property="LineHeight" Value="25" />
         <Setter Property="LineStackingStrategy" Value="BlockLineHeight" />
+        <Setter Property="RenderTransform">
+            <Setter.Value>
+                <TranslateTransform X="0" Y="-3" />
+            </Setter.Value>
+        </Setter>
         <Setter Property="TextWrapping" Value="Wrap" />
     </Style>
 
@@ -17,26 +23,7 @@
         <Setter Property="FontFamily" Value="{StaticResource BigShouldersDisplay.FontFamily}" />
         <Setter Property="FontSize" Value="40" />
         <Setter Property="FontWeight" Value="Bold" />
-        <Setter Property="Foreground" Value="#F2F2F2" />
+        <Setter Property="Foreground" Value="{StaticResource Heading.TextBlock.Foreground.Brush}" />
     </Style>
-
-    <!--<Style x:Key="Heading.TextBlock.Style" TargetType="{x:Type TextBlock}">
-        <Setter Property="FontSize" Value="24" />
-        <Setter Property="FontWeight" Value="SemiBold" />
-        <Setter Property="LineHeight" Value="36" />
-        <Setter Property="LineStackingStrategy" Value="BlockLineHeight" />
-    </Style>
-
-    <Style x:Key="Body.Regular.TextBlock.Style" TargetType="{x:Type TextBlock}">
-        <Setter Property="FontSize" Value="14" />
-        <Setter Property="LineHeight" Value="21" />
-        <Setter Property="LineStackingStrategy" Value="BlockLineHeight" />
-    </Style>
-
-    <Style x:Key="Body.Bold.TextBlock.Style"
-           BasedOn="{StaticResource Body.Regular.TextBlock.Style}"
-           TargetType="{x:Type TextBlock}">
-        <Setter Property="FontWeight" Value="Bold" />
-    </Style>-->
 
 </ResourceDictionary>
