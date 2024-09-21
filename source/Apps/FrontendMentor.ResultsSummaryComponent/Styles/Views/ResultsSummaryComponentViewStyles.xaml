@@ -17,22 +17,6 @@
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Styles/Controls/Custom/TextBlocks/TextBlockStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="SocialLinksProfileView.SocialLinkButton.FocusBorder.Style" TargetType="{x:Type Border}">
-        <Setter Property="BorderBrush" Value="{StaticResource ResultsSummaryComponentView.ContinueButton.FocusBorder.Border.Brush}" />
-        <Setter Property="BorderThickness" Value="2" />
-        <Setter Property="Opacity" Value="0" />
-        <Style.Triggers>
-            <Trigger Property="helpers:UIElementPropertiesHelper.IsFocusedParent" Value="True">
-                <Trigger.EnterActions>
-                    <BeginStoryboard Storyboard="{StaticResource ResultsSummaryComponentView.ContinueButton.FocusBorder.ToFocused.Storyboard}" />
-                </Trigger.EnterActions>
-                <Trigger.ExitActions>
-                    <BeginStoryboard Storyboard="{StaticResource ResultsSummaryComponentView.ContinueButton.FocusBorder.FromFocused.Storyboard}" />
-                </Trigger.ExitActions>
-            </Trigger>
-        </Style.Triggers>
-    </Style>
-
     <Style x:Key="ResultsSummaryComponentView.ContinueButton.ActiveBorder.Style" TargetType="{x:Type Border}">
         <Setter Property="Background" Value="{StaticResource ResultsSummaryComponentView.ContinueButton.Background.MouseOver.Brush}" />
         <Setter Property="Effect" Value="{StaticResource Button.DropShadowEffect}" />
@@ -61,17 +45,12 @@
                     Style="{StaticResource ResultsSummaryComponentView.ContinueButton.ActiveBorder.Style}" />
 
             <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-
-            <Border helpers:UIElementPropertiesHelper.IsFocusedParent="{TemplateBinding IsFocused}"
-                    CornerRadius="{TemplateBinding helpers:BorderPropertiesHelper.CornerRadius}"
-                    Style="{StaticResource SocialLinksProfileView.SocialLinkButton.FocusBorder.Style}" />
         </Grid>
     </ControlTemplate>
 
     <Style x:Key="ResultsSummaryComponentView.ContinueButton.Style" TargetType="{x:Type Button}">
         <Setter Property="Background" Value="{StaticResource ResultsSummaryComponentView.ContinueButton.Background.Brush}" />
         <Setter Property="Cursor" Value="Hand" />
-        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Height" Value="56" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="OverridesDefaultStyle" Value="True" />

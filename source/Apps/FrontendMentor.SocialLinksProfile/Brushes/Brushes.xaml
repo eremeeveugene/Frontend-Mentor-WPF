@@ -37,10 +37,6 @@
                      po:Freeze="True"
                      Color="{StaticResource White.Color}" />
 
-    <SolidColorBrush x:Key="SocialLinksProfileView.SocialLinkButton.FocusBorder.Border.Brush"
-                     po:Freeze="True"
-                     Color="{StaticResource Cyan.Cornflower.Blue.Color}" />
-
     <!--#endregion-->
 
 </ResourceDictionary>

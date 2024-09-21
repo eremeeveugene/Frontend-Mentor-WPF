@@ -5,6 +5,5 @@
     <Color x:Key="Grey.900.Color">#141414</Color>
     <Color x:Key="Grey.700.Color">#333333</Color>
     <Color x:Key="Grey.800.Color">#1F1F1F</Color>
-    <Color x:Key="Cyan.Cornflower.Blue.Color">#2980b9</Color>
 
 </ResourceDictionary>

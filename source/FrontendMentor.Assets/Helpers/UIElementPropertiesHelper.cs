@@ -18,9 +18,6 @@ public static class UIElementPropertiesHelper
     public static readonly DependencyProperty IsMouseOverParentProperty = DependencyProperty.RegisterAttached(
         "IsMouseOverParent", typeof(bool), typeof(UIElementPropertiesHelper), new PropertyMetadata(default(bool)));
 
-    public static readonly DependencyProperty IsFocusedParentProperty = DependencyProperty.RegisterAttached(
-        "IsFocusedParent", typeof(bool), typeof(UIElementPropertiesHelper), new PropertyMetadata(default(bool)));
-
     public static void SetIsMouseOverParent(DependencyObject element, bool value)
     {
         element.SetValue(IsMouseOverParentProperty, value);
@@ -29,15 +26,5 @@ public static class UIElementPropertiesHelper
     public static bool GetIsMouseOverParent(DependencyObject element)
     {
         return (bool)element.GetValue(IsMouseOverParentProperty);
-    }
-
-    public static void SetIsFocusedParent(DependencyObject element, bool value)
-    {
-        element.SetValue(IsFocusedParentProperty, value);
-    }
-
-    public static bool GetIsFocusedParent(DependencyObject element)
-    {
-        return (bool)element.GetValue(IsFocusedParentProperty);
     }
 }

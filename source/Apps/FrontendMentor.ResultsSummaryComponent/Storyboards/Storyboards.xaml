@@ -23,18 +23,4 @@
                          Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 
-    <Storyboard x:Key="ResultsSummaryComponentView.ContinueButton.FocusBorder.ToFocused.Storyboard" po:Freeze="True">
-        <DoubleAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
-                         Storyboard.TargetProperty="(Button.Opacity)"
-                         To="1"
-                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
-    </Storyboard>
-
-    <Storyboard x:Key="ResultsSummaryComponentView.ContinueButton.FocusBorder.FromFocused.Storyboard" po:Freeze="True">
-        <DoubleAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
-                         Storyboard.TargetProperty="(Button.Opacity)"
-                         From="1"
-                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
-    </Storyboard>
-
 </ResourceDictionary>

@@ -107,6 +107,7 @@
     </ControlTemplate>
 
     <Style TargetType="{x:Type cards:PreviewCard}">
+        <Setter Property="Focusable" Value="False" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="Padding" Value="48" />
         <Setter Property="Template" Value="{StaticResource PreviewCard.Template}" />
