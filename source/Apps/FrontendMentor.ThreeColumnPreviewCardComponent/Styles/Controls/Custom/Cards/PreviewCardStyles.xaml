@@ -1,0 +1,38 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:cards="clr-namespace:FrontendMentor.ThreeColumnPreviewCardComponent.Controls.Cards"
+                    xmlns:properties="clr-namespace:FrontendMentor.ThreeColumnPreviewCardComponent.Properties"
+                    xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
+
+    <ResourceDictionary.MergedDictionaries>
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ThreeColumnPreviewCardComponent;component/Brushes/Brushes.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ThreeColumnPreviewCardComponent;component/Geometries/Geometries.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="Sedan.PreviewCard.Style" TargetType="{x:Type cards:PreviewCard}">
+        <Setter Property="Background" Value="{StaticResource Sedan.PreviewCard.Background.Brush}" />
+        <Setter Property="Caption" Value="{x:Static properties:Resources.Sedan_PreviewCard_Caption}" />
+        <Setter Property="CornerRadius" Value="8 0 0 8" />
+        <Setter Property="IconData" Value="{StaticResource Sedan.Geometry}" />
+        <Setter Property="IconFill" Value="{StaticResource Sedan.PreviewCard.IconFill.Brush}" />
+        <Setter Property="Title" Value="{x:Static properties:Resources.Sedan_PreviewCard_Title}" />
+    </Style>
+
+    <Style x:Key="Suv.PreviewCard.Style" TargetType="{x:Type cards:PreviewCard}">
+        <Setter Property="Background" Value="{StaticResource Suv.PreviewCard.Background.Brush}" />
+        <Setter Property="Caption" Value="{x:Static properties:Resources.Suv_PreviewCard_Caption}" />
+        <Setter Property="IconData" Value="{StaticResource Suv.Geometry}" />
+        <Setter Property="IconFill" Value="{StaticResource Suv.PreviewCard.IconFill.Brush}" />
+        <Setter Property="Title" Value="{x:Static properties:Resources.Suv_PreviewCard_Title}" />
+    </Style>
+
+    <Style x:Key="Luxury.PreviewCard.Style" TargetType="{x:Type cards:PreviewCard}">
+        <Setter Property="Background" Value="{StaticResource Luxury.PreviewCard.Background.Brush}" />
+        <Setter Property="Caption" Value="{x:Static properties:Resources.Luxury_PreviewCard_Caption}" />
+        <Setter Property="CornerRadius" Value="0 8 8 0" />
+        <Setter Property="IconData" Value="{StaticResource Luxury.Geometry}" />
+        <Setter Property="IconFill" Value="{StaticResource Luxury.PreviewCard.IconFill.Brush}" />
+        <Setter Property="Title" Value="{x:Static properties:Resources.Luxury_PreviewCard_Title}" />
+    </Style>
+
+</ResourceDictionary>

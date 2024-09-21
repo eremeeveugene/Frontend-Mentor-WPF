@@ -9,22 +9,12 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using System.Windows;
+namespace FrontendMentor.ThreeColumnPreviewCardComponent.Views;
 
-namespace FrontendMentor.Assets.Helpers;
-
-public static class UIElementPropertiesHelper
+internal sealed partial class ThreeColumnPreviewCardComponentView
 {
-    public static readonly DependencyProperty IsMouseOverParentProperty = DependencyProperty.RegisterAttached(
-        "IsMouseOverParent", typeof(bool), typeof(UIElementPropertiesHelper), new PropertyMetadata(default(bool)));
-
-    public static void SetIsMouseOverParent(DependencyObject element, bool value)
+    public ThreeColumnPreviewCardComponentView()
     {
-        element.SetValue(IsMouseOverParentProperty, value);
-    }
-
-    public static bool GetIsMouseOverParent(DependencyObject element)
-    {
-        return (bool)element.GetValue(IsMouseOverParentProperty);
+        InitializeComponent();
     }
 }
