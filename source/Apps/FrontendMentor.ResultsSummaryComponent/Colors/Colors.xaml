@@ -13,5 +13,9 @@
     <Color x:Key="LightBlue.Color">#CAC9FF</Color>
     <Color x:Key="VeryLightBlue.Color">#ECF2FF</Color>
     <Color x:Key="White.Color">#FFFFFF</Color>
+    <Color x:Key="Ivory.White.Color">#FEFBF4</Color>
+    <Color x:Key="Blush.Pink.Color">#FDF6F6</Color>
+    <Color x:Key="Mint.Whisper.Color">#F4FCF9</Color>
+    <Color x:Key="Lavender.Mist.Color">#F3F4FD</Color>
 
 </ResourceDictionary>

@@ -77,7 +77,7 @@
 
     <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemBorder.Memory.Background.Brush"
                      po:Freeze="True"
-                     Color="#fefbf4" />
+                     Color="{StaticResource Ivory.White.Color}" />
 
     <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemIcon.Memory.Stroke.Brush"
                      po:Freeze="True"
@@ -89,7 +89,7 @@
 
     <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemBorder.Reaction.Background.Brush"
                      po:Freeze="True"
-                     Color="#fdf6f6" />
+                     Color="{StaticResource Blush.Pink.Color}" />
 
     <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemTextBlock.Reaction.Foreground.Brush"
                      po:Freeze="True"
@@ -101,7 +101,7 @@
 
     <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemBorder.Verbal.Background.Brush"
                      po:Freeze="True"
-                     Color="#f4fcf9" />
+                     Color="{StaticResource Mint.Whisper.Color}" />
 
     <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemTextBlock.Verbal.Foreground.Brush"
                      po:Freeze="True"
@@ -113,7 +113,7 @@
 
     <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemBorder.Visual.Background.Brush"
                      po:Freeze="True"
-                     Color="#f3f4fd" />
+                     Color="{StaticResource Lavender.Mist.Color}" />
 
     <SolidColorBrush x:Key="ResultsSummaryComponentView.SummaryItemsControl.SummaryItemTextBlock.Visual.Foreground.Brush"
                      po:Freeze="True"
