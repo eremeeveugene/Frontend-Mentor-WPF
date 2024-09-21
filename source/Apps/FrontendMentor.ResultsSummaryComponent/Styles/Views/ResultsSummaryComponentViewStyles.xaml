@@ -70,6 +70,7 @@
 
     <Style x:Key="ResultsSummaryComponentView.ContinueButton.Style" TargetType="{x:Type Button}">
         <Setter Property="Background" Value="{StaticResource ResultsSummaryComponentView.ContinueButton.Background.Brush}" />
+        <Setter Property="Cursor" Value="Hand" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Height" Value="56" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />

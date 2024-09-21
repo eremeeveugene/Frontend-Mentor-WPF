@@ -45,6 +45,7 @@
 
     <Style x:Key="SocialLinksProfileView.SocialLinkButton.Style" TargetType="{x:Type Button}">
         <Setter Property="Background" Value="{StaticResource SocialLinksProfileView.SocialLinkButton.Background.Brush}" />
+        <Setter Property="Cursor" Value="Hand" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Foreground" Value="{StaticResource SocialLinksProfileView.SocialLinkButton.Foreground.Brush}" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />

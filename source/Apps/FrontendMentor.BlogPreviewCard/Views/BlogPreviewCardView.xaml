@@ -11,7 +11,9 @@
              x:ClassModifier="internal"
              mc:Ignorable="d">
 
-    <Border x:Name="RootBorder" Style="{StaticResource BlogPreviewCardView.RootBorder.Style}">
+    <Border x:Name="RootBorder"
+            Cursor="Hand"
+            Style="{StaticResource BlogPreviewCardView.RootBorder.Style}">
         <StackPanel>
             <Rectangle Height="200"
                        RadiusX="10"
