@@ -27,27 +27,47 @@
 
     <!--#endregion-->
 
-    <!--#region SocialLinksProfileView-->
+    <!--#region PreviewCard-->
 
-    <!--<SolidColorBrush x:Key="SocialLinksProfileView.CardOuterBorder.Background.Brush"
+    <SolidColorBrush x:Key="PreviewCard.IconEllipse.Fill.Brush"
                      po:Freeze="True"
-                     Color="{StaticResource Grey.800.Color}" />
+                     Color="{StaticResource Black.Color}" />
 
-    <SolidColorBrush x:Key="SocialLinksProfileView.LocationTextBlock.Foreground.Brush"
+    <SolidColorBrush x:Key="PreviewCard.LearnMoreButton.Background.Brush"
                      po:Freeze="True"
-                     Color="{StaticResource Green.Color}" />
+                     Color="{StaticResource Flight.White.Color}" />
 
-    <SolidColorBrush x:Key="SocialLinksProfileView.SocialLinkButton.Background.Brush"
-                     po:Freeze="True"
-                     Color="{StaticResource Grey.700.Color}" />
-
-    <SolidColorBrush x:Key="SocialLinksProfileView.SocialLinkButton.Foreground.Brush"
+    <SolidColorBrush x:Key="PreviewCard.LearnMoreButton.MouseOverBorder.Border.Brush"
                      po:Freeze="True"
                      Color="{StaticResource White.Color}" />
 
-    <SolidColorBrush x:Key="SocialLinksProfileView.SocialLinkButton.FocusBorder.Border.Brush"
+    <!--#endregion-->
+
+    <!--#region Cards-->
+
+    <SolidColorBrush x:Key="Sedan.PreviewCard.Background.Brush"
                      po:Freeze="True"
-                     Color="{StaticResource Cyan.Cornflower.Blue.Color}" />-->
+                     Color="{StaticResource Burnt.Orange.Color}" />
+
+    <SolidColorBrush x:Key="Sedan.PreviewCard.IconFill.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Goldenrod.Yellow.Color}" />
+
+    <SolidColorBrush x:Key="Suv.PreviewCard.Background.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Deep.Teal.Color}" />
+
+    <SolidColorBrush x:Key="Suv.PreviewCard.IconFill.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Tropical.Aqua.Color}" />
+
+    <SolidColorBrush x:Key="Luxury.PreviewCard.Background.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Deep.Sea.Green.Color}" />
+
+    <SolidColorBrush x:Key="Luxury.PreviewCard.IconFill.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Emerald.Aqua.Color}" />
 
     <!--#endregion-->
 

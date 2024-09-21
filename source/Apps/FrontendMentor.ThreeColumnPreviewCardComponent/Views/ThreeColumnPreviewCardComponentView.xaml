@@ -1,8 +1,8 @@
 ﻿<UserControl x:Class="FrontendMentor.ThreeColumnPreviewCardComponent.Views.ThreeColumnPreviewCardComponentView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:cards="clr-namespace:FrontendMentor.ThreeColumnPreviewCardComponent.Controls.Cards"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:icons="clr-namespace:FrontendMentor.Assets.Controls.Icons;assembly=FrontendMentor.Assets"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              x:ClassModifier="internal"
              mc:Ignorable="d">
@@ -18,115 +18,11 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Border Grid.Column="0"
-                Padding="48"
-                Background="#E28625"
-                CornerRadius="8 0 0 8">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
+        <cards:PreviewCard Grid.Column="0" Style="{StaticResource Sedan.PreviewCard.Style}" />
 
-                <StackPanel>
-                    <Grid HorizontalAlignment="Left">
-                        <Ellipse Width="40"
-                                 Height="40"
-                                 HorizontalAlignment="Left"
-                                 Fill="#000000 "
-                                 Opacity="0.2" />
+        <cards:PreviewCard Grid.Column="1" Style="{StaticResource Suv.PreviewCard.Style}" />
 
-                        <icons:Icon Margin="20,0,0,0"
-                                    Data="{StaticResource Sedan.Geometry}"
-                                    Fill="#FFD473" />
-                    </Grid>
-
-                    <TextBlock Margin="0,35,0,0"
-                               Style="{StaticResource Heading.TextBlock.Style}"
-                               Text="SEDANS" />
-
-                    <TextBlock Margin="0,25,0,0"
-                               Opacity="0.75"
-                               Style="{StaticResource Body.TextBlock.Style}"
-                               Text="Choose a sedan for its affordability and excellent fuel economy. Ideal for cruising in the city or on your next road trip." />
-                </StackPanel>
-
-                <Button Grid.Row="1" Style="{StaticResource Sedan.LearnMore.Button.Style}" />
-            </Grid>
-        </Border>
-
-        <Border Grid.Column="1"
-                Padding="48"
-                Background="#006971">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
-
-                <StackPanel Grid.Row="0">
-                    <Grid HorizontalAlignment="Left">
-                        <Ellipse Width="40"
-                                 Height="40"
-                                 HorizontalAlignment="Left"
-                                 Fill="#000000 "
-                                 Opacity="0.2" />
-
-                        <icons:Icon Margin="20,0,0,0"
-                                    Data="{StaticResource Suv.Geometry}"
-                                    Fill="#26B5C0" />
-                    </Grid>
-
-                    <TextBlock Margin="0,35,0,0"
-                               Style="{StaticResource Heading.TextBlock.Style}"
-                               Text="SUVS" />
-
-                    <TextBlock Margin="0,25,0,0"
-                               Opacity="0.75"
-                               Style="{StaticResource Body.TextBlock.Style}"
-                               Text="Take an SUV for its spacious interior, power, and versatility. Perfect for your next family vacation and off-road adventures." />
-                </StackPanel>
-
-                <Button Grid.Row="1" Style="{StaticResource Suv.LearnMore.Button.Style}" />
-            </Grid>
-        </Border>
-
-        <Border Grid.Column="2"
-                Padding="48"
-                Background="#004140"
-                CornerRadius="0 8 8 0">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
-
-                <StackPanel Grid.Row="0">
-                    <Grid HorizontalAlignment="Left">
-                        <Ellipse Width="40"
-                                 Height="40"
-                                 HorizontalAlignment="Left"
-                                 Fill="#000000 "
-                                 Opacity="0.2" />
-
-                        <icons:Icon Margin="20,0,0,0"
-                                    Data="{StaticResource Luxury.Geometry}"
-                                    Fill="#19B89D" />
-                    </Grid>
-
-                    <TextBlock Margin="0,35,0,0"
-                               Style="{StaticResource Heading.TextBlock.Style}"
-                               Text="LUXURY" />
-
-                    <TextBlock Margin="0,25,0,0"
-                               Opacity="0.75"
-                               Style="{StaticResource Body.TextBlock.Style}"
-                               Text="Cruise in the best car brands without the bloated prices. Enjoy the enhanced comfort of a luxury rental and arrive in style. " />
-                </StackPanel>
-
-                <Button Grid.Row="1" Style="{StaticResource Luxury.LearnMore.Button.Style}" />
-            </Grid>
-        </Border>
+        <cards:PreviewCard Grid.Column="2" Style="{StaticResource Luxury.PreviewCard.Style}" />
     </Grid>
 
 </UserControl>

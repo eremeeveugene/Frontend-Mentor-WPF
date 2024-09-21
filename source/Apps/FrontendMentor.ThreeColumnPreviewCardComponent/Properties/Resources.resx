@@ -120,4 +120,25 @@
   <data name="ThreeColumnPreviewCardComponentWindow_Title" xml:space="preserve">
     <value>Three column preview card component</value>
   </data>
+  <data name="Luxury_PreviewCard_Caption" xml:space="preserve">
+    <value>Cruise in the best car brands without the bloated prices. Enjoy the enhanced comfort of a luxury rental and arrive in style.</value>
+  </data>
+  <data name="Suv_PreviewCard_Caption" xml:space="preserve">
+    <value>Take an SUV for its spacious interior, power, and versatility. Perfect for your next family vacation and off-road adventures.</value>
+  </data>
+  <data name="Sedan_PreviewCard_Caption" xml:space="preserve">
+    <value>Choose a sedan for its affordability and excellent fuel economy. Ideal for cruising in the city or on your next road trip.</value>
+  </data>
+  <data name="Luxury_PreviewCard_Title" xml:space="preserve">
+    <value>LUXURY</value>
+  </data>
+  <data name="Sedan_PreviewCard_Title" xml:space="preserve">
+    <value>SEDANS</value>
+  </data>
+  <data name="Suv_PreviewCard_Title" xml:space="preserve">
+    <value>SUVS</value>
+  </data>
+  <data name="PreviewCard_LearnMoreButton_Content" xml:space="preserve">
+    <value>Learn More</value>
+  </data>
 </root>

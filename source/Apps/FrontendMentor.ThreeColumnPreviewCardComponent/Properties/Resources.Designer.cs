@@ -61,6 +61,69 @@ namespace FrontendMentor.ThreeColumnPreviewCardComponent.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cruise in the best car brands without the bloated prices. Enjoy the enhanced comfort of a luxury rental and arrive in style..
+        /// </summary>
+        public static string Luxury_PreviewCard_Caption {
+            get {
+                return ResourceManager.GetString("Luxury_PreviewCard_Caption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LUXURY.
+        /// </summary>
+        public static string Luxury_PreviewCard_Title {
+            get {
+                return ResourceManager.GetString("Luxury_PreviewCard_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Learn More.
+        /// </summary>
+        public static string PreviewCard_LearnMoreButton_Content {
+            get {
+                return ResourceManager.GetString("PreviewCard_LearnMoreButton_Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose a sedan for its affordability and excellent fuel economy. Ideal for cruising in the city or on your next road trip..
+        /// </summary>
+        public static string Sedan_PreviewCard_Caption {
+            get {
+                return ResourceManager.GetString("Sedan_PreviewCard_Caption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SEDANS.
+        /// </summary>
+        public static string Sedan_PreviewCard_Title {
+            get {
+                return ResourceManager.GetString("Sedan_PreviewCard_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Take an SUV for its spacious interior, power, and versatility. Perfect for your next family vacation and off-road adventures..
+        /// </summary>
+        public static string Suv_PreviewCard_Caption {
+            get {
+                return ResourceManager.GetString("Suv_PreviewCard_Caption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SUVS.
+        /// </summary>
+        public static string Suv_PreviewCard_Title {
+            get {
+                return ResourceManager.GetString("Suv_PreviewCard_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Three column preview card component.
         /// </summary>
         public static string ThreeColumnPreviewCardComponentWindow_Title {

@@ -15,9 +15,13 @@
         <Setter Property="Background" Value="{StaticResource ThreeColumnPreviewCardComponentWindow.Background.Brush}" />
         <Setter Property="FontFamily" Value="{StaticResource LexendDeca.FontFamily}" />
         <Setter Property="Foreground" Value="{StaticResource ThreeColumnPreviewCardComponentWindow.Foreground.Brush}" />
+        <Setter Property="MaxHeight" Value="800" />
+        <Setter Property="MaxWidth" Value="1440" />
         <Setter Property="MinHeight" Value="800" />
         <Setter Property="MinWidth" Value="1440" />
+        <Setter Property="ResizeMode" Value="NoResize" />
         <Setter Property="Title" Value="{x:Static properties:Resources.ThreeColumnPreviewCardComponentWindow_Title}" />
+        <Setter Property="WindowStyle" Value="None" />
     </Style>
 
 </ResourceDictionary>
