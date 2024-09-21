@@ -1,0 +1,66 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:bindableModels="clr-namespace:FrontendMentor.SocialLinksProfile.BindableModels"
+                    xmlns:helpers="clr-namespace:FrontendMentor.Assets.Helpers;assembly=FrontendMentor.Assets"
+                    xmlns:panels="clr-namespace:FrontendMentor.Assets.Controls.Panels;assembly=FrontendMentor.Assets"
+                    xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
+
+    <ResourceDictionary.MergedDictionaries>
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Brushes/Brushes.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Storyboards/Storyboards.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Styles/Controls/TextBlocks/TextBlockStyles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <ControlTemplate x:Key="SocialLinksProfileView.SocialLinkButton.Template" TargetType="{x:Type Button}">
+        <Border Padding="{TemplateBinding Padding}"
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                CornerRadius="{TemplateBinding helpers:BorderPropertiesHelper.CornerRadius}">
+            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+        </Border>
+    </ControlTemplate>
+
+    <Style x:Key="SocialLinksProfileView.SocialLinkButton.Style" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{StaticResource SocialLinksProfileView.SocialLinkButton.Background.Brush}" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Foreground" Value="{StaticResource SocialLinksProfileView.SocialLinkButton.Foreground.Brush}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Padding" Value="12" />
+        <Setter Property="Template" Value="{StaticResource SocialLinksProfileView.SocialLinkButton.Template}" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="helpers:BorderPropertiesHelper.CornerRadius" Value="8" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Trigger.EnterActions>
+                    <BeginStoryboard Storyboard="{StaticResource SocialLinksProfileView.SocialLinkButton.ToMouseOver.Storyboard}" />
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard Storyboard="{StaticResource SocialLinksProfileView.SocialLinkButton.FromMouseOver.Storyboard}" />
+                </Trigger.ExitActions>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <DataTemplate x:Key="SocialLinksProfileView.SocialLinksItemsControl.ItemContentTemplate" DataType="{x:Type bindableModels:SocialLinkBindableModel}">
+        <Button Command="{Binding OpenLinkCommand}" Style="{StaticResource SocialLinksProfileView.SocialLinkButton.Style}">
+            <TextBlock Style="{StaticResource Body.Bold.TextBlock.Style}" Text="{Binding Name}" />
+        </Button>
+    </DataTemplate>
+
+    <Style x:Key="SocialLinksProfileView.SocialLinksItemsControl.ItemContainerStyle" TargetType="{x:Type ContentPresenter}">
+        <Setter Property="ContentTemplate" Value="{StaticResource SocialLinksProfileView.SocialLinksItemsControl.ItemContentTemplate}" />
+    </Style>
+
+    <ItemsPanelTemplate x:Key="SocialLinksProfileView.SocialLinksItemsControl.ItemsPanelTemplate">
+        <panels:SpacingStackPanel Spacing="16" />
+    </ItemsPanelTemplate>
+
+    <Style x:Key="SocialLinksProfileView.SocialLinksItemsControl.Style" TargetType="{x:Type ItemsControl}">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="ItemContainerStyle" Value="{StaticResource SocialLinksProfileView.SocialLinksItemsControl.ItemContainerStyle}" />
+        <Setter Property="ItemsPanel" Value="{StaticResource SocialLinksProfileView.SocialLinksItemsControl.ItemsPanelTemplate}" />
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="FrontendMentor.QrCodeComponent.Views.QrCodeComponentView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:properties="clr-namespace:FrontendMentor.QrCodeComponent.Properties"
+             x:ClassModifier="internal"
+             mc:Ignorable="d">
+
+    <Border Width="320"
+            Padding="16,16,16,40"
+            VerticalAlignment="Center"
+            Background="{StaticResource QrCodeComponentView.QrCodeOuterBorder.Background.Brush}"
+            CornerRadius="20"
+            Effect="{StaticResource QrCodeComponentView.QrCodeOuterBorder.DropShadowEffect}">
+        <StackPanel>
+            <Grid Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}">
+                <Rectangle x:Name="InnerBorder"
+                           Grid.Row="0"
+                           Fill="{StaticResource QrCodeComponentView.QrCodeInnerRectangle.Background.Brush}"
+                           RadiusX="10"
+                           RadiusY="10" />
+
+                <Decorator>
+                    <Decorator.OpacityMask>
+                        <VisualBrush Visual="{Binding ElementName=InnerBorder}" />
+                    </Decorator.OpacityMask>
+
+                    <Canvas ClipToBounds="True">
+                        <Canvas.OpacityMask>
+                            <VisualBrush Visual="{Binding ElementName=InnerBorder}" />
+                        </Canvas.OpacityMask>
+
+                        <Ellipse Canvas.Right="91.5"
+                                 Canvas.Bottom="124.5"
+                                 Width="328"
+                                 Height="328"
+                                 Fill="{StaticResource QrCodeComponentView.QrCodeEllipse.Fill.Brush}" />
+
+                        <Ellipse Canvas.Left="131.5"
+                                 Canvas.Top="204.5"
+                                 Width="270"
+                                 Height="270"
+                                 Fill="{StaticResource QrCodeComponentView.QrCodeEllipse.Fill.Brush}" />
+                    </Canvas>
+                </Decorator>
+
+                <Image Width="160"
+                       Height="160"
+                       Source="{StaticResource QrCode.Image}" />
+            </Grid>
+
+            <StackPanel Margin="16,24,16,0">
+                <TextBlock Style="{StaticResource Heading.TextBlock.Style}"
+                           Text="{x:Static properties:Resources.QrCodeComponentView_HeadingTextBlock_Text}"
+                           TextAlignment="Center"
+                           TextWrapping="Wrap" />
+
+                <TextBlock Margin="0,16,0,0"
+                           Foreground="{StaticResource QrCodeComponentView.BodyTextBlock.Foreground.Brush}"
+                           Style="{StaticResource Body.TextBlock.Style}"
+                           Text="{x:Static properties:Resources.QrCodeComponentView_CaptionTextBlock_Text}"
+                           TextAlignment="Center"
+                           TextWrapping="Wrap" />
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</UserControl>

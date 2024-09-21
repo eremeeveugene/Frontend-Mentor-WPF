@@ -116,6 +116,31 @@ https://www.frontendmentor.io/challenges/results-summary-component-CE_K6s0maV
 
 </details>
 
+## Three-column preview card component
+
+https://www.frontendmentor.io/challenges/3column-preview-card-component-pH92eAR2-
+
+<details>
+    <summary><strong>Screenshots</strong></summary>
+  
+### Expected Result
+
+![Expected Result](https://github.com/user-attachments/assets/4065dfff-c3b8-4d78-92f2-ea229f14bdbc)
+
+### Actual Result (99.67% identical to the expected result)
+
+![Actual Result](https://github.com/user-attachments/assets/bdfe6d6d-73c2-499c-9e9e-82cc22667eac)
+
+### Expected Result - Active
+
+![Expected Result - Active](https://github.com/user-attachments/assets/1bc1730c-2d5d-4237-a831-33e691a52f2a)
+
+### Actual Result - Active (99.67% identical to the expected result)
+
+![Actual Result - Active](https://github.com/user-attachments/assets/a00f75af-4e43-429a-9c9d-88e9392c06d8)
+
+</details>
+
 ## License
 
 This project is licensed under a custom license. See the [LICENSE](LICENSE) file for details.
