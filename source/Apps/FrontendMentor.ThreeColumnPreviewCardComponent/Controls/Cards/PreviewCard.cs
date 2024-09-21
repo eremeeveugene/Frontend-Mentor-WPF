@@ -31,7 +31,7 @@ internal class PreviewCard : Control
 
     public static readonly DependencyProperty CaptionProperty = DependencyProperty.Register(
         nameof(Caption), typeof(string), typeof(PreviewCard), new PropertyMetadata(default(string)));
-    
+
     static PreviewCard()
     {
         DefaultStyleKeyProperty.OverrideMetadata(typeof(PreviewCard),
