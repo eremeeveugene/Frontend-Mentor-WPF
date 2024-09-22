@@ -4,26 +4,18 @@
                     xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
 
     <ResourceDictionary.MergedDictionaries>
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ThreeColumnPreviewCardComponent;component/Colors/Colors.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.MortgageRepaymentCalculator;component/Colors/Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <!--#region ThreeColumnPreviewCardComponentWindow-->
+    <!--#region MortgageRepaymentCalculatorWindow-->
 
-    <!--<SolidColorBrush x:Key="ThreeColumnPreviewCardComponentWindow.Foreground.Brush"
+    <SolidColorBrush x:Key="MortgageRepaymentCalculatorWindow.Foreground.Brush"
                      po:Freeze="True"
-                     Color="{StaticResource White.Color}" />
+                     Color="{StaticResource Slate.900.Color}" />
 
-    <SolidColorBrush x:Key="ThreeColumnPreviewCardComponentWindow.Background.Brush"
+    <SolidColorBrush x:Key="MortgageRepaymentCalculatorWindow.Background.Brush"
                      po:Freeze="True"
-                     Color="{StaticResource Flight.White.Color}" />-->
-
-    <!--#endregion-->
-
-    <!--#region TextBlock-->
-
-    <!--<SolidColorBrush x:Key="Heading.TextBlock.Foreground.Brush"
-                     po:Freeze="True"
-                     Color="{StaticResource Flight.White.Color}" />-->
+                     Color="{StaticResource Slate.100.Color}" />
 
     <!--#endregion-->
 
