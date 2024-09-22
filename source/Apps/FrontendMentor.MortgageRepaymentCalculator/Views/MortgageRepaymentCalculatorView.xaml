@@ -89,9 +89,10 @@
                 </Border.Background>
 
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Border Width="192" Height="192" />
+                    <Image Source="{StaticResource MortgageResults.Image}" Stretch="None" />
 
-                    <TextBlock Style="{StaticResource TextPreset2.TextBlock.Style}"
+                    <TextBlock Margin="0,16,0,0"
+                               Style="{StaticResource TextPreset2.TextBlock.Style}"
                                Text="Results shown here"
                                TextAlignment="Center">
                         <TextBlock.Foreground>
