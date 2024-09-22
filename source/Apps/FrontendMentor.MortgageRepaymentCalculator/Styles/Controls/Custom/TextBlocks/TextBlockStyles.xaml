@@ -6,16 +6,67 @@
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.MortgageRepaymentCalculator;component/Brushes/Brushes.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
+    <!--  -1px Letter Spacing  -->
     <Style x:Key="TextPreset1.TextBlock.Style" TargetType="{x:Type TextBlock}">
-        <Setter Property="FontSize" Value="15" />
-        <Setter Property="LineHeight" Value="25" />
+        <Setter Property="FontSize" Value="56" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="LineHeight" Value="70" />
         <Setter Property="LineStackingStrategy" Value="BlockLineHeight" />
-        <Setter Property="RenderTransform">
+        <!--<Setter Property="RenderTransform">
             <Setter.Value>
                 <TranslateTransform X="0" Y="-2" />
             </Setter.Value>
-        </Setter>
-        <Setter Property="TextWrapping" Value="Wrap" />
+        </Setter>-->
+    </Style>
+
+    <!--  -1px Letter Spacing  -->
+    <Style x:Key="TextPreset2.TextBlock.Style" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="LineHeight" Value="30" />
+        <Setter Property="LineStackingStrategy" Value="BlockLineHeight" />
+        <!--<Setter Property="RenderTransform">
+          <Setter.Value>
+              <TranslateTransform X="0" Y="-2" />
+          </Setter.Value>
+      </Setter>-->
+    </Style>
+
+    <!--  -1px Letter Spacing  -->
+    <Style x:Key="TextPreset3.TextBlock.Style" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="LineHeight" Value="22.5" />
+        <Setter Property="LineStackingStrategy" Value="BlockLineHeight" />
+        <!--<Setter Property="RenderTransform">
+          <Setter.Value>
+              <TranslateTransform X="0" Y="-2" />
+          </Setter.Value>
+      </Setter>-->
+    </Style>
+
+    <Style x:Key="TextPreset4.TextBlock.Style" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontWeight" Value="Medium" />
+        <Setter Property="LineHeight" Value="24" />
+        <Setter Property="LineStackingStrategy" Value="BlockLineHeight" />
+        <!--<Setter Property="RenderTransform">
+          <Setter.Value>
+              <TranslateTransform X="0" Y="-2" />
+          </Setter.Value>
+      </Setter>-->
+    </Style>
+
+    <Style x:Key="TextPreset5.TextBlock.Style" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontWeight" Value="Medium" />
+        <Setter Property="LineHeight" Value="21" />
+        <Setter Property="LineStackingStrategy" Value="BlockLineHeight" />
+        <!--<Setter Property="RenderTransform">
+          <Setter.Value>
+              <TranslateTransform X="0" Y="-2" />
+          </Setter.Value>
+      </Setter>-->
     </Style>
 
 </ResourceDictionary>

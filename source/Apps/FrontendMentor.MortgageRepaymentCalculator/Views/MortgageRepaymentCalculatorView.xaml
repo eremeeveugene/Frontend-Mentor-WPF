@@ -6,7 +6,8 @@
              x:ClassModifier="internal"
              mc:Ignorable="d">
 
-    <Border HorizontalAlignment="Center"
+    <Border MaxWidth="1008"
+            HorizontalAlignment="Center"
             VerticalAlignment="Center"
             CornerRadius="24">
         <Border.Background>
@@ -26,40 +27,58 @@
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Grid.Column="0" Text="Mortgage Calculator" />
+                    <TextBlock Grid.Column="0"
+                               Style="{StaticResource TextPreset2.TextBlock.Style}"
+                               Text="Mortgage Calculator" />
 
-                    <TextBlock Grid.Column="1" Text="Clear All" />
+                    <TextBlock Grid.Column="1"
+                               Width="62"
+                               Margin="120,0,0,0"
+                               Text="Clear All" />
                 </Grid>
 
-                <TextBlock Text="Mortgage Amount" />
+                <TextBlock Margin="0,40,0,0"
+                           Style="{StaticResource TextPreset4.TextBlock.Style}"
+                           Text="Mortgage Amount" />
 
-                <TextBox />
+                <TextBox Height="48" Margin="0,12,0,0" />
 
-                <Grid>
+                <Grid Margin="0,24,0,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
 
                     <StackPanel Grid.Column="0">
-                        <TextBlock Text="Mortgage Term" />
+                        <TextBlock Style="{StaticResource TextPreset4.TextBlock.Style}" Text="Mortgage Term" />
 
-                        <TextBox />
+                        <TextBox Height="48" Margin="0,12,0,0" />
+
                     </StackPanel>
 
                     <StackPanel Grid.Column="1">
-                        <TextBlock Text="Interest Rate" />
+                        <TextBlock Style="{StaticResource TextPreset4.TextBlock.Style}" Text="Interest Rate" />
 
-                        <TextBox />
+                        <TextBox Height="48" Margin="0,12,0,0" />
+
                     </StackPanel>
                 </Grid>
 
-                <TextBlock Text="Mortgage Type" />
+                <TextBlock Margin="0,24,0,0"
+                           Style="{StaticResource TextPreset4.TextBlock.Style}"
+                           Text="Mortgage Type" />
 
-                <TextBlock Text="Repayment" />
-                <TextBlock Text="Interest Only" />
+                <TextBlock Height="48"
+                           Margin="0,12,0,0"
+                           Text="Repayment" />
 
-                <Button Content="Calculate Repayments" />
+                <TextBlock Height="48"
+                           Margin="0,12,0,0"
+                           Text="Interest Only" />
+
+                <Button Height="56"
+                        Margin="0,40,0,0"
+                        Content="Calculate Repayments" />
             </StackPanel>
 
             <Border Grid.Column="1"
@@ -69,14 +88,22 @@
                     <SolidColorBrush Color="{StaticResource Slate.900.Color}" />
                 </Border.Background>
 
-                <StackPanel>
-                    <TextBlock Text="Results shown here">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Border Width="192" Height="192" />
+
+                    <TextBlock Style="{StaticResource TextPreset2.TextBlock.Style}"
+                               Text="Results shown here"
+                               TextAlignment="Center">
                         <TextBlock.Foreground>
                             <SolidColorBrush Color="{StaticResource White.Color}" />
                         </TextBlock.Foreground>
                     </TextBlock>
 
-                    <TextBlock Text="Complete the form and click “calculate repayments” to see what your monthly repayments would be.">
+                    <TextBlock Margin="0,16,0,0"
+                               Style="{StaticResource TextPreset4.TextBlock.Style}"
+                               Text="Complete the form and click “calculate repayments” to see what your monthly repayments would be."
+                               TextAlignment="Center"
+                               TextWrapping="Wrap">
                         <TextBlock.Foreground>
                             <SolidColorBrush Color="{StaticResource Slate.300.Color}" />
                         </TextBlock.Foreground>
