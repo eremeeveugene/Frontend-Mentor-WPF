@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets"
+                    xmlns:windows="clr-namespace:FrontendMentor.Assets.Controls.Windows;assembly=FrontendMentor.Assets"
+                    xmlns:windows11="clr-namespace:FrontendMentor.MortgageRepaymentCalculator.Controls.Windows">
+
+    <ResourceDictionary.MergedDictionaries>
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Windows/FrontendMentorWindowStyles.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.MortgageRepaymentCalculator;component/Brushes/Brushes.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.MortgageRepaymentCalculator;component/Fonts/Fonts.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style BasedOn="{StaticResource {x:Type windows:FrontendMentorWindow}}" TargetType="{x:Type windows11:MortgageRepaymentCalculatorWindow}">
+        <!--<Setter Property="Background" Value="{StaticResource ThreeColumnPreviewCardComponentWindow.Background.Brush}" />-->
+        <Setter Property="FontFamily" Value="{StaticResource PlusJakartaSans.FontFamily}" />
+        <!--<Setter Property="Foreground" Value="{StaticResource ThreeColumnPreviewCardComponentWindow.Foreground.Brush}" />-->
+        <Setter Property="MinHeight" Value="800" />
+        <Setter Property="MinWidth" Value="1440" />
+        <!--<Setter Property="Title" Value="{x:Static properties:Resources.ThreeColumnPreviewCardComponentWindow_Title}" />-->
+    </Style>
+
+</ResourceDictionary>
