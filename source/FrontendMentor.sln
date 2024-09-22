@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrontendMentor.ResultsSumma
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrontendMentor.SocialLinksProfile", "Apps\FrontendMentor.SocialLinksProfile\FrontendMentor.SocialLinksProfile.csproj", "{70F6A685-08AB-49CD-8009-F739B8379FDB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontendMentor.MortgageRepaymentCalculator", "Apps\FrontendMentor.MortgageRepaymentCalculator\FrontendMentor.MortgageRepaymentCalculator.csproj", "{2BB54DD9-3B5E-409D-9861-C33BFD7805BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{70F6A685-08AB-49CD-8009-F739B8379FDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70F6A685-08AB-49CD-8009-F739B8379FDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70F6A685-08AB-49CD-8009-F739B8379FDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BB54DD9-3B5E-409D-9861-C33BFD7805BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BB54DD9-3B5E-409D-9861-C33BFD7805BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BB54DD9-3B5E-409D-9861-C33BFD7805BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BB54DD9-3B5E-409D-9861-C33BFD7805BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +69,7 @@ Global
 		{EDF7123E-9B96-4A30-A35E-DD1AFF0A59F7} = {5EAFD35D-2691-45AF-AA3A-227BE86402B8}
 		{45DBE837-95A4-4B04-8FE9-79B86477843F} = {5EAFD35D-2691-45AF-AA3A-227BE86402B8}
 		{70F6A685-08AB-49CD-8009-F739B8379FDB} = {5EAFD35D-2691-45AF-AA3A-227BE86402B8}
+		{2BB54DD9-3B5E-409D-9861-C33BFD7805BA} = {5EAFD35D-2691-45AF-AA3A-227BE86402B8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {595C463F-8E9C-40B9-B872-0B34D6E89BBA}
