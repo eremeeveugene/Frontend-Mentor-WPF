@@ -19,4 +19,20 @@
 
     <!--#endregion-->
 
+    <!--#region MortgageResultsImage-->
+
+    <SolidColorBrush x:Key="MortgageResultsImage.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource White.Color}" />
+
+    <SolidColorBrush x:Key="MortgageResultsImage.Secondary.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Slate.900.Color}" />
+
+    <SolidColorBrush x:Key="MortgageResultsImage.Accent.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Lime.Color}" />
+
+    <!--#endregion-->
+
 </ResourceDictionary>
