@@ -2,12 +2,11 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
 
-    <!--<ResourceDictionary.MergedDictionaries>
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ThreeColumnPreviewCardComponent;component/Brushes/Brushes.xaml" />
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ThreeColumnPreviewCardComponent;component/Fonts/Fonts.xaml" />
+    <ResourceDictionary.MergedDictionaries>
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.MortgageRepaymentCalculator;component/Brushes/Brushes.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="Body.TextBlock.Style" TargetType="{x:Type TextBlock}">
+    <Style x:Key="TextPreset1.TextBlock.Style" TargetType="{x:Type TextBlock}">
         <Setter Property="FontSize" Value="15" />
         <Setter Property="LineHeight" Value="25" />
         <Setter Property="LineStackingStrategy" Value="BlockLineHeight" />
@@ -18,12 +17,5 @@
         </Setter>
         <Setter Property="TextWrapping" Value="Wrap" />
     </Style>
-
-    <Style x:Key="Heading.TextBlock.Style" TargetType="{x:Type TextBlock}">
-        <Setter Property="FontFamily" Value="{StaticResource BigShouldersDisplay.FontFamily}" />
-        <Setter Property="FontSize" Value="40" />
-        <Setter Property="FontWeight" Value="Bold" />
-        <Setter Property="Foreground" Value="{StaticResource Heading.TextBlock.Foreground.Brush}" />
-    </Style>-->
 
 </ResourceDictionary>
