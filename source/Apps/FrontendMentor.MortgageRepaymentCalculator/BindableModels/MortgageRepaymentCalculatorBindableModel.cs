@@ -17,8 +17,13 @@ internal sealed class MortgageRepaymentCalculatorBindableModel : BindableBase
 {
     private double _amount;
     private double _rate;
+    private MortgageTypeBindableModel? _selectedMortgageType;
     private int _term;
-    private MortgageType _mortgageType;
+
+    public MortgageRepaymentCalculatorBindableModel()
+    {
+        SelectedMortgageType = MortgageTypes.FirstOrDefault();
+    }
 
     public double Amount
     {
@@ -38,9 +43,17 @@ internal sealed class MortgageRepaymentCalculatorBindableModel : BindableBase
         set => SetProperty(ref _rate, value);
     }
 
-    public MortgageType MortgageType
+    public MortgageTypeBindableModel? SelectedMortgageType
     {
-        get => _mortgageType;
-        set => SetProperty(ref _mortgageType, value);
+        get => _selectedMortgageType;
+        set => SetProperty(ref _selectedMortgageType, value);
+    }
+
+    public List<MortgageTypeBindableModel> MortgageTypes { get; } = GetMortgageTypes();
+
+    private static List<MortgageTypeBindableModel> GetMortgageTypes()
+    {
+        return Enum.GetValues<MortgageType>().Select(mortgageType =>
+            new MortgageTypeBindableModel(new MortgageTypeBindableModel.Parameters(mortgageType))).ToList();
     }
 }
