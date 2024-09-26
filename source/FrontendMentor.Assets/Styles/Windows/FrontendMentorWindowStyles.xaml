@@ -85,15 +85,17 @@
     <Style TargetType="{x:Type windows:FrontendMentorWindow}">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderBrush" Value="{StaticResource FrontendMentorWindow.Border.Brush}" />
-        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderThickness" Value="0" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="ResizeMode" Value="NoResize" />
         <Setter Property="Template" Value="{StaticResource FrontendMentorWindow.Template}" />
         <Setter Property="TitleBarBackground" Value="{StaticResource FrontendMentorWindow.TitleBarBackground.Brush}" />
-        <Setter Property="TitleBarHeight" Value="40" />
+        <Setter Property="TitleBarHeight" Value="0" />
         <Setter Property="TitleBarImageHeight" Value="20" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
         <Setter Property="WindowChrome.WindowChrome" Value="{StaticResource FrontendMentorWindowChrome}" />
         <Setter Property="WindowState" Value="Maximized" />
+        <Setter Property="WindowStyle" Value="None" />
         <Setter Property="regions:RegionManager.RegionName" Value="{x:Static constants:FrontedMentorRegionNames.Shell}" />
         <Style.Triggers>
             <Trigger Property="WindowState" Value="Maximized">

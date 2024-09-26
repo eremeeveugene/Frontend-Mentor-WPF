@@ -2,7 +2,12 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:enums="clr-namespace:FrontendMentor.MortgageRepaymentCalculator.Enums"
+             xmlns:markupExtensions="clr-namespace:FrontendMentor.Assets.MarkupExtensions;assembly=FrontendMentor.Assets"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:panels="clr-namespace:FrontendMentor.Assets.Controls.Panels;assembly=FrontendMentor.Assets"
+             xmlns:viewModels="clr-namespace:FrontendMentor.MortgageRepaymentCalculator.ViewModels"
+             d:DataContext="{d:DesignInstance viewModels:MortgageRepaymentCalculatorViewModel}"
              x:ClassModifier="internal"
              mc:Ignorable="d">
 
@@ -39,9 +44,15 @@
 
                 <TextBlock Margin="0,40,0,0"
                            Style="{StaticResource TextPreset4.TextBlock.Style}"
-                           Text="Mortgage Amount" />
+                           Text="Mortgage Amount">
+                    <TextBlock.Foreground>
+                        <SolidColorBrush Color="{StaticResource Slate.700.Color}" />
+                    </TextBlock.Foreground>
+                </TextBlock>
 
-                <TextBox Height="48" Margin="0,12,0,0" />
+                <TextBox Height="48"
+                         Margin="0,12,0,0"
+                         Text="{Binding MortgageRepaymentCalculator.Amount}" />
 
                 <Grid Margin="0,24,0,0">
                     <Grid.ColumnDefinitions>
@@ -50,23 +61,53 @@
                     </Grid.ColumnDefinitions>
 
                     <StackPanel Grid.Column="0">
-                        <TextBlock Style="{StaticResource TextPreset4.TextBlock.Style}" Text="Mortgage Term" />
+                        <TextBlock Style="{StaticResource TextPreset4.TextBlock.Style}" Text="Mortgage Term">
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="{StaticResource Slate.700.Color}" />
+                            </TextBlock.Foreground>
+                        </TextBlock>
 
-                        <TextBox Height="48" Margin="0,12,0,0" />
+                        <TextBox Height="48"
+                                 Margin="0,12,0,0"
+                                 Text="{Binding MortgageRepaymentCalculator.Term}" />
 
                     </StackPanel>
 
                     <StackPanel Grid.Column="1">
-                        <TextBlock Style="{StaticResource TextPreset4.TextBlock.Style}" Text="Interest Rate" />
+                        <TextBlock Style="{StaticResource TextPreset4.TextBlock.Style}" Text="Interest Rate">
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="{StaticResource Slate.700.Color}" />
+                            </TextBlock.Foreground>
+                        </TextBlock>
 
-                        <TextBox Height="48" Margin="0,12,0,0" />
+                        <TextBox Height="48"
+                                 Margin="0,12,0,0"
+                                 Text="{Binding MortgageRepaymentCalculator.InterestRate}" />
 
                     </StackPanel>
                 </Grid>
 
                 <TextBlock Margin="0,24,0,0"
                            Style="{StaticResource TextPreset4.TextBlock.Style}"
-                           Text="Mortgage Type" />
+                           Text="Mortgage Type">
+                    <TextBlock.Foreground>
+                        <SolidColorBrush Color="{StaticResource Slate.700.Color}" />
+                    </TextBlock.Foreground>
+                </TextBlock>
+
+                <ItemsControl ItemsSource="{Binding Source={markupExtensions:EnumValuesMarkupExtension Type={x:Type enums:MortgageType}}}">
+                    <ItemsControl.Style>
+                        <Style TargetType="{x:Type ItemsControl}">
+                            <Setter Property="ItemsPanel">
+                                <Setter.Value>
+                                    <ItemsPanelTemplate>
+                                        <panels:SpacingStackPanel Spacing="12" />
+                                    </ItemsPanelTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ItemsControl.Style>
+                </ItemsControl>
 
                 <TextBlock Height="48"
                            Margin="0,12,0,0"
@@ -78,6 +119,7 @@
 
                 <Button Height="56"
                         Margin="0,40,0,0"
+                        Command="{Binding CalculateCommand}"
                         Content="Calculate Repayments" />
             </StackPanel>
 
