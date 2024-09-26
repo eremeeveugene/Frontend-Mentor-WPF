@@ -9,10 +9,15 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
+using FrontendMentor.Core.Attributes;
+using FrontendMentor.MortgageRepaymentCalculator.Properties;
+
 namespace FrontendMentor.MortgageRepaymentCalculator.Enums;
 
 internal enum MortgageType
 {
+    [LocalizedDescription(nameof(Resources.MortgageType_Repayment), typeof(Resources), "Repayment")]
     Repayment,
+    [LocalizedDescription(nameof(Resources.MortgageType_InterestOnly), typeof(Resources), "Interest Only")]
     InterestOnly
 }
