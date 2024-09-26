@@ -11,6 +11,7 @@
 
 using FrontendMentor.Assets.MarkupExtensions;
 using FrontendMentor.Core.Attributes;
+using FrontendMentor.Core.Exceptions;
 using System.ComponentModel;
 using System.Globalization;
 
@@ -49,8 +50,8 @@ public class EnumToDescriptionConverter : ConverterMarkupExtension<EnumToDescrip
         return value.ToString();
     }
 
-    public override object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
+    public override object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
-        throw new NotSupportedException();
+        throw new ConvertBackNotSupportedException();
     }
 }

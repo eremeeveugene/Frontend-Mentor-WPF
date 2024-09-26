@@ -16,20 +16,25 @@ using System.Windows.Data;
 
 namespace FrontendMentor.Assets.Converters;
 
-[ValueConversion(typeof(object), typeof(object))]
-public class EqualityParameterToValueConverter : ConverterMarkupExtension<EqualityParameterToValueConverter>
+public class BoolToValueConverter<T> : ConverterMarkupExtension<BoolToValueConverter<T>>, IValueConverter
 {
-    public object? TrueValue { get; set; }
-    public object? FalseValue { get; set; }
+    public bool Invert { get; set; }
+    public virtual T? TrueValue { get; set; }
+    public virtual T? FalseValue { get; set; }
 
     public override object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
-        if (value != null && value.Equals(parameter))
+        if (value is not bool boolValue)
         {
-            return TrueValue;
+            throw new InvalidTypeException<bool>();
         }
 
-        return FalseValue;
+        if (Invert)
+        {
+            return boolValue ? FalseValue : TrueValue;
+        }
+
+        return boolValue ? TrueValue : FalseValue;
     }
 
     public override object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
