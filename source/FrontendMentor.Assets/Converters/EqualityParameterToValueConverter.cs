@@ -10,6 +10,7 @@
 // --------------------------------------------------------------------------------
 
 using FrontendMentor.Assets.MarkupExtensions;
+using FrontendMentor.Core.Exceptions;
 using System.Globalization;
 using System.Windows.Data;
 
@@ -31,9 +32,9 @@ public class EqualityParameterToValueConverter : ConverterMarkupExtension<Equali
         return FalseValue;
     }
 
-    public override object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
+    public override object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
-        throw new NotSupportedException();
+        throw new ConvertBackNotSupportedException();
     }
 
     public override object ProvideValue(IServiceProvider serviceProvider)

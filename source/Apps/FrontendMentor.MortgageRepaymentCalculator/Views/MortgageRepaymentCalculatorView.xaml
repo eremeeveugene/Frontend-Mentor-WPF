@@ -190,28 +190,98 @@
                     <SolidColorBrush Color="{StaticResource Slate.900.Color}" />
                 </Border.Background>
 
-                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Image Source="{StaticResource MortgageResults.Image}" Stretch="None" />
+                <Grid>
+                    <StackPanel HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Visibility="{Binding IsCalculated, Converter={converters:BoolToVisibilityConverter Invert=True}}">
+                        <Image Source="{StaticResource MortgageResults.Image}" Stretch="None" />
 
-                    <TextBlock Margin="0,16,0,0"
-                               Style="{StaticResource TextPreset2.TextBlock.Style}"
-                               Text="Results shown here"
-                               TextAlignment="Center">
-                        <TextBlock.Foreground>
-                            <SolidColorBrush Color="{StaticResource White.Color}" />
-                        </TextBlock.Foreground>
-                    </TextBlock>
+                        <TextBlock Margin="0,16,0,0"
+                                   Style="{StaticResource TextPreset2.TextBlock.Style}"
+                                   Text="Results shown here"
+                                   TextAlignment="Center">
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="{StaticResource White.Color}" />
+                            </TextBlock.Foreground>
+                        </TextBlock>
 
-                    <TextBlock Margin="0,16,0,0"
-                               Style="{StaticResource TextPreset4.TextBlock.Style}"
-                               Text="Complete the form and click “calculate repayments” to see what your monthly repayments would be."
-                               TextAlignment="Center"
-                               TextWrapping="Wrap">
-                        <TextBlock.Foreground>
-                            <SolidColorBrush Color="{StaticResource Slate.300.Color}" />
-                        </TextBlock.Foreground>
-                    </TextBlock>
-                </StackPanel>
+                        <TextBlock Margin="0,16,0,0"
+                                   Style="{StaticResource TextPreset4.TextBlock.Style}"
+                                   Text="Complete the form and click “calculate repayments” to see what your monthly repayments would be."
+                                   TextAlignment="Center"
+                                   TextWrapping="Wrap">
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="{StaticResource Slate.300.Color}" />
+                            </TextBlock.Foreground>
+                        </TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Visibility="{Binding IsCalculated, Converter={converters:BoolToVisibilityConverter}}">
+                        <TextBlock Style="{StaticResource TextPreset2.TextBlock.Style}" Text="Your results">
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="{StaticResource White.Color}" />
+                            </TextBlock.Foreground>
+                        </TextBlock>
+
+                        <TextBlock Margin="0,16,0,0"
+                                   Style="{StaticResource TextPreset4.TextBlock.Style}"
+                                   Text="Your results are shown below based on the information you provided. To adjust the results, edit the form and click “calculate repayments” again."
+                                   TextWrapping="Wrap">
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="{StaticResource Slate.300.Color}" />
+                            </TextBlock.Foreground>
+                        </TextBlock>
+
+                        <Border Margin="0,40,0,0"
+                                Padding="32"
+                                BorderThickness="0,4,0,0"
+                                CornerRadius="8">
+                            <Border.BorderBrush>
+                                <SolidColorBrush Color="{StaticResource Lime.Color}" />
+                            </Border.BorderBrush>
+                            <Border.Background>
+                                <SolidColorBrush Opacity="0.25" Color="#000000" />
+                            </Border.Background>
+                            <StackPanel>
+                                <TextBlock Style="{StaticResource TextPreset4.TextBlock.Style}" Text="Your monthly repayments">
+                                    <TextBlock.Foreground>
+                                        <SolidColorBrush Color="{StaticResource Slate.300.Color}" />
+                                    </TextBlock.Foreground>
+                                </TextBlock>
+
+                                <TextBlock Margin="0,8,0,0"
+                                           Style="{StaticResource TextPreset1.TextBlock.Style}"
+                                           Text="{Binding MonthlyPayment}">
+                                    <TextBlock.Foreground>
+                                        <SolidColorBrush Color="{StaticResource Lime.Color}" />
+                                    </TextBlock.Foreground>
+                                </TextBlock>
+
+                                <Separator Height="1" Margin="0,32,0,0">
+                                    <Separator.Background>
+                                        <SolidColorBrush Opacity="0.25" Color="#9ABED5" />
+                                    </Separator.Background>
+                                </Separator>
+
+                                <TextBlock Margin="0,32,0,0"
+                                           Style="{StaticResource TextPreset4.TextBlock.Style}"
+                                           Text="Total you'll repay over the term">
+                                    <TextBlock.Foreground>
+                                        <SolidColorBrush Color="{StaticResource Slate.300.Color}" />
+                                    </TextBlock.Foreground>
+                                </TextBlock>
+
+                                <TextBlock Margin="0,8,0,0"
+                                           Style="{StaticResource TextPreset2.TextBlock.Style}"
+                                           Text="{Binding TotalRepayment}">
+                                    <TextBlock.Foreground>
+                                        <SolidColorBrush Color="{StaticResource White.Color}" />
+                                    </TextBlock.Foreground>
+                                </TextBlock>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </Grid>
             </Border>
         </Grid>
     </Border>

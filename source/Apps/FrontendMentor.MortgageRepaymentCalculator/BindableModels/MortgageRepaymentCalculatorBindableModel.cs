@@ -51,6 +51,62 @@ internal sealed class MortgageRepaymentCalculatorBindableModel : BindableBase
 
     public List<MortgageTypeBindableModel> MortgageTypes { get; } = GetMortgageTypes();
 
+
+    public double CalculateMonthlyPayment()
+    {
+        var termMonths = Term * 12;
+        var monthlyInterestRate = InterestRate / 100 / 12;
+        double monthlyPayment;
+
+        if (SelectedMortgageType == null)
+        {
+            throw new InvalidOperationException();
+        }
+
+        if (SelectedMortgageType.MortgageType == MortgageType.Repayment)
+        {
+            monthlyPayment = Amount * monthlyInterestRate /
+                             (1 - Math.Pow(1 + monthlyInterestRate, -termMonths));
+        }
+        else if (SelectedMortgageType.MortgageType == MortgageType.InterestOnly)
+        {
+            monthlyPayment = Amount * monthlyInterestRate;
+        }
+        else
+        {
+            throw new ArgumentException("Invalid loan type. Choose 'repayment' or 'interest only'.");
+        }
+
+        return monthlyPayment;
+    }
+
+    public double CalculateTotalRepayment()
+    {
+        var termMonths = Term * 12;
+        var monthlyPayment = CalculateMonthlyPayment();
+        double totalRepayment;
+
+        if (SelectedMortgageType == null)
+        {
+            throw new InvalidOperationException();
+        }
+
+        if (SelectedMortgageType.MortgageType == MortgageType.Repayment)
+        {
+            totalRepayment = monthlyPayment * termMonths;
+        }
+        else if (SelectedMortgageType.MortgageType == MortgageType.InterestOnly)
+        {
+            totalRepayment = (monthlyPayment * termMonths) + Amount;
+        }
+        else
+        {
+            throw new ArgumentException("Invalid loan type. Choose 'repayment' or 'interest only'.");
+        }
+
+        return totalRepayment;
+    }
+
     private static List<MortgageTypeBindableModel> GetMortgageTypes()
     {
         return Enum.GetValues<MortgageType>().Select(mortgageType =>
