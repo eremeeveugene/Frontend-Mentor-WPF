@@ -59,5 +59,23 @@ namespace FrontendMentor.MortgageRepaymentCalculator.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Interest Only.
+        /// </summary>
+        internal static string MortgageType_InterestOnly {
+            get {
+                return ResourceManager.GetString("MortgageType_InterestOnly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Repayment.
+        /// </summary>
+        internal static string MortgageType_Repayment {
+            get {
+                return ResourceManager.GetString("MortgageType_Repayment", resourceCulture);
+            }
+        }
     }
 }
