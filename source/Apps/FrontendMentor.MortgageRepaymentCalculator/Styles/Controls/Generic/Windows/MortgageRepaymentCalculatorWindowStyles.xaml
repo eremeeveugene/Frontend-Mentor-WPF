@@ -14,7 +14,9 @@
         <Setter Property="Background" Value="{StaticResource MortgageRepaymentCalculatorWindow.Background.Brush}" />
         <Setter Property="FontFamily" Value="{StaticResource PlusJakartaSans.FontFamily}" />
         <Setter Property="Foreground" Value="{StaticResource MortgageRepaymentCalculatorWindow.Foreground.Brush}" />
-        <Setter Property="MinHeight" Value="800" />
+        <Setter Property="MaxWidth" Value="1440" />
+        <Setter Property="MaxHeight" Value="1024" />
+        <Setter Property="MinHeight" Value="1024" />
         <Setter Property="MinWidth" Value="1440" />
         <!--<Setter Property="Title" Value="{x:Static properties:Resources.ThreeColumnPreviewCardComponentWindow_Title}" />-->
     </Style>
