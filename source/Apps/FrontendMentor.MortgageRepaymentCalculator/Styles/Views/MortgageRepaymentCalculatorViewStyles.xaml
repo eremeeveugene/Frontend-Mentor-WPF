@@ -10,7 +10,6 @@
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.MortgageRepaymentCalculator;component/Styles/Controls/Custom/TextBlocks/TextBlockStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-
     <DataTemplate x:Key="MortgageTypesListBox.ItemContainer.ContentTemplate" DataType="{x:Type bindableModels:MortgageTypeBindableModel}">
         <RadioButton IsChecked="{Binding IsSelected}">
             <TextBlock Style="{StaticResource TextPreset3.TextBlock.Style}" Text="{Binding MortgageType, Converter={converters:EnumToDescriptionConverter}}" />
@@ -18,46 +17,13 @@
     </DataTemplate>
 
     <ControlTemplate x:Key="MortgageTypesListBox.ItemContainer.Template" TargetType="{x:Type ListBoxItem}">
-        <Border Padding="{TemplateBinding Padding}"
-                Background="{TemplateBinding Background}"
-                BorderThickness="1"
-                CornerRadius="4">
-            <Border.BorderBrush>
-                <SolidColorBrush Color="{StaticResource Slate.500.Color}" />
-            </Border.BorderBrush>
-
-            <ContentPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-        </Border>
+        <ContentPresenter />
     </ControlTemplate>
 
     <Style x:Key="MortgageTypesListBox.ItemContainer.Style" TargetType="{x:Type ListBoxItem}">
         <Setter Property="ContentTemplate" Value="{StaticResource MortgageTypesListBox.ItemContainer.ContentTemplate}" />
-        <Setter Property="Height" Value="48" />
         <Setter Property="IsSelected" Value="{Binding IsSelected}" />
-        <Setter Property="Padding" Value="16,12" />
         <Setter Property="Template" Value="{StaticResource MortgageTypesListBox.ItemContainer.Template}" />
-        <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="BorderBrush">
-                    <Setter.Value>
-                        <SolidColorBrush Color="{StaticResource Lime.Color}" />
-                    </Setter.Value>
-                </Setter>
-            </Trigger>
-            <Trigger Property="IsSelected" Value="True">
-                <Setter Property="Background">
-                    <Setter.Value>
-                        <SolidColorBrush Opacity="0.15" Color="#D8DB2F" />
-                    </Setter.Value>
-                </Setter>
-                <Setter Property="BorderBrush">
-                    <Setter.Value>
-                        <SolidColorBrush Color="{StaticResource Lime.Color}" />
-                    </Setter.Value>
-                </Setter>
-            </Trigger>
-        </Style.Triggers>
     </Style>
 
     <ItemsPanelTemplate x:Key="MortgageTypesListBox.ItemsPanel">
