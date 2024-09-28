@@ -123,4 +123,7 @@
   <data name="MortgageType_InterestOnly" xml:space="preserve">
     <value>Interest Only</value>
   </data>
+  <data name="MortgageRepaymentCalculatorWindow_Title" xml:space="preserve">
+    <value>Mortgage Repayment Calculator</value>
+  </data>
 </root>
