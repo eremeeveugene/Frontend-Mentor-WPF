@@ -182,7 +182,8 @@
                 <Button Height="56"
                         Margin="0,40,0,0"
                         Command="{Binding CalculateCommand}"
-                        Content="Calculate Repayments" />
+                        Content="Calculate Repayments"
+                        IsDefault="True" />
             </StackPanel>
 
             <Border Grid.Column="1"
@@ -251,9 +252,8 @@
                                     </TextBlock.Foreground>
                                 </TextBlock>
 
-                                <TextBlock Margin="0,8,0,0"
-                                           Style="{StaticResource TextPreset1.TextBlock.Style}"
-                                           Text="{Binding MonthlyPayment, StringFormat={x:Static constants:StandardNumericFormatStrings.FixedPoint2}}">
+                                <TextBlock Margin="0,8,0,0" Style="{StaticResource TextPreset1.TextBlock.Style}">
+                                    <Run Text="{x:Static constants:CurrencySymbols.Pound}" /><Run Text="{Binding MonthlyPayment, Mode=OneWay, StringFormat={x:Static constants:StandardNumericFormatStrings.Number2}}" />
                                     <TextBlock.Foreground>
                                         <SolidColorBrush Color="{StaticResource Lime.Color}" />
                                     </TextBlock.Foreground>
@@ -273,9 +273,8 @@
                                     </TextBlock.Foreground>
                                 </TextBlock>
 
-                                <TextBlock Margin="0,8,0,0"
-                                           Style="{StaticResource TextPreset2.TextBlock.Style}"
-                                           Text="{Binding TotalRepayment, StringFormat={x:Static constants:StandardNumericFormatStrings.FixedPoint2}}">
+                                <TextBlock Margin="0,8,0,0" Style="{StaticResource TextPreset2.TextBlock.Style}">
+                                    <Run Text="{x:Static constants:CurrencySymbols.Pound}" /><Run Text="{Binding TotalRepayment, Mode=OneWay, StringFormat={x:Static constants:StandardNumericFormatStrings.Number2}}" />
                                     <TextBlock.Foreground>
                                         <SolidColorBrush Color="{StaticResource White.Color}" />
                                     </TextBlock.Foreground>
