@@ -69,4 +69,14 @@
       </Setter>-->
     </Style>
 
+    <Style x:Key="ValidationError.TextPreset5.TextBlock.Style"
+           BasedOn="{StaticResource TextPreset5.TextBlock.Style}"
+           TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground">
+            <Setter.Value>
+                <SolidColorBrush Color="{StaticResource Red.Color}" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>

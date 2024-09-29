@@ -48,7 +48,7 @@ internal sealed class MortgageRepaymentCalculatorViewModel : NavigationViewModel
 
     private void Clear()
     {
-        MortgageRepaymentCalculator.ClearErrors();
+        MortgageRepaymentCalculator.Reset();
 
         IsCalculated = false;
     }

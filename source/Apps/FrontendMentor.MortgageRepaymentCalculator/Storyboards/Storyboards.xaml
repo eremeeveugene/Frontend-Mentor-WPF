@@ -96,4 +96,25 @@
 
     <!--#endregion-->
 
+    <!--#region RadioButton-->
+
+    <Storyboard x:Key="MortgageTypesListBox.ToMouseOver.Storyboard" po:Freeze="True">
+        <DoubleAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
+                         Storyboard.TargetName="ErrorTextBlock"
+                         Storyboard.TargetProperty="(UIElement.Opacity)"
+                         To="1"
+                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
+    </Storyboard>
+
+    <Storyboard x:Key="MortgageTypesListBox.FromMouseOver.Storyboard" po:Freeze="True">
+        <DoubleAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
+                         Storyboard.TargetName="ErrorTextBlock"
+                         Storyboard.TargetProperty="(UIElement.Opacity)"
+                         From="1"
+                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
+    </Storyboard>
+
+
+    <!--#endregion-->
+
 </ResourceDictionary>
