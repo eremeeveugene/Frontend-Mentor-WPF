@@ -11,7 +11,7 @@
     </ResourceDictionary.MergedDictionaries>
 
     <DataTemplate x:Key="MortgageTypesListBox.ItemContainer.ContentTemplate" DataType="{x:Type bindableModels:MortgageTypeBindableModel}">
-        <RadioButton IsChecked="{Binding IsSelected}">
+        <RadioButton x:Name="Group" IsChecked="{Binding IsSelected}">
             <TextBlock Style="{StaticResource TextPreset3.TextBlock.Style}" Text="{Binding MortgageType, Converter={converters:EnumToDescriptionConverter}}" />
         </RadioButton>
     </DataTemplate>
@@ -22,7 +22,7 @@
 
     <Style x:Key="MortgageTypesListBox.ItemContainer.Style" TargetType="{x:Type ListBoxItem}">
         <Setter Property="ContentTemplate" Value="{StaticResource MortgageTypesListBox.ItemContainer.ContentTemplate}" />
-        <Setter Property="IsSelected" Value="{Binding IsSelected}" />
+        <!--<Setter Property="IsSelected" Value="{Binding IsSelected}" />-->
         <Setter Property="Template" Value="{StaticResource MortgageTypesListBox.ItemContainer.Template}" />
     </Style>
 
