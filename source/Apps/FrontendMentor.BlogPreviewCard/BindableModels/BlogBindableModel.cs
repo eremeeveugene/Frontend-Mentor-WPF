@@ -10,6 +10,7 @@
 // --------------------------------------------------------------------------------
 
 using FrontendMentor.BlogPreviewCard.Models;
+using FrontendMentor.Core.BindableModels;
 using FrontendMentor.Core.Services.BitmapImages;
 using System.Windows.Media.Imaging;
 
@@ -19,7 +20,7 @@ internal class BlogBindableModel(
     IContainerProvider containerProvider,
     IBitmapImagesService bitmapImagesService,
     BlogBindableModel.Parameters parameters)
-    : BindableBase
+    : BindableModelBase
 {
     public string Title { get; } = parameters.Blog.Title;
     public string Description { get; } = parameters.Blog.Description;

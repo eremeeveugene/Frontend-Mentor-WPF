@@ -9,13 +9,14 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
+using FrontendMentor.Core.BindableModels;
 using FrontendMentor.ResultsSummaryComponent.Models;
 
 namespace FrontendMentor.ResultsSummaryComponent.BindableModels;
 
 internal sealed class ResultSummaryBindableModel(
     IContainerProvider containerProvider,
-    ResultSummaryBindableModel.Parameters parameters) : BindableBase
+    ResultSummaryBindableModel.Parameters parameters) : BindableModelBase
 {
     public int NumberScore { get; } = parameters.ResultSummary.NumberScore;
 

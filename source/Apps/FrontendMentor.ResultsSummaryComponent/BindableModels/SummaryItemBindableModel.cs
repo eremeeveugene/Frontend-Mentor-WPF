@@ -9,12 +9,13 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
+using FrontendMentor.Core.BindableModels;
 using FrontendMentor.ResultsSummaryComponent.Enums;
 using FrontendMentor.ResultsSummaryComponent.Models;
 
 namespace FrontendMentor.ResultsSummaryComponent.BindableModels;
 
-internal sealed class SummaryItemBindableModel(SummaryItemBindableModel.Parameters parameters) : BindableBase
+internal sealed class SummaryItemBindableModel(SummaryItemBindableModel.Parameters parameters) : BindableModelBase
 {
     public SummaryItemType SummaryItemType { get; } = parameters.SummaryItem.SummaryItemType;
 

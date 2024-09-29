@@ -18,11 +18,13 @@ namespace FrontendMentor.MortgageRepaymentCalculator.ViewModels;
 internal sealed class MortgageRepaymentCalculatorViewModel : NavigationViewModelBase
 {
     private ICommand? _calculateCommand;
+    private ICommand? _clearCommand;
     private bool _isCalculated;
     private double _monthlyPayment;
     private double _totalRepayment;
 
     public ICommand CalculateCommand => _calculateCommand ??= new DelegateCommand(Calculate);
+    public ICommand ClearCommand => _clearCommand ??= new DelegateCommand(Clear);
 
     public MortgageRepaymentCalculatorBindableModel MortgageRepaymentCalculator { get; } = new();
 
@@ -44,8 +46,22 @@ internal sealed class MortgageRepaymentCalculatorViewModel : NavigationViewModel
         private set => SetProperty(ref _totalRepayment, value);
     }
 
+    private void Clear()
+    {
+        MortgageRepaymentCalculator.ClearErrors();
+
+        IsCalculated = false;
+    }
+
     private void Calculate()
     {
+        if (!MortgageRepaymentCalculator.Validate())
+        {
+            IsCalculated = false;
+
+            return;
+        }
+
         MonthlyPayment = MortgageRepaymentCalculator.CalculateMonthlyPayment();
         TotalRepayment = MortgageRepaymentCalculator.CalculateTotalRepayment();
 
