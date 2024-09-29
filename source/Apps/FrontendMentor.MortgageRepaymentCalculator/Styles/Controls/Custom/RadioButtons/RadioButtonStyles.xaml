@@ -35,26 +35,18 @@
         </Border>
 
         <ControlTemplate.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Trigger.EnterActions>
-                    <BeginStoryboard Storyboard="{StaticResource RadioButton.ControlTemplate.ToMouseOver.Storyboard}" />
-                </Trigger.EnterActions>
-                <Trigger.ExitActions>
-                    <BeginStoryboard Storyboard="{StaticResource RadioButton.ControlTemplate.FromMouseOver.Storyboard}" />
-                </Trigger.ExitActions>
-            </Trigger>
             <Trigger Property="IsChecked" Value="True">
                 <Trigger.EnterActions>
-                    <BeginStoryboard Storyboard="{StaticResource RadioButton.ControlTemplate.ToChecked.Storyboard}" />
+                    <BeginStoryboard Storyboard="{StaticResource Primary.RadioButton.ControlTemplate.ToChecked.Storyboard}" />
                 </Trigger.EnterActions>
                 <Trigger.ExitActions>
-                    <BeginStoryboard Storyboard="{StaticResource RadioButton.ControlTemplate.FromChecked.Storyboard}" />
+                    <BeginStoryboard Storyboard="{StaticResource Primary.RadioButton.ControlTemplate.FromChecked.Storyboard}" />
                 </Trigger.ExitActions>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
-    <Style TargetType="{x:Type RadioButton}">
+    <Style x:Key="Primary.RadioButton.Style" TargetType="{x:Type RadioButton}">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderBrush" Value="{StaticResource RadioButton.Border.Brush}" />
         <Setter Property="BorderThickness" Value="1" />
@@ -71,18 +63,18 @@
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Trigger.EnterActions>
-                    <BeginStoryboard Storyboard="{StaticResource RadioButton.ToMouseOver.Storyboard}" />
+                    <BeginStoryboard Storyboard="{StaticResource Primary.RadioButton.ToMouseOver.Storyboard}" />
                 </Trigger.EnterActions>
                 <Trigger.ExitActions>
-                    <BeginStoryboard Storyboard="{StaticResource RadioButton.FromMouseOver.Storyboard}" />
+                    <BeginStoryboard Storyboard="{StaticResource Primary.RadioButton.FromMouseOver.Storyboard}" />
                 </Trigger.ExitActions>
             </Trigger>
             <Trigger Property="IsChecked" Value="True">
                 <Trigger.EnterActions>
-                    <BeginStoryboard Storyboard="{StaticResource RadioButton.ToChecked.Storyboard}" />
+                    <BeginStoryboard Storyboard="{StaticResource Primary.RadioButton.ToChecked.Storyboard}" />
                 </Trigger.EnterActions>
                 <Trigger.ExitActions>
-                    <BeginStoryboard Storyboard="{StaticResource RadioButton.FromChecked.Storyboard}" />
+                    <BeginStoryboard Storyboard="{StaticResource Primary.RadioButton.FromChecked.Storyboard}" />
                 </Trigger.ExitActions>
             </Trigger>
         </Style.Triggers>
