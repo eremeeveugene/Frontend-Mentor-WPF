@@ -61,6 +61,15 @@ namespace FrontendMentor.MortgageRepaymentCalculator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Clear All.
+        /// </summary>
+        public static string MortgageRepaymentCalculatorView_ClearAllButton_Content {
+            get {
+                return ResourceManager.GetString("MortgageRepaymentCalculatorView_ClearAllButton_Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mortgage Repayment Calculator.
         /// </summary>
         public static string MortgageRepaymentCalculatorWindow_Title {

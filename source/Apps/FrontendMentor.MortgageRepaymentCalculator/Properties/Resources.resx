@@ -126,4 +126,7 @@
   <data name="MortgageRepaymentCalculatorWindow_Title" xml:space="preserve">
     <value>Mortgage Repayment Calculator</value>
   </data>
+  <data name="MortgageRepaymentCalculatorView_ClearAllButton_Content" xml:space="preserve">
+    <value>Clear All</value>
+  </data>
 </root>

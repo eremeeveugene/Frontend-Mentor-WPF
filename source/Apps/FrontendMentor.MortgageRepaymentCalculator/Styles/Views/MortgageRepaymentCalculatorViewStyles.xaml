@@ -12,7 +12,9 @@
     </ResourceDictionary.MergedDictionaries>
 
     <DataTemplate x:Key="MortgageTypesListBox.ItemContainer.ContentTemplate" DataType="{x:Type bindableModels:MortgageTypeBindableModel}">
-        <RadioButton x:Name="Group" IsChecked="{Binding IsSelected}">
+        <RadioButton x:Name="Group"
+                     IsChecked="{Binding IsSelected}"
+                     Style="{StaticResource Primary.RadioButton.Style}">
             <TextBlock Style="{StaticResource TextPreset3.TextBlock.Style}" Text="{Binding MortgageType, Converter={converters:EnumToDescriptionConverter}}" />
         </RadioButton>
     </DataTemplate>

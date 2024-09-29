@@ -5,6 +5,7 @@
              xmlns:converters="clr-namespace:FrontendMentor.Assets.Converters;assembly=FrontendMentor.Assets"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:properties="clr-namespace:FrontendMentor.MortgageRepaymentCalculator.Properties"
              xmlns:viewModels="clr-namespace:FrontendMentor.MortgageRepaymentCalculator.ViewModels"
              d:DataContext="{d:DesignInstance viewModels:MortgageRepaymentCalculatorViewModel}"
              x:ClassModifier="internal"
@@ -37,7 +38,7 @@
 
                     <Button Grid.Column="1"
                             Command="{Binding ClearCommand}"
-                            Content="Clear All"
+                            Content="{x:Static properties:Resources.MortgageRepaymentCalculatorView_ClearAllButton_Content}"
                             Style="{StaticResource Link.Button.Style}" />
                 </Grid>
 
