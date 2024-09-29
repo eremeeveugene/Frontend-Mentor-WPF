@@ -10,7 +10,7 @@
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.MortgageRepaymentCalculator;component/Storyboards/Storyboards.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <ControlTemplate x:Key="RadioButton.Template" TargetType="{x:Type RadioButton}">
+    <ControlTemplate x:Key="Primary.RadioButton.Template" TargetType="{x:Type RadioButton}">
         <Border Padding="{TemplateBinding Padding}"
                 Background="{TemplateBinding Background}"
                 BorderBrush="{TemplateBinding BorderBrush}"
@@ -56,7 +56,7 @@
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="Padding" Value="16,0" />
-        <Setter Property="Template" Value="{StaticResource RadioButton.Template}" />
+        <Setter Property="Template" Value="{StaticResource Primary.RadioButton.Template}" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="helpers:BorderPropertiesHelper.CornerRadius" Value="4" />
