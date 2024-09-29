@@ -7,6 +7,7 @@
 
     <ResourceDictionary.MergedDictionaries>
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.MortgageRepaymentCalculator;component/Brushes/Brushes.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.MortgageRepaymentCalculator;component/Storyboards/Storyboards.xaml" />
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.MortgageRepaymentCalculator;component/Styles/Controls/Custom/TextBlocks/TextBlockStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
@@ -31,7 +32,32 @@
     </ItemsPanelTemplate>
 
     <ControlTemplate x:Key="MortgageTypesListBox.Template" TargetType="{x:Type ListBox}">
-        <ItemsPresenter />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <ItemsPresenter Grid.Row="0" />
+
+            <TextBlock x:Name="ErrorTextBlock"
+                       Grid.Row="1"
+                       Margin="0,12,0,0"
+                       Opacity="0"
+                       Style="{StaticResource ValidationError.TextPreset5.TextBlock.Style}"
+                       Text="This field is required" />
+        </Grid>
+
+        <ControlTemplate.Triggers>
+            <DataTrigger Binding="{Binding (Validation.HasError), RelativeSource={RelativeSource Self}}" Value="True">
+                <DataTrigger.EnterActions>
+                    <BeginStoryboard Storyboard="{StaticResource MortgageTypesListBox.ToMouseOver.Storyboard}" />
+                </DataTrigger.EnterActions>
+                <DataTrigger.ExitActions>
+                    <BeginStoryboard Storyboard="{StaticResource MortgageTypesListBox.FromMouseOver.Storyboard}" />
+                </DataTrigger.ExitActions>
+            </DataTrigger>
+        </ControlTemplate.Triggers>
     </ControlTemplate>
 
     <Style x:Key="MortgageTypesListBox.Style" TargetType="{x:Type ListBox}">
@@ -39,6 +65,7 @@
         <Setter Property="ItemsPanel" Value="{StaticResource MortgageTypesListBox.ItemsPanel}" />
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="Template" Value="{StaticResource MortgageTypesListBox.Template}" />
+        <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
     </Style>
 
 </ResourceDictionary>

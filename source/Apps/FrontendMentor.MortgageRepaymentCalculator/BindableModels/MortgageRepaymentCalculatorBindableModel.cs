@@ -9,6 +9,7 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
+using FrontendMentor.Core.Attributes;
 using FrontendMentor.Core.BindableModels;
 using FrontendMentor.MortgageRepaymentCalculator.Enums;
 using System.ComponentModel.DataAnnotations;
@@ -23,6 +24,7 @@ internal sealed class MortgageRepaymentCalculatorBindableModel : ValidatableMode
     private int? _term;
 
     [Required]
+    [Resettable]
     public double? Amount
     {
         get => _amount;
@@ -30,6 +32,7 @@ internal sealed class MortgageRepaymentCalculatorBindableModel : ValidatableMode
     }
 
     [Required]
+    [Resettable]
     public int? Term
     {
         get => _term;
@@ -37,6 +40,7 @@ internal sealed class MortgageRepaymentCalculatorBindableModel : ValidatableMode
     }
 
     [Required]
+    [Resettable]
     public double? InterestRate
     {
         get => _rate;
@@ -44,6 +48,7 @@ internal sealed class MortgageRepaymentCalculatorBindableModel : ValidatableMode
     }
 
     [Required]
+    [Resettable]
     public MortgageTypeBindableModel? SelectedMortgageType
     {
         get => _selectedMortgageType;
@@ -106,7 +111,7 @@ internal sealed class MortgageRepaymentCalculatorBindableModel : ValidatableMode
 
         return totalRepayment;
     }
-
+     
     private static List<MortgageTypeBindableModel> GetMortgageTypes()
     {
         return Enum.GetValues<MortgageType>().Select(mortgageType =>
