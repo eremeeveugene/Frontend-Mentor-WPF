@@ -22,7 +22,7 @@
 
     <Style x:Key="MortgageTypesListBox.ItemContainer.Style" TargetType="{x:Type ListBoxItem}">
         <Setter Property="ContentTemplate" Value="{StaticResource MortgageTypesListBox.ItemContainer.ContentTemplate}" />
-        <!--<Setter Property="IsSelected" Value="{Binding IsSelected}" />-->
+        <Setter Property="IsSelected" Value="{Binding IsSelected}" />
         <Setter Property="Template" Value="{StaticResource MortgageTypesListBox.ItemContainer.Template}" />
     </Style>
 

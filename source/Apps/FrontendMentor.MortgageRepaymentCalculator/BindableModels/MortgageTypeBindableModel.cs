@@ -9,11 +9,12 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
+using FrontendMentor.Core.BindableModels;
 using FrontendMentor.MortgageRepaymentCalculator.Enums;
 
 namespace FrontendMentor.MortgageRepaymentCalculator.BindableModels;
 
-internal sealed class MortgageTypeBindableModel(MortgageTypeBindableModel.Parameters parameters) : BindableBase
+internal sealed class MortgageTypeBindableModel(MortgageTypeBindableModel.Parameters parameters) : BindableModelBase
 {
     private bool _isSelected;
     public MortgageType MortgageType { get; } = parameters.MortgageType;

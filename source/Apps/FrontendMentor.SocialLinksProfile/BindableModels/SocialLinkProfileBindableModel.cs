@@ -9,6 +9,7 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
+using FrontendMentor.Core.BindableModels;
 using FrontendMentor.Core.Services.BitmapImages;
 using FrontendMentor.SocialLinksProfile.Models;
 using System.Windows.Media.Imaging;
@@ -18,7 +19,7 @@ namespace FrontendMentor.SocialLinksProfile.BindableModels;
 internal class SocialLinkProfileBindableModel(
     IContainerProvider containerProvider,
     IBitmapImagesService bitmapImagesService,
-    SocialLinkProfileBindableModel.Parameters parameters) : BindableBase
+    SocialLinkProfileBindableModel.Parameters parameters) : BindableModelBase
 {
     public string FirstName { get; } = parameters.SocialLinkProfile.FirstName;
 

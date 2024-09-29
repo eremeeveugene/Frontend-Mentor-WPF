@@ -9,12 +9,13 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
+using FrontendMentor.Core.BindableModels;
 using FrontendMentor.MortgageRepaymentCalculator.Enums;
 using System.ComponentModel.DataAnnotations;
 
 namespace FrontendMentor.MortgageRepaymentCalculator.BindableModels;
 
-internal sealed class MortgageRepaymentCalculatorBindableModel : BindableBase
+internal sealed class MortgageRepaymentCalculatorBindableModel : ValidatableModelBase
 {
     private double? _amount;
     private double? _rate;
@@ -25,28 +26,28 @@ internal sealed class MortgageRepaymentCalculatorBindableModel : BindableBase
     public double? Amount
     {
         get => _amount;
-        set => SetProperty(ref _amount, value);
+        set => SetValidatedProperty(ref _amount, value);
     }
 
     [Required]
     public int? Term
     {
         get => _term;
-        set => SetProperty(ref _term, value);
+        set => SetValidatedProperty(ref _term, value);
     }
 
     [Required]
     public double? InterestRate
     {
         get => _rate;
-        set => SetProperty(ref _rate, value);
+        set => SetValidatedProperty(ref _rate, value);
     }
 
     [Required]
     public MortgageTypeBindableModel? SelectedMortgageType
     {
         get => _selectedMortgageType;
-        set => SetProperty(ref _selectedMortgageType, value);
+        set => SetValidatedProperty(ref _selectedMortgageType, value);
     }
 
     public List<MortgageTypeBindableModel> MortgageTypes { get; } = GetMortgageTypes();

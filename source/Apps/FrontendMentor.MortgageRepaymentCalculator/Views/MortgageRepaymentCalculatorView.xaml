@@ -35,10 +35,12 @@
                                Style="{StaticResource TextPreset2.TextBlock.Style}"
                                Text="Mortgage Calculator" />
 
-                    <TextBlock Grid.Column="1"
-                               Width="62"
-                               Margin="120,0,0,0"
-                               Text="Clear All" />
+                    <Button Grid.Column="1"
+                            Width="62"
+                            Margin="120,0,0,0"
+                            Command="{Binding ClearCommand}">
+                        <TextBlock Text="Clear All" />
+                    </Button>
                 </Grid>
 
                 <TextBlock Margin="0,40,0,0"
