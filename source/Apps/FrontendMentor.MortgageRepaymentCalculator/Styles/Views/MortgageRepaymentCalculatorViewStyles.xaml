@@ -45,7 +45,7 @@
                        Margin="0,12,0,0"
                        Opacity="0"
                        Style="{StaticResource ValidationError.TextPreset5.TextBlock.Style}"
-                       Text="This field is required" />
+                       Text="{Binding (Validation.Errors)/ErrorContent, RelativeSource={RelativeSource TemplatedParent}}" />
         </Grid>
 
         <ControlTemplate.Triggers>

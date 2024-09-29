@@ -53,7 +53,7 @@
 
                 <TextBox Height="48"
                          Margin="0,12,0,0"
-                         Text="{Binding MortgageRepaymentCalculator.Amount}" />
+                         Text="{Binding MortgageRepaymentCalculator.MortgageAmount}" />
 
                 <Grid Margin="0,24,0,0">
                     <Grid.ColumnDefinitions>
@@ -71,7 +71,7 @@
 
                         <TextBox Height="48"
                                  Margin="0,12,0,0"
-                                 Text="{Binding MortgageRepaymentCalculator.Term}" />
+                                 Text="{Binding MortgageRepaymentCalculator.MortgageTerm}" />
 
                     </StackPanel>
 
@@ -103,7 +103,7 @@
                          Style="{StaticResource MortgageTypesListBox.Style}" />
 
                 <Button Height="56"
-                        Margin="0,40,0,0"
+                        Margin="0,24,0,0"
                         Command="{Binding CalculateCommand}"
                         Content="Calculate Repayments"
                         Cursor="Hand"

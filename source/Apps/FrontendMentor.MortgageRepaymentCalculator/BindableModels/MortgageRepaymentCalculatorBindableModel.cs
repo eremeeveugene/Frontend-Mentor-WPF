@@ -18,22 +18,24 @@ namespace FrontendMentor.MortgageRepaymentCalculator.BindableModels;
 
 internal sealed class MortgageRepaymentCalculatorBindableModel : ValidatableModelBase
 {
-    private double? _amount;
-    private double? _rate;
+    private double? _mortgageAmount;
+    private double? _mortgageRate;
     private MortgageTypeBindableModel? _selectedMortgageType;
     private int? _term;
 
     [Required]
     [Resettable]
-    public double? Amount
+    [Display(Name = "Mortgage Amount")]
+    public double? MortgageAmount
     {
-        get => _amount;
-        set => SetValidatedProperty(ref _amount, value);
+        get => _mortgageAmount;
+        set => SetValidatedProperty(ref _mortgageAmount, value);
     }
 
     [Required]
     [Resettable]
-    public int? Term
+    [Display(Name = "Mortgage Term")]
+    public int? MortgageTerm
     {
         get => _term;
         set => SetValidatedProperty(ref _term, value);
@@ -41,14 +43,16 @@ internal sealed class MortgageRepaymentCalculatorBindableModel : ValidatableMode
 
     [Required]
     [Resettable]
+    [Display(Name = "Interest Rate")]
     public double? InterestRate
     {
-        get => _rate;
-        set => SetValidatedProperty(ref _rate, value);
+        get => _mortgageRate;
+        set => SetValidatedProperty(ref _mortgageRate, value);
     }
 
     [Required]
     [Resettable]
+    [Display(Name = "Mortgage Type")]
     public MortgageTypeBindableModel? SelectedMortgageType
     {
         get => _selectedMortgageType;
@@ -59,7 +63,7 @@ internal sealed class MortgageRepaymentCalculatorBindableModel : ValidatableMode
 
     public double CalculateMonthlyPayment()
     {
-        var termMonths = Term.Value * 12;
+        var termMonths = MortgageTerm.Value * 12;
         var monthlyInterestRate = InterestRate.Value / 100 / 12;
         double monthlyPayment;
 
@@ -70,12 +74,12 @@ internal sealed class MortgageRepaymentCalculatorBindableModel : ValidatableMode
 
         if (SelectedMortgageType.MortgageType == MortgageType.Repayment)
         {
-            monthlyPayment = Amount.Value * monthlyInterestRate /
+            monthlyPayment = MortgageAmount.Value * monthlyInterestRate /
                              (1 - Math.Pow(1 + monthlyInterestRate, -termMonths));
         }
         else if (SelectedMortgageType.MortgageType == MortgageType.InterestOnly)
         {
-            monthlyPayment = Amount.Value * monthlyInterestRate;
+            monthlyPayment = MortgageAmount.Value * monthlyInterestRate;
         }
         else
         {
@@ -87,7 +91,7 @@ internal sealed class MortgageRepaymentCalculatorBindableModel : ValidatableMode
 
     public double CalculateTotalRepayment()
     {
-        var termMonths = Term.Value * 12;
+        var termMonths = MortgageTerm.Value * 12;
         var monthlyPayment = CalculateMonthlyPayment();
         double totalRepayment;
 
@@ -102,7 +106,7 @@ internal sealed class MortgageRepaymentCalculatorBindableModel : ValidatableMode
         }
         else if (SelectedMortgageType.MortgageType == MortgageType.InterestOnly)
         {
-            totalRepayment = (monthlyPayment * termMonths) + Amount.Value;
+            totalRepayment = (monthlyPayment * termMonths) + MortgageAmount.Value;
         }
         else
         {
@@ -111,7 +115,7 @@ internal sealed class MortgageRepaymentCalculatorBindableModel : ValidatableMode
 
         return totalRepayment;
     }
-     
+
     private static List<MortgageTypeBindableModel> GetMortgageTypes()
     {
         return Enum.GetValues<MortgageType>().Select(mortgageType =>
