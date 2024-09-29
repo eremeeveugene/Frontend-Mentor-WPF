@@ -51,4 +51,20 @@
 
     <!--#endregion-->
 
+    <!--#region Link.Button-->
+
+    <SolidColorBrush x:Key="RadioButton.Border.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Slate.500.Color}" />
+
+    <SolidColorBrush x:Key="RadioButton.FilledIcon.Fill.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Lime.Color}" />
+
+    <SolidColorBrush x:Key="RadioButton.EmptyIcon.Fill.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Slate.700.Color}" />
+
+    <!--#endregion-->
+
 </ResourceDictionary>

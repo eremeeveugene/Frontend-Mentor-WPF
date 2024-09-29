@@ -10,7 +10,7 @@
              x:ClassModifier="internal"
              mc:Ignorable="d">
 
-    <Border MaxWidth="1008"
+    <Border Width="1008"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             CornerRadius="24">
@@ -36,11 +36,9 @@
                                Text="Mortgage Calculator" />
 
                     <Button Grid.Column="1"
-                            Width="62"
-                            Margin="120,0,0,0"
-                            Command="{Binding ClearCommand}">
-                        <TextBlock Text="Clear All" />
-                    </Button>
+                            Command="{Binding ClearCommand}"
+                            Content="Clear All"
+                            Style="{StaticResource Link.Button.Style}" />
                 </Grid>
 
                 <TextBlock Margin="0,40,0,0"
