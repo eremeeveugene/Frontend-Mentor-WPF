@@ -14,13 +14,51 @@
 
     <Storyboard x:Key="RadioButton.ToMouseOver.Storyboard" po:Freeze="True">
         <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
+                        Storyboard.TargetProperty="(RadioButton.Background).(SolidColorBrush.Color)"
+                        To="#26D8DB2F"
+                        Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
+    </Storyboard>
+
+    <Storyboard x:Key="RadioButton.FromMouseOver.Storyboard" po:Freeze="True">
+        <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
+                        Storyboard.TargetProperty="(RadioButton.Background).(SolidColorBrush.Color)"
+                        From="#26D8DB2F"
+                        Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
+    </Storyboard>
+
+    <Storyboard x:Key="RadioButton.ToChecked.Storyboard" po:Freeze="True">
+        <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
+                        Storyboard.TargetProperty="(RadioButton.Background).(SolidColorBrush.Color)"
+                        To="#26D8DB2F"
+                        Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
+
+        <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
+                        Storyboard.TargetProperty="(RadioButton.BorderBrush).(SolidColorBrush.Color)"
+                        To="{StaticResource Lime.Color}"
+                        Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
+    </Storyboard>
+
+    <Storyboard x:Key="RadioButton.FromChecked.Storyboard" po:Freeze="True">
+        <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
+                        Storyboard.TargetProperty="(RadioButton.Background).(SolidColorBrush.Color)"
+                        From="#26D8DB2F"
+                        Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
+
+        <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
+                        Storyboard.TargetProperty="(RadioButton.BorderBrush).(SolidColorBrush.Color)"
+                        From="{StaticResource Lime.Color}"
+                        Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
+    </Storyboard>
+
+    <Storyboard x:Key="RadioButton.ControlTemplate.ToMouseOver.Storyboard" po:Freeze="True">
+        <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                         Storyboard.TargetName="EmptyIcon"
                         Storyboard.TargetProperty="(icons:Icon.Fill).(SolidColorBrush.Color)"
                         To="{StaticResource Lime.Color}"
                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 
-    <Storyboard x:Key="RadioButton.FromMouseOver.Storyboard" po:Freeze="True">
+    <Storyboard x:Key="RadioButton.ControlTemplate.FromMouseOver.Storyboard" po:Freeze="True">
         <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                         Storyboard.TargetName="EmptyIcon"
                         Storyboard.TargetProperty="(icons:Icon.Fill).(SolidColorBrush.Color)"
@@ -28,7 +66,7 @@
                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 
-    <Storyboard x:Key="RadioButton.ToChecked.Storyboard" po:Freeze="True">
+    <Storyboard x:Key="RadioButton.ControlTemplate.ToChecked.Storyboard" po:Freeze="True">
         <DoubleAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                          Storyboard.TargetName="EmptyIcon"
                          Storyboard.TargetProperty="(UIElement.Opacity)"
@@ -42,7 +80,7 @@
                          Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 
-    <Storyboard x:Key="RadioButton.FromChecked.Storyboard" po:Freeze="True">
+    <Storyboard x:Key="RadioButton.ControlTemplate.FromChecked.Storyboard" po:Freeze="True">
         <DoubleAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                          Storyboard.TargetName="EmptyIcon"
                          Storyboard.TargetProperty="(UIElement.Opacity)"
