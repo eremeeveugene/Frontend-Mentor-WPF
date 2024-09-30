@@ -129,4 +129,7 @@
   <data name="MortgageRepaymentCalculatorView_ClearAllButton_Content" xml:space="preserve">
     <value>Clear All</value>
   </data>
+  <data name="MortgageRepaymentCalculatorView_TotalRepayment_TextBlock_Text" xml:space="preserve">
+    <value>Total you'll repay over the term</value>
+  </data>
 </root>

@@ -70,6 +70,15 @@ namespace FrontendMentor.MortgageRepaymentCalculator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Total you&apos;ll repay over the term.
+        /// </summary>
+        public static string MortgageRepaymentCalculatorView_TotalRepayment_TextBlock_Text {
+            get {
+                return ResourceManager.GetString("MortgageRepaymentCalculatorView_TotalRepayment_TextBlock_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mortgage Repayment Calculator.
         /// </summary>
         public static string MortgageRepaymentCalculatorWindow_Title {
