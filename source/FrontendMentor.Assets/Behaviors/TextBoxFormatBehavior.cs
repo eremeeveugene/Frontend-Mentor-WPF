@@ -28,12 +28,12 @@ public class TextBoxFormatBehavior : Behavior<TextBox>
     /// </summary>
     public static readonly DependencyProperty FormatProperty =
         DependencyProperty.Register(nameof(Format), typeof(string), typeof(TextBoxFormatBehavior),
-            new PropertyMetadata(null));
+            new PropertyMetadata(default(string)));
 
     /// <summary>
     ///     Gets or sets the numeric format string that will be applied to the TextBox content.
     /// </summary>
-    public string? Format
+    public string Format
     {
         get => (string)GetValue(FormatProperty);
         set => SetValue(FormatProperty, value);
@@ -61,12 +61,6 @@ public class TextBoxFormatBehavior : Behavior<TextBox>
         AssociatedObject.LostFocus -= OnLostFocus;
     }
 
-    /// <summary>
-    ///     Handles the LostFocus event of the associated TextBox.
-    ///     Applies the specified numeric format to the TextBox content.
-    /// </summary>
-    /// <param name="sender">The source of the event, the TextBox.</param>
-    /// <param name="e">The event data.</param>
     private void OnLostFocus(object sender, RoutedEventArgs e)
     {
         if (string.IsNullOrEmpty(Format))
