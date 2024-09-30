@@ -28,10 +28,14 @@ public partial class TextBoxInputBehavior : Behavior<TextBox>
     private const string IntegerRegexPattern = @"^\d+$";
     private const string DoubleRegexPattern = @"^[0-9]+(\.[0-9]+)?$";
 
+    /// <summary>
+    ///     Identifies the Input Type dependency property. This property is used to define
+    ///     the input type applied to the TextBox content on text input.
+    /// </summary>
     public static readonly DependencyProperty TextBoxInputTypeProperty =
         DependencyProperty.Register(nameof(TextBoxInputType), typeof(TextBoxInputType),
             typeof(TextBoxInputBehavior),
-            new PropertyMetadata(TextBoxInputType.Integer));
+            new PropertyMetadata(default(TextBoxInputType)));
 
     /// <summary>
     ///     Gets or sets the input type restriction for the TextBox. Supported input types are Integer and Double.
@@ -54,7 +58,9 @@ public partial class TextBoxInputBehavior : Behavior<TextBox>
     protected override void OnAttached()
     {
         base.OnAttached();
+
         AssociatedObject.PreviewTextInput += OnPreviewTextInput;
+
         DataObject.AddPastingHandler(AssociatedObject, OnPasting);
     }
 
@@ -65,25 +71,17 @@ public partial class TextBoxInputBehavior : Behavior<TextBox>
     protected override void OnDetaching()
     {
         base.OnDetaching();
+
         AssociatedObject.PreviewTextInput -= OnPreviewTextInput;
+
         DataObject.RemovePastingHandler(AssociatedObject, OnPasting);
     }
 
-    /// <summary>
-    ///     Handles the text input event to restrict user input based on the TextBoxInputType.
-    /// </summary>
-    /// <param name="sender">The sender of the event.</param>
-    /// <param name="e">The text input event arguments.</param>
     private void OnPreviewTextInput(object sender, TextCompositionEventArgs e)
     {
         e.Handled = !IsInputValid(e.Text);
     }
 
-    /// <summary>
-    ///     Handles the pasting event to restrict pasted text based on the TextBoxInputType.
-    /// </summary>
-    /// <param name="sender">The sender of the event.</param>
-    /// <param name="e">The data object pasting event arguments.</param>
     private void OnPasting(object sender, DataObjectPastingEventArgs e)
     {
         if (e.DataObject?.GetData(typeof(string)) is not string text || !IsInputValid(text))
@@ -92,11 +90,6 @@ public partial class TextBoxInputBehavior : Behavior<TextBox>
         }
     }
 
-    /// <summary>
-    ///     Validates the input string against the selected TextBoxInputType (Integer or Double).
-    /// </summary>
-    /// <param name="input">The input text to validate.</param>
-    /// <returns>True if the input is valid for the current TextBoxInputType, false otherwise.</returns>
     private bool IsInputValid(string input)
     {
         return TextBoxInputType switch
