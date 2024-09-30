@@ -24,6 +24,7 @@ internal sealed class MortgageRepaymentCalculatorBindableModel : ValidatableMode
     private int? _term;
 
     [Required]
+    [Range(50000, 1000000)]
     [Resettable]
     [Display(Name = "Mortgage Amount")]
     public double? MortgageAmount
@@ -33,6 +34,7 @@ internal sealed class MortgageRepaymentCalculatorBindableModel : ValidatableMode
     }
 
     [Required]
+    [Range(5, 30)]
     [Resettable]
     [Display(Name = "Mortgage Term")]
     public int? MortgageTerm
@@ -42,6 +44,7 @@ internal sealed class MortgageRepaymentCalculatorBindableModel : ValidatableMode
     }
 
     [Required]
+    [Range(0.01, 0.15)]
     [Resettable]
     [Display(Name = "Interest Rate")]
     public double? InterestRate

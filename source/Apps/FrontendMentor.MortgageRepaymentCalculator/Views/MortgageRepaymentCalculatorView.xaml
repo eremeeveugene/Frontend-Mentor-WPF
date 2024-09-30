@@ -1,9 +1,12 @@
 ﻿<UserControl x:Class="FrontendMentor.MortgageRepaymentCalculator.Views.MortgageRepaymentCalculatorView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:behaviors="clr-namespace:FrontendMentor.Assets.Behaviors;assembly=FrontendMentor.Assets"
              xmlns:constants="clr-namespace:FrontendMentor.Core.Constants;assembly=FrontendMentor.Core"
              xmlns:converters="clr-namespace:FrontendMentor.Assets.Converters;assembly=FrontendMentor.Assets"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:helpers="clr-namespace:FrontendMentor.Assets.Helpers;assembly=FrontendMentor.Assets"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:properties="clr-namespace:FrontendMentor.MortgageRepaymentCalculator.Properties"
              xmlns:viewModels="clr-namespace:FrontendMentor.MortgageRepaymentCalculator.ViewModels"
@@ -52,7 +55,12 @@
 
                 <TextBox Height="48"
                          Margin="0,12,0,0"
-                         Text="{Binding MortgageRepaymentCalculator.MortgageAmount}" />
+                         Text="{Binding MortgageRepaymentCalculator.MortgageAmount}">
+                    <b:Interaction.Behaviors>
+                        <behaviors:TextBoxInputBehavior TextBoxInputType="Double" />
+                        <behaviors:TextBoxFormatBehavior Format="{x:Static constants:StandardNumericFormatStrings.Number2}" />
+                    </b:Interaction.Behaviors>
+                </TextBox>
 
                 <Grid Margin="0,24,0,0">
                     <Grid.ColumnDefinitions>
@@ -70,7 +78,11 @@
 
                         <TextBox Height="48"
                                  Margin="0,12,0,0"
-                                 Text="{Binding MortgageRepaymentCalculator.MortgageTerm}" />
+                                 Text="{Binding MortgageRepaymentCalculator.MortgageTerm}">
+                            <b:Interaction.Behaviors>
+                                <behaviors:TextBoxInputBehavior TextBoxInputType="Integer" />
+                            </b:Interaction.Behaviors>
+                        </TextBox>
 
                     </StackPanel>
 
@@ -83,7 +95,12 @@
 
                         <TextBox Height="48"
                                  Margin="0,12,0,0"
-                                 Text="{Binding MortgageRepaymentCalculator.InterestRate}" />
+                                 Text="{Binding MortgageRepaymentCalculator.InterestRate}">
+                            <b:Interaction.Behaviors>
+                                <behaviors:TextBoxInputBehavior TextBoxInputType="Double" />
+                                <behaviors:TextBoxFormatBehavior Format="{x:Static constants:StandardNumericFormatStrings.Number2}" />
+                            </b:Interaction.Behaviors>
+                        </TextBox>
 
                     </StackPanel>
                 </Grid>
@@ -189,18 +206,14 @@
                                 </Separator>
 
                                 <TextBlock Margin="0,32,0,0"
+                                           Foreground="{StaticResource MortgageRepaymentCalculatorView.TotalRepayment.TextBlock.Foreground.Brush}"
                                            Style="{StaticResource TextPreset4.TextBlock.Style}"
-                                           Text="Total you'll repay over the term">
-                                    <TextBlock.Foreground>
-                                        <SolidColorBrush Color="{StaticResource Slate.300.Color}" />
-                                    </TextBlock.Foreground>
-                                </TextBlock>
+                                           Text="{x:Static properties:Resources.MortgageRepaymentCalculatorView_TotalRepayment_TextBlock_Text}" />
 
-                                <TextBlock Margin="0,8,0,0" Style="{StaticResource TextPreset2.TextBlock.Style}">
+                                <TextBlock Margin="0,8,0,0"
+                                           Foreground="{StaticResource MortgageRepaymentCalculatorView.TotalRepayment.Value.TextBlock.Foreground.Brush}"
+                                           Style="{StaticResource TextPreset2.TextBlock.Style}">
                                     <Run Text="{x:Static constants:CurrencySymbols.Pound}" /><Run Text="{Binding TotalRepayment, Mode=OneWay, StringFormat={x:Static constants:StandardNumericFormatStrings.Number2}}" />
-                                    <TextBlock.Foreground>
-                                        <SolidColorBrush Color="{StaticResource White.Color}" />
-                                    </TextBlock.Foreground>
                                 </TextBlock>
                             </StackPanel>
                         </Border>

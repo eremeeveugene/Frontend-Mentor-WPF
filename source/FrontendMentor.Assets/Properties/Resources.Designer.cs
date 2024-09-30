@@ -59,5 +59,14 @@ namespace FrontendMentor.Assets.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The value &apos;{0}&apos; is not valid for {1}..
+        /// </summary>
+        public static string TextBoxInputBehavior_IsInputValid_ArgumentOutOfRangeException_Message {
+            get {
+                return ResourceManager.GetString("TextBoxInputBehavior_IsInputValid_ArgumentOutOfRangeException_Message", resourceCulture);
+            }
+        }
     }
 }

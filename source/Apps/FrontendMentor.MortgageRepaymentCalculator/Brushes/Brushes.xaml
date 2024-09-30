@@ -59,4 +59,16 @@
 
     <!--#endregion-->
 
+    <!--#region MortgageRepaymentCalculatorView-->
+
+    <SolidColorBrush x:Key="MortgageRepaymentCalculatorView.TotalRepayment.TextBlock.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Slate.300.Color}" />
+
+    <SolidColorBrush x:Key="MortgageRepaymentCalculatorView.TotalRepayment.Value.TextBlock.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource White.Color}" />
+
+    <!--#endregion-->
+
 </ResourceDictionary>
