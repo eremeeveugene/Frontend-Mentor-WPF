@@ -52,7 +52,6 @@ internal sealed class MortgageRepaymentCalculatorBindableModel : ValidatableMode
         get => _mortgageRate;
         set => SetValidatedProperty(ref _mortgageRate, value);
     }
-
     [Required]
     [Resettable]
     [Display(Name = "Mortgage Type")]

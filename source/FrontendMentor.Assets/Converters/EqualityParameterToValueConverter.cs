@@ -24,12 +24,17 @@ public class EqualityParameterToValueConverter : ConverterMarkupExtension<Equali
 
     public override object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
-        if (value != null && value.Equals(parameter))
+        if (value == null && parameter == null)
         {
             return TrueValue;
         }
 
-        return FalseValue;
+        if (value == null || parameter == null)
+        {
+            return FalseValue;
+        }
+
+        return value.Equals(parameter) ? TrueValue : FalseValue;
     }
 
     public override object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
