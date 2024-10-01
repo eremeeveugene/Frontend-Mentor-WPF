@@ -2,8 +2,6 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
                     xmlns:behaviors="clr-namespace:FrontendMentor.Assets.Behaviors;assembly=FrontendMentor.Assets"
-                    xmlns:controls="clr-namespace:FrontendMentor.MortgageRepaymentCalculator.Controls"
-                    xmlns:helpers="clr-namespace:FrontendMentor.MortgageRepaymentCalculator.Helpers"
                     xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets"
                     xmlns:textBoxes="clr-namespace:FrontendMentor.MortgageRepaymentCalculator.Controls.Inputs"
                     xmlns:textBoxes1="clr-namespace:FrontendMentor.MortgageRepaymentCalculator.Controls.TextBoxes">
