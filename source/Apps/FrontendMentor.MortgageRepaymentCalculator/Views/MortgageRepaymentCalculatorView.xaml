@@ -7,6 +7,7 @@
              xmlns:converters="clr-namespace:FrontendMentor.Assets.Converters;assembly=FrontendMentor.Assets"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:helpers="clr-namespace:FrontendMentor.Assets.Helpers;assembly=FrontendMentor.Assets"
+             xmlns:inputs="clr-namespace:FrontendMentor.MortgageRepaymentCalculator.Controls.Inputs"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:properties="clr-namespace:FrontendMentor.MortgageRepaymentCalculator.Properties"
              xmlns:viewModels="clr-namespace:FrontendMentor.MortgageRepaymentCalculator.ViewModels"
@@ -45,22 +46,12 @@
                             Style="{StaticResource Link.Button.Style}" />
                 </Grid>
 
-                <TextBlock Margin="0,40,0,0"
-                           Style="{StaticResource TextPreset4.TextBlock.Style}"
-                           Text="Mortgage Amount">
-                    <TextBlock.Foreground>
-                        <SolidColorBrush Color="{StaticResource Slate.700.Color}" />
-                    </TextBlock.Foreground>
-                </TextBlock>
-
-                <TextBox Height="48"
-                         Margin="0,12,0,0"
-                         Text="{Binding MortgageRepaymentCalculator.MortgageAmount}">
-                    <b:Interaction.Behaviors>
-                        <behaviors:TextBoxInputBehavior TextBoxInputType="Double" />
-                        <behaviors:TextBoxFormatBehavior Format="{x:Static constants:StandardNumericFormatStrings.Number2}" />
-                    </b:Interaction.Behaviors>
-                </TextBox>
+                <inputs:NumericInput Margin="0,40,0,0"
+                                     Caption="Mortgage Amount"
+                                     Format="{x:Static constants:StandardNumericFormatStrings.Number2}"
+                                     Prefix="£"
+                                     TextBoxInputType="Double"
+                                     Value="{Binding MortgageRepaymentCalculator.MortgageAmount}" />
 
                 <Grid Margin="0,24,0,0">
                     <Grid.ColumnDefinitions>
@@ -69,40 +60,18 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <StackPanel Grid.Column="0">
-                        <TextBlock Style="{StaticResource TextPreset4.TextBlock.Style}" Text="Mortgage Term">
-                            <TextBlock.Foreground>
-                                <SolidColorBrush Color="{StaticResource Slate.700.Color}" />
-                            </TextBlock.Foreground>
-                        </TextBlock>
+                    <inputs:NumericInput Grid.Column="0"
+                                         Caption="Mortgage Term"
+                                         Suffix="years"
+                                         TextBoxInputType="Integer"
+                                         Value="{Binding MortgageRepaymentCalculator.MortgageTerm}" />
 
-                        <TextBox Height="48"
-                                 Margin="0,12,0,0"
-                                 Text="{Binding MortgageRepaymentCalculator.MortgageTerm}">
-                            <b:Interaction.Behaviors>
-                                <behaviors:TextBoxInputBehavior TextBoxInputType="Integer" />
-                            </b:Interaction.Behaviors>
-                        </TextBox>
-
-                    </StackPanel>
-
-                    <StackPanel Grid.Column="2">
-                        <TextBlock Style="{StaticResource TextPreset4.TextBlock.Style}" Text="Interest Rate">
-                            <TextBlock.Foreground>
-                                <SolidColorBrush Color="{StaticResource Slate.700.Color}" />
-                            </TextBlock.Foreground>
-                        </TextBlock>
-
-                        <TextBox Height="48"
-                                 Margin="0,12,0,0"
-                                 Text="{Binding MortgageRepaymentCalculator.InterestRate}">
-                            <b:Interaction.Behaviors>
-                                <behaviors:TextBoxInputBehavior TextBoxInputType="Double" />
-                                <behaviors:TextBoxFormatBehavior Format="{x:Static constants:StandardNumericFormatStrings.Number2}" />
-                            </b:Interaction.Behaviors>
-                        </TextBox>
-
-                    </StackPanel>
+                    <inputs:NumericInput Grid.Column="2"
+                                         Caption="Interest Rate"
+                                         Format="{x:Static constants:StandardNumericFormatStrings.Number2}"
+                                         Suffix="%"
+                                         TextBoxInputType="Double"
+                                         Value="{Binding MortgageRepaymentCalculator.InterestRate}" />
                 </Grid>
 
                 <TextBlock Margin="0,24,0,0"

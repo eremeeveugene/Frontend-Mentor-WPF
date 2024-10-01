@@ -48,11 +48,13 @@
                        Margin="0,12,0,0"
                        Opacity="0"
                        Style="{StaticResource ValidationError.TextPreset5.TextBlock.Style}"
-                       Text="{Binding (Validation.Errors)/ErrorContent, RelativeSource={RelativeSource TemplatedParent}}" />
+                       Text="{Binding (Validation.Errors)/ErrorContent, RelativeSource={RelativeSource TemplatedParent}}"
+                       Visibility="Collapsed" />
         </Grid>
 
         <ControlTemplate.Triggers>
             <DataTrigger Binding="{Binding (Validation.HasError), RelativeSource={RelativeSource Self}}" Value="True">
+                <Setter TargetName="ErrorTextBlock" Property="Visibility" Value="Visible" />
                 <DataTrigger.EnterActions>
                     <BeginStoryboard Storyboard="{StaticResource MortgageTypesListBox.ToMouseOver.Storyboard}" />
                 </DataTrigger.EnterActions>
