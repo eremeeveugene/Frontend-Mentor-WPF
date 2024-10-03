@@ -7,6 +7,7 @@
              xmlns:converters="clr-namespace:FrontendMentor.Assets.Converters;assembly=FrontendMentor.Assets"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:helpers="clr-namespace:FrontendMentor.Assets.Helpers;assembly=FrontendMentor.Assets"
+             xmlns:icons="clr-namespace:FrontendMentor.Assets.Controls.Icons;assembly=FrontendMentor.Assets"
              xmlns:inputs="clr-namespace:FrontendMentor.MortgageRepaymentCalculator.Controls.Inputs"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:properties="clr-namespace:FrontendMentor.MortgageRepaymentCalculator.Properties"
@@ -49,7 +50,7 @@
                 <inputs:NumericInput Margin="0,40,0,0"
                                      Caption="Mortgage Amount"
                                      Format="{x:Static constants:StandardNumericFormatStrings.Number2}"
-                                     Prefix="£" 
+                                     Prefix="£"
                                      TextBoxInputType="Double"
                                      Value="{Binding MortgageRepaymentCalculator.MortgageAmount}" />
 
@@ -87,12 +88,32 @@
                          SelectedItem="{Binding MortgageRepaymentCalculator.SelectedMortgageType}"
                          Style="{StaticResource MortgageTypesListBox.Style}" />
 
-                <Button Height="56"
-                        Margin="0,24,0,0"
+                <Button Margin="0,24,0,0"
                         Command="{Binding CalculateCommand}"
-                        Content="Calculate Repayments"
-                        Cursor="Hand"
-                        IsDefault="True" />
+                        IsDefault="True"
+                        Style="{StaticResource Primary.Button.Style}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <icons:Icon Grid.Column="0" Data="{StaticResource Calculator.Geometry}">
+                            <icons:Icon.Fill>
+                                <SolidColorBrush Color="{StaticResource Slate.900.Color}" />
+                            </icons:Icon.Fill>
+                        </icons:Icon>
+
+                        <TextBlock Grid.Column="1"
+                                   Margin="12,0,0,0"
+                                   Style="{StaticResource TextPreset3.TextBlock.Style}"
+                                   Text="Calculate Repayments">
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="{StaticResource Slate.900.Color}" />
+                            </TextBlock.Foreground>
+                        </TextBlock>
+                    </Grid>
+                </Button>
             </StackPanel>
 
             <Border Grid.Column="1"
