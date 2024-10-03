@@ -10,11 +10,8 @@
 // --------------------------------------------------------------------------------
 
 using FrontendMentor.Assets.Enums;
-using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Media.Animation;
 
 namespace FrontendMentor.MortgageRepaymentCalculator.Controls.Inputs;
 
@@ -22,19 +19,20 @@ internal class NumericInput : Control
 {
     public static readonly DependencyProperty TextBoxInputTypeProperty = DependencyProperty.Register(
         nameof(TextBoxInputType), typeof(TextBoxInputType), typeof(NumericInput),
-        new PropertyMetadata(default(TextBoxInputType)));
+        new PropertyMetadata(default(TextBoxInputType), OnTextBoxInputTypeChanged));
 
     public static readonly DependencyProperty FormatProperty = DependencyProperty.Register(
-        nameof(Format), typeof(string), typeof(NumericInput), new PropertyMetadata(default(string)));
+        nameof(Format), typeof(string), typeof(NumericInput), new PropertyMetadata(default(string), OnFormatChanged));
 
     public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
         nameof(Value), typeof(double), typeof(NumericInput),
-        new FrameworkPropertyMetadata(default(double), FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+        new FrameworkPropertyMetadata(default(double), FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+            OnValueChanged));
 
     public static readonly DependencyProperty TextProperty = DependencyProperty.Register(
         nameof(Text), typeof(string), typeof(NumericInput),
         new FrameworkPropertyMetadata(default(string), FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnTextPropertyChanged, CoerceText, true, UpdateSourceTrigger.LostFocus));
+            OnTextChanged));
 
     public static readonly DependencyProperty CaptionProperty = DependencyProperty.Register(
         nameof(Caption), typeof(string), typeof(NumericInput), new PropertyMetadata(default(string)));
@@ -44,6 +42,9 @@ internal class NumericInput : Control
 
     public static readonly DependencyProperty SuffixProperty = DependencyProperty.Register(
         nameof(Suffix), typeof(string), typeof(NumericInput), new PropertyMetadata(default(string?)));
+
+    public static readonly DependencyProperty PlaceholderProperty = DependencyProperty.Register(
+        nameof(Placeholder), typeof(string), typeof(NumericInput), new PropertyMetadata(default(string)));
 
     static NumericInput()
     {
@@ -93,19 +94,48 @@ internal class NumericInput : Control
         set => SetValue(FormatProperty, value);
     }
 
-    private static object CoerceText(DependencyObject d, object basevalue)
+    public string Placeholder
     {
-        return basevalue;
+        get => (string)GetValue(PlaceholderProperty);
+        set => SetValue(PlaceholderProperty, value);
     }
 
-    private static void OnTextPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+    private static void OnTextChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
     {
-        if (d is NumericInput numericInput && e.NewValue is string newText)
+        var control = (NumericInput)d;
+        control.OnTextChanged((string)e.NewValue);
+    }
+
+    private void OnTextChanged(string newText)
+    {
+        // Sync the text to value, considering TextBoxInputType and Format.
+        if (double.TryParse(newText, out var result))
         {
-            if (double.TryParse(newText, NumberStyles.Any, CultureInfo.InvariantCulture, out var parsedValue))
-            {
-                numericInput.Value = parsedValue;
-            }
+            Value = result;
         }
+    }
+
+    private static void OnValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+    {
+        var control = (NumericInput)d;
+        control.OnValueChanged((double)e.NewValue);
+    }
+
+    private void OnValueChanged(double newValue)
+    {
+        // Apply the format and update the Text.
+        Text = string.IsNullOrEmpty(Format) ? newValue.ToString() : newValue.ToString(Format);
+    }
+
+    private static void OnTextBoxInputTypeChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+    {
+        var control = (NumericInput)d;
+        // Adjust input restrictions based on the type (e.g., integer or decimal).
+    }
+
+    private static void OnFormatChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+    {
+        var control = (NumericInput)d;
+        control.OnValueChanged(control.Value); // Reapply format when format changes.
     }
 }
