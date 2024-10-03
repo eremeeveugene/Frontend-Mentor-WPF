@@ -49,7 +49,7 @@
                 <inputs:NumericInput Margin="0,40,0,0"
                                      Caption="Mortgage Amount"
                                      Format="{x:Static constants:StandardNumericFormatStrings.Number2}"
-                                     Prefix="£"
+                                     Prefix="£" 
                                      TextBoxInputType="Double"
                                      Value="{Binding MortgageRepaymentCalculator.MortgageAmount}" />
 

@@ -31,6 +31,7 @@
                                      Height="48"
                                      Margin="0,12,0,0"
                                      HasError="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(Validation.HasError)}"
+                                     MaxLength="10"
                                      Prefix="{TemplateBinding Prefix}"
                                      Suffix="{TemplateBinding Suffix}"
                                      Text="{Binding Text, RelativeSource={RelativeSource TemplatedParent}}">
