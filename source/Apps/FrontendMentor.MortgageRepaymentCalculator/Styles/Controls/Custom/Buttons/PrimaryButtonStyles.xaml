@@ -1,1 +1,56 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" />
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:helpers="clr-namespace:FrontendMentor.Assets.Helpers;assembly=FrontendMentor.Assets"
+                    xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets"
+                    xmlns:system="clr-namespace:System;assembly=System.Runtime">
+
+    <ResourceDictionary.MergedDictionaries>
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.MortgageRepaymentCalculator;component/Brushes/Brushes.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.MortgageRepaymentCalculator;component/Storyboards/Storyboards.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.MortgageRepaymentCalculator;component/Styles/Controls/Custom/TextBlocks/TextBlockStyles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <!--<DataTemplate x:Key="Primary.Button.ContentTemplate" DataType="{x:Type system:String}">
+        <TextBlock Style="{StaticResource TextPreset3.TextBlock.Style}" Text="{Binding}" />
+    </DataTemplate>-->
+
+    <ControlTemplate x:Key="Primary.Button.Template" TargetType="{x:Type Button}">
+        <Border Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding helpers:BorderPropertiesHelper.CornerRadius}">
+            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+        </Border>
+    </ControlTemplate>
+
+    <Style x:Key="Primary.Button.Style" TargetType="{x:Type Button}">
+        <Setter Property="Background">
+            <Setter.Value>
+                <SolidColorBrush Color="{StaticResource Lime.Color}" />
+            </Setter.Value>
+        </Setter>
+        <!--<Setter Property="ContentTemplate" Value="{StaticResource Primary.Button.ContentTemplate}" />-->
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Height" Value="56" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Template" Value="{StaticResource Primary.Button.Template}" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="helpers:BorderPropertiesHelper.CornerRadius" Value="28" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <SolidColorBrush Color="#ebeb9b" />
+                    </Setter.Value>
+                </Setter>
+                <!--<Trigger.EnterActions>
+                    <BeginStoryboard Storyboard="{StaticResource Link.Button.ToMouseOver.Storyboard}" />
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard Storyboard="{StaticResource Link.Button.FromMouseOver.Storyboard}" />
+                </Trigger.ExitActions>-->
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

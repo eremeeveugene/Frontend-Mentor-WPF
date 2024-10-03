@@ -92,6 +92,7 @@
     </ControlTemplate>
 
     <Style TargetType="{x:Type textBoxes:NumericInput}">
+        <Setter Property="Focusable" Value="False" />
         <Setter Property="Template" Value="{StaticResource NumericInput.Template}" />
         <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
     </Style>
