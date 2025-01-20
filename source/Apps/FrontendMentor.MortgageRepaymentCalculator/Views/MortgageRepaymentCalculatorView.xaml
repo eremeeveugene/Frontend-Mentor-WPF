@@ -88,7 +88,7 @@
                          SelectedItem="{Binding MortgageRepaymentCalculator.SelectedMortgageType}"
                          Style="{StaticResource MortgageTypesListBox.Style}" />
 
-                <Button Margin="0,24,0,0"
+                <Button Margin="0,40,0,0"
                         Command="{Binding CalculateCommand}"
                         IsDefault="True"
                         Style="{StaticResource Primary.Button.Style}">
