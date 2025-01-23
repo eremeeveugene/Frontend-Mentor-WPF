@@ -28,12 +28,12 @@ public class TextBoxFormatBehavior : Behavior<TextBox>
     /// </summary>
     public static readonly DependencyProperty FormatProperty =
         DependencyProperty.Register(nameof(Format), typeof(string), typeof(TextBoxFormatBehavior),
-            new PropertyMetadata(default(string)));
+            new PropertyMetadata(null));
 
     /// <summary>
     ///     Gets or sets the numeric format string that will be applied to the TextBox content.
     /// </summary>
-    public string Format
+    public string? Format
     {
         get => (string)GetValue(FormatProperty);
         set => SetValue(FormatProperty, value);
