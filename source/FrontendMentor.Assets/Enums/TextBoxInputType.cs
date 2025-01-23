@@ -12,11 +12,11 @@
 namespace FrontendMentor.Assets.Enums;
 
 /// <summary>
-///     Specifies the input type for a TextBox control, restricting input to either integer or double values.
+///     Specifies the input type for a TextBox control, restricting input to either integer or decimal values.
 ///     Use this enum in conjunction with input validation logic to enforce the desired input type.
 /// </summary>
 public enum TextBoxInputType
 {
     Integer,
-    Double
+    Decimal
 }

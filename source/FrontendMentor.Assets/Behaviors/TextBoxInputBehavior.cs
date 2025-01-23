@@ -26,7 +26,7 @@ namespace FrontendMentor.Assets.Behaviors;
 public partial class TextBoxInputBehavior : Behavior<TextBox>
 {
     private const string IntegerRegexPattern = @"^\d+$";
-    private const string DoubleRegexPattern = @"^[0-9]+(\.[0-9]+)?$";
+    private const string DecimalRegexPattern = @"^[0-9]*\.?[0-9]*$";
 
     /// <summary>
     ///     Identifies the Input Type dependency property. This property is used to define
@@ -49,8 +49,8 @@ public partial class TextBoxInputBehavior : Behavior<TextBox>
     [GeneratedRegex(IntegerRegexPattern)]
     private static partial Regex IntegerRegex();
 
-    [GeneratedRegex(DoubleRegexPattern)]
-    private static partial Regex DoubleRegex();
+    [GeneratedRegex(DecimalRegexPattern)]
+    private static partial Regex DecimalRegex();
 
     /// <summary>
     ///     Called when the behavior is attached to the TextBox. Adds event handlers for text input and pasting operations.
@@ -95,7 +95,7 @@ public partial class TextBoxInputBehavior : Behavior<TextBox>
         return TextBoxInputType switch
         {
             TextBoxInputType.Integer => IntegerRegex().IsMatch(input),
-            TextBoxInputType.Double => DoubleRegex().IsMatch(input),
+            TextBoxInputType.Decimal => DecimalRegex().IsMatch(input),
             _ => throw new ArgumentOutOfRangeException(nameof(input),
                 string.Format(Resources.TextBoxInputBehavior_IsInputValid_ArgumentOutOfRangeException_Message,
                     TextBoxInputType, nameof(TextBoxInputType)))

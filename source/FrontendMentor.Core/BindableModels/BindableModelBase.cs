@@ -57,18 +57,7 @@ public abstract class BindableModelBase : BindableBase, IResettable, IChangeTrac
             var attribute =
                 (ResettableAttribute)property.GetCustomAttributes(typeof(ResettableAttribute), false).First();
 
-            if (attribute.DefaultValue != null)
-            {
-                property.SetValue(this, attribute.DefaultValue);
-            }
-            else
-            {
-                var defaultValue = property.PropertyType.IsValueType
-                    ? Activator.CreateInstance(property.PropertyType)
-                    : null;
-
-                property.SetValue(this, defaultValue);
-            }
+            property.SetValue(this, attribute.DefaultValue);
         }
     }
 

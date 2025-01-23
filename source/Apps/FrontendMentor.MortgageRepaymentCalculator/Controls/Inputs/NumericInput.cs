@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------
-// Copyright (C) 2024 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
+// Copyright (C) 2025 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
 // All Rights Reserved.
 // --------------------------------------------------------------------------------
 // This software is the confidential and proprietary information of Eugene Eremeev
@@ -19,32 +19,30 @@ internal class NumericInput : Control
 {
     public static readonly DependencyProperty TextBoxInputTypeProperty = DependencyProperty.Register(
         nameof(TextBoxInputType), typeof(TextBoxInputType), typeof(NumericInput),
-        new PropertyMetadata(default(TextBoxInputType), OnTextBoxInputTypeChanged));
+        new PropertyMetadata(default(TextBoxInputType)));
 
     public static readonly DependencyProperty FormatProperty = DependencyProperty.Register(
-        nameof(Format), typeof(string), typeof(NumericInput), new PropertyMetadata(default(string), OnFormatChanged));
-
-    public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        nameof(Value), typeof(double), typeof(NumericInput),
-        new FrameworkPropertyMetadata(default(double), FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged));
+        nameof(Format), typeof(string), typeof(NumericInput), new PropertyMetadata(default(string)));
 
     public static readonly DependencyProperty TextProperty = DependencyProperty.Register(
         nameof(Text), typeof(string), typeof(NumericInput),
-        new FrameworkPropertyMetadata(default(string), FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnTextChanged));
+        new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+            (o, _) => ((NumericInput)o).OnTextChanged()));
 
     public static readonly DependencyProperty CaptionProperty = DependencyProperty.Register(
         nameof(Caption), typeof(string), typeof(NumericInput), new PropertyMetadata(default(string)));
 
     public static readonly DependencyProperty PrefixProperty = DependencyProperty.Register(
-        nameof(Prefix), typeof(string), typeof(NumericInput), new PropertyMetadata(default(string?)));
+        nameof(Prefix), typeof(string), typeof(NumericInput), new PropertyMetadata(null));
 
     public static readonly DependencyProperty SuffixProperty = DependencyProperty.Register(
-        nameof(Suffix), typeof(string), typeof(NumericInput), new PropertyMetadata(default(string?)));
+        nameof(Suffix), typeof(string), typeof(NumericInput), new PropertyMetadata(null));
 
     public static readonly DependencyProperty PlaceholderProperty = DependencyProperty.Register(
         nameof(Placeholder), typeof(string), typeof(NumericInput), new PropertyMetadata(default(string)));
+
+    public static readonly DependencyProperty MaxLengthProperty = DependencyProperty.Register(
+        nameof(MaxLength), typeof(int), typeof(NumericInput), new PropertyMetadata(default(int)));
 
     static NumericInput()
     {
@@ -52,9 +50,15 @@ internal class NumericInput : Control
             new FrameworkPropertyMetadata(typeof(NumericInput)));
     }
 
-    public string Text
+    public int MaxLength
     {
-        get => (string)GetValue(TextProperty);
+        get => (int)GetValue(MaxLengthProperty);
+        set => SetValue(MaxLengthProperty, value);
+    }
+
+    public string? Text
+    {
+        get => (string?)GetValue(TextProperty);
         set => SetValue(TextProperty, value);
     }
 
@@ -68,12 +72,6 @@ internal class NumericInput : Control
     {
         get => (string?)GetValue(SuffixProperty);
         set => SetValue(SuffixProperty, value);
-    }
-
-    public double Value
-    {
-        get => (double)GetValue(ValueProperty);
-        set => SetValue(ValueProperty, value);
     }
 
     public string Caption
@@ -100,42 +98,7 @@ internal class NumericInput : Control
         set => SetValue(PlaceholderProperty, value);
     }
 
-    private static void OnTextChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+    private void OnTextChanged()
     {
-        var control = (NumericInput)d;
-        control.OnTextChanged((string)e.NewValue);
-    }
-
-    private void OnTextChanged(string newText)
-    {
-        // Sync the text to value, considering TextBoxInputType and Format.
-        if (double.TryParse(newText, out var result))
-        {
-            Value = result;
-        }
-    }
-
-    private static void OnValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-    {
-        var control = (NumericInput)d;
-        control.OnValueChanged((double)e.NewValue);
-    }
-
-    private void OnValueChanged(double newValue)
-    {
-        // Apply the format and update the Text.
-        Text = string.IsNullOrEmpty(Format) ? newValue.ToString() : newValue.ToString(Format);
-    }
-
-    private static void OnTextBoxInputTypeChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-    {
-        var control = (NumericInput)d;
-        // Adjust input restrictions based on the type (e.g., integer or decimal).
-    }
-
-    private static void OnFormatChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-    {
-        var control = (NumericInput)d;
-        control.OnValueChanged(control.Value); // Reapply format when format changes.
     }
 }

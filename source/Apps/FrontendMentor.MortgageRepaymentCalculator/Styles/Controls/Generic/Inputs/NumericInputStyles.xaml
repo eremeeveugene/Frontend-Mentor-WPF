@@ -12,43 +12,33 @@
     </ResourceDictionary.MergedDictionaries>
 
     <ControlTemplate x:Key="NumericInput.Template" TargetType="{x:Type textBoxes:NumericInput}">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-
-            <TextBlock Grid.Row="0"
-                       Style="{StaticResource TextPreset4.TextBlock.Style}"
-                       Text="{TemplateBinding Caption}">
+        <StackPanel>
+            <TextBlock Style="{StaticResource TextPreset4.TextBlock.Style}" Text="{TemplateBinding Caption}">
                 <TextBlock.Foreground>
                     <SolidColorBrush Color="{StaticResource Slate.700.Color}" />
                 </TextBlock.Foreground>
             </TextBlock>
 
-            <textBoxes1:AffixTextBox Grid.Row="1"
-                                     Height="48"
+            <textBoxes1:AffixTextBox Height="48"
                                      Margin="0,12,0,0"
                                      HasError="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(Validation.HasError)}"
-                                     MaxLength="10"
+                                     MaxLength="{TemplateBinding MaxLength}"
                                      Prefix="{TemplateBinding Prefix}"
                                      Suffix="{TemplateBinding Suffix}"
                                      Text="{Binding Text, RelativeSource={RelativeSource TemplatedParent}}">
                 <b:Interaction.Behaviors>
-                    <behaviors:TextBoxInputBehavior TextBoxInputType="{TemplateBinding TextBoxInputType}" />
-                    <behaviors:TextBoxFormatBehavior Format="{TemplateBinding Format}" />
+                    <behaviors:TextBoxInputBehavior TextBoxInputType="{Binding TextBoxInputType, RelativeSource={RelativeSource TemplatedParent}}" />
+                    <behaviors:TextBoxFormatBehavior Format="{Binding Format, RelativeSource={RelativeSource TemplatedParent}}" />
                 </b:Interaction.Behaviors>
             </textBoxes1:AffixTextBox>
 
             <TextBlock x:Name="ErrorTextBlock"
-                       Grid.Row="2"
                        Margin="0,12,0,0"
                        Style="{StaticResource ValidationError.TextPreset5.TextBlock.Style}"
                        Text="{Binding (Validation.Errors)/ErrorContent, RelativeSource={RelativeSource TemplatedParent}}"
                        TextWrapping="Wrap"
                        Visibility="Collapsed" />
-        </Grid>
+        </StackPanel>
 
         <ControlTemplate.Triggers>
             <DataTrigger Binding="{Binding (Validation.HasError), RelativeSource={RelativeSource Self}}" Value="True">
