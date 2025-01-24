@@ -13,9 +13,26 @@ using System.Windows;
 
 namespace FrontendMentor.OrderSummaryComponent;
 
-/// <summary>
-///     Interaction logic for App.xaml
-/// </summary>
-public partial class App : Application
+internal partial class App
 {
+    protected override void RegisterTypes(IContainerRegistry containerRegistry)
+    {
+        base.RegisterTypes(containerRegistry);
+
+        containerRegistry.RegisterSingleton<IResultSummaryService, ResultSummaryService>();
+        containerRegistry.RegisterForNavigation<ResultsSummaryComponentView>(ResultsSummaryComponentViewNames
+            .ResultsSummaryComponent);
+    }
+
+    protected override Window CreateShell()
+    {
+        return Container.Resolve<ResultsSummaryComponentWindow>();
+    }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        NavigateToShellRegion(ResultsSummaryComponentViewNames.ResultsSummaryComponent);
+    }
 }

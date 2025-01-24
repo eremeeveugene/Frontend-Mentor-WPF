@@ -6,16 +6,12 @@
                     xmlns:windows1="clr-namespace:FrontendMentor.QrCodeComponent.Controls">
 
     <ResourceDictionary.MergedDictionaries>
-        <resourceDictionaries:SharedResourceDictionary
-            Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Windows/FrontendMentorWindowStyles.xaml" />
-        <resourceDictionaries:SharedResourceDictionary
-            Source="pack://application:,,,/FrontendMentor.QrCodeComponent;component/Brushes/Brushes.xaml" />
-        <resourceDictionaries:SharedResourceDictionary
-            Source="pack://application:,,,/FrontendMentor.QrCodeComponent;component/Fonts/Fonts.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Windows/FrontendMentorWindowStyles.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.QrCodeComponent;component/Brushes/Brushes.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.QrCodeComponent;component/Fonts/Fonts.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style BasedOn="{StaticResource {x:Type windows:FrontendMentorWindow}}"
-           TargetType="{x:Type windows1:QrCodeComponentWindow}">
+    <Style BasedOn="{StaticResource {x:Type windows:FrontendMentorWindow}}" TargetType="{x:Type windows1:QrCodeComponentWindow}">
         <Setter Property="Background" Value="{StaticResource QrCodeComponentWindow.Background.Brush}" />
         <Setter Property="FontFamily" Value="{StaticResource Outfit.FontFamily}" />
         <Setter Property="Foreground" Value="{StaticResource QrCodeComponentWindow.Foreground.Brush}" />

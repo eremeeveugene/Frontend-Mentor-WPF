@@ -4,14 +4,10 @@
                     xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
 
     <ResourceDictionary.MergedDictionaries>
-        <resourceDictionaries:SharedResourceDictionary
-            Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Brushes/Brushes.xaml" />
-        <resourceDictionaries:SharedResourceDictionary
-            Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Effects/Effects.xaml" />
-        <resourceDictionaries:SharedResourceDictionary
-            Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Storyboards/Storyboards.xaml" />
-        <resourceDictionaries:SharedResourceDictionary
-            Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Styles/Controls/Custom/TextBlocks/TextBlockStyles.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Brushes/Brushes.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Effects/Effects.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Storyboards/Storyboards.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Styles/Controls/Custom/TextBlocks/TextBlockStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="BlogPreviewCardView.TitleTextBlock.Style"
@@ -21,12 +17,10 @@
         <Style.Triggers>
             <Trigger Property="helpers:UIElementPropertiesHelper.IsMouseOverParent" Value="True">
                 <Trigger.EnterActions>
-                    <BeginStoryboard
-                        Storyboard="{StaticResource BlogPreviewCardView.TitleTextBlock.ToMouseOverParent.Storyboard}" />
+                    <BeginStoryboard Storyboard="{StaticResource BlogPreviewCardView.TitleTextBlock.ToMouseOverParent.Storyboard}" />
                 </Trigger.EnterActions>
                 <Trigger.ExitActions>
-                    <BeginStoryboard
-                        Storyboard="{StaticResource BlogPreviewCardView.TitleTextBlock.FromMouseOverParent.Storyboard}" />
+                    <BeginStoryboard Storyboard="{StaticResource BlogPreviewCardView.TitleTextBlock.FromMouseOverParent.Storyboard}" />
                 </Trigger.ExitActions>
             </Trigger>
         </Style.Triggers>

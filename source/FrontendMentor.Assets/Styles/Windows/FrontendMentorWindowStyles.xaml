@@ -9,16 +9,11 @@
                     xmlns:windows="clr-namespace:FrontendMentor.Assets.Controls.Windows">
 
     <ResourceDictionary.MergedDictionaries>
-        <resourceDictionaries:SharedResourceDictionary
-            Source="pack://application:,,,/FrontendMentor.Assets;component/Images/ImagesDictionary.xaml" />
-        <resourceDictionaries:SharedResourceDictionary
-            Source="pack://application:,,,/FrontendMentor.Assets;component/Brushes/Brushes.xaml" />
-        <resourceDictionaries:SharedResourceDictionary
-            Source="pack://application:,,,/FrontendMentor.Assets;component/Storyboards/Storyboards.xaml" />
-        <resourceDictionaries:SharedResourceDictionary
-            Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Windows/FrontendMentorWindowTitleBarTextBlockStyles.xaml" />
-        <resourceDictionaries:SharedResourceDictionary
-            Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Windows/FrontendMentorWindowTitleBarButtonStyles.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Images/ImagesDictionary.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Brushes/Brushes.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Storyboards/Storyboards.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Windows/FrontendMentorWindowTitleBarTextBlockStyles.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Windows/FrontendMentorWindowTitleBarButtonStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <WindowChrome x:Key="FrontendMentorWindowChrome"
@@ -52,8 +47,7 @@
                                                       Margin="12,0,0,0"
                                                       Orientation="Horizontal"
                                                       Spacing="12">
-                                <Image Height="{TemplateBinding TitleBarImageHeight}"
-                                       Source="{StaticResource FrontendMentor.Image}" />
+                                <Image Height="{TemplateBinding TitleBarImageHeight}" Source="{StaticResource FrontendMentor.Image}" />
 
                                 <TextBlock VerticalAlignment="Center"
                                            helpers:WindowPropertiesHelper.IsActive="{TemplateBinding IsActive}"

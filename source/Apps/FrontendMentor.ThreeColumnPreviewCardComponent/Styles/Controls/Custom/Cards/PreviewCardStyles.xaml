@@ -5,10 +5,8 @@
                     xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
 
     <ResourceDictionary.MergedDictionaries>
-        <resourceDictionaries:SharedResourceDictionary
-            Source="pack://application:,,,/FrontendMentor.ThreeColumnPreviewCardComponent;component/Brushes/Brushes.xaml" />
-        <resourceDictionaries:SharedResourceDictionary
-            Source="pack://application:,,,/FrontendMentor.ThreeColumnPreviewCardComponent;component/Geometries/Geometries.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ThreeColumnPreviewCardComponent;component/Brushes/Brushes.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ThreeColumnPreviewCardComponent;component/Geometries/Geometries.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="Sedan.PreviewCard.Style" TargetType="{x:Type cards:PreviewCard}">

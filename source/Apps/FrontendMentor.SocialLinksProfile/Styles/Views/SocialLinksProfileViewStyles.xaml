@@ -6,12 +6,9 @@
                     xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
 
     <ResourceDictionary.MergedDictionaries>
-        <resourceDictionaries:SharedResourceDictionary
-            Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Brushes/Brushes.xaml" />
-        <resourceDictionaries:SharedResourceDictionary
-            Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Storyboards/Storyboards.xaml" />
-        <resourceDictionaries:SharedResourceDictionary
-            Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Styles/Controls/TextBlocks/TextBlockStyles.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Brushes/Brushes.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Storyboards/Storyboards.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Styles/Controls/TextBlocks/TextBlockStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <ControlTemplate x:Key="SocialLinksProfileView.SocialLinkButton.Template" TargetType="{x:Type Button}">
@@ -20,8 +17,7 @@
                 BorderBrush="{TemplateBinding BorderBrush}"
                 BorderThickness="{TemplateBinding BorderThickness}"
                 CornerRadius="{TemplateBinding helpers:BorderPropertiesHelper.CornerRadius}">
-            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
         </Border>
     </ControlTemplate>
 
@@ -38,29 +34,23 @@
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Trigger.EnterActions>
-                    <BeginStoryboard
-                        Storyboard="{StaticResource SocialLinksProfileView.SocialLinkButton.ToMouseOver.Storyboard}" />
+                    <BeginStoryboard Storyboard="{StaticResource SocialLinksProfileView.SocialLinkButton.ToMouseOver.Storyboard}" />
                 </Trigger.EnterActions>
                 <Trigger.ExitActions>
-                    <BeginStoryboard
-                        Storyboard="{StaticResource SocialLinksProfileView.SocialLinkButton.FromMouseOver.Storyboard}" />
+                    <BeginStoryboard Storyboard="{StaticResource SocialLinksProfileView.SocialLinkButton.FromMouseOver.Storyboard}" />
                 </Trigger.ExitActions>
             </Trigger>
         </Style.Triggers>
     </Style>
 
-    <DataTemplate x:Key="SocialLinksProfileView.SocialLinksItemsControl.ItemContentTemplate"
-                  DataType="{x:Type bindableModels:SocialLinkBindableModel}">
-        <Button Command="{Binding OpenLinkCommand}"
-                Style="{StaticResource SocialLinksProfileView.SocialLinkButton.Style}">
+    <DataTemplate x:Key="SocialLinksProfileView.SocialLinksItemsControl.ItemContentTemplate" DataType="{x:Type bindableModels:SocialLinkBindableModel}">
+        <Button Command="{Binding OpenLinkCommand}" Style="{StaticResource SocialLinksProfileView.SocialLinkButton.Style}">
             <TextBlock Style="{StaticResource Body.Bold.TextBlock.Style}" Text="{Binding Name}" />
         </Button>
     </DataTemplate>
 
-    <Style x:Key="SocialLinksProfileView.SocialLinksItemsControl.ItemContainerStyle"
-           TargetType="{x:Type ContentPresenter}">
-        <Setter Property="ContentTemplate"
-                Value="{StaticResource SocialLinksProfileView.SocialLinksItemsControl.ItemContentTemplate}" />
+    <Style x:Key="SocialLinksProfileView.SocialLinksItemsControl.ItemContainerStyle" TargetType="{x:Type ContentPresenter}">
+        <Setter Property="ContentTemplate" Value="{StaticResource SocialLinksProfileView.SocialLinksItemsControl.ItemContentTemplate}" />
     </Style>
 
     <ItemsPanelTemplate x:Key="SocialLinksProfileView.SocialLinksItemsControl.ItemsPanelTemplate">
@@ -69,10 +59,8 @@
 
     <Style x:Key="SocialLinksProfileView.SocialLinksItemsControl.Style" TargetType="{x:Type ItemsControl}">
         <Setter Property="Focusable" Value="False" />
-        <Setter Property="ItemContainerStyle"
-                Value="{StaticResource SocialLinksProfileView.SocialLinksItemsControl.ItemContainerStyle}" />
-        <Setter Property="ItemsPanel"
-                Value="{StaticResource SocialLinksProfileView.SocialLinksItemsControl.ItemsPanelTemplate}" />
+        <Setter Property="ItemContainerStyle" Value="{StaticResource SocialLinksProfileView.SocialLinksItemsControl.ItemContainerStyle}" />
+        <Setter Property="ItemsPanel" Value="{StaticResource SocialLinksProfileView.SocialLinksItemsControl.ItemsPanelTemplate}" />
     </Style>
 
 </ResourceDictionary>

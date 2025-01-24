@@ -27,10 +27,8 @@
             <TextBlock Margin="0,23,0,1"
                        Style="{StaticResource Heading.TextBlock.Style}"
                        TextAlignment="Center">
-                <Run
-                    Text="{Binding SocialLinkProfile.FirstName, Mode=OneWay, FallbackValue={x:Static constants:Signs.Minus}}" />
-                <Run
-                    Text="{Binding SocialLinkProfile.LastName, Mode=OneWay, FallbackValue={x:Static constants:Signs.Minus}}" />
+                <Run Text="{Binding SocialLinkProfile.FirstName, Mode=OneWay, FallbackValue={x:Static constants:Signs.Minus}}" />
+                <Run Text="{Binding SocialLinkProfile.LastName, Mode=OneWay, FallbackValue={x:Static constants:Signs.Minus}}" />
             </TextBlock>
 
             <TextBlock Margin="0,4,0,0"
