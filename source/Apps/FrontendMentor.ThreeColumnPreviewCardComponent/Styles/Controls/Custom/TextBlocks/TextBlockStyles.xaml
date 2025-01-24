@@ -3,8 +3,10 @@
                     xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
 
     <ResourceDictionary.MergedDictionaries>
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ThreeColumnPreviewCardComponent;component/Brushes/Brushes.xaml" />
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ThreeColumnPreviewCardComponent;component/Fonts/Fonts.xaml" />
+        <resourceDictionaries:SharedResourceDictionary
+            Source="pack://application:,,,/FrontendMentor.ThreeColumnPreviewCardComponent;component/Brushes/Brushes.xaml" />
+        <resourceDictionaries:SharedResourceDictionary
+            Source="pack://application:,,,/FrontendMentor.ThreeColumnPreviewCardComponent;component/Fonts/Fonts.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="Body.TextBlock.Style" TargetType="{x:Type TextBlock}">

@@ -4,9 +4,12 @@
                     xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries">
 
     <ResourceDictionary.MergedDictionaries>
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Brushes/Brushes.xaml" />
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Fonts/Fonts.xaml" />
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Storyboards/Storyboards.xaml" />
+        <resourceDictionaries:SharedResourceDictionary
+            Source="pack://application:,,,/FrontendMentor.Assets;component/Brushes/Brushes.xaml" />
+        <resourceDictionaries:SharedResourceDictionary
+            Source="pack://application:,,,/FrontendMentor.Assets;component/Fonts/Fonts.xaml" />
+        <resourceDictionaries:SharedResourceDictionary
+            Source="pack://application:,,,/FrontendMentor.Assets;component/Storyboards/Storyboards.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="FrontendMentorWindow.TitleBarTextBlock.Style" TargetType="{x:Type TextBlock}">
@@ -16,10 +19,12 @@
         <Style.Triggers>
             <Trigger Property="helpers:WindowPropertiesHelper.IsActive" Value="True">
                 <Trigger.EnterActions>
-                    <BeginStoryboard Storyboard="{StaticResource FrontendMentorWindow.TitleBarTextBlock.ToActive.Storyboard}" />
+                    <BeginStoryboard
+                        Storyboard="{StaticResource FrontendMentorWindow.TitleBarTextBlock.ToActive.Storyboard}" />
                 </Trigger.EnterActions>
                 <Trigger.ExitActions>
-                    <BeginStoryboard Storyboard="{StaticResource FrontendMentorWindow.TitleBarTextBlock.FromActive.Storyboard}" />
+                    <BeginStoryboard
+                        Storyboard="{StaticResource FrontendMentorWindow.TitleBarTextBlock.FromActive.Storyboard}" />
                 </Trigger.ExitActions>
             </Trigger>
         </Style.Triggers>

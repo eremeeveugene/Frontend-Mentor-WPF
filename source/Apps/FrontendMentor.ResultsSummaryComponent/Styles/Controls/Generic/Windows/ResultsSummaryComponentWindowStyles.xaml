@@ -6,12 +6,16 @@
                     xmlns:windows1="clr-namespace:FrontendMentor.ResultsSummaryComponent.Controls.Windows">
 
     <ResourceDictionary.MergedDictionaries>
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Windows/FrontendMentorWindowStyles.xaml" />
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Brushes/Brushes.xaml" />
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Fonts/Fonts.xaml" />
+        <resourceDictionaries:SharedResourceDictionary
+            Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Windows/FrontendMentorWindowStyles.xaml" />
+        <resourceDictionaries:SharedResourceDictionary
+            Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Brushes/Brushes.xaml" />
+        <resourceDictionaries:SharedResourceDictionary
+            Source="pack://application:,,,/FrontendMentor.ResultsSummaryComponent;component/Fonts/Fonts.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style BasedOn="{StaticResource {x:Type windows:FrontendMentorWindow}}" TargetType="{x:Type windows1:ResultsSummaryComponentWindow}">
+    <Style BasedOn="{StaticResource {x:Type windows:FrontendMentorWindow}}"
+           TargetType="{x:Type windows1:ResultsSummaryComponentWindow}">
         <Setter Property="Background" Value="{StaticResource ResultsSummaryComponentWindow.Background.Brush}" />
         <Setter Property="FontFamily" Value="{StaticResource HankenGrotesk.FontFamily}" />
         <Setter Property="Foreground" Value="{StaticResource ResultsSummaryComponentWindow.Foreground.Brush}" />
