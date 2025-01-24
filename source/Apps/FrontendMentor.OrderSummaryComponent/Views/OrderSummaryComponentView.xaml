@@ -23,7 +23,13 @@
             <Border Grid.Row="0"
                     Height="220"
                     Background="#382AE1"
-                    CornerRadius="20 20 0 0" />
+                    CornerRadius="20 20 0 0">
+                <Image HorizontalAlignment="Left" Source="{StaticResource MusicFlatLine.Image}">
+                    <Image.RenderTransform>
+                        <TranslateTransform X="34.54" Y="19" />
+                    </Image.RenderTransform>
+                </Image>
+            </Border>
 
             <Border Grid.Row="1"
                     Padding="48,45,48,48"
