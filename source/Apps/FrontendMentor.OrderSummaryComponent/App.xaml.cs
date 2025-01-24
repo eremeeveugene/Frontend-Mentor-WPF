@@ -9,7 +9,9 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
+using FrontendMentor.OrderSummaryComponent.Constants;
 using FrontendMentor.OrderSummaryComponent.Controls.Windows;
+using FrontendMentor.OrderSummaryComponent.Views;
 using System.Windows;
 
 namespace FrontendMentor.OrderSummaryComponent;
@@ -21,8 +23,8 @@ internal partial class App
         base.RegisterTypes(containerRegistry);
 
         //containerRegistry.RegisterSingleton<IResultSummaryService, ResultSummaryService>();
-        //containerRegistry.RegisterForNavigation<ResultsSummaryComponentView>(ResultsSummaryComponentViewNames
-        //    .ResultsSummaryComponent);
+        containerRegistry.RegisterForNavigation<OrderSummaryComponentView>(OrderSummaryComponentViewNames
+            .OrderSummaryComponent);
     }
 
     protected override Window CreateShell()
@@ -34,6 +36,6 @@ internal partial class App
     {
         base.OnInitialized();
 
-        //NavigateToShellRegion(ResultsSummaryComponentViewNames.ResultsSummaryComponent);
+        NavigateToShellRegion(OrderSummaryComponentViewNames.OrderSummaryComponent);
     }
 }
