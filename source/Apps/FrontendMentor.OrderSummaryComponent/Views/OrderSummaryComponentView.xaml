@@ -30,9 +30,18 @@
                     Background="#FFFFFF"
                     CornerRadius="0 0 20 20">
                 <StackPanel>
-                    <TextBlock Text="Order Summary" />
+                    <TextBlock FontSize="28"
+                               FontWeight="Black"
+                               Text="Order Summary"
+                               TextAlignment="Center" />
 
-                    <TextBlock Margin="0,17,0,0" Text="You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!" />
+                    <TextBlock Margin="0,17,0,0"
+                               FontSize="16"
+                               FontWeight="Medium"
+                               Foreground="#717FA6"
+                               Text="You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!"
+                               TextAlignment="Center"
+                               TextWrapping="Wrap" />
 
                     <Border Margin="0,20,0,0"
                             Background="#F7F9FF"
