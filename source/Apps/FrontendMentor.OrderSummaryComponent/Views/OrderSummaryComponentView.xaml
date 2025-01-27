@@ -23,12 +23,27 @@
             <Border Grid.Row="0"
                     Height="220"
                     Background="#382AE1"
+                    ClipToBounds="True"
                     CornerRadius="20 20 0 0">
-                <Image HorizontalAlignment="Left" Source="{StaticResource MusicFlatLine.Image}">
-                    <Image.RenderTransform>
-                        <TranslateTransform X="34.54" Y="19" />
-                    </Image.RenderTransform>
-                </Image>
+                <Grid>
+                    <Path Data="M242.604 88.7821V103.327L245.588 104.87V217.778L31.8997 220.214V147.977H38.9133V78.5204H41.461V68.9693H44.506V78.5204H58.6551C58.6551 78.5204 58.4419 123.475 58.6551 123.718C58.8682 123.962 65.9732 123.718 65.9732 123.718V160.157H71.7587V30.3993H79.1377V23.2435H82.1828V30.3993H105.294V36.7938H114.084V23.2435H117.129V36.7938H121.443V60.565H131.796V103.195H143.976V141.887H150.36V61.4684H158.399V49.1564H161.444V61.4684H183.561V17.0215H190.016V13.3675H215.767V0H218.812V13.3675H220.497V16.9911H226.8V94.9735L239.559 101.673V88.7821H242.604ZM15.8424 105.64H19.0396L25.4747 219.899H-8L-1.55475 105.64H0.96245V101.489H15.8424V105.64Z" Fill="#1E1FCD">
+                        <Path.RenderTransform>
+                            <TranslateTransform X="-8" Y="46" />
+                        </Path.RenderTransform>
+                    </Path>
+
+                    <Path Data="M250.604 88.7821V103.327L253.588 104.87V217.778L39.8997 220.214V147.977H46.9133V78.5204H49.461V68.9693H52.506V78.5204H66.6551C66.6551 78.5204 66.4419 123.475 66.6551 123.718C66.8682 123.962 73.9732 123.718 73.9732 123.718V160.157H79.7587V30.3993H87.1377V23.2435H90.1828V30.3993H113.294V36.7938H122.084V23.2435H125.129V36.7938H129.443V60.565H139.796V103.195H151.976V141.887H158.36V61.4684H166.399V49.1564H169.444V61.4684H191.561V17.0215H198.016V13.3675H223.767V0H226.812V13.3675H228.497V16.9911H234.8V94.9735L247.559 101.673V88.7821H250.604ZM23.8424 105.64H27.0396L33.4747 219.899H0L6.44525 105.64H8.96245V101.489H23.8424V105.64Z" Fill="#1E1FCD">
+                        <Path.RenderTransform>
+                            <TranslateTransform X="196" Y="82" />
+                        </Path.RenderTransform>
+                    </Path>
+
+                    <Image HorizontalAlignment="Left" Source="{StaticResource MusicFlatLine.Image}">
+                        <Image.RenderTransform>
+                            <TranslateTransform X="34.54" Y="19" />
+                        </Image.RenderTransform>
+                    </Image>
+                </Grid>
             </Border>
 
             <Border Grid.Row="1"
@@ -45,6 +60,8 @@
                                FontSize="16"
                                FontWeight="Medium"
                                Foreground="#717FA6"
+                               LineHeight="26"
+                               LineStackingStrategy="BlockLineHeight"
                                Text="You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!"
                                TextAlignment="Center"
                                TextWrapping="Wrap" />
