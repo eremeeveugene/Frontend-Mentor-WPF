@@ -10,16 +10,20 @@ I am solving Frontend Mentor challenges using **.NET**, **C#**, **WPF**, and the
 
 The primary goal of this repository is to improve my own skills and demonstrate my capabilities. I am focused on my growth and learning by providing efficient and pixel-perfect UI solutions.
 
-## Technologies Used
+## Technologies
 
-- **[.NET 8](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)**: The latest version of the .NET platform for building and running applications.
-- **[C# 12](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-12)**: The programming language used to implement the solutions.
-- **[WPF](https://learn.microsoft.com/en-us/dotnet/desktop/wpf/overview/?view=netdesktop-8.0)**: Windows Presentation Foundation, used for creating rich desktop applications.
-- **[XAML](https://learn.microsoft.com/en-us/dotnet/desktop/wpf/xaml/?view=netdesktop-8.0)**: Extensible Application Markup Language, used for designing the UI in WPF applications.
+- **[.NET 9](https://dotnet.microsoft.com/en-us/download/dotnet/9.0)**: The latest version of the .NET platform for building and running applications.
+- **[C# 13](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-13)**: The programming language used to implement the solutions.
+- **[WPF](https://learn.microsoft.com/en-us/dotnet/desktop/wpf/overview/?view=netdesktop-9.0)**: Windows Presentation Foundation, used for creating rich desktop applications.
+- **[XAML](https://learn.microsoft.com/en-us/dotnet/desktop/wpf/xaml/?view=netdesktop-9.0)**: Extensible Application Markup Language, used for designing the UI in WPF applications.
 - **[Prism Library](https://prismlibrary.com/)**: A framework for building loosely coupled, maintainable, and testable XAML applications.
 
-## Tools for Comparison
+## Tools
 
+For developing and testing the solutions in this repository, I use the following tools:
+
+- **[Visual Studio 2022](https://visualstudio.microsoft.com/vs/)**: The integrated development environment (IDE) where I write, debug, and run my C# code. It provides a comprehensive set of features for efficient coding and debugging, making it my go-to tool for .NET development.
+- **[ReSharper](https://www.jetbrains.com/resharper/)**: A Visual Studio extension that enhances the development experience with advanced code analysis, refactoring tools, and productivity features. ReSharper helps me ensure my code is clean, optimized, and follows best practices.
 - **[Diffchecker](https://www.diffchecker.com/image-compare/)**: I am using this tool to compare expected result screenshots with actual results.
 - **[ImgOnline](https://www.imgonline.com.ua/eng/similarity-percent-result.php)**: I am using this tool to verify the percentage of similarity between images.
 
@@ -138,6 +142,31 @@ https://www.frontendmentor.io/challenges/3column-preview-card-component-pH92eAR2
 ### Actual Result - Active (99.67% identical to the expected result)
 
 ![Actual Result - Active](https://github.com/user-attachments/assets/a00f75af-4e43-429a-9c9d-88e9392c06d8)
+
+</details>
+
+## Order summary component
+
+https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj
+
+<details>
+    <summary><strong>Screenshots</strong></summary>
+  
+### Expected Result
+
+![Expected Result]()
+
+### Actual Result
+
+![Actual Result]()
+
+### Expected Result - Active
+
+![Expected Result - Active]()
+
+### Actual Result - Active
+
+![Actual Result - Active]()
 
 </details>
 
