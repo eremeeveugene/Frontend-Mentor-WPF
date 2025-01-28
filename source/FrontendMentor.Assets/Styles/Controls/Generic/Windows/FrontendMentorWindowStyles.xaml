@@ -12,8 +12,8 @@
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Images/ImagesDictionary.xaml" />
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Brushes/Brushes.xaml" />
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Storyboards/Storyboards.xaml" />
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Windows/FrontendMentorWindowTitleBarTextBlockStyles.xaml" />
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Windows/FrontendMentorWindowTitleBarButtonStyles.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Controls/Generic/Windows/FrontendMentorWindowTitleBarTextBlockStyles.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Controls/Generic/Windows/FrontendMentorWindowTitleBarButtonStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <WindowChrome x:Key="FrontendMentorWindowChrome"
@@ -35,7 +35,8 @@
 
                     <Border Grid.Row="0"
                             Height="{TemplateBinding TitleBarHeight}"
-                            Background="{TemplateBinding TitleBarBackground}">
+                            Background="{TemplateBinding TitleBarBackground}"
+                            Visibility="Collapsed">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" />
@@ -85,7 +86,7 @@
     <Style TargetType="{x:Type windows:FrontendMentorWindow}">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderBrush" Value="{StaticResource FrontendMentorWindow.Border.Brush}" />
-        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderThickness" Value="0" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="Template" Value="{StaticResource FrontendMentorWindow.Template}" />
         <Setter Property="TitleBarBackground" Value="{StaticResource FrontendMentorWindow.TitleBarBackground.Brush}" />
