@@ -53,6 +53,10 @@
                      po:Freeze="True"
                      Color="{StaticResource Lavender.Dark.Color}" />
 
+    <SolidColorBrush x:Key="OrderSummaryComponentView.Card.AnnualPlanPriceTextBlock.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Space.Cadet.Color}" />
+
     <!--#endregion-->
 
 </ResourceDictionary>
