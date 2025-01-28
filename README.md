@@ -22,10 +22,10 @@ The primary goal of this repository is to improve my own skills and demonstrate 
 
 For developing and testing the solutions in this repository, I use the following tools:
 
-- **[Visual Studio 2022](https://visualstudio.microsoft.com/vs/)**: The integrated development environment (IDE) where I write, debug, and run my C# code. It provides a comprehensive set of features for efficient coding and debugging, making it my go-to tool for .NET development.
-- **[ReSharper](https://www.jetbrains.com/resharper/)**: A Visual Studio extension that enhances the development experience with advanced code analysis, refactoring tools, and productivity features. ReSharper helps me ensure my code is clean, optimized, and follows best practices.
-- **[Diffchecker](https://www.diffchecker.com/image-compare/)**: I am using this tool to compare expected result screenshots with actual results.
-- **[ImgOnline](https://www.imgonline.com.ua/eng/similarity-percent-result.php)**: I am using this tool to verify the percentage of similarity between images.
+- **[Visual Studio 2022](https://visualstudio.microsoft.com/vs/)**: My primary integrated development environment (IDE) for writing, debugging, and running C# code. With its robust features, Visual Studio 2022 streamlines .NET development, offering tools for efficient coding, debugging, and performance optimization.
+- **[ReSharper](https://www.jetbrains.com/resharper/)**: A powerful Visual Studio extension that elevates the development experience through advanced code analysis, intelligent refactoring tools, and productivity-enhancing features. ReSharper ensures my code is clean, optimized, and adheres to best practices.
+- **[Diffchecker](https://www.diffchecker.com/image-compare/)**: A reliable tool I use to compare screenshots of expected and actual results, ensuring visual consistency and accuracy.
+- **[ImgOnline](https://www.imgonline.com.ua/eng/similarity-percent-result.php)**: This tool helps me evaluate the similarity percentage between images, enabling precise verification of visual elements.
 
 ## Automation Jobs
 
