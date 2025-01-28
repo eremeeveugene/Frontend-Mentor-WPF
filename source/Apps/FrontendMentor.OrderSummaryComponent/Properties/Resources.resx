@@ -117,22 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="OrderSummaryComponentWindow_Title" xml:space="preserve">
-    <value>Order Summary Component</value>
-  </data>
-  <data name="OrderSummaryComponentView_OrderSummaryTextBlock_Text" xml:space="preserve">
-    <value>Order Summary</value>
+  <data name="OrderSummaryComponentView_AnnualPlanTextBlock_Text" xml:space="preserve">
+    <value>Annual Plan</value>
   </data>
   <data name="OrderSummaryComponentView_BodyTextBlock_Text" xml:space="preserve">
     <value>You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!</value>
   </data>
-  <data name="asdasd" xml:space="preserve">
-    <value>Annual Plan</value>
+  <data name="OrderSummaryComponentView_OrderSummaryTextBlock_Text" xml:space="preserve">
+    <value>Order Summary</value>
   </data>
-  <data name="OrderSummaryComponentView_AnnualPlanTextBlock_Text" xml:space="preserve">
-    <value>Annual Plan</value>
-  </data>
-  <data name="OrderSummaryComponentView_AnnualPlanTextBlock_Text1" xml:space="preserve">
-    <value>Annual Plan</value>
+  <data name="OrderSummaryComponentWindow_Title" xml:space="preserve">
+    <value>Order Summary Component</value>
   </data>
 </root>

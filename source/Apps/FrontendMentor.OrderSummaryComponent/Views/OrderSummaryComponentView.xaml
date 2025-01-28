@@ -110,7 +110,7 @@
                                     </Grid.ColumnDefinitions>
 
                                     <StackPanel Grid.Column="0" VerticalAlignment="Center">
-                                        <TextBlock Style="{StaticResource Heading.M.TextBlock.Style}" Text="{x:Static properties:OrderSummaryComponentView_AnnualPlanTextBlock_Text}" />
+                                        <TextBlock Style="{StaticResource Heading.M.TextBlock.Style}" Text="{x:Static properties:Resources.OrderSummaryComponentView_AnnualPlanTextBlock_Text}" />
 
                                         <TextBlock Margin="0,6,0,0"
                                                    FontSize="16"
