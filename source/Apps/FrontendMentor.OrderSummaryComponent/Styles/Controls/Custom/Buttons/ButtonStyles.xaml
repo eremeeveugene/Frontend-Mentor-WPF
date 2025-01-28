@@ -16,18 +16,18 @@
     </ControlTemplate>
 
     <Style x:Key="Primary.Button.Style" TargetType="{x:Type buttons:RoundedButton}">
-        <Setter Property="Background" Value="{StaticResource PrimaryButton.Background.Brush}" />
+        <Setter Property="Background" Value="{StaticResource Primary.Button.Background.Brush}" />
         <Setter Property="CornerRadius" Value="11" />
-        <Setter Property="Effect" Value="{StaticResource PrimaryButton.DropShadowEffect}" />
+        <Setter Property="Effect" Value="{StaticResource Primary.Button.DropShadowEffect}" />
         <Setter Property="Height" Value="50" />
         <Setter Property="Template" Value="{StaticResource Primary.Button.Template}" />
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Trigger.EnterActions>
-                    <BeginStoryboard Storyboard="{StaticResource PrimaryButton.ToMouseOver.Storyboard}" />
+                    <BeginStoryboard Storyboard="{StaticResource Primary.Button.ToMouseOver.Storyboard}" />
                 </Trigger.EnterActions>
                 <Trigger.ExitActions>
-                    <BeginStoryboard Storyboard="{StaticResource PrimaryButton.FromMouseOver.Storyboard}" />
+                    <BeginStoryboard Storyboard="{StaticResource Primary.Button.FromMouseOver.Storyboard}" />
                 </Trigger.ExitActions>
             </Trigger>
         </Style.Triggers>
@@ -40,15 +40,15 @@
     <Style x:Key="Secondary.Button.Style"
            BasedOn="{StaticResource {x:Type Button}}"
            TargetType="{x:Type Button}">
-        <Setter Property="Foreground" Value="{StaticResource SecondaryButton.Foreground.Brush}" />
+        <Setter Property="Foreground" Value="{StaticResource Secondary.Button.Foreground.Brush}" />
         <Setter Property="Template" Value="{StaticResource Secondary.Button.Template}" />
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Trigger.EnterActions>
-                    <BeginStoryboard Storyboard="{StaticResource Secondary.ToMouseOver.Storyboard}" />
+                    <BeginStoryboard Storyboard="{StaticResource Secondary.Button.ToMouseOver.Storyboard}" />
                 </Trigger.EnterActions>
                 <Trigger.ExitActions>
-                    <BeginStoryboard Storyboard="{StaticResource Secondary.FromMouseOver.Storyboard}" />
+                    <BeginStoryboard Storyboard="{StaticResource Secondary.Button.FromMouseOver.Storyboard}" />
                 </Trigger.ExitActions>
             </Trigger>
         </Style.Triggers>

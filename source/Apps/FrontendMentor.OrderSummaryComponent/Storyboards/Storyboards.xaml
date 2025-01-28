@@ -9,16 +9,16 @@
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.OrderSummaryComponent;component/Colors/Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <!--#region PrimaryButton-->
+    <!--#region Primary.Button-->
 
-    <Storyboard x:Key="PrimaryButton.ToMouseOver.Storyboard" po:Freeze="True">
+    <Storyboard x:Key="Primary.Button.ToMouseOver.Storyboard" po:Freeze="True">
         <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                         Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
                         To="{StaticResource Medium.Slate.Blue.Color}"
                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 
-    <Storyboard x:Key="PrimaryButton.FromMouseOver.Storyboard" po:Freeze="True">
+    <Storyboard x:Key="Primary.Button.FromMouseOver.Storyboard" po:Freeze="True">
         <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                         Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
                         From="{StaticResource Medium.Slate.Blue.Color}"
@@ -27,19 +27,37 @@
 
     <!--#endregion-->
 
-    <!--#region Secondary-->
+    <!--#region Secondary.Button-->
 
-    <Storyboard x:Key="Secondary.ToMouseOver.Storyboard" po:Freeze="True">
+    <Storyboard x:Key="Secondary.Button.ToMouseOver.Storyboard" po:Freeze="True">
         <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                         Storyboard.TargetProperty="(Button.Foreground).(SolidColorBrush.Color)"
                         To="{StaticResource Shadow.Blue.Color}"
                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 
-    <Storyboard x:Key="Secondary.FromMouseOver.Storyboard" po:Freeze="True">
+    <Storyboard x:Key="Secondary.Button.FromMouseOver.Storyboard" po:Freeze="True">
         <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                         Storyboard.TargetProperty="(Button.Foreground).(SolidColorBrush.Color)"
                         From="{StaticResource Shadow.Blue.Color}"
+                        Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
+    </Storyboard>
+
+    <!--#endregion-->
+
+    <!--#region Primary.Hyperlink-->
+
+    <Storyboard x:Key="Primary.Hyperlink.ToMouseOver.Storyboard" po:Freeze="True">
+        <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
+                        Storyboard.TargetProperty="(Hyperlink.Foreground).(SolidColorBrush.Color)"
+                        To="{StaticResource Medium.Slate.Blue.Color}"
+                        Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
+    </Storyboard>
+
+    <Storyboard x:Key="Primary.Hyperlink.FromMouseOver.Storyboard" po:Freeze="True">
+        <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
+                        Storyboard.TargetProperty="(Hyperlink.Foreground).(SolidColorBrush.Color)"
+                        From="{StaticResource Medium.Slate.Blue.Color}"
                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 

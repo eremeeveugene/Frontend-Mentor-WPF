@@ -19,19 +19,27 @@
 
     <!--#endregion-->
 
-    <!--#region PrimaryButton-->
+    <!--#region Primary.Button-->
 
-    <SolidColorBrush x:Key="PrimaryButton.Background.Brush"
+    <SolidColorBrush x:Key="Primary.Button.Background.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Palatinate.Blue.Color}" />
 
     <!--#endregion-->
 
-    <!--#region SecondaryButton-->
+    <!--#region Secondary.Button-->
 
-    <SolidColorBrush x:Key="SecondaryButton.Foreground.Brush"
+    <SolidColorBrush x:Key="Secondary.Button.Foreground.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Space.Cadet.Color}" />
+
+    <!--#endregion-->
+
+    <!--#region Primary.Hyperlink-->
+
+    <SolidColorBrush x:Key="Primary.Hyperlink.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Palatinate.Blue.Color}" />
 
     <!--#endregion-->
 
