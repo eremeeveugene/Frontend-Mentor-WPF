@@ -3,6 +3,8 @@
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.OrderSummaryComponent;component/Colors/Colors.xaml" />
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.OrderSummaryComponent;component/Brushes/Brushes.xaml" />
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.OrderSummaryComponent;component/Fonts/Fonts.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.OrderSummaryComponent;component/Effects/Effects.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.OrderSummaryComponent;component/Storyboards/Storyboards.xaml" />
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.OrderSummaryComponent;component/Geometries/Geometries.xaml" />
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.OrderSummaryComponent;component/Images/Images.xaml" />
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.OrderSummaryComponent;component/Styles/Controls/Custom/TextBlocks/TextBlockStyles.xaml" />

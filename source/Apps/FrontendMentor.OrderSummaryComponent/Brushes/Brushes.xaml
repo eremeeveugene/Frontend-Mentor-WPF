@@ -19,6 +19,22 @@
 
     <!--#endregion-->
 
+    <!--#region PrimaryButton-->
+
+    <SolidColorBrush x:Key="PrimaryButton.Background.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Palatinate.Blue.Color}" />
+
+    <!--#endregion-->
+
+    <!--#region SecondaryButton-->
+
+    <SolidColorBrush x:Key="SecondaryButton.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Space.Cadet.Color}" />
+
+    <!--#endregion-->
+
     <!--#region OrderSummaryComponentView-->
 
     <SolidColorBrush x:Key="OrderSummaryComponentView.WaveIcon.Fill.Brush"
