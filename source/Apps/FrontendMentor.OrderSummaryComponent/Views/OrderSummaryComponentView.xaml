@@ -2,17 +2,18 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:icons="clr-namespace:FrontendMentor.Assets.Controls.Icons;assembly=FrontendMentor.Assets"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:properties="clr-namespace:FrontendMentor.OrderSummaryComponent.Properties"
              xmlns:viewModels="clr-namespace:FrontendMentor.OrderSummaryComponent.ViewModels"
              d:DataContext="{d:DesignInstance viewModels:OrderSummaryComponentViewModel}"
              x:ClassModifier="internal"
              mc:Ignorable="d">
 
     <Grid>
-        <Path VerticalAlignment="Top"
-              Data="M0 349.974C0 349.974 327.837 524.026 724.475 349.974C1121.11 175.921 1440 349.974 1440 349.974V0H0V349.974Z"
-              Fill="#D6E1FF"
-              Stretch="Uniform" />
+        <icons:Icon VerticalAlignment="Top"
+                    Data="{StaticResource Wave.Geometry}"
+                    Fill="{StaticResource OrderSummaryComponentView.WaveIcon.Fill.Brush}" />
 
         <Grid Width="450" VerticalAlignment="Center">
             <Rectangle Margin="20"
@@ -39,32 +40,27 @@
 
                 <Border Grid.Row="0"
                         Height="220"
-                        Background="#382AE1"
+                        Background="{StaticResource OrderSummaryComponentView.Card.HeaderBorder.Background.Brush}"
                         ClipToBounds="True"
                         CornerRadius="20 20 0 0">
                     <Grid>
-                        <Path HorizontalAlignment="Left"
-                              VerticalAlignment="Top"
-                              Data="M242.604 88.7821V103.327L245.588 104.87V217.778L31.8997 220.214V147.977H38.9133V78.5204H41.461V68.9693H44.506V78.5204H58.6551C58.6551 78.5204 58.4419 123.475 58.6551 123.718C58.8682 123.962 65.9732 123.718 65.9732 123.718V160.157H71.7587V30.3993H79.1377V23.2435H82.1828V30.3993H105.294V36.7938H114.084V23.2435H117.129V36.7938H121.443V60.565H131.796V103.195H143.976V141.887H150.36V61.4684H158.399V49.1564H161.444V61.4684H183.561V17.0215H190.016V13.3675H215.767V0H218.812V13.3675H220.497V16.9911H226.8V94.9735L239.559 101.673V88.7821H242.604ZM15.8424 105.64H19.0396L25.4747 219.899H-8L-1.55475 105.64H0.96245V101.489H15.8424V105.64Z"
-                              Fill="#1E1FCD"
-                              Stretch="Uniform">
-                            <Path.RenderTransform>
+                        <icons:Icon HorizontalAlignment="Left"
+                                    Data="{StaticResource City.Geometry}"
+                                    Fill="{StaticResource OrderSummaryComponentView.Card.Header.CityIcon.Fill.Brush}">
+                            <icons:Icon.RenderTransform>
                                 <TranslateTransform X="-8" Y="46" />
-                            </Path.RenderTransform>
-                        </Path>
+                            </icons:Icon.RenderTransform>
+                        </icons:Icon>
 
-                        <Path HorizontalAlignment="Left"
-                              VerticalAlignment="Top"
-                              Data="M250.604 88.7821V103.327L253.588 104.87V217.778L39.8997 220.214V147.977H46.9133V78.5204H49.461V68.9693H52.506V78.5204H66.6551C66.6551 78.5204 66.4419 123.475 66.6551 123.718C66.8682 123.962 73.9732 123.718 73.9732 123.718V160.157H79.7587V30.3993H87.1377V23.2435H90.1828V30.3993H113.294V36.7938H122.084V23.2435H125.129V36.7938H129.443V60.565H139.796V103.195H151.976V141.887H158.36V61.4684H166.399V49.1564H169.444V61.4684H191.561V17.0215H198.016V13.3675H223.767V0H226.812V13.3675H228.497V16.9911H234.8V94.9735L247.559 101.673V88.7821H250.604ZM23.8424 105.64H27.0396L33.4747 219.899H0L6.44525 105.64H8.96245V101.489H23.8424V105.64Z"
-                              Fill="#1E1FCD"
-                              Stretch="Uniform">
-                            <Path.RenderTransform>
+                        <icons:Icon HorizontalAlignment="Left"
+                                    Data="{StaticResource City.Geometry}"
+                                    Fill="{StaticResource OrderSummaryComponentView.Card.Header.CityIcon.Fill.Brush}">
+                            <icons:Icon.RenderTransform>
                                 <TranslateTransform X="196" Y="82" />
-                            </Path.RenderTransform>
-                        </Path>
+                            </icons:Icon.RenderTransform>
+                        </icons:Icon>
 
                         <Image HorizontalAlignment="Left"
-                               VerticalAlignment="Top"
                                Source="{StaticResource MusicFlatLine.Image}"
                                Stretch="Uniform">
                             <Image.RenderTransform>
@@ -76,27 +72,20 @@
 
                 <Border Grid.Row="1"
                         Padding="48,45,48,48"
-                        Background="#FFFFFF"
+                        Background="{StaticResource OrderSummaryComponentView.Card.BodyBorder.Background.Brush}"
                         CornerRadius="0 0 20 20">
                     <StackPanel>
-                        <TextBlock FontSize="28"
-                                   FontWeight="Black"
-                                   Text="Order Summary"
-                                   TextAlignment="Center" />
+                        <TextBlock Style="{StaticResource Heading.L.TextBlock.Style}" Text="{x:Static properties:Resources.OrderSummaryComponentView_OrderSummaryTextBlock_Text}" />
 
                         <TextBlock Margin="0,17,0,0"
-                                   FontSize="16"
-                                   FontWeight="Medium"
-                                   Foreground="#717FA6"
-                                   LineHeight="26"
-                                   LineStackingStrategy="BlockLineHeight"
-                                   Text="You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!"
-                                   TextAlignment="Center"
-                                   TextWrapping="Wrap" />
+                                   Foreground="{StaticResource OrderSummaryComponentView.Card.BodyTextBlock.Foreground.Brush}"
+                                   Style="{StaticResource Body.TextBlock.Style}"
+                                   Text="{x:Static properties:Resources.OrderSummaryComponentView_BodyTextBlock_Text}"
+                                   TextAlignment="Center" />
 
                         <Border Margin="0,20,0,0"
                                 Padding="24,25"
-                                Background="#F7F9FF"
+                                Background="{StaticResource OrderSummaryComponentView.Card.AnnualPlanBorder.Background.Brush}"
                                 CornerRadius="11">
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -107,12 +96,11 @@
                                 <Grid Grid.Column="0"
                                       Width="48"
                                       Height="48">
-                                    <Ellipse Grid.Column="0" Fill="#DFE6FB" />
+                                    <Ellipse Grid.Column="0" Fill="{StaticResource OrderSummaryComponentView.Card.AnnualPlanMusicIconEllipse.Fill.Brush}" />
 
-                                    <Path HorizontalAlignment="Center"
-                                          VerticalAlignment="Center"
-                                          Data="M17.5741 0.198201C17.3967 0.0442519 17.1611 -0.025006 16.9284 0.00811123L5.58095 1.62917C5.18161 1.68623 4.88503 2.02823 4.88503 2.43161V5.67376V11.9347C4.40494 11.655 3.84761 11.4939 3.25304 11.4939C1.45934 11.4939 0 12.9532 0 14.747C0 16.5407 1.4593 18 3.25301 18C5.04672 18 6.50605 16.5407 6.50605 14.747V6.37674L16.2325 4.98726V10.3136C15.7524 10.0339 15.1951 9.87282 14.6005 9.87282C12.8068 9.87282 11.3475 11.3322 11.3475 13.1259C11.3475 14.9196 12.8068 16.3789 14.6005 16.3789C16.3942 16.3789 17.8535 14.9196 17.8535 13.1259V4.05266V0.810518C17.8536 0.575533 17.7516 0.35215 17.5741 0.198201Z"
-                                          Fill="#717FA6" />
+                                    <icons:Icon Height="18"
+                                                Data="{StaticResource Music.Geometry}"
+                                                Fill="{StaticResource OrderSummaryComponentView.Card.AnnualPlanMusicIcon.Fill.Brush}" />
                                 </Grid>
 
                                 <Grid Grid.Column="1" Margin="20,0,0,0">
@@ -122,9 +110,7 @@
                                     </Grid.ColumnDefinitions>
 
                                     <StackPanel Grid.Column="0" VerticalAlignment="Center">
-                                        <TextBlock FontSize="16"
-                                                   FontWeight="Black"
-                                                   Text="Annual Plan" />
+                                        <TextBlock Style="{StaticResource Heading.M.TextBlock.Style}" Text="{x:Static properties:OrderSummaryComponentView_AnnualPlanTextBlock_Text}" />
 
                                         <TextBlock Margin="0,6,0,0"
                                                    FontSize="16"

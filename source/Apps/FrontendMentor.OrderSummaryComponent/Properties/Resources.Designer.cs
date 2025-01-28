@@ -61,6 +61,51 @@ namespace FrontendMentor.OrderSummaryComponent.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Annual Plan.
+        /// </summary>
+        public static string asdasd {
+            get {
+                return ResourceManager.GetString("asdasd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Annual Plan.
+        /// </summary>
+        public static string OrderSummaryComponentView_AnnualPlanTextBlock_Text {
+            get {
+                return ResourceManager.GetString("OrderSummaryComponentView_AnnualPlanTextBlock_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Annual Plan.
+        /// </summary>
+        public static string OrderSummaryComponentView_AnnualPlanTextBlock_Text1 {
+            get {
+                return ResourceManager.GetString("OrderSummaryComponentView_AnnualPlanTextBlock_Text1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!.
+        /// </summary>
+        public static string OrderSummaryComponentView_BodyTextBlock_Text {
+            get {
+                return ResourceManager.GetString("OrderSummaryComponentView_BodyTextBlock_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order Summary.
+        /// </summary>
+        public static string OrderSummaryComponentView_OrderSummaryTextBlock_Text {
+            get {
+                return ResourceManager.GetString("OrderSummaryComponentView_OrderSummaryTextBlock_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Order Summary Component.
         /// </summary>
         public static string OrderSummaryComponentWindow_Title {

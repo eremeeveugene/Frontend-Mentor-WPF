@@ -11,11 +11,47 @@
 
     <SolidColorBrush x:Key="OrderSummaryComponentWindow.Background.Brush"
                      po:Freeze="True"
-                     Color="{StaticResource Lavender.Color}" />
+                     Color="{StaticResource Lavender.Light.Color}" />
 
     <SolidColorBrush x:Key="OrderSummaryComponentWindow.Foreground.Brush"
                      po:Freeze="True"
+                     Color="{StaticResource Shadow.Blue.Color}" />
+
+    <!--#endregion-->
+
+    <!--#region OrderSummaryComponentView-->
+
+    <SolidColorBrush x:Key="OrderSummaryComponentView.WaveIcon.Fill.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Azureish.White.Color}" />
+
+    <SolidColorBrush x:Key="OrderSummaryComponentView.Card.HeaderBorder.Background.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Palatinate.Blue.Color}" />
+
+    <SolidColorBrush x:Key="OrderSummaryComponentView.Card.Header.CityIcon.Fill.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Interdimensional.Blue.Color}" />
+
+    <SolidColorBrush x:Key="OrderSummaryComponentView.Card.BodyBorder.Background.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource White.Color}" />
+
+    <SolidColorBrush x:Key="OrderSummaryComponentView.Card.BodyTextBlock.Foreground.Brush"
+                     po:Freeze="True"
                      Color="{StaticResource Space.Cadet.Color}" />
+
+    <SolidColorBrush x:Key="OrderSummaryComponentView.Card.AnnualPlanBorder.Background.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Ghost.White.Color}" />
+
+    <SolidColorBrush x:Key="OrderSummaryComponentView.Card.AnnualPlanMusicIcon.Fill.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Space.Cadet.Color}" />
+
+    <SolidColorBrush x:Key="OrderSummaryComponentView.Card.AnnualPlanMusicIconEllipse.Fill.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Lavender.Dark.Color}" />
 
     <!--#endregion-->
 
