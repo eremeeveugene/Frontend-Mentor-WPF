@@ -17,6 +17,7 @@ internal sealed class OrderSummaryComponentViewModel(
     IContainerProvider containerProvider)
     : NavigationViewModelBase
 {
+    private double _price;
     //private ResultSummaryBindableModel? _resultSummary;
 
     //public ResultSummaryBindableModel? ResultSummary
@@ -33,5 +34,14 @@ internal sealed class OrderSummaryComponentViewModel(
 
         //ResultSummary = ResultSummaryBindableModel.Create(containerProvider,
         //    new ResultSummaryBindableModel.Parameters(resultSummary));
+
+
+        Price = 59.99;
+    }
+
+    public double Price
+    {
+        get => _price;
+        set => SetProperty(ref _price, value);
     }
 }

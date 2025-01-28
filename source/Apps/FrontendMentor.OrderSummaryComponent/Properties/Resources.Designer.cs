@@ -61,6 +61,15 @@ namespace FrontendMentor.OrderSummaryComponent.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ${0}/year.
+        /// </summary>
+        public static string OrderSummaryComponentView_AnnualPlanPriceTextBlock_StringFormat {
+            get {
+                return ResourceManager.GetString("OrderSummaryComponentView_AnnualPlanPriceTextBlock_StringFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Annual Plan.
         /// </summary>
         public static string OrderSummaryComponentView_AnnualPlanTextBlock_Text {
@@ -84,6 +93,15 @@ namespace FrontendMentor.OrderSummaryComponent.Properties {
         public static string OrderSummaryComponentView_CancelOrderTextBlock_Text {
             get {
                 return ResourceManager.GetString("OrderSummaryComponentView_CancelOrderTextBlock_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change.
+        /// </summary>
+        public static string OrderSummaryComponentView_ChangeAnnualPlanTextBlock_Text {
+            get {
+                return ResourceManager.GetString("OrderSummaryComponentView_ChangeAnnualPlanTextBlock_Text", resourceCulture);
             }
         }
         

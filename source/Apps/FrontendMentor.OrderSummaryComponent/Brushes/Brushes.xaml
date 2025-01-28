@@ -73,6 +73,10 @@
                      po:Freeze="True"
                      Color="{StaticResource Space.Cadet.Color}" />
 
+    <SolidColorBrush x:Key="OrderSummaryComponentView.Card.ProceedToPaymentTextBlock.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource White.Color}" />
+
     <!--#endregion-->
 
 </ResourceDictionary>

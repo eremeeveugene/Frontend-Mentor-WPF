@@ -135,4 +135,10 @@
   <data name="OrderSummaryComponentView_CancelOrderTextBlock_Text" xml:space="preserve">
     <value>Cancel Order</value>
   </data>
+  <data name="OrderSummaryComponentView_ChangeAnnualPlanTextBlock_Text" xml:space="preserve">
+    <value>Change</value>
+  </data>
+  <data name="OrderSummaryComponentView_AnnualPlanPriceTextBlock_StringFormat" xml:space="preserve">
+    <value>${0}/year</value>
+  </data>
 </root>
