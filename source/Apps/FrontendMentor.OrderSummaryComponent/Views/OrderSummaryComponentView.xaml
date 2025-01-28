@@ -64,6 +64,7 @@
                         </Path>
 
                         <Image HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
                                Source="{StaticResource MusicFlatLine.Image}"
                                Stretch="Uniform">
                             <Image.RenderTransform>
