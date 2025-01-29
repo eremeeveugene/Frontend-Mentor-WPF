@@ -43,11 +43,39 @@
 
     <!--#endregion-->
 
+    <!--#region MusicFlatLine.Image-->
+
+    <SolidColorBrush x:Key="MusicFlatLine.Image.0.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource White.Color}" />
+
+    <SolidColorBrush x:Key="MusicFlatLine.Image.1.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Raisin.Black.Color}" />
+
+    <SolidColorBrush x:Key="MusicFlatLine.Image.16.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Aquamarine.Color}" />
+
+    <SolidColorBrush x:Key="MusicFlatLine.Image.42.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Bright.Lilac.Color}" />
+
+    <SolidColorBrush x:Key="MusicFlatLine.Image.46.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Cornflower.Blue.Color}" />
+
+    <!--#endregion-->
+
     <!--#region OrderSummaryComponentView-->
 
     <SolidColorBrush x:Key="OrderSummaryComponentView.WaveIcon.Fill.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Azureish.White.Color}" />
+
+    <SolidColorBrush x:Key="OrderSummaryComponentView.Card.BackgroundBorder.Background.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource White.Color}" />
 
     <SolidColorBrush x:Key="OrderSummaryComponentView.Card.HeaderBorder.Background.Brush"
                      po:Freeze="True"

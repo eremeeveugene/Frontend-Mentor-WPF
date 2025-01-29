@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:icons="clr-namespace:FrontendMentor.Assets.Controls.Icons;assembly=FrontendMentor.Assets"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
              xmlns:properties="clr-namespace:FrontendMentor.OrderSummaryComponent.Properties"
              xmlns:viewModels="clr-namespace:FrontendMentor.OrderSummaryComponent.ViewModels"
              d:DataContext="{d:DesignInstance viewModels:OrderSummaryComponentViewModel}"
@@ -18,11 +19,11 @@
 
         <Grid Width="450" VerticalAlignment="Center">
             <Border Margin="20"
-                    Background="White"
+                    Background="{StaticResource OrderSummaryComponentView.Card.BackgroundBorder.Background.Brush}"
                     CornerRadius="20"
                     Effect="{StaticResource OrderSummaryComponentView.BackgroundBorder.DropShadowEffect}">
                 <Border.RenderTransform>
-                    <TranslateTransform Y="-20" />
+                    <TranslateTransform po:Freeze="True" Y="-20" />
                 </Border.RenderTransform>
             </Border>
 
@@ -42,7 +43,7 @@
                                     Data="{StaticResource City.Geometry}"
                                     Fill="{StaticResource OrderSummaryComponentView.Card.Header.CityIcon.Fill.Brush}">
                             <icons:Icon.RenderTransform>
-                                <TranslateTransform X="-8" Y="46" />
+                                <TranslateTransform po:Freeze="True" X="-8" Y="46" />
                             </icons:Icon.RenderTransform>
                         </icons:Icon>
 
@@ -50,7 +51,7 @@
                                     Data="{StaticResource City.Geometry}"
                                     Fill="{StaticResource OrderSummaryComponentView.Card.Header.CityIcon.Fill.Brush}">
                             <icons:Icon.RenderTransform>
-                                <TranslateTransform X="196" Y="82" />
+                                <TranslateTransform po:Freeze="True" X="196" Y="82" />
                             </icons:Icon.RenderTransform>
                         </icons:Icon>
 
@@ -58,7 +59,7 @@
                                Source="{StaticResource MusicFlatLine.Image}"
                                Stretch="Uniform">
                             <Image.RenderTransform>
-                                <TranslateTransform X="34.54" Y="19" />
+                                <TranslateTransform po:Freeze="True" X="34.54" Y="19" />
                             </Image.RenderTransform>
                         </Image>
                     </Grid>
@@ -89,7 +90,7 @@
                                 <Grid Grid.Column="0"
                                       Width="48"
                                       Height="48">
-                                    <Ellipse Grid.Column="0" Fill="{StaticResource OrderSummaryComponentView.Card.AnnualPlanMusicIconEllipse.Fill.Brush}" />
+                                    <Ellipse Fill="{StaticResource OrderSummaryComponentView.Card.AnnualPlanMusicIconEllipse.Fill.Brush}" />
 
                                     <icons:Icon Height="18"
                                                 Data="{StaticResource Music.Geometry}"
@@ -114,7 +115,7 @@
                                     <TextBlock Grid.Column="1"
                                                VerticalAlignment="Center"
                                                Style="{StaticResource Heading.XS.TextBlock.Style}">
-                                        <Hyperlink Style="{StaticResource Primary.Hyperlink.Style}">
+                                        <Hyperlink Command="{Binding ChangeAnnualPlanCommand}" Style="{StaticResource Primary.Hyperlink.Style}">
                                             <Run Text="{x:Static properties:Resources.OrderSummaryComponentView_ChangeAnnualPlanTextBlock_Text}" />
                                         </Hyperlink>
                                     </TextBlock>
@@ -122,7 +123,9 @@
                             </Grid>
                         </Border>
 
-                        <buttons:RoundedButton Margin="0,32,0,0" Style="{StaticResource Primary.Button.Style}">
+                        <buttons:RoundedButton Margin="0,32,0,0"
+                                               Command="{Binding ProceedToPaymentCommand}"
+                                               Style="{StaticResource Primary.Button.Style}">
                             <TextBlock Foreground="{StaticResource OrderSummaryComponentView.Card.ProceedToPaymentTextBlock.Foreground.Brush}"
                                        Style="{StaticResource Heading.S.TextBlock.Style}"
                                        Text="{x:Static properties:Resources.OrderSummaryComponentView_ProceedToPaymentTextBlock_Text}" />
@@ -130,6 +133,7 @@
 
                         <Button Margin="0,32,0,0"
                                 HorizontalAlignment="Center"
+                                Command="{Binding CancelOrderCommand}"
                                 Style="{StaticResource Secondary.Button.Style}">
                             <TextBlock Style="{StaticResource Heading.S.TextBlock.Style}" Text="{x:Static properties:Resources.OrderSummaryComponentView_CancelOrderTextBlock_Text}" />
                         </Button>

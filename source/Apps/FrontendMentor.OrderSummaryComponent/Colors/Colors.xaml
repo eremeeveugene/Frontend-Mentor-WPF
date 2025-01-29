@@ -11,5 +11,9 @@
     <Color x:Key="Medium.Slate.Blue.Color">#766CF1</Color>
     <Color x:Key="Palatinate.Blue.Color">#382AE1</Color>
     <Color x:Key="Interdimensional.Blue.Color">#1E1FCD</Color>
+    <Color x:Key="Raisin.Black.Color">#231F20</Color>
+    <Color x:Key="Aquamarine.Color">#75ECCA</Color>
+    <Color x:Key="Bright.Lilac.Color">#CD7DF3</Color>
+    <Color x:Key="Cornflower.Blue.Color">#698DFF</Color>
 
 </ResourceDictionary>

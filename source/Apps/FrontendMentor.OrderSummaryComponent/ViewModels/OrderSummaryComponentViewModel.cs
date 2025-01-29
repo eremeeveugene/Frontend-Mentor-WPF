@@ -10,6 +10,7 @@
 // --------------------------------------------------------------------------------
 
 using FrontendMentor.Core.ViewModels;
+using System.Windows.Input;
 
 namespace FrontendMentor.OrderSummaryComponent.ViewModels;
 
@@ -17,7 +18,23 @@ internal sealed class OrderSummaryComponentViewModel(
     IContainerProvider containerProvider)
     : NavigationViewModelBase
 {
+    private ICommand? _cancelOrderCommand;
+    private ICommand? _changeAnnualPlanCommand;
+
     private double _price;
+    private ICommand? _proceedToPaymentCommand;
+
+    public double Price
+    {
+        get => _price;
+        set => SetProperty(ref _price, value);
+    }
+
+    public ICommand ProceedToPaymentCommand => _proceedToPaymentCommand ??= new DelegateCommand(ProceedToPayment);
+
+    public ICommand CancelOrderCommand => _cancelOrderCommand ??= new DelegateCommand(CancelOrder);
+
+    public ICommand ChangeAnnualPlanCommand => _changeAnnualPlanCommand ??= new DelegateCommand(ChangeAnnualPlan);
     //private ResultSummaryBindableModel? _resultSummary;
 
     //public ResultSummaryBindableModel? ResultSummary
@@ -35,13 +52,21 @@ internal sealed class OrderSummaryComponentViewModel(
         //ResultSummary = ResultSummaryBindableModel.Create(containerProvider,
         //    new ResultSummaryBindableModel.Parameters(resultSummary));
 
-
         Price = 59.99;
     }
 
-    public double Price
+    private void ChangeAnnualPlan()
     {
-        get => _price;
-        set => SetProperty(ref _price, value);
+        // Implement logic to change the annual plan
+    }
+
+    private void ProceedToPayment()
+    {
+        // Implement payment processing logic
+    }
+
+    private void CancelOrder()
+    {
+        // Implement order cancellation logic
     }
 }
