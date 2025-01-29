@@ -1,0 +1,118 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
+                    xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
+
+    <ResourceDictionary.MergedDictionaries>
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.OrderSummaryComponent;component/Colors/Colors.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <!--#region OrderSummaryComponentWindow-->
+
+    <SolidColorBrush x:Key="OrderSummaryComponentWindow.Background.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Lavender.Light.Color}" />
+
+    <SolidColorBrush x:Key="OrderSummaryComponentWindow.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Shadow.Blue.Color}" />
+
+    <!--#endregion-->
+
+    <!--#region Primary.Button-->
+
+    <SolidColorBrush x:Key="Primary.Button.Background.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Palatinate.Blue.Color}" />
+
+    <!--#endregion-->
+
+    <!--#region Secondary.Button-->
+
+    <SolidColorBrush x:Key="Secondary.Button.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Space.Cadet.Color}" />
+
+    <!--#endregion-->
+
+    <!--#region Primary.Hyperlink-->
+
+    <SolidColorBrush x:Key="Primary.Hyperlink.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Palatinate.Blue.Color}" />
+
+    <!--#endregion-->
+
+    <!--#region MusicFlatLine.Image-->
+
+    <SolidColorBrush x:Key="MusicFlatLine.Image.0.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource White.Color}" />
+
+    <SolidColorBrush x:Key="MusicFlatLine.Image.1.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Raisin.Black.Color}" />
+
+    <SolidColorBrush x:Key="MusicFlatLine.Image.16.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Aquamarine.Color}" />
+
+    <SolidColorBrush x:Key="MusicFlatLine.Image.42.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Bright.Lilac.Color}" />
+
+    <SolidColorBrush x:Key="MusicFlatLine.Image.46.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Cornflower.Blue.Color}" />
+
+    <!--#endregion-->
+
+    <!--#region OrderSummaryComponentView-->
+
+    <SolidColorBrush x:Key="OrderSummaryComponentView.WaveIcon.Fill.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Azureish.White.Color}" />
+
+    <SolidColorBrush x:Key="OrderSummaryComponentView.Card.BackgroundBorder.Background.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource White.Color}" />
+
+    <SolidColorBrush x:Key="OrderSummaryComponentView.Card.HeaderBorder.Background.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Palatinate.Blue.Color}" />
+
+    <SolidColorBrush x:Key="OrderSummaryComponentView.Card.Header.CityIcon.Fill.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Interdimensional.Blue.Color}" />
+
+    <SolidColorBrush x:Key="OrderSummaryComponentView.Card.BodyBorder.Background.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource White.Color}" />
+
+    <SolidColorBrush x:Key="OrderSummaryComponentView.Card.BodyTextBlock.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Space.Cadet.Color}" />
+
+    <SolidColorBrush x:Key="OrderSummaryComponentView.Card.AnnualPlanBorder.Background.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Ghost.White.Color}" />
+
+    <SolidColorBrush x:Key="OrderSummaryComponentView.Card.AnnualPlanMusicIcon.Fill.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Space.Cadet.Color}" />
+
+    <SolidColorBrush x:Key="OrderSummaryComponentView.Card.AnnualPlanMusicIconEllipse.Fill.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Lavender.Dark.Color}" />
+
+    <SolidColorBrush x:Key="OrderSummaryComponentView.Card.AnnualPlanPriceTextBlock.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Space.Cadet.Color}" />
+
+    <SolidColorBrush x:Key="OrderSummaryComponentView.Card.ProceedToPaymentTextBlock.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource White.Color}" />
+
+    <!--#endregion-->
+
+</ResourceDictionary>
