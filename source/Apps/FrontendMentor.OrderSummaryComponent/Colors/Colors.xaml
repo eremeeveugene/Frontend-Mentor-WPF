@@ -7,6 +7,7 @@
     <Color x:Key="Lavender.Dark.Color">#DFE6FB</Color>
     <Color x:Key="Space.Cadet.Color">#717FA6</Color>
     <Color x:Key="Shadow.Blue.Color">#1F2E55</Color>
+    <Color x:Key="Persian.Blue.Color">#0D30BD</Color>
     <Color x:Key="Medium.Slate.Blue.Color">#766CF1</Color>
     <Color x:Key="Palatinate.Blue.Color">#382AE1</Color>
     <Color x:Key="Interdimensional.Blue.Color">#1E1FCD</Color>

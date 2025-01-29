@@ -15,4 +15,12 @@
                       ShadowDepth="20"
                       Color="{StaticResource Palatinate.Blue.Color}" />
 
+    <DropShadowEffect x:Key="OrderSummaryComponentView.BackgroundBorder.DropShadowEffect"
+                      po:Freeze="True"
+                      BlurRadius="40"
+                      Direction="270"
+                      Opacity="0.13"
+                      ShadowDepth="60"
+                      Color="{StaticResource Persian.Blue.Color}" />
+
 </ResourceDictionary>

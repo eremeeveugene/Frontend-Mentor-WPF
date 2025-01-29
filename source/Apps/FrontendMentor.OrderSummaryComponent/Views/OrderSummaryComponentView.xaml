@@ -17,21 +17,14 @@
                     Fill="{StaticResource OrderSummaryComponentView.WaveIcon.Fill.Brush}" />
 
         <Grid Width="450" VerticalAlignment="Center">
-            <Rectangle Margin="20"
-                       Fill="White"
-                       RadiusX="20"
-                       RadiusY="20">
-                <Rectangle.RenderTransform>
+            <Border Margin="20"
+                    Background="White"
+                    CornerRadius="20"
+                    Effect="{StaticResource OrderSummaryComponentView.BackgroundBorder.DropShadowEffect}">
+                <Border.RenderTransform>
                     <TranslateTransform Y="-20" />
-                </Rectangle.RenderTransform>
-                <Rectangle.Effect>
-                    <DropShadowEffect BlurRadius="40"
-                                      Direction="270"
-                                      Opacity="0.13"
-                                      ShadowDepth="60"
-                                      Color="#0D30BD" />
-                </Rectangle.Effect>
-            </Rectangle>
+                </Border.RenderTransform>
+            </Border>
 
             <Grid>
                 <Grid.RowDefinitions>
