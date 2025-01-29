@@ -6,5 +6,6 @@
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Geometries/Geometries.xaml" />
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Storyboards/Storyboards.xaml" />
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Images/ImagesDictionary.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Controls/Custom/Buttons/ButtonStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

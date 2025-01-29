@@ -6,7 +6,7 @@
                     xmlns:windows1="clr-namespace:FrontendMentor.SocialLinksProfile.Controls.Windows">
 
     <ResourceDictionary.MergedDictionaries>
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Windows/FrontendMentorWindowStyles.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Controls/Generic/Windows/FrontendMentorWindowStyles.xaml" />
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Brushes/Brushes.xaml" />
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.SocialLinksProfile;component/Fonts/Fonts.xaml" />
     </ResourceDictionary.MergedDictionaries>
