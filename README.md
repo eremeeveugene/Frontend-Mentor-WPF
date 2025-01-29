@@ -10,18 +10,22 @@ I am solving Frontend Mentor challenges using **.NET**, **C#**, **WPF**, and the
 
 The primary goal of this repository is to improve my own skills and demonstrate my capabilities. I am focused on my growth and learning by providing efficient and pixel-perfect UI solutions.
 
-## Technologies Used
+## Technologies
 
-- **[.NET 8](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)**: The latest version of the .NET platform for building and running applications.
-- **[C# 12](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-12)**: The programming language used to implement the solutions.
-- **[WPF](https://learn.microsoft.com/en-us/dotnet/desktop/wpf/overview/?view=netdesktop-8.0)**: Windows Presentation Foundation, used for creating rich desktop applications.
-- **[XAML](https://learn.microsoft.com/en-us/dotnet/desktop/wpf/xaml/?view=netdesktop-8.0)**: Extensible Application Markup Language, used for designing the UI in WPF applications.
+- **[.NET 9](https://dotnet.microsoft.com/en-us/download/dotnet/9.0)**: The latest version of the .NET platform for building and running applications.
+- **[C# 13](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-13)**: The programming language used to implement the solutions.
+- **[WPF](https://learn.microsoft.com/en-us/dotnet/desktop/wpf/overview/?view=netdesktop-9.0)**: Windows Presentation Foundation, used for creating rich desktop applications.
+- **[XAML](https://learn.microsoft.com/en-us/dotnet/desktop/wpf/xaml/?view=netdesktop-9.0)**: Extensible Application Markup Language, used for designing the UI in WPF applications.
 - **[Prism Library](https://prismlibrary.com/)**: A framework for building loosely coupled, maintainable, and testable XAML applications.
 
-## Tools for Comparison
+## Tools
 
-- **[Diffchecker](https://www.diffchecker.com/image-compare/)**: I am using this tool to compare expected result screenshots with actual results.
-- **[ImgOnline](https://www.imgonline.com.ua/eng/similarity-percent-result.php)**: I am using this tool to verify the percentage of similarity between images.
+For developing and testing the solutions in this repository, I use the following tools:
+
+- **[Visual Studio 2022](https://visualstudio.microsoft.com/vs/)**: My primary integrated development environment (IDE) for writing, debugging, and running C# code. With its robust features, Visual Studio 2022 streamlines .NET development, offering tools for efficient coding, debugging, and performance optimization.
+- **[ReSharper](https://www.jetbrains.com/resharper/)**: A powerful Visual Studio extension that elevates the development experience through advanced code analysis, intelligent refactoring tools, and productivity-enhancing features. ReSharper ensures my code is clean, optimized, and adheres to best practices.
+- **[Diffchecker](https://www.diffchecker.com/image-compare/)**: A reliable tool I use to compare screenshots of expected and actual results, ensuring visual consistency and accuracy.
+- **[ImgOnline](https://www.imgonline.com.ua/eng/similarity-percent-result.php)**: This tool helps me evaluate the similarity percentage between images, enabling precise verification of visual elements.
 
 ## Automation Jobs
 
@@ -138,6 +142,47 @@ https://www.frontendmentor.io/challenges/3column-preview-card-component-pH92eAR2
 ### Actual Result - Active (99.67% identical to the expected result)
 
 ![Actual Result - Active](https://github.com/user-attachments/assets/a00f75af-4e43-429a-9c9d-88e9392c06d8)
+
+</details>
+
+## Order summary component
+
+https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj
+
+<details>
+    <summary><strong>Screenshots</strong></summary>
+  
+### Expected Result
+
+![Expected Result](https://github.com/user-attachments/assets/9043add5-f097-4c69-83a9-aeb48230c3e8)
+
+### Actual Result (99.38% identical to the expected result)
+
+![Actual Result](https://github.com/user-attachments/assets/24d59ce9-1ea8-4c4a-8796-2935f4b1d8ee)
+
+### Expected Result - Change Annual Plan
+
+![Expected Result - Change Annual Plan](https://github.com/user-attachments/assets/99e6221a-2430-47da-946f-38f4eb9cb74c)
+
+### Actual Result - Change Annual Plan (99.4% identical to the expected result)
+
+![Actual Result - Change Annual Plan](https://github.com/user-attachments/assets/9542b08c-1d62-4476-8e0e-586db57ca55b)
+
+### Expected Result - Proceed to Payment
+
+![Expected Result - Proceed to Payment](https://github.com/user-attachments/assets/ea94611f-eea1-43fe-b6b2-59b557c39191)
+
+### Actual Result - Proceed to Payment (99.35% identical to the expected result)
+
+![Actual Result - Proceed to Payment](https://github.com/user-attachments/assets/c4de0d52-bf0b-4ab8-8bdd-3a955335c87e)
+
+### Expected Result - Cancel Order
+
+![Expected Result - Cancel Order](https://github.com/user-attachments/assets/3e45e21e-3ef6-40d8-bbaf-a9bc4aa48169)
+
+### Actual Result - Cancel Order (99.35% identical to the expected result)
+
+![Actual Result - Cancel Order](https://github.com/user-attachments/assets/d510d445-8f99-4acf-b875-effa3df787cf)
 
 </details>
 
