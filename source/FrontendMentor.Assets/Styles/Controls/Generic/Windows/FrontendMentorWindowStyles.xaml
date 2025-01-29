@@ -35,8 +35,7 @@
 
                     <Border Grid.Row="0"
                             Height="{TemplateBinding TitleBarHeight}"
-                            Background="{TemplateBinding TitleBarBackground}"
-                            Visibility="Collapsed">
+                            Background="{TemplateBinding TitleBarBackground}">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" />
@@ -86,7 +85,7 @@
     <Style TargetType="{x:Type windows:FrontendMentorWindow}">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderBrush" Value="{StaticResource FrontendMentorWindow.Border.Brush}" />
-        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="BorderThickness" Value="1" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="Template" Value="{StaticResource FrontendMentorWindow.Template}" />
         <Setter Property="TitleBarBackground" Value="{StaticResource FrontendMentorWindow.TitleBarBackground.Brush}" />
