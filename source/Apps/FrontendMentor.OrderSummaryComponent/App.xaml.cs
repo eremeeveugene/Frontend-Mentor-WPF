@@ -1,0 +1,42 @@
+﻿// --------------------------------------------------------------------------------
+// Copyright (C) 2025 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
+// All Rights Reserved.
+// --------------------------------------------------------------------------------
+// This software is the confidential and proprietary information of Eugene Eremeev
+// (also known as Yevhenii Yeriemeieiv) ("Confidential Information"). You shall not
+// disclose such Confidential Information and shall use it only in accordance with
+// the terms of the license agreement you entered into with Eugene Eremeev (also
+// known as Yevhenii Yeriemeieiv).
+// --------------------------------------------------------------------------------
+
+using FrontendMentor.OrderSummaryComponent.Constants;
+using FrontendMentor.OrderSummaryComponent.Controls.Windows;
+using FrontendMentor.OrderSummaryComponent.Services.AnnualPlan;
+using FrontendMentor.OrderSummaryComponent.Views;
+using System.Windows;
+
+namespace FrontendMentor.OrderSummaryComponent;
+
+internal partial class App
+{
+    protected override void RegisterTypes(IContainerRegistry containerRegistry)
+    {
+        base.RegisterTypes(containerRegistry);
+
+        containerRegistry.RegisterSingleton<IAnnualPlanService, AnnualPlanService>();
+        containerRegistry.RegisterForNavigation<OrderSummaryView>(OrderSummaryComponentViewNames
+            .OrderSummary);
+    }
+
+    protected override Window CreateShell()
+    {
+        return Container.Resolve<OrderSummaryComponentWindow>();
+    }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        NavigateToShellRegion(OrderSummaryComponentViewNames.OrderSummary);
+    }
+}

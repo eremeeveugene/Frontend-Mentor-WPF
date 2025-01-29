@@ -1,0 +1,84 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Properties\Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Fonts\RedHatDisplay\RedHatDisplay-Black.ttf" />
+    <None Remove="Fonts\RedHatDisplay\RedHatDisplay-BlackItalic.ttf" />
+    <None Remove="Fonts\RedHatDisplay\RedHatDisplay-Bold.ttf" />
+    <None Remove="Fonts\RedHatDisplay\RedHatDisplay-BoldItalic.ttf" />
+    <None Remove="Fonts\RedHatDisplay\RedHatDisplay-ExtraBold.ttf" />
+    <None Remove="Fonts\RedHatDisplay\RedHatDisplay-ExtraBoldItalic.ttf" />
+    <None Remove="Fonts\RedHatDisplay\RedHatDisplay-Italic.ttf" />
+    <None Remove="Fonts\RedHatDisplay\RedHatDisplay-Light.ttf" />
+    <None Remove="Fonts\RedHatDisplay\RedHatDisplay-LightItalic.ttf" />
+    <None Remove="Fonts\RedHatDisplay\RedHatDisplay-Medium.ttf" />
+    <None Remove="Fonts\RedHatDisplay\RedHatDisplay-MediumItalic.ttf" />
+    <None Remove="Fonts\RedHatDisplay\RedHatDisplay-Regular.ttf" />
+    <None Remove="Fonts\RedHatDisplay\RedHatDisplay-SemiBold.ttf" />
+    <None Remove="Fonts\RedHatDisplay\RedHatDisplay-SemiBoldItalic.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Properties\Icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\FrontendMentor.Assets\FrontendMentor.Assets.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Update="Views\OrderSummaryView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\RedHatDisplay\RedHatDisplay-Black.ttf" />
+    <Resource Include="Fonts\RedHatDisplay\RedHatDisplay-BlackItalic.ttf" />
+    <Resource Include="Fonts\RedHatDisplay\RedHatDisplay-Bold.ttf" />
+    <Resource Include="Fonts\RedHatDisplay\RedHatDisplay-BoldItalic.ttf" />
+    <Resource Include="Fonts\RedHatDisplay\RedHatDisplay-ExtraBold.ttf" />
+    <Resource Include="Fonts\RedHatDisplay\RedHatDisplay-ExtraBoldItalic.ttf" />
+    <Resource Include="Fonts\RedHatDisplay\RedHatDisplay-Italic.ttf" />
+    <Resource Include="Fonts\RedHatDisplay\RedHatDisplay-Light.ttf" />
+    <Resource Include="Fonts\RedHatDisplay\RedHatDisplay-LightItalic.ttf" />
+    <Resource Include="Fonts\RedHatDisplay\RedHatDisplay-Medium.ttf" />
+    <Resource Include="Fonts\RedHatDisplay\RedHatDisplay-MediumItalic.ttf" />
+    <Resource Include="Fonts\RedHatDisplay\RedHatDisplay-Regular.ttf" />
+    <Resource Include="Fonts\RedHatDisplay\RedHatDisplay-SemiBold.ttf" />
+    <Resource Include="Fonts\RedHatDisplay\RedHatDisplay-SemiBoldItalic.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

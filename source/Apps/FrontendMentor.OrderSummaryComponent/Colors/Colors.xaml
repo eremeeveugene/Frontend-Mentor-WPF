@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Color x:Key="White.Color">#FFFFFF</Color>
+    <Color x:Key="Ghost.White.Color">#F7F9FF</Color>
+    <Color x:Key="Azureish.White.Color">#D6E1FF</Color>
+    <Color x:Key="Lavender.Light.Color">#E0E8FF</Color>
+    <Color x:Key="Lavender.Dark.Color">#DFE6FB</Color>
+    <Color x:Key="Space.Cadet.Color">#717FA6</Color>
+    <Color x:Key="Shadow.Blue.Color">#1F2E55</Color>
+    <Color x:Key="Persian.Blue.Color">#0D30BD</Color>
+    <Color x:Key="Medium.Slate.Blue.Color">#766CF1</Color>
+    <Color x:Key="Palatinate.Blue.Color">#382AE1</Color>
+    <Color x:Key="Interdimensional.Blue.Color">#1E1FCD</Color>
+    <Color x:Key="Raisin.Black.Color">#231F20</Color>
+    <Color x:Key="Aquamarine.Color">#75ECCA</Color>
+    <Color x:Key="Bright.Lilac.Color">#CD7DF3</Color>
+    <Color x:Key="Cornflower.Blue.Color">#698DFF</Color>
+
+</ResourceDictionary>
