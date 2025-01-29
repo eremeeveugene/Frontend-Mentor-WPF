@@ -45,7 +45,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Update="Views\OrderSummaryComponentView.xaml.cs">
+    <Compile Update="Views\OrderSummaryView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

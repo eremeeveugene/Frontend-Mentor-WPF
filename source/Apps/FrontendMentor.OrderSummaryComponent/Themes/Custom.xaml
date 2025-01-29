@@ -10,6 +10,6 @@
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.OrderSummaryComponent;component/Styles/Controls/Custom/TextBlocks/TextBlockStyles.xaml" />
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.OrderSummaryComponent;component/Styles/Controls/Custom/Hyperlinks/HyperlinkStyles.xaml" />
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.OrderSummaryComponent;component/Styles/Controls/Custom/Buttons/ButtonStyles.xaml" />
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.OrderSummaryComponent;component/Styles/Views/OrderSummaryComponentViewStyles.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.OrderSummaryComponent;component/Styles/Views/OrderSummaryViewStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

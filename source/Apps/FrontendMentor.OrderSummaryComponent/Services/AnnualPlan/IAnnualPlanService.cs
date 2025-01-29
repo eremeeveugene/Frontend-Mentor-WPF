@@ -9,9 +9,9 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-namespace FrontendMentor.OrderSummaryComponent.Constants;
+namespace FrontendMentor.OrderSummaryComponent.Services.AnnualPlan;
 
-internal static class OrderSummaryComponentViewNames
+internal interface IAnnualPlanService
 {
-    public const string OrderSummary = nameof(OrderSummary);
+    double GetAnnualPlanPrice();
 }

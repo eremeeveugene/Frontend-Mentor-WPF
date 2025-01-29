@@ -9,9 +9,17 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-namespace FrontendMentor.OrderSummaryComponent.Constants;
+namespace FrontendMentor.OrderSummaryComponent.BindableModels;
 
-internal static class OrderSummaryComponentViewNames
+internal sealed class OrderSummaryBindableModel(OrderSummaryBindableModel.Parameters parameters)
+    : BindableBase
 {
-    public const string OrderSummary = nameof(OrderSummary);
+    public double AnnualPlanPrice { get; } = parameters.AnnualPlanPrice;
+
+    public static OrderSummaryBindableModel Create(IContainerProvider containerProvider, Parameters parameters)
+    {
+        return containerProvider.Resolve<OrderSummaryBindableModel>((typeof(Parameters), parameters));
+    }
+
+    public record Parameters(double AnnualPlanPrice);
 }

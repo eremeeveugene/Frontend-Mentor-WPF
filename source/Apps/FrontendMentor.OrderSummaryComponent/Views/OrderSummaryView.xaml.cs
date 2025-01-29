@@ -11,9 +11,9 @@
 
 namespace FrontendMentor.OrderSummaryComponent.Views;
 
-internal sealed partial class OrderSummaryComponentView
+internal sealed partial class OrderSummaryView
 {
-    public OrderSummaryComponentView()
+    public OrderSummaryView()
     {
         InitializeComponent();
     }

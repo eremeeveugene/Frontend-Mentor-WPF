@@ -11,6 +11,7 @@
 
 using FrontendMentor.OrderSummaryComponent.Constants;
 using FrontendMentor.OrderSummaryComponent.Controls.Windows;
+using FrontendMentor.OrderSummaryComponent.Services.AnnualPlan;
 using FrontendMentor.OrderSummaryComponent.Views;
 using System.Windows;
 
@@ -22,9 +23,9 @@ internal partial class App
     {
         base.RegisterTypes(containerRegistry);
 
-        //containerRegistry.RegisterSingleton<IResultSummaryService, ResultSummaryService>();
-        containerRegistry.RegisterForNavigation<OrderSummaryComponentView>(OrderSummaryComponentViewNames
-            .OrderSummaryComponent);
+        containerRegistry.RegisterSingleton<IAnnualPlanService, AnnualPlanService>();
+        containerRegistry.RegisterForNavigation<OrderSummaryView>(OrderSummaryComponentViewNames
+            .OrderSummary);
     }
 
     protected override Window CreateShell()
@@ -36,6 +37,6 @@ internal partial class App
     {
         base.OnInitialized();
 
-        NavigateToShellRegion(OrderSummaryComponentViewNames.OrderSummaryComponent);
+        NavigateToShellRegion(OrderSummaryComponentViewNames.OrderSummary);
     }
 }
