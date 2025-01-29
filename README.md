@@ -154,19 +154,35 @@ https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj
   
 ### Expected Result
 
-![Expected Result]()
+![Expected Result](https://github.com/user-attachments/assets/9043add5-f097-4c69-83a9-aeb48230c3e8)
 
-### Actual Result
+### Actual Result (99.38% identical to the expected result)
 
-![Actual Result]()
+![Actual Result](https://github.com/user-attachments/assets/24d59ce9-1ea8-4c4a-8796-2935f4b1d8ee)
 
-### Expected Result - Active
+### Expected Result - Change Annual Plan
 
-![Expected Result - Active]()
+![Expected Result - Change Annual Plan](https://github.com/user-attachments/assets/99e6221a-2430-47da-946f-38f4eb9cb74c)
 
-### Actual Result - Active
+### Actual Result - Change Annual Plan (99.4% identical to the expected result)
 
-![Actual Result - Active]()
+![Actual Result - Change Annual Plan](https://github.com/user-attachments/assets/9542b08c-1d62-4476-8e0e-586db57ca55b)
+
+### Expected Result - Proceed to Payment
+
+![Expected Result - Proceed to Payment](https://github.com/user-attachments/assets/ea94611f-eea1-43fe-b6b2-59b557c39191)
+
+### Actual Result - Proceed to Payment (99.35% identical to the expected result)
+
+![Actual Result - Proceed to Payment](https://github.com/user-attachments/assets/c4de0d52-bf0b-4ab8-8bdd-3a955335c87e)
+
+### Expected Result - Cancel Order
+
+![Expected Result - Cancel Order](https://github.com/user-attachments/assets/3e45e21e-3ef6-40d8-bbaf-a9bc4aa48169)
+
+### Actual Result - Cancel Order (99.35% identical to the expected result)
+
+![Actual Result - Cancel Order](https://github.com/user-attachments/assets/d510d445-8f99-4acf-b875-effa3df787cf)
 
 </details>
 
