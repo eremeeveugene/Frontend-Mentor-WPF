@@ -11,6 +11,16 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style BasedOn="{StaticResource {x:Type assetsWindows:FrontendMentorWindow}}" TargetType="{x:Type windows:GitHubUserSearchAppWindow}">
+        <Setter Property="Background">
+            <Setter.Value>
+                <SolidColorBrush Color="#F6F8FF" />
+            </Setter.Value>
+        </Setter>        
+        <Setter Property="Foreground">
+            <Setter.Value>
+                <SolidColorBrush Color="#2B3442" />
+            </Setter.Value>
+        </Setter>
         <!--<Setter Property="Background" Value="{StaticResource OrderSummaryComponentWindow.Background.Brush}" />
         <Setter Property="FontFamily" Value="{StaticResource RedHatDisplay.FontFamily}" />
         <Setter Property="Foreground" Value="{StaticResource OrderSummaryComponentWindow.Foreground.Brush}" />-->
