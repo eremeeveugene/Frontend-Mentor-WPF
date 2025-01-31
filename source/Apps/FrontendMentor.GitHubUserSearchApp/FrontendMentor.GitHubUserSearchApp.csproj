@@ -10,11 +10,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Fonts\SpaceMono\SpaceMono-Bold.ttf" />
+    <None Remove="Fonts\SpaceMono\SpaceMono-BoldItalic.ttf" />
+    <None Remove="Fonts\SpaceMono\SpaceMono-Italic.ttf" />
+    <None Remove="Fonts\SpaceMono\SpaceMono-Regular.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="Properties\Icon.ico" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\FrontendMentor.Assets\FrontendMentor.Assets.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\SpaceMono\SpaceMono-Bold.ttf" />
+    <Resource Include="Fonts\SpaceMono\SpaceMono-BoldItalic.ttf" />
+    <Resource Include="Fonts\SpaceMono\SpaceMono-Italic.ttf" />
+    <Resource Include="Fonts\SpaceMono\SpaceMono-Regular.ttf" />
   </ItemGroup>
 
   <ItemGroup>

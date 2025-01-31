@@ -1,8 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
     <ResourceDictionary.MergedDictionaries>
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.GitHubUserSearchApp;component/Fonts/Fonts.xaml" />
         <!--<resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.GitHubUserSearchApp;component/Colors/Colors.xaml" />
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.GitHubUserSearchApp;component/Brushes/Brushes.xaml" />
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.GitHubUserSearchApp;component/Fonts/Fonts.xaml" />
+
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.GitHubUserSearchApp;component/Effects/Effects.xaml" />
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.GitHubUserSearchApp;component/Storyboards/Storyboards.xaml" />
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.GitHubUserSearchApp;component/Geometries/Geometries.xaml" />

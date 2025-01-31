@@ -8,16 +8,20 @@
 
     <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
         <StackPanel>
-
             <DockPanel>
-                <TextBlock DockPanel.Dock="Left" Text="devfinder" />
+                <TextBlock DockPanel.Dock="Left"
+                           FontFamily="{StaticResource SpaceMono.FontFamily}"
+                           FontSize="26"
+                           FontWeight="Bold"
+                           Text="devfinder" />
 
                 <TextBlock DockPanel.Dock="Right" Text="Dark" />
             </DockPanel>
 
-            <TextBox />
+            <TextBox Margin="0,36,0,0" />
 
-            <Border Padding="48"
+            <Border Margin="0,24,0,0"
+                    Padding="48"
                     Background="#FEFEFE"
                     CornerRadius="15">
                 <Grid>
