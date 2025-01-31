@@ -11,6 +11,9 @@
 
 using FrontendMentor.GitHubUserSearchApp.Constants;
 using FrontendMentor.GitHubUserSearchApp.Controls.Windows;
+using FrontendMentor.GitHubUserSearchApp.Models.Navigation;
+using FrontendMentor.GitHubUserSearchApp.Services.GitHubUsers;
+using FrontendMentor.GitHubUserSearchApp.Services.Navigation;
 using FrontendMentor.GitHubUserSearchApp.Views;
 using System.Windows;
 
@@ -22,7 +25,8 @@ internal partial class App
     {
         base.RegisterTypes(containerRegistry);
 
-        //containerRegistry.RegisterSingleton<IAnnualPlanService, AnnualPlanService>();
+        containerRegistry.RegisterSingleton<INavigationService, NavigationService>();
+        containerRegistry.RegisterSingleton<IGitHubUsersService, GitHubUsersService>();
         containerRegistry.RegisterForNavigation<GitHubUserSearchAppView>(GitHubUserSearchAppViewNames
             .GitHubUserSearchApp);
     }
@@ -32,10 +36,15 @@ internal partial class App
         return Container.Resolve<GitHubUserSearchAppWindow>();
     }
 
-    protected override void OnInitialized()
+    protected override async void OnInitialized()
     {
         base.OnInitialized();
 
-        NavigateToShellRegion(GitHubUserSearchAppViewNames.GitHubUserSearchApp);
+        var gitHubUsersService = Container.Resolve<IGitHubUsersService>();
+        var navigationService = Container.Resolve<INavigationService>();
+
+        var gitHubUser = await gitHubUsersService.GetUserAsync("octocat");
+
+        navigationService.NavigateToGitHubUserSearchApp(new GitHubUserSearchAppNavigationParametersModel(gitHubUser));
     }
 }

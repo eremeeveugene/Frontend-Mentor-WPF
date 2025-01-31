@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:FrontendMentor.GitHubUserSearchApp.ViewModels"
+             d:DataContext="{d:DesignInstance viewModels:GitHubUserSearchAppViewModel}"
              x:ClassModifier="internal"
              mc:Ignorable="d">
 
@@ -18,7 +20,20 @@
                 <TextBlock DockPanel.Dock="Right" Text="Dark" />
             </DockPanel>
 
-            <TextBox Margin="0,36,0,0" />
+            <Border Margin="0,36,0,0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBox Grid.Column="0" Text="{Binding Username}" />
+
+                    <Button Grid.Column="1" Command="{Binding SearchUserCommand}">
+                        <TextBlock Text="Search" />
+                    </Button>
+                </Grid>
+            </Border>
 
             <Border Margin="0,24,0,0"
                     Padding="48"
@@ -30,29 +45,36 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
+                    <Image Grid.Column="0" />
+
                     <StackPanel Grid.Column="1">
                         <DockPanel>
-                            <TextBlock DockPanel.Dock="Left" Text="The Octocat" />
+                            <TextBlock DockPanel.Dock="Left" Text="{Binding GitHubUser.Name}" />
 
                             <TextBlock DockPanel.Dock="Right" Text="Joined 25 Jan 2011" />
                         </DockPanel>
 
-                        <TextBlock Text="@octocat" />
+                        <TextBlock Text="{Binding GitHubUser.Login}" />
 
                         <TextBlock Text="This profile has no bio" />
 
                         <Border Background="#F6F8FF " CornerRadius="10">
                             <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                </Grid.RowDefinitions>
-
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
+
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+
+
+                                </Grid>
+
                             </Grid>
                         </Border>
 
