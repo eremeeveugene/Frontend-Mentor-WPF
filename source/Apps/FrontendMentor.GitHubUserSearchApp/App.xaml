@@ -2,10 +2,12 @@
                                         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                                         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                                         xmlns:applications="clr-namespace:FrontendMentor.Assets.Applications;assembly=FrontendMentor.Assets"
+                                        xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets"
                                         x:ClassModifier="internal">
     <applications:FrontendMentorApplication.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <resourceDictionaries:ThemeResourceDictionary DarkThemeSource="pack://application:,,,/FrontendMentor.GitHubUserSearchApp;component/Brushes/DarkThemeBrushes.xaml" LightThemeSource="pack://application:,,,/FrontendMentor.GitHubUserSearchApp;component/Brushes/LightThemeBrushes.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Themes/Custom.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/FrontendMentor.GitHubUserSearchApp;component/Themes/Custom.xaml" />
             </ResourceDictionary.MergedDictionaries>

@@ -7,17 +7,16 @@
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.GitHubUserSearchApp;component/Colors/Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <!--#region OrderSummaryComponentWindow-->
+    <!--#region GitHubUserSearchAppWindow-->
 
-    <SolidColorBrush x:Key="OrderSummaryComponentWindow.Background.Brush"
+    <SolidColorBrush x:Key="GitHubUserSearchAppWindow.Background.Brush"
                      po:Freeze="True"
-                     Color="{StaticResource Lavender.Light.Color}" />
+                     Color="{StaticResource Dark.Gunmetal.Color}" />
 
-    <SolidColorBrush x:Key="OrderSummaryComponentWindow.Foreground.Brush"
+    <SolidColorBrush x:Key="GitHubUserSearchAppWindow.Foreground.Brush}"
                      po:Freeze="True"
-                     Color="{StaticResource Shadow.Blue.Color}" />
+                     Color="{StaticResource White.Color}" />
 
     <!--#endregion-->
-
 
 </ResourceDictionary>

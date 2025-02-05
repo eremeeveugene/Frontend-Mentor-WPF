@@ -9,6 +9,8 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
+using FrontendMentor.Assets.Enums;
+using FrontendMentor.Assets.Services.Themes;
 using FrontendMentor.Core.ViewModels;
 using FrontendMentor.GitHubUserSearchApp.BindableModels;
 using FrontendMentor.GitHubUserSearchApp.Models.Navigation;
@@ -19,7 +21,8 @@ namespace FrontendMentor.GitHubUserSearchApp.ViewModels;
 
 internal sealed class GitHubUserSearchAppViewModel(
     IContainerProvider containerProvider,
-    IGitHubUsersService gitHubUsersService) : NavigationViewModelBase
+    IGitHubUsersService gitHubUsersService,
+    IThemeService themeService) : NavigationViewModelBase
 {
     private GitHubUserBindableModel _gitHubUser = null!;
     private ICommand? _searchUserCommand;
@@ -38,6 +41,11 @@ internal sealed class GitHubUserSearchAppViewModel(
     {
         get => _gitHubUser;
         set => SetProperty(ref _gitHubUser, value);
+    }
+
+    public void SetTheme(Theme theme)
+    {
+        themeService.SetTheme(theme);
     }
 
     private async void SearchUser()

@@ -11,6 +11,8 @@
 
 using FrontendMentor.Assets.Constants;
 using FrontendMentor.Assets.Controls.Windows;
+using FrontendMentor.Assets.Enums;
+using FrontendMentor.Assets.Services.Themes;
 using FrontendMentor.Core.Applications;
 using System.Windows;
 
@@ -30,6 +32,18 @@ public abstract class FrontendMentorApplication : FrontendMentorCoreApplication
         base.OnInitialized();
 
         _regionManager = Container.Resolve<IRegionManager>();
+
+        var themeService = Container.Resolve<IThemeService>();
+
+        // ToDo: Get system value
+        themeService.SetTheme(Theme.Light);
+    }
+
+    protected override void RegisterTypes(IContainerRegistry containerRegistry)
+    {
+        base.RegisterTypes(containerRegistry);
+
+        containerRegistry.RegisterSingleton<IThemeService, ThemeService>();
     }
 
     protected void NavigateToShellRegion(string viewName)
