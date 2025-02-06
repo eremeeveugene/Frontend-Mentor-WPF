@@ -3,21 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:panels="clr-namespace:FrontendMentor.Assets.Controls.Panels;assembly=FrontendMentor.Assets"
              xmlns:viewModels="clr-namespace:FrontendMentor.GitHubUserSearchApp.ViewModels"
              d:DataContext="{d:DesignInstance viewModels:GitHubUserSearchAppViewModel}"
              x:ClassModifier="internal"
              mc:Ignorable="d">
 
-    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+    <Grid Width="730"
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center">
         <StackPanel>
             <DockPanel>
                 <TextBlock DockPanel.Dock="Left"
-                           FontFamily="{StaticResource SpaceMono.FontFamily}"
-                           FontSize="26"
-                           FontWeight="Bold"
+                           Style="{StaticResource H1.TextBlock.Style}"
                            Text="devfinder" />
 
-                <TextBlock DockPanel.Dock="Right" Text="Dark" />
+                <Button HorizontalAlignment="Right"
+                        Command="{Binding SwitchThemeCommand}"
+                        DockPanel.Dock="Right">
+                    <TextBlock Text="Dark" />
+                </Button>
             </DockPanel>
 
             <Border Margin="0,36,0,0">
@@ -49,33 +54,105 @@
 
                     <StackPanel Grid.Column="1">
                         <DockPanel>
-                            <TextBlock DockPanel.Dock="Left" Text="{Binding GitHubUser.Name}" />
+                            <TextBlock DockPanel.Dock="Left"
+                                       Style="{StaticResource H1.TextBlock.Style}"
+                                       Text="{Binding GitHubUser.Name}" />
 
-                            <TextBlock DockPanel.Dock="Right" Text="Joined 25 Jan 2011" />
+                            <TextBlock HorizontalAlignment="Right"
+                                       DockPanel.Dock="Right"
+                                       Style="{StaticResource Body.TextBlock.Style}"
+                                       Text="Joined 25 Jan 2011">
+                                <TextBlock.Foreground>
+                                    <SolidColorBrush Color="#697C9A" />
+                                </TextBlock.Foreground>
+                            </TextBlock>
                         </DockPanel>
 
-                        <TextBlock Text="{Binding GitHubUser.Login}" />
+                        <TextBlock Style="{StaticResource H3.TextBlock.Style}">
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="#0079FF" />
+                            </TextBlock.Foreground>
 
-                        <TextBlock Text="This profile has no bio" />
+                            <Run Text="@" /><Run Text="{Binding GitHubUser.Login, Mode=OneWay}" />
+                        </TextBlock>
 
-                        <Border Background="#F6F8FF " CornerRadius="10">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
+                        <TextBlock Style="{StaticResource Body.TextBlock.Style}" Text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.">
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="#4B6A9B" />
+                            </TextBlock.Foreground>
+                        </TextBlock>
 
+                        <Border Padding="32,15,32,17"
+                                Background="#F6F8FF "
+                                CornerRadius="10">
+                            <panels:SpacingStackPanel Spacing="1">
                                 <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="Auto" />
-                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
 
+                                    <TextBlock Grid.Row="0"
+                                               Grid.Column="0"
+                                               Style="{StaticResource H4.TextBlock.Style}"
+                                               Text="Repos">
+                                        <TextBlock.Foreground>
+                                            <SolidColorBrush Color="#4B6A9B" />
+                                        </TextBlock.Foreground>
+                                    </TextBlock>
 
+                                    <TextBlock Grid.Row="0"
+                                               Grid.Column="1"
+                                               Style="{StaticResource H4.TextBlock.Style}"
+                                               Text="Followers">
+                                        <TextBlock.Foreground>
+                                            <SolidColorBrush Color="#4B6A9B" />
+                                        </TextBlock.Foreground>
+                                    </TextBlock>
+
+                                    <TextBlock Grid.Row="0"
+                                               Grid.Column="2"
+                                               Style="{StaticResource H4.TextBlock.Style}"
+                                               Text="Following">
+                                        <TextBlock.Foreground>
+                                            <SolidColorBrush Color="#4B6A9B" />
+                                        </TextBlock.Foreground>
+                                    </TextBlock>
                                 </Grid>
 
-                            </Grid>
+                                <Grid Margin="0,1,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Grid.Column="0"
+                                               Style="{StaticResource H2.TextBlock.Style}"
+                                               Text="8">
+                                        <TextBlock.Foreground>
+                                            <SolidColorBrush Color="#2B3442" />
+                                        </TextBlock.Foreground>
+                                    </TextBlock>
+
+                                    <TextBlock Grid.Column="1"
+                                               Style="{StaticResource H2.TextBlock.Style}"
+                                               Text="3938">
+                                        <TextBlock.Foreground>
+                                            <SolidColorBrush Color="#2B3442" />
+                                        </TextBlock.Foreground>
+                                    </TextBlock>
+
+                                    <TextBlock Grid.Column="2"
+                                               Style="{StaticResource H2.TextBlock.Style}"
+                                               Text="9">
+                                        <TextBlock.Foreground>
+                                            <SolidColorBrush Color="#2B3442" />
+                                        </TextBlock.Foreground>
+                                    </TextBlock>
+                                </Grid>
+                            </panels:SpacingStackPanel>
                         </Border>
 
                         <Grid>

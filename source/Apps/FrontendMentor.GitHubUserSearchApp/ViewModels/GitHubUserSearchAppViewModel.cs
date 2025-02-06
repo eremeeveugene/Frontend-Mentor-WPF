@@ -26,10 +26,21 @@ internal sealed class GitHubUserSearchAppViewModel(
 {
     private GitHubUserBindableModel _gitHubUser = null!;
     private ICommand? _searchUserCommand;
+    private ICommand? _switchThemeCommand;
 
     private string? _username;
 
     public ICommand SearchUserCommand => _searchUserCommand ??= new DelegateCommand(SearchUser);
+    public ICommand SwitchThemeCommand => _switchThemeCommand ??= new DelegateCommand(SwitchTheme);
+
+    private Theme _theme;
+
+    private void SwitchTheme()
+    {
+        _theme = _theme == Theme.Light ? Theme.Dark : Theme.Light;
+
+        themeService.SetTheme(_theme);
+    }
 
     public string? Username
     {
@@ -45,7 +56,7 @@ internal sealed class GitHubUserSearchAppViewModel(
 
     public void SetTheme(Theme theme)
     {
-        themeService.SetTheme(theme);
+      
     }
 
     private async void SearchUser()
