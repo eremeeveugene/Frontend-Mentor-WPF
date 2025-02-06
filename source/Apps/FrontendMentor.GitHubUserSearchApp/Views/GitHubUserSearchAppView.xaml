@@ -2,6 +2,7 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:links="clr-namespace:FrontendMentor.GitHubUserSearchApp.Controls.Links"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:panels="clr-namespace:FrontendMentor.Assets.Controls.Panels;assembly=FrontendMentor.Assets"
              xmlns:viewModels="clr-namespace:FrontendMentor.GitHubUserSearchApp.ViewModels"
@@ -60,15 +61,16 @@
 
                             <TextBlock HorizontalAlignment="Right"
                                        DockPanel.Dock="Right"
-                                       Style="{StaticResource Body.TextBlock.Style}"
-                                       Text="Joined 25 Jan 2011">
+                                       Style="{StaticResource Body.TextBlock.Style}">
                                 <TextBlock.Foreground>
                                     <SolidColorBrush Color="#697C9A" />
                                 </TextBlock.Foreground>
+                                <Run Text="Joined" />
+                                <Run Text="{Binding GitHubUser.DateJoined, StringFormat='{}{0:dd MMM yyyy}', Mode=OneWay, FallbackValue='This profile has no bio'}" />
                             </TextBlock>
                         </DockPanel>
 
-                        <TextBlock Style="{StaticResource H3.TextBlock.Style}">
+                        <TextBlock Margin="0,2,0,0" Style="{StaticResource H3.TextBlock.Style}">
                             <TextBlock.Foreground>
                                 <SolidColorBrush Color="#0079FF" />
                             </TextBlock.Foreground>
@@ -76,13 +78,16 @@
                             <Run Text="@" /><Run Text="{Binding GitHubUser.Login, Mode=OneWay}" />
                         </TextBlock>
 
-                        <TextBlock Style="{StaticResource Body.TextBlock.Style}" Text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.">
+                        <TextBlock Margin="0,20,0,0"
+                                   Style="{StaticResource Body.TextBlock.Style}"
+                                   Text="{Binding GitHubUser.Bio}">
                             <TextBlock.Foreground>
                                 <SolidColorBrush Color="#4B6A9B" />
                             </TextBlock.Foreground>
                         </TextBlock>
 
-                        <Border Padding="32,15,32,17"
+                        <Border Margin="0,32,0,0"
+                                Padding="32,15,32,17"
                                 Background="#F6F8FF "
                                 CornerRadius="10">
                             <panels:SpacingStackPanel Spacing="1">
@@ -130,7 +135,7 @@
 
                                     <TextBlock Grid.Column="0"
                                                Style="{StaticResource H2.TextBlock.Style}"
-                                               Text="8">
+                                               Text="{Binding GitHubUser.Repos}">
                                         <TextBlock.Foreground>
                                             <SolidColorBrush Color="#2B3442" />
                                         </TextBlock.Foreground>
@@ -138,7 +143,7 @@
 
                                     <TextBlock Grid.Column="1"
                                                Style="{StaticResource H2.TextBlock.Style}"
-                                               Text="3938">
+                                               Text="{Binding GitHubUser.Followers}">
                                         <TextBlock.Foreground>
                                             <SolidColorBrush Color="#2B3442" />
                                         </TextBlock.Foreground>
@@ -146,7 +151,7 @@
 
                                     <TextBlock Grid.Column="2"
                                                Style="{StaticResource H2.TextBlock.Style}"
-                                               Text="9">
+                                               Text="{Binding GitHubUser.Following}">
                                         <TextBlock.Foreground>
                                             <SolidColorBrush Color="#2B3442" />
                                         </TextBlock.Foreground>
@@ -155,33 +160,38 @@
                             </panels:SpacingStackPanel>
                         </Border>
 
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
+                        <panels:SpacingStackPanel Margin="0,37,0,0" Spacing="15">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
 
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
+                                <links:Link Grid.Column="0"
+                                            Geometry="M7.03013 0.00158203C9.42758 0.0504882 11.5835 1.33021 12.7973 3.4249C14.038 5.56599 14.072 8.13786 12.8882 10.3047L7.92872 19.3823L7.92196 19.3943C7.7038 19.7736 7.3129 20 6.87634 20C6.43974 20 6.04884 19.7736 5.83064 19.3943L5.82388 19.3823L0.86439 10.3047C-0.319437 8.13786 -0.285492 5.56599 0.95521 3.4249C2.16904 1.33021 4.32497 0.0504882 6.72239 0.00158203C6.82477 -0.000527343 6.92778 -0.000527343 7.03013 0.00158203ZM4.06376 6.25001C4.06376 7.80083 5.32544 9.06251 6.87626 9.06251C8.42712 9.06251 9.68876 7.80083 9.68876 6.25001C9.68876 4.69919 8.42708 3.43752 6.87626 3.43752C5.32544 3.43752 4.06376 4.69919 4.06376 6.25001Z"
+                                            Source="{Binding GitHubUser.Location}" />
 
-                            <TextBlock Grid.Row="0"
-                                       Grid.Column="0"
-                                       Text="San Francisco" />
+                                <links:Link Grid.Column="1"
+                                            Geometry="M20 2.79876C19.2562 3.12501 18.4637 3.34126 17.6375 3.44626C18.4875 2.93876 19.1362 2.14126 19.4412 1.18001C18.6487 1.65251 17.7737 1.98626 16.8412 2.17251C16.0887 1.37126 15.0162 0.875015 13.8462 0.875015C11.5762 0.875015 9.74874 2.71751 9.74874 4.97626C9.74874 5.30126 9.77624 5.61376 9.84374 5.91126C6.43499 5.74501 3.41875 4.11126 1.3925 1.62251C1.03875 2.23626 0.831249 2.93876 0.831249 3.69501C0.831249 5.11501 1.5625 6.37376 2.6525 7.10251C1.99375 7.09001 1.3475 6.89876 0.799999 6.59751C0.799999 6.61001 0.799999 6.62626 0.799999 6.64251C0.799999 8.63501 2.22125 10.29 4.085 10.6713C3.75125 10.7625 3.3875 10.8063 3.01 10.8063C2.7475 10.8063 2.4825 10.7913 2.23375 10.7363C2.765 12.36 4.2725 13.5538 6.06499 13.5925C4.67 14.6838 2.89875 15.3413 0.981249 15.3413C0.644999 15.3413 0.3225 15.3263 0 15.285C1.81625 16.4562 3.96875 17.125 6.28999 17.125C13.835 17.125 17.96 10.875 17.96 5.45751C17.96 5.27626 17.9537 5.10126 17.945 4.92751C18.7587 4.35001 19.4425 3.62876 20 2.79876Z"
+                                            Source="{Binding GitHubUser.TwitterUsername}" />
+                            </Grid>
 
-                            <TextBlock Grid.Row="0"
-                                       Grid.Column="1"
-                                       Text="https://github.blog" />
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
 
-                            <TextBlock Grid.Row="1"
-                                       Grid.Column="0"
-                                       Text="Not Available" />
+                                <links:Link Grid.Column="0"
+                                            Geometry="M7.40752 5.02591C5.05091 7.46978 5.56517 11.5255 8.26463 13.3221C8.35357 13.3813 8.47191 13.3696 8.54831 13.2948C9.11661 12.7382 9.59737 12.1991 10.0183 11.5134C10.0827 11.4085 10.0427 11.2724 9.93464 11.2138C9.52289 10.9902 9.11317 10.5709 8.88252 10.1281C8.60623 9.57663 8.51189 8.95864 8.65816 8.32025C8.65801 8.32025 8.65832 8.32028 8.65816 8.32025C8.82648 7.50292 9.70238 6.7427 10.371 6.03955C10.3696 6.03908 10.3682 6.03858 10.3668 6.03811L12.872 3.47535C13.8703 2.45406 15.5125 2.44564 16.5212 3.45666C17.5401 4.45727 17.5569 6.11151 16.5586 7.13276L15.0412 8.69675C14.971 8.76914 14.9482 8.87474 14.981 8.9702C15.3304 9.98569 15.4164 11.4176 15.1822 12.4994C15.1757 12.5296 15.213 12.5495 15.2346 12.5273L18.4641 9.22355C20.5271 7.11306 20.5096 3.67688 18.4252 1.58761C16.2979 -0.544543 12.8348 -0.526799 10.7294 1.62698L7.42046 5.01204C7.41608 5.01666 7.41194 5.02136 7.40752 5.02591Z M13.445 13.7875C13.4451 13.7874 13.445 13.7876 13.445 13.7875C13.4471 13.7866 13.4489 13.7861 13.4509 13.7852C14.11 12.5773 14.2398 11.1919 13.9309 9.8413L13.9295 9.84275L13.9279 9.84209C13.6346 8.63921 12.8299 7.44475 11.7369 6.70932C11.6428 6.64606 11.4927 6.65339 11.4046 6.72476C10.851 7.17345 10.309 7.74883 9.95146 8.48307C9.8953 8.59835 9.93735 8.73682 10.048 8.80122C10.463 9.0427 10.8378 9.39625 11.0887 9.86563C11.2843 10.1972 11.4774 10.8261 11.3526 11.5021C11.3526 11.5021 11.3525 11.5021 11.3526 11.5021C11.2361 12.3983 10.3328 13.2204 9.61502 13.9612C9.0686 14.5213 7.67993 15.9409 7.12374 16.5105C6.12544 17.5317 4.47501 17.5486 3.45611 16.548C2.43722 15.5474 2.42037 13.8932 3.41867 12.8719L4.94057 11.3032C5.00955 11.2321 5.03299 11.1288 5.00232 11.0345C4.66439 9.99528 4.57181 8.59569 4.78511 7.5151C4.79105 7.48498 4.75408 7.46574 4.73262 7.48768L1.5517 10.7418C-0.532521 12.8739 -0.514857 16.3453 1.59101 18.456C3.71814 20.545 7.16372 20.5097 9.24786 18.3776C9.9719 17.5659 13.0713 14.6896 13.445 13.7875Z"
+                                            Source="{Binding GitHubUser.Blog}" />
 
-                            <TextBlock Grid.Row="1"
-                                       Grid.Column="1"
-                                       Text="@github" />
-                        </Grid>
+                                <links:Link Grid.Column="1"
+                                            Geometry="M10.8583 1.55835L1.7 0.166681C1.275 0.100014 0.841666 0.216681 0.516666 0.491681C0.191666 0.775014 0 1.18335 0 1.60835V19.1667C0 19.625 0.375 20 0.833333 20H3.54166V15.625C3.54166 14.8167 4.19166 14.1667 5 14.1667H7.08333C7.89166 14.1667 8.54166 14.8167 8.54166 15.625V20H12.0833V3.00001C12.0833 2.28335 11.5667 1.67501 10.8583 1.55835ZM4.58333 12.2917H3.33333C2.98833 12.2917 2.70833 12.0117 2.70833 11.6667C2.70833 11.3217 2.98833 11.0417 3.33333 11.0417H4.58333C4.92833 11.0417 5.20833 11.3217 5.20833 11.6667C5.20833 12.0117 4.92833 12.2917 4.58333 12.2917ZM3.33333 9.79167H4.58333C4.92833 9.79167 5.20833 9.51167 5.20833 9.16667C5.20833 8.82167 4.92833 8.54167 4.58333 8.54167H3.33333C2.98833 8.54167 2.70833 8.82167 2.70833 9.16667C2.70833 9.51167 2.98833 9.79167 3.33333 9.79167ZM4.58333 7.29167H3.33333C2.98833 7.29167 2.70833 7.01167 2.70833 6.66667C2.70833 6.32167 2.98833 6.04168 3.33333 6.04168H4.58333C4.92833 6.04168 5.20833 6.32167 5.20833 6.66667C5.20833 7.01167 4.92833 7.29167 4.58333 7.29167ZM3.33333 4.79168H4.58333C4.92833 4.79168 5.20833 4.51168 5.20833 4.16668C5.20833 3.82168 4.92833 3.54168 4.58333 3.54168H3.33333C2.98833 3.54168 2.70833 3.82168 2.70833 4.16668C2.70833 4.51168 2.98833 4.79168 3.33333 4.79168ZM8.74999 12.2917H7.49999C7.15499 12.2917 6.87499 12.0117 6.87499 11.6667C6.87499 11.3217 7.15499 11.0417 7.49999 11.0417H8.74999C9.09499 11.0417 9.37499 11.3217 9.37499 11.6667C9.37499 12.0117 9.09499 12.2917 8.74999 12.2917ZM7.49999 9.79167H8.74999C9.09499 9.79167 9.37499 9.51167 9.37499 9.16667C9.37499 8.82167 9.09499 8.54167 8.74999 8.54167H7.49999C7.15499 8.54167 6.87499 8.82167 6.87499 9.16667C6.87499 9.51167 7.15499 9.79167 7.49999 9.79167ZM8.74999 7.29167H7.49999C7.15499 7.29167 6.87499 7.01167 6.87499 6.66667C6.87499 6.32167 7.15499 6.04168 7.49999 6.04168H8.74999C9.09499 6.04168 9.37499 6.32167 9.37499 6.66667C9.37499 7.01167 9.09499 7.29167 8.74999 7.29167ZM7.49999 4.79168H8.74999C9.09499 4.79168 9.37499 4.51168 9.37499 4.16668C9.37499 3.82168 9.09499 3.54168 8.74999 3.54168H7.49999C7.15499 3.54168 6.87499 3.82168 6.87499 4.16668C6.87499 4.51168 7.15499 4.79168 7.49999 4.79168Z M12.9166 7.79251L18.85 9.03501C19.5308 9.18584 20 9.77168 20 10.46V18.5417C20 19.3458 19.3458 20 18.5416 20H12.9166V7.79251ZM15.625 17.5H16.875C17.22 17.5 17.5 17.22 17.5 16.875C17.5 16.53 17.22 16.25 16.875 16.25H15.625C15.28 16.25 15 16.53 15 16.875C15 17.22 15.28 17.5 15.625 17.5ZM16.875 15H15.625C15.28 15 15 14.72 15 14.375C15 14.03 15.28 13.75 15.625 13.75H16.875C17.22 13.75 17.5 14.03 17.5 14.375C17.5 14.72 17.22 15 16.875 15ZM15.625 12.5H16.875C17.22 12.5 17.5 12.22 17.5 11.875C17.5 11.53 17.22 11.25 16.875 11.25H15.625C15.28 11.25 15 11.53 15 11.875C15 12.22 15.28 12.5 15.625 12.5Z"
+                                            Source="{Binding GitHubUser.Company}" />
+                            </Grid>
+
+                        </panels:SpacingStackPanel>
                     </StackPanel>
                 </Grid>
             </Border>

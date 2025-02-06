@@ -1,0 +1,43 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:links="clr-namespace:FrontendMentor.GitHubUserSearchApp.Controls.Links">
+
+    <ControlTemplate x:Key="LinkTemplate" TargetType="{x:Type links:Link}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Path Grid.Column="0"
+                  Width="20"
+                  Data="{TemplateBinding Geometry}">
+                <Path.Fill>
+                    <SolidColorBrush Color="#4B6A9B" />
+                </Path.Fill>
+            </Path>
+
+            <TextBlock Grid.Column="1" Margin="16,0,0,0">
+                <TextBlock.Foreground>
+                    <SolidColorBrush Color="#4B6A9B" />
+                </TextBlock.Foreground>
+                <Hyperlink Command="{TemplateBinding NavigateCommand}">
+                    <Run Text="{Binding Source, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}, TargetNullValue='Not Available'}" />
+                </Hyperlink>
+            </TextBlock>
+        </Grid>
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type links:Link}">
+        <Setter Property="Template" Value="{StaticResource LinkTemplate}" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Source, RelativeSource={RelativeSource Self}}" Value="{x:Null}">
+                <Setter Property="IsEnabled" Value="False" />
+            </DataTrigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

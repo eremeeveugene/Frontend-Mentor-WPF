@@ -21,9 +21,21 @@ internal class GitHubUserModel
 
     [JsonProperty("avatar_url")] public string AvatarUrl { get; set; }
 
+    [JsonProperty("location")] public string? Location { get; set; }
+
+    [JsonProperty("blog")] public string? Blog { get; set; }
+
+    [JsonProperty("bio")] public string? Bio { get; set; }
+
+    [JsonProperty("twitter_username")] public string? TwitterUsername { get; set; }
+
+    [JsonProperty("company")] public string? Company { get; set; }
+
     [JsonProperty("public_repos")] public int PublicRepos { get; set; }
 
     [JsonProperty("followers")] public int Followers { get; set; }
 
     [JsonProperty("following")] public int Following { get; set; }
+
+    [JsonProperty("created_at")] public DateTime CreatedAt { get; set; }
 }

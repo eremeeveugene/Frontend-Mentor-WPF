@@ -26,6 +26,7 @@ internal sealed class GitHubUsersService : IGitHubUsersService
         _httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("WPFApp"); // GitHub API requires a User-Agent header
 
         var response = await _httpClient.GetAsync(url);
+
         if (!response.IsSuccessStatusCode)
         {
             throw new Exception($"Error fetching GitHub user: {response.StatusCode}");
