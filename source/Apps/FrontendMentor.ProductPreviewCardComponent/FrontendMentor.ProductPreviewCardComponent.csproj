@@ -10,11 +10,77 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Fonts\Fraunces\Fraunces_9pt-Black.ttf" />
+    <None Remove="Fonts\Fraunces\Fraunces_9pt-BlackItalic.ttf" />
+    <None Remove="Fonts\Fraunces\Fraunces_9pt-Bold.ttf" />
+    <None Remove="Fonts\Fraunces\Fraunces_9pt-BoldItalic.ttf" />
+    <None Remove="Fonts\Fraunces\Fraunces_9pt-Italic.ttf" />
+    <None Remove="Fonts\Fraunces\Fraunces_9pt-Light.ttf" />
+    <None Remove="Fonts\Fraunces\Fraunces_9pt-LightItalic.ttf" />
+    <None Remove="Fonts\Fraunces\Fraunces_9pt-Regular.ttf" />
+    <None Remove="Fonts\Fraunces\Fraunces_9pt-SemiBold.ttf" />
+    <None Remove="Fonts\Fraunces\Fraunces_9pt-SemiBoldItalic.ttf" />
+    <None Remove="Fonts\Fraunces\Fraunces_9pt-Thin.ttf" />
+    <None Remove="Fonts\Fraunces\Fraunces_9pt-ThinItalic.ttf" />
+    <None Remove="Fonts\Montserrat\Montserrat-Black.ttf" />
+    <None Remove="Fonts\Montserrat\Montserrat-BlackItalic.ttf" />
+    <None Remove="Fonts\Montserrat\Montserrat-Bold.ttf" />
+    <None Remove="Fonts\Montserrat\Montserrat-BoldItalic.ttf" />
+    <None Remove="Fonts\Montserrat\Montserrat-ExtraBold.ttf" />
+    <None Remove="Fonts\Montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <None Remove="Fonts\Montserrat\Montserrat-ExtraLight.ttf" />
+    <None Remove="Fonts\Montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <None Remove="Fonts\Montserrat\Montserrat-Italic.ttf" />
+    <None Remove="Fonts\Montserrat\Montserrat-Light.ttf" />
+    <None Remove="Fonts\Montserrat\Montserrat-LightItalic.ttf" />
+    <None Remove="Fonts\Montserrat\Montserrat-Medium.ttf" />
+    <None Remove="Fonts\Montserrat\Montserrat-MediumItalic.ttf" />
+    <None Remove="Fonts\Montserrat\Montserrat-Regular.ttf" />
+    <None Remove="Fonts\Montserrat\Montserrat-SemiBold.ttf" />
+    <None Remove="Fonts\Montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <None Remove="Fonts\Montserrat\Montserrat-Thin.ttf" />
+    <None Remove="Fonts\Montserrat\Montserrat-ThinItalic.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="Properties\Icon.ico" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\FrontendMentor.Assets\FrontendMentor.Assets.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\Fraunces\Fraunces_9pt-Black.ttf" />
+    <Resource Include="Fonts\Fraunces\Fraunces_9pt-BlackItalic.ttf" />
+    <Resource Include="Fonts\Fraunces\Fraunces_9pt-Bold.ttf" />
+    <Resource Include="Fonts\Fraunces\Fraunces_9pt-BoldItalic.ttf" />
+    <Resource Include="Fonts\Fraunces\Fraunces_9pt-Italic.ttf" />
+    <Resource Include="Fonts\Fraunces\Fraunces_9pt-Light.ttf" />
+    <Resource Include="Fonts\Fraunces\Fraunces_9pt-LightItalic.ttf" />
+    <Resource Include="Fonts\Fraunces\Fraunces_9pt-Regular.ttf" />
+    <Resource Include="Fonts\Fraunces\Fraunces_9pt-SemiBold.ttf" />
+    <Resource Include="Fonts\Fraunces\Fraunces_9pt-SemiBoldItalic.ttf" />
+    <Resource Include="Fonts\Fraunces\Fraunces_9pt-Thin.ttf" />
+    <Resource Include="Fonts\Fraunces\Fraunces_9pt-ThinItalic.ttf" />
+    <Resource Include="Fonts\Montserrat\Montserrat-Black.ttf" />
+    <Resource Include="Fonts\Montserrat\Montserrat-BlackItalic.ttf" />
+    <Resource Include="Fonts\Montserrat\Montserrat-Bold.ttf" />
+    <Resource Include="Fonts\Montserrat\Montserrat-BoldItalic.ttf" />
+    <Resource Include="Fonts\Montserrat\Montserrat-ExtraBold.ttf" />
+    <Resource Include="Fonts\Montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Resource Include="Fonts\Montserrat\Montserrat-ExtraLight.ttf" />
+    <Resource Include="Fonts\Montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Resource Include="Fonts\Montserrat\Montserrat-Italic.ttf" />
+    <Resource Include="Fonts\Montserrat\Montserrat-Light.ttf" />
+    <Resource Include="Fonts\Montserrat\Montserrat-LightItalic.ttf" />
+    <Resource Include="Fonts\Montserrat\Montserrat-Medium.ttf" />
+    <Resource Include="Fonts\Montserrat\Montserrat-MediumItalic.ttf" />
+    <Resource Include="Fonts\Montserrat\Montserrat-Regular.ttf" />
+    <Resource Include="Fonts\Montserrat\Montserrat-SemiBold.ttf" />
+    <Resource Include="Fonts\Montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Resource Include="Fonts\Montserrat\Montserrat-Thin.ttf" />
+    <Resource Include="Fonts\Montserrat\Montserrat-ThinItalic.ttf" />
   </ItemGroup>
 
   <ItemGroup>

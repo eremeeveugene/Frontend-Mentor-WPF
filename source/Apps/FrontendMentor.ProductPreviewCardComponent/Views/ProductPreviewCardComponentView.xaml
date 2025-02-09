@@ -23,16 +23,94 @@
             </Grid.ColumnDefinitions>
 
             <StackPanel Grid.Column="1" Margin="32">
-                <TextBlock Text="PERFUME" />
+                <TextBlock FontFamily="{StaticResource Montserrat.FontFamily}"
+                           FontSize="12"
+                           FontWeight="Medium"
+                           Text="PERFUME">
+                    <TextBlock.Foreground>
+                        <SolidColorBrush Color="#6C7289" />
+                    </TextBlock.Foreground>
+                    <TextBlock.TextEffects>
+                        <TextEffect PositionCount="1" PositionStart="1">
+                            <TextEffect.Transform>
+                                <TranslateTransform X="5" />
+                            </TextEffect.Transform>
+                        </TextEffect>
+                        <TextEffect PositionCount="1" PositionStart="2">
+                            <TextEffect.Transform>
+                                <TranslateTransform X="10" />
+                            </TextEffect.Transform>
+                        </TextEffect>
+                        <TextEffect PositionCount="1" PositionStart="3">
+                            <TextEffect.Transform>
+                                <TranslateTransform X="15" />
+                            </TextEffect.Transform>
+                        </TextEffect>
+                        <TextEffect PositionCount="1" PositionStart="4">
+                            <TextEffect.Transform>
+                                <TranslateTransform X="20" />
+                            </TextEffect.Transform>
+                        </TextEffect>
+                        <TextEffect PositionCount="1" PositionStart="5">
+                            <TextEffect.Transform>
+                                <TranslateTransform X="25" />
+                            </TextEffect.Transform>
+                        </TextEffect>
+                        <TextEffect PositionCount="1" PositionStart="6">
+                            <TextEffect.Transform>
+                                <TranslateTransform X="30" />
+                            </TextEffect.Transform>
+                        </TextEffect>
+                    </TextBlock.TextEffects>
+                </TextBlock>
 
-                <TextBlock Margin="0,20,0,0" Text="Gabrielle Essence Eau De Parfum" />
+                <TextBlock Margin="0,20,0,0"
+                           FontSize="32"
+                           FontWeight="Bold"
+                           LineHeight="32"
+                           LineStackingStrategy="BlockLineHeight"
+                           Text="Gabrielle Essence Eau De Parfum"
+                           TextWrapping="Wrap">
+                    <TextBlock.Foreground>
+                        <SolidColorBrush Color="#1C232B" />
+                    </TextBlock.Foreground>
+                </TextBlock>
 
-                <TextBlock Margin="0,24,0,0" Text="A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of CHANEL." />
+                <TextBlock Margin="0,24,0,0"
+                           FontFamily="{StaticResource Montserrat.FontFamily}"
+                           FontSize="13"
+                           FontWeight="Medium"
+                           LineHeight="23"
+                           LineStackingStrategy="BlockLineHeight"
+                           Text="A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of CHANEL."
+                           TextWrapping="Wrap">
+                    <TextBlock.Foreground>
+                        <SolidColorBrush Color="#6C7289" />
+                    </TextBlock.Foreground>
+                </TextBlock>
 
                 <StackPanel Margin="0,29,0,0" Orientation="Horizontal">
-                    <TextBlock Text="$149.99" />
+                    <TextBlock FontSize="32"
+                               FontWeight="Bold"
+                               LineHeight="32"
+                               LineStackingStrategy="BlockLineHeight"
+                               Text="$149.99">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="#3D8168" />
+                        </TextBlock.Foreground>
+                    </TextBlock>
 
-                    <TextBlock Margin="19,0,0,0" Text="$169.99" />
+                    <TextBlock Margin="19,0,0,0"
+                               FontSize="13"
+                               FontWeight="Medium"
+                               LineHeight="23"
+                               LineStackingStrategy="BlockLineHeight"
+                               Text="$169.99"
+                               TextDecorations="Strikethrough">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="#6C7289" />
+                        </TextBlock.Foreground>
+                    </TextBlock>
                 </StackPanel>
 
                 <Button Margin="0,30,0,0">
