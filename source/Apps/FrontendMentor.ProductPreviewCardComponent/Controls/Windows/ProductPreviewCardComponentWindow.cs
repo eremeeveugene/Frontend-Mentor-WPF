@@ -9,31 +9,16 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.QrCodeComponent.Constants;
-using FrontendMentor.QrCodeComponent.Controls.Windows;
-using FrontendMentor.QrCodeComponent.Views;
+using FrontendMentor.Assets.Controls.Windows;
 using System.Windows;
 
-namespace FrontendMentor.QrCodeComponent;
+namespace FrontendMentor.ProductPreviewCardComponent.Controls.Windows;
 
-internal partial class App
+internal class ProductPreviewCardComponentWindow : FrontendMentorWindow
 {
-    protected override Window CreateShell()
+    static ProductPreviewCardComponentWindow()
     {
-        return Container.Resolve<QrCodeComponentWindow>();
-    }
-
-    protected override void RegisterTypes(IContainerRegistry containerRegistry)
-    {
-        base.RegisterTypes(containerRegistry);
-
-        containerRegistry.RegisterForNavigation<QrCodeComponentView>(QrCodeComponentViewNames.QrCodeComponent);
-    }
-
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-
-        NavigateToShellRegion(QrCodeComponentViewNames.QrCodeComponent);
+        DefaultStyleKeyProperty.OverrideMetadata(typeof(ProductPreviewCardComponentWindow),
+            new FrameworkPropertyMetadata(typeof(ProductPreviewCardComponentWindow)));
     }
 }

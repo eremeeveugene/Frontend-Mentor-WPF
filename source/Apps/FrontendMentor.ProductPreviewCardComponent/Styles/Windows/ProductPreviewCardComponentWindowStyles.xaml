@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:assetsWindows="clr-namespace:FrontendMentor.Assets.Controls.Windows;assembly=FrontendMentor.Assets"
+                    xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets"
+                    xmlns:windows="clr-namespace:FrontendMentor.ProductPreviewCardComponent.Controls.Windows">
+
+    <ResourceDictionary.MergedDictionaries>
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Controls/Generic/Windows/FrontendMentorWindowStyles.xaml" />
+        <!--<resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ProductPreviewCardComponent;component/Brushes/Brushes.xaml" />-->
+        <!--<resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ProductPreviewCardComponent;component/Fonts/Fonts.xaml" />-->
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style BasedOn="{StaticResource {x:Type assetsWindows:FrontendMentorWindow}}" TargetType="{x:Type windows:ProductPreviewCardComponentWindow}">
+        <!--<Setter Property="Background" Value="{StaticResource QrCodeComponentWindow.Background.Brush}" />-->
+        <Setter Property="FontFamily" Value="{StaticResource Outfit.FontFamily}" />
+        <!--<Setter Property="Foreground" Value="{StaticResource QrCodeComponentWindow.Foreground.Brush}" />-->
+        <Setter Property="MinHeight" Value="800" />
+        <Setter Property="MinWidth" Value="1440" />
+        <!--<Setter Property="Title" Value="{x:Static properties:Resources.QrCodeComponentWindow_Title}" />-->
+    </Style>
+
+</ResourceDictionary>

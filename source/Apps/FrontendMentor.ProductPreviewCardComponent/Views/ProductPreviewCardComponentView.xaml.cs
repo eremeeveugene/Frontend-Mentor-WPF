@@ -9,16 +9,12 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.Assets.Controls.Windows;
-using System.Windows;
+namespace FrontendMentor.ProductPreviewCardComponent.Views;
 
-namespace FrontendMentor.QrCodeComponent.Controls;
-
-internal class QrCodeComponentWindow : FrontendMentorWindow
+internal partial class ProductPreviewCardComponentView
 {
-    static QrCodeComponentWindow()
+    public ProductPreviewCardComponentView()
     {
-        DefaultStyleKeyProperty.OverrideMetadata(typeof(QrCodeComponentWindow),
-            new FrameworkPropertyMetadata(typeof(QrCodeComponentWindow)));
+        InitializeComponent();
     }
 }
