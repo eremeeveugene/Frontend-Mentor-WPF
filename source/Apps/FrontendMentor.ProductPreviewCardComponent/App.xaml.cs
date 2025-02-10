@@ -11,6 +11,7 @@
 
 using FrontendMentor.ProductPreviewCardComponent.Constants;
 using FrontendMentor.ProductPreviewCardComponent.Controls.Windows;
+using FrontendMentor.ProductPreviewCardComponent.Services.Products;
 using FrontendMentor.ProductPreviewCardComponent.Views;
 using System.Windows;
 
@@ -27,6 +28,7 @@ internal partial class App
     {
         base.RegisterTypes(containerRegistry);
 
+        containerRegistry.RegisterSingleton<IProductsService, ProductsService>();
         containerRegistry.RegisterForNavigation<ProductPreviewCardComponentView>(ProductPreviewCardComponentViewNames
             .ProductPreviewCardComponent);
     }

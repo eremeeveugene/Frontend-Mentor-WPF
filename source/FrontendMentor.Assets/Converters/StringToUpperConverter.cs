@@ -9,19 +9,27 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-namespace FrontendMentor.SocialLinksProfile.Models;
+using FrontendMentor.Assets.MarkupExtensions;
+using System.Globalization;
+using System.Windows.Data;
 
-internal class SocialLinkProfileModel
+namespace FrontendMentor.Assets.Converters;
+
+[ValueConversion(typeof(string), typeof(string))]
+public class StringToUpperConverter : ConverterMarkupExtension<StringToUpperConverter>
 {
-    public string FirstName { get; set; } = null!;
+    public override object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
+    {
+        if (value is not string str)
+        {
+            return new InvalidOperationException();
+        }
 
-    public string LastName { get; set; } = null!;
+        return str.ToUpper();
+    }
 
-    public string Title { get; set; } = null!;
-
-    public string ProfileImageBase64String { get; set; } = null!;
-
-    public string Location { get; set; } = null!;
-
-    public IEnumerable<SocialLinkModel> SocialLinks { get; set; } = null!;
+    public override object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
+    {
+        throw new NotSupportedException();
+    }
 }

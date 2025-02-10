@@ -9,19 +9,14 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-namespace FrontendMentor.SocialLinksProfile.Models;
+namespace FrontendMentor.ProductPreviewCardComponent.Models;
 
-internal class SocialLinkProfileModel
+internal class ProductModel
 {
-    public string FirstName { get; set; } = null!;
-
-    public string LastName { get; set; } = null!;
-
+    public string Type { get; set; } = null!;
     public string Title { get; set; } = null!;
-
-    public string ProfileImageBase64String { get; set; } = null!;
-
-    public string Location { get; set; } = null!;
-
-    public IEnumerable<SocialLinkModel> SocialLinks { get; set; } = null!;
+    public string Description { get; set; } = null!;
+    public double Price { get; set; }
+    public double OldPrice { get; set; }
+    public string ProductImageBase64String { get; set; } = null!;
 }
