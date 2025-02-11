@@ -21,11 +21,11 @@ public class FrontendMentorWindow : Window
         nameof(TitleBarBackground), typeof(Brush), typeof(FrontendMentorWindow), new PropertyMetadata(default(Brush)));
 
     public static readonly DependencyProperty TitleBarHeightProperty = DependencyProperty.Register(
-        nameof(TitleBarHeight), typeof(double), typeof(FrontendMentorWindow), new PropertyMetadata(40));
+        nameof(TitleBarHeight), typeof(double), typeof(FrontendMentorWindow), new PropertyMetadata(40.0));
 
     public static readonly DependencyProperty TitleBarImageHeightProperty = DependencyProperty.Register(
         nameof(TitleBarImageHeight), typeof(double), typeof(FrontendMentorWindow),
-        new PropertyMetadata(20));
+        new PropertyMetadata(20.0));
 
     private ICommand? _closeCommand;
     private ICommand? _minimizeCommand;

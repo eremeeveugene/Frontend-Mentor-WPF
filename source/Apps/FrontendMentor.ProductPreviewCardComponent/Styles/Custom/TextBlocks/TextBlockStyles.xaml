@@ -13,7 +13,7 @@
         <Setter Property="LineStackingStrategy" Value="BlockLineHeight" />
         <Setter Property="RenderTransform">
             <Setter.Value>
-                <TranslateTransform X="0" Y="2.2" />
+                <TranslateTransform X="0" Y="3.2" />
             </Setter.Value>
         </Setter>
         <Setter Property="TextWrapping" Value="Wrap" />
@@ -26,7 +26,7 @@
         <Setter Property="LineStackingStrategy" Value="BlockLineHeight" />
         <Setter Property="RenderTransform">
             <Setter.Value>
-                <TranslateTransform X="0" Y="-2.2" />
+                <TranslateTransform X="0" Y="-1.4" />
             </Setter.Value>
         </Setter>
         <Setter Property="TextWrapping" Value="Wrap" />
