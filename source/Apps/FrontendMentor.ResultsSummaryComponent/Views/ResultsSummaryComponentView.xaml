@@ -70,7 +70,9 @@
                               ItemsSource="{Binding ResultSummary.SummaryItems, FallbackValue={x:Null}}"
                               Style="{StaticResource ResultsSummaryComponentView.SummaryItemsControl.Style}" />
 
-                <Button Margin="0,41,0,0" Style="{StaticResource ResultsSummaryComponentView.ContinueButton.Style}">
+                <Button Margin="0,41,0,0"
+                        Command="{Binding ContinueCommand}"
+                        Style="{StaticResource ResultsSummaryComponentView.ContinueButton.Style}">
                     <TextBlock Foreground="{StaticResource ResultsSummaryComponentView.ContinueTextBlock.Foreground.Brush}"
                                Style="{StaticResource Body.Bold.TextBlock.Style}"
                                Text="{x:Static properties:Resources.ResultsSummaryComponentView_ContinueTextBlock_Text}" />

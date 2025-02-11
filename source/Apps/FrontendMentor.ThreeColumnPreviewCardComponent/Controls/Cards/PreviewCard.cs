@@ -11,14 +11,14 @@
 
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
 
 namespace FrontendMentor.ThreeColumnPreviewCardComponent.Controls.Cards;
 
 internal class PreviewCard : Control
 {
-    public static readonly DependencyProperty IconFillProperty = DependencyProperty.Register(
-        nameof(IconFill),
+    public static readonly DependencyProperty IconFillProperty = DependencyProperty.Register(nameof(IconFill),
         typeof(Brush),
         typeof(PreviewCard),
         new PropertyMetadata(default(Brush)));
@@ -47,6 +47,12 @@ internal class PreviewCard : Control
         typeof(PreviewCard),
         new PropertyMetadata(default(string)));
 
+    public static readonly DependencyProperty LearnMoreCommandProperty = DependencyProperty.Register(
+        nameof(LearnMoreCommand),
+        typeof(ICommand),
+        typeof(PreviewCard),
+        new PropertyMetadata(default(ICommand)));
+
     static PreviewCard()
     {
         DefaultStyleKeyProperty.OverrideMetadata(typeof(PreviewCard),
@@ -56,35 +62,36 @@ internal class PreviewCard : Control
     public Brush IconFill
     {
         get => (Brush)GetValue(IconFillProperty);
-        set => SetValue(IconFillProperty,
-            value);
+        set => SetValue(IconFillProperty, value);
+    }
+
+    public ICommand LearnMoreCommand
+    {
+        get => (ICommand)GetValue(LearnMoreCommandProperty);
+        set => SetValue(LearnMoreCommandProperty, value);
     }
 
     public Geometry IconData
     {
         get => (Geometry)GetValue(IconDataProperty);
-        set => SetValue(IconDataProperty,
-            value);
+        set => SetValue(IconDataProperty, value);
     }
 
     public CornerRadius CornerRadius
     {
         get => (CornerRadius)GetValue(CornerRadiusProperty);
-        set => SetValue(CornerRadiusProperty,
-            value);
+        set => SetValue(CornerRadiusProperty, value);
     }
 
     public string Title
     {
         get => (string)GetValue(TitleProperty);
-        set => SetValue(TitleProperty,
-            value);
+        set => SetValue(TitleProperty, value);
     }
 
     public string Caption
     {
         get => (string)GetValue(CaptionProperty);
-        set => SetValue(CaptionProperty,
-            value);
+        set => SetValue(CaptionProperty, value);
     }
 }
