@@ -68,6 +68,7 @@
                     </panels:SpacingStackPanel>
 
                     <buttons:IconButton Margin="0,30,0,0"
+                                        Command="{Binding AddToCartCommand}"
                                         Geometry="{StaticResource Cart.Geometry}"
                                         Text="{x:Static properties:Resources.ProductPreviewCardComponentView_AddToCartTextBlock_Text}" />
                 </StackPanel>
