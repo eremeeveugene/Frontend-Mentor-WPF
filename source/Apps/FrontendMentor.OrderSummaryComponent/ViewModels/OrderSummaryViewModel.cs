@@ -25,18 +25,14 @@ internal sealed class OrderSummaryViewModel(
     private ICommand? _changeAnnualPlanCommand;
     private OrderSummaryBindableModel _orderSummary = null!;
     private ICommand? _proceedToPaymentCommand;
-
     public ICommand ProceedToPaymentCommand => _proceedToPaymentCommand ??= new DelegateCommand(ProceedToPayment);
-
     public ICommand CancelOrderCommand => _cancelOrderCommand ??= new DelegateCommand(CancelOrder);
-
     public ICommand ChangeAnnualPlanCommand => _changeAnnualPlanCommand ??= new DelegateCommand(ChangeAnnualPlan);
 
     public OrderSummaryBindableModel OrderSummary
     {
         get => _orderSummary;
-        private set => SetProperty(ref _orderSummary,
-            value);
+        private set => SetProperty(ref _orderSummary, value);
     }
 
     public override void OnNavigatedTo(NavigationContext navigationContext)
