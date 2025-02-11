@@ -19,11 +19,15 @@
 
     <!--#endregion-->
 
-    <!--#region Primary.RoundedButton-->
+    <!--#region IconButton-->
 
-    <SolidColorBrush x:Key="Primary.RoundedButton.Background.Brush"
+    <SolidColorBrush x:Key="IconButton.Background.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Deep.Aquamarine.Color}" />
+
+    <SolidColorBrush x:Key="IconButton.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource White.Color}" />
 
     <!--#endregion-->
 

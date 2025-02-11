@@ -61,6 +61,15 @@ namespace FrontendMentor.ProductPreviewCardComponent.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add to Cart.
+        /// </summary>
+        public static string ProductPreviewCardComponentView_AddToCartTextBlock_Text {
+            get {
+                return ResourceManager.GetString("ProductPreviewCardComponentView_AddToCartTextBlock_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Product Preview Card Component.
         /// </summary>
         public static string ProductPreviewCardComponentWindow_Title {
