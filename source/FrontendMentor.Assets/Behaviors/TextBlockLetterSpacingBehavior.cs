@@ -20,13 +20,17 @@ namespace FrontendMentor.Assets.Behaviors;
 public class TextBlockLetterSpacingBehavior : Behavior<TextBlock>
 {
     public static readonly DependencyProperty LetterSpacingProperty =
-        DependencyProperty.Register(nameof(LetterSpacing), typeof(double), typeof(TextBlockLetterSpacingBehavior),
-            new PropertyMetadata(0.0, (o, _) => ((TextBlockLetterSpacingBehavior)o).OnLetterSpacingChanged()));
+        DependencyProperty.Register(nameof(LetterSpacing),
+            typeof(double),
+            typeof(TextBlockLetterSpacingBehavior),
+            new PropertyMetadata(0.0,
+                (o, _) => ((TextBlockLetterSpacingBehavior)o).OnLetterSpacingChanged()));
 
     public double LetterSpacing
     {
         get => (double)GetValue(LetterSpacingProperty);
-        set => SetValue(LetterSpacingProperty, value);
+        set => SetValue(LetterSpacingProperty,
+            value);
     }
 
     private void OnLetterSpacingChanged()
@@ -43,8 +47,10 @@ public class TextBlockLetterSpacingBehavior : Behavior<TextBlock>
             return;
         }
 
-        var descriptor = DependencyPropertyDescriptor.FromProperty(TextBlock.TextProperty, typeof(TextBlock));
-        descriptor.AddValueChanged(AssociatedObject, OnAssociatedObjectTextChanged);
+        var descriptor = DependencyPropertyDescriptor.FromProperty(TextBlock.TextProperty,
+            typeof(TextBlock));
+        descriptor.AddValueChanged(AssociatedObject,
+            OnAssociatedObjectTextChanged);
 
         ApplyLetterSpacing();
     }
@@ -63,8 +69,10 @@ public class TextBlockLetterSpacingBehavior : Behavior<TextBlock>
             return;
         }
 
-        var descriptor = DependencyPropertyDescriptor.FromProperty(TextBlock.TextProperty, typeof(TextBlock));
-        descriptor.RemoveValueChanged(AssociatedObject, OnAssociatedObjectTextChanged);
+        var descriptor = DependencyPropertyDescriptor.FromProperty(TextBlock.TextProperty,
+            typeof(TextBlock));
+        descriptor.RemoveValueChanged(AssociatedObject,
+            OnAssociatedObjectTextChanged);
 
         AssociatedObject.TextEffects.Clear();
     }
@@ -89,9 +97,10 @@ public class TextBlockLetterSpacingBehavior : Behavior<TextBlock>
         {
             var textEffect = new TextEffect
             {
-                PositionStart = i, 
-                PositionCount = 1, 
-                Transform = new TranslateTransform(i * LetterSpacing, 0)
+                PositionStart = i,
+                PositionCount = 1,
+                Transform = new TranslateTransform(i * LetterSpacing,
+                    0)
             };
 
             textEffects.Add(textEffect);
