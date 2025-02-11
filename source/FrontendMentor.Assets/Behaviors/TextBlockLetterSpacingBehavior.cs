@@ -89,7 +89,9 @@ public class TextBlockLetterSpacingBehavior : Behavior<TextBlock>
         {
             var textEffect = new TextEffect
             {
-                PositionStart = i, PositionCount = 1, Transform = new TranslateTransform(i * LetterSpacing, 0)
+                PositionStart = i, 
+                PositionCount = 1, 
+                Transform = new TranslateTransform(i * LetterSpacing, 0)
             };
 
             textEffects.Add(textEffect);
