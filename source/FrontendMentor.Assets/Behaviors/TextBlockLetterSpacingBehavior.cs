@@ -21,7 +21,7 @@ public class TextBlockLetterSpacingBehavior : Behavior<TextBlock>
 {
     public static readonly DependencyProperty LetterSpacingProperty =
         DependencyProperty.Register(nameof(LetterSpacing), typeof(double), typeof(TextBlockLetterSpacingBehavior),
-            new PropertyMetadata(0.0, (o, args) => ((TextBlockLetterSpacingBehavior)o).OnLetterSpacingChanged()));
+            new PropertyMetadata(0.0, (o, _) => ((TextBlockLetterSpacingBehavior)o).OnLetterSpacingChanged()));
 
     public double LetterSpacing
     {
