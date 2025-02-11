@@ -15,11 +15,21 @@ using System.Windows.Data;
 
 namespace FrontendMentor.Assets.Converters;
 
-[ValueConversion(typeof(object), typeof(object))]
+[ValueConversion(typeof(object),
+    typeof(object))]
 public class EqualityParameterToValueConverter : ConverterMarkupExtension<EqualityParameterToValueConverter>
 {
-    public object? TrueValue { get; set; }
-    public object? FalseValue { get; set; }
+    public object? TrueValue
+    {
+        get;
+        set;
+    }
+
+    public object? FalseValue
+    {
+        get;
+        set;
+    }
 
     public override object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {

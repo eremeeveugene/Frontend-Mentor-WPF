@@ -15,7 +15,8 @@ using System.Windows.Data;
 
 namespace FrontendMentor.Assets.Converters;
 
-[ValueConversion(typeof(string), typeof(string))]
+[ValueConversion(typeof(string),
+    typeof(string))]
 public class StringToUpperConverter : ConverterMarkupExtension<StringToUpperConverter>
 {
     public override object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)

@@ -21,7 +21,10 @@ internal class SocialLinkBindableModel(
 {
     private ICommand? _openLinkCommand;
 
-    public string Name { get; } = parameters.SocialLink.Name;
+    public string Name
+    {
+        get;
+    } = parameters.SocialLink.Name;
 
     public ICommand OpenLinkCommand => _openLinkCommand ??= new DelegateCommand(OpenLink);
 

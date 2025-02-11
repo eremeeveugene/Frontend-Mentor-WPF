@@ -25,7 +25,8 @@ internal sealed class ResultsSummaryComponentViewModel(
     public ResultSummaryBindableModel ResultSummary
     {
         get => _resultSummary;
-        private set => SetProperty(ref _resultSummary, value);
+        private set => SetProperty(ref _resultSummary,
+            value);
     }
 
     public override void OnNavigatedTo(NavigationContext navigationContext)

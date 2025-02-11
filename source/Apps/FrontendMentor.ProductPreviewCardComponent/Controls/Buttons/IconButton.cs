@@ -18,10 +18,16 @@ namespace FrontendMentor.ProductPreviewCardComponent.Controls.Buttons;
 internal class IconButton : RoundedButton
 {
     public static readonly DependencyProperty TextProperty = DependencyProperty.Register(
-        nameof(Text), typeof(string), typeof(IconButton), new PropertyMetadata(default(string)));
+        nameof(Text),
+        typeof(string),
+        typeof(IconButton),
+        new PropertyMetadata(default(string)));
 
     public static readonly DependencyProperty GeometryProperty = DependencyProperty.Register(
-        nameof(Geometry), typeof(Geometry), typeof(IconButton), new PropertyMetadata(default(Geometry)));
+        nameof(Geometry),
+        typeof(Geometry),
+        typeof(IconButton),
+        new PropertyMetadata(default(Geometry)));
 
     static IconButton()
     {
@@ -32,12 +38,14 @@ internal class IconButton : RoundedButton
     public string Text
     {
         get => (string)GetValue(TextProperty);
-        set => SetValue(TextProperty, value);
+        set => SetValue(TextProperty,
+            value);
     }
 
     public Geometry Geometry
     {
         get => (Geometry)GetValue(GeometryProperty);
-        set => SetValue(GeometryProperty, value);
+        set => SetValue(GeometryProperty,
+            value);
     }
 }

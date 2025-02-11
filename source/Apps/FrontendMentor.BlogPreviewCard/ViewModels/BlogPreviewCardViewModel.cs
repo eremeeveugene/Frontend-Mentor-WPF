@@ -25,7 +25,8 @@ internal sealed class BlogPreviewCardViewModel(
     public BlogBindableModel Blog
     {
         get => _blog;
-        private set => SetProperty(ref _blog, value);
+        private set => SetProperty(ref _blog,
+            value);
     }
 
     public override void OnNavigatedTo(NavigationContext navigationContext)
@@ -34,6 +35,7 @@ internal sealed class BlogPreviewCardViewModel(
 
         var blog = blogsService.GetBlog();
 
-        Blog = BlogBindableModel.Create(containerProvider, new BlogBindableModel.Parameters(blog));
+        Blog = BlogBindableModel.Create(containerProvider,
+            new BlogBindableModel.Parameters(blog));
     }
 }

@@ -25,7 +25,8 @@ internal sealed class SocialLinksProfileViewModel(
     public SocialLinkProfileBindableModel SocialLinkProfile
     {
         get => _socialLinkProfile;
-        private set => SetProperty(ref _socialLinkProfile, value);
+        private set => SetProperty(ref _socialLinkProfile,
+            value);
     }
 
     public override void OnNavigatedTo(NavigationContext navigationContext)

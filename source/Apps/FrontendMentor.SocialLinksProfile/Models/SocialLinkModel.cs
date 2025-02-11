@@ -13,6 +13,15 @@ namespace FrontendMentor.SocialLinksProfile.Models;
 
 internal class SocialLinkModel
 {
-    public string Link { get; set; } = null!;
-    public string Name { get; set; } = null!;
+    public string Link
+    {
+        get;
+        set;
+    } = null!;
+
+    public string Name
+    {
+        get;
+        set;
+    } = null!;
 }

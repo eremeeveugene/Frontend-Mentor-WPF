@@ -27,7 +27,8 @@ internal class BitmapImagesService : IBitmapImagesService
 
     public BitmapImage GetBitmapImage(string uriString)
     {
-        return GetBitmapImage(new Uri(uriString, UriKind.RelativeOrAbsolute));
+        return GetBitmapImage(new Uri(uriString,
+            UriKind.RelativeOrAbsolute));
     }
 
     public BitmapImage GetBitmapImageFromBase64String(string base64String)

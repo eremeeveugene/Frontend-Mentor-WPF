@@ -34,6 +34,7 @@ public abstract class FrontendMentorApplication : FrontendMentorCoreApplication
 
     protected void NavigateToShellRegion(string viewName)
     {
-        _regionManager.RequestNavigate(FrontedMentorRegionNames.Shell, viewName);
+        _regionManager.RequestNavigate(FrontedMentorRegionNames.Shell,
+            viewName);
     }
 }

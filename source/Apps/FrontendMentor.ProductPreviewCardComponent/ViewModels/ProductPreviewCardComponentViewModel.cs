@@ -27,7 +27,8 @@ internal sealed class ProductPreviewCardComponentViewModel(
     public ProductPreviewCardComponentBindableModel Product
     {
         get => _product;
-        private set => SetProperty(ref _product, value);
+        private set => SetProperty(ref _product,
+            value);
     }
 
     private void AddToCart()

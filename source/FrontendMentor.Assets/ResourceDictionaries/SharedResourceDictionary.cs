@@ -44,7 +44,8 @@ public class SharedResourceDictionary : ResourceDictionary
                 return;
             }
 
-            if (SharedDictionaries.TryGetValue(value, out var dictionary))
+            if (SharedDictionaries.TryGetValue(value,
+                    out var dictionary))
             {
                 MergedDictionaries.Add(dictionary);
             }
@@ -52,7 +53,8 @@ public class SharedResourceDictionary : ResourceDictionary
             {
                 base.Source = value;
 
-                SharedDictionaries.Add(value, this);
+                SharedDictionaries.Add(value,
+                    this);
             }
         }
     }

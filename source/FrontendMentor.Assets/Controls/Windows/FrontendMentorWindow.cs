@@ -18,13 +18,21 @@ namespace FrontendMentor.Assets.Controls.Windows;
 public class FrontendMentorWindow : Window
 {
     public static readonly DependencyProperty TitleBarBackgroundProperty = DependencyProperty.Register(
-        nameof(TitleBarBackground), typeof(Brush), typeof(FrontendMentorWindow), new PropertyMetadata(default(Brush)));
+        nameof(TitleBarBackground),
+        typeof(Brush),
+        typeof(FrontendMentorWindow),
+        new PropertyMetadata(default(Brush)));
 
     public static readonly DependencyProperty TitleBarHeightProperty = DependencyProperty.Register(
-        nameof(TitleBarHeight), typeof(double), typeof(FrontendMentorWindow), new PropertyMetadata(40.0));
+        nameof(TitleBarHeight),
+        typeof(double),
+        typeof(FrontendMentorWindow),
+        new PropertyMetadata(40.0));
 
     public static readonly DependencyProperty TitleBarImageHeightProperty = DependencyProperty.Register(
-        nameof(TitleBarImageHeight), typeof(double), typeof(FrontendMentorWindow),
+        nameof(TitleBarImageHeight),
+        typeof(double),
+        typeof(FrontendMentorWindow),
         new PropertyMetadata(20.0));
 
     private ICommand? _closeCommand;
@@ -40,19 +48,22 @@ public class FrontendMentorWindow : Window
     public double TitleBarImageHeight
     {
         get => (double)GetValue(TitleBarImageHeightProperty);
-        set => SetValue(TitleBarImageHeightProperty, value);
+        set => SetValue(TitleBarImageHeightProperty,
+            value);
     }
 
     public double TitleBarHeight
     {
         get => (double)GetValue(TitleBarHeightProperty);
-        set => SetValue(TitleBarHeightProperty, value);
+        set => SetValue(TitleBarHeightProperty,
+            value);
     }
 
     public Brush TitleBarBackground
     {
         get => (Brush)GetValue(TitleBarBackgroundProperty);
-        set => SetValue(TitleBarBackgroundProperty, value);
+        set => SetValue(TitleBarBackgroundProperty,
+            value);
     }
 
     public ICommand MinimizeCommand => _minimizeCommand ??= new DelegateCommand(Minimize);

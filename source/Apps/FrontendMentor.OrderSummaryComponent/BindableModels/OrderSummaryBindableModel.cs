@@ -14,7 +14,10 @@ namespace FrontendMentor.OrderSummaryComponent.BindableModels;
 internal sealed class OrderSummaryBindableModel(OrderSummaryBindableModel.Parameters parameters)
     : BindableBase
 {
-    public double AnnualPlanPrice { get; } = parameters.AnnualPlanPrice;
+    public double AnnualPlanPrice
+    {
+        get;
+    } = parameters.AnnualPlanPrice;
 
     public static OrderSummaryBindableModel Create(IContainerProvider containerProvider, Parameters parameters)
     {

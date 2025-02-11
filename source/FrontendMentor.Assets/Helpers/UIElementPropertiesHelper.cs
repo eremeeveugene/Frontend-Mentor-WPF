@@ -16,11 +16,15 @@ namespace FrontendMentor.Assets.Helpers;
 public static class UIElementPropertiesHelper
 {
     public static readonly DependencyProperty IsMouseOverParentProperty = DependencyProperty.RegisterAttached(
-        "IsMouseOverParent", typeof(bool), typeof(UIElementPropertiesHelper), new PropertyMetadata(default(bool)));
+        "IsMouseOverParent",
+        typeof(bool),
+        typeof(UIElementPropertiesHelper),
+        new PropertyMetadata(default(bool)));
 
     public static void SetIsMouseOverParent(DependencyObject element, bool value)
     {
-        element.SetValue(IsMouseOverParentProperty, value);
+        element.SetValue(IsMouseOverParentProperty,
+            value);
     }
 
     public static bool GetIsMouseOverParent(DependencyObject element)

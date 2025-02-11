@@ -35,7 +35,8 @@ internal sealed class OrderSummaryViewModel(
     public OrderSummaryBindableModel OrderSummary
     {
         get => _orderSummary;
-        private set => SetProperty(ref _orderSummary, value);
+        private set => SetProperty(ref _orderSummary,
+            value);
     }
 
     public override void OnNavigatedTo(NavigationContext navigationContext)
