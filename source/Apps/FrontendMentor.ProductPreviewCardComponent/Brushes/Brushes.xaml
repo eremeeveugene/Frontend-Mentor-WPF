@@ -19,4 +19,36 @@
 
     <!--#endregion-->
 
+    <!--#region Primary.RoundedButton-->
+
+    <SolidColorBrush x:Key="Primary.RoundedButton.Background.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Deep.Aquamarine.Color}" />
+
+    <!--#endregion-->
+
+    <!--#region ProductPreviewCardComponentView-->
+
+    <SolidColorBrush x:Key="ProductPreviewCardComponentView.Product.Border.Background.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource White.Color}" />
+
+    <SolidColorBrush x:Key="ProductPreviewCardComponentView.Type.TextBlock.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Auro.Metal.Saurus.Color}" />
+
+    <SolidColorBrush x:Key="ProductPreviewCardComponentView.Description.TextBlock.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Auro.Metal.Saurus.Color}" />
+
+    <SolidColorBrush x:Key="ProductPreviewCardComponentView.Price.TextBlock.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Deep.Aquamarine.Color}" />
+
+    <SolidColorBrush x:Key="ProductPreviewCardComponentView.OldPrice.TextBlock.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Auro.Metal.Saurus.Color}" />
+
+    <!--#endregion-->
+
 </ResourceDictionary>

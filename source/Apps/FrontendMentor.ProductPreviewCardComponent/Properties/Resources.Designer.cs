@@ -59,5 +59,14 @@ namespace FrontendMentor.ProductPreviewCardComponent.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product Preview Card Component.
+        /// </summary>
+        public static string ProductPreviewCardComponentWindow_Title {
+            get {
+                return ResourceManager.GetString("ProductPreviewCardComponentWindow_Title", resourceCulture);
+            }
+        }
     }
 }

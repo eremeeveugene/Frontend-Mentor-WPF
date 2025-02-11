@@ -1,6 +1,10 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+    <Color x:Key="White.Color">#FFFFFF</Color>
     <Color x:Key="Alabaster.Color">#F2EAE2</Color>
     <Color x:Key="Gunmetal.Color">#1C232B</Color>
+    <Color x:Key="Deep.Aquamarine.Color">#3D8168</Color>
+    <Color x:Key="Msu.Green.Color">#1A4032</Color>
+    <Color x:Key="Auro.Metal.Saurus.Color">#6C7289</Color>
 
 </ResourceDictionary>
