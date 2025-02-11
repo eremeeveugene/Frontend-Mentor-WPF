@@ -20,9 +20,9 @@ internal sealed class BlogPreviewCardViewModel(
     IBlogsService blogsService)
     : NavigationViewModelBase
 {
-    private BlogBindableModel? _blog;
+    private BlogBindableModel _blog = null!;
 
-    public BlogBindableModel? Blog
+    public BlogBindableModel Blog
     {
         get => _blog;
         private set => SetProperty(ref _blog, value);

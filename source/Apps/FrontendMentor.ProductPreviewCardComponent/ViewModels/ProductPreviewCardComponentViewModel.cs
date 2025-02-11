@@ -32,7 +32,7 @@ internal sealed class ProductPreviewCardComponentViewModel(
 
     private void AddToCart()
     {
-        // ToDo: Implement add to cart functionality
+        // Implement add to cart functionality
     }
 
     public override void OnNavigatedTo(NavigationContext navigationContext)

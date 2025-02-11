@@ -20,9 +20,9 @@ internal sealed class SocialLinksProfileViewModel(
     IContainerProvider containerProvider) :
     NavigationViewModelBase
 {
-    private SocialLinkProfileBindableModel? _socialLinkProfile;
+    private SocialLinkProfileBindableModel _socialLinkProfile = null!;
 
-    public SocialLinkProfileBindableModel? SocialLinkProfile
+    public SocialLinkProfileBindableModel SocialLinkProfile
     {
         get => _socialLinkProfile;
         private set => SetProperty(ref _socialLinkProfile, value);

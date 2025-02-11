@@ -20,9 +20,9 @@ internal sealed class ResultsSummaryComponentViewModel(
     IResultSummaryService resultSummaryService)
     : NavigationViewModelBase
 {
-    private ResultSummaryBindableModel? _resultSummary;
+    private ResultSummaryBindableModel _resultSummary = null!;
 
-    public ResultSummaryBindableModel? ResultSummary
+    public ResultSummaryBindableModel ResultSummary
     {
         get => _resultSummary;
         private set => SetProperty(ref _resultSummary, value);
