@@ -17,14 +17,17 @@ namespace FrontendMentor.Assets.Controls.Panels;
 public class SpacingStackPanel : StackPanel
 {
     public static readonly DependencyProperty SpacingProperty = DependencyProperty.Register(
-        nameof(Spacing), typeof(double), typeof(SpacingStackPanel),
+        nameof(Spacing),
+        typeof(double),
+        typeof(SpacingStackPanel),
         new FrameworkPropertyMetadata(default(double),
             FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange));
 
     public double Spacing
     {
         get => (double)GetValue(SpacingProperty);
-        set => SetValue(SpacingProperty, value);
+        set => SetValue(SpacingProperty,
+            value);
     }
 
     protected override Size MeasureOverride(Size constraint)
@@ -43,20 +46,24 @@ public class SpacingStackPanel : StackPanel
                 totalWidth += child.DesiredSize.Width +
                               (InternalChildren.IndexOf(child) < InternalChildren.Count - 1 ? Spacing : 0);
 
-                maxHeight = Math.Max(maxHeight, child.DesiredSize.Height);
+                maxHeight = Math.Max(maxHeight,
+                    child.DesiredSize.Height);
             }
             else
             {
                 totalHeight += child.DesiredSize.Height +
                                (InternalChildren.IndexOf(child) < InternalChildren.Count - 1 ? Spacing : 0);
 
-                maxWidth = Math.Max(maxWidth, child.DesiredSize.Width);
+                maxWidth = Math.Max(maxWidth,
+                    child.DesiredSize.Width);
             }
         }
 
         return Orientation == Orientation.Horizontal
-            ? new Size(totalWidth, maxHeight)
-            : new Size(maxWidth, totalHeight);
+            ? new Size(totalWidth,
+                maxHeight)
+            : new Size(maxWidth,
+                totalHeight);
     }
 
     protected override Size ArrangeOverride(Size arrangeSize)
@@ -72,12 +79,18 @@ public class SpacingStackPanel : StackPanel
 
             if (Orientation == Orientation.Horizontal)
             {
-                child.Arrange(new Rect(offset, 0, child.DesiredSize.Width, arrangeSize.Height));
+                child.Arrange(new Rect(offset,
+                    0,
+                    child.DesiredSize.Width,
+                    arrangeSize.Height));
                 offset += child.DesiredSize.Width + Spacing;
             }
             else
             {
-                child.Arrange(new Rect(0, offset, arrangeSize.Width, child.DesiredSize.Height));
+                child.Arrange(new Rect(0,
+                    offset,
+                    arrangeSize.Width,
+                    child.DesiredSize.Height));
                 offset += child.DesiredSize.Height + Spacing;
             }
         }

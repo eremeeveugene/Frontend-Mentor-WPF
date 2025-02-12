@@ -4,6 +4,8 @@
              xmlns:cards="clr-namespace:FrontendMentor.ThreeColumnPreviewCardComponent.Controls.Cards"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:FrontendMentor.ThreeColumnPreviewCardComponent.ViewModels"
+             d:DataContext="{d:DesignInstance viewModels:ThreeColumnPreviewCardComponentViewModel}"
              x:ClassModifier="internal"
              mc:Ignorable="d">
 
@@ -18,11 +20,17 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <cards:PreviewCard Grid.Column="0" Style="{StaticResource Sedan.PreviewCard.Style}" />
+        <cards:PreviewCard Grid.Column="0"
+                           LearnMoreCommand="{Binding LearnMoreAboutSedanCommand}"
+                           Style="{StaticResource Sedan.PreviewCard.Style}" />
 
-        <cards:PreviewCard Grid.Column="1" Style="{StaticResource Suv.PreviewCard.Style}" />
+        <cards:PreviewCard Grid.Column="1"
+                           LearnMoreCommand="{Binding LearnMoreAboutSuvCommand}"
+                           Style="{StaticResource Suv.PreviewCard.Style}" />
 
-        <cards:PreviewCard Grid.Column="2" Style="{StaticResource Luxury.PreviewCard.Style}" />
+        <cards:PreviewCard Grid.Column="2"
+                           LearnMoreCommand="{Binding LearnMoreAboutLuxuryCommand}"
+                           Style="{StaticResource Luxury.PreviewCard.Style}" />
     </Grid>
 
 </UserControl>

@@ -13,8 +13,27 @@ namespace FrontendMentor.ResultsSummaryComponent.Models;
 
 internal class ResultSummaryModel
 {
-    public int NumberScore { get; set; }
-    public string TextScore { get; set; } = null!;
-    public int PerformancePercent { get; set; }
-    public IEnumerable<SummaryItemModel> SummaryItems { get; set; } = null!;
+    public int NumberScore
+    {
+        get;
+        set;
+    }
+
+    public string TextScore
+    {
+        get;
+        set;
+    } = null!;
+
+    public int PerformancePercent
+    {
+        get;
+        set;
+    }
+
+    public IEnumerable<SummaryItemModel> SummaryItems
+    {
+        get;
+        set;
+    } = null!;
 }

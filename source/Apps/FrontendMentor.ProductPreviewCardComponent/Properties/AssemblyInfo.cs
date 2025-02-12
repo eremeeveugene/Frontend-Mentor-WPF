@@ -1,4 +1,4 @@
-﻿// --------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------
 // Copyright (C) 2025 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
 // All Rights Reserved.
 // --------------------------------------------------------------------------------
@@ -9,16 +9,7 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.Assets.Controls.Windows;
 using System.Windows;
 
-namespace FrontendMentor.QrCodeComponent.Controls;
-
-internal class QrCodeComponentWindow : FrontendMentorWindow
-{
-    static QrCodeComponentWindow()
-    {
-        DefaultStyleKeyProperty.OverrideMetadata(typeof(QrCodeComponentWindow),
-            new FrameworkPropertyMetadata(typeof(QrCodeComponentWindow)));
-    }
-}
+[assembly: ThemeInfo(ResourceDictionaryLocation.None,
+    ResourceDictionaryLocation.SourceAssembly)]

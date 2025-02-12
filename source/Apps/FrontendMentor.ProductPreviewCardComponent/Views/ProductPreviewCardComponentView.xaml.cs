@@ -9,9 +9,12 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-namespace FrontendMentor.Core.Constants;
+namespace FrontendMentor.ProductPreviewCardComponent.Views;
 
-public static class Signs
+internal partial class ProductPreviewCardComponentView
 {
-    public const string Minus = "-";
+    public ProductPreviewCardComponentView()
+    {
+        InitializeComponent();
+    }
 }

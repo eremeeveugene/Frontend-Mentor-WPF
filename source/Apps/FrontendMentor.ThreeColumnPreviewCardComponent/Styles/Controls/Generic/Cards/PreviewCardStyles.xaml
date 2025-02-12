@@ -100,6 +100,7 @@
                 </StackPanel>
 
                 <Button Grid.Row="1"
+                        Command="{TemplateBinding LearnMoreCommand}"
                         Foreground="{TemplateBinding Background}"
                         Style="{StaticResource PreviewCard.LearnMoreButton.Style}" />
             </Grid>
