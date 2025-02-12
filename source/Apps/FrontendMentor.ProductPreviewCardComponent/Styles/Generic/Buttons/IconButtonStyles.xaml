@@ -1,0 +1,49 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:buttons="clr-namespace:FrontendMentor.ProductPreviewCardComponent.Controls.Buttons"
+                    xmlns:buttons1="clr-namespace:FrontendMentor.Assets.Controls.Buttons;assembly=FrontendMentor.Assets"
+                    xmlns:panels="clr-namespace:FrontendMentor.Assets.Controls.Panels;assembly=FrontendMentor.Assets"
+                    xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
+
+    <ResourceDictionary.MergedDictionaries>
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Controls/Generic/RoundedButtons/RoundedButtonStyles.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ProductPreviewCardComponent;component/Brushes/Brushes.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ProductPreviewCardComponent;component/Storyboards/Storyboards.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ProductPreviewCardComponent;component/Styles/Custom/TextBlocks/TextBlockStyles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <ControlTemplate x:Key="IconButton.Template" TargetType="{x:Type buttons:IconButton}">
+        <Border Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}">
+            <panels:SpacingStackPanel HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                      Orientation="Horizontal"
+                                      Spacing="12">
+                <Path Height="16"
+                      VerticalAlignment="Center"
+                      Data="{TemplateBinding Geometry}"
+                      Fill="{TemplateBinding Foreground}" />
+
+                <TextBlock Style="{StaticResource Button.TextBlock.Style}" Text="{TemplateBinding Text}" />
+            </panels:SpacingStackPanel>
+        </Border>
+    </ControlTemplate>
+
+    <Style BasedOn="{StaticResource {x:Type buttons1:RoundedButton}}" TargetType="{x:Type buttons:IconButton}">
+        <Setter Property="Background" Value="{StaticResource IconButton.Background.Brush}" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="Foreground" Value="{StaticResource IconButton.Foreground.Brush}" />
+        <Setter Property="Height" Value="48" />
+        <Setter Property="Template" Value="{StaticResource IconButton.Template}" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Trigger.EnterActions>
+                    <BeginStoryboard Storyboard="{StaticResource IconButton.ToMouseOver.Storyboard}" />
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard Storyboard="{StaticResource IconButton.FromMouseOver.Storyboard}" />
+                </Trigger.ExitActions>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

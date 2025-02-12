@@ -27,7 +27,8 @@ public class LocalizedDescriptionAttribute(string resourceKey, Type resourceType
     {
         get
         {
-            if (DescriptionCache.TryGetValue((_resourceManager.GetType(), resourceKey), out var description))
+            if (DescriptionCache.TryGetValue((_resourceManager.GetType(), resourceKey),
+                    out var description))
             {
                 return description;
             }

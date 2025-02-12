@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="FrontendMentor.ProductPreviewCardComponent.Views.ProductPreviewCardComponentView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:behaviors="clr-namespace:FrontendMentor.Assets.Behaviors;assembly=FrontendMentor.Assets"
+             xmlns:buttons="clr-namespace:FrontendMentor.ProductPreviewCardComponent.Controls.Buttons"
+             xmlns:constants="clr-namespace:FrontendMentor.Core.Constants;assembly=FrontendMentor.Core"
+             xmlns:converters="clr-namespace:FrontendMentor.Assets.Converters;assembly=FrontendMentor.Assets"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:panels="clr-namespace:FrontendMentor.Assets.Controls.Panels;assembly=FrontendMentor.Assets"
+             xmlns:properties="clr-namespace:FrontendMentor.ProductPreviewCardComponent.Properties"
+             xmlns:viewModels="clr-namespace:FrontendMentor.ProductPreviewCardComponent.ViewModels"
+             d:DataContext="{d:DesignInstance viewModels:ProductPreviewCardComponentViewModel}"
+             x:ClassModifier="internal"
+             mc:Ignorable="d">
+
+    <Border Width="600"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0" CornerRadius="10 0 0 10">
+                <Border.Background>
+                    <ImageBrush ImageSource="{Binding Product.ProfileImage}" />
+                </Border.Background>
+            </Border>
+
+            <Border Grid.Column="1"
+                    Padding="32"
+                    Background="{StaticResource ProductPreviewCardComponentView.Product.Border.Background.Brush}"
+                    CornerRadius="0 10 10 0">
+                <StackPanel>
+                    <TextBlock Foreground="{StaticResource ProductPreviewCardComponentView.Type.TextBlock.Foreground.Brush}"
+                               Style="{StaticResource Overline.TextBlock.Style}"
+                               Text="{Binding Product.Type, Converter={converters:StringToUpperConverter}}">
+                        <b:Interaction.Behaviors>
+                            <behaviors:TextBlockLetterSpacingBehavior LetterSpacing="5" />
+                        </b:Interaction.Behaviors>
+                    </TextBlock>
+
+                    <TextBlock Margin="0,20,0,0"
+                               Style="{StaticResource Display.TextBlock.Style}"
+                               Text="{Binding Product.Title}" />
+
+                    <TextBlock Margin="0,24,0,0"
+                               Foreground="{StaticResource ProductPreviewCardComponentView.Description.TextBlock.Foreground.Brush}"
+                               Style="{StaticResource Body.TextBlock.Style}"
+                               Text="{Binding Product.Description}" />
+
+                    <panels:SpacingStackPanel Margin="0,29,0,0"
+                                              Orientation="Horizontal"
+                                              Spacing="19">
+                        <TextBlock Foreground="{StaticResource ProductPreviewCardComponentView.Price.TextBlock.Foreground.Brush}" Style="{StaticResource Display.TextBlock.Style}">
+                            <Run Text="{x:Static constants:SpecialCharacters.Dollar}" /><Run Text="{Binding Product.Price, Mode=OneWay}" />
+                        </TextBlock>
+
+                        <TextBlock VerticalAlignment="Center"
+                                   Foreground="{StaticResource ProductPreviewCardComponentView.OldPrice.TextBlock.Foreground.Brush}"
+                                   Style="{StaticResource Caption.TextBlock.Style}"
+                                   TextDecorations="Strikethrough">
+                            <Run Text="{x:Static constants:SpecialCharacters.Dollar}" /><Run Text="{Binding Product.OldPrice, Mode=OneWay}" />
+                        </TextBlock>
+                    </panels:SpacingStackPanel>
+
+                    <buttons:IconButton Margin="0,30,0,0"
+                                        Command="{Binding AddToCartCommand}"
+                                        Geometry="{StaticResource Cart.Geometry}"
+                                        Text="{x:Static properties:Resources.ProductPreviewCardComponentView_AddToCartTextBlock_Text}" />
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Border>
+</UserControl>

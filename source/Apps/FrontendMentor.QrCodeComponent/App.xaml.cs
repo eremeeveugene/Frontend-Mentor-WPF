@@ -10,7 +10,7 @@
 // --------------------------------------------------------------------------------
 
 using FrontendMentor.QrCodeComponent.Constants;
-using FrontendMentor.QrCodeComponent.Controls;
+using FrontendMentor.QrCodeComponent.Controls.Windows;
 using FrontendMentor.QrCodeComponent.Views;
 using System.Windows;
 

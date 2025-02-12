@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
+    <ResourceDictionary.MergedDictionaries>
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ProductPreviewCardComponent;component/Colors/Colors.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ProductPreviewCardComponent;component/Brushes/Brushes.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ProductPreviewCardComponent;component/Fonts/Fonts.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ProductPreviewCardComponent;component/Geometries/Geometries.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ProductPreviewCardComponent;component/Storyboards/Storyboards.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ProductPreviewCardComponent;component/Styles/Custom/TextBlocks/TextBlockStyles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

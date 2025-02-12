@@ -16,12 +16,15 @@ namespace FrontendMentor.Assets.Helpers;
 public static class BorderPropertiesHelper
 {
     public static readonly DependencyProperty CornerRadiusProperty = DependencyProperty.RegisterAttached(
-        "CornerRadius", typeof(CornerRadius), typeof(BorderPropertiesHelper),
+        "CornerRadius",
+        typeof(CornerRadius),
+        typeof(BorderPropertiesHelper),
         new PropertyMetadata(default(CornerRadius)));
 
     public static void SetCornerRadius(DependencyObject element, CornerRadius value)
     {
-        element.SetValue(CornerRadiusProperty, value);
+        element.SetValue(CornerRadiusProperty,
+            value);
     }
 
     public static CornerRadius GetCornerRadius(DependencyObject element)

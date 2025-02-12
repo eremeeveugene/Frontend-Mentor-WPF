@@ -16,15 +16,23 @@ namespace FrontendMentor.ResultsSummaryComponent.Enums;
 
 internal enum SummaryItemType
 {
-    [LocalizedDescription(nameof(Resources.SummaryItemType_Reaction), typeof(Resources), "Reaction")]
+    [LocalizedDescription(nameof(Resources.SummaryItemType_Reaction),
+        typeof(Resources),
+        "Reaction")]
     Reaction,
 
-    [LocalizedDescription(nameof(Resources.SummaryItemType_Memory), typeof(Resources), "Memory")]
+    [LocalizedDescription(nameof(Resources.SummaryItemType_Memory),
+        typeof(Resources),
+        "Memory")]
     Memory,
 
-    [LocalizedDescription(nameof(Resources.SummaryItemType_Verbal), typeof(Resources), "Verbal")]
+    [LocalizedDescription(nameof(Resources.SummaryItemType_Verbal),
+        typeof(Resources),
+        "Verbal")]
     Verbal,
 
-    [LocalizedDescription(nameof(Resources.SummaryItemType_Visual), typeof(Resources), "Visual")]
+    [LocalizedDescription(nameof(Resources.SummaryItemType_Visual),
+        typeof(Resources),
+        "Visual")]
     Visual
 }

@@ -12,6 +12,7 @@
 using FrontendMentor.Core.ViewModels;
 using FrontendMentor.ResultsSummaryComponent.BindableModels;
 using FrontendMentor.ResultsSummaryComponent.Services.ResultSummary;
+using System.Windows.Input;
 
 namespace FrontendMentor.ResultsSummaryComponent.ViewModels;
 
@@ -20,12 +21,19 @@ internal sealed class ResultsSummaryComponentViewModel(
     IResultSummaryService resultSummaryService)
     : NavigationViewModelBase
 {
-    private ResultSummaryBindableModel? _resultSummary;
+    private ICommand? _continueCommand;
+    private ResultSummaryBindableModel _resultSummary = null!;
+    public ICommand ContinueCommand => _continueCommand ??= new DelegateCommand(Continue);
 
-    public ResultSummaryBindableModel? ResultSummary
+    public ResultSummaryBindableModel ResultSummary
     {
         get => _resultSummary;
         private set => SetProperty(ref _resultSummary, value);
+    }
+
+    private void Continue()
+    {
+        // Implement continue functionality
     }
 
     public override void OnNavigatedTo(NavigationContext navigationContext)

@@ -17,7 +17,10 @@ namespace FrontendMentor.Assets.Controls.Buttons;
 public class RoundedButton : Button
 {
     public static readonly DependencyProperty CornerRadiusProperty = DependencyProperty.Register(
-        nameof(CornerRadius), typeof(CornerRadius), typeof(RoundedButton), new PropertyMetadata(default(CornerRadius)));
+        nameof(CornerRadius),
+        typeof(CornerRadius),
+        typeof(RoundedButton),
+        new PropertyMetadata(default(CornerRadius)));
 
     static RoundedButton()
     {
@@ -28,6 +31,7 @@ public class RoundedButton : Button
     public CornerRadius CornerRadius
     {
         get => (CornerRadius)GetValue(CornerRadiusProperty);
-        set => SetValue(CornerRadiusProperty, value);
+        set => SetValue(CornerRadiusProperty,
+            value);
     }
 }

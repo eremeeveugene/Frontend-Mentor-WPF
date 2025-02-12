@@ -23,16 +23,13 @@ internal sealed class OrderSummaryViewModel(
 {
     private ICommand? _cancelOrderCommand;
     private ICommand? _changeAnnualPlanCommand;
-    private OrderSummaryBindableModel? _orderSummary;
+    private OrderSummaryBindableModel _orderSummary = null!;
     private ICommand? _proceedToPaymentCommand;
-
     public ICommand ProceedToPaymentCommand => _proceedToPaymentCommand ??= new DelegateCommand(ProceedToPayment);
-
     public ICommand CancelOrderCommand => _cancelOrderCommand ??= new DelegateCommand(CancelOrder);
-
     public ICommand ChangeAnnualPlanCommand => _changeAnnualPlanCommand ??= new DelegateCommand(ChangeAnnualPlan);
 
-    public OrderSummaryBindableModel? OrderSummary
+    public OrderSummaryBindableModel OrderSummary
     {
         get => _orderSummary;
         private set => SetProperty(ref _orderSummary, value);
@@ -50,16 +47,16 @@ internal sealed class OrderSummaryViewModel(
 
     private void ChangeAnnualPlan()
     {
-        // Implement logic to change the annual plan
+        // Implement change annual plan functionality
     }
 
     private void ProceedToPayment()
     {
-        // Implement payment processing logic
+        // Implement payment processing functionality
     }
 
     private void CancelOrder()
     {
-        // Implement order cancellation logic
+        // Implement order cancellation functionality
     }
 }

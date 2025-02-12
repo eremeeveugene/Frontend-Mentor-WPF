@@ -11,26 +11,47 @@
 
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
 
 namespace FrontendMentor.ThreeColumnPreviewCardComponent.Controls.Cards;
 
 internal class PreviewCard : Control
 {
-    public static readonly DependencyProperty IconFillProperty = DependencyProperty.Register(
-        nameof(IconFill), typeof(Brush), typeof(PreviewCard), new PropertyMetadata(default(Brush)));
+    public static readonly DependencyProperty IconFillProperty = DependencyProperty.Register(nameof(IconFill),
+        typeof(Brush),
+        typeof(PreviewCard),
+        new PropertyMetadata(default(Brush)));
 
     public static readonly DependencyProperty IconDataProperty = DependencyProperty.Register(
-        nameof(IconData), typeof(Geometry), typeof(PreviewCard), new PropertyMetadata(default(Geometry)));
+        nameof(IconData),
+        typeof(Geometry),
+        typeof(PreviewCard),
+        new PropertyMetadata(default(Geometry)));
 
     public static readonly DependencyProperty CornerRadiusProperty = DependencyProperty.Register(
-        nameof(CornerRadius), typeof(CornerRadius), typeof(PreviewCard), new PropertyMetadata(default(CornerRadius)));
+        nameof(CornerRadius),
+        typeof(CornerRadius),
+        typeof(PreviewCard),
+        new PropertyMetadata(default(CornerRadius)));
 
     public static readonly DependencyProperty TitleProperty = DependencyProperty.Register(
-        nameof(Title), typeof(string), typeof(PreviewCard), new PropertyMetadata(default(string)));
+        nameof(Title),
+        typeof(string),
+        typeof(PreviewCard),
+        new PropertyMetadata(default(string)));
 
     public static readonly DependencyProperty CaptionProperty = DependencyProperty.Register(
-        nameof(Caption), typeof(string), typeof(PreviewCard), new PropertyMetadata(default(string)));
+        nameof(Caption),
+        typeof(string),
+        typeof(PreviewCard),
+        new PropertyMetadata(default(string)));
+
+    public static readonly DependencyProperty LearnMoreCommandProperty = DependencyProperty.Register(
+        nameof(LearnMoreCommand),
+        typeof(ICommand),
+        typeof(PreviewCard),
+        new PropertyMetadata(default(ICommand)));
 
     static PreviewCard()
     {
@@ -42,6 +63,12 @@ internal class PreviewCard : Control
     {
         get => (Brush)GetValue(IconFillProperty);
         set => SetValue(IconFillProperty, value);
+    }
+
+    public ICommand LearnMoreCommand
+    {
+        get => (ICommand)GetValue(LearnMoreCommandProperty);
+        set => SetValue(LearnMoreCommandProperty, value);
     }
 
     public Geometry IconData
