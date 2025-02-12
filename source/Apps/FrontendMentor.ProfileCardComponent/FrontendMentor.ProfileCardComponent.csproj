@@ -9,7 +9,31 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Fonts\KumbhSans\KumbhSans-Black.ttf" />
+    <None Remove="Fonts\KumbhSans\KumbhSans-Bold.ttf" />
+    <None Remove="Fonts\KumbhSans\KumbhSans-ExtraBold.ttf" />
+    <None Remove="Fonts\KumbhSans\KumbhSans-ExtraLight.ttf" />
+    <None Remove="Fonts\KumbhSans\KumbhSans-Light.ttf" />
+    <None Remove="Fonts\KumbhSans\KumbhSans-Medium.ttf" />
+    <None Remove="Fonts\KumbhSans\KumbhSans-Regular.ttf" />
+    <None Remove="Fonts\KumbhSans\KumbhSans-SemiBold.ttf" />
+    <None Remove="Fonts\KumbhSans\KumbhSans-Thin.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\FrontendMentor.Assets\FrontendMentor.Assets.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\KumbhSans\KumbhSans-Black.ttf" />
+    <Resource Include="Fonts\KumbhSans\KumbhSans-Bold.ttf" />
+    <Resource Include="Fonts\KumbhSans\KumbhSans-ExtraBold.ttf" />
+    <Resource Include="Fonts\KumbhSans\KumbhSans-ExtraLight.ttf" />
+    <Resource Include="Fonts\KumbhSans\KumbhSans-Light.ttf" />
+    <Resource Include="Fonts\KumbhSans\KumbhSans-Medium.ttf" />
+    <Resource Include="Fonts\KumbhSans\KumbhSans-Regular.ttf" />
+    <Resource Include="Fonts\KumbhSans\KumbhSans-SemiBold.ttf" />
+    <Resource Include="Fonts\KumbhSans\KumbhSans-Thin.ttf" />
   </ItemGroup>
 
   <ItemGroup>
