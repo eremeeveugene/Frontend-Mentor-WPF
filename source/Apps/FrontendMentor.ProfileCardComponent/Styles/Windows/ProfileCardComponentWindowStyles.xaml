@@ -8,12 +8,12 @@
     <ResourceDictionary.MergedDictionaries>
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Controls/Generic/Windows/FrontendMentorWindowStyles.xaml" />
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ProfileCardComponent;component/Brushes/Brushes.xaml" />
-        <!--<resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ProfileCardComponent;component/Fonts/Fonts.xaml" />-->
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ProfileCardComponent;component/Fonts/Fonts.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style BasedOn="{StaticResource {x:Type assetsWindows:FrontendMentorWindow}}" TargetType="{x:Type windows:ProfileCardComponentWindow}">
         <Setter Property="Background" Value="{StaticResource ProfileCardComponentWindow.Background.Brush}" />
-        <!--<Setter Property="FontFamily" Value="{StaticResource Outfit.FontFamily}" />-->
+        <Setter Property="FontFamily" Value="{StaticResource KumbhSans.FontFamily}" />
         <Setter Property="Foreground" Value="{StaticResource ProfileCardComponentWindow.Foreground.Brush}" />
         <Setter Property="MinHeight" Value="720" />
         <Setter Property="MinWidth" Value="1440" />

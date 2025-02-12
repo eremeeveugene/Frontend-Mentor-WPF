@@ -1,11 +1,124 @@
 ﻿<UserControl x:Class="FrontendMentor.ProfileCardComponent.Views.ProfileCardComponentView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:behaviors="clr-namespace:FrontendMentor.Assets.Behaviors;assembly=FrontendMentor.Assets"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:panels="clr-namespace:FrontendMentor.Assets.Controls.Panels;assembly=FrontendMentor.Assets"
              xmlns:viewModels="clr-namespace:FrontendMentor.ProfileCardComponent.ViewModels"
              d:DataContext="{d:DesignInstance viewModels:ProfileCardComponentViewModel}"
              x:ClassModifier="internal"
              mc:Ignorable="d">
-    <Grid />
+
+    <StackPanel Width="350"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+        <Grid>
+            <StackPanel>
+                <Border Height="140"
+                        Background="#41CBD3"
+                        CornerRadius="15 15 0 0" />
+
+                <Border Height="145" Background="#FFFFFF">
+                    <StackPanel HorizontalAlignment="Center">
+                        <StackPanel Margin="0,72,0,0" Orientation="Horizontal">
+                            <TextBlock FontSize="18"
+                                       FontWeight="Bold"
+                                       Text="Victor Crest" />
+
+                            <TextBlock Margin="8.5,0,0,0"
+                                       FontSize="18"
+                                       Text="26">
+                                <TextBlock.Foreground>
+                                    <SolidColorBrush Color="#6B7082" />
+                                </TextBlock.Foreground>
+                            </TextBlock>
+                        </StackPanel>
+
+                        <TextBlock Margin="0,8,0,0"
+                                   HorizontalAlignment="Center"
+                                   FontSize="14"
+                                   Text="London">
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="#6B7082" />
+                            </TextBlock.Foreground>
+                        </TextBlock>
+                    </StackPanel>
+                </Border>
+
+            </StackPanel>
+
+            <Ellipse Width="96"
+                     Height="96"
+                     Fill="Blue"
+                     Stroke="#FFFFFF"
+                     StrokeThickness="5" />
+
+        </Grid>
+
+        <Border Height="1" Background="#E8E9EC" />
+
+        <Border Padding="24"
+                Background="#FFFFFF"
+                CornerRadius="0 0 15 15">
+            <Grid HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <panels:SpacingStackPanel Grid.Column="0" Spacing="9">
+                    <TextBlock FontSize="18"
+                               FontWeight="Bold"
+                               Text="80K" />
+
+                    <TextBlock FontSize="10" Text="Followers">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="#6B7082" />
+                        </TextBlock.Foreground>
+                        <b:Interaction.Behaviors>
+                            <behaviors:TextBlockLetterSpacingBehavior LetterSpacing="1.5" />
+                        </b:Interaction.Behaviors>
+                    </TextBlock>
+                </panels:SpacingStackPanel>
+
+                <panels:SpacingStackPanel Grid.Column="1"
+                                          Margin="46,0,0,0"
+                                          Spacing="9">
+                    <TextBlock FontSize="18"
+                               FontWeight="Bold"
+                               Text="803K" />
+
+                    <TextBlock FontSize="10" Text="Followers">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="#6B7082" />
+                        </TextBlock.Foreground>
+                        <b:Interaction.Behaviors>
+                            <behaviors:TextBlockLetterSpacingBehavior LetterSpacing="1.5" />
+                        </b:Interaction.Behaviors>
+                    </TextBlock>
+                </panels:SpacingStackPanel>
+
+                <panels:SpacingStackPanel Grid.Column="2"
+                                          Margin="54,0,0,0"
+                                          Spacing="9">
+                    <TextBlock FontSize="18"
+                               FontWeight="Bold"
+                               Text="1.4K" />
+
+                    <TextBlock FontSize="10" Text="Photos">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="#6B7082" />
+                        </TextBlock.Foreground>
+                        <b:Interaction.Behaviors>
+                            <behaviors:TextBlockLetterSpacingBehavior LetterSpacing="1.5" />
+                        </b:Interaction.Behaviors>
+                    </TextBlock>
+                </panels:SpacingStackPanel>
+            </Grid>
+        </Border>
+    </StackPanel>
+
 </UserControl>
