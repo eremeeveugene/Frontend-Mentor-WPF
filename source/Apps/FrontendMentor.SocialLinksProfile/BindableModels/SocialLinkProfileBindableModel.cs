@@ -20,25 +20,45 @@ internal class SocialLinkProfileBindableModel(
     IBitmapImagesService bitmapImagesService,
     SocialLinkProfileBindableModel.Parameters parameters) : BindableBase
 {
-    public string FirstName { get; } = parameters.SocialLinkProfile.FirstName;
+    public string FirstName
+    {
+        get;
+    } = parameters.SocialLinkProfile.FirstName;
 
-    public string LastName { get; } = parameters.SocialLinkProfile.LastName;
+    public string LastName
+    {
+        get;
+    } = parameters.SocialLinkProfile.LastName;
 
-    public string Title { get; } = parameters.SocialLinkProfile.Title;
+    public string Title
+    {
+        get;
+    } = parameters.SocialLinkProfile.Title;
 
-    public string Location { get; } = parameters.SocialLinkProfile.Location;
+    public string Location
+    {
+        get;
+    } = parameters.SocialLinkProfile.Location;
 
-    public BitmapImage ProfileImage { get; } =
+    public BitmapImage ProfileImage
+    {
+        get;
+    } =
         bitmapImagesService.GetBitmapImageFromBase64String(parameters.SocialLinkProfile.ProfileImageBase64String);
 
-    public List<SocialLinkBindableModel> SocialLinks { get; } =
-        GetSocialLinks(containerProvider, parameters.SocialLinkProfile.SocialLinks);
+    public List<SocialLinkBindableModel> SocialLinks
+    {
+        get;
+    } =
+        GetSocialLinks(containerProvider,
+            parameters.SocialLinkProfile.SocialLinks);
 
     private static List<SocialLinkBindableModel> GetSocialLinks(IContainerProvider containerProvider,
         IEnumerable<SocialLinkModel> socialLinks)
     {
         return socialLinks.Select(socialLink => SocialLinkBindableModel.Create(containerProvider,
-            new SocialLinkBindableModel.Parameters(socialLink))).ToList();
+                new SocialLinkBindableModel.Parameters(socialLink)))
+            .ToList();
     }
 
     public static SocialLinkProfileBindableModel Create(IContainerProvider containerProvider, Parameters parameters)

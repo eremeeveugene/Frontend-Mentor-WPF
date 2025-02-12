@@ -18,10 +18,29 @@ namespace FrontendMentor.ResultsSummaryComponent.Converters;
 
 internal class SummaryItemTypeToValueConverter : ConverterMarkupExtension<SummaryItemTypeToValueConverter>
 {
-    public object? MemoryValue { get; set; }
-    public object? ReactionValue { get; set; }
-    public object? VerbalValue { get; set; }
-    public object? VisualValue { get; set; }
+    public object? MemoryValue
+    {
+        get;
+        set;
+    }
+
+    public object? ReactionValue
+    {
+        get;
+        set;
+    }
+
+    public object? VerbalValue
+    {
+        get;
+        set;
+    }
+
+    public object? VisualValue
+    {
+        get;
+        set;
+    }
 
     public override object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {

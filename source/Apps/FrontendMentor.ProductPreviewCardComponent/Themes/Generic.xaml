@@ -1,0 +1,6 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
+    <ResourceDictionary.MergedDictionaries>
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ProductPreviewCardComponent;component/Styles/Generic/Buttons/IconButtonStyles.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ProductPreviewCardComponent;component/Styles/Generic/Windows/ProductPreviewCardComponentWindowStyles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

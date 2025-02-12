@@ -27,20 +27,23 @@ public class EnumToDescriptionConverter : ConverterMarkupExtension<EnumToDescrip
 
         var fieldName = value.ToString() ?? throw new InvalidOperationException();
 
-        var fieldInfo = value.GetType().GetField(fieldName);
+        var fieldInfo = value.GetType()
+            .GetField(fieldName);
 
         if (fieldInfo == null)
         {
             return value.ToString();
         }
 
-        if (fieldInfo.GetCustomAttributes(typeof(LocalizedDescriptionAttribute), false)
+        if (fieldInfo.GetCustomAttributes(typeof(LocalizedDescriptionAttribute),
+                    false)
                 .FirstOrDefault() is LocalizedDescriptionAttribute localizedDescription)
         {
             return localizedDescription.Description;
         }
 
-        if (fieldInfo.GetCustomAttributes(typeof(DescriptionAttribute), false)
+        if (fieldInfo.GetCustomAttributes(typeof(DescriptionAttribute),
+                    false)
                 .FirstOrDefault() is DescriptionAttribute description)
         {
             return description.Description;

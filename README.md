@@ -120,7 +120,7 @@ https://www.frontendmentor.io/challenges/results-summary-component-CE_K6s0maV
 
 </details>
 
-## Three-column preview card component
+## Three Column Preview Card Component
 
 https://www.frontendmentor.io/challenges/3column-preview-card-component-pH92eAR2-
 
@@ -145,7 +145,7 @@ https://www.frontendmentor.io/challenges/3column-preview-card-component-pH92eAR2
 
 </details>
 
-## Order summary component
+## Order Summary Component
 
 https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj
 
@@ -186,6 +186,31 @@ https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj
 
 </details>
 
+## Product Preview Card Component
+
+https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj
+
+<details>
+    <summary><strong>Screenshots</strong></summary>
+  
+### Expected Result
+
+![Expected Result](https://github.com/user-attachments/assets/5e0ab0d9-0ad2-422f-a2bc-705a74ef5979)
+
+### Actual Result (99.89% identical to the expected result)
+![Actual Result](https://github.com/user-attachments/assets/bb6a99ca-f2cf-4b34-bd10-471fb8f038ba)
+
+### Expected Result - Add to Cart
+
+![Expected Result - Add to Cart](https://github.com/user-attachments/assets/a2840ba4-67b7-425e-b603-e8e0deed2730)
+
+### Actual Result - Add to Cart (99.89% identical to the expected result)
+
+![Actual Result - Add to Cart](https://github.com/user-attachments/assets/4a70e273-1e86-40e7-b79a-c0ca9d95c0d8)
+
+</details>
+
 ## License
 
 This project is licensed under a custom license. See the [LICENSE](LICENSE) file for details.
+

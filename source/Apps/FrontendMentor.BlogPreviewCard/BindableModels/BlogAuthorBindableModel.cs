@@ -19,10 +19,20 @@ internal class BlogAuthorBindableModel(
     IBitmapImagesService bitmapImagesService,
     BlogAuthorBindableModel.Parameters parameters) : BindableBase
 {
-    public string FirstName { get; } = parameters.BlogAuthor.FirstName;
-    public string LastName { get; } = parameters.BlogAuthor.LastName;
+    public string FirstName
+    {
+        get;
+    } = parameters.BlogAuthor.FirstName;
 
-    public BitmapImage UserImage { get; } =
+    public string LastName
+    {
+        get;
+    } = parameters.BlogAuthor.LastName;
+
+    public BitmapImage UserImage
+    {
+        get;
+    } =
         bitmapImagesService.GetBitmapImageFromBase64String(parameters.BlogAuthor.ImageBase64String);
 
     public static BlogAuthorBindableModel Create(IContainerProvider containerProvider, Parameters parameters)
