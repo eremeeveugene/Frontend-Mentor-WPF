@@ -198,6 +198,7 @@ https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj
 ![Expected Result](https://github.com/user-attachments/assets/5e0ab0d9-0ad2-422f-a2bc-705a74ef5979)
 
 ### Actual Result (99.89% identical to the expected result)
+
 ![Actual Result](https://github.com/user-attachments/assets/bb6a99ca-f2cf-4b34-bd10-471fb8f038ba)
 
 ### Expected Result - Add to Cart
@@ -210,7 +211,17 @@ https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj
 
 </details>
 
+## Profile Card Component
+
+https://www.frontendmentor.io/challenges/profile-card-component-cfArpWshJ
+
+<details>
+    <summary><strong>Screenshots</strong></summary>
+  
+### Expected Result
+
+</details>
+
 ## License
 
 This project is licensed under a custom license. See the [LICENSE](LICENSE) file for details.
-
