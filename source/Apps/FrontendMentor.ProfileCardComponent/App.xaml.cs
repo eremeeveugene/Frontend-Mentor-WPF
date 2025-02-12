@@ -9,26 +9,32 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
+using FrontendMentor.ProfileCardComponent.Constants;
+using FrontendMentor.ProfileCardComponent.Controls.Windows;
+using FrontendMentor.ProfileCardComponent.Views;
+using System.Windows;
+
 namespace FrontendMentor.ProfileCardComponent;
 
 internal partial class App
 {
-    //protected override Window CreateShell()
-    //{
-    //    return Container.Resolve<QrCodeComponentWindow>();
-    //}
+    protected override Window CreateShell()
+    {
+        return Container.Resolve<ProfileCardComponentWindow>();
+    }
 
     protected override void RegisterTypes(IContainerRegistry containerRegistry)
     {
         base.RegisterTypes(containerRegistry);
 
-        //containerRegistry.RegisterForNavigation<QrCodeComponentView>(QrCodeComponentViewNames.QrCodeComponent);
+        containerRegistry.RegisterForNavigation<ProfileCardComponentView>(ProfileCardComponentViewNames
+            .ProfileCardComponent);
     }
 
     protected override void OnInitialized()
     {
         base.OnInitialized();
 
-        //NavigateToShellRegion(QrCodeComponentViewNames.QrCodeComponent);
+        NavigateToShellRegion(ProfileCardComponentViewNames.ProfileCardComponent);
     }
 }
