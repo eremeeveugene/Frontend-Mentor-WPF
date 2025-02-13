@@ -11,6 +11,7 @@
 
 using FrontendMentor.ProfileCardComponent.Constants;
 using FrontendMentor.ProfileCardComponent.Controls.Windows;
+using FrontendMentor.ProfileCardComponent.Services.Profiles;
 using FrontendMentor.ProfileCardComponent.Views;
 using System.Windows;
 
@@ -27,6 +28,7 @@ internal partial class App
     {
         base.RegisterTypes(containerRegistry);
 
+        containerRegistry.RegisterSingleton<IProfilesService, ProfilesService>();
         containerRegistry.RegisterForNavigation<ProfileCardComponentView>(ProfileCardComponentViewNames
             .ProfileCardComponent);
     }
