@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,6 +19,12 @@
     <None Remove="Fonts\KumbhSans\KumbhSans-Regular.ttf" />
     <None Remove="Fonts\KumbhSans\KumbhSans-SemiBold.ttf" />
     <None Remove="Fonts\KumbhSans\KumbhSans-Thin.ttf" />
+    <None Remove="Properties\Icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Icon.ico" />
+    <Content Include="Properties\Icon.ico" />
   </ItemGroup>
 
   <ItemGroup>
