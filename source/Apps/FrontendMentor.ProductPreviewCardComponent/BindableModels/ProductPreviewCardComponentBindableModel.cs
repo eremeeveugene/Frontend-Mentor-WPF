@@ -22,7 +22,6 @@ internal class ProductPreviewCardComponentBindableModel(
     public string Type
     {
         get;
-        set;
     } = parameters.Product.Type;
 
     public string Title
@@ -33,26 +32,22 @@ internal class ProductPreviewCardComponentBindableModel(
     public string Description
     {
         get;
-        set;
     } = parameters.Product.Description;
 
     public double Price
     {
         get;
-        set;
     } = parameters.Product.Price;
 
     public double OldPrice
     {
         get;
-        set;
     } = parameters.Product.OldPrice;
 
     public BitmapImage ProfileImage
     {
         get;
-    } =
-        bitmapImagesService.GetBitmapImageFromBase64String(parameters.Product.ProductImageBase64String);
+    } = bitmapImagesService.GetBitmapImageFromBase64String(parameters.Product.ProductImageBase64String);
 
     public static ProductPreviewCardComponentBindableModel Create(IContainerProvider containerProvider,
         Parameters parameters)

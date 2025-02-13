@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
              xmlns:behaviors="clr-namespace:FrontendMentor.Assets.Behaviors;assembly=FrontendMentor.Assets"
+             xmlns:converters="clr-namespace:FrontendMentor.ProfileCardComponent.Converters"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:panels="clr-namespace:FrontendMentor.Assets.Controls.Panels;assembly=FrontendMentor.Assets"
@@ -68,13 +69,14 @@
                     <Border Height="145" Background="#FFFFFF">
                         <StackPanel HorizontalAlignment="Center">
                             <StackPanel Margin="0,72,0,0" Orientation="Horizontal">
-                                <TextBlock FontSize="18"
-                                           FontWeight="Bold"
-                                           Text="Victor Crest" />
+                                <TextBlock FontSize="18" FontWeight="Bold">
+                                    <Run Text="{Binding Profile.FirstName, Mode=OneWay}" />
+                                    <Run Text="{Binding Profile.LastName, Mode=OneWay}" />
+                                </TextBlock>
 
                                 <TextBlock Margin="8.5,0,0,0"
                                            FontSize="18"
-                                           Text="26">
+                                           Text="{Binding Profile.Age}">
                                     <TextBlock.Foreground>
                                         <SolidColorBrush Color="#6B7082" />
                                     </TextBlock.Foreground>
@@ -84,7 +86,7 @@
                             <TextBlock Margin="0,8,0,0"
                                        HorizontalAlignment="Center"
                                        FontSize="14"
-                                       Text="London">
+                                       Text="{Binding Profile.Location}">
                                 <TextBlock.Foreground>
                                     <SolidColorBrush Color="#6B7082" />
                                 </TextBlock.Foreground>
@@ -96,10 +98,12 @@
 
                 <Ellipse Width="96"
                          Height="96"
-                         Fill="Blue"
                          Stroke="#FFFFFF"
-                         StrokeThickness="5" />
-
+                         StrokeThickness="5">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="{Binding Profile.ProfileImage}" />
+                    </Ellipse.Fill>
+                </Ellipse>
             </Grid>
 
             <Border Height="1" Background="#E8E9EC" />
@@ -117,7 +121,7 @@
                     <panels:SpacingStackPanel Grid.Column="0" Spacing="9">
                         <TextBlock FontSize="18"
                                    FontWeight="Bold"
-                                   Text="80K"
+                                   Text="{Binding Profile.Followers, Converter={converters:NumberAbbreviationConverter}}"
                                    TextAlignment="Center" />
 
                         <TextBlock FontSize="10"
@@ -137,7 +141,7 @@
                                               Spacing="9">
                         <TextBlock FontSize="18"
                                    FontWeight="Bold"
-                                   Text="803K"
+                                   Text="{Binding Profile.Likes, Converter={converters:NumberAbbreviationConverter}}"
                                    TextAlignment="Center" />
 
                         <TextBlock FontSize="10"
@@ -157,7 +161,7 @@
                                               Spacing="9">
                         <TextBlock FontSize="18"
                                    FontWeight="Bold"
-                                   Text="1.4K"
+                                   Text="{Binding Profile.Photos, Converter={converters:NumberAbbreviationConverter}}"
                                    TextAlignment="Center" />
 
                         <TextBlock FontSize="10"
