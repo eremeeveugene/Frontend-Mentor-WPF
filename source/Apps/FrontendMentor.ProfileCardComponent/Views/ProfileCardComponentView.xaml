@@ -11,114 +11,168 @@
              x:ClassModifier="internal"
              mc:Ignorable="d">
 
-    <StackPanel Width="350"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center">
-        <Grid>
-            <StackPanel>
-                <Border Height="140"
-                        Background="#41CBD3"
-                        CornerRadius="15 15 0 0" />
+    <Grid ClipToBounds="True">
+        <Ellipse Width="976"
+                 Height="976"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Opacity="0.5"
+                 RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <RotateTransform Angle="135" />
+                    <TranslateTransform X="-283" Y="-508" />
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+            <Ellipse.Fill>
+                <LinearGradientBrush StartPoint="1,1" EndPoint="0,0">
+                    <LinearGradientBrush.GradientStops>
+                        <GradientStop Color="#000989B4" />
+                        <GradientStop Offset="1" Color="#53FFEE" />
+                    </LinearGradientBrush.GradientStops>
+                </LinearGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
 
-                <Border Height="145" Background="#FFFFFF">
-                    <StackPanel HorizontalAlignment="Center">
-                        <StackPanel Margin="0,72,0,0" Orientation="Horizontal">
-                            <TextBlock FontSize="18"
-                                       FontWeight="Bold"
-                                       Text="Victor Crest" />
+        <Ellipse Width="976"
+                 Height="976"
+                 HorizontalAlignment="Right"
+                 VerticalAlignment="Bottom"
+                 Opacity="0.25"
+                 RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <RotateTransform Angle="45" />
+                    <TranslateTransform X="228" Y="632" />
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+            <Ellipse.Fill>
+                <LinearGradientBrush StartPoint="1,1" EndPoint="0,0">
+                    <LinearGradientBrush.GradientStops>
+                        <GradientStop Color="#000989B4" />
+                        <GradientStop Offset="1" Color="#53FFEE" />
+                    </LinearGradientBrush.GradientStops>
+                </LinearGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
 
-                            <TextBlock Margin="8.5,0,0,0"
-                                       FontSize="18"
-                                       Text="26">
+        <StackPanel Width="350"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <Grid>
+                <StackPanel>
+                    <Border Height="140"
+                            Background="#41CBD3"
+                            CornerRadius="15 15 0 0" />
+
+                    <Border Height="145" Background="#FFFFFF">
+                        <StackPanel HorizontalAlignment="Center">
+                            <StackPanel Margin="0,72,0,0" Orientation="Horizontal">
+                                <TextBlock FontSize="18"
+                                           FontWeight="Bold"
+                                           Text="Victor Crest" />
+
+                                <TextBlock Margin="8.5,0,0,0"
+                                           FontSize="18"
+                                           Text="26">
+                                    <TextBlock.Foreground>
+                                        <SolidColorBrush Color="#6B7082" />
+                                    </TextBlock.Foreground>
+                                </TextBlock>
+                            </StackPanel>
+
+                            <TextBlock Margin="0,8,0,0"
+                                       HorizontalAlignment="Center"
+                                       FontSize="14"
+                                       Text="London">
                                 <TextBlock.Foreground>
                                     <SolidColorBrush Color="#6B7082" />
                                 </TextBlock.Foreground>
                             </TextBlock>
                         </StackPanel>
+                    </Border>
 
-                        <TextBlock Margin="0,8,0,0"
-                                   HorizontalAlignment="Center"
-                                   FontSize="14"
-                                   Text="London">
+                </StackPanel>
+
+                <Ellipse Width="96"
+                         Height="96"
+                         Fill="Blue"
+                         Stroke="#FFFFFF"
+                         StrokeThickness="5" />
+
+            </Grid>
+
+            <Border Height="1" Background="#E8E9EC" />
+
+            <Border Padding="24"
+                    Background="#FFFFFF"
+                    CornerRadius="0 0 15 15">
+                <Grid HorizontalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <panels:SpacingStackPanel Grid.Column="0" Spacing="9">
+                        <TextBlock FontSize="18"
+                                   FontWeight="Bold"
+                                   Text="80K"
+                                   TextAlignment="Center" />
+
+                        <TextBlock FontSize="10"
+                                   Text="Followers"
+                                   TextAlignment="Center">
                             <TextBlock.Foreground>
                                 <SolidColorBrush Color="#6B7082" />
                             </TextBlock.Foreground>
+                            <b:Interaction.Behaviors>
+                                <behaviors:TextBlockLetterSpacingBehavior LetterSpacing="1.5" />
+                            </b:Interaction.Behaviors>
                         </TextBlock>
-                    </StackPanel>
-                </Border>
+                    </panels:SpacingStackPanel>
 
-            </StackPanel>
+                    <panels:SpacingStackPanel Grid.Column="1"
+                                              Margin="46,0,0,0"
+                                              Spacing="9">
+                        <TextBlock FontSize="18"
+                                   FontWeight="Bold"
+                                   Text="803K"
+                                   TextAlignment="Center" />
 
-            <Ellipse Width="96"
-                     Height="96"
-                     Fill="Blue"
-                     Stroke="#FFFFFF"
-                     StrokeThickness="5" />
+                        <TextBlock FontSize="10"
+                                   Text="Likes"
+                                   TextAlignment="Center">
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="#6B7082" />
+                            </TextBlock.Foreground>
+                            <b:Interaction.Behaviors>
+                                <behaviors:TextBlockLetterSpacingBehavior LetterSpacing="1.5" />
+                            </b:Interaction.Behaviors>
+                        </TextBlock>
+                    </panels:SpacingStackPanel>
 
-        </Grid>
+                    <panels:SpacingStackPanel Grid.Column="2"
+                                              Margin="54,0,0,0"
+                                              Spacing="9">
+                        <TextBlock FontSize="18"
+                                   FontWeight="Bold"
+                                   Text="1.4K"
+                                   TextAlignment="Center" />
 
-        <Border Height="1" Background="#E8E9EC" />
-
-        <Border Padding="24"
-                Background="#FFFFFF"
-                CornerRadius="0 0 15 15">
-            <Grid HorizontalAlignment="Center">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-
-                <panels:SpacingStackPanel Grid.Column="0" Spacing="9">
-                    <TextBlock FontSize="18"
-                               FontWeight="Bold"
-                               Text="80K" />
-
-                    <TextBlock FontSize="10" Text="Followers">
-                        <TextBlock.Foreground>
-                            <SolidColorBrush Color="#6B7082" />
-                        </TextBlock.Foreground>
-                        <b:Interaction.Behaviors>
-                            <behaviors:TextBlockLetterSpacingBehavior LetterSpacing="1.5" />
-                        </b:Interaction.Behaviors>
-                    </TextBlock>
-                </panels:SpacingStackPanel>
-
-                <panels:SpacingStackPanel Grid.Column="1"
-                                          Margin="46,0,0,0"
-                                          Spacing="9">
-                    <TextBlock FontSize="18"
-                               FontWeight="Bold"
-                               Text="803K" />
-
-                    <TextBlock FontSize="10" Text="Followers">
-                        <TextBlock.Foreground>
-                            <SolidColorBrush Color="#6B7082" />
-                        </TextBlock.Foreground>
-                        <b:Interaction.Behaviors>
-                            <behaviors:TextBlockLetterSpacingBehavior LetterSpacing="1.5" />
-                        </b:Interaction.Behaviors>
-                    </TextBlock>
-                </panels:SpacingStackPanel>
-
-                <panels:SpacingStackPanel Grid.Column="2"
-                                          Margin="54,0,0,0"
-                                          Spacing="9">
-                    <TextBlock FontSize="18"
-                               FontWeight="Bold"
-                               Text="1.4K" />
-
-                    <TextBlock FontSize="10" Text="Photos">
-                        <TextBlock.Foreground>
-                            <SolidColorBrush Color="#6B7082" />
-                        </TextBlock.Foreground>
-                        <b:Interaction.Behaviors>
-                            <behaviors:TextBlockLetterSpacingBehavior LetterSpacing="1.5" />
-                        </b:Interaction.Behaviors>
-                    </TextBlock>
-                </panels:SpacingStackPanel>
-            </Grid>
-        </Border>
-    </StackPanel>
-
+                        <TextBlock FontSize="10"
+                                   Text="Photos"
+                                   TextAlignment="Center">
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="#6B7082" />
+                            </TextBlock.Foreground>
+                            <b:Interaction.Behaviors>
+                                <behaviors:TextBlockLetterSpacingBehavior LetterSpacing="1.5" />
+                            </b:Interaction.Behaviors>
+                        </TextBlock>
+                    </panels:SpacingStackPanel>
+                </Grid>
+            </Border>
+        </StackPanel>
+    </Grid>
 </UserControl>
