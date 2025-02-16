@@ -21,36 +21,18 @@ internal class BlogBindableModel(
     BlogBindableModel.Parameters parameters)
     : BindableBase
 {
-    public string Title
-    {
-        get;
-    } = parameters.Blog.Title;
+    public string Title { get; } = parameters.Blog.Title;
 
-    public string Description
-    {
-        get;
-    } = parameters.Blog.Description;
+    public string Description { get; } = parameters.Blog.Description;
 
-    public string Category
-    {
-        get;
-    } = parameters.Blog.Category;
+    public string Category { get; } = parameters.Blog.Category;
 
-    public DateTime PublishedDate
-    {
-        get;
-    } = parameters.Blog.PublishedDate;
+    public DateTime PublishedDate { get; } = parameters.Blog.PublishedDate;
 
-    public BitmapImage BlogImage
-    {
-        get;
-    } =
+    public BitmapImage BlogImage { get; } =
         bitmapImagesService.GetBitmapImageFromBase64String(parameters.Blog.ImageBase64String);
 
-    public BlogAuthorBindableModel BlogAuthor
-    {
-        get;
-    } = BlogAuthorBindableModel.Create(containerProvider,
+    public BlogAuthorBindableModel BlogAuthor { get; } = BlogAuthorBindableModel.Create(containerProvider,
         new BlogAuthorBindableModel.Parameters(parameters.Blog.BlogAuthor));
 
     public static BlogBindableModel Create(IContainerProvider containerProvider, Parameters parameters)
