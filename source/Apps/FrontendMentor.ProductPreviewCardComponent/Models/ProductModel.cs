@@ -13,39 +13,15 @@ namespace FrontendMentor.ProductPreviewCardComponent.Models;
 
 internal class ProductModel
 {
-    public string Type
-    {
-        get;
-        set;
-    } = null!;
+    public string Type { get; set; } = null!;
 
-    public string Title
-    {
-        get;
-        set;
-    } = null!;
+    public string Title { get; set; } = null!;
 
-    public string Description
-    {
-        get;
-        set;
-    } = null!;
+    public string Description { get; set; } = null!;
 
-    public double Price
-    {
-        get;
-        set;
-    }
+    public double Price { get; set; }
 
-    public double OldPrice
-    {
-        get;
-        set;
-    }
+    public double OldPrice { get; set; }
 
-    public string ProductImageBase64String
-    {
-        get;
-        set;
-    } = null!;
+    public string ProductImageBase64String { get; set; } = null!;
 }

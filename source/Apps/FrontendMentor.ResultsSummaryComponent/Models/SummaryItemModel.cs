@@ -15,15 +15,7 @@ namespace FrontendMentor.ResultsSummaryComponent.Models;
 
 internal class SummaryItemModel
 {
-    public SummaryItemType SummaryItemType
-    {
-        get;
-        set;
-    }
+    public SummaryItemType SummaryItemType { get; set; }
 
-    public int Value
-    {
-        get;
-        set;
-    }
+    public int Value { get; set; }
 }

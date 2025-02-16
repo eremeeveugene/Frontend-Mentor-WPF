@@ -15,9 +15,9 @@ using System.Windows.Media.Imaging;
 
 namespace FrontendMentor.ProfileCardComponent.BindableModels;
 
-internal class ProfileCardComponentBindableModel(
+internal class ProfileBindableModel(
     IBitmapImagesService bitmapImagesService,
-    ProfileCardComponentBindableModel.Parameters parameters) : BindableBase
+    ProfileBindableModel.Parameters parameters) : BindableBase
 {
     public string Location { get; } = parameters.Profile.Location;
 
@@ -36,9 +36,9 @@ internal class ProfileCardComponentBindableModel(
     public BitmapImage ProfileImage { get; } =
         bitmapImagesService.GetBitmapImageFromBase64String(parameters.Profile.ProfileImageBase64String);
 
-    public static ProfileCardComponentBindableModel Create(IContainerProvider containerProvider, Parameters parameters)
+    public static ProfileBindableModel Create(IContainerProvider containerProvider, Parameters parameters)
     {
-        return containerProvider.Resolve<ProfileCardComponentBindableModel>((typeof(Parameters), parameters));
+        return containerProvider.Resolve<ProfileBindableModel>((typeof(Parameters), parameters));
     }
 
     public record Parameters(ProfileModel Profile);

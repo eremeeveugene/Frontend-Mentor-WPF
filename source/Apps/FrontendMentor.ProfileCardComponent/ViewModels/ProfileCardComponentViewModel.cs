@@ -19,9 +19,9 @@ internal sealed class ProfileCardComponentViewModel(
     IContainerProvider containerProvider,
     IProfilesService profilesService) : NavigationViewModelBase
 {
-    private ProfileCardComponentBindableModel _profile = null!;
+    private ProfileBindableModel _profile = null!;
 
-    public ProfileCardComponentBindableModel Profile
+    public ProfileBindableModel Profile
     {
         get => _profile;
         private set => SetProperty(ref _profile, value);
@@ -33,7 +33,7 @@ internal sealed class ProfileCardComponentViewModel(
 
         var profile = profilesService.GetProfile();
 
-        Profile = ProfileCardComponentBindableModel.Create(containerProvider,
-            new ProfileCardComponentBindableModel.Parameters(profile));
+        Profile = ProfileBindableModel.Create(containerProvider,
+            new ProfileBindableModel.Parameters(profile));
     }
 }

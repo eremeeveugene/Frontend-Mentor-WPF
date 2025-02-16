@@ -23,7 +23,6 @@ internal sealed class ResultsSummaryComponentViewModel(
 {
     private ICommand? _continueCommand;
     private ResultSummaryBindableModel _resultSummary = null!;
-    public ICommand ContinueCommand => _continueCommand ??= new DelegateCommand(Continue);
 
     public ResultSummaryBindableModel ResultSummary
     {
@@ -31,10 +30,7 @@ internal sealed class ResultsSummaryComponentViewModel(
         private set => SetProperty(ref _resultSummary, value);
     }
 
-    private void Continue()
-    {
-        // Implement continue functionality
-    }
+    public ICommand ContinueCommand => _continueCommand ??= new DelegateCommand(Continue);
 
     public override void OnNavigatedTo(NavigationContext navigationContext)
     {
@@ -44,5 +40,10 @@ internal sealed class ResultsSummaryComponentViewModel(
 
         ResultSummary = ResultSummaryBindableModel.Create(containerProvider,
             new ResultSummaryBindableModel.Parameters(resultSummary));
+    }
+
+    private void Continue()
+    {
+        // Implement continue functionality
     }
 }

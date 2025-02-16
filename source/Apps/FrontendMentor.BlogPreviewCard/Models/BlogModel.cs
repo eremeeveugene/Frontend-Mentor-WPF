@@ -13,39 +13,15 @@ namespace FrontendMentor.BlogPreviewCard.Models;
 
 internal class BlogModel
 {
-    public string Title
-    {
-        get;
-        set;
-    } = null!;
+    public string Title { get; set; } = null!;
 
-    public string Description
-    {
-        get;
-        set;
-    } = null!;
+    public string Description { get; set; } = null!;
 
-    public string Category
-    {
-        get;
-        set;
-    } = null!;
+    public string Category { get; set; } = null!;
 
-    public string ImageBase64String
-    {
-        get;
-        set;
-    } = null!;
+    public string ImageBase64String { get; set; } = null!;
 
-    public DateTime PublishedDate
-    {
-        get;
-        set;
-    }
+    public DateTime PublishedDate { get; set; }
 
-    public BlogAuthorModel BlogAuthor
-    {
-        get;
-        set;
-    } = null!;
+    public BlogAuthorModel BlogAuthor { get; set; } = null!;
 }

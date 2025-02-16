@@ -16,15 +16,9 @@ namespace FrontendMentor.ResultsSummaryComponent.BindableModels;
 
 internal sealed class SummaryItemBindableModel(SummaryItemBindableModel.Parameters parameters) : BindableBase
 {
-    public SummaryItemType SummaryItemType
-    {
-        get;
-    } = parameters.SummaryItem.SummaryItemType;
+    public SummaryItemType SummaryItemType { get; } = parameters.SummaryItem.SummaryItemType;
 
-    public int Value
-    {
-        get;
-    } = parameters.SummaryItem.Value;
+    public int Value { get; } = parameters.SummaryItem.Value;
 
     public static SummaryItemBindableModel Create(IContainerProvider containerProvider, Parameters parameters)
     {
