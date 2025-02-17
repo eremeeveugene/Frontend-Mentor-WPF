@@ -2,5 +2,6 @@
 
     <Color x:Key="Light.Sea.Green.Color">#19A1AE</Color>
     <Color x:Key="Outer.Space.Color">#2E3349</Color>
+    <Color x:Key="Auro.Metal.Saurus.Color">#6B7082</Color>
 
 </ResourceDictionary>

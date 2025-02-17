@@ -11,13 +11,23 @@
 
     <SolidColorBrush x:Key="ProfileCardComponentWindow.Foreground.Brush"
                      po:Freeze="True"
-                     Color="{StaticResource Outer.Space.Color}" />
+                     Color="{StaticResource Auro.Metal.Saurus.Color}" />
 
     <SolidColorBrush x:Key="ProfileCardComponentWindow.Background.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Light.Sea.Green.Color}" />
 
     <!--#endregion-->
+
+    <!--#region Heading.TextBlock-->
+
+    <SolidColorBrush x:Key="Heading.TextBlock.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Outer.Space.Color}" />
+
+    <!--#endregion-->
+
+
 
     <!--#region QrCodeComponentView-->
 
