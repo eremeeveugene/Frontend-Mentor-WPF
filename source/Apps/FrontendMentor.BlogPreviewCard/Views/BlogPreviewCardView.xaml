@@ -19,7 +19,7 @@
                        RadiusX="10"
                        RadiusY="10">
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="{Binding Blog.BlogImage, FallbackValue={x:Null}}" Stretch="Fill" />
+                    <ImageBrush ImageSource="{Binding Blog.BlogImage}" Stretch="Fill" />
                 </Rectangle.Fill>
             </Rectangle>
 
@@ -48,7 +48,7 @@
             <StackPanel Margin="0,25,0,0" Orientation="Horizontal">
                 <Ellipse Width="32" Height="32">
                     <Ellipse.Fill>
-                        <ImageBrush ImageSource="{Binding Blog.BlogAuthor.UserImage, FallbackValue={x:Null}}" />
+                        <ImageBrush ImageSource="{Binding Blog.BlogAuthor.UserImage}" />
                     </Ellipse.Fill>
                 </Ellipse>
 
