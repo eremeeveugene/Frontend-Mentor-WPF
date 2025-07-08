@@ -15,25 +15,32 @@ using System.Windows.Media.Imaging;
 
 namespace FrontendMentor.BlogPreviewCard.BindableModels;
 
-internal class BlogBindableModel(
-    IContainerProvider containerProvider,
-    IBitmapImagesService bitmapImagesService,
-    BlogBindableModel.Parameters parameters)
-    : BindableBase
+internal class BlogBindableModel : BindableBase
 {
-    public string Title { get; } = parameters.Blog.Title;
+    public BlogBindableModel(IContainerProvider containerProvider,
+        IBitmapImagesService bitmapImagesService,
+        Parameters parameters)
+    {
+        Title = parameters.Blog.Title;
+        Description = parameters.Blog.Description;
+        Category = parameters.Blog.Category;
+        PublishedDate = parameters.Blog.PublishedDate;
+        BlogImage = bitmapImagesService.GetBitmapImageFromBase64String(parameters.Blog.ImageBase64String);
+        BlogAuthor = BlogAuthorBindableModel.Create(containerProvider,
+            new BlogAuthorBindableModel.Parameters(parameters.Blog.BlogAuthor));
+    }
 
-    public string Description { get; } = parameters.Blog.Description;
+    public string Title { get; }
 
-    public string Category { get; } = parameters.Blog.Category;
+    public string Description { get; }
 
-    public DateTime PublishedDate { get; } = parameters.Blog.PublishedDate;
+    public string Category { get; }
 
-    public BitmapImage BlogImage { get; } =
-        bitmapImagesService.GetBitmapImageFromBase64String(parameters.Blog.ImageBase64String);
+    public DateTime PublishedDate { get; }
 
-    public BlogAuthorBindableModel BlogAuthor { get; } = BlogAuthorBindableModel.Create(containerProvider,
-        new BlogAuthorBindableModel.Parameters(parameters.Blog.BlogAuthor));
+    public BitmapImage BlogImage { get; }
+
+    public BlogAuthorBindableModel BlogAuthor { get; }
 
     public static BlogBindableModel Create(IContainerProvider containerProvider, Parameters parameters)
     {

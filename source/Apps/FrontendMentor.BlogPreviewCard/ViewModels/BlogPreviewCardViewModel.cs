@@ -15,12 +15,18 @@ using FrontendMentor.Core.ViewModels;
 
 namespace FrontendMentor.BlogPreviewCard.ViewModels;
 
-internal sealed class BlogPreviewCardViewModel(
-    IContainerProvider containerProvider,
-    IBlogsService blogsService)
-    : NavigationViewModelBase
+internal sealed class BlogPreviewCardViewModel : NavigationViewModelBase
 {
+    private readonly IBlogsService _blogsService;
+    private readonly IContainerProvider _containerProvider;
     private BlogBindableModel _blog = null!;
+
+    public BlogPreviewCardViewModel(IContainerProvider containerProvider,
+        IBlogsService blogsService)
+    {
+        _containerProvider = containerProvider;
+        _blogsService = blogsService;
+    }
 
     public BlogBindableModel Blog
     {
@@ -32,9 +38,9 @@ internal sealed class BlogPreviewCardViewModel(
     {
         base.OnNavigatedTo(navigationContext);
 
-        var blog = blogsService.GetBlog();
+        var blog = _blogsService.GetBlog();
 
-        Blog = BlogBindableModel.Create(containerProvider,
+        Blog = BlogBindableModel.Create(_containerProvider,
             new BlogBindableModel.Parameters(blog));
     }
 }
