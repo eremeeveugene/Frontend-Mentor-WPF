@@ -55,71 +55,89 @@
             </Ellipse.Fill>
         </Ellipse>
 
-        <StackPanel Width="350" VerticalAlignment="Center">
-            <Grid>
-                <StackPanel>
-                    <Border Height="140"
-                            Background="#41CBD3"
-                            CornerRadius="15 15 0 0" />
-
-                    <Border Height="145" Background="#FFFFFF">
-                        <panels:SpacingStackPanel HorizontalAlignment="Center" Spacing="8">
-                            <panels:SpacingStackPanel Margin="0,72,0,0"
-                                                      Orientation="Horizontal"
-                                                      Spacing="10">
-                                <TextBlock Style="{StaticResource Heading.TextBlock.Style}">
-                                    <Run Text="{Binding Profile.FirstName, Mode=OneWay}" />
-                                    <Run Text="{Binding Profile.LastName, Mode=OneWay}" />
-                                </TextBlock>
-
-                                <TextBlock Style="{StaticResource Heading.Caption.TextBlock.Style}" Text="{Binding Profile.Age}" />
-                            </panels:SpacingStackPanel>
-
-                            <TextBlock HorizontalAlignment="Center"
-                                       Style="{StaticResource Body.TextBlock.Style}"
-                                       Text="{Binding Profile.Location}" />
-                        </panels:SpacingStackPanel>
-                    </Border>
-
-                </StackPanel>
-
-                <Ellipse Width="96"
-                         Height="96"
-                         Stroke="#FFFFFF"
-                         StrokeThickness="5">
-                    <Ellipse.Fill>
-                        <ImageBrush ImageSource="{Binding Profile.ProfileImage}" />
-                    </Ellipse.Fill>
-                </Ellipse>
-            </Grid>
-
-            <Border Height="1" Background="#E8E9EC" />
-
-            <Border Padding="24"
-                    Background="#FFFFFF"
-                    CornerRadius="0 0 15 15">
-                <panels:SpacingStackPanel HorizontalAlignment="Center"
-                                          Orientation="Horizontal"
-                                          Spacing="50">
-                    <panels:SpacingStackPanel Spacing="5">
-                        <TextBlock Style="{StaticResource Heading.TextBlock.Style}" Text="{Binding Profile.Followers, Converter={converters:NumberAbbreviationConverter}}" />
-
-                        <TextBlock Style="{StaticResource Caption.TextBlock.Style}" Text="Followers" />
-                    </panels:SpacingStackPanel>
-
-                    <panels:SpacingStackPanel Spacing="5">
-                        <TextBlock Style="{StaticResource Heading.TextBlock.Style}" Text="{Binding Profile.Likes, Converter={converters:NumberAbbreviationConverter}}" />
-
-                        <TextBlock Style="{StaticResource Caption.TextBlock.Style}" Text="Likes" />
-                    </panels:SpacingStackPanel>
-
-                    <panels:SpacingStackPanel Spacing="5">
-                        <TextBlock Style="{StaticResource Heading.TextBlock.Style}" Text="{Binding Profile.Photos, Converter={converters:NumberAbbreviationConverter}}" />
-
-                        <TextBlock Style="{StaticResource Caption.TextBlock.Style}" Text="Photos" />
-                    </panels:SpacingStackPanel>
-                </panels:SpacingStackPanel>
+        <Grid Width="350" VerticalAlignment="Center">
+            <Border Margin="20"
+                    Background="White"
+                    CornerRadius="15">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="100"
+                                      Direction="270"
+                                      Opacity="0.5"
+                                      ShadowDepth="50"
+                                      Color="#08465E" />
+                </Border.Effect>
+                <Border.RenderTransform>
+                    <TranslateTransform Y="-20" />
+                </Border.RenderTransform>
             </Border>
-        </StackPanel>
+
+            <StackPanel>
+                <Grid>
+                    <StackPanel>
+                        <Border Height="140"
+                                Background="#41CBD3"
+                                CornerRadius="15 15 0 0" />
+
+                        <Border Height="145" Background="#FFFFFF">
+                            <panels:SpacingStackPanel HorizontalAlignment="Center" Spacing="8">
+                                <panels:SpacingStackPanel Margin="0,72,0,0"
+                                                          Orientation="Horizontal"
+                                                          Spacing="10">
+                                    <TextBlock Style="{StaticResource Heading.TextBlock.Style}">
+                                        <Run Text="{Binding Profile.FirstName, Mode=OneWay}" />
+                                        <Run Text="{Binding Profile.LastName, Mode=OneWay}" />
+                                    </TextBlock>
+
+                                    <TextBlock Style="{StaticResource Heading.Caption.TextBlock.Style}" Text="{Binding Profile.Age}" />
+                                </panels:SpacingStackPanel>
+
+                                <TextBlock HorizontalAlignment="Center"
+                                           Style="{StaticResource Body.TextBlock.Style}"
+                                           Text="{Binding Profile.Location}" />
+                            </panels:SpacingStackPanel>
+                        </Border>
+
+                    </StackPanel>
+
+                    <Ellipse Width="96"
+                             Height="96"
+                             Margin="0,0,0,5"
+                             Stroke="#FFFFFF"
+                             StrokeThickness="5">
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="{Binding Profile.ProfileImage}" />
+                        </Ellipse.Fill>
+                    </Ellipse>
+                </Grid>
+
+                <Border Height="1" Background="#E8E9EC" />
+
+                <Border Padding="24"
+                        Background="#FFFFFF"
+                        CornerRadius="0 0 15 15">
+                    <panels:SpacingStackPanel HorizontalAlignment="Center"
+                                              Orientation="Horizontal"
+                                              Spacing="50">
+                        <panels:SpacingStackPanel Spacing="5">
+                            <TextBlock Style="{StaticResource Heading.TextBlock.Style}" Text="{Binding Profile.Followers, Converter={converters:NumberAbbreviationConverter}}" />
+
+                            <TextBlock Style="{StaticResource Caption.TextBlock.Style}" Text="Followers" />
+                        </panels:SpacingStackPanel>
+
+                        <panels:SpacingStackPanel Spacing="5">
+                            <TextBlock Style="{StaticResource Heading.TextBlock.Style}" Text="{Binding Profile.Likes, Converter={converters:NumberAbbreviationConverter}}" />
+
+                            <TextBlock Style="{StaticResource Caption.TextBlock.Style}" Text="Likes" />
+                        </panels:SpacingStackPanel>
+
+                        <panels:SpacingStackPanel Spacing="5">
+                            <TextBlock Style="{StaticResource Heading.TextBlock.Style}" Text="{Binding Profile.Photos, Converter={converters:NumberAbbreviationConverter}}" />
+
+                            <TextBlock Style="{StaticResource Caption.TextBlock.Style}" Text="Photos" />
+                        </panels:SpacingStackPanel>
+                    </panels:SpacingStackPanel>
+                </Border>
+            </StackPanel>
+        </Grid>
     </Grid>
 </UserControl>
