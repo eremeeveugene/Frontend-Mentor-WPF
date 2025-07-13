@@ -29,10 +29,6 @@
                      po:Freeze="True"
                      Color="{StaticResource White.Color}" />
 
-    <SolidColorBrush x:Key="BlogPreviewCardView.TitleTextBlock.Foreground.Brush"
-                     po:Freeze="True"
-                     Color="{StaticResource Grey.950.Color}" />
-
     <SolidColorBrush x:Key="BlogPreviewCardView.CategoryBorder.Background.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Yellow.Color}" />
