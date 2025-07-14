@@ -71,7 +71,7 @@
                 </StackPanel>
             </StackPanel>
 
-            <VisualStateManager.VisualStateGroups>
+            <!--<VisualStateManager.VisualStateGroups>
                 <VisualStateGroup x:Name="CommonStates">
                     <VisualState x:Name="Normal">
                         <VisualState.Storyboard>
@@ -116,11 +116,13 @@
                         </VisualTransition>
                     </VisualStateGroup.Transitions>
                 </VisualStateGroup>
-            </VisualStateManager.VisualStateGroups>
+            </VisualStateManager.VisualStateGroups>-->
         </Border>
         <ControlTemplate.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter TargetName="PART_TitleTextBlock" Property="Foreground" Value="{StaticResource BlogPreviewCard.TitleTextBlock.Foreground.MouseOver.Brush}" />
+            </Trigger>
+        </ControlTemplate.Triggers>
     </ControlTemplate>
 
     <Style TargetType="{x:Type cards:BlogPreviewCard}">
