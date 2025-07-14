@@ -12,18 +12,11 @@
 using FrontendMentor.BlogPreviewCard.BindableModels;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
 
 namespace FrontendMentor.BlogPreviewCard.Controls.Cards;
 
-[TemplateVisualState(Name = NormalStateName, GroupName = CommonStatesGroupName)]
-[TemplateVisualState(Name = MouseOverStateName, GroupName = CommonStatesGroupName)]
 internal class BlogPreviewCard : Control
 {
-    private const string NormalStateName = "Normal";
-    private const string MouseOverStateName = "MouseOver";
-    private const string CommonStatesGroupName = "CommonStates";
-
     public static readonly DependencyProperty BlogProperty = DependencyProperty.Register(
         nameof(Blog), typeof(BlogBindableModel), typeof(BlogPreviewCard),
         new PropertyMetadata(default(BlogBindableModel)));
@@ -31,8 +24,6 @@ internal class BlogPreviewCard : Control
     public static readonly DependencyProperty CornerRadiusProperty = DependencyProperty.Register(
         nameof(CornerRadius), typeof(CornerRadius), typeof(BlogPreviewCard),
         new PropertyMetadata(default(CornerRadius)));
-
-    private bool _isTemplateApplied;
 
     static BlogPreviewCard()
     {
@@ -50,40 +41,5 @@ internal class BlogPreviewCard : Control
     {
         get => (BlogBindableModel)GetValue(BlogProperty);
         set => SetValue(BlogProperty, value);
-    }
-
-    protected override void OnMouseEnter(MouseEventArgs e)
-    {
-        base.OnMouseEnter(e);
-
-        UpdateState();
-    }
-
-    protected override void OnMouseLeave(MouseEventArgs e)
-    {
-        base.OnMouseLeave(e);
-
-        UpdateState();
-    }
-
-    public override void OnApplyTemplate()
-    {
-        base.OnApplyTemplate();
-
-        try
-        {
-            UpdateState();
-        }
-        finally
-        {
-            _isTemplateApplied = true;
-        }
-    }
-
-    private void UpdateState()
-    {
-        var stateName = IsMouseOver ? MouseOverStateName : NormalStateName;
-
-        VisualStateManager.GoToState(this, stateName, _isTemplateApplied);
     }
 }
