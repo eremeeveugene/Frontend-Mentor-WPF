@@ -2,6 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:cards="clr-namespace:FrontendMentor.BlogPreviewCard.Controls.Cards"
                     xmlns:coreConstants="clr-namespace:FrontendMentor.Core.Constants;assembly=FrontendMentor.Core"
+                    xmlns:panels="clr-namespace:FrontendMentor.Assets.Controls.Panels;assembly=FrontendMentor.Assets"
                     xmlns:properties="clr-namespace:FrontendMentor.BlogPreviewCard.Properties"
                     xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
 
@@ -23,7 +24,7 @@
                 BorderBrush="{TemplateBinding BorderBrush}"
                 BorderThickness="{TemplateBinding BorderThickness}"
                 CornerRadius="{TemplateBinding CornerRadius}">
-            <StackPanel>
+            <panels:SpacingStackPanel Spacing="24">
                 <Rectangle Height="200"
                            RadiusX="10"
                            RadiusY="10">
@@ -32,30 +33,28 @@
                     </Rectangle.Fill>
                 </Rectangle>
 
-                <StackPanel Margin="0,25,0,0">
-                    <Border Style="{StaticResource BlogPreviewCard.CategoryBorder.Style}">
+                <panels:SpacingStackPanel Spacing="12">
+                    <Border HorizontalAlignment="Left" Style="{StaticResource BlogPreviewCard.CategoryBorder.Style}">
                         <TextBlock Style="{StaticResource Body.S.Bold.TextBlock.Style}" Text="{Binding Blog.Category, RelativeSource={RelativeSource TemplatedParent}}" />
                     </Border>
 
-                    <TextBlock Margin="0,9,0,0" Style="{StaticResource Body.S.Regular.TextBlock.Style}">
+                    <TextBlock Style="{StaticResource Body.S.Regular.TextBlock.Style}">
                         <Run Text="{x:Static properties:Resources.BlogPreviewCard_PublishedTextBlock_Text}" />
                         <Run Text="{Binding Blog.PublishedDate, Mode=OneWay, StringFormat={x:Static coreConstants:DateTimeFormatConstants.DayMonthAbbrYear}, RelativeSource={RelativeSource TemplatedParent}}" />
                     </TextBlock>
 
                     <TextBlock x:Name="PART_TitleTextBlock"
-                               Margin="0,11,0,0"
                                Foreground="{StaticResource BlogPreviewCard.TitleTextBlock.Foreground.Brush}"
                                Style="{StaticResource Heading.TextBlock.Style}"
                                Text="{Binding Blog.Title, RelativeSource={RelativeSource TemplatedParent}}" />
 
-                    <TextBlock Margin="0,14,0,0"
-                               Foreground="{StaticResource BlogPreviewCard.AuthorTextBlock.Foreground.Brush}"
+                    <TextBlock Foreground="{StaticResource BlogPreviewCard.AuthorTextBlock.Foreground.Brush}"
                                Style="{StaticResource Body.M.TextBlock.Style}"
                                Text="{Binding Blog.Description, RelativeSource={RelativeSource TemplatedParent}}"
                                TextWrapping="Wrap" />
-                </StackPanel>
+                </panels:SpacingStackPanel>
 
-                <StackPanel Margin="0,25,0,0" Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal">
                     <Ellipse Width="32" Height="32">
                         <Ellipse.Fill>
                             <ImageBrush ImageSource="{Binding Blog.BlogAuthor.UserImage, RelativeSource={RelativeSource TemplatedParent}}" />
@@ -69,7 +68,7 @@
                         <Run Text="{Binding Blog.BlogAuthor.LastName, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" />
                     </TextBlock>
                 </StackPanel>
-            </StackPanel>
+            </panels:SpacingStackPanel>
 
             <!--<VisualStateManager.VisualStateGroups>
                 <VisualStateGroup x:Name="CommonStates">
@@ -133,7 +132,7 @@
         <Setter Property="Cursor" Value="Hand" />
         <Setter Property="Effect" Value="{StaticResource BlogPreviewCard.RootBorder.DropShadow.Effect}" />
         <Setter Property="HorizontalAlignment" Value="Center" />
-        <Setter Property="Padding" Value="23" />
+        <Setter Property="Padding" Value="24" />
         <Setter Property="Template" Value="{StaticResource BlogPreviewCard.Template}" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Width" Value="384" />
