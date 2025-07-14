@@ -16,28 +16,18 @@ namespace FrontendMentor.Assets.Helpers;
 
 public static class IconPropertiesHelper
 {
-    public static readonly DependencyProperty FillProperty = DependencyProperty.RegisterAttached(
-        "Fill",
-        typeof(Brush),
-        typeof(IconPropertiesHelper),
-        new PropertyMetadata(default(Brush)));
+    public static readonly DependencyProperty FillProperty = DependencyProperty.RegisterAttached("Fill", typeof(Brush),
+        typeof(IconPropertiesHelper), new PropertyMetadata(default(Brush)));
 
-    public static readonly DependencyProperty DataProperty = DependencyProperty.RegisterAttached(
-        "Data",
-        typeof(Geometry),
-        typeof(IconPropertiesHelper),
-        new PropertyMetadata(default(Geometry)));
+    public static readonly DependencyProperty DataProperty = DependencyProperty.RegisterAttached("Data",
+        typeof(Geometry), typeof(IconPropertiesHelper), new PropertyMetadata(default(Geometry)));
 
-    public static readonly DependencyProperty WidthProperty = DependencyProperty.RegisterAttached(
-        "Width",
-        typeof(double),
-        typeof(IconPropertiesHelper),
-        new PropertyMetadata(default(double)));
+    public static readonly DependencyProperty WidthProperty = DependencyProperty.RegisterAttached("Width",
+        typeof(double), typeof(IconPropertiesHelper), new PropertyMetadata(0.0));
 
     public static void SetFill(DependencyObject element, Brush value)
     {
-        element.SetValue(FillProperty,
-            value);
+        element.SetValue(FillProperty, value);
     }
 
     public static Brush GetFill(DependencyObject element)
@@ -47,8 +37,7 @@ public static class IconPropertiesHelper
 
     public static void SetData(DependencyObject element, Geometry value)
     {
-        element.SetValue(DataProperty,
-            value);
+        element.SetValue(DataProperty, value);
     }
 
     public static Geometry GetData(DependencyObject element)
@@ -58,8 +47,7 @@ public static class IconPropertiesHelper
 
     public static void SetWidth(DependencyObject element, double value)
     {
-        element.SetValue(WidthProperty,
-            value);
+        element.SetValue(WidthProperty, value);
     }
 
     public static double GetWidth(DependencyObject element)

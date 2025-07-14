@@ -17,13 +17,11 @@ namespace FrontendMentor.BlogPreviewCard.Controls.Cards;
 
 internal class BlogPreviewCard : Control
 {
-    public static readonly DependencyProperty BlogProperty = DependencyProperty.Register(
-        nameof(Blog), typeof(BlogBindableModel), typeof(BlogPreviewCard),
-        new PropertyMetadata(default(BlogBindableModel)));
+    public static readonly DependencyProperty BlogProperty = DependencyProperty.Register(nameof(Blog),
+        typeof(BlogBindableModel), typeof(BlogPreviewCard), new PropertyMetadata(default(BlogBindableModel)));
 
-    public static readonly DependencyProperty CornerRadiusProperty = DependencyProperty.Register(
-        nameof(CornerRadius), typeof(CornerRadius), typeof(BlogPreviewCard),
-        new PropertyMetadata(default(CornerRadius)));
+    public static readonly DependencyProperty CornerRadiusProperty = DependencyProperty.Register(nameof(CornerRadius),
+        typeof(CornerRadius), typeof(BlogPreviewCard), new PropertyMetadata(default(CornerRadius)));
 
     static BlogPreviewCard()
     {
