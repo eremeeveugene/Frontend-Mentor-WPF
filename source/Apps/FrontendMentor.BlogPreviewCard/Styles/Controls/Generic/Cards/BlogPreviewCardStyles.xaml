@@ -15,7 +15,8 @@
     <Style x:Key="BlogPreviewCard.CategoryBorder.Style" TargetType="{x:Type Border}">
         <Setter Property="Background" Value="{StaticResource BlogPreviewCard.CategoryBorder.Background.Brush}" />
         <Setter Property="CornerRadius" Value="4" />
-        <Setter Property="Padding" Value="12,2,12,6" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="Padding" Value="12,4" />
     </Style>
 
     <ControlTemplate x:Key="BlogPreviewCard.Template" TargetType="{x:Type cards:BlogPreviewCard}">
@@ -25,16 +26,14 @@
                 BorderThickness="{TemplateBinding BorderThickness}"
                 CornerRadius="{TemplateBinding CornerRadius}">
             <panels:SpacingStackPanel Spacing="24">
-                <Rectangle Height="200"
-                           RadiusX="10"
-                           RadiusY="10">
-                    <Rectangle.Fill>
-                        <ImageBrush ImageSource="{Binding Blog.BlogImage, RelativeSource={RelativeSource TemplatedParent}}" Stretch="Fill" />
-                    </Rectangle.Fill>
-                </Rectangle>
+                <Border Height="200" CornerRadius="10">
+                    <Border.Background>
+                        <ImageBrush ImageSource="{Binding Blog.BlogImage, RelativeSource={RelativeSource TemplatedParent}}" />
+                    </Border.Background>
+                </Border>
 
                 <panels:SpacingStackPanel Spacing="12">
-                    <Border HorizontalAlignment="Left" Style="{StaticResource BlogPreviewCard.CategoryBorder.Style}">
+                    <Border Style="{StaticResource BlogPreviewCard.CategoryBorder.Style}">
                         <TextBlock Style="{StaticResource Body.S.Bold.TextBlock.Style}" Text="{Binding Blog.Category, RelativeSource={RelativeSource TemplatedParent}}" />
                     </Border>
 
@@ -54,69 +53,21 @@
                                TextWrapping="Wrap" />
                 </panels:SpacingStackPanel>
 
-                <StackPanel Orientation="Horizontal">
-                    <Ellipse Width="32" Height="32">
+                <panels:SpacingStackPanel Orientation="Horizontal" Spacing="12">
+                    <Ellipse Width="32" Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}">
                         <Ellipse.Fill>
                             <ImageBrush ImageSource="{Binding Blog.BlogAuthor.UserImage, RelativeSource={RelativeSource TemplatedParent}}" />
                         </Ellipse.Fill>
                     </Ellipse>
 
-                    <TextBlock Margin="12,0,0,2"
-                               VerticalAlignment="Center"
-                               Style="{StaticResource Body.S.Bold.TextBlock.Style}">
+                    <TextBlock VerticalAlignment="Center" Style="{StaticResource Body.S.Bold.TextBlock.Style}">
                         <Run Text="{Binding Blog.BlogAuthor.FirstName, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" />
                         <Run Text="{Binding Blog.BlogAuthor.LastName, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" />
                     </TextBlock>
-                </StackPanel>
+                </panels:SpacingStackPanel>
             </panels:SpacingStackPanel>
-
-            <!--<VisualStateManager.VisualStateGroups>
-                <VisualStateGroup x:Name="CommonStates">
-                    <VisualState x:Name="Normal">
-                        <VisualState.Storyboard>
-                            <Storyboard>
-                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="PART_TitleTextBlock" Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)">
-                                    <DiscreteColorKeyFrame Value="{StaticResource Grey.950.Color}" />
-                                </ColorAnimationUsingKeyFrames>
-                            </Storyboard>
-                        </VisualState.Storyboard>
-                    </VisualState>
-                    <VisualState x:Name="MouseOver">
-                        <VisualState.Storyboard>
-                            <Storyboard>
-                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="PART_TitleTextBlock" Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)">
-                                    <DiscreteColorKeyFrame Value="{StaticResource Yellow.Color}" />
-                                </ColorAnimationUsingKeyFrames>
-                            </Storyboard>
-                        </VisualState.Storyboard>
-                    </VisualState>
-                    <VisualStateGroup.Transitions>
-                        <VisualTransition To="Normal">
-                            <VisualTransition.Storyboard>
-                                <Storyboard>
-                                    <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
-                                                    Storyboard.TargetName="PART_TitleTextBlock"
-                                                    Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
-                                                    To="{StaticResource Grey.950.Color}"
-                                                    Duration="{x:Static assetsConstants:AnimationConstants.GenericAnimationDuration}" />
-                                </Storyboard>
-                            </VisualTransition.Storyboard>
-                        </VisualTransition>
-                        <VisualTransition To="MouseOver">
-                            <VisualTransition.Storyboard>
-                                <Storyboard>
-                                    <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
-                                                    Storyboard.TargetName="PART_TitleTextBlock"
-                                                    Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
-                                                    To="{StaticResource Yellow.Color}"
-                                                    Duration="{x:Static assetsConstants:AnimationConstants.GenericAnimationDuration}" />
-                                </Storyboard>
-                            </VisualTransition.Storyboard>
-                        </VisualTransition>
-                    </VisualStateGroup.Transitions>
-                </VisualStateGroup>
-            </VisualStateManager.VisualStateGroups>-->
         </Border>
+
         <ControlTemplate.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter TargetName="PART_TitleTextBlock" Property="Foreground" Value="{StaticResource BlogPreviewCard.TitleTextBlock.Foreground.MouseOver.Brush}" />
