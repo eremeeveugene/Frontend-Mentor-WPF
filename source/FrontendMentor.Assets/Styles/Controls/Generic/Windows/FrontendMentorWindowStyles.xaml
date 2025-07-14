@@ -89,8 +89,6 @@
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="Template" Value="{StaticResource FrontendMentorWindow.Template}" />
         <Setter Property="TitleBarBackground" Value="{StaticResource FrontendMentorWindow.TitleBarBackground.Brush}" />
-        <Setter Property="TitleBarHeight" Value="40" />
-        <Setter Property="TitleBarImageHeight" Value="20" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
         <Setter Property="WindowChrome.WindowChrome" Value="{StaticResource FrontendMentorWindowChrome}" />
         <Setter Property="WindowState" Value="Maximized" />
