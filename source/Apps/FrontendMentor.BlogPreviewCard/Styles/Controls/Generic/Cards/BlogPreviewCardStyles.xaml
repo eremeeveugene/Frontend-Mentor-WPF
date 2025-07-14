@@ -20,12 +20,13 @@
     </Style>
 
     <ControlTemplate x:Key="BlogPreviewCard.Template" TargetType="{x:Type cards:BlogPreviewCard}">
-        <Border Padding="{TemplateBinding Padding}"
-                Background="{TemplateBinding Background}"
-                BorderBrush="{TemplateBinding BorderBrush}"
-                BorderThickness="{TemplateBinding BorderThickness}"
-                CornerRadius="{TemplateBinding CornerRadius}">
-            <panels:SpacingStackPanel Spacing="24">
+        <Grid>
+            <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding CornerRadius}" />
+
+            <panels:SpacingStackPanel Margin="{TemplateBinding Padding}" Spacing="24">
                 <Border Height="200" CornerRadius="10">
                     <Border.Background>
                         <ImageBrush ImageSource="{Binding Blog.BlogImage, RelativeSource={RelativeSource TemplatedParent}}" />
@@ -66,7 +67,7 @@
                     </TextBlock>
                 </panels:SpacingStackPanel>
             </panels:SpacingStackPanel>
-        </Border>
+        </Grid>
 
         <ControlTemplate.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
