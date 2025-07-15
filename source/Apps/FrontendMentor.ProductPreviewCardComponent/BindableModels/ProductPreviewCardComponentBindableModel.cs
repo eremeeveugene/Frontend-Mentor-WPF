@@ -19,39 +19,17 @@ internal class ProductPreviewCardComponentBindableModel(
     IBitmapImagesService bitmapImagesService,
     ProductPreviewCardComponentBindableModel.Parameters parameters) : BindableBase
 {
-    public string Type
-    {
-        get;
-        set;
-    } = parameters.Product.Type;
+    public string Type { get; } = parameters.Product.Type;
 
-    public string Title
-    {
-        get;
-    } = parameters.Product.Title;
+    public string Title { get; } = parameters.Product.Title;
 
-    public string Description
-    {
-        get;
-        set;
-    } = parameters.Product.Description;
+    public string Description { get; } = parameters.Product.Description;
 
-    public double Price
-    {
-        get;
-        set;
-    } = parameters.Product.Price;
+    public double Price { get; } = parameters.Product.Price;
 
-    public double OldPrice
-    {
-        get;
-        set;
-    } = parameters.Product.OldPrice;
+    public double OldPrice { get; } = parameters.Product.OldPrice;
 
-    public BitmapImage ProfileImage
-    {
-        get;
-    } =
+    public BitmapImage ProfileImage { get; } =
         bitmapImagesService.GetBitmapImageFromBase64String(parameters.Product.ProductImageBase64String);
 
     public static ProductPreviewCardComponentBindableModel Create(IContainerProvider containerProvider,

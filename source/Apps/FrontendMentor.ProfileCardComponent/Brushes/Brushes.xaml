@@ -1,0 +1,52 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
+                    xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
+
+    <ResourceDictionary.MergedDictionaries>
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ProfileCardComponent;component/Colors/Colors.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <!--#region ProfileCardComponentWindow-->
+
+    <SolidColorBrush x:Key="ProfileCardComponentWindow.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Auro.Metal.Saurus.Color}" />
+
+    <SolidColorBrush x:Key="ProfileCardComponentWindow.Background.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Light.Sea.Green.Color}" />
+
+    <!--#endregion-->
+
+    <!--#region Heading.TextBlock-->
+
+    <SolidColorBrush x:Key="Heading.TextBlock.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Outer.Space.Color}" />
+
+    <!--#endregion-->
+
+
+
+    <!--#region QrCodeComponentView-->
+
+    <!--<SolidColorBrush x:Key="QrCodeComponentView.BodyTextBlock.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Slate.500.Color}" />
+
+    <SolidColorBrush x:Key="QrCodeComponentView.QrCodeEllipse.Fill.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource BlueShade.Color}" />
+
+    <SolidColorBrush x:Key="QrCodeComponentView.QrCodeOuterBorder.Background.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource White.Color}" />
+
+    <SolidColorBrush x:Key="QrCodeComponentView.QrCodeInnerRectangle.Background.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Blue.Color}" />-->
+
+    <!--#endregion-->
+
+</ResourceDictionary>

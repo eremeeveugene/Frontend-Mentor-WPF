@@ -1,0 +1,97 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:cards="clr-namespace:FrontendMentor.BlogPreviewCard.Controls.Cards"
+                    xmlns:coreConstants="clr-namespace:FrontendMentor.Core.Constants;assembly=FrontendMentor.Core"
+                    xmlns:panels="clr-namespace:FrontendMentor.Assets.Controls.Panels;assembly=FrontendMentor.Assets"
+                    xmlns:properties="clr-namespace:FrontendMentor.BlogPreviewCard.Properties"
+                    xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
+
+    <ResourceDictionary.MergedDictionaries>
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Brushes/Brushes.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Effects/Effects.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Styles/Controls/Custom/TextBlocks/TextBlockStyles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="BlogPreviewCard.CategoryBorder.Style" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="{StaticResource BlogPreviewCard.CategoryBorder.Background.Brush}" />
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="Padding" Value="12,4" />
+    </Style>
+
+    <ControlTemplate x:Key="BlogPreviewCard.Template" TargetType="{x:Type cards:BlogPreviewCard}">
+        <Grid>
+            <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding CornerRadius}" />
+
+            <panels:SpacingStackPanel Margin="{TemplateBinding Padding}" Spacing="24">
+                <Border Height="200" CornerRadius="10">
+                    <Border.Background>
+                        <ImageBrush ImageSource="{Binding Blog.BlogImage, RelativeSource={RelativeSource TemplatedParent}}" />
+                    </Border.Background>
+                </Border>
+
+                <panels:SpacingStackPanel Spacing="12">
+                    <Border Style="{StaticResource BlogPreviewCard.CategoryBorder.Style}">
+                        <TextBlock Style="{StaticResource Body.S.Bold.TextBlock.Style}">
+                            <Run BaselineAlignment="Center" Text="{Binding Blog.Category, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </TextBlock>
+                    </Border>
+
+                    <TextBlock Style="{StaticResource Body.S.Regular.TextBlock.Style}">
+                        <Run BaselineAlignment="Center" Text="{x:Static properties:Resources.BlogPreviewCard_PublishedTextBlock_Text}" />
+                        <Run BaselineAlignment="Center" Text="{Binding Blog.PublishedDate, Mode=OneWay, StringFormat={x:Static coreConstants:DateTimeFormatConstants.DayMonthAbbrYear}, RelativeSource={RelativeSource TemplatedParent}}" />
+                    </TextBlock>
+
+                    <TextBlock x:Name="PART_TitleTextBlock"
+                               Foreground="{StaticResource BlogPreviewCard.TitleTextBlock.Foreground.Brush}"
+                               Style="{StaticResource Heading.TextBlock.Style}">
+                        <Run BaselineAlignment="Center" Text="{Binding Blog.Title, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" />
+                    </TextBlock>
+
+                    <TextBlock Foreground="{StaticResource BlogPreviewCard.AuthorTextBlock.Foreground.Brush}"
+                               Style="{StaticResource Body.M.TextBlock.Style}"
+                               TextWrapping="Wrap">
+                        <Run BaselineAlignment="Center" Text="{Binding Blog.Description, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" />
+                    </TextBlock>
+                </panels:SpacingStackPanel>
+
+                <panels:SpacingStackPanel Orientation="Horizontal" Spacing="12">
+                    <Ellipse Width="32" Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}">
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="{Binding Blog.BlogAuthor.UserImage, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Ellipse.Fill>
+                    </Ellipse>
+
+                    <TextBlock VerticalAlignment="Center" Style="{StaticResource Body.S.Bold.TextBlock.Style}">
+                        <Run BaselineAlignment="Center" Text="{Binding Blog.BlogAuthor.FirstName, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" />
+                        <Run BaselineAlignment="Center" Text="{Binding Blog.BlogAuthor.LastName, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" />
+                    </TextBlock>
+                </panels:SpacingStackPanel>
+            </panels:SpacingStackPanel>
+        </Grid>
+
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="PART_TitleTextBlock" Property="Foreground" Value="{StaticResource BlogPreviewCard.TitleTextBlock.Foreground.MouseOver.Brush}" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type cards:BlogPreviewCard}">
+        <Setter Property="Background" Value="{StaticResource BlogPreviewCard.RootBorder.Background.Brush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource BlogPreviewCard.RootBorder.Border.Brush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="20" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Effect" Value="{StaticResource BlogPreviewCard.RootBorder.DropShadow.Effect}" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Padding" Value="24" />
+        <Setter Property="Template" Value="{StaticResource BlogPreviewCard.Template}" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Width" Value="384" />
+    </Style>
+
+</ResourceDictionary>

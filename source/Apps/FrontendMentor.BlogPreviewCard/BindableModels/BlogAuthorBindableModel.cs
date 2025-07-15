@@ -15,25 +15,21 @@ using System.Windows.Media.Imaging;
 
 namespace FrontendMentor.BlogPreviewCard.BindableModels;
 
-internal class BlogAuthorBindableModel(
-    IBitmapImagesService bitmapImagesService,
-    BlogAuthorBindableModel.Parameters parameters) : BindableBase
+internal class BlogAuthorBindableModel : BindableBase
 {
-    public string FirstName
+    public BlogAuthorBindableModel(IBitmapImagesService bitmapImagesService,
+        Parameters parameters)
     {
-        get;
-    } = parameters.BlogAuthor.FirstName;
+        FirstName = parameters.BlogAuthor.FirstName;
+        LastName = parameters.BlogAuthor.LastName;
+        UserImage = bitmapImagesService.GetBitmapImageFromBase64String(parameters.BlogAuthor.ImageBase64String);
+    }
 
-    public string LastName
-    {
-        get;
-    } = parameters.BlogAuthor.LastName;
+    public string FirstName { get; }
 
-    public BitmapImage UserImage
-    {
-        get;
-    } =
-        bitmapImagesService.GetBitmapImageFromBase64String(parameters.BlogAuthor.ImageBase64String);
+    public string LastName { get; }
+
+    public BitmapImage UserImage { get; }
 
     public static BlogAuthorBindableModel Create(IContainerProvider containerProvider, Parameters parameters)
     {

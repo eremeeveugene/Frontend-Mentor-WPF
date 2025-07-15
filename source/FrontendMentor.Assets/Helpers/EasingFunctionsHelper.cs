@@ -15,10 +15,7 @@ namespace FrontendMentor.Assets.Helpers;
 
 public static class EasingFunctionsHelper
 {
-    public static IEasingFunction GenericEasingFunction
-    {
-        get;
-    } = GetGenericEasingFunction();
+    public static IEasingFunction GenericEasingFunction { get; } = GetGenericEasingFunction();
 
     private static ExponentialEase GetGenericEasingFunction()
     {

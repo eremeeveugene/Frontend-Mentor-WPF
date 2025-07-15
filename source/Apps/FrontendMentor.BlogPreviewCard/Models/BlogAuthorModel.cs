@@ -13,21 +13,9 @@ namespace FrontendMentor.BlogPreviewCard.Models;
 
 internal class BlogAuthorModel
 {
-    public string FirstName
-    {
-        get;
-        set;
-    } = null!;
+    public string FirstName { get; set; } = null!;
 
-    public string LastName
-    {
-        get;
-        set;
-    } = null!;
+    public string LastName { get; set; } = null!;
 
-    public string ImageBase64String
-    {
-        get;
-        set;
-    } = null!;
+    public string ImageBase64String { get; set; } = null!;
 }

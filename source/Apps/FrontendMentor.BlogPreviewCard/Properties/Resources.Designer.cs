@@ -63,9 +63,9 @@ namespace FrontendMentor.BlogPreviewCard.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Published.
         /// </summary>
-        public static string BlogPreviewCardView_PublishedTextBlock_Text {
+        public static string BlogPreviewCard_PublishedTextBlock_Text {
             get {
-                return ResourceManager.GetString("BlogPreviewCardView_PublishedTextBlock_Text", resourceCulture);
+                return ResourceManager.GetString("BlogPreviewCard_PublishedTextBlock_Text", resourceCulture);
             }
         }
         

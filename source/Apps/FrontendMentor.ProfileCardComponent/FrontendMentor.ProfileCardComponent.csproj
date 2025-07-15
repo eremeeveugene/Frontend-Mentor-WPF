@@ -1,0 +1,76 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Properties\Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Fonts\KumbhSans\KumbhSans-Black.ttf" />
+    <None Remove="Fonts\KumbhSans\KumbhSans-Bold.ttf" />
+    <None Remove="Fonts\KumbhSans\KumbhSans-ExtraBold.ttf" />
+    <None Remove="Fonts\KumbhSans\KumbhSans-ExtraLight.ttf" />
+    <None Remove="Fonts\KumbhSans\KumbhSans-Light.ttf" />
+    <None Remove="Fonts\KumbhSans\KumbhSans-Medium.ttf" />
+    <None Remove="Fonts\KumbhSans\KumbhSans-Regular.ttf" />
+    <None Remove="Fonts\KumbhSans\KumbhSans-SemiBold.ttf" />
+    <None Remove="Fonts\KumbhSans\KumbhSans-Thin.ttf" />
+    <None Remove="Properties\Icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Properties\Icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\FrontendMentor.Assets\FrontendMentor.Assets.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\KumbhSans\KumbhSans-Black.ttf" />
+    <Resource Include="Fonts\KumbhSans\KumbhSans-Bold.ttf" />
+    <Resource Include="Fonts\KumbhSans\KumbhSans-ExtraBold.ttf" />
+    <Resource Include="Fonts\KumbhSans\KumbhSans-ExtraLight.ttf" />
+    <Resource Include="Fonts\KumbhSans\KumbhSans-Light.ttf" />
+    <Resource Include="Fonts\KumbhSans\KumbhSans-Medium.ttf" />
+    <Resource Include="Fonts\KumbhSans\KumbhSans-Regular.ttf" />
+    <Resource Include="Fonts\KumbhSans\KumbhSans-SemiBold.ttf" />
+    <Resource Include="Fonts\KumbhSans\KumbhSans-Thin.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Styles\Views\" />
+  </ItemGroup>
+
+</Project>
