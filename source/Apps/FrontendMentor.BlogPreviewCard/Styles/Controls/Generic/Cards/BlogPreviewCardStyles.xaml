@@ -35,23 +35,27 @@
 
                 <panels:SpacingStackPanel Spacing="12">
                     <Border Style="{StaticResource BlogPreviewCard.CategoryBorder.Style}">
-                        <TextBlock Style="{StaticResource Body.S.Bold.TextBlock.Style}" Text="{Binding Blog.Category, RelativeSource={RelativeSource TemplatedParent}}" />
+                        <TextBlock Style="{StaticResource Body.S.Bold.TextBlock.Style}">
+                            <Run BaselineAlignment="Center" Text="{Binding Blog.Category, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </TextBlock>
                     </Border>
 
                     <TextBlock Style="{StaticResource Body.S.Regular.TextBlock.Style}">
-                        <Run Text="{x:Static properties:Resources.BlogPreviewCard_PublishedTextBlock_Text}" />
-                        <Run Text="{Binding Blog.PublishedDate, Mode=OneWay, StringFormat={x:Static coreConstants:DateTimeFormatConstants.DayMonthAbbrYear}, RelativeSource={RelativeSource TemplatedParent}}" />
+                        <Run BaselineAlignment="Center" Text="{x:Static properties:Resources.BlogPreviewCard_PublishedTextBlock_Text}" />
+                        <Run BaselineAlignment="Center" Text="{Binding Blog.PublishedDate, Mode=OneWay, StringFormat={x:Static coreConstants:DateTimeFormatConstants.DayMonthAbbrYear}, RelativeSource={RelativeSource TemplatedParent}}" />
                     </TextBlock>
 
                     <TextBlock x:Name="PART_TitleTextBlock"
                                Foreground="{StaticResource BlogPreviewCard.TitleTextBlock.Foreground.Brush}"
-                               Style="{StaticResource Heading.TextBlock.Style}"
-                               Text="{Binding Blog.Title, RelativeSource={RelativeSource TemplatedParent}}" />
+                               Style="{StaticResource Heading.TextBlock.Style}">
+                        <Run BaselineAlignment="Center" Text="{Binding Blog.Title, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" />
+                    </TextBlock>
 
                     <TextBlock Foreground="{StaticResource BlogPreviewCard.AuthorTextBlock.Foreground.Brush}"
                                Style="{StaticResource Body.M.TextBlock.Style}"
-                               Text="{Binding Blog.Description, RelativeSource={RelativeSource TemplatedParent}}"
-                               TextWrapping="Wrap" />
+                               TextWrapping="Wrap">
+                        <Run BaselineAlignment="Center" Text="{Binding Blog.Description, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" />
+                    </TextBlock>
                 </panels:SpacingStackPanel>
 
                 <panels:SpacingStackPanel Orientation="Horizontal" Spacing="12">
@@ -62,8 +66,8 @@
                     </Ellipse>
 
                     <TextBlock VerticalAlignment="Center" Style="{StaticResource Body.S.Bold.TextBlock.Style}">
-                        <Run Text="{Binding Blog.BlogAuthor.FirstName, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" />
-                        <Run Text="{Binding Blog.BlogAuthor.LastName, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" />
+                        <Run BaselineAlignment="Center" Text="{Binding Blog.BlogAuthor.FirstName, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" />
+                        <Run BaselineAlignment="Center" Text="{Binding Blog.BlogAuthor.LastName, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" />
                     </TextBlock>
                 </panels:SpacingStackPanel>
             </panels:SpacingStackPanel>

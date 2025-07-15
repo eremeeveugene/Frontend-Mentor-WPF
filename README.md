@@ -79,19 +79,19 @@ https://www.frontendmentor.io/challenges/blog-preview-card-ckPaj01IcS
     <summary><strong>Screenshots</strong></summary>
   
 ### Expected Result
-![Expected Result](https://github.com/user-attachments/assets/4893d4a5-3604-46fb-926e-dbe601b89ae2)
+<img width="1440" height="960" alt="Expected Result" src="https://github.com/user-attachments/assets/acdf2ec9-3b37-4038-8e97-9fab3bf5ac77" />
 
 ### Actual Result (99.33%)
 
-![Actual Result](https://github.com/user-attachments/assets/90a433e1-82fc-45bc-9954-37131f85cc21)
+<img width="1440" height="960" alt="Actual Result" src="https://github.com/user-attachments/assets/a71a8928-575f-4e72-99ff-28767409baf6" />
 
 ### Expected Result - Active
 
-![Expected Result - Active](https://github.com/user-attachments/assets/32da64f7-745e-4de5-96d1-ef218e9ae0b7)
+<img width="1440" height="960" alt="Expected Result - Active" src="https://github.com/user-attachments/assets/76e2e9a8-4f6e-4361-95b5-5bb57fd8b8f0" />
 
 ### Actual Result - Active (99.53%)
 
-![Actual Result - Active](https://github.com/user-attachments/assets/61173279-2753-45b8-bb2f-c2d826ae41e6)
+<img width="1440" height="960" alt="Actual Result - Active" src="https://github.com/user-attachments/assets/02a3f0d5-5c4a-431b-b2be-e643f906b887" />
 
 </details>
 
