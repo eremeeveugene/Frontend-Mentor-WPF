@@ -10,6 +10,7 @@
 // --------------------------------------------------------------------------------
 
 using DryIoc;
+using FrontendMentor.Core.Extensions;
 using FrontendMentor.Core.Services.BitmapImages;
 using FrontendMentor.Core.Services.Processes;
 using System.Windows;
@@ -18,19 +19,39 @@ namespace FrontendMentor.Core.Applications;
 
 public abstract class FrontendMentorCoreApplication : Application
 {
-    protected readonly IContainer Container;
+    private readonly Container _container;
 
     protected FrontendMentorCoreApplication()
     {
-        Container = BuildContainer();
+        _container = BuildContainer();
+    }
+
+    protected override void OnStartup(StartupEventArgs e)
+    {
+        base.OnStartup(e);
+
+        var mainWindow = GetMainWindow();
+
+        MainWindow = mainWindow;
+
+        mainWindow.Show();
+    }
+
+    protected abstract Window GetMainWindow();
+
+    protected Window GetWindow<T>() where T : Window
+    {
+        return _container.Resolve<T>();
     }
 
     private Container BuildContainer()
     {
-        var container = new Container();
+        var container = new Container(rules => rules
+            .WithAutoConcreteTypeResolution()
+            .WithMicrosoftDependencyInjectionRules());
 
-        container.Register<IProcessesService, ProcessesService>(Reuse.Singleton);
-        container.Register<IBitmapImagesService, BitmapImagesService>(Reuse.Singleton);
+        container.RegisterSingleton<IProcessesService, ProcessesService>();
+        container.RegisterSingleton<IBitmapImagesService, BitmapImagesService>();
 
         RegisterTypes(container);
 
@@ -39,5 +60,12 @@ public abstract class FrontendMentorCoreApplication : Application
 
     protected virtual void RegisterTypes(IContainer container)
     {
+    }
+
+    protected override void OnExit(ExitEventArgs e)
+    {
+        base.OnExit(e);
+
+        _container.Dispose();
     }
 }

@@ -10,10 +10,8 @@
 // --------------------------------------------------------------------------------
 
 using DryIoc;
-using FrontendMentor.BlogPreviewCard.BindableModels;
 using FrontendMentor.BlogPreviewCard.Services;
 using FrontendMentor.BlogPreviewCard.Services.Blogs;
-using FrontendMentor.BlogPreviewCard.ViewModels;
 using FrontendMentor.BlogPreviewCard.Views;
 using FrontendMentor.Core.Extensions;
 using System.Windows;
@@ -22,13 +20,9 @@ namespace FrontendMentor.BlogPreviewCard;
 
 internal sealed partial class App
 {
-    protected override void OnStartup(StartupEventArgs e)
+    protected override Window GetMainWindow()
     {
-        base.OnStartup(e);
-
-        var shell = Container.Resolve<BlogPreviewCardView>();
-
-        shell.Show();
+        return GetWindow<BlogPreviewCardView>();
     }
 
     protected override void RegisterTypes(IContainer container)
@@ -36,8 +30,7 @@ internal sealed partial class App
         base.RegisterTypes(container);
 
         container.RegisterSingleton<IBlogsService, BlogsService>();
-        container.Register<BlogBindableModel>(Reuse.Transient);
         container.RegisterSingleton<IBlogBindableModelFactory, BlogBindableModelFactory>();
-        container.RegisterViewWithViewModel<BlogPreviewCardView, BlogPreviewCardViewModel>();
+        //container.RegisterViewWithViewModel<BlogPreviewCardView, BlogPreviewCardViewModel>();
     }
 }
