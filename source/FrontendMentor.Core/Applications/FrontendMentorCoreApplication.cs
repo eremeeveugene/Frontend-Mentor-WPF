@@ -25,7 +25,7 @@ public abstract class FrontendMentorCoreApplication : Application
         Container = BuildContainer();
     }
 
-    private IContainer BuildContainer()
+    private Container BuildContainer()
     {
         var container = new Container();
 
