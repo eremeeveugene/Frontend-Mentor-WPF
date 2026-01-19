@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------
-// Copyright (C) 2025 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
+// Copyright (C) 2026 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
 // All Rights Reserved.
 // --------------------------------------------------------------------------------
 // This software is the confidential and proprietary information of Eugene Eremeev
@@ -9,12 +9,16 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
+using FrontendMentor.BlogPreviewCard.ViewModels;
+
 namespace FrontendMentor.BlogPreviewCard.Views;
 
 internal sealed partial class BlogPreviewCardView
 {
-    public BlogPreviewCardView()
+    public BlogPreviewCardView(BlogPreviewCardViewModel blogPreviewCardViewModel)
     {
         InitializeComponent();
+
+        DataContext = blogPreviewCardViewModel;
     }
 }

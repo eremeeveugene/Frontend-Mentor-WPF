@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------
-// Copyright (C) 2025 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
+// Copyright (C) 2026 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
 // All Rights Reserved.
 // --------------------------------------------------------------------------------
 // This software is the confidential and proprietary information of Eugene Eremeev
@@ -9,33 +9,35 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.BlogPreviewCard.Constants;
-using FrontendMentor.BlogPreviewCard.Controls.Windows;
+using DryIoc;
+using FrontendMentor.BlogPreviewCard.BindableModels;
+using FrontendMentor.BlogPreviewCard.Services;
 using FrontendMentor.BlogPreviewCard.Services.Blogs;
+using FrontendMentor.BlogPreviewCard.ViewModels;
 using FrontendMentor.BlogPreviewCard.Views;
+using FrontendMentor.Core.Extensions;
 using System.Windows;
 
 namespace FrontendMentor.BlogPreviewCard;
 
 internal sealed partial class App
 {
-    protected override Window CreateShell()
+    protected override void OnStartup(StartupEventArgs e)
     {
-        return Container.Resolve<BlogPreviewCardWindow>();
+        base.OnStartup(e);
+
+        var shell = Container.Resolve<BlogPreviewCardView>();
+
+        shell.Show();
     }
 
-    protected override void OnInitialized()
+    protected override void RegisterTypes(IContainer container)
     {
-        base.OnInitialized();
+        base.RegisterTypes(container);
 
-        NavigateToShellRegion(BlogPreviewCardViewNames.BlogPreviewCard);
-    }
-
-    protected override void RegisterTypes(IContainerRegistry containerRegistry)
-    {
-        base.RegisterTypes(containerRegistry);
-
-        containerRegistry.RegisterSingleton<IBlogsService, BlogsService>();
-        containerRegistry.RegisterForNavigation<BlogPreviewCardView>(BlogPreviewCardViewNames.BlogPreviewCard);
+        container.RegisterSingleton<IBlogsService, BlogsService>();
+        container.Register<BlogBindableModel>(Reuse.Transient);
+        container.RegisterSingleton<IBlogBindableModelFactory, BlogBindableModelFactory>();
+        container.RegisterViewWithViewModel<BlogPreviewCardView, BlogPreviewCardViewModel>();
     }
 }

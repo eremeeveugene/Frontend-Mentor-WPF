@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------
-// Copyright (C) 2025 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
+// Copyright (C) 2026 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
 // All Rights Reserved.
 // --------------------------------------------------------------------------------
 // This software is the confidential and proprietary information of Eugene Eremeev
@@ -9,13 +9,11 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-namespace FrontendMentor.Core.ViewModels;
+using FrontendMentor.BlogPreviewCard.BindableModels;
 
-public abstract class ViewModelBase : BindableBase, IRegionMemberLifetime, IDestructible
+namespace FrontendMentor.BlogPreviewCard.Services;
+
+internal interface IBlogBindableModelFactory
 {
-    public virtual void Destroy()
-    {
-    }
-
-    public bool KeepAlive => false;
+    BlogBindableModel Create(BlogBindableModel.Parameters parameters);
 }

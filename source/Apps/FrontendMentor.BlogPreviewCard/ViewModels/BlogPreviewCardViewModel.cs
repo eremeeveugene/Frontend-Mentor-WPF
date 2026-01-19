@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------
-// Copyright (C) 2025 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
+// Copyright (C) 2026 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
 // All Rights Reserved.
 // --------------------------------------------------------------------------------
 // This software is the confidential and proprietary information of Eugene Eremeev
@@ -10,32 +10,36 @@
 // --------------------------------------------------------------------------------
 
 using FrontendMentor.BlogPreviewCard.BindableModels;
+using FrontendMentor.BlogPreviewCard.Services;
 using FrontendMentor.BlogPreviewCard.Services.Blogs;
-using FrontendMentor.Core.ViewModels;
+using FrontendMentor.Core;
 
 namespace FrontendMentor.BlogPreviewCard.ViewModels;
 
-internal sealed class BlogPreviewCardViewModel(
-    IContainerProvider containerProvider,
-    IBlogsService blogsService)
-    : NavigationViewModelBase
+internal sealed class BlogPreviewCardViewModel : BindableBase
 {
-    private BlogBindableModel _blog = null!;
+    private readonly IBlogsService _blogsService;
+    private readonly IBlogBindableModelFactory _blogBindableModelFactory;
+
+    public BlogPreviewCardViewModel(IBlogsService blogsService,
+        IBlogBindableModelFactory blogBindableModelFactory)
+    {
+        _blogsService = blogsService;
+        _blogBindableModelFactory = blogBindableModelFactory;
+
+        Load();
+    }
 
     public BlogBindableModel Blog
     {
-        get => _blog;
-        private set => SetProperty(ref _blog,
-            value);
-    }
+        get;
+        private set => SetProperty(ref field, value);
+    } = null!;
 
-    public override void OnNavigatedTo(NavigationContext navigationContext)
+    public void Load()
     {
-        base.OnNavigatedTo(navigationContext);
+        var blog = _blogsService.GetBlog();
 
-        var blog = blogsService.GetBlog();
-
-        Blog = BlogBindableModel.Create(containerProvider,
-            new BlogBindableModel.Parameters(blog));
+        Blog = _blogBindableModelFactory.Create(new BlogBindableModel.Parameters(blog));
     }
 }

@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------
-// Copyright (C) 2025 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
+// Copyright (C) 2026 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
 // All Rights Reserved.
 // --------------------------------------------------------------------------------
 // This software is the confidential and proprietary information of Eugene Eremeev
@@ -9,20 +9,22 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-namespace FrontendMentor.Core.ViewModels;
+using FrontendMentor.BlogPreviewCard.BindableModels;
 
-public abstract class NavigationViewModelBase : ViewModelBase, INavigationAware
+namespace FrontendMentor.BlogPreviewCard.Services;
+
+internal sealed class BlogBindableModelFactory : IBlogBindableModelFactory
 {
-    public virtual void OnNavigatedTo(NavigationContext navigationContext)
+    private readonly Func<BlogBindableModel.Parameters, BlogBindableModel> _factory;
+
+    public BlogBindableModelFactory(
+        Func<BlogBindableModel.Parameters, BlogBindableModel> factory)
     {
+        _factory = factory;
     }
 
-    public virtual bool IsNavigationTarget(NavigationContext navigationContext)
+    public BlogBindableModel Create(BlogBindableModel.Parameters parameters)
     {
-        return false;
-    }
-
-    public virtual void OnNavigatedFrom(NavigationContext navigationContext)
-    {
+        return _factory(parameters);
     }
 }

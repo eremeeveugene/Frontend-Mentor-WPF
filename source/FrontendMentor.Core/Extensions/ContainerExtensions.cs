@@ -9,10 +9,27 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.Core.Applications;
+using DryIoc;
 
-namespace FrontendMentor.Assets.Applications;
+namespace FrontendMentor.Core.Extensions;
 
-public abstract class FrontendMentorApplication : FrontendMentorCoreApplication
+public static class ContainerExtensions
 {
+    extension(IContainer container)
+    {
+        public void RegisterSingleton<TService, TImplementation>()
+            where TService : class
+            where TImplementation : class, TService
+        {
+            container.Register<TService, TImplementation>(Reuse.Singleton);
+        }
+
+        public void RegisterViewWithViewModel<TView, TViewModel>()
+            where TView : class
+            where TViewModel : class
+        {
+            container.Register<TView>(Reuse.Transient);
+            container.Register<TViewModel>(Reuse.Transient);
+        }
+    }
 }
