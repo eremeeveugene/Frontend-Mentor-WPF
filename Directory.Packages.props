@@ -2,9 +2,8 @@
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
-
   <ItemGroup>
-    <PackageVersion Include="Prism.Wpf" Version="9.0.537" />
-    <PackageVersion Include="Prism.DryIoc" Version="9.0.537" />
+    <PackageVersion Include="DryIoc.dll" Version="5.4.3" />
+    <PackageVersion Include="ReactiveUI.WPF" Version="22.3.1" />
   </ItemGroup>
 </Project>

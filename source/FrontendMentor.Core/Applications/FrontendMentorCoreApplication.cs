@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------
-// Copyright (C) 2025 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
+// Copyright (C) 2026 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
 // All Rights Reserved.
 // --------------------------------------------------------------------------------
 // This software is the confidential and proprietary information of Eugene Eremeev
@@ -9,16 +9,35 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
+using DryIoc;
 using FrontendMentor.Core.Services.BitmapImages;
 using FrontendMentor.Core.Services.Processes;
+using System.Windows;
 
 namespace FrontendMentor.Core.Applications;
 
-public abstract class FrontendMentorCoreApplication : PrismApplication
+public abstract class FrontendMentorCoreApplication : Application
 {
-    protected override void RegisterTypes(IContainerRegistry containerRegistry)
+    protected readonly IContainer Container;
+
+    protected FrontendMentorCoreApplication()
     {
-        containerRegistry.RegisterSingleton<IProcessesService, ProcessesService>();
-        containerRegistry.RegisterSingleton<IBitmapImagesService, BitmapImagesService>();
+        Container = BuildContainer();
+    }
+
+    private IContainer BuildContainer()
+    {
+        var container = new Container();
+
+        container.Register<IProcessesService, ProcessesService>(Reuse.Singleton);
+        container.Register<IBitmapImagesService, BitmapImagesService>(Reuse.Singleton);
+
+        RegisterTypes(container);
+
+        return container;
+    }
+
+    protected virtual void RegisterTypes(IContainer container)
+    {
     }
 }

@@ -13,6 +13,7 @@ using FrontendMentor.SocialLinksProfile.Constants;
 using FrontendMentor.SocialLinksProfile.Controls.Windows;
 using FrontendMentor.SocialLinksProfile.Services.SocialLinkProfiles;
 using FrontendMentor.SocialLinksProfile.Views;
+using Splat;
 using System.Windows;
 
 namespace FrontendMentor.SocialLinksProfile;
@@ -23,7 +24,6 @@ internal partial class App
     {
         base.RegisterTypes(containerRegistry);
 
-        containerRegistry.Register<ISocialLinkProfilesService, SocialLinkProfilesService>();
         containerRegistry.RegisterForNavigation<SocialLinksProfileView>(SocialLinksProfileViewNames
             .SocialLinksProfile);
     }
@@ -38,5 +38,29 @@ internal partial class App
         base.OnInitialized();
 
         NavigateToShellRegion(SocialLinksProfileViewNames.SocialLinksProfile);
+    }
+
+    protected override void RegisterServices(IMutableDependencyResolver locator)
+    {
+        base.RegisterTypes(locator);
+
+        locator.RegisterLazySingleton<ISocialLinkProfilesService>(() => new SocialLinkProfilesService());
+
+
+        locator.RegisterLazySingleton<FrontendMentorWindowViewModel>(
+            () => new FrontendMentorWindowViewModel());
+
+        locator.Register(() =>
+        {
+            var shell = Locator.Current.GetService<FrontendMentorWindowViewModel>()!;
+            return new BlogPreviewCardViewModel(shell);
+        }, typeof(BlogPreviewCardViewModel));
+    }
+
+    protected override void OnShellStarted(FrontendMentorWindowViewModel shell)
+    {
+        var first = Locator.Current.GetService<BlogPreviewCardViewModel>()!;
+
+        shell.Router.Navigate.Execute(first).Subscribe();
     }
 }

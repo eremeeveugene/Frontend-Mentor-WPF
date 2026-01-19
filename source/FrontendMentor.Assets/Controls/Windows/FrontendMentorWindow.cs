@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------
-// Copyright (C) 2025 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
+// Copyright (C) 2026 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
 // All Rights Reserved.
 // --------------------------------------------------------------------------------
 // This software is the confidential and proprietary information of Eugene Eremeev
@@ -15,7 +15,7 @@ using System.Windows.Media;
 
 namespace FrontendMentor.Assets.Controls.Windows;
 
-public class FrontendMentorWindow : Window
+public abstract class FrontendMentorWindow : Window
 {
     public static readonly DependencyProperty TitleBarBackgroundProperty = DependencyProperty.Register(
         nameof(TitleBarBackground),
@@ -35,10 +35,6 @@ public class FrontendMentorWindow : Window
         typeof(FrontendMentorWindow),
         new PropertyMetadata(20.0));
 
-    private ICommand? _closeCommand;
-    private ICommand? _minimizeCommand;
-    private ICommand? _toggleMaximizeCommand;
-
     static FrontendMentorWindow()
     {
         DefaultStyleKeyProperty.OverrideMetadata(typeof(FrontendMentorWindow),
@@ -48,27 +44,24 @@ public class FrontendMentorWindow : Window
     public double TitleBarImageHeight
     {
         get => (double)GetValue(TitleBarImageHeightProperty);
-        set => SetValue(TitleBarImageHeightProperty,
-            value);
+        set => SetValue(TitleBarImageHeightProperty, value);
     }
 
     public double TitleBarHeight
     {
         get => (double)GetValue(TitleBarHeightProperty);
-        set => SetValue(TitleBarHeightProperty,
-            value);
+        set => SetValue(TitleBarHeightProperty, value);
     }
 
     public Brush TitleBarBackground
     {
         get => (Brush)GetValue(TitleBarBackgroundProperty);
-        set => SetValue(TitleBarBackgroundProperty,
-            value);
+        set => SetValue(TitleBarBackgroundProperty, value);
     }
 
-    public ICommand MinimizeCommand => _minimizeCommand ??= new DelegateCommand(Minimize);
-    public ICommand ToggleMaximizeCommand => _toggleMaximizeCommand ??= new DelegateCommand(ToggleMaximize);
-    public ICommand CloseCommand => _closeCommand ??= new DelegateCommand(Close);
+    //public ICommand MinimizeCommand => field ??= ReactiveCommand.Create(Minimize);
+    //public ICommand ToggleMaximizeCommand => field ??= ReactiveCommand.Create(ToggleMaximize);
+    //public ICommand CloseCommand => field ??= ReactiveCommand.Create(Close);
 
     private void ToggleMaximize()
     {
