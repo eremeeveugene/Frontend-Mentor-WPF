@@ -18,8 +18,8 @@ namespace FrontendMentor.BlogPreviewCard.ViewModels;
 
 internal sealed class BlogPreviewCardViewModel : BindableBase
 {
-    private readonly IBlogsService _blogsService;
     private readonly IBlogBindableModelFactory _blogBindableModelFactory;
+    private readonly IBlogsService _blogsService;
 
     public BlogPreviewCardViewModel(IBlogsService blogsService,
         IBlogBindableModelFactory blogBindableModelFactory)
@@ -36,9 +36,9 @@ internal sealed class BlogPreviewCardViewModel : BindableBase
         private set => SetProperty(ref field, value);
     } = null!;
 
-    public void Load()
+    private async void Load()
     {
-        var blog = _blogsService.GetBlog();
+        var blog = await _blogsService.GetBlogAsync();
 
         Blog = _blogBindableModelFactory.Create(new BlogBindableModel.Parameters(blog));
     }

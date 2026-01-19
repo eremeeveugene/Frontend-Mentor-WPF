@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------
-// Copyright (C) 2025 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
+// Copyright (C) 2026 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
 // All Rights Reserved.
 // --------------------------------------------------------------------------------
 // This software is the confidential and proprietary information of Eugene Eremeev
@@ -15,5 +15,5 @@ namespace FrontendMentor.BlogPreviewCard.Services.Blogs;
 
 internal interface IBlogsService
 {
-    BlogModel GetBlog();
+    Task<BlogModel> GetBlogAsync();
 }

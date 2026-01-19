@@ -1,14 +1,14 @@
-﻿<applications:FrontendMentorApplication x:Class="FrontendMentor.BlogPreviewCard.App"
-                                        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                                        xmlns:applications="clr-namespace:FrontendMentor.Assets.Applications;assembly=FrontendMentor.Assets"
-                                        x:ClassModifier="internal">
-    <applications:FrontendMentorApplication.Resources>
+﻿<applications1:FrontendMentorCoreApplication x:Class="FrontendMentor.BlogPreviewCard.App"
+                                             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                                             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                             xmlns:applications1="clr-namespace:FrontendMentor.Core.Applications;assembly=FrontendMentor.Core"
+                                             x:ClassModifier="internal">
+    <applications1:FrontendMentorCoreApplication.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Themes/Custom.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Themes/Custom.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
-    </applications:FrontendMentorApplication.Resources>
-</applications:FrontendMentorApplication>
+    </applications1:FrontendMentorCoreApplication.Resources>
+</applications1:FrontendMentorCoreApplication>
