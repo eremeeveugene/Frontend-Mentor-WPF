@@ -31,6 +31,5 @@ internal sealed partial class App
 
         container.RegisterSingleton<IBlogsService, BlogsService>();
         container.RegisterSingleton<IBlogBindableModelFactory, BlogBindableModelFactory>();
-        //container.RegisterViewWithViewModel<BlogPreviewCardView, BlogPreviewCardViewModel>();
     }
 }
