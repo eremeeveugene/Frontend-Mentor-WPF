@@ -9,27 +9,12 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using DryIoc;
-using FrontendMentor.BlogPreviewCard.Services;
-using FrontendMentor.BlogPreviewCard.Services.Blogs;
-using FrontendMentor.BlogPreviewCard.Views;
-using FrontendMentor.Core.Extensions;
-using System.Windows;
+namespace FrontendMentor.EntertainmentApp.Views;
 
-namespace FrontendMentor.BlogPreviewCard;
-
-internal sealed partial class App
+internal sealed partial class EntertainmentAppWindowView
 {
-    protected override Window GetMainWindow()
+    public EntertainmentAppWindowView()
     {
-        return GetWindow<BlogPreviewCardView>();
-    }
-
-    protected override void RegisterTypes(IContainer container)
-    {
-        base.RegisterTypes(container);
-
-        container.RegisterSingleton<IBlogsService, BlogsService>();
-        container.RegisterSingleton<IBlogBindableModelFactory, BlogBindableModelFactory>();
+        InitializeComponent();
     }
 }

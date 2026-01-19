@@ -1,9 +1,9 @@
-﻿<applications:FrontendMentorCoreApplication x:Class="FrontendMentor.BlogPreviewCard.App"
+﻿<applications:FrontendMentorCoreApplication x:Class="FrontendMentor.EntertainmentApp.App"
                                             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                                             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                                             xmlns:applications="clr-namespace:FrontendMentor.Core.Applications;assembly=FrontendMentor.Core"
                                             x:ClassModifier="internal">
     <applications:FrontendMentorCoreApplication.Resources>
-        <ResourceDictionary Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Themes/Custom.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/FrontendMentor.EntertainmentApp;component/Themes/Custom.xaml" />
     </applications:FrontendMentorCoreApplication.Resources>
 </applications:FrontendMentorCoreApplication>

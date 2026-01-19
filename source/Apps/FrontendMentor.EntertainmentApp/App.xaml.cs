@@ -10,26 +10,23 @@
 // --------------------------------------------------------------------------------
 
 using DryIoc;
-using FrontendMentor.BlogPreviewCard.Services;
-using FrontendMentor.BlogPreviewCard.Services.Blogs;
-using FrontendMentor.BlogPreviewCard.Views;
-using FrontendMentor.Core.Extensions;
+using FrontendMentor.EntertainmentApp.Views;
 using System.Windows;
 
-namespace FrontendMentor.BlogPreviewCard;
+namespace FrontendMentor.EntertainmentApp;
 
 internal sealed partial class App
 {
     protected override Window GetMainWindow()
     {
-        return GetWindow<BlogPreviewCardView>();
+        return GetWindow<EntertainmentAppWindowView>();
     }
 
     protected override void RegisterTypes(IContainer container)
     {
         base.RegisterTypes(container);
 
-        container.RegisterSingleton<IBlogsService, BlogsService>();
-        container.RegisterSingleton<IBlogBindableModelFactory, BlogBindableModelFactory>();
+        //container.RegisterSingleton<IBlogsService, BlogsService>();
+        //container.RegisterSingleton<IBlogBindableModelFactory, BlogBindableModelFactory>();
     }
 }
