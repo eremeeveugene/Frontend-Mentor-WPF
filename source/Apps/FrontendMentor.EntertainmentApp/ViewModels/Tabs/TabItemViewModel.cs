@@ -9,12 +9,11 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
+using FrontendMentor.Core.Common;
+
 namespace FrontendMentor.EntertainmentApp.ViewModels.Tabs;
 
-internal abstract class TabItemViewModel
+internal abstract class TabItemViewModel : ObservableObject
 {
-    public abstract string Header
-    {
-        get;
-    }
+    public abstract string Header { get; }
 }
