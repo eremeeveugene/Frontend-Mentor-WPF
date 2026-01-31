@@ -9,9 +9,10 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-namespace FrontendMentor.EntertainmentApp.ViewModels.Tabs;
+namespace FrontendMentor.EntertainmentApp.Interfaces;
 
-internal sealed class BookmarksTabItemViewModel : TabItemViewModel
+public interface ITabItem
 {
-    public override string Header => "Bookmarked";
+    IView View { get; }
+    string Header { get; }
 }

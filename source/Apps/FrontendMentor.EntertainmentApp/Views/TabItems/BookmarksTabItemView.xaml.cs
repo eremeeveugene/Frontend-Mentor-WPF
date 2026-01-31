@@ -9,9 +9,14 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-namespace FrontendMentor.EntertainmentApp.ViewModels.Tabs;
+using FrontendMentor.EntertainmentApp.Interfaces;
 
-internal sealed class HomeTabItemViewModel : TabItemViewModel
+namespace FrontendMentor.EntertainmentApp.Views.TabItems;
+
+internal sealed partial class BookmarksTabItemView : IView
 {
-    public override string Header => "Home";
+    public BookmarksTabItemView()
+    {
+        InitializeComponent();
+    }
 }

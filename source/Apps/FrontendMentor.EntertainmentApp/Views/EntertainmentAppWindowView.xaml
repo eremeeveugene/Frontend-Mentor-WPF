@@ -9,11 +9,14 @@
         x:ClassModifier="internal">
     <Window.Resources>
         <Style TargetType="{x:Type TabItem}">
+            <Setter Property="Content"
+                    Value="{Binding View}" />
             <Setter Property="Header"
                     Value="{Binding Header}" />
         </Style>
     </Window.Resources>
 
     <TabControl TabStripPlacement="Left"
-                ItemsSource="{Binding Tabs}" />
+                SelectedItem="{Binding SelectedTabItem}"
+                ItemsSource="{Binding TabItems}" />
 </Window>
