@@ -12,7 +12,7 @@
 using DryIoc;
 using FrontendMentor.Core.Common;
 using FrontendMentor.EntertainmentApp.Interfaces;
-using FrontendMentor.EntertainmentApp.ViewModels.TabItems;
+using FrontendMentor.EntertainmentApp.Interfaces.ViewModels;
 
 namespace FrontendMentor.EntertainmentApp.ViewModels;
 
@@ -20,12 +20,13 @@ internal sealed class EntertainmentAppWindowViewModel : ObservableObject
 {
     public EntertainmentAppWindowViewModel(IContainer container)
     {
+        // ToDo: if don't pass arguments, init from ctor
         ITabItem[] tabItems =
         [
-            container.Resolve<HomeTabItemViewModel>(),
-            container.Resolve<MoviesTabItemViewModel>(),
-            container.Resolve<SeriesTabItemViewModel>(),
-            container.Resolve<BookmarksTabItemViewModel>()
+            container.Resolve<IHomeTabItemViewModel>(),
+            container.Resolve<IMoviesTabItemViewModel>(),
+            container.Resolve<ISeriesTabItemViewModel>(),
+            container.Resolve<IBookmarksTabItemViewModel>()
         ];
 
         TabItems = tabItems;

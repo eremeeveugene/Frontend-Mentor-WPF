@@ -5,8 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:tabItems="clr-namespace:FrontendMentor.EntertainmentApp.ViewModels.TabItems"
              mc:Ignorable="d"
-             x:ClassModifier="internal"
-             d:DataContext="{d:DesignInstance tabItems:BookmarksTabItemViewModel}">
+             d:DataContext="{d:DesignInstance tabItems:BookmarksTabItemViewModel}"
+             x:ClassModifier="internal">
     <Grid>
         <TextBlock Text="BookmarksTabItemView" />
     </Grid>

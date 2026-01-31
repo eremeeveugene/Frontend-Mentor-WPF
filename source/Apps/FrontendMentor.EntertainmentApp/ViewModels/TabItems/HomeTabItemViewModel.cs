@@ -9,13 +9,14 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.EntertainmentApp.Views.TabItems;
+using FrontendMentor.EntertainmentApp.Interfaces.ViewModels;
+using FrontendMentor.EntertainmentApp.Interfaces.Views;
 
 namespace FrontendMentor.EntertainmentApp.ViewModels.TabItems;
 
-internal sealed class HomeTabItemViewModel : TabItemViewModel
+internal sealed class HomeTabItemViewModel : TabItemViewModel, IHomeTabItemViewModel
 {
-    public HomeTabItemViewModel(HomeTabItemView homeTabItemView) : base(homeTabItemView)
+    public HomeTabItemViewModel(IHomeTabItemView homeTabItemView) : base(homeTabItemView)
     {
     }
 

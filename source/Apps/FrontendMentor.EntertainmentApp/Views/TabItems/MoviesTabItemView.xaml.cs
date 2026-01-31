@@ -9,11 +9,11 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.EntertainmentApp.Interfaces;
+using FrontendMentor.EntertainmentApp.Interfaces.Views;
 
 namespace FrontendMentor.EntertainmentApp.Views.TabItems;
 
-internal sealed partial class MoviesTabItemView : IView
+internal sealed partial class MoviesTabItemView : IMoviesTabItemView
 {
     public MoviesTabItemView()
     {

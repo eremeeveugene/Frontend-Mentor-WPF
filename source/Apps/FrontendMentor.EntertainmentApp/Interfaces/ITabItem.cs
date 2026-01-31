@@ -9,6 +9,8 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
+using FrontendMentor.EntertainmentApp.Interfaces.Views;
+
 namespace FrontendMentor.EntertainmentApp.Interfaces;
 
 public interface ITabItem

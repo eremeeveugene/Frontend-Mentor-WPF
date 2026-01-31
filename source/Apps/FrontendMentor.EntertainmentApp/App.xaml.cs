@@ -10,7 +10,11 @@
 // --------------------------------------------------------------------------------
 
 using DryIoc;
+using FrontendMentor.EntertainmentApp.Interfaces.ViewModels;
+using FrontendMentor.EntertainmentApp.Interfaces.Views;
+using FrontendMentor.EntertainmentApp.ViewModels.TabItems;
 using FrontendMentor.EntertainmentApp.Views;
+using FrontendMentor.EntertainmentApp.Views.TabItems;
 using System.Windows;
 
 namespace FrontendMentor.EntertainmentApp;
@@ -26,7 +30,13 @@ internal sealed partial class App
     {
         base.RegisterTypes(container);
 
-        //container.RegisterSingleton<IBlogsService, BlogsService>();
-        //container.RegisterSingleton<IBlogBindableModelFactory, BlogBindableModelFactory>();
+        container.Register<IBookmarksTabItemView, BookmarksTabItemView>();
+        container.Register<IBookmarksTabItemViewModel, BookmarksTabItemViewModel>();
+        container.Register<IHomeTabItemView, HomeTabItemView>();
+        container.Register<IHomeTabItemViewModel, HomeTabItemViewModel>();
+        container.Register<IMoviesTabItemView, MoviesTabItemView>();
+        container.Register<IMoviesTabItemViewModel, MoviesTabItemViewModel>();
+        container.Register<ISeriesTabItemView, SeriesTabItemView>();
+        container.Register<ISeriesTabItemViewModel, SeriesTabItemViewModel>();
     }
 }

@@ -9,8 +9,8 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-namespace FrontendMentor.EntertainmentApp.Interfaces;
+namespace FrontendMentor.EntertainmentApp.Interfaces.Views;
 
-public interface IView
+public interface ISeriesTabItemView : IView
 {
 }

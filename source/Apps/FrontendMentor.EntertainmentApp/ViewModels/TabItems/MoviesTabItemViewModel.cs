@@ -9,13 +9,14 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.EntertainmentApp.Views.TabItems;
+using FrontendMentor.EntertainmentApp.Interfaces.ViewModels;
+using FrontendMentor.EntertainmentApp.Interfaces.Views;
 
 namespace FrontendMentor.EntertainmentApp.ViewModels.TabItems;
 
-internal sealed class MoviesTabItemViewModel : TabItemViewModel
+internal sealed class MoviesTabItemViewModel : TabItemViewModel, IMoviesTabItemViewModel
 {
-    public MoviesTabItemViewModel(MoviesTabItemView moviesTabItemView) : base(moviesTabItemView)
+    public MoviesTabItemViewModel(IMoviesTabItemView moviesTabItemView) : base(moviesTabItemView)
     {
     }
 

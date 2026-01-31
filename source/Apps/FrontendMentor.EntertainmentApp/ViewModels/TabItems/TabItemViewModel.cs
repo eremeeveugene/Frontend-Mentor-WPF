@@ -11,6 +11,7 @@
 
 using FrontendMentor.Core.Common;
 using FrontendMentor.EntertainmentApp.Interfaces;
+using FrontendMentor.EntertainmentApp.Interfaces.Views;
 
 namespace FrontendMentor.EntertainmentApp.ViewModels.TabItems;
 
