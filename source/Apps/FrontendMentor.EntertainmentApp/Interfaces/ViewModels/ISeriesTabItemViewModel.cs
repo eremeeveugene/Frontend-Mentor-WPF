@@ -9,8 +9,8 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-namespace FrontendMentor.EntertainmentApp.Interfaces;
+namespace FrontendMentor.EntertainmentApp.Interfaces.ViewModels;
 
-public interface IBookmarksTabItemView : IView
+public interface ISeriesTabItemViewModel : IViewModel
 {
 }

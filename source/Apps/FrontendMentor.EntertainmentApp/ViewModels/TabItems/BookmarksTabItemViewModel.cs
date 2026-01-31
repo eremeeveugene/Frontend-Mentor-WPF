@@ -9,13 +9,14 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.EntertainmentApp.Views.TabItems;
+using FrontendMentor.EntertainmentApp.Interfaces.ViewModels;
+using FrontendMentor.EntertainmentApp.Interfaces.Views;
 
 namespace FrontendMentor.EntertainmentApp.ViewModels.TabItems;
 
-internal sealed class BookmarksTabItemViewModel : TabItemViewModel
+internal sealed class BookmarksTabItemViewModel : TabItemViewModel, IBookmarksTabItemViewModel
 {
-    public BookmarksTabItemViewModel(BookmarksTabItemView bookmarksTabItemView) : base(bookmarksTabItemView)
+    public BookmarksTabItemViewModel(IBookmarksTabItemView bookmarksTabItemView) : base(bookmarksTabItemView)
     {
     }
 

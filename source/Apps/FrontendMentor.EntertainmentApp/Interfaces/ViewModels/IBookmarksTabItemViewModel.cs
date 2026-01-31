@@ -9,16 +9,8 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.EntertainmentApp.Interfaces.ViewModels;
-using FrontendMentor.EntertainmentApp.Interfaces.Views;
+namespace FrontendMentor.EntertainmentApp.Interfaces.ViewModels;
 
-namespace FrontendMentor.EntertainmentApp.ViewModels.TabItems;
-
-internal sealed class MoviesTabItemViewModel : TabItemViewModel, IMoviesTabItemViewModel
+public interface IBookmarksTabItemViewModel : IViewModel
 {
-    public MoviesTabItemViewModel(IMoviesTabItemView moviesTabItemView) : base(moviesTabItemView)
-    {
-    }
-
-    public override string Header => "Movies";
 }
