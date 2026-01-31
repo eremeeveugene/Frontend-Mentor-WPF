@@ -9,9 +9,14 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-namespace FrontendMentor.EntertainmentApp.ViewModels.Tabs;
+using FrontendMentor.EntertainmentApp.Interfaces;
 
-internal sealed class SeriesTabItemViewModel : TabItemViewModel
+namespace FrontendMentor.EntertainmentApp.Views.TabItems;
+
+internal sealed partial class MoviesTabItemView : IView
 {
-    public override string Header => "TV Series";
+    public MoviesTabItemView()
+    {
+        InitializeComponent();
+    }
 }

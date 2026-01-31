@@ -9,11 +9,15 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.Core.Common;
+using FrontendMentor.EntertainmentApp.Views.TabItems;
 
-namespace FrontendMentor.EntertainmentApp.ViewModels.Tabs;
+namespace FrontendMentor.EntertainmentApp.ViewModels.TabItems;
 
-internal abstract class TabItemViewModel : ObservableObject
+internal sealed class HomeTabItemViewModel : TabItemViewModel
 {
-    public abstract string Header { get; }
+    public HomeTabItemViewModel(HomeTabItemView homeTabItemView) : base(homeTabItemView)
+    {
+    }
+
+    public override string Header => "Home";
 }

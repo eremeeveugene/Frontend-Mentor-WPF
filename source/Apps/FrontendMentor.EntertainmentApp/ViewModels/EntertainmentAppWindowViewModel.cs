@@ -9,25 +9,34 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.EntertainmentApp.ViewModels.Tabs;
+using DryIoc;
+using FrontendMentor.Core.Common;
+using FrontendMentor.EntertainmentApp.Interfaces;
+using FrontendMentor.EntertainmentApp.ViewModels.TabItems;
 
 namespace FrontendMentor.EntertainmentApp.ViewModels;
 
-internal sealed class EntertainmentAppWindowViewModel
+internal sealed class EntertainmentAppWindowViewModel : ObservableObject
 {
-    public IReadOnlyCollection<TabItemViewModel> Tabs
+    public EntertainmentAppWindowViewModel(IContainer container)
     {
-        get;
+        ITabItem[] tabItems =
+        [
+            container.Resolve<HomeTabItemViewModel>(),
+            container.Resolve<MoviesTabItemViewModel>(),
+            container.Resolve<SeriesTabItemViewModel>(),
+            container.Resolve<BookmarksTabItemViewModel>()
+        ];
+
+        TabItems = tabItems;
+        SelectedTabItem = tabItems[0];
     }
 
-    public EntertainmentAppWindowViewModel()
+    public IReadOnlyCollection<ITabItem> TabItems { get; }
+
+    public ITabItem SelectedTabItem
     {
-        Tabs = new TabItemViewModel[]
-        {
-            new HomeTabItemViewModel(),
-            new MoviesTabItemViewModel(),
-            new SeriesTabItemViewModel(),
-            new BookmarksTabItemViewModel(),
-        };
+        get;
+        set => SetProperty(ref field, value);
     }
 }
