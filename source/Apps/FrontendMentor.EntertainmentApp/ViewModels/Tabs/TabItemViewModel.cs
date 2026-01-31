@@ -9,16 +9,12 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.EntertainmentApp.ViewModels;
+namespace FrontendMentor.EntertainmentApp.ViewModels.Tabs;
 
-namespace FrontendMentor.EntertainmentApp.Views;
-
-internal sealed partial class EntertainmentAppWindowView
+internal abstract class TabItemViewModel
 {
-    public EntertainmentAppWindowView(EntertainmentAppWindowViewModel entertainmentAppWindowViewModel)
+    public abstract string Header
     {
-        InitializeComponent();
-
-        DataContext = entertainmentAppWindowViewModel;
+        get;
     }
 }
