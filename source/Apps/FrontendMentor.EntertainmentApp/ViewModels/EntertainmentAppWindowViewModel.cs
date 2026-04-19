@@ -13,10 +13,11 @@ using DryIoc;
 using FrontendMentor.Core.Common;
 using FrontendMentor.EntertainmentApp.Interfaces;
 using FrontendMentor.EntertainmentApp.Interfaces.ViewModels;
+using FrontendMentor.EntertainmentApp.Interfaces.Views;
 
 namespace FrontendMentor.EntertainmentApp.ViewModels;
 
-internal sealed class EntertainmentAppWindowViewModel : ObservableObject
+internal sealed class EntertainmentAppWindowViewModel : ObservableObject, IEntertainmentAppWindowViewModel
 {
     public EntertainmentAppWindowViewModel(IContainer container)
     {
@@ -40,4 +41,7 @@ internal sealed class EntertainmentAppWindowViewModel : ObservableObject
         get;
         set => SetProperty(ref field, value);
     }
+
+    public IView View { get; }
+    public string Header { get; }
 }
