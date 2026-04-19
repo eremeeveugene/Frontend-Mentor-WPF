@@ -19,12 +19,12 @@ namespace FrontendMentor.Core.Applications;
 
 public abstract class FrontendMentorCoreApplication : Application
 {
-    private readonly Container _container;
-
     protected FrontendMentorCoreApplication()
     {
-        _container = BuildContainer();
+        Container = BuildContainer();
     }
+
+    protected IContainer Container { get; }
 
     protected override void OnStartup(StartupEventArgs e)
     {
@@ -39,9 +39,19 @@ public abstract class FrontendMentorCoreApplication : Application
 
     protected abstract Window GetMainWindow();
 
-    protected Window GetWindow<T>() where T : Window
+    protected Window GetWindow<TWindow, TViewModel>()
+        where TWindow : IWindow
+        where TViewModel : notnull
     {
-        return _container.Resolve<T>();
+        var windowViewModel = Container.Resolve<TViewModel>();
+        var windowView = Container.Resolve<TWindow>();
+
+        windowView.DataContext = windowViewModel;
+
+        return windowView as Window
+               ?? throw new InvalidOperationException(
+                   $"Type '{windowView.GetType().FullName}' resolved for '{typeof(TWindow).FullName}' " +
+                   $"must inherit from '{typeof(Window).FullName}' to be used as a main window.");
     }
 
     private Container BuildContainer()
@@ -66,6 +76,6 @@ public abstract class FrontendMentorCoreApplication : Application
     {
         base.OnExit(e);
 
-        _container.Dispose();
+        Container.Dispose();
     }
 }

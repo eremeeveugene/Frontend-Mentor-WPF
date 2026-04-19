@@ -9,14 +9,8 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.EntertainmentApp.Interfaces.Views;
+namespace FrontendMentor.EntertainmentApp.Interfaces.ViewModels;
 
-namespace FrontendMentor.EntertainmentApp.Views;
-
-internal sealed partial class EntertainmentAppWindowView : IEntertainmentAppWindowView
+public interface IEntertainmentAppWindowViewModel : IViewModel
 {
-    public EntertainmentAppWindowView()
-    {
-        InitializeComponent();
-    }
 }
