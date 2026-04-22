@@ -3,11 +3,7 @@
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="DryIoc.dll" Version="5.4.3" />
-    <PackageVersion Include="DryIoc.Microsoft.DependencyInjection" Version="6.2.0" />
-    <PackageVersion Include="Microsoft.Extensions.Configuration" Version="10.0.6" />
     <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="10.0.6" />
     <PackageVersion Include="Microsoft.Extensions.Http" Version="10.0.6" />
-    <PackageVersion Include="ReactiveUI.WPF" Version="22.3.1" />
   </ItemGroup>
 </Project>
