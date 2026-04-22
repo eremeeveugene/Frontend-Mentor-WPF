@@ -11,6 +11,6 @@
 
 namespace FrontendMentor.EntertainmentApp.Interfaces.ViewModels;
 
-public interface IMoviesTabItemViewModel : IViewModel
+public interface IMoviesTabItemViewModel : IViewModel, ITabItem
 {
 }

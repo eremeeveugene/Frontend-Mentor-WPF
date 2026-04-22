@@ -11,6 +11,6 @@
 
 namespace FrontendMentor.EntertainmentApp.Interfaces.ViewModels;
 
-public interface IBookmarksTabItemViewModel : IViewModel
+public interface IBookmarksTabItemViewModel : IViewModel, ITabItem
 {
 }
