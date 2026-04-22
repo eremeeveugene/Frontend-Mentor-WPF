@@ -9,6 +9,9 @@
 
   <ItemGroup>
     <PackageReference Include="DryIoc.dll" />
+    <PackageReference Include="DryIoc.Microsoft.DependencyInjection" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" />
+    <PackageReference Include="Microsoft.Extensions.Http" />
   </ItemGroup>
 
   <ItemGroup>
