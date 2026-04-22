@@ -10,21 +10,22 @@
 // --------------------------------------------------------------------------------
 
 using DryIoc;
-using FrontendMentor.Core.Extensions;
+using DryIoc.Microsoft.DependencyInjection;
 using FrontendMentor.Core.Services.BitmapImages;
 using FrontendMentor.Core.Services.Processes;
+using Microsoft.Extensions.DependencyInjection;
 using System.Windows;
 
 namespace FrontendMentor.Core.Applications;
 
 public abstract class FrontendMentorCoreApplication : Application
 {
+    private readonly IContainer _container;
+
     protected FrontendMentorCoreApplication()
     {
-        Container = BuildContainer();
+        _container = CreateContainer();
     }
-
-    protected IContainer Container { get; }
 
     protected override void OnStartup(StartupEventArgs e)
     {
@@ -39,36 +40,43 @@ public abstract class FrontendMentorCoreApplication : Application
 
     protected abstract Window GetMainWindow();
 
-    protected Window GetWindow<TWindow, TViewModel>()
-        where TWindow : IWindow
-        where TViewModel : notnull
+    protected Window GetWindow<TWindow, TViewModel>() where TWindow : IWindow where TViewModel : notnull
     {
-        var windowViewModel = Container.Resolve<TViewModel>();
-        var windowView = Container.Resolve<TWindow>();
+        var windowViewModel = _container.Resolve<TViewModel>();
+        var windowView = _container.Resolve<TWindow>();
 
         windowView.DataContext = windowViewModel;
 
-        return windowView as Window
-               ?? throw new InvalidOperationException(
-                   $"Type '{windowView.GetType().FullName}' resolved for '{typeof(TWindow).FullName}' " +
-                   $"must inherit from '{typeof(Window).FullName}' to be used as a main window.");
+        return windowView as Window ?? throw new InvalidOperationException(
+            $"Type '{windowView.GetType().FullName}' resolved for '{typeof(TWindow).FullName}' " +
+            $"must inherit from '{typeof(Window).FullName}' to be used as a main window.");
     }
 
-    private Container BuildContainer()
+    private IContainer CreateContainer()
     {
-        var container = new Container(rules => rules
-            .WithAutoConcreteTypeResolution()
-            .WithMicrosoftDependencyInjectionRules());
+        var serviceCollection = CreateServiceCollection();
 
-        container.RegisterSingleton<IProcessesService, ProcessesService>();
-        container.RegisterSingleton<IBitmapImagesService, BitmapImagesService>();
-
-        RegisterTypes(container);
-
-        return container;
+        return new Container(rules => rules.WithAutoConcreteTypeResolution().WithMicrosoftDependencyInjectionRules())
+            .WithDependencyInjectionAdapter(serviceCollection);
     }
 
-    protected virtual void RegisterTypes(IContainer container)
+    private ServiceCollection CreateServiceCollection()
+    {
+        var serviceCollection = new ServiceCollection();
+
+        AddRequiredServices(serviceCollection);
+        AddServices(serviceCollection);
+
+        return serviceCollection;
+    }
+
+    private static void AddRequiredServices(IServiceCollection serviceCollection)
+    {
+        serviceCollection.AddSingleton<IProcessesService, ProcessesService>();
+        serviceCollection.AddSingleton<IBitmapImagesService, BitmapImagesService>();
+    }
+
+    protected virtual void AddServices(IServiceCollection serviceCollection)
     {
     }
 
@@ -76,6 +84,6 @@ public abstract class FrontendMentorCoreApplication : Application
     {
         base.OnExit(e);
 
-        Container.Dispose();
+        _container.Dispose();
     }
 }
