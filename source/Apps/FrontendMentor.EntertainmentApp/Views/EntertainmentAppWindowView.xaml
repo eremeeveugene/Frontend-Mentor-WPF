@@ -14,9 +14,13 @@
             <Setter Property="Header"
                     Value="{Binding Header}" />
         </Style>
+
+        <Style TargetType="{x:Type TabControl}">
+            <Setter Property="TabStripPlacement" Value="Left" />
+        </Style>
     </Window.Resources>
 
-    <TabControl TabStripPlacement="Left"
-                SelectedItem="{Binding SelectedTabItem}"
-                ItemsSource="{Binding TabItems}" />
+    <TabControl
+        SelectedItem="{Binding SelectedTabItem}"
+        ItemsSource="{Binding TabItems}" />
 </Window>
