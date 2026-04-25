@@ -9,8 +9,6 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using DryIoc;
-using DryIoc.Microsoft.DependencyInjection;
 using FrontendMentor.Core.Services.BitmapImages;
 using FrontendMentor.Core.Services.Processes;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,17 +18,22 @@ namespace FrontendMentor.Core.Applications;
 
 public abstract class FrontendMentorCoreApplication : Application
 {
-    private readonly IContainer _container;
+    private readonly ServiceProvider _serviceProvider;
 
     protected FrontendMentorCoreApplication()
     {
-        _container = CreateContainer();
+        _serviceProvider = BuildServiceProvider();
     }
 
     protected override void OnStartup(StartupEventArgs e)
     {
         base.OnStartup(e);
 
+        ShowMainWindow();
+    }
+
+    private void ShowMainWindow()
+    {
         var mainWindow = GetMainWindow();
 
         MainWindow = mainWindow;
@@ -42,8 +45,8 @@ public abstract class FrontendMentorCoreApplication : Application
 
     protected Window GetWindow<TWindow, TViewModel>() where TWindow : IWindow where TViewModel : notnull
     {
-        var windowViewModel = _container.Resolve<TViewModel>();
-        var windowView = _container.Resolve<TWindow>();
+        var windowViewModel = _serviceProvider.GetRequiredService<TViewModel>();
+        var windowView = _serviceProvider.GetRequiredService<TWindow>();
 
         windowView.DataContext = windowViewModel;
 
@@ -52,22 +55,14 @@ public abstract class FrontendMentorCoreApplication : Application
             $"must inherit from '{typeof(Window).FullName}' to be used as a main window.");
     }
 
-    private IContainer CreateContainer()
-    {
-        var serviceCollection = CreateServiceCollection();
-
-        return new Container(rules => rules.WithAutoConcreteTypeResolution().WithMicrosoftDependencyInjectionRules())
-            .WithDependencyInjectionAdapter(serviceCollection);
-    }
-
-    private ServiceCollection CreateServiceCollection()
+    private ServiceProvider BuildServiceProvider()
     {
         var serviceCollection = new ServiceCollection();
 
         AddRequiredServices(serviceCollection);
         AddServices(serviceCollection);
 
-        return serviceCollection;
+        return serviceCollection.BuildServiceProvider();
     }
 
     private static void AddRequiredServices(IServiceCollection serviceCollection)
@@ -82,8 +77,8 @@ public abstract class FrontendMentorCoreApplication : Application
 
     protected override void OnExit(ExitEventArgs e)
     {
-        base.OnExit(e);
+        _serviceProvider.Dispose();
 
-        _container.Dispose();
+        base.OnExit(e);
     }
 }

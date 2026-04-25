@@ -12,35 +12,25 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace FrontendMentor.Core;
+namespace FrontendMentor.Core.Common;
 
 public abstract class BindableBase : INotifyPropertyChanged
 {
     public event PropertyChangedEventHandler? PropertyChanged;
 
     /// <summary>
-    ///     Sets the backing field and raises PropertyChanged if the value actually changed.
-    ///     Returns true if the value was changed.
+    ///     Sets the backing field and raises <see cref="PropertyChanged" /> if the value changed.
     /// </summary>
-    protected bool SetProperty<T>(
-        ref T storage,
-        T value,
-        [CallerMemberName] string? propertyName = null)
+    protected virtual bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string? propertyName = null)
     {
-        if (EqualityComparer<T>.Default.Equals(storage, value))
-        {
-            return false;
-        }
-
-        storage = value;
-        RaisePropertyChanged(propertyName);
-        return true;
+        return SetProperty(ref storage, value, null, propertyName);
     }
 
     /// <summary>
-    ///     Sets the backing field, runs an optional onChanged callback, then raises PropertyChanged.
+    ///     Sets the backing field, invokes <paramref name="onChanged" />,
+    ///     and raises <see cref="PropertyChanged" /> if the value changed.
     /// </summary>
-    protected bool SetProperty<T>(
+    protected virtual bool SetProperty<T>(
         ref T storage,
         T value,
         Action? onChanged,
@@ -52,12 +42,18 @@ public abstract class BindableBase : INotifyPropertyChanged
         }
 
         storage = value;
+
         onChanged?.Invoke();
-        RaisePropertyChanged(propertyName);
+
+        OnPropertyChanged(propertyName);
+
         return true;
     }
 
-    protected void RaisePropertyChanged([CallerMemberName] string? propertyName = null)
+    /// <summary>
+    ///     Raises <see cref="PropertyChanged" /> for the specified property.
+    /// </summary>
+    protected virtual void OnPropertyChanged([CallerMemberName] string? propertyName = null)
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
