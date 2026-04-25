@@ -1,5 +1,6 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
     <ResourceDictionary.MergedDictionaries>
-        <!--<resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.EntertainmentApp;component/Styles/Controls/Generic/Windows/BlogPreviewCardWindowStyles.xaml" />-->
+        <ResourceDictionary
+            Source="pack://application:,,,/FrontendMentor.EntertainmentApp;component/Styles/Controls/Generic/Windows/EntertainmentAppWindowStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
