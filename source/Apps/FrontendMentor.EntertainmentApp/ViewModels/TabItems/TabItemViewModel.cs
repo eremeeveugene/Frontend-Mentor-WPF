@@ -15,7 +15,7 @@ using FrontendMentor.EntertainmentApp.Interfaces.Views;
 
 namespace FrontendMentor.EntertainmentApp.ViewModels.TabItems;
 
-internal abstract class TabItemViewModel : ObservableObject, ITabItem
+internal abstract class TabItemViewModel : BindableBase, ITabItem
 {
     protected TabItemViewModel(IView view)
     {
