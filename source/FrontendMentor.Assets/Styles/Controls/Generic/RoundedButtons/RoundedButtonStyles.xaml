@@ -4,7 +4,7 @@
                     xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries">
 
     <ResourceDictionary.MergedDictionaries>
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Controls/Custom/Buttons/ButtonStyles.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Controls/Custom/Buttons/ButtonStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type buttons:RoundedButton}" />
