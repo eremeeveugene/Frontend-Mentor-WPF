@@ -1,0 +1,25 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:assetsWindows="clr-namespace:FrontendMentor.Assets.Controls.Windows;assembly=FrontendMentor.Assets"
+                    xmlns:windows="clr-namespace:FrontendMentor.EntertainmentApp.Controls.Windows"
+                    xmlns:properties="clr-namespace:FrontendMentor.EntertainmentApp.Properties">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary
+            Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Controls/Generic/Windows/FrontendMentorWindowStyles.xaml" />
+        <ResourceDictionary
+            Source="pack://application:,,,/FrontendMentor.EntertainmentApp;component/Brushes/Brushes.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/FrontendMentor.EntertainmentApp;component/Fonts/Fonts.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style BasedOn="{StaticResource {x:Type assetsWindows:FrontendMentorWindow}}"
+           TargetType="{x:Type windows:EntertainmentAppWindow}">
+        <Setter Property="FontFamily" Value="{StaticResource Outfit.FontFamily}" />
+        <Setter Property="Background" Value="{StaticResource EntertainmentAppWindow.Background.Brush}" />
+        <Setter Property="Foreground" Value="{StaticResource EntertainmentAppWindow.Foreground.Brush}" />
+        <Setter Property="MinHeight" Value="1024" />
+        <Setter Property="MinWidth" Value="1440" />
+        <Setter Property="Title" Value="{x:Static properties:Resources.EntertainmentApp_Title}" />
+    </Style>
+
+</ResourceDictionary>
