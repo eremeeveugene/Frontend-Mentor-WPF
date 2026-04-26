@@ -1,0 +1,64 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="TextPreset1.TextBlock.Style" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="32" />
+        <Setter Property="LineHeight" Value="40" />
+        <Setter Property="LineStackingStrategy" Value="BlockLineHeight" />
+    </Style>
+
+    <Style x:Key="TextPreset1.Light.TextBlock.Style" TargetType="{x:Type TextBlock}"
+           BasedOn="{StaticResource TextPreset1.TextBlock.Style}">
+        <Setter Property="FontWeight" Value="Light" />
+    </Style>
+
+    <Style x:Key="TextPreset2.TextBlock.Style" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="LineHeight" Value="30" />
+        <Setter Property="LineStackingStrategy" Value="BlockLineHeight" />
+    </Style>
+
+    <Style x:Key="TextPreset2.Medium.TextBlock.Style" TargetType="{x:Type TextBlock}"
+           BasedOn="{StaticResource TextPreset2.TextBlock.Style}">
+        <Setter Property="FontWeight" Value="Medium" />
+    </Style>
+
+    <Style x:Key="TextPreset2.Light.TextBlock.Style" TargetType="{x:Type TextBlock}"
+           BasedOn="{StaticResource TextPreset2.TextBlock.Style}">
+        <Setter Property="FontWeight" Value="Light" />
+    </Style>
+
+    <Style x:Key="TextPreset3.TextBlock.Style" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="LineHeight" Value="22.5" />
+        <Setter Property="LineStackingStrategy" Value="BlockLineHeight" />
+    </Style>
+
+    <Style x:Key="TextPreset3.Medium.TextBlock.Style" TargetType="{x:Type TextBlock}"
+           BasedOn="{StaticResource TextPreset3.TextBlock.Style}">
+        <Setter Property="FontWeight" Value="Medium" />
+    </Style>
+
+    <Style x:Key="TextPreset4.TextBlock.Style" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="LineHeight" Value="18.75" />
+        <Setter Property="LineStackingStrategy" Value="BlockLineHeight" />
+    </Style>
+
+    <Style x:Key="TextPreset4.Light.TextBlock.Style" TargetType="{x:Type TextBlock}"
+           BasedOn="{StaticResource TextPreset4.TextBlock.Style}">
+        <Setter Property="FontWeight" Value="Light" />
+    </Style>
+
+    <Style x:Key="TextPreset5.TextBlock.Style" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="LineHeight" Value="16.25" />
+        <Setter Property="LineStackingStrategy" Value="BlockLineHeight" />
+    </Style>
+
+    <Style x:Key="TextPreset5.Light.TextBlock.Style" TargetType="{x:Type TextBlock}"
+           BasedOn="{StaticResource TextPreset5.TextBlock.Style}">
+        <Setter Property="FontWeight" Value="Light" />
+    </Style>
+
+</ResourceDictionary>
