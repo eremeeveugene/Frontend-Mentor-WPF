@@ -12,6 +12,7 @@
 using FrontendMentor.EntertainmentApp.Interfaces.ViewModels;
 using FrontendMentor.EntertainmentApp.Interfaces.Views;
 using FrontendMentor.EntertainmentApp.Services.ImageCache;
+using FrontendMentor.EntertainmentApp.Services.ImageDownloader;
 using FrontendMentor.EntertainmentApp.Services.ImageLoader;
 using FrontendMentor.EntertainmentApp.Services.Tmdb;
 using FrontendMentor.EntertainmentApp.ViewModels;
@@ -48,6 +49,7 @@ internal sealed partial class App
         serviceCollection.AddTransient<ISeriesTabItemViewModel, SeriesTabItemViewModel>();
         serviceCollection.AddSingleton<ITmdbService, TmdbService>();
         serviceCollection.AddSingleton<IImageCacheService, ImageCacheService>();
+        serviceCollection.AddSingleton<IImageDownloaderService, ImageDownloaderService>();
         serviceCollection.AddSingleton<IImageLoaderService, ImageLoaderService>();
 
         var configurationBuilder = new ConfigurationBuilder().SetBasePath(AppContext.BaseDirectory)
@@ -65,6 +67,13 @@ internal sealed partial class App
             {
                 c.BaseAddress = new Uri("https://api.themoviedb.org/3/");
                 c.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            });
+
+        serviceCollection.AddHttpClient<IImageDownloaderService, ImageDownloaderService>(
+            "tmdb-images",
+            c =>
+            {
+                c.BaseAddress = new Uri("https://image.tmdb.org/t/p/");
             });
     }
 }
