@@ -11,6 +11,7 @@
 
 using FrontendMentor.EntertainmentApp.Interfaces.ViewModels;
 using FrontendMentor.EntertainmentApp.Interfaces.Views;
+using FrontendMentor.EntertainmentApp.Services.ImageCache;
 using FrontendMentor.EntertainmentApp.Services.Tmdb;
 using FrontendMentor.EntertainmentApp.ViewModels;
 using FrontendMentor.EntertainmentApp.ViewModels.TabItems;
@@ -45,6 +46,7 @@ internal sealed partial class App
         serviceCollection.AddTransient<ISeriesTabItemView, SeriesTabItemView>();
         serviceCollection.AddTransient<ISeriesTabItemViewModel, SeriesTabItemViewModel>();
         serviceCollection.AddSingleton<ITmdbService, TmdbService>();
+        serviceCollection.AddSingleton<IImageCacheService, ImageCacheService>();
 
         var configurationBuilder = new ConfigurationBuilder().SetBasePath(AppContext.BaseDirectory)
             .AddJsonFile("appsettings.json", false).Build();
