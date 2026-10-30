@@ -10,15 +10,22 @@
 // --------------------------------------------------------------------------------
 
 using FrontendMentor.Assets.Controls.Windows;
+using FrontendMentor.BlogPreviewCard.Views.BlogPreviewCard;
 using System.Windows;
 
 namespace FrontendMentor.BlogPreviewCard.Controls.Windows;
 
-internal class BlogPreviewCardWindow : FrontendMentorWindow
+/// <inheritdoc cref="IBlogPreviewCardWindow" />
+internal sealed class BlogPreviewCardWindow : FrontendMentorWindow, IBlogPreviewCardWindow
 {
     static BlogPreviewCardWindow()
     {
         DefaultStyleKeyProperty.OverrideMetadata(typeof(BlogPreviewCardWindow),
             new FrameworkPropertyMetadata(typeof(BlogPreviewCardWindow)));
+    }
+
+    public BlogPreviewCardWindow(IBlogPreviewCardView view)
+        : base(view)
+    {
     }
 }

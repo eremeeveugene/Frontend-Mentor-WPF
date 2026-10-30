@@ -13,7 +13,14 @@ using FrontendMentor.SocialLinksProfile.Models;
 
 namespace FrontendMentor.SocialLinksProfile.Services.SocialLinkProfiles;
 
+/// <summary>
+///     Provides social link profiles.
+/// </summary>
 internal interface ISocialLinkProfilesService
 {
+    /// <summary>
+    ///     Gets the social link profile that the view shows.
+    /// </summary>
+    /// <returns>The social link profile.</returns>
     SocialLinkProfileModel GetSocialLinkProfile();
 }

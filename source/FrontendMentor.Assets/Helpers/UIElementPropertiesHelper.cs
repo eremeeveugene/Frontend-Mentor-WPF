@@ -13,16 +13,29 @@ using System.Windows;
 
 namespace FrontendMentor.Assets.Helpers;
 
+/// <summary>
+///     Attached properties for UI elements.
+/// </summary>
 public static class UIElementPropertiesHelper
 {
     public static readonly DependencyProperty IsMouseOverParentProperty = DependencyProperty.RegisterAttached(
         "IsMouseOverParent", typeof(bool), typeof(UIElementPropertiesHelper), new PropertyMetadata(default(bool)));
 
+    /// <summary>
+    ///     Sets the IsMouseOverParent attached property value of an element.
+    /// </summary>
+    /// <param name="element">The element.</param>
+    /// <param name="value">The value to set.</param>
     public static void SetIsMouseOverParent(DependencyObject element, bool value)
     {
         element.SetValue(IsMouseOverParentProperty, value);
     }
 
+    /// <summary>
+    ///     Gets the IsMouseOverParent attached property value of an element.
+    /// </summary>
+    /// <param name="element">The element.</param>
+    /// <returns>The value of the attached property.</returns>
     public static bool GetIsMouseOverParent(DependencyObject element)
     {
         return (bool)element.GetValue(IsMouseOverParentProperty);

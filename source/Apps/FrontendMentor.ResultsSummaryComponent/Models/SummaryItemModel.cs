@@ -13,8 +13,17 @@ using FrontendMentor.ResultsSummaryComponent.Enums;
 
 namespace FrontendMentor.ResultsSummaryComponent.Models;
 
-internal class SummaryItemModel
+/// <summary>
+///     The data of a summary item.
+/// </summary>
+internal sealed class SummaryItemModel
 {
-    public SummaryItemType SummaryItemType { get; set; }
-    public int Value { get; set; }
+    /// <summary>
+    ///     Gets or initializes the type of the summary item.
+    /// </summary>
+    public required SummaryItemType SummaryItemType { get; init; }
+    /// <summary>
+    ///     Gets or initializes the score of the summary item.
+    /// </summary>
+    public required int Value { get; init; }
 }

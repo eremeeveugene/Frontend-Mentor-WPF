@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------
-// Copyright (C) 2025 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
+// Copyright (C) 2026 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
 // All Rights Reserved.
 // --------------------------------------------------------------------------------
 // This software is the confidential and proprietary information of Eugene Eremeev
@@ -9,51 +9,48 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
+using System.Collections.Concurrent;
 using System.Windows;
 
 namespace FrontendMentor.Assets.ResourceDictionaries;
 
 /// <summary>
-///     A custom ResourceDictionary for WPF applications that optimizes resource loading and sharing.
-///     This class prevents the multiple loading of the same resource dictionaries by maintaining
-///     a static cache of loaded dictionaries. When a dictionary is requested, it is either retrieved
-///     from the cache (if already loaded) or loaded and then added to the cache for future use.
-///     This approach enhances performance and reduces memory usage by reusing dictionaries across
-///     the application.
+///     A resource dictionary that parses each source only once. The first dictionary that loads a source
+///     is cached, and every other dictionary with the same source merges the cached instance instead of
+///     parsing the source again. This saves parsing time and memory when the same dictionary is merged
+///     from several places.
 /// </summary>
-public class SharedResourceDictionary : ResourceDictionary
+public sealed class SharedResourceDictionary : ResourceDictionary
 {
-    private static readonly Dictionary<Uri, ResourceDictionary> SharedDictionaries = [];
-    private Uri? _sourceUri;
+    private static readonly ConcurrentDictionary<Uri, ResourceDictionary> SharedDictionaries = [];
 
     /// <summary>
-    ///     Overrides the Source property of ResourceDictionary. Setting this property checks if the
-    ///     resource dictionary specified by the given URI is already loaded. If so, the loaded dictionary
-    ///     is reused by adding it to the MergedDictionaries collection. If not, the dictionary is loaded
-    ///     and then added to both the MergedDictionaries collection and the SharedDictionaries cache.
+    ///     Gets or sets the source of the dictionary. Setting a source that is already loaded merges the
+    ///     cached dictionary. Setting a source that is not loaded yet loads it into this dictionary and
+    ///     caches this dictionary. Setting the source that is already set does nothing.
     /// </summary>
     public new Uri? Source
     {
-        get => _sourceUri;
+        get;
         set
         {
-            _sourceUri = value;
-
-            if (value == null)
+            if (value == null || value == field)
             {
                 return;
             }
 
-            if (SharedDictionaries.TryGetValue(value, out var dictionary))
-            {
-                MergedDictionaries.Add(dictionary);
-            }
-            else
-            {
-                base.Source = value;
+            field = value;
 
-                SharedDictionaries.Add(value, this);
+            if (SharedDictionaries.TryGetValue(value, out var sharedDictionary))
+            {
+                MergedDictionaries.Add(sharedDictionary);
+
+                return;
             }
+
+            base.Source = value;
+
+            SharedDictionaries.TryAdd(value, this);
         }
     }
 }

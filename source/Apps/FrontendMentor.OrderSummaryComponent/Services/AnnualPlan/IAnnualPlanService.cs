@@ -11,7 +11,14 @@
 
 namespace FrontendMentor.OrderSummaryComponent.Services.AnnualPlan;
 
+/// <summary>
+///     Provides the annual plan.
+/// </summary>
 internal interface IAnnualPlanService
 {
+    /// <summary>
+    ///     Gets the price of the annual plan.
+    /// </summary>
+    /// <returns>The price of the annual plan.</returns>
     double GetAnnualPlanPrice();
 }

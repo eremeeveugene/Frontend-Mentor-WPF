@@ -10,15 +10,22 @@
 // --------------------------------------------------------------------------------
 
 using FrontendMentor.Assets.Controls.Windows;
+using FrontendMentor.ThreeColumnPreviewCardComponent.Views.ThreeColumnPreviewCardComponent;
 using System.Windows;
 
 namespace FrontendMentor.ThreeColumnPreviewCardComponent.Controls.Windows;
 
-internal class ThreeColumnPreviewCardComponentWindow : FrontendMentorWindow
+/// <inheritdoc cref="IThreeColumnPreviewCardComponentWindow" />
+internal sealed class ThreeColumnPreviewCardComponentWindow : FrontendMentorWindow, IThreeColumnPreviewCardComponentWindow
 {
     static ThreeColumnPreviewCardComponentWindow()
     {
         DefaultStyleKeyProperty.OverrideMetadata(typeof(ThreeColumnPreviewCardComponentWindow),
             new FrameworkPropertyMetadata(typeof(ThreeColumnPreviewCardComponentWindow)));
+    }
+
+    public ThreeColumnPreviewCardComponentWindow(IThreeColumnPreviewCardComponentView view)
+        : base(view)
+    {
     }
 }

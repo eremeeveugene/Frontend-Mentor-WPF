@@ -13,7 +13,14 @@ using FrontendMentor.ResultsSummaryComponent.Models;
 
 namespace FrontendMentor.ResultsSummaryComponent.Services.ResultSummary;
 
+/// <summary>
+///     Provides result summaries.
+/// </summary>
 internal interface IResultSummaryService
 {
+    /// <summary>
+    ///     Gets the result summary that the view shows.
+    /// </summary>
+    /// <returns>The result summary.</returns>
     ResultSummaryModel GetResultSummary();
 }

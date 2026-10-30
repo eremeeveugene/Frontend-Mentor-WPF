@@ -15,7 +15,10 @@ using System.Windows.Media;
 
 namespace FrontendMentor.ThreeColumnPreviewCardComponent.Controls.Cards;
 
-internal class PreviewCard : Control
+/// <summary>
+///     A card with an icon, a title and a caption.
+/// </summary>
+internal sealed class PreviewCard : Control
 {
     public static readonly DependencyProperty IconFillProperty = DependencyProperty.Register(
         nameof(IconFill), typeof(Brush), typeof(PreviewCard), new PropertyMetadata(default(Brush)));
@@ -38,30 +41,45 @@ internal class PreviewCard : Control
             new FrameworkPropertyMetadata(typeof(PreviewCard)));
     }
 
+    /// <summary>
+    ///     Gets or sets the brush that fills the icon.
+    /// </summary>
     public Brush IconFill
     {
         get => (Brush)GetValue(IconFillProperty);
         set => SetValue(IconFillProperty, value);
     }
 
+    /// <summary>
+    ///     Gets or sets the geometry of the icon.
+    /// </summary>
     public Geometry IconData
     {
         get => (Geometry)GetValue(IconDataProperty);
         set => SetValue(IconDataProperty, value);
     }
 
+    /// <summary>
+    ///     Gets or sets the radius of the card corners.
+    /// </summary>
     public CornerRadius CornerRadius
     {
         get => (CornerRadius)GetValue(CornerRadiusProperty);
         set => SetValue(CornerRadiusProperty, value);
     }
 
+    /// <summary>
+    ///     Gets or sets the title.
+    /// </summary>
     public string Title
     {
         get => (string)GetValue(TitleProperty);
         set => SetValue(TitleProperty, value);
     }
 
+    /// <summary>
+    ///     Gets or sets the caption.
+    /// </summary>
     public string Caption
     {
         get => (string)GetValue(CaptionProperty);

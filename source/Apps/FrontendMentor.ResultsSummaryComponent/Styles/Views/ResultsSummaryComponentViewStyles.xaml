@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:bindableModels="clr-namespace:FrontendMentor.ResultsSummaryComponent.BindableModels"
+                    xmlns:bindableModels="clr-namespace:FrontendMentor.ResultsSummaryComponent.BindableModels.SummaryItem"
                     xmlns:converters="clr-namespace:FrontendMentor.Assets.Converters;assembly=FrontendMentor.Assets"
                     xmlns:converters1="clr-namespace:FrontendMentor.ResultsSummaryComponent.Converters"
                     xmlns:helpers="clr-namespace:FrontendMentor.Assets.Helpers;assembly=FrontendMentor.Assets"

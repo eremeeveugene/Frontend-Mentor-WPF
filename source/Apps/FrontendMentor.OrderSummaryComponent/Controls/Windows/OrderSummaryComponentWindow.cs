@@ -10,15 +10,22 @@
 // --------------------------------------------------------------------------------
 
 using FrontendMentor.Assets.Controls.Windows;
+using FrontendMentor.OrderSummaryComponent.Views.OrderSummary;
 using System.Windows;
 
 namespace FrontendMentor.OrderSummaryComponent.Controls.Windows;
 
-internal class OrderSummaryComponentWindow : FrontendMentorWindow
+/// <inheritdoc cref="IOrderSummaryComponentWindow" />
+internal sealed class OrderSummaryComponentWindow : FrontendMentorWindow, IOrderSummaryComponentWindow
 {
     static OrderSummaryComponentWindow()
     {
         DefaultStyleKeyProperty.OverrideMetadata(typeof(OrderSummaryComponentWindow),
             new FrameworkPropertyMetadata(typeof(OrderSummaryComponentWindow)));
+    }
+
+    public OrderSummaryComponentWindow(IOrderSummaryView view)
+        : base(view)
+    {
     }
 }

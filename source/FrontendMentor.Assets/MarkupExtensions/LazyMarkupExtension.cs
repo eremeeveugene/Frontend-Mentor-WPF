@@ -13,10 +13,14 @@ using System.Windows.Markup;
 
 namespace FrontendMentor.Assets.MarkupExtensions;
 
+/// <summary>
+///     The base class for markup extensions that provide one lazily created shared instance.
+/// </summary>
 public abstract class LazyMarkupExtension<T> : MarkupExtension where T : class, new()
 {
     private static readonly Lazy<T> LazyInstance = new(() => new T());
 
+    /// <inheritdoc />
     public override object ProvideValue(IServiceProvider serviceProvider)
     {
         return LazyInstance.Value;

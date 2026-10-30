@@ -15,7 +15,10 @@ using System.Windows.Media;
 
 namespace FrontendMentor.Assets.Controls.Icons;
 
-public class Icon : Control
+/// <summary>
+///     A control that draws a geometry as an icon.
+/// </summary>
+public sealed class Icon : Control
 {
     public static readonly DependencyProperty DataProperty = DependencyProperty.Register(
         nameof(Data), typeof(Geometry), typeof(Icon), new PropertyMetadata(default(Geometry)));
@@ -38,30 +41,45 @@ public class Icon : Control
             new FrameworkPropertyMetadata(typeof(Icon)));
     }
 
+    /// <summary>
+    ///     Gets or sets the geometry that the icon draws.
+    /// </summary>
     public Geometry Data
     {
         get => (Geometry)GetValue(DataProperty);
         set => SetValue(DataProperty, value);
     }
 
+    /// <summary>
+    ///     Gets or sets the brush that fills the geometry.
+    /// </summary>
     public Brush Fill
     {
         get => (Brush)GetValue(FillProperty);
         set => SetValue(FillProperty, value);
     }
 
+    /// <summary>
+    ///     Gets or sets the brush that outlines the geometry.
+    /// </summary>
     public Brush Stroke
     {
         get => (Brush)GetValue(StrokeProperty);
         set => SetValue(StrokeProperty, value);
     }
 
+    /// <summary>
+    ///     Gets or sets the thickness of the outline.
+    /// </summary>
     public double StrokeThickness
     {
         get => (double)GetValue(StrokeThicknessProperty);
         set => SetValue(StrokeThicknessProperty, value);
     }
 
+    /// <summary>
+    ///     Gets or sets how the geometry is stretched to fill the icon.
+    /// </summary>
     public Stretch Stretch
     {
         get => (Stretch)GetValue(StretchProperty);

@@ -13,7 +13,14 @@ using FrontendMentor.BlogPreviewCard.Models;
 
 namespace FrontendMentor.BlogPreviewCard.Services.Blogs;
 
+/// <summary>
+///     Provides blogs.
+/// </summary>
 internal interface IBlogsService
 {
+    /// <summary>
+    ///     Gets the blog that the card shows.
+    /// </summary>
+    /// <returns>The blog.</returns>
     BlogModel GetBlog();
 }

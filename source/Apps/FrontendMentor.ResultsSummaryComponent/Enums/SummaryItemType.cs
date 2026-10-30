@@ -14,6 +14,9 @@ using FrontendMentor.ResultsSummaryComponent.Properties;
 
 namespace FrontendMentor.ResultsSummaryComponent.Enums;
 
+/// <summary>
+///     The types of a summary item.
+/// </summary>
 internal enum SummaryItemType
 {
     [LocalizedDescription(nameof(Resources.SummaryItemType_Reaction), typeof(Resources), "Reaction")]

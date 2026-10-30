@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net9.0-windows</TargetFramework>
+    <TargetFramework>net10.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
@@ -30,12 +30,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="Prism.DryIoc.Wpf">
-      <HintPath>..\..\..\..\Users\ereme\.nuget\packages\prism.dryioc\8.1.97\lib\net5.0-windows7.0\Prism.DryIoc.Wpf.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
     <Resource Include="Fonts\Outfit\Outfit-Black.ttf" />
     <Resource Include="Fonts\Outfit\Outfit-Bold.ttf">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
@@ -57,11 +51,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Update="Properties\Settings.Designer.cs">
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -73,7 +62,7 @@
 
   <ItemGroup>
     <None Update="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>

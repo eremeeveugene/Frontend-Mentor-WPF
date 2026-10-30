@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------
-// Copyright (C) 2025 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
+// Copyright (C) 2026 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
 // All Rights Reserved.
 // --------------------------------------------------------------------------------
 // This software is the confidential and proprietary information of Eugene Eremeev
@@ -11,46 +11,63 @@
 
 using FrontendMentor.Assets.MarkupExtensions;
 using FrontendMentor.Core.Attributes;
+using System.Collections.Concurrent;
 using System.ComponentModel;
 using System.Globalization;
+using System.Reflection;
 
 namespace FrontendMentor.Assets.Converters;
 
-public class EnumToDescriptionConverter : ConverterMarkupExtension<EnumToDescriptionConverter>
+/// <summary>
+///     Converts an enum value to its localized or plain description.
+/// </summary>
+public sealed class EnumToDescriptionConverter : ConverterMarkupExtension<EnumToDescriptionConverter>
 {
+    private static readonly ConcurrentDictionary<object, string> Descriptions = [];
+
+    /// <inheritdoc />
     public override object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
-        if (value == null)
-        {
-            return null;
-        }
+        return value == null ? null : Descriptions.GetOrAdd(value, GetDescription);
+    }
 
+    /// <inheritdoc />
+    public override object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
+    {
+        throw new NotSupportedException();
+    }
+
+    /// <summary>
+    ///     Reads the description of an enum value from its attributes. Reflection creates new attribute
+    ///     instances on every call, so the result is cached by <see cref="Convert" />.
+    /// </summary>
+    /// <param name="value">The enum value.</param>
+    /// <returns>The localized description, the plain description, or the name of the value.</returns>
+    private static string GetDescription(object value)
+    {
         var fieldName = value.ToString() ?? throw new InvalidOperationException();
 
         var fieldInfo = value.GetType().GetField(fieldName);
 
         if (fieldInfo == null)
         {
-            return value.ToString();
+            return fieldName;
         }
 
-        if (fieldInfo.GetCustomAttributes(typeof(LocalizedDescriptionAttribute), false)
-                .FirstOrDefault() is LocalizedDescriptionAttribute localizedDescription)
+        var localizedDescription = fieldInfo.GetCustomAttribute<LocalizedDescriptionAttribute>(false);
+
+        if (localizedDescription != null)
         {
             return localizedDescription.Description;
         }
 
-        if (fieldInfo.GetCustomAttributes(typeof(DescriptionAttribute), false)
-                .FirstOrDefault() is DescriptionAttribute description)
+        var description = fieldInfo.GetCustomAttribute<DescriptionAttribute>(false);
+
+        if (description != null)
         {
             return description.Description;
         }
 
-        return value.ToString();
-    }
-
-    public override object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
-    {
-        throw new NotSupportedException();
+        return fieldName;
     }
 }

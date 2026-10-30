@@ -9,31 +9,24 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.QrCodeComponent.Constants;
+using FrontendMentor.Core.Extensions;
 using FrontendMentor.QrCodeComponent.Controls;
-using FrontendMentor.QrCodeComponent.Views;
-using System.Windows;
+using FrontendMentor.QrCodeComponent.Views.QrCodeComponent;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace FrontendMentor.QrCodeComponent;
 
-internal partial class App
+/// <summary>
+///     The application entry point.
+/// </summary>
+internal sealed partial class App
 {
-    protected override Window CreateShell()
+    /// <inheritdoc />
+    protected override void ConfigureServices(IServiceCollection services)
     {
-        return Container.Resolve<QrCodeComponentWindow>();
-    }
+        base.ConfigureServices(services);
 
-    protected override void RegisterTypes(IContainerRegistry containerRegistry)
-    {
-        base.RegisterTypes(containerRegistry);
-
-        containerRegistry.RegisterForNavigation<QrCodeComponentView>(QrCodeComponentViewNames.QrCodeComponent);
-    }
-
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-
-        NavigateToShellRegion(QrCodeComponentViewNames.QrCodeComponent);
+        services.AddMainWindow<IQrCodeComponentWindow, QrCodeComponentWindow>()
+            .AddTransient<IQrCodeComponentView, QrCodeComponentView>();
     }
 }

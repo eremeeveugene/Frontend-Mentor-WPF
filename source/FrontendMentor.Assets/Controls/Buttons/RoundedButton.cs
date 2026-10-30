@@ -14,7 +14,10 @@ using System.Windows.Controls;
 
 namespace FrontendMentor.Assets.Controls.Buttons;
 
-public class RoundedButton : Button
+/// <summary>
+///     A button with rounded corners.
+/// </summary>
+public sealed class RoundedButton : Button
 {
     public static readonly DependencyProperty CornerRadiusProperty = DependencyProperty.Register(
         nameof(CornerRadius), typeof(CornerRadius), typeof(RoundedButton), new PropertyMetadata(default(CornerRadius)));
@@ -25,6 +28,9 @@ public class RoundedButton : Button
             new FrameworkPropertyMetadata(typeof(RoundedButton)));
     }
 
+    /// <summary>
+    ///     Gets or sets the radius of the button corners.
+    /// </summary>
     public CornerRadius CornerRadius
     {
         get => (CornerRadius)GetValue(CornerRadiusProperty);

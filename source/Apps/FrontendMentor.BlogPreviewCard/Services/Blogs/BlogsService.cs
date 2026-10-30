@@ -14,8 +14,10 @@ using System.Globalization;
 
 namespace FrontendMentor.BlogPreviewCard.Services.Blogs;
 
-internal class BlogsService : IBlogsService
+/// <inheritdoc />
+internal sealed class BlogsService : IBlogsService
 {
+    /// <inheritdoc />
     public BlogModel GetBlog()
     {
         return new BlogModel

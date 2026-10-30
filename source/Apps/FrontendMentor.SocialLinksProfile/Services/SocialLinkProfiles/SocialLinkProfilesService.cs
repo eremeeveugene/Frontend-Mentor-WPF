@@ -13,8 +13,10 @@ using FrontendMentor.SocialLinksProfile.Models;
 
 namespace FrontendMentor.SocialLinksProfile.Services.SocialLinkProfiles;
 
-internal class SocialLinkProfilesService : ISocialLinkProfilesService
+/// <inheritdoc />
+internal sealed class SocialLinkProfilesService : ISocialLinkProfilesService
 {
+    /// <inheritdoc />
     public SocialLinkProfileModel GetSocialLinkProfile()
     {
         return new SocialLinkProfileModel

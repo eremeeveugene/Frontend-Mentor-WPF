@@ -9,31 +9,33 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.Assets.Constants;
-using FrontendMentor.Assets.Controls.Windows;
+using FrontendMentor.Assets.Enums;
+using FrontendMentor.Assets.Services.Themes;
 using FrontendMentor.Core.Applications;
-using System.Windows;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace FrontendMentor.Assets.Applications;
 
+/// <summary>
+///     The base application that adds theming to <see cref="FrontendMentorCoreApplication" />.
+/// </summary>
 public abstract class FrontendMentorApplication : FrontendMentorCoreApplication
 {
-    private IRegionManager _regionManager = null!;
-
-    protected override Window CreateShell()
+    /// <inheritdoc />
+    protected override void ConfigureServices(IServiceCollection services)
     {
-        return Container.Resolve<FrontendMentorWindow>();
+        base.ConfigureServices(services);
+
+        services.AddSingleton<INativeWindowThemeService, NativeWindowThemeService>()
+            .AddSingleton<IThemeService, ThemeService>();
     }
 
+    /// <inheritdoc />
     protected override void OnInitialized()
     {
+        // ToDo: Get system value
+        ServiceProvider.GetRequiredService<IThemeService>().SetTheme(Theme.Dark);
+
         base.OnInitialized();
-
-        _regionManager = Container.Resolve<IRegionManager>();
-    }
-
-    protected void NavigateToShellRegion(string viewName)
-    {
-        _regionManager.RequestNavigate(FrontedMentorRegionNames.Shell, viewName);
     }
 }

@@ -9,63 +9,29 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
+using FrontendMentor.Core.Views;
 using System.Windows;
-using System.Windows.Input;
-using System.Windows.Media;
 
 namespace FrontendMentor.Assets.Controls.Windows;
 
-public class FrontendMentorWindow : Window
+/// <summary>
+///     The base window of the Frontend Mentor applications. It has a themed frame and
+///     shows a view as its content.
+/// </summary>
+public abstract class FrontendMentorWindow : Window
 {
-    public static readonly DependencyProperty TitleBarBackgroundProperty = DependencyProperty.Register(
-        nameof(TitleBarBackground), typeof(Brush), typeof(FrontendMentorWindow), new PropertyMetadata(default(Brush)));
-
-    public static readonly DependencyProperty TitleBarHeightProperty = DependencyProperty.Register(
-        nameof(TitleBarHeight), typeof(double), typeof(FrontendMentorWindow), new PropertyMetadata(default(double)));
-
-    public static readonly DependencyProperty TitleBarImageHeightProperty = DependencyProperty.Register(
-        nameof(TitleBarImageHeight), typeof(double), typeof(FrontendMentorWindow),
-        new PropertyMetadata(default(double)));
-
-    private ICommand? _closeCommand;
-    private ICommand? _minimizeCommand;
-    private ICommand? _toggleMaximizeCommand;
-
     static FrontendMentorWindow()
     {
         DefaultStyleKeyProperty.OverrideMetadata(typeof(FrontendMentorWindow),
             new FrameworkPropertyMetadata(typeof(FrontendMentorWindow)));
     }
 
-    public double TitleBarImageHeight
+    /// <summary>
+    ///     Initializes a new instance of the <see cref="FrontendMentorWindow" /> class.
+    /// </summary>
+    /// <param name="view">The view that the window shows as its content.</param>
+    protected FrontendMentorWindow(IView view)
     {
-        get => (double)GetValue(TitleBarImageHeightProperty);
-        set => SetValue(TitleBarImageHeightProperty, value);
-    }
-
-    public double TitleBarHeight
-    {
-        get => (double)GetValue(TitleBarHeightProperty);
-        set => SetValue(TitleBarHeightProperty, value);
-    }
-
-    public Brush TitleBarBackground
-    {
-        get => (Brush)GetValue(TitleBarBackgroundProperty);
-        set => SetValue(TitleBarBackgroundProperty, value);
-    }
-
-    public ICommand MinimizeCommand => _minimizeCommand ??= new DelegateCommand(Minimize);
-    public ICommand ToggleMaximizeCommand => _toggleMaximizeCommand ??= new DelegateCommand(ToggleMaximize);
-    public ICommand CloseCommand => _closeCommand ??= new DelegateCommand(Close);
-
-    private void ToggleMaximize()
-    {
-        WindowState = WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
-    }
-
-    private void Minimize()
-    {
-        WindowState = WindowState.Minimized;
+        Content = view;
     }
 }

@@ -10,15 +10,22 @@
 // --------------------------------------------------------------------------------
 
 using FrontendMentor.Assets.Controls.Windows;
+using FrontendMentor.ResultsSummaryComponent.Views.ResultsSummaryComponent;
 using System.Windows;
 
 namespace FrontendMentor.ResultsSummaryComponent.Controls.Windows;
 
-internal class ResultsSummaryComponentWindow : FrontendMentorWindow
+/// <inheritdoc cref="IResultsSummaryComponentWindow" />
+internal sealed class ResultsSummaryComponentWindow : FrontendMentorWindow, IResultsSummaryComponentWindow
 {
     static ResultsSummaryComponentWindow()
     {
         DefaultStyleKeyProperty.OverrideMetadata(typeof(ResultsSummaryComponentWindow),
             new FrameworkPropertyMetadata(typeof(ResultsSummaryComponentWindow)));
+    }
+
+    public ResultsSummaryComponentWindow(IResultsSummaryComponentView view)
+        : base(view)
+    {
     }
 }

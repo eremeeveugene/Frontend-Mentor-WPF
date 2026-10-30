@@ -14,8 +14,10 @@ using FrontendMentor.ResultsSummaryComponent.Models;
 
 namespace FrontendMentor.ResultsSummaryComponent.Services.ResultSummary;
 
-internal class ResultSummaryService : IResultSummaryService
+/// <inheritdoc />
+internal sealed class ResultSummaryService : IResultSummaryService
 {
+    /// <inheritdoc />
     public ResultSummaryModel GetResultSummary()
     {
         return new ResultSummaryModel

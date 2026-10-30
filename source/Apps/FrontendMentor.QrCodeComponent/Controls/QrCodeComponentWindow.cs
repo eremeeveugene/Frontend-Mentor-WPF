@@ -10,15 +10,22 @@
 // --------------------------------------------------------------------------------
 
 using FrontendMentor.Assets.Controls.Windows;
+using FrontendMentor.QrCodeComponent.Views.QrCodeComponent;
 using System.Windows;
 
 namespace FrontendMentor.QrCodeComponent.Controls;
 
-internal class QrCodeComponentWindow : FrontendMentorWindow
+/// <inheritdoc cref="IQrCodeComponentWindow" />
+internal sealed class QrCodeComponentWindow : FrontendMentorWindow, IQrCodeComponentWindow
 {
     static QrCodeComponentWindow()
     {
         DefaultStyleKeyProperty.OverrideMetadata(typeof(QrCodeComponentWindow),
             new FrameworkPropertyMetadata(typeof(QrCodeComponentWindow)));
+    }
+
+    public QrCodeComponentWindow(IQrCodeComponentView view)
+        : base(view)
+    {
     }
 }

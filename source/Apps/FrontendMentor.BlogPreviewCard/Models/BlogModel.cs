@@ -11,12 +11,33 @@
 
 namespace FrontendMentor.BlogPreviewCard.Models;
 
-internal class BlogModel
+/// <summary>
+///     The data of a blog.
+/// </summary>
+internal sealed class BlogModel
 {
-    public string Title { get; set; } = null!;
-    public string Description { get; set; } = null!;
-    public string Category { get; set; } = null!;
-    public string ImageBase64String { get; set; } = null!;
-    public DateTime PublishedDate { get; set; }
-    public BlogAuthorModel BlogAuthor { get; set; } = null!;
+    /// <summary>
+    ///     Gets or initializes the title.
+    /// </summary>
+    public required string Title { get; init; }
+    /// <summary>
+    ///     Gets or initializes the description.
+    /// </summary>
+    public required string Description { get; init; }
+    /// <summary>
+    ///     Gets or initializes the category.
+    /// </summary>
+    public required string Category { get; init; }
+    /// <summary>
+    ///     Gets or initializes the Base64 encoded image.
+    /// </summary>
+    public required string ImageBase64String { get; init; }
+    /// <summary>
+    ///     Gets or initializes the date when the blog was published.
+    /// </summary>
+    public required DateTime PublishedDate { get; init; }
+    /// <summary>
+    ///     Gets or initializes the author of the blog.
+    /// </summary>
+    public required BlogAuthorModel BlogAuthor { get; init; }
 }

@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------
-// Copyright (C) 2025 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
+// Copyright (C) 2026 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
 // All Rights Reserved.
 // --------------------------------------------------------------------------------
 // This software is the confidential and proprietary information of Eugene Eremeev
@@ -14,71 +14,128 @@ using System.Windows.Controls;
 
 namespace FrontendMentor.Assets.Controls.Panels;
 
-public class SpacingStackPanel : StackPanel
+/// <summary>
+///     A panel that stacks its visible children in one direction and adds a fixed spacing between them.
+/// </summary>
+public sealed class SpacingStackPanel : Panel
 {
+    public static readonly DependencyProperty OrientationProperty = DependencyProperty.Register(
+        nameof(Orientation), typeof(Orientation), typeof(SpacingStackPanel),
+        new FrameworkPropertyMetadata(Orientation.Vertical, FrameworkPropertyMetadataOptions.AffectsMeasure));
+
     public static readonly DependencyProperty SpacingProperty = DependencyProperty.Register(
         nameof(Spacing), typeof(double), typeof(SpacingStackPanel),
-        new FrameworkPropertyMetadata(default(double),
-            FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange));
+        new FrameworkPropertyMetadata(0.0, FrameworkPropertyMetadataOptions.AffectsMeasure));
 
+    /// <summary>
+    ///     Gets or sets the direction in which the children are stacked.
+    /// </summary>
+    public Orientation Orientation
+    {
+        get => (Orientation)GetValue(OrientationProperty);
+        set => SetValue(OrientationProperty, value);
+    }
+
+    /// <summary>
+    ///     Gets or sets the spacing between the visible children.
+    /// </summary>
     public double Spacing
     {
         get => (double)GetValue(SpacingProperty);
         set => SetValue(SpacingProperty, value);
     }
 
+    /// <inheritdoc />
     protected override Size MeasureOverride(Size constraint)
     {
-        double totalWidth = 0;
-        double totalHeight = 0;
-        double maxWidth = 0;
-        double maxHeight = 0;
+        var isHorizontal = Orientation == Orientation.Horizontal;
+        var spacing = Spacing;
 
-        foreach (UIElement child in InternalChildren)
+        var childConstraint = isHorizontal
+            ? new Size(double.PositiveInfinity, constraint.Height)
+            : new Size(constraint.Width, double.PositiveInfinity);
+
+        double stackLength = 0;
+        double crossLength = 0;
+        var hasVisibleChild = false;
+
+        var children = InternalChildren;
+
+        for (var i = 0; i < children.Count; i++)
         {
-            child.Measure(constraint);
+            var child = children[i];
 
-            if (Orientation == Orientation.Horizontal)
-            {
-                totalWidth += child.DesiredSize.Width +
-                              (InternalChildren.IndexOf(child) < InternalChildren.Count - 1 ? Spacing : 0);
-
-                maxHeight = Math.Max(maxHeight, child.DesiredSize.Height);
-            }
-            else
-            {
-                totalHeight += child.DesiredSize.Height +
-                               (InternalChildren.IndexOf(child) < InternalChildren.Count - 1 ? Spacing : 0);
-
-                maxWidth = Math.Max(maxWidth, child.DesiredSize.Width);
-            }
-        }
-
-        return Orientation == Orientation.Horizontal
-            ? new Size(totalWidth, maxHeight)
-            : new Size(maxWidth, totalHeight);
-    }
-
-    protected override Size ArrangeOverride(Size arrangeSize)
-    {
-        double offset = 0;
-
-        foreach (UIElement child in InternalChildren)
-        {
             if (child.Visibility == Visibility.Collapsed)
             {
                 continue;
             }
 
-            if (Orientation == Orientation.Horizontal)
+            child.Measure(childConstraint);
+
+            var desiredSize = child.DesiredSize;
+
+            if (hasVisibleChild)
             {
-                child.Arrange(new Rect(offset, 0, child.DesiredSize.Width, arrangeSize.Height));
-                offset += child.DesiredSize.Width + Spacing;
+                stackLength += spacing;
+            }
+
+            hasVisibleChild = true;
+
+            if (isHorizontal)
+            {
+                stackLength += desiredSize.Width;
+                crossLength = Math.Max(crossLength, desiredSize.Height);
             }
             else
             {
-                child.Arrange(new Rect(0, offset, arrangeSize.Width, child.DesiredSize.Height));
-                offset += child.DesiredSize.Height + Spacing;
+                stackLength += desiredSize.Height;
+                crossLength = Math.Max(crossLength, desiredSize.Width);
+            }
+        }
+
+        return isHorizontal ? new Size(stackLength, crossLength) : new Size(crossLength, stackLength);
+    }
+
+    /// <inheritdoc />
+    protected override Size ArrangeOverride(Size arrangeSize)
+    {
+        var isHorizontal = Orientation == Orientation.Horizontal;
+        var spacing = Spacing;
+
+        double offset = 0;
+        var hasVisibleChild = false;
+
+        var children = InternalChildren;
+
+        for (var i = 0; i < children.Count; i++)
+        {
+            var child = children[i];
+
+            if (child.Visibility == Visibility.Collapsed)
+            {
+                continue;
+            }
+
+            if (hasVisibleChild)
+            {
+                offset += spacing;
+            }
+
+            hasVisibleChild = true;
+
+            var desiredSize = child.DesiredSize;
+
+            if (isHorizontal)
+            {
+                child.Arrange(new Rect(offset, 0, desiredSize.Width, arrangeSize.Height));
+
+                offset += desiredSize.Width;
+            }
+            else
+            {
+                child.Arrange(new Rect(0, offset, arrangeSize.Width, desiredSize.Height));
+
+                offset += desiredSize.Height;
             }
         }
 

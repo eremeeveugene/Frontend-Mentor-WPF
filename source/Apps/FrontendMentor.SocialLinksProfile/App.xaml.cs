@@ -9,34 +9,33 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.SocialLinksProfile.Constants;
+using FrontendMentor.Core.Extensions;
+using FrontendMentor.SocialLinksProfile.BindableModels.SocialLink;
+using FrontendMentor.SocialLinksProfile.BindableModels.SocialLinkProfile;
 using FrontendMentor.SocialLinksProfile.Controls.Windows;
+using FrontendMentor.SocialLinksProfile.Models;
 using FrontendMentor.SocialLinksProfile.Services.SocialLinkProfiles;
-using FrontendMentor.SocialLinksProfile.Views;
-using System.Windows;
+using FrontendMentor.SocialLinksProfile.ViewModels.SocialLinksProfile;
+using FrontendMentor.SocialLinksProfile.Views.SocialLinksProfile;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace FrontendMentor.SocialLinksProfile;
 
-internal partial class App
+/// <summary>
+///     The application entry point.
+/// </summary>
+internal sealed partial class App
 {
-    protected override void RegisterTypes(IContainerRegistry containerRegistry)
+    /// <inheritdoc />
+    protected override void ConfigureServices(IServiceCollection services)
     {
-        base.RegisterTypes(containerRegistry);
+        base.ConfigureServices(services);
 
-        containerRegistry.Register<ISocialLinkProfilesService, SocialLinkProfilesService>();
-        containerRegistry.RegisterForNavigation<SocialLinksProfileView>(SocialLinksProfileViewNames
-            .SocialLinksProfile);
-    }
-
-    protected override Window CreateShell()
-    {
-        return Container.Resolve<SocialLinksProfileWindow>();
-    }
-
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-
-        NavigateToShellRegion(SocialLinksProfileViewNames.SocialLinksProfile);
+        services.AddTransient<ISocialLinkProfilesService, SocialLinkProfilesService>()
+            .AddFactory<SocialLinkProfileBindableModelParameters, ISocialLinkProfileBindableModel, SocialLinkProfileBindableModel>()
+            .AddFactory<SocialLinkBindableModelParameters, ISocialLinkBindableModel, SocialLinkBindableModel>()
+            .AddTransient<ISocialLinksProfileViewModel, SocialLinksProfileViewModel>()
+            .AddMainWindow<ISocialLinksProfileWindow, SocialLinksProfileWindow>()
+            .AddTransient<ISocialLinksProfileView, SocialLinksProfileView>();
     }
 }

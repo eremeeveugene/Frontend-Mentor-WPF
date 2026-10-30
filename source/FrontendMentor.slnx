@@ -1,0 +1,17 @@
+<Solution>
+  <Folder Name="/Apps/">
+    <Project Path="Apps/FrontendMentor.BlogPreviewCard/FrontendMentor.BlogPreviewCard.csproj" />
+    <Project Path="Apps/FrontendMentor.GitHubUserSearchApp/FrontendMentor.GitHubUserSearchApp.csproj" />
+    <Project Path="Apps/FrontendMentor.OrderSummaryComponent/FrontendMentor.OrderSummaryComponent.csproj" />
+    <Project Path="Apps/FrontendMentor.QrCodeComponent/FrontendMentor.QrCodeComponent.csproj" />
+    <Project Path="Apps/FrontendMentor.ResultsSummaryComponent/FrontendMentor.ResultsSummaryComponent.csproj" />
+    <Project Path="Apps/FrontendMentor.SocialLinksProfile/FrontendMentor.SocialLinksProfile.csproj" />
+    <Project Path="Apps/FrontendMentor.ThreeColumnPreviewCardComponent/FrontendMentor.ThreeColumnPreviewCardComponent.csproj" />
+  </Folder>
+  <Folder Name="/Tests/">
+    <Project Path="Tests/FrontendMentor.Core.Tests/FrontendMentor.Core.Tests.csproj" />
+    <Project Path="Tests/FrontendMentor.GitHubUserSearchApp.Tests/FrontendMentor.GitHubUserSearchApp.Tests.csproj" />
+  </Folder>
+  <Project Path="FrontendMentor.Assets/FrontendMentor.Assets.csproj" />
+  <Project Path="FrontendMentor.Core/FrontendMentor.Core.csproj" />
+</Solution>

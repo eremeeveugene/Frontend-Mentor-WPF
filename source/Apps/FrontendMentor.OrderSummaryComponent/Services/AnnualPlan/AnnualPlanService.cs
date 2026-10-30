@@ -11,8 +11,10 @@
 
 namespace FrontendMentor.OrderSummaryComponent.Services.AnnualPlan;
 
+/// <inheritdoc />
 internal sealed class AnnualPlanService : IAnnualPlanService
 {
+    /// <inheritdoc />
     public double GetAnnualPlanPrice()
     {
         return 59.99;

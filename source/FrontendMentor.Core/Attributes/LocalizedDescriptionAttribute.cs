@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------
-// Copyright (C) 2025 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
+// Copyright (C) 2026 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
 // All Rights Reserved.
 // --------------------------------------------------------------------------------
 // This software is the confidential and proprietary information of Eugene Eremeev
@@ -17,26 +17,18 @@ namespace FrontendMentor.Core.Attributes;
 /// <summary>
 ///     An attribute to provide localized descriptions for enum values.
 /// </summary>
-public class LocalizedDescriptionAttribute(string resourceKey, Type resourceType, string fallbackDescription)
-    : DescriptionAttribute(fallbackDescription)
+public sealed class LocalizedDescriptionAttribute : DescriptionAttribute
 {
-    private static readonly Dictionary<(Type, string), string> DescriptionCache = [];
-    private readonly ResourceManager _resourceManager = new(resourceType);
+    private readonly string _resourceKey;
+    private readonly ResourceManager _resourceManager;
 
-    public override string Description
+    public LocalizedDescriptionAttribute(string resourceKey, Type resourceType, string fallbackDescription)
+        : base(fallbackDescription)
     {
-        get
-        {
-            if (DescriptionCache.TryGetValue((_resourceManager.GetType(), resourceKey), out var description))
-            {
-                return description;
-            }
-
-            description = _resourceManager.GetString(resourceKey) ?? base.Description;
-
-            DescriptionCache[(_resourceManager.GetType(), resourceKey)] = description;
-
-            return description;
-        }
+        _resourceKey = resourceKey;
+        _resourceManager = new ResourceManager(resourceType);
     }
+
+    /// <inheritdoc />
+    public override string Description => field ??= _resourceManager.GetString(_resourceKey) ?? base.Description;
 }

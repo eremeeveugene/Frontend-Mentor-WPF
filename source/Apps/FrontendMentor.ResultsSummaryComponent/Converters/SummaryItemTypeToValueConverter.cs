@@ -16,13 +16,29 @@ using System.Windows;
 
 namespace FrontendMentor.ResultsSummaryComponent.Converters;
 
-internal class SummaryItemTypeToValueConverter : ConverterMarkupExtension<SummaryItemTypeToValueConverter>
+/// <summary>
+///     Converts a summary item type to the value that is configured for it.
+/// </summary>
+internal sealed class SummaryItemTypeToValueConverter : ConverterMarkupExtension<SummaryItemTypeToValueConverter>
 {
+    /// <summary>
+    ///     Gets or sets the value for the memory summary item type.
+    /// </summary>
     public object? MemoryValue { get; set; }
+    /// <summary>
+    ///     Gets or sets the value for the reaction summary item type.
+    /// </summary>
     public object? ReactionValue { get; set; }
+    /// <summary>
+    ///     Gets or sets the value for the verbal summary item type.
+    /// </summary>
     public object? VerbalValue { get; set; }
+    /// <summary>
+    ///     Gets or sets the value for the visual summary item type.
+    /// </summary>
     public object? VisualValue { get; set; }
 
+    /// <inheritdoc />
     public override object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
         if (value is not SummaryItemType summaryItemType)
@@ -40,11 +56,13 @@ internal class SummaryItemTypeToValueConverter : ConverterMarkupExtension<Summar
         };
     }
 
+    /// <inheritdoc />
     public override object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
         throw new NotSupportedException();
     }
 
+    /// <inheritdoc />
     public override object ProvideValue(IServiceProvider serviceProvider)
     {
         return this;

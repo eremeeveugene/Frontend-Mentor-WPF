@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------
-// Copyright (C) 2025 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
+// Copyright (C) 2026 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
 // All Rights Reserved.
 // --------------------------------------------------------------------------------
 // This software is the confidential and proprietary information of Eugene Eremeev
@@ -11,9 +11,23 @@
 
 namespace FrontendMentor.BlogPreviewCard.Models;
 
-internal class BlogAuthorModel
+/// <summary>
+///     The data of a blog author.
+/// </summary>
+internal sealed class BlogAuthorModel
 {
-    public string FirstName { get; set; } = null!;
-    public string LastName { get; set; } = null!;
-    public string ImageBase64String { get; set; } = null!;
+    /// <summary>
+    ///     Gets or initializes the first name.
+    /// </summary>
+    public required string FirstName { get; init; }
+
+    /// <summary>
+    ///     Gets or initializes the last name.
+    /// </summary>
+    public required string LastName { get; init; }
+
+    /// <summary>
+    ///     Gets or initializes the Base64 encoded image.
+    /// </summary>
+    public required string ImageBase64String { get; init; }
 }

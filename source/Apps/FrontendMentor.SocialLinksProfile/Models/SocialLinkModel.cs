@@ -11,8 +11,17 @@
 
 namespace FrontendMentor.SocialLinksProfile.Models;
 
-internal class SocialLinkModel
+/// <summary>
+///     The data of a social link.
+/// </summary>
+internal sealed class SocialLinkModel
 {
-    public string Link { get; set; } = null!;
-    public string Name { get; set; } = null!;
+    /// <summary>
+    ///     Gets or initializes the link.
+    /// </summary>
+    public required string Link { get; init; }
+    /// <summary>
+    ///     Gets or initializes the name.
+    /// </summary>
+    public required string Name { get; init; }
 }

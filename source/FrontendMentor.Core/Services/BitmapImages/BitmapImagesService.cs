@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------
-// Copyright (C) 2025 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
+// Copyright (C) 2026 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
 // All Rights Reserved.
 // --------------------------------------------------------------------------------
 // This software is the confidential and proprietary information of Eugene Eremeev
@@ -9,31 +9,54 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
+using FrontendMentor.Core.Services.Cache;
 using System.IO;
+using System.Security.Cryptography;
 using System.Windows.Media.Imaging;
 
 namespace FrontendMentor.Core.Services.BitmapImages;
 
-internal class BitmapImagesService : IBitmapImagesService
+/// <inheritdoc />
+internal sealed class BitmapImagesService : IBitmapImagesService
 {
-    public BitmapImage GetBitmapImage(Uri uri)
+    private const string CacheKeyFormat = $"{nameof(BitmapImagesService)}:{{0}}";
+
+    private readonly ICacheService _cacheService;
+
+    public BitmapImagesService(ICacheService cacheService)
     {
-        var bitmapImage = new BitmapImage(uri);
-
-        bitmapImage.Freeze();
-
-        return bitmapImage;
+        _cacheService = cacheService;
     }
 
-    public BitmapImage GetBitmapImage(string uriString)
+    /// <inheritdoc />
+    public Task<BitmapImage> GetBitmapImageFromBase64StringAsync(string base64String, CancellationToken cancellationToken = default)
     {
-        return GetBitmapImage(new Uri(uriString, UriKind.RelativeOrAbsolute));
+        return Task.Run(() => GetBitmapImageFromBase64String(base64String), cancellationToken);
     }
 
-    public BitmapImage GetBitmapImageFromBase64String(string base64String)
+    /// <summary>
+    ///     Gets a frozen bitmap image from a Base64 encoded string, from the cache when it is cached.
+    /// </summary>
+    /// <param name="base64String">The Base64 encoded image bytes.</param>
+    /// <returns>The frozen bitmap image.</returns>
+    private BitmapImage GetBitmapImageFromBase64String(string base64String)
     {
         var imageBytes = Convert.FromBase64String(base64String);
 
+        var imageHash = Convert.ToHexString(SHA256.HashData(imageBytes));
+
+        var key = string.Format(CacheKeyFormat, imageHash);
+
+        return _cacheService.GetOrCreate(key, () => CreateBitmapImage(imageBytes));
+    }
+
+    /// <summary>
+    ///     Decodes image bytes into a frozen bitmap image.
+    /// </summary>
+    /// <param name="imageBytes">The image bytes.</param>
+    /// <returns>The frozen bitmap image.</returns>
+    private static BitmapImage CreateBitmapImage(byte[] imageBytes)
+    {
         using var memoryStream = new MemoryStream(imageBytes);
 
         var bitmapImage = new BitmapImage();

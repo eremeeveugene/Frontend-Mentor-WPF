@@ -11,10 +11,25 @@
 
 namespace FrontendMentor.ResultsSummaryComponent.Models;
 
-internal class ResultSummaryModel
+/// <summary>
+///     The data of a result summary.
+/// </summary>
+internal sealed class ResultSummaryModel
 {
-    public int NumberScore { get; set; }
-    public string TextScore { get; set; } = null!;
-    public int PerformancePercent { get; set; }
-    public IEnumerable<SummaryItemModel> SummaryItems { get; set; } = null!;
+    /// <summary>
+    ///     Gets or initializes the total score as a number.
+    /// </summary>
+    public required int NumberScore { get; init; }
+    /// <summary>
+    ///     Gets or initializes the total score as a text.
+    /// </summary>
+    public required string TextScore { get; init; }
+    /// <summary>
+    ///     Gets or initializes the percent of the users that the result outperforms.
+    /// </summary>
+    public required int PerformancePercent { get; init; }
+    /// <summary>
+    ///     Gets or initializes the summary items.
+    /// </summary>
+    public required IReadOnlyList<SummaryItemModel> SummaryItems { get; init; }
 }

@@ -10,15 +10,22 @@
 // --------------------------------------------------------------------------------
 
 using FrontendMentor.Assets.Controls.Windows;
+using FrontendMentor.SocialLinksProfile.Views.SocialLinksProfile;
 using System.Windows;
 
 namespace FrontendMentor.SocialLinksProfile.Controls.Windows;
 
-internal class SocialLinksProfileWindow : FrontendMentorWindow
+/// <inheritdoc cref="ISocialLinksProfileWindow" />
+internal sealed class SocialLinksProfileWindow : FrontendMentorWindow, ISocialLinksProfileWindow
 {
     static SocialLinksProfileWindow()
     {
         DefaultStyleKeyProperty.OverrideMetadata(typeof(SocialLinksProfileWindow),
             new FrameworkPropertyMetadata(typeof(SocialLinksProfileWindow)));
+    }
+
+    public SocialLinksProfileWindow(ISocialLinksProfileView view)
+        : base(view)
+    {
     }
 }
