@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------
-// Copyright (C) 2025 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
+// Copyright (C) 2026 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
 // All Rights Reserved.
 // --------------------------------------------------------------------------------
 // This software is the confidential and proprietary information of Eugene Eremeev
@@ -13,9 +13,28 @@ using System.Windows.Media.Imaging;
 
 namespace FrontendMentor.Core.Services.BitmapImages;
 
+/// <summary>
+///     Creates frozen bitmap images.
+/// </summary>
 public interface IBitmapImagesService
 {
-    BitmapImage GetBitmapImage(Uri uri);
-    BitmapImage GetBitmapImage(string uriString);
-    BitmapImage GetBitmapImageFromBase64String(string base64String);
+    /// <summary>
+    ///     Gets a frozen bitmap image from a Base64 encoded string. The decoding runs on a background thread.
+    /// </summary>
+    /// <param name="base64String">The Base64 encoded image bytes.</param>
+    /// <param name="cancellationToken">The token that cancels the operation.</param>
+    /// <returns>The frozen bitmap image.</returns>
+    Task<BitmapImage> GetBitmapImageFromBase64StringAsync(string base64String,
+        CancellationToken cancellationToken = default);
+
+    /// <summary>
+    ///     Gets a frozen bitmap image from a URL, from the cache when it is cached. The download and the decoding
+    ///     run on background threads.
+    /// </summary>
+    /// <param name="url">The absolute URL of the image.</param>
+    /// <param name="decodePixelWidth">The width in pixels that the image is decoded to.</param>
+    /// <param name="cancellationToken">The token that cancels the operation.</param>
+    /// <returns>The frozen bitmap image.</returns>
+    Task<BitmapImage> GetBitmapImageFromUrlAsync(Uri url, int decodePixelWidth,
+        CancellationToken cancellationToken = default);
 }

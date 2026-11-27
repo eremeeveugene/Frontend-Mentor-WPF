@@ -27,7 +27,7 @@
 
     <SolidColorBrush x:Key="QrCodeComponentView.QrCodeEllipse.Fill.Brush"
                      po:Freeze="True"
-                     Color="{StaticResource BlueShade.Color}" />
+                     Color="{StaticResource Blue.Shade.Color}" />
 
     <SolidColorBrush x:Key="QrCodeComponentView.QrCodeOuterBorder.Background.Brush"
                      po:Freeze="True"

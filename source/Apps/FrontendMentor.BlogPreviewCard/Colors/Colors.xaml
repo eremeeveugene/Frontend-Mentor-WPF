@@ -4,5 +4,6 @@
     <Color x:Key="Grey.950.Color">#111111</Color>
     <Color x:Key="Yellow.Color">#F4D04E</Color>
     <Color x:Key="White.Color">#FFFFFF</Color>
+    <Color x:Key="Black.Color">#000000</Color>
 
 </ResourceDictionary>

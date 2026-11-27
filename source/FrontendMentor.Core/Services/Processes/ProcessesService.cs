@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------
-// Copyright (C) 2025 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
+// Copyright (C) 2026 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
 // All Rights Reserved.
 // --------------------------------------------------------------------------------
 // This software is the confidential and proprietary information of Eugene Eremeev
@@ -13,10 +13,12 @@ using System.Diagnostics;
 
 namespace FrontendMentor.Core.Services.Processes;
 
-internal class ProcessesService : IProcessesService
+/// <inheritdoc />
+internal sealed class ProcessesService : IProcessesService
 {
+    /// <inheritdoc />
     public void StartProcess(string fileName)
     {
-        Process.Start(new ProcessStartInfo { FileName = fileName, UseShellExecute = true });
+        Process.Start(new ProcessStartInfo(fileName) { UseShellExecute = true });
     }
 }

@@ -25,8 +25,8 @@
                          Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
 
         <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
-                        Storyboard.TargetName="ContentTextBlock"
-                        Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
+                        Storyboard.TargetName="ContentPresenter"
+                        Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
                         To="{StaticResource White.Color}"
                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
@@ -35,19 +35,16 @@
         <DoubleAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                          Storyboard.TargetName="BackgroundBorder"
                          Storyboard.TargetProperty="(UIElement.Opacity)"
-                         From="0"
                          Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
 
         <DoubleAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                          Storyboard.TargetName="MouseOverBorder"
                          Storyboard.TargetProperty="(UIElement.Opacity)"
-                         From="1"
                          Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
 
         <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
-                        Storyboard.TargetName="ContentTextBlock"
-                        Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
-                        From="{StaticResource White.Color}"
+                        Storyboard.TargetName="ContentPresenter"
+                        Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 

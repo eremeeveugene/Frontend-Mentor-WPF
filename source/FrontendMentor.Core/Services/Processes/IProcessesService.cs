@@ -11,7 +11,14 @@
 
 namespace FrontendMentor.Core.Services.Processes;
 
+/// <summary>
+///     Starts operating system processes.
+/// </summary>
 public interface IProcessesService
 {
+    /// <summary>
+    ///     Starts a process, or opens a document or a link, with the shell.
+    /// </summary>
+    /// <param name="fileName">The file name, document or link to open.</param>
     void StartProcess(string fileName);
 }

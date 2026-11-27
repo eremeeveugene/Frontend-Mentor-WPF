@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------
-// Copyright (C) 2025 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
+// Copyright (C) 2026 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
 // All Rights Reserved.
 // --------------------------------------------------------------------------------
 // This software is the confidential and proprietary information of Eugene Eremeev
@@ -9,33 +9,38 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.BlogPreviewCard.Constants;
 using FrontendMentor.BlogPreviewCard.Controls.Windows;
+using FrontendMentor.BlogPreviewCard.Factories.Blog;
+using FrontendMentor.BlogPreviewCard.Factories.BlogAuthor;
 using FrontendMentor.BlogPreviewCard.Services.Blogs;
-using FrontendMentor.BlogPreviewCard.Views;
-using System.Windows;
+using FrontendMentor.BlogPreviewCard.ViewModels.BlogPreviewCard;
+using FrontendMentor.BlogPreviewCard.Views.BlogPreviewCard;
+using FrontendMentor.Core.Windows;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace FrontendMentor.BlogPreviewCard;
 
+/// <summary>
+///     The application entry point.
+/// </summary>
 internal sealed partial class App
 {
-    protected override Window CreateShell()
+    /// <inheritdoc />
+    protected override void ConfigureServices(IServiceCollection services)
     {
-        return Container.Resolve<BlogPreviewCardWindow>();
+        base.ConfigureServices(services);
+
+        services.AddTransient<IBlogPreviewCardWindow, BlogPreviewCardWindow>()
+            .AddTransient<IBlogPreviewCardView, BlogPreviewCardView>()
+            .AddTransient<IBlogPreviewCardViewModel, BlogPreviewCardViewModel>()
+            .AddSingleton<IBlogsService, BlogsService>()
+            .AddSingleton<IBlogBindableModelFactory, BlogBindableModelFactory>()
+            .AddSingleton<IBlogAuthorBindableModelFactory, BlogAuthorBindableModelFactory>();
     }
 
-    protected override void OnInitialized()
+    /// <inheritdoc />
+    protected override IWindow CreateMainWindow(IServiceProvider serviceProvider)
     {
-        base.OnInitialized();
-
-        NavigateToShellRegion(BlogPreviewCardViewNames.BlogPreviewCard);
-    }
-
-    protected override void RegisterTypes(IContainerRegistry containerRegistry)
-    {
-        base.RegisterTypes(containerRegistry);
-
-        containerRegistry.RegisterSingleton<IBlogsService, BlogsService>();
-        containerRegistry.RegisterForNavigation<BlogPreviewCardView>(BlogPreviewCardViewNames.BlogPreviewCard);
+        return serviceProvider.GetRequiredService<IBlogPreviewCardWindow>();
     }
 }

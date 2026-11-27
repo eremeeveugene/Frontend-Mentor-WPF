@@ -9,34 +9,36 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.OrderSummaryComponent.Constants;
+using FrontendMentor.Core.Windows;
 using FrontendMentor.OrderSummaryComponent.Controls.Windows;
-using FrontendMentor.OrderSummaryComponent.Services.AnnualPlan;
-using FrontendMentor.OrderSummaryComponent.Views;
-using System.Windows;
+using FrontendMentor.OrderSummaryComponent.Factories.OrderSummary;
+using FrontendMentor.OrderSummaryComponent.Services.AnnualPlans;
+using FrontendMentor.OrderSummaryComponent.ViewModels.OrderSummary;
+using FrontendMentor.OrderSummaryComponent.Views.OrderSummary;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace FrontendMentor.OrderSummaryComponent;
 
-internal partial class App
+/// <summary>
+///     The application entry point.
+/// </summary>
+internal sealed partial class App
 {
-    protected override void RegisterTypes(IContainerRegistry containerRegistry)
+    /// <inheritdoc />
+    protected override void ConfigureServices(IServiceCollection services)
     {
-        base.RegisterTypes(containerRegistry);
+        base.ConfigureServices(services);
 
-        containerRegistry.RegisterSingleton<IAnnualPlanService, AnnualPlanService>();
-        containerRegistry.RegisterForNavigation<OrderSummaryView>(OrderSummaryComponentViewNames
-            .OrderSummary);
+        services.AddTransient<IOrderSummaryComponentWindow, OrderSummaryComponentWindow>()
+            .AddTransient<IOrderSummaryView, OrderSummaryView>()
+            .AddTransient<IOrderSummaryViewModel, OrderSummaryViewModel>()
+            .AddSingleton<IAnnualPlansService, AnnualPlansService>()
+            .AddSingleton<IOrderSummaryBindableModelFactory, OrderSummaryBindableModelFactory>();
     }
 
-    protected override Window CreateShell()
+    /// <inheritdoc />
+    protected override IWindow CreateMainWindow(IServiceProvider serviceProvider)
     {
-        return Container.Resolve<OrderSummaryComponentWindow>();
-    }
-
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-
-        NavigateToShellRegion(OrderSummaryComponentViewNames.OrderSummary);
+        return serviceProvider.GetRequiredService<IOrderSummaryComponentWindow>();
     }
 }

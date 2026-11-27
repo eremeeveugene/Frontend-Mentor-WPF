@@ -10,15 +10,18 @@
     </ResourceDictionary.MergedDictionaries>
 
     <ControlTemplate x:Key="Primary.Button.Template" TargetType="{x:Type buttons:RoundedButton}">
-        <Border Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}">
+        <Grid>
+            <Border Background="{TemplateBinding Background}"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    Effect="{StaticResource Primary.Button.DropShadowEffect}" />
+
             <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-        </Border>
+        </Grid>
     </ControlTemplate>
 
     <Style x:Key="Primary.Button.Style" TargetType="{x:Type buttons:RoundedButton}">
         <Setter Property="Background" Value="{StaticResource Primary.Button.Background.Brush}" />
         <Setter Property="CornerRadius" Value="11" />
-        <Setter Property="Effect" Value="{StaticResource Primary.Button.DropShadowEffect}" />
         <Setter Property="Height" Value="50" />
         <Setter Property="Template" Value="{StaticResource Primary.Button.Template}" />
         <Style.Triggers>

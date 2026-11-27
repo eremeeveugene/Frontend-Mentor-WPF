@@ -9,34 +9,38 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.SocialLinksProfile.Constants;
+using FrontendMentor.Core.Windows;
 using FrontendMentor.SocialLinksProfile.Controls.Windows;
+using FrontendMentor.SocialLinksProfile.Factories.SocialLink;
+using FrontendMentor.SocialLinksProfile.Factories.SocialLinkProfile;
 using FrontendMentor.SocialLinksProfile.Services.SocialLinkProfiles;
-using FrontendMentor.SocialLinksProfile.Views;
-using System.Windows;
+using FrontendMentor.SocialLinksProfile.ViewModels.SocialLinksProfile;
+using FrontendMentor.SocialLinksProfile.Views.SocialLinksProfile;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace FrontendMentor.SocialLinksProfile;
 
-internal partial class App
+/// <summary>
+///     The application entry point.
+/// </summary>
+internal sealed partial class App
 {
-    protected override void RegisterTypes(IContainerRegistry containerRegistry)
+    /// <inheritdoc />
+    protected override void ConfigureServices(IServiceCollection services)
     {
-        base.RegisterTypes(containerRegistry);
+        base.ConfigureServices(services);
 
-        containerRegistry.Register<ISocialLinkProfilesService, SocialLinkProfilesService>();
-        containerRegistry.RegisterForNavigation<SocialLinksProfileView>(SocialLinksProfileViewNames
-            .SocialLinksProfile);
+        services.AddTransient<ISocialLinksProfileWindow, SocialLinksProfileWindow>()
+            .AddTransient<ISocialLinksProfileView, SocialLinksProfileView>()
+            .AddTransient<ISocialLinksProfileViewModel, SocialLinksProfileViewModel>()
+            .AddSingleton<ISocialLinkProfilesService, SocialLinkProfilesService>()
+            .AddSingleton<ISocialLinkProfileBindableModelFactory, SocialLinkProfileBindableModelFactory>()
+            .AddSingleton<ISocialLinkBindableModelFactory, SocialLinkBindableModelFactory>();
     }
 
-    protected override Window CreateShell()
+    /// <inheritdoc />
+    protected override IWindow CreateMainWindow(IServiceProvider serviceProvider)
     {
-        return Container.Resolve<SocialLinksProfileWindow>();
-    }
-
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-
-        NavigateToShellRegion(SocialLinksProfileViewNames.SocialLinksProfile);
+        return serviceProvider.GetRequiredService<ISocialLinksProfileWindow>();
     }
 }

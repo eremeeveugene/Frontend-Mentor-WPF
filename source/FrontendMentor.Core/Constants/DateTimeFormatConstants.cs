@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------
-// Copyright (C) 2025 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
+// Copyright (C) 2026 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
 // All Rights Reserved.
 // --------------------------------------------------------------------------------
 // This software is the confidential and proprietary information of Eugene Eremeev
@@ -11,7 +11,13 @@
 
 namespace FrontendMentor.Core.Constants;
 
+/// <summary>
+///     Date and time format strings.
+/// </summary>
 public static class DateTimeFormatConstants
 {
+    /// <summary>
+    ///     The day, the abbreviated month and the year, for example 21 Dec 2023.
+    /// </summary>
     public const string DayMonthAbbrYear = "dd MMM yyyy";
 }

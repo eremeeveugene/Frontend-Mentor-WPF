@@ -23,12 +23,14 @@
                     CornerRadius="{TemplateBinding helpers:BorderPropertiesHelper.CornerRadius}"
                     Opacity="0" />
 
-            <TextBlock x:Name="ContentTextBlock"
-                       HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                       VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                       Foreground="{TemplateBinding Foreground}"
-                       Style="{StaticResource Body.TextBlock.Style}"
-                       Text="{TemplateBinding Content}" />
+            <ContentPresenter x:Name="ContentPresenter"
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                              TextElement.Foreground="{TemplateBinding Foreground}">
+                <ContentPresenter.Resources>
+                    <Style BasedOn="{StaticResource Body.TextBlock.Style}" TargetType="{x:Type TextBlock}" />
+                </ContentPresenter.Resources>
+            </ContentPresenter>
         </Grid>
 
         <ControlTemplate.Triggers>
@@ -100,7 +102,6 @@
                 </StackPanel>
 
                 <Button Grid.Row="1"
-                        Command="{TemplateBinding LearnMoreCommand}"
                         Foreground="{TemplateBinding Background}"
                         Style="{StaticResource PreviewCard.LearnMoreButton.Style}" />
             </Grid>

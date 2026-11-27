@@ -9,34 +9,38 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.ResultsSummaryComponent.Constants;
+using FrontendMentor.Core.Windows;
 using FrontendMentor.ResultsSummaryComponent.Controls.Windows;
-using FrontendMentor.ResultsSummaryComponent.Services.ResultSummary;
-using FrontendMentor.ResultsSummaryComponent.Views;
-using System.Windows;
+using FrontendMentor.ResultsSummaryComponent.Factories.ResultSummary;
+using FrontendMentor.ResultsSummaryComponent.Factories.SummaryItem;
+using FrontendMentor.ResultsSummaryComponent.Services.ResultSummaries;
+using FrontendMentor.ResultsSummaryComponent.ViewModels.ResultsSummaryComponent;
+using FrontendMentor.ResultsSummaryComponent.Views.ResultsSummaryComponent;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace FrontendMentor.ResultsSummaryComponent;
 
-internal partial class App
+/// <summary>
+///     The application entry point.
+/// </summary>
+internal sealed partial class App
 {
-    protected override void RegisterTypes(IContainerRegistry containerRegistry)
+    /// <inheritdoc />
+    protected override void ConfigureServices(IServiceCollection services)
     {
-        base.RegisterTypes(containerRegistry);
+        base.ConfigureServices(services);
 
-        containerRegistry.RegisterSingleton<IResultSummaryService, ResultSummaryService>();
-        containerRegistry.RegisterForNavigation<ResultsSummaryComponentView>(ResultsSummaryComponentViewNames
-            .ResultsSummaryComponent);
+        services.AddTransient<IResultsSummaryComponentWindow, ResultsSummaryComponentWindow>()
+            .AddTransient<IResultsSummaryComponentView, ResultsSummaryComponentView>()
+            .AddTransient<IResultsSummaryComponentViewModel, ResultsSummaryComponentViewModel>()
+            .AddSingleton<IResultSummariesService, ResultSummariesService>()
+            .AddSingleton<IResultSummaryBindableModelFactory, ResultSummaryBindableModelFactory>()
+            .AddSingleton<ISummaryItemBindableModelFactory, SummaryItemBindableModelFactory>();
     }
 
-    protected override Window CreateShell()
+    /// <inheritdoc />
+    protected override IWindow CreateMainWindow(IServiceProvider serviceProvider)
     {
-        return Container.Resolve<ResultsSummaryComponentWindow>();
-    }
-
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-
-        NavigateToShellRegion(ResultsSummaryComponentViewNames.ResultsSummaryComponent);
+        return serviceProvider.GetRequiredService<IResultsSummaryComponentWindow>();
     }
 }
