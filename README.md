@@ -207,7 +207,7 @@ https://www.frontendmentor.io/challenges/github-user-search-app-Q09YOgaH6
 
 ![Expected Result - Light](docs/screenshots/github-user-search-app/expected/light.png)
 
-### Actual Result - Light
+### Actual Result - Light (99.17% identical to the expected result)
 
 ![Actual Result - Light](docs/screenshots/github-user-search-app/actual/light.png)
 
@@ -215,7 +215,7 @@ https://www.frontendmentor.io/challenges/github-user-search-app-Q09YOgaH6
 
 ![Expected Result - Dark](docs/screenshots/github-user-search-app/expected/dark.png)
 
-### Actual Result - Dark
+### Actual Result - Dark (98.97% identical to the expected result)
 
 ![Actual Result - Dark](docs/screenshots/github-user-search-app/actual/dark.png)
 
@@ -223,19 +223,19 @@ https://www.frontendmentor.io/challenges/github-user-search-app-Q09YOgaH6
 
 ![Expected Result - Light - Active](docs/screenshots/github-user-search-app/expected/light-active.png)
 
-### Actual Result - Light - No Results
+### Actual Result - Light - No Results (98.01% identical to the expected result)
 
 ![Actual Result - Light - No Results](docs/screenshots/github-user-search-app/actual/light-no-results.png)
 
-### Actual Result - Light - Theme Button Hover
+### Actual Result - Light - Theme Button Hover (98.02% identical to the expected result)
 
 ![Actual Result - Light - Theme Button Hover](docs/screenshots/github-user-search-app/actual/light-hover-theme-button.png)
 
-### Actual Result - Light - Search Button Hover
+### Actual Result - Light - Search Button Hover (98.39% identical to the expected result)
 
 ![Actual Result - Light - Search Button Hover](docs/screenshots/github-user-search-app/actual/light-hover-search-button.png)
 
-### Actual Result - Light - Link Hover
+### Actual Result - Light - Link Hover (98% identical to the expected result)
 
 ![Actual Result - Light - Link Hover](docs/screenshots/github-user-search-app/actual/light-hover-blog-link.png)
 
@@ -243,19 +243,19 @@ https://www.frontendmentor.io/challenges/github-user-search-app-Q09YOgaH6
 
 ![Expected Result - Dark - Active](docs/screenshots/github-user-search-app/expected/dark-active.png)
 
-### Actual Result - Dark - No Results
+### Actual Result - Dark - No Results (98.52% identical to the expected result)
 
 ![Actual Result - Dark - No Results](docs/screenshots/github-user-search-app/actual/dark-no-results.png)
 
-### Actual Result - Dark - Theme Button Hover
+### Actual Result - Dark - Theme Button Hover (98.53% identical to the expected result)
 
 ![Actual Result - Dark - Theme Button Hover](docs/screenshots/github-user-search-app/actual/dark-hover-theme-button.png)
 
-### Actual Result - Dark - Search Button Hover
+### Actual Result - Dark - Search Button Hover (98.9% identical to the expected result)
 
 ![Actual Result - Dark - Search Button Hover](docs/screenshots/github-user-search-app/actual/dark-hover-search-button.png)
 
-### Actual Result - Dark - Link Hover
+### Actual Result - Dark - Link Hover (98.51% identical to the expected result)
 
 ![Actual Result - Dark - Link Hover](docs/screenshots/github-user-search-app/actual/dark-hover-blog-link.png)
 
