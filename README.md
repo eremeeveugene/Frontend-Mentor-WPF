@@ -272,7 +272,7 @@ https://www.frontendmentor.io/challenges/mortgage-repayment-calculator-Galx1LXK7
 
 ![Expected Result - Empty](docs/screenshots/mortgage-repayment-calculator/expected/empty.png)
 
-### Actual Result - Empty (99.33% identical to the expected result)
+### Actual Result - Empty (99.38% identical to the expected result)
 
 ![Actual Result - Empty](docs/screenshots/mortgage-repayment-calculator/actual/empty.png)
 
@@ -280,7 +280,7 @@ https://www.frontendmentor.io/challenges/mortgage-repayment-calculator-Galx1LXK7
 
 ![Expected Result - Completed](docs/screenshots/mortgage-repayment-calculator/expected/completed.png)
 
-### Actual Result - Completed (99.08% identical to the expected result)
+### Actual Result - Completed (99.12% identical to the expected result)
 
 ![Actual Result - Completed](docs/screenshots/mortgage-repayment-calculator/actual/completed.png)
 
@@ -288,7 +288,7 @@ https://www.frontendmentor.io/challenges/mortgage-repayment-calculator-Galx1LXK7
 
 ![Expected Result - Error](docs/screenshots/mortgage-repayment-calculator/expected/error.png)
 
-### Actual Result - Error (98.74% identical to the expected result)
+### Actual Result - Error (98.78% identical to the expected result)
 
 ![Actual Result - Error](docs/screenshots/mortgage-repayment-calculator/actual/error.png)
 
@@ -296,7 +296,7 @@ https://www.frontendmentor.io/challenges/mortgage-repayment-calculator-Galx1LXK7
 
 ![Expected Result - Mortgage Amount Focus](docs/screenshots/mortgage-repayment-calculator/expected/focus-mortgage-amount.png)
 
-### Actual Result - Mortgage Amount Focus (99.3% identical to the expected result)
+### Actual Result - Mortgage Amount Focus (99.35% identical to the expected result)
 
 ![Actual Result - Mortgage Amount Focus](docs/screenshots/mortgage-repayment-calculator/actual/focus-mortgage-amount.png)
 
@@ -304,7 +304,7 @@ https://www.frontendmentor.io/challenges/mortgage-repayment-calculator-Galx1LXK7
 
 ![Expected Result - Clear All Hover](docs/screenshots/mortgage-repayment-calculator/expected/hover-clear-all.png)
 
-### Actual Result - Clear All Hover (99.31% identical to the expected result)
+### Actual Result - Clear All Hover (99.35% identical to the expected result)
 
 ![Actual Result - Clear All Hover](docs/screenshots/mortgage-repayment-calculator/actual/hover-clear-all.png)
 
@@ -312,7 +312,7 @@ https://www.frontendmentor.io/challenges/mortgage-repayment-calculator-Galx1LXK7
 
 ![Expected Result - Mortgage Amount Hover](docs/screenshots/mortgage-repayment-calculator/expected/hover-mortgage-amount.png)
 
-### Actual Result - Mortgage Amount Hover (99.31% identical to the expected result)
+### Actual Result - Mortgage Amount Hover (99.35% identical to the expected result)
 
 ![Actual Result - Mortgage Amount Hover](docs/screenshots/mortgage-repayment-calculator/actual/hover-mortgage-amount.png)
 
@@ -320,7 +320,7 @@ https://www.frontendmentor.io/challenges/mortgage-repayment-calculator-Galx1LXK7
 
 ![Expected Result - Repayment Hover](docs/screenshots/mortgage-repayment-calculator/expected/hover-repayment.png)
 
-### Actual Result - Repayment Hover (99.31% identical to the expected result)
+### Actual Result - Repayment Hover (99.36% identical to the expected result)
 
 ![Actual Result - Repayment Hover](docs/screenshots/mortgage-repayment-calculator/actual/hover-repayment.png)
 
@@ -328,7 +328,7 @@ https://www.frontendmentor.io/challenges/mortgage-repayment-calculator-Galx1LXK7
 
 ![Expected Result - Calculate Button Hover](docs/screenshots/mortgage-repayment-calculator/expected/hover-calculate.png)
 
-### Actual Result - Calculate Button Hover (99.32% identical to the expected result)
+### Actual Result - Calculate Button Hover (99.36% identical to the expected result)
 
 ![Actual Result - Calculate Button Hover](docs/screenshots/mortgage-repayment-calculator/actual/hover-calculate.png)
 
