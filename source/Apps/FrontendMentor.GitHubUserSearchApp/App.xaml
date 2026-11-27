@@ -8,6 +8,8 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <resourceDictionaries:ThemeResourceDictionary DarkThemeSource="pack://application:,,,/FrontendMentor.GitHubUserSearchApp;component/Brushes/DarkThemeBrushes.xaml" LightThemeSource="pack://application:,,,/FrontendMentor.GitHubUserSearchApp;component/Brushes/LightThemeBrushes.xaml" />
+                <resourceDictionaries:ThemeResourceDictionary DarkThemeSource="pack://application:,,,/FrontendMentor.GitHubUserSearchApp;component/Effects/DarkThemeEffects.xaml" LightThemeSource="pack://application:,,,/FrontendMentor.GitHubUserSearchApp;component/Effects/LightThemeEffects.xaml" />
+                <resourceDictionaries:ThemeResourceDictionary DarkThemeSource="pack://application:,,,/FrontendMentor.GitHubUserSearchApp;component/Geometries/DarkThemeGeometries.xaml" LightThemeSource="pack://application:,,,/FrontendMentor.GitHubUserSearchApp;component/Geometries/LightThemeGeometries.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Themes/Custom.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/FrontendMentor.GitHubUserSearchApp;component/Themes/Custom.xaml" />
             </ResourceDictionary.MergedDictionaries>

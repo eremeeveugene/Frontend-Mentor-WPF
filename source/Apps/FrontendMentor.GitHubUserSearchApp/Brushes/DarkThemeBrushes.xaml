@@ -29,6 +29,10 @@
                      po:Freeze="True"
                      Color="{StaticResource Dark.Gunmetal.Color}" />
 
+    <SolidColorBrush x:Key="GitHubUserSearchAppView.Title.Foreground.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource White.Color}" />
+
     <SolidColorBrush x:Key="GitHubUserSearchAppView.Heading.Foreground.Brush"
                      po:Freeze="True"
                      Color="{StaticResource White.Color}" />
@@ -43,13 +47,13 @@
 
     <SolidColorBrush x:Key="GitHubUserSearchAppView.ThemeSwitchButton.MouseOver.Foreground.Brush"
                      po:Freeze="True"
-                     Color="{StaticResource Slate.Gray.Color}" />
+                     Color="{StaticResource Wild.Blue.Yonder.Color}" />
 
     <SolidColorBrush x:Key="GitHubUserSearchAppView.Accent.Foreground.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Azure.Color}" />
 
-    <SolidColorBrush x:Key="GitHubUserSearchAppView.NoResults.Foreground.Brush"
+    <SolidColorBrush x:Key="GitHubUserSearchAppView.SearchError.Foreground.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Red.Orange.Color}" />
 

@@ -25,6 +25,12 @@
         <Setter Property="TextWrapping" Value="Wrap" />
     </Style>
 
+    <Style x:Key="SearchError.TextBlock.Style" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Foreground" Value="{DynamicResource GitHubUserSearchAppView.SearchError.Foreground.Brush}" />
+    </Style>
+
     <Style x:Key="Bio.TextBlock.Style"
            BasedOn="{StaticResource Body.TextBlock.Style}"
            TargetType="{x:Type TextBlock}">

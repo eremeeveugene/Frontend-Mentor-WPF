@@ -97,14 +97,32 @@ public sealed class GitHubUserSearchAppViewModelTests
     }
 
     [TestMethod]
-    public async Task LoadAsync_RequestFails_ShowsNoResults()
+    public async Task LoadAsync_RequestFails_ShowsThatTheSearchFailed()
     {
         _gitHubUsersService.ExceptionToThrow = new HttpRequestException("offline");
 
         await _viewModel.LoadAsync(CancellationToken.None);
 
-        Assert.IsTrue(_viewModel.HasNoResults);
+        Assert.IsTrue(_viewModel.HasSearchFailed);
+        Assert.IsFalse(_viewModel.HasNoResults, "A failed request is not reported as a missing user.");
         Assert.IsNull(_viewModel.GitHubUser);
+    }
+
+    [TestMethod]
+    public async Task SearchUserCommand_AfterAFailedRequest_ClearsTheFailure()
+    {
+        _gitHubUsersService.ExceptionToThrow = new HttpRequestException("offline");
+
+        await _viewModel.LoadAsync(CancellationToken.None);
+
+        _gitHubUsersService.ExceptionToThrow = null;
+        _viewModel.Username = "nobody";
+
+        _viewModel.SearchUserCommand.Execute(null);
+
+        await WaitUntilAsync(() => _viewModel.HasNoResults);
+
+        Assert.IsFalse(_viewModel.HasSearchFailed);
     }
 
     [TestMethod]

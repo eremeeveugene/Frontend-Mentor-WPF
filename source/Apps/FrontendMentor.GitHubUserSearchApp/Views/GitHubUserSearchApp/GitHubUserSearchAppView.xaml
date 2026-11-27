@@ -22,7 +22,7 @@
         <StackPanel>
             <DockPanel>
                 <TextBlock DockPanel.Dock="Left"
-                           Foreground="{DynamicResource GitHubUserSearchAppView.Heading.Foreground.Brush}"
+                           Foreground="{DynamicResource GitHubUserSearchAppView.Title.Foreground.Brush}"
                            Style="{StaticResource H1.TextBlock.Style}"
                            Text="{x:Static properties:Resources.GitHubUserSearchAppView_TitleTextBlock_Text}" />
 
@@ -37,7 +37,8 @@
                     Margin="0,36,0,0"
                     Padding="0,0,10,0"
                     Background="{DynamicResource GitHubUserSearchAppView.Surface.Background.Brush}"
-                    CornerRadius="15">
+                    CornerRadius="15"
+                    Effect="{DynamicResource GitHubUserSearchAppView.Surface.DropShadowEffect}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
@@ -66,11 +67,16 @@
                     <TextBlock Grid.Column="2"
                                Margin="16,0,24,0"
                                VerticalAlignment="Center"
-                               FontSize="15"
-                               FontWeight="Bold"
-                               Foreground="{DynamicResource GitHubUserSearchAppView.NoResults.Foreground.Brush}"
+                               Style="{StaticResource SearchError.TextBlock.Style}"
                                Text="{x:Static properties:Resources.GitHubUserSearchAppView_NoResultsTextBlock_Text}"
                                Visibility="{Binding HasNoResults, Converter={StaticResource BooleanToVisibilityConverter}}" />
+
+                    <TextBlock Grid.Column="2"
+                               Margin="16,0,24,0"
+                               VerticalAlignment="Center"
+                               Style="{StaticResource SearchError.TextBlock.Style}"
+                               Text="{x:Static properties:Resources.GitHubUserSearchAppView_SearchFailedTextBlock_Text}"
+                               Visibility="{Binding HasSearchFailed, Converter={StaticResource BooleanToVisibilityConverter}}" />
 
                     <Button Grid.Column="3"
                             Command="{Binding SearchUserCommand}"
@@ -82,7 +88,8 @@
             <Border Margin="0,24,0,0"
                     Padding="48"
                     Background="{DynamicResource GitHubUserSearchAppView.Surface.Background.Brush}"
-                    CornerRadius="15">
+                    CornerRadius="15"
+                    Effect="{DynamicResource GitHubUserSearchAppView.Surface.DropShadowEffect}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
@@ -107,8 +114,9 @@
                                        Style="{StaticResource H1.TextBlock.Style}"
                                        Text="{Binding GitHubUser.Name, FallbackValue={x:Static constants:FallbackValueConstants.Text}}" />
 
-                            <TextBlock HorizontalAlignment="Right"
-                                       VerticalAlignment="Bottom"
+                            <TextBlock Margin="0,8,0,0"
+                                       HorizontalAlignment="Right"
+                                       VerticalAlignment="Top"
                                        DockPanel.Dock="Right"
                                        Foreground="{DynamicResource GitHubUserSearchAppView.Muted.Foreground.Brush}"
                                        Style="{StaticResource Body.TextBlock.Style}">
@@ -138,8 +146,8 @@
                                     <RowDefinition Height="Auto" />
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="139" />
+                                    <ColumnDefinition Width="154" />
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
 
@@ -190,7 +198,7 @@
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="273" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
 

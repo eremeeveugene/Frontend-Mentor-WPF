@@ -27,7 +27,7 @@ internal sealed class GitHubUsersService : IGitHubUsersService
     }
 
     /// <inheritdoc />
-    public async Task<GitHubUserModel?> GetUserAsync(string username, CancellationToken cancellationToken = default)
+    public async Task<GitHubUserModel?> GetGitHubUserAsync(string username, CancellationToken cancellationToken = default)
     {
         using var response = await _httpClient.GetAsync($"users/{Uri.EscapeDataString(username)}", cancellationToken);
 

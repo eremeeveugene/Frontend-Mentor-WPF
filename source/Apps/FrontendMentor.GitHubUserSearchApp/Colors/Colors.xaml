@@ -4,7 +4,9 @@
     <Color x:Key="Light.Azure.Color">#60ABFF</Color>
     <Color x:Key="Slate.Gray.Color">#697C9A</Color>
     <Color x:Key="Queen.Blue.Color">#4B6A9B</Color>
+    <Color x:Key="Wild.Blue.Yonder.Color">#90A4D4</Color>
     <Color x:Key="Gunmetal.Color">#2B3442</Color>
+    <Color x:Key="Raisin.Black.Color">#222731</Color>
     <Color x:Key="Dark.Gunmetal.Color">#141D2F</Color>
     <Color x:Key="Yankees.Blue.Color">#1E2A47</Color>
     <Color x:Key="Ghost.White.Color">#F6F8FF</Color>

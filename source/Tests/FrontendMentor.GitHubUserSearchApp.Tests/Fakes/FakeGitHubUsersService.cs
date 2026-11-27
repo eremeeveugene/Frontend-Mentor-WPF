@@ -30,7 +30,7 @@ internal sealed class FakeGitHubUsersService : IGitHubUsersService
         _users[user.Login] = user;
     }
 
-    public Task<GitHubUserModel?> GetUserAsync(string username, CancellationToken cancellationToken = default)
+    public Task<GitHubUserModel?> GetGitHubUserAsync(string username, CancellationToken cancellationToken = default)
     {
         RequestedUsernames.Add(username);
 

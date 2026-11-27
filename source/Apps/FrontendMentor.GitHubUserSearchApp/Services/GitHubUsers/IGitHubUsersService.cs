@@ -24,5 +24,5 @@ internal interface IGitHubUsersService
     /// <param name="username">The login of the user.</param>
     /// <param name="cancellationToken">The token that cancels the request.</param>
     /// <returns>The user, or <c>null</c> when the user does not exist.</returns>
-    Task<GitHubUserModel?> GetUserAsync(string username, CancellationToken cancellationToken = default);
+    Task<GitHubUserModel?> GetGitHubUserAsync(string username, CancellationToken cancellationToken = default);
 }

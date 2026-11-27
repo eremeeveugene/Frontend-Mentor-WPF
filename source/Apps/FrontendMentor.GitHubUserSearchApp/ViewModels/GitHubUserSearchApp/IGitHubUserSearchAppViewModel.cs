@@ -46,6 +46,11 @@ internal interface IGitHubUserSearchAppViewModel : ILoadableViewModel
     bool HasNoResults { get; }
 
     /// <summary>
+    ///     Gets a value indicating whether the last search failed, such as when GitHub could not be reached.
+    /// </summary>
+    bool HasSearchFailed { get; }
+
+    /// <summary>
     ///     Gets the GitHub user that is shown, if any.
     /// </summary>
     IGitHubUserBindableModel? GitHubUser { get; }

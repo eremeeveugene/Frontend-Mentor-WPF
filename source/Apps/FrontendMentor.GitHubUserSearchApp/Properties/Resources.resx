@@ -138,6 +138,9 @@
   <data name="GitHubUserSearchAppView_SearchButton_Text" xml:space="preserve">
     <value>Search</value>
   </data>
+  <data name="GitHubUserSearchAppView_SearchFailedTextBlock_Text" xml:space="preserve">
+    <value>Search failed</value>
+  </data>
   <data name="GitHubUserSearchAppView_JoinedTextBlock_Text" xml:space="preserve">
     <value>Joined</value>
   </data>

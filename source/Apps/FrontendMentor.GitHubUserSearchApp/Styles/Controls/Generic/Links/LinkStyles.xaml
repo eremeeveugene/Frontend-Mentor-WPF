@@ -15,22 +15,30 @@
                   Data="{TemplateBinding Geometry}"
                   Fill="{DynamicResource GitHubUserSearchAppView.Body.Foreground.Brush}" />
 
-            <TextBlock Grid.Column="1"
+            <TextBlock x:Name="SourceTextBlock"
+                       Grid.Column="1"
                        Margin="16,0,0,0"
                        Foreground="{DynamicResource GitHubUserSearchAppView.Body.Foreground.Brush}"
                        Text="{Binding Source, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}, TargetNullValue={x:Static properties:Resources.Link_NotAvailable_Text}}"
                        TextTrimming="CharacterEllipsis" />
         </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="SourceTextBlock" Property="TextDecorations" Value="Underline" />
+            </Trigger>
+        </ControlTemplate.Triggers>
     </ControlTemplate>
 
     <Style TargetType="{x:Type links:Link}">
         <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="FontSize" Value="15" />
         <Setter Property="HorizontalAlignment" Value="Left" />
         <Setter Property="Template" Value="{StaticResource LinkTemplate}" />
         <Style.Triggers>
             <Trigger Property="Command" Value="{x:Null}">
                 <Setter Property="Cursor" Value="{x:Null}" />
                 <Setter Property="Focusable" Value="False" />
+                <Setter Property="IsHitTestVisible" Value="False" />
             </Trigger>
             <DataTrigger Binding="{Binding Source, RelativeSource={RelativeSource Self}}" Value="{x:Null}">
                 <Setter Property="Opacity" Value="0.5" />

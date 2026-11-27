@@ -19,7 +19,7 @@ namespace FrontendMentor.GitHubUserSearchApp.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -61,24 +61,6 @@ namespace FrontendMentor.GitHubUserSearchApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to GitHub User Search App.
-        /// </summary>
-        public static string GitHubUserSearchAppWindow_Title {
-            get {
-                return ResourceManager.GetString("GitHubUserSearchAppWindow_Title", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to devfinder.
-        /// </summary>
-        public static string GitHubUserSearchAppView_TitleTextBlock_Text {
-            get {
-                return ResourceManager.GetString("GitHubUserSearchAppView_TitleTextBlock_Text", resourceCulture);
-            }
-        }
-
-        /// <summary>
         ///   Looks up a localized string similar to DARK.
         /// </summary>
         public static string GitHubUserSearchAppView_DarkThemeButton_Text {
@@ -86,7 +68,34 @@ namespace FrontendMentor.GitHubUserSearchApp.Properties {
                 return ResourceManager.GetString("GitHubUserSearchAppView_DarkThemeButton_Text", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Followers.
+        /// </summary>
+        public static string GitHubUserSearchAppView_FollowersTextBlock_Text {
+            get {
+                return ResourceManager.GetString("GitHubUserSearchAppView_FollowersTextBlock_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Following.
+        /// </summary>
+        public static string GitHubUserSearchAppView_FollowingTextBlock_Text {
+            get {
+                return ResourceManager.GetString("GitHubUserSearchAppView_FollowingTextBlock_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Joined.
+        /// </summary>
+        public static string GitHubUserSearchAppView_JoinedTextBlock_Text {
+            get {
+                return ResourceManager.GetString("GitHubUserSearchAppView_JoinedTextBlock_Text", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to LIGHT.
         /// </summary>
@@ -95,16 +104,16 @@ namespace FrontendMentor.GitHubUserSearchApp.Properties {
                 return ResourceManager.GetString("GitHubUserSearchAppView_LightThemeButton_Text", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   Looks up a localized string similar to Search GitHub username….
+        ///   Looks up a localized string similar to This profile has no bio.
         /// </summary>
-        public static string GitHubUserSearchAppView_SearchTextBox_Placeholder {
+        public static string GitHubUserSearchAppView_NoBioTextBlock_Text {
             get {
-                return ResourceManager.GetString("GitHubUserSearchAppView_SearchTextBox_Placeholder", resourceCulture);
+                return ResourceManager.GetString("GitHubUserSearchAppView_NoBioTextBlock_Text", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to No results.
         /// </summary>
@@ -113,7 +122,16 @@ namespace FrontendMentor.GitHubUserSearchApp.Properties {
                 return ResourceManager.GetString("GitHubUserSearchAppView_NoResultsTextBlock_Text", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Repos.
+        /// </summary>
+        public static string GitHubUserSearchAppView_ReposTextBlock_Text {
+            get {
+                return ResourceManager.GetString("GitHubUserSearchAppView_ReposTextBlock_Text", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Search.
         /// </summary>
@@ -124,50 +142,41 @@ namespace FrontendMentor.GitHubUserSearchApp.Properties {
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to Joined.
+        ///   Looks up a localized string similar to Search failed.
         /// </summary>
-        public static string GitHubUserSearchAppView_JoinedTextBlock_Text {
+        public static string GitHubUserSearchAppView_SearchFailedTextBlock_Text {
             get {
-                return ResourceManager.GetString("GitHubUserSearchAppView_JoinedTextBlock_Text", resourceCulture);
+                return ResourceManager.GetString("GitHubUserSearchAppView_SearchFailedTextBlock_Text", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   Looks up a localized string similar to This profile has no bio.
+        ///   Looks up a localized string similar to Search GitHub username….
         /// </summary>
-        public static string GitHubUserSearchAppView_NoBioTextBlock_Text {
+        public static string GitHubUserSearchAppView_SearchTextBox_Placeholder {
             get {
-                return ResourceManager.GetString("GitHubUserSearchAppView_NoBioTextBlock_Text", resourceCulture);
+                return ResourceManager.GetString("GitHubUserSearchAppView_SearchTextBox_Placeholder", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   Looks up a localized string similar to Repos.
+        ///   Looks up a localized string similar to devfinder.
         /// </summary>
-        public static string GitHubUserSearchAppView_ReposTextBlock_Text {
+        public static string GitHubUserSearchAppView_TitleTextBlock_Text {
             get {
-                return ResourceManager.GetString("GitHubUserSearchAppView_ReposTextBlock_Text", resourceCulture);
+                return ResourceManager.GetString("GitHubUserSearchAppView_TitleTextBlock_Text", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   Looks up a localized string similar to Followers.
+        ///   Looks up a localized string similar to GitHub User Search App.
         /// </summary>
-        public static string GitHubUserSearchAppView_FollowersTextBlock_Text {
+        public static string GitHubUserSearchAppWindow_Title {
             get {
-                return ResourceManager.GetString("GitHubUserSearchAppView_FollowersTextBlock_Text", resourceCulture);
+                return ResourceManager.GetString("GitHubUserSearchAppWindow_Title", resourceCulture);
             }
         }
-
-        /// <summary>
-        ///   Looks up a localized string similar to Following.
-        /// </summary>
-        public static string GitHubUserSearchAppView_FollowingTextBlock_Text {
-            get {
-                return ResourceManager.GetString("GitHubUserSearchAppView_FollowingTextBlock_Text", resourceCulture);
-            }
-        }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Not Available.
         /// </summary>

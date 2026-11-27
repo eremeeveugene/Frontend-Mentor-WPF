@@ -73,6 +73,13 @@ internal sealed class GitHubUserSearchAppViewModel : BindableBase, IGitHubUserSe
     }
 
     /// <inheritdoc />
+    public bool HasSearchFailed
+    {
+        get;
+        private set => SetProperty(ref field, value);
+    }
+
+    /// <inheritdoc />
     public IGitHubUserBindableModel? GitHubUser
     {
         get;
@@ -130,8 +137,9 @@ internal sealed class GitHubUserSearchAppViewModel : BindableBase, IGitHubUserSe
 
         try
         {
-            var gitHubUser = await _gitHubUsersService.GetUserAsync(username, loadCancellationToken);
+            var gitHubUser = await _gitHubUsersService.GetGitHubUserAsync(username, loadCancellationToken);
 
+            HasSearchFailed = false;
             HasNoResults = gitHubUser == null;
 
             if (gitHubUser != null)
@@ -148,7 +156,8 @@ internal sealed class GitHubUserSearchAppViewModel : BindableBase, IGitHubUserSe
         {
             _logger.LogError(exception, "Failed to load the GitHub user '{Username}'.", username);
 
-            HasNoResults = true;
+            HasNoResults = false;
+            HasSearchFailed = true;
         }
     }
 
