@@ -1,0 +1,236 @@
+﻿<views:ViewBase x:Class="FrontendMentor.GitHubUserSearchApp.Views.GitHubUserSearchApp.GitHubUserSearchAppView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:constants="clr-namespace:FrontendMentor.Core.Constants;assembly=FrontendMentor.Core"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:links="clr-namespace:FrontendMentor.GitHubUserSearchApp.Controls.Links"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:properties="clr-namespace:FrontendMentor.GitHubUserSearchApp.Properties"
+             xmlns:viewModels="clr-namespace:FrontendMentor.GitHubUserSearchApp.ViewModels.GitHubUserSearchApp"
+             xmlns:views="clr-namespace:FrontendMentor.Core.Views;assembly=FrontendMentor.Core"
+             d:DataContext="{d:DesignInstance viewModels:IGitHubUserSearchAppViewModel}"
+             x:ClassModifier="internal"
+             mc:Ignorable="d">
+
+    <views:ViewBase.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </views:ViewBase.Resources>
+
+    <Grid Width="730"
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center">
+        <StackPanel>
+            <DockPanel>
+                <TextBlock DockPanel.Dock="Left"
+                           Foreground="{DynamicResource GitHubUserSearchAppView.Title.Foreground.Brush}"
+                           Style="{StaticResource H1.TextBlock.Style}"
+                           Text="{x:Static properties:Resources.GitHubUserSearchAppView_TitleTextBlock_Text}" />
+
+                <Button HorizontalAlignment="Right"
+                        Command="{Binding SwitchThemeCommand}"
+                        Content="{Binding ThemeSwitchText}"
+                        DockPanel.Dock="Right"
+                        Style="{StaticResource ThemeSwitch.Button.Style}" />
+            </DockPanel>
+
+            <Border Height="69"
+                    Margin="0,36,0,0"
+                    Padding="0,0,10,0"
+                    Background="{DynamicResource GitHubUserSearchAppView.Surface.Background.Brush}"
+                    CornerRadius="15"
+                    Effect="{DynamicResource GitHubUserSearchAppView.Surface.DropShadowEffect}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Path Grid.Column="0"
+                          Width="24"
+                          Height="24"
+                          Margin="32,0,24,0"
+                          Data="{StaticResource Search.Geometry}"
+                          Stroke="{DynamicResource GitHubUserSearchAppView.Accent.Foreground.Brush}"
+                          StrokeEndLineCap="Round"
+                          StrokeThickness="3" />
+
+                    <TextBox Grid.Column="1"
+                             Style="{StaticResource Search.TextBox.Style}"
+                             Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}">
+                        <TextBox.InputBindings>
+                            <KeyBinding Key="Enter" Command="{Binding SearchUserCommand}" />
+                        </TextBox.InputBindings>
+                    </TextBox>
+
+                    <TextBlock Grid.Column="2"
+                               Margin="16,0,24,0"
+                               VerticalAlignment="Center"
+                               Style="{StaticResource SearchError.TextBlock.Style}"
+                               Text="{x:Static properties:Resources.GitHubUserSearchAppView_NoResultsTextBlock_Text}"
+                               Visibility="{Binding HasNoResults, Converter={StaticResource BooleanToVisibilityConverter}}" />
+
+                    <TextBlock Grid.Column="2"
+                               Margin="16,0,24,0"
+                               VerticalAlignment="Center"
+                               Style="{StaticResource SearchError.TextBlock.Style}"
+                               Text="{x:Static properties:Resources.GitHubUserSearchAppView_SearchFailedTextBlock_Text}"
+                               Visibility="{Binding HasSearchFailed, Converter={StaticResource BooleanToVisibilityConverter}}" />
+
+                    <Button Grid.Column="3"
+                            Command="{Binding SearchUserCommand}"
+                            Content="{x:Static properties:Resources.GitHubUserSearchAppView_SearchButton_Text}"
+                            Style="{StaticResource Search.Button.Style}" />
+                </Grid>
+            </Border>
+
+            <Border Margin="0,24,0,0"
+                    Padding="48"
+                    Background="{DynamicResource GitHubUserSearchAppView.Surface.Background.Brush}"
+                    CornerRadius="15"
+                    Effect="{DynamicResource GitHubUserSearchAppView.Surface.DropShadowEffect}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="0"
+                            Width="117"
+                            Height="117"
+                            Margin="0,0,37,0"
+                            VerticalAlignment="Top"
+                            CornerRadius="58.5">
+                        <Border.Background>
+                            <ImageBrush ImageSource="{Binding GitHubUser.AvatarImage}" Stretch="UniformToFill" />
+                        </Border.Background>
+                    </Border>
+
+                    <StackPanel Grid.Column="1">
+                        <DockPanel>
+                            <TextBlock DockPanel.Dock="Left"
+                                       Foreground="{DynamicResource GitHubUserSearchAppView.Heading.Foreground.Brush}"
+                                       Style="{StaticResource H1.TextBlock.Style}"
+                                       Text="{Binding GitHubUser.Name, FallbackValue={x:Static constants:FallbackValueConstants.Text}}" />
+
+                            <TextBlock Margin="0,8,0,0"
+                                       HorizontalAlignment="Right"
+                                       VerticalAlignment="Top"
+                                       DockPanel.Dock="Right"
+                                       Foreground="{DynamicResource GitHubUserSearchAppView.Muted.Foreground.Brush}"
+                                       Style="{StaticResource Body.TextBlock.Style}">
+                                <Run Text="{x:Static properties:Resources.GitHubUserSearchAppView_JoinedTextBlock_Text}" />
+                                <Run Text="{Binding GitHubUser.DateJoined, Mode=OneWay, StringFormat={x:Static constants:DateTimeFormatConstants.DayMonthAbbrYear}, FallbackValue={x:Static constants:FallbackValueConstants.Text}}" />
+                            </TextBlock>
+                        </DockPanel>
+
+                        <TextBlock Margin="0,2,0,0"
+                                   Foreground="{DynamicResource GitHubUserSearchAppView.Accent.Foreground.Brush}"
+                                   Style="{StaticResource H3.TextBlock.Style}">
+                            <Run Text="@" /><Run Text="{Binding GitHubUser.Login, Mode=OneWay, FallbackValue={x:Static constants:FallbackValueConstants.Text}}" />
+                        </TextBlock>
+
+                        <TextBlock Margin="0,20,0,0"
+                                   Foreground="{DynamicResource GitHubUserSearchAppView.Body.Foreground.Brush}"
+                                   Style="{StaticResource Bio.TextBlock.Style}"
+                                   Text="{Binding GitHubUser.Bio, FallbackValue={x:Static constants:FallbackValueConstants.Text}, TargetNullValue={x:Static properties:Resources.GitHubUserSearchAppView_NoBioTextBlock_Text}}" />
+
+                        <Border Margin="0,32,0,0"
+                                Padding="32,15,32,17"
+                                Background="{DynamicResource GitHubUserSearchAppView.Stats.Background.Brush}"
+                                CornerRadius="10">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="139" />
+                                    <ColumnDefinition Width="154" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Grid.Row="0"
+                                           Grid.Column="0"
+                                           Foreground="{DynamicResource GitHubUserSearchAppView.Body.Foreground.Brush}"
+                                           Style="{StaticResource H4.TextBlock.Style}"
+                                           Text="{x:Static properties:Resources.GitHubUserSearchAppView_ReposTextBlock_Text}" />
+
+                                <TextBlock Grid.Row="0"
+                                           Grid.Column="1"
+                                           Foreground="{DynamicResource GitHubUserSearchAppView.Body.Foreground.Brush}"
+                                           Style="{StaticResource H4.TextBlock.Style}"
+                                           Text="{x:Static properties:Resources.GitHubUserSearchAppView_FollowersTextBlock_Text}" />
+
+                                <TextBlock Grid.Row="0"
+                                           Grid.Column="2"
+                                           Foreground="{DynamicResource GitHubUserSearchAppView.Body.Foreground.Brush}"
+                                           Style="{StaticResource H4.TextBlock.Style}"
+                                           Text="{x:Static properties:Resources.GitHubUserSearchAppView_FollowingTextBlock_Text}" />
+
+                                <TextBlock Grid.Row="1"
+                                           Grid.Column="0"
+                                           Margin="0,1,0,0"
+                                           Foreground="{DynamicResource GitHubUserSearchAppView.Heading.Foreground.Brush}"
+                                           Style="{StaticResource H2.TextBlock.Style}"
+                                           Text="{Binding GitHubUser.Repos, FallbackValue={x:Static constants:FallbackValueConstants.Text}}" />
+
+                                <TextBlock Grid.Row="1"
+                                           Grid.Column="1"
+                                           Margin="0,1,0,0"
+                                           Foreground="{DynamicResource GitHubUserSearchAppView.Heading.Foreground.Brush}"
+                                           Style="{StaticResource H2.TextBlock.Style}"
+                                           Text="{Binding GitHubUser.Followers, FallbackValue={x:Static constants:FallbackValueConstants.Text}}" />
+
+                                <TextBlock Grid.Row="1"
+                                           Grid.Column="2"
+                                           Margin="0,1,0,0"
+                                           Foreground="{DynamicResource GitHubUserSearchAppView.Heading.Foreground.Brush}"
+                                           Style="{StaticResource H2.TextBlock.Style}"
+                                           Text="{Binding GitHubUser.Following, FallbackValue={x:Static constants:FallbackValueConstants.Text}}" />
+                            </Grid>
+                        </Border>
+
+                        <Grid Margin="0,37,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="273" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <links:Link Grid.Row="0"
+                                        Grid.Column="0"
+                                        Geometry="{StaticResource Location.Geometry}"
+                                        Source="{Binding GitHubUser.Location}" />
+
+                            <links:Link Grid.Row="0"
+                                        Grid.Column="1"
+                                        Command="{Binding GitHubUser.OpenTwitterCommand}"
+                                        Geometry="{StaticResource Twitter.Geometry}"
+                                        Source="{Binding GitHubUser.TwitterUsername}" />
+
+                            <links:Link Grid.Row="1"
+                                        Grid.Column="0"
+                                        Margin="0,15,0,0"
+                                        Command="{Binding GitHubUser.OpenBlogCommand}"
+                                        Geometry="{StaticResource Blog.Geometry}"
+                                        Source="{Binding GitHubUser.Blog}" />
+
+                            <links:Link Grid.Row="1"
+                                        Grid.Column="1"
+                                        Margin="0,15,0,0"
+                                        Command="{Binding GitHubUser.OpenCompanyCommand}"
+                                        Geometry="{StaticResource Company.Geometry}"
+                                        Source="{Binding GitHubUser.Company}" />
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </StackPanel>
+    </Grid>
+
+</views:ViewBase>

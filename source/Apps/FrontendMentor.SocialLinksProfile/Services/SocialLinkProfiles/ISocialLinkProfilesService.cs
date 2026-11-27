@@ -9,11 +9,24 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.SocialLinksProfile.Models;
+
+using FrontendMentor.SocialLinksProfile.Models.SocialLinkProfiles;
 
 namespace FrontendMentor.SocialLinksProfile.Services.SocialLinkProfiles;
 
+/// <summary>
+///     Provides social link profiles.
+/// </summary>
 internal interface ISocialLinkProfilesService
 {
-    SocialLinkProfileModel GetSocialLinkProfile();
+    /// <summary>
+    ///     Gets the social link profile that the view shows.
+    /// </summary>
+    /// <param name="cancellationToken">The token that cancels the request.</param>
+    /// <returns>A task that completes with the social link profile.</returns>
+    /// <remarks>
+    ///     The method is asynchronous to simulate retrieving the profile from a backend service.
+    ///     The data is local, so the task completes immediately.
+    /// </remarks>
+    Task<SocialLinkProfileModel> GetSocialLinkProfileAsync(CancellationToken cancellationToken = default);
 }

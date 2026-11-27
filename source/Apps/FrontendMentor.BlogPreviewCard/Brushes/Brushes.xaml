@@ -21,6 +21,10 @@
 
     <!--#region BlogPreviewCardView-->
 
+    <SolidColorBrush x:Key="BlogPreviewCardView.ShadowBorder.Brush"
+                     po:Freeze="True"
+                     Color="{StaticResource Black.Color}" />
+
     <SolidColorBrush x:Key="BlogPreviewCardView.RootBorder.Border.Brush"
                      po:Freeze="True"
                      Color="{StaticResource Grey.950.Color}" />

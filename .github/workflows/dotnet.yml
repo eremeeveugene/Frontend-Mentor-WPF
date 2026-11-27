@@ -2,9 +2,9 @@ name: .NET
 
 on:
   push:
-    branches: ["develop"]
+    branches: [ "develop" ]
   pull_request:
-    branches: ["develop"]
+    branches: [ "develop" ]
 
 jobs:
   pipeline:
@@ -12,24 +12,22 @@ jobs:
     defaults:
       run:
         working-directory: source
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
+      - uses: actions/checkout@v7
+      - name: Get .NET version from global.json
+        id: dotnet-version
+        run: |
+          $DOTNET_VERSION = $(jq -r '.sdk.version' ../global.json)
+          echo "DOTNET_VERSION=$DOTNET_VERSION" | Out-File -FilePath $env:GITHUB_ENV -Append
       - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v6
         with:
-          global-json-file: ${{ github.workspace }}/global.json
-
+          dotnet-version: ${{ env.DOTNET_VERSION }}
       - name: Restore dependencies
         run: dotnet restore
-
       - name: Build
         run: dotnet build --no-restore
-
-      - name: Install .NET Format tool
-        run: dotnet tool install -g dotnet-format
-
+      - name: Test
+        run: dotnet test --no-build
       - name: Check Code Style
         run: dotnet format --verify-no-changes --verbosity diagnostic

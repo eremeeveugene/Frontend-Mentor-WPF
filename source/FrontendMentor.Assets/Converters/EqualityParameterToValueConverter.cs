@@ -15,22 +15,22 @@ using System.Windows.Data;
 
 namespace FrontendMentor.Assets.Converters;
 
-[ValueConversion(typeof(object),
-    typeof(object))]
-public class EqualityParameterToValueConverter : ConverterMarkupExtension<EqualityParameterToValueConverter>
+/// <summary>
+///     Converts a value to one of two values, depending on whether it equals the converter parameter.
+/// </summary>
+[ValueConversion(typeof(object), typeof(object))]
+public sealed class EqualityParameterToValueConverter : ConverterMarkupExtension<EqualityParameterToValueConverter>
 {
-    public object? TrueValue
-    {
-        get;
-        set;
-    }
+    /// <summary>
+    ///     Gets or sets the value that is returned when the value equals the parameter.
+    /// </summary>
+    public object? TrueValue { get; set; }
+    /// <summary>
+    ///     Gets or sets the value that is returned when the value does not equal the parameter.
+    /// </summary>
+    public object? FalseValue { get; set; }
 
-    public object? FalseValue
-    {
-        get;
-        set;
-    }
-
+    /// <inheritdoc />
     public override object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
         if (value != null && value.Equals(parameter))
@@ -41,11 +41,13 @@ public class EqualityParameterToValueConverter : ConverterMarkupExtension<Equali
         return FalseValue;
     }
 
+    /// <inheritdoc />
     public override object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
         throw new NotSupportedException();
     }
 
+    /// <inheritdoc />
     public override object ProvideValue(IServiceProvider serviceProvider)
     {
         return this;

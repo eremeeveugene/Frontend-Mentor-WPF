@@ -1,11 +1,11 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
                     xmlns:helpers="clr-namespace:FrontendMentor.Assets.Helpers;assembly=FrontendMentor.Assets"
                     xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
 
     <ResourceDictionary.MergedDictionaries>
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Brushes/Brushes.xaml" />
-        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Effects/Effects.xaml" />
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Storyboards/Storyboards.xaml" />
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.BlogPreviewCard;component/Styles/Controls/Custom/TextBlocks/TextBlockStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
@@ -31,11 +31,23 @@
         <Setter Property="BorderBrush" Value="{StaticResource BlogPreviewCardView.RootBorder.Border.Brush}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="CornerRadius" Value="20" />
-        <Setter Property="Effect" Value="{StaticResource BlogPreviewCardView.RootBorder.DropShadow.Effect}" />
         <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="Padding" Value="23" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Width" Value="384" />
+    </Style>
+
+    <Style x:Key="BlogPreviewCardView.ShadowBorder.Style" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="{StaticResource BlogPreviewCardView.ShadowBorder.Brush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource BlogPreviewCardView.ShadowBorder.Brush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="20" />
+        <Setter Property="IsHitTestVisible" Value="False" />
+        <Setter Property="RenderTransform">
+            <Setter.Value>
+                <TranslateTransform po:Freeze="True" X="8" Y="8" />
+            </Setter.Value>
+        </Setter>
     </Style>
 
     <Style x:Key="BlogPreviewCardView.CategoryBorder.Style" TargetType="{x:Type Border}">

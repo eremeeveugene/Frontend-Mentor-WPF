@@ -13,20 +13,33 @@ using System.Windows;
 
 namespace FrontendMentor.Assets.Helpers;
 
+/// <summary>
+///     Attached properties for borders.
+/// </summary>
 public static class BorderPropertiesHelper
 {
+    /// <summary>
+    ///     Identifies the CornerRadius attached property.
+    /// </summary>
     public static readonly DependencyProperty CornerRadiusProperty = DependencyProperty.RegisterAttached(
-        "CornerRadius",
-        typeof(CornerRadius),
-        typeof(BorderPropertiesHelper),
+        "CornerRadius", typeof(CornerRadius), typeof(BorderPropertiesHelper),
         new PropertyMetadata(default(CornerRadius)));
 
+    /// <summary>
+    ///     Sets the CornerRadius attached property value of an element.
+    /// </summary>
+    /// <param name="element">The element.</param>
+    /// <param name="value">The value to set.</param>
     public static void SetCornerRadius(DependencyObject element, CornerRadius value)
     {
-        element.SetValue(CornerRadiusProperty,
-            value);
+        element.SetValue(CornerRadiusProperty, value);
     }
 
+    /// <summary>
+    ///     Gets the CornerRadius attached property value of an element.
+    /// </summary>
+    /// <param name="element">The element.</param>
+    /// <returns>The value of the attached property.</returns>
     public static CornerRadius GetCornerRadius(DependencyObject element)
     {
         return (CornerRadius)element.GetValue(CornerRadiusProperty);

@@ -1,9 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:assetsWindows="clr-namespace:FrontendMentor.Assets.Controls.Windows;assembly=FrontendMentor.Assets"
                     xmlns:properties="clr-namespace:FrontendMentor.ThreeColumnPreviewCardComponent.Properties"
                     xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets"
-                    xmlns:windows="clr-namespace:FrontendMentor.Assets.Controls.Windows;assembly=FrontendMentor.Assets"
-                    xmlns:windows1="clr-namespace:FrontendMentor.ThreeColumnPreviewCardComponent.Controls.Windows">
+                    xmlns:windows="clr-namespace:FrontendMentor.ThreeColumnPreviewCardComponent.Controls.Windows">
 
     <ResourceDictionary.MergedDictionaries>
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.Assets;component/Styles/Controls/Generic/Windows/FrontendMentorWindowStyles.xaml" />
@@ -11,7 +11,7 @@
         <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.ThreeColumnPreviewCardComponent;component/Fonts/Fonts.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style BasedOn="{StaticResource {x:Type windows:FrontendMentorWindow}}" TargetType="{x:Type windows1:ThreeColumnPreviewCardComponentWindow}">
+    <Style BasedOn="{StaticResource {x:Type assetsWindows:FrontendMentorWindow}}" TargetType="{x:Type windows:ThreeColumnPreviewCardComponentWindow}">
         <Setter Property="Background" Value="{StaticResource ThreeColumnPreviewCardComponentWindow.Background.Brush}" />
         <Setter Property="FontFamily" Value="{StaticResource LexendDeca.FontFamily}" />
         <Setter Property="Foreground" Value="{StaticResource ThreeColumnPreviewCardComponentWindow.Foreground.Brush}" />

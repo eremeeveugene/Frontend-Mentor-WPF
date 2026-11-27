@@ -1,0 +1,1 @@
+N:System.Linq; LINQ allocates. Use a loop over an array or a span instead.

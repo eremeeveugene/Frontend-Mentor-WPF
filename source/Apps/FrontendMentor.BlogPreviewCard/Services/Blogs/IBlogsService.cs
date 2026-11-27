@@ -9,11 +9,24 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.BlogPreviewCard.Models;
+
+using FrontendMentor.BlogPreviewCard.Models.Blogs;
 
 namespace FrontendMentor.BlogPreviewCard.Services.Blogs;
 
+/// <summary>
+///     Provides blogs.
+/// </summary>
 internal interface IBlogsService
 {
-    BlogModel GetBlog();
+    /// <summary>
+    ///     Gets the blog that the card shows.
+    /// </summary>
+    /// <param name="cancellationToken">The token that cancels the request.</param>
+    /// <returns>A task that completes with the blog.</returns>
+    /// <remarks>
+    ///     The method is asynchronous to simulate retrieving the blog from a backend service.
+    ///     The data is local, so the task completes immediately.
+    /// </remarks>
+    Task<BlogModel> GetBlogAsync(CancellationToken cancellationToken = default);
 }

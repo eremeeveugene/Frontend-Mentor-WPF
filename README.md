@@ -4,7 +4,7 @@
 
 ## Overview
 
-I am solving Frontend Mentor challenges using **.NET**, **C#**, **WPF**, and the **Prism library**. This repository showcases my ability to create pixel-perfect and efficient UI solutions using these technologies. I aim to enhance my development skills through these projects while adhering to best practices and design principles.
+I am solving Frontend Mentor challenges using **.NET**, **C#**, **WPF**, and **XAML**. This repository showcases my ability to create pixel-perfect and efficient UI solutions using these technologies. I aim to enhance my development skills through these projects while adhering to best practices and design principles.
 
 ## Purpose
 
@@ -12,17 +12,27 @@ The primary goal of this repository is to improve my own skills and demonstrate 
 
 ## Technologies
 
-- **[.NET 9](https://dotnet.microsoft.com/en-us/download/dotnet/9.0)**: The latest version of the .NET platform for building and running applications.
-- **[C# 13](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-13)**: The programming language used to implement the solutions.
-- **[WPF](https://learn.microsoft.com/en-us/dotnet/desktop/wpf/overview/?view=netdesktop-9.0)**: Windows Presentation Foundation, used for creating rich desktop applications.
-- **[XAML](https://learn.microsoft.com/en-us/dotnet/desktop/wpf/xaml/?view=netdesktop-9.0)**: Extensible Application Markup Language, used for designing the UI in WPF applications.
-- **[Prism Library](https://prismlibrary.com/)**: A framework for building loosely coupled, maintainable, and testable XAML applications.
+- **[.NET 11](https://dotnet.microsoft.com/en-us/download/dotnet/11.0)**: The latest version of the .NET platform for building and running applications.
+- **[C# 15](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-15)**: The programming language used to implement the solutions.
+- **[WPF](https://learn.microsoft.com/en-us/dotnet/desktop/wpf/overview/?view=netdesktop-11.0)**: Windows Presentation Foundation, used for creating rich desktop applications.
+- **[XAML](https://learn.microsoft.com/en-us/dotnet/desktop/wpf/xaml/?view=netdesktop-11.0)**: Extensible Application Markup Language, used for designing the UI in WPF applications.
+
+## Dependencies
+
+The solution has the following NuGet dependencies:
+
+- **[Microsoft.CodeAnalysis.BannedApiAnalyzers](https://www.nuget.org/packages/Microsoft.CodeAnalysis.BannedApiAnalyzers)**: Build errors for APIs that are listed as banned.
+- **[Microsoft.Extensions.DependencyInjection](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection)**: Dependency injection.
+- **[Microsoft.Extensions.Caching.Memory](https://www.nuget.org/packages/Microsoft.Extensions.Caching.Memory)**: In-memory caching.
+- **[Microsoft.Extensions.Http](https://www.nuget.org/packages/Microsoft.Extensions.Http)**: HTTP client factory and typed HTTP clients.
+- **[Microsoft.Extensions.Logging.Debug](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Debug)**: Logging to the debugger output.
+- **[MSTest](https://www.nuget.org/packages/MSTest)**: Unit testing framework.
 
 ## Tools
 
 For developing and testing the solutions in this repository, I use the following tools:
 
-- **[Visual Studio 2022](https://visualstudio.microsoft.com/vs/)**: My primary integrated development environment (IDE) for writing, debugging, and running C# code. With its robust features, Visual Studio 2022 streamlines .NET development, offering tools for efficient coding, debugging, and performance optimization.
+- **[Visual Studio 2026](https://visualstudio.microsoft.com/vs/)**: My primary integrated development environment (IDE) for writing, debugging, and running C# code. With its robust features, Visual Studio 2026 streamlines .NET development, offering tools for efficient coding, debugging, and performance optimization.
 - **[ReSharper](https://www.jetbrains.com/resharper/)**: A powerful Visual Studio extension that elevates the development experience through advanced code analysis, intelligent refactoring tools, and productivity-enhancing features. ReSharper ensures my code is clean, optimized, and adheres to best practices.
 - **[Diffchecker](https://www.diffchecker.com/image-compare/)**: A reliable tool I use to compare screenshots of expected and actual results, ensuring visual consistency and accuracy.
 - **[ImgOnline](https://www.imgonline.com.ua/eng/similarity-percent-result.php)**: This tool helps me evaluate the similarity percentage between images, enabling precise verification of visual elements.
@@ -39,11 +49,11 @@ https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H
     <summary><strong>Screenshots</strong></summary>
   
 ### Expected Result
-![Expected Result](https://github.com/user-attachments/assets/43b27cfc-be88-40d5-b96a-e08882f3debc)
+![Expected Result](docs/screenshots/qr-code-component/expected/default.png)
 
 ### Actual Result (96.87%)
 
-![Actual Result](https://github.com/user-attachments/assets/1be65699-e68c-4fc0-af27-e8052a375296)
+![Actual Result](docs/screenshots/qr-code-component/actual/default.png)
 
 </details>
 
@@ -55,19 +65,19 @@ https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ
     <summary><strong>Screenshots</strong></summary>
     
 ### Expected Result
-![Expected Result](https://github.com/user-attachments/assets/62f75f8a-23d9-4517-a0e6-99a13cf58fe0)
+![Expected Result](docs/screenshots/social-links-profile/expected/default.png)
 
 ### Actual Result (95.56%)
 
-![Actual Result](https://github.com/user-attachments/assets/435957fa-0cf8-48e8-9266-a3bd22731319)
+![Actual Result](docs/screenshots/social-links-profile/actual/default.png)
 
 ### Expected Result - Active
 
-![Expected Result - Active](https://github.com/user-attachments/assets/d08d9c58-227f-44b6-95c1-40efdd46e8e1)
+![Expected Result - Active](docs/screenshots/social-links-profile/expected/active.png)
 
 ### Actual Result - Active (97.38%)
 
-![Actual Result - Active](https://github.com/user-attachments/assets/8645161f-431d-4f3e-8b05-9d59f7db6e95)
+![Actual Result - Active](docs/screenshots/social-links-profile/actual/active.png)
 
 </details>
 
@@ -79,19 +89,19 @@ https://www.frontendmentor.io/challenges/blog-preview-card-ckPaj01IcS
     <summary><strong>Screenshots</strong></summary>
   
 ### Expected Result
-![Expected Result](https://github.com/user-attachments/assets/4893d4a5-3604-46fb-926e-dbe601b89ae2)
+![Expected Result](docs/screenshots/blog-preview-card/expected/default.png)
 
 ### Actual Result (99.33%)
 
-![Actual Result](https://github.com/user-attachments/assets/90a433e1-82fc-45bc-9954-37131f85cc21)
+![Actual Result](docs/screenshots/blog-preview-card/actual/default.png)
 
 ### Expected Result - Active
 
-![Expected Result - Active](https://github.com/user-attachments/assets/32da64f7-745e-4de5-96d1-ef218e9ae0b7)
+![Expected Result - Active](docs/screenshots/blog-preview-card/expected/active.png)
 
 ### Actual Result - Active (99.53%)
 
-![Actual Result - Active](https://github.com/user-attachments/assets/61173279-2753-45b8-bb2f-c2d826ae41e6)
+![Actual Result - Active](docs/screenshots/blog-preview-card/actual/active.png)
 
 </details>
 
@@ -104,23 +114,23 @@ https://www.frontendmentor.io/challenges/results-summary-component-CE_K6s0maV
   
 ### Expected Result
 
-![Expected Result](https://github.com/user-attachments/assets/86364aa8-e278-424b-a52c-e5e8658ac9c2)
+![Expected Result](docs/screenshots/results-summary-component/expected/default.png)
 
 ### Actual Result (99.69%)
 
-![Actual Result](https://github.com/user-attachments/assets/86cbd786-fdb1-4853-b0e9-c89acee1bfe9)
+![Actual Result](docs/screenshots/results-summary-component/actual/default.png)
 
 ### Expected Result - Active
 
-![Expected Result - Active](https://github.com/user-attachments/assets/537dc955-73ef-4f17-84f5-50a21432444a)
+![Expected Result - Active](docs/screenshots/results-summary-component/expected/active.png)
 
 ### Actual Result - Active (99.15%)
 
-![Actual Result - Active](https://github.com/user-attachments/assets/3ab7d3f5-9e6a-4de7-8863-b70c35017852)
+![Actual Result - Active](docs/screenshots/results-summary-component/actual/active.png)
 
 </details>
 
-## Three Column Preview Card Component
+## Three-column preview card component
 
 https://www.frontendmentor.io/challenges/3column-preview-card-component-pH92eAR2-
 
@@ -129,23 +139,23 @@ https://www.frontendmentor.io/challenges/3column-preview-card-component-pH92eAR2
   
 ### Expected Result
 
-![Expected Result](https://github.com/user-attachments/assets/4065dfff-c3b8-4d78-92f2-ea229f14bdbc)
+![Expected Result](docs/screenshots/three-column-preview-card-component/expected/default.png)
 
 ### Actual Result (99.67% identical to the expected result)
 
-![Actual Result](https://github.com/user-attachments/assets/bdfe6d6d-73c2-499c-9e9e-82cc22667eac)
+![Actual Result](docs/screenshots/three-column-preview-card-component/actual/default.png)
 
 ### Expected Result - Active
 
-![Expected Result - Active](https://github.com/user-attachments/assets/1bc1730c-2d5d-4237-a831-33e691a52f2a)
+![Expected Result - Active](docs/screenshots/three-column-preview-card-component/expected/active.png)
 
 ### Actual Result - Active (99.67% identical to the expected result)
 
-![Actual Result - Active](https://github.com/user-attachments/assets/a00f75af-4e43-429a-9c9d-88e9392c06d8)
+![Actual Result - Active](docs/screenshots/three-column-preview-card-component/actual/active.png)
 
 </details>
 
-## Order Summary Component
+## Order summary component
 
 https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj
 
@@ -154,63 +164,103 @@ https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj
   
 ### Expected Result
 
-![Expected Result](https://github.com/user-attachments/assets/9043add5-f097-4c69-83a9-aeb48230c3e8)
+![Expected Result](docs/screenshots/order-summary-component/expected/default.png)
 
 ### Actual Result (99.38% identical to the expected result)
 
-![Actual Result](https://github.com/user-attachments/assets/24d59ce9-1ea8-4c4a-8796-2935f4b1d8ee)
+![Actual Result](docs/screenshots/order-summary-component/actual/default.png)
 
 ### Expected Result - Change Annual Plan
 
-![Expected Result - Change Annual Plan](https://github.com/user-attachments/assets/99e6221a-2430-47da-946f-38f4eb9cb74c)
+![Expected Result - Change Annual Plan](docs/screenshots/order-summary-component/expected/change-annual-plan.png)
 
 ### Actual Result - Change Annual Plan (99.4% identical to the expected result)
 
-![Actual Result - Change Annual Plan](https://github.com/user-attachments/assets/9542b08c-1d62-4476-8e0e-586db57ca55b)
+![Actual Result - Change Annual Plan](docs/screenshots/order-summary-component/actual/change-annual-plan.png)
 
 ### Expected Result - Proceed to Payment
 
-![Expected Result - Proceed to Payment](https://github.com/user-attachments/assets/ea94611f-eea1-43fe-b6b2-59b557c39191)
+![Expected Result - Proceed to Payment](docs/screenshots/order-summary-component/expected/proceed-to-payment.png)
 
 ### Actual Result - Proceed to Payment (99.35% identical to the expected result)
 
-![Actual Result - Proceed to Payment](https://github.com/user-attachments/assets/c4de0d52-bf0b-4ab8-8bdd-3a955335c87e)
+![Actual Result - Proceed to Payment](docs/screenshots/order-summary-component/actual/proceed-to-payment.png)
 
 ### Expected Result - Cancel Order
 
-![Expected Result - Cancel Order](https://github.com/user-attachments/assets/3e45e21e-3ef6-40d8-bbaf-a9bc4aa48169)
+![Expected Result - Cancel Order](docs/screenshots/order-summary-component/expected/cancel-order.png)
 
 ### Actual Result - Cancel Order (99.35% identical to the expected result)
 
-![Actual Result - Cancel Order](https://github.com/user-attachments/assets/d510d445-8f99-4acf-b875-effa3df787cf)
+![Actual Result - Cancel Order](docs/screenshots/order-summary-component/actual/cancel-order.png)
 
 </details>
 
-## Product Preview Card Component
+## GitHub User Search App
 
-https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj
+https://www.frontendmentor.io/challenges/github-user-search-app-Q09YOgaH6
 
 <details>
     <summary><strong>Screenshots</strong></summary>
   
-### Expected Result
+### Expected Result - Light
 
-![Expected Result](https://github.com/user-attachments/assets/5e0ab0d9-0ad2-422f-a2bc-705a74ef5979)
+![Expected Result - Light](docs/screenshots/github-user-search-app/expected/light.png)
 
-### Actual Result (99.89% identical to the expected result)
-![Actual Result](https://github.com/user-attachments/assets/bb6a99ca-f2cf-4b34-bd10-471fb8f038ba)
+### Actual Result - Light (99.17% identical to the expected result)
 
-### Expected Result - Add to Cart
+![Actual Result - Light](docs/screenshots/github-user-search-app/actual/light.png)
 
-![Expected Result - Add to Cart](https://github.com/user-attachments/assets/a2840ba4-67b7-425e-b603-e8e0deed2730)
+### Expected Result - Dark
 
-### Actual Result - Add to Cart (99.89% identical to the expected result)
+![Expected Result - Dark](docs/screenshots/github-user-search-app/expected/dark.png)
 
-![Actual Result - Add to Cart](https://github.com/user-attachments/assets/4a70e273-1e86-40e7-b79a-c0ca9d95c0d8)
+### Actual Result - Dark (98.97% identical to the expected result)
+
+![Actual Result - Dark](docs/screenshots/github-user-search-app/actual/dark.png)
+
+### Expected Result - Light - Active
+
+![Expected Result - Light - Active](docs/screenshots/github-user-search-app/expected/light-active.png)
+
+### Actual Result - Light - No Results (98.01% identical to the expected result)
+
+![Actual Result - Light - No Results](docs/screenshots/github-user-search-app/actual/light-no-results.png)
+
+### Actual Result - Light - Theme Button Hover (98.02% identical to the expected result)
+
+![Actual Result - Light - Theme Button Hover](docs/screenshots/github-user-search-app/actual/light-hover-theme-button.png)
+
+### Actual Result - Light - Search Button Hover (98.39% identical to the expected result)
+
+![Actual Result - Light - Search Button Hover](docs/screenshots/github-user-search-app/actual/light-hover-search-button.png)
+
+### Actual Result - Light - Link Hover (98% identical to the expected result)
+
+![Actual Result - Light - Link Hover](docs/screenshots/github-user-search-app/actual/light-hover-blog-link.png)
+
+### Expected Result - Dark - Active
+
+![Expected Result - Dark - Active](docs/screenshots/github-user-search-app/expected/dark-active.png)
+
+### Actual Result - Dark - No Results (98.52% identical to the expected result)
+
+![Actual Result - Dark - No Results](docs/screenshots/github-user-search-app/actual/dark-no-results.png)
+
+### Actual Result - Dark - Theme Button Hover (98.53% identical to the expected result)
+
+![Actual Result - Dark - Theme Button Hover](docs/screenshots/github-user-search-app/actual/dark-hover-theme-button.png)
+
+### Actual Result - Dark - Search Button Hover (98.9% identical to the expected result)
+
+![Actual Result - Dark - Search Button Hover](docs/screenshots/github-user-search-app/actual/dark-hover-search-button.png)
+
+### Actual Result - Dark - Link Hover (98.51% identical to the expected result)
+
+![Actual Result - Dark - Link Hover](docs/screenshots/github-user-search-app/actual/dark-hover-blog-link.png)
 
 </details>
 
 ## License
 
 This project is licensed under a custom license. See the [LICENSE](LICENSE) file for details.
-

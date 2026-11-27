@@ -21,7 +21,6 @@
     <Storyboard x:Key="Primary.Button.FromMouseOver.Storyboard" po:Freeze="True">
         <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                         Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
-                        From="{StaticResource Medium.Slate.Blue.Color}"
                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 
@@ -39,7 +38,6 @@
     <Storyboard x:Key="Secondary.Button.FromMouseOver.Storyboard" po:Freeze="True">
         <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                         Storyboard.TargetProperty="(Button.Foreground).(SolidColorBrush.Color)"
-                        From="{StaticResource Shadow.Blue.Color}"
                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 
@@ -57,7 +55,6 @@
     <Storyboard x:Key="Primary.Hyperlink.FromMouseOver.Storyboard" po:Freeze="True">
         <ColorAnimation EasingFunction="{x:Static helpers:EasingFunctionsHelper.GenericEasingFunction}"
                         Storyboard.TargetProperty="(Hyperlink.Foreground).(SolidColorBrush.Color)"
-                        From="{StaticResource Medium.Slate.Blue.Color}"
                         Duration="{x:Static constants:AnimationConstants.GenericAnimationDuration}" />
     </Storyboard>
 

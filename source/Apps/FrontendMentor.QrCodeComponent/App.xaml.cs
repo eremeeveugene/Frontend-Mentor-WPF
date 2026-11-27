@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------
-// Copyright (C) 2025 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
+// Copyright (C) 2026 Eugene Eremeev (also known as Yevhenii Yeriemeieiv).
 // All Rights Reserved.
 // --------------------------------------------------------------------------------
 // This software is the confidential and proprietary information of Eugene Eremeev
@@ -9,31 +9,36 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.QrCodeComponent.Constants;
+using FrontendMentor.Core.Windows;
 using FrontendMentor.QrCodeComponent.Controls.Windows;
-using FrontendMentor.QrCodeComponent.Views;
-using System.Windows;
+using FrontendMentor.QrCodeComponent.Factories.QrCode;
+using FrontendMentor.QrCodeComponent.Services.QrCodes;
+using FrontendMentor.QrCodeComponent.ViewModels.QrCodeComponent;
+using FrontendMentor.QrCodeComponent.Views.QrCodeComponent;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace FrontendMentor.QrCodeComponent;
 
-internal partial class App
+/// <summary>
+///     The application entry point.
+/// </summary>
+internal sealed partial class App
 {
-    protected override Window CreateShell()
+    /// <inheritdoc />
+    protected override void ConfigureServices(IServiceCollection services)
     {
-        return Container.Resolve<QrCodeComponentWindow>();
+        base.ConfigureServices(services);
+
+        services.AddTransient<IQrCodeComponentWindow, QrCodeComponentWindow>()
+            .AddTransient<IQrCodeComponentView, QrCodeComponentView>()
+            .AddTransient<IQrCodeComponentViewModel, QrCodeComponentViewModel>()
+            .AddSingleton<IQrCodesService, QrCodesService>()
+            .AddSingleton<IQrCodeBindableModelFactory, QrCodeBindableModelFactory>();
     }
 
-    protected override void RegisterTypes(IContainerRegistry containerRegistry)
+    /// <inheritdoc />
+    protected override IWindow CreateMainWindow(IServiceProvider serviceProvider)
     {
-        base.RegisterTypes(containerRegistry);
-
-        containerRegistry.RegisterForNavigation<QrCodeComponentView>(QrCodeComponentViewNames.QrCodeComponent);
-    }
-
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-
-        NavigateToShellRegion(QrCodeComponentViewNames.QrCodeComponent);
+        return serviceProvider.GetRequiredService<IQrCodeComponentWindow>();
     }
 }

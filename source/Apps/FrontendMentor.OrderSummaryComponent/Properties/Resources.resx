@@ -139,6 +139,6 @@
     <value>Change</value>
   </data>
   <data name="OrderSummaryComponentView_AnnualPlanPriceTextBlock_StringFormat" xml:space="preserve">
-    <value>${0}/year</value>
+    <value>${0:F2}/year</value>
   </data>
 </root>

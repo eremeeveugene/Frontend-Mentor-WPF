@@ -61,7 +61,7 @@ namespace FrontendMentor.OrderSummaryComponent.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ${0}/year.
+        ///   Looks up a localized string similar to ${0:F2}/year.
         /// </summary>
         public static string OrderSummaryComponentView_AnnualPlanPriceTextBlock_StringFormat {
             get {

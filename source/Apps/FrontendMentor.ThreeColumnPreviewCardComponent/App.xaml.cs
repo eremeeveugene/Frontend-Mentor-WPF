@@ -9,32 +9,30 @@
 // known as Yevhenii Yeriemeieiv).
 // --------------------------------------------------------------------------------
 
-using FrontendMentor.ThreeColumnPreviewCardComponent.Constants;
+using FrontendMentor.Core.Windows;
 using FrontendMentor.ThreeColumnPreviewCardComponent.Controls.Windows;
-using FrontendMentor.ThreeColumnPreviewCardComponent.Views;
-using System.Windows;
+using FrontendMentor.ThreeColumnPreviewCardComponent.Views.ThreeColumnPreviewCardComponent;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace FrontendMentor.ThreeColumnPreviewCardComponent;
 
-internal partial class App
+/// <summary>
+///     The application entry point.
+/// </summary>
+internal sealed partial class App
 {
-    protected override void RegisterTypes(IContainerRegistry containerRegistry)
+    /// <inheritdoc />
+    protected override void ConfigureServices(IServiceCollection services)
     {
-        base.RegisterTypes(containerRegistry);
+        base.ConfigureServices(services);
 
-        containerRegistry.RegisterForNavigation<ThreeColumnPreviewCardComponentView>(
-            ThreeColumnPreviewCardComponentViewNames.ThreeColumnPreviewCardComponent);
+        services.AddTransient<IThreeColumnPreviewCardComponentWindow, ThreeColumnPreviewCardComponentWindow>()
+            .AddTransient<IThreeColumnPreviewCardComponentView, ThreeColumnPreviewCardComponentView>();
     }
 
-    protected override Window CreateShell()
+    /// <inheritdoc />
+    protected override IWindow CreateMainWindow(IServiceProvider serviceProvider)
     {
-        return Container.Resolve<ThreeColumnPreviewCardComponentWindow>();
-    }
-
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-
-        NavigateToShellRegion(ThreeColumnPreviewCardComponentViewNames.ThreeColumnPreviewCardComponent);
+        return serviceProvider.GetRequiredService<IThreeColumnPreviewCardComponentWindow>();
     }
 }
