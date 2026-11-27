@@ -1,0 +1,85 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <ApplicationIcon>Properties\Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Fonts\PlusJakartaSans\PlusJakartaSans-Bold.ttf" />
+    <None Remove="Fonts\PlusJakartaSans\PlusJakartaSans-BoldItalic.ttf" />
+    <None Remove="Fonts\PlusJakartaSans\PlusJakartaSans-ExtraBold.ttf" />
+    <None Remove="Fonts\PlusJakartaSans\PlusJakartaSans-ExtraBoldItalic.ttf" />
+    <None Remove="Fonts\PlusJakartaSans\PlusJakartaSans-ExtraLight.ttf" />
+    <None Remove="Fonts\PlusJakartaSans\PlusJakartaSans-ExtraLightItalic.ttf" />
+    <None Remove="Fonts\PlusJakartaSans\PlusJakartaSans-Italic.ttf" />
+    <None Remove="Fonts\PlusJakartaSans\PlusJakartaSans-Light.ttf" />
+    <None Remove="Fonts\PlusJakartaSans\PlusJakartaSans-LightItalic.ttf" />
+    <None Remove="Fonts\PlusJakartaSans\PlusJakartaSans-Medium.ttf" />
+    <None Remove="Fonts\PlusJakartaSans\PlusJakartaSans-MediumItalic.ttf" />
+    <None Remove="Fonts\PlusJakartaSans\PlusJakartaSans-Regular.ttf" />
+    <None Remove="Fonts\PlusJakartaSans\PlusJakartaSans-SemiBold.ttf" />
+    <None Remove="Fonts\PlusJakartaSans\PlusJakartaSans-SemiBoldItalic.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Properties\Icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="FrontendMentor.MortgageRepaymentCalculator.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\FrontendMentor.Assets\FrontendMentor.Assets.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\PlusJakartaSans\PlusJakartaSans-Bold.ttf" />
+    <Resource Include="Fonts\PlusJakartaSans\PlusJakartaSans-BoldItalic.ttf" />
+    <Resource Include="Fonts\PlusJakartaSans\PlusJakartaSans-ExtraBold.ttf" />
+    <Resource Include="Fonts\PlusJakartaSans\PlusJakartaSans-ExtraBoldItalic.ttf" />
+    <Resource Include="Fonts\PlusJakartaSans\PlusJakartaSans-ExtraLight.ttf" />
+    <Resource Include="Fonts\PlusJakartaSans\PlusJakartaSans-ExtraLightItalic.ttf" />
+    <Resource Include="Fonts\PlusJakartaSans\PlusJakartaSans-Italic.ttf" />
+    <Resource Include="Fonts\PlusJakartaSans\PlusJakartaSans-Light.ttf" />
+    <Resource Include="Fonts\PlusJakartaSans\PlusJakartaSans-LightItalic.ttf" />
+    <Resource Include="Fonts\PlusJakartaSans\PlusJakartaSans-Medium.ttf" />
+    <Resource Include="Fonts\PlusJakartaSans\PlusJakartaSans-MediumItalic.ttf" />
+    <Resource Include="Fonts\PlusJakartaSans\PlusJakartaSans-Regular.ttf" />
+    <Resource Include="Fonts\PlusJakartaSans\PlusJakartaSans-SemiBold.ttf" />
+    <Resource Include="Fonts\PlusJakartaSans\PlusJakartaSans-SemiBoldItalic.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>

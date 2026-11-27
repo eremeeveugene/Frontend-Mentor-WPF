@@ -1,0 +1,41 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
+
+    <ResourceDictionary.MergedDictionaries>
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.MortgageRepaymentCalculator;component/Brushes/Brushes.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.MortgageRepaymentCalculator;component/Styles/Controls/Custom/TextBlocks/TextBlockStyles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="MortgageRepaymentCalculatorView.ErrorTextBlock.Style"
+           BasedOn="{StaticResource Preset5.TextBlock.Style}"
+           TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource MortgageRepaymentCalculatorView.Error.Foreground.Brush}" />
+        <Style.Triggers>
+            <Trigger Property="Text" Value="{x:Null}">
+                <Setter Property="Visibility" Value="Collapsed" />
+            </Trigger>
+            <Trigger Property="Text" Value="">
+                <Setter Property="Visibility" Value="Collapsed" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="MortgageRepaymentCalculatorView.EmptyResults.StackPanel.Style" TargetType="{x:Type StackPanel}">
+        <Setter Property="Visibility" Value="Collapsed" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding MortgageRepayment}" Value="{x:Null}">
+                <Setter Property="Visibility" Value="Visible" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="MortgageRepaymentCalculatorView.CompletedResults.StackPanel.Style" TargetType="{x:Type StackPanel}">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding MortgageRepayment}" Value="{x:Null}">
+                <Setter Property="Visibility" Value="Collapsed" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

@@ -2,6 +2,7 @@
   <Folder Name="/Apps/">
     <Project Path="Apps/FrontendMentor.BlogPreviewCard/FrontendMentor.BlogPreviewCard.csproj" />
     <Project Path="Apps/FrontendMentor.GitHubUserSearchApp/FrontendMentor.GitHubUserSearchApp.csproj" />
+    <Project Path="Apps/FrontendMentor.MortgageRepaymentCalculator/FrontendMentor.MortgageRepaymentCalculator.csproj" />
     <Project Path="Apps/FrontendMentor.OrderSummaryComponent/FrontendMentor.OrderSummaryComponent.csproj" />
     <Project Path="Apps/FrontendMentor.QrCodeComponent/FrontendMentor.QrCodeComponent.csproj" />
     <Project Path="Apps/FrontendMentor.ResultsSummaryComponent/FrontendMentor.ResultsSummaryComponent.csproj" />
@@ -12,6 +13,7 @@
     <Project Path="Tests/FrontendMentor.Assets.Tests/FrontendMentor.Assets.Tests.csproj" />
     <Project Path="Tests/FrontendMentor.Core.Tests/FrontendMentor.Core.Tests.csproj" />
     <Project Path="Tests/FrontendMentor.GitHubUserSearchApp.Tests/FrontendMentor.GitHubUserSearchApp.Tests.csproj" />
+    <Project Path="Tests/FrontendMentor.MortgageRepaymentCalculator.Tests/FrontendMentor.MortgageRepaymentCalculator.Tests.csproj" />
   </Folder>
   <Project Path="FrontendMentor.Assets/FrontendMentor.Assets.csproj" />
   <Project Path="FrontendMentor.Core/FrontendMentor.Core.csproj" />

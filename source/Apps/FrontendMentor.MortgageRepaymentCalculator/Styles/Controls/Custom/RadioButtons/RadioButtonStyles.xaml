@@ -1,0 +1,63 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:resourceDictionaries="clr-namespace:FrontendMentor.Assets.ResourceDictionaries;assembly=FrontendMentor.Assets">
+
+    <ResourceDictionary.MergedDictionaries>
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.MortgageRepaymentCalculator;component/Brushes/Brushes.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.MortgageRepaymentCalculator;component/Geometries/Geometries.xaml" />
+        <resourceDictionaries:SharedResourceDictionary Source="pack://application:,,,/FrontendMentor.MortgageRepaymentCalculator;component/Styles/Controls/Custom/TextBlocks/TextBlockStyles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="MortgageType.RadioButton.Style" TargetType="{x:Type RadioButton}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="{StaticResource MortgageTypeRadioButton.BorderBrush.Brush}" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Foreground" Value="{StaticResource MortgageTypeRadioButton.Foreground.Brush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Border Height="48"
+                            Padding="16,0"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="1"
+                            CornerRadius="4">
+                        <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                            <Grid Width="24" Height="24">
+                                <Path x:Name="RingPath"
+                                      Data="{StaticResource RadioRing.Geometry}"
+                                      Fill="{StaticResource MortgageTypeRadioButton.Indicator.Fill.Brush}" />
+
+                                <Path x:Name="DotPath"
+                                      Data="{StaticResource RadioDot.Geometry}"
+                                      Fill="{StaticResource MortgageTypeRadioButton.Checked.Indicator.Fill.Brush}"
+                                      Visibility="Collapsed" />
+                            </Grid>
+
+                            <TextBlock Margin="16,0,0,0"
+                                       VerticalAlignment="Center"
+                                       Style="{StaticResource Preset3.TextBlock.Style}"
+                                       Text="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </StackPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="RingPath" Property="Fill" Value="{StaticResource MortgageTypeRadioButton.Checked.Indicator.Fill.Brush}" />
+                            <Setter TargetName="DotPath" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="BorderBrush" Value="{StaticResource MortgageTypeRadioButton.Checked.BorderBrush.Brush}" />
+            </Trigger>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background" Value="{StaticResource MortgageTypeRadioButton.Checked.Background.Brush}" />
+                <Setter Property="BorderBrush" Value="{StaticResource MortgageTypeRadioButton.Checked.BorderBrush.Brush}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>
