@@ -1,0 +1,165 @@
+﻿<views:ViewBase x:Class="FrontendMentor.MortgageRepaymentCalculator.Views.MortgageRepaymentCalculator.MortgageRepaymentCalculatorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:converters="clr-namespace:FrontendMentor.Assets.Converters;assembly=FrontendMentor.Assets"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:enums="clr-namespace:FrontendMentor.MortgageRepaymentCalculator.Enums"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:numberFields="clr-namespace:FrontendMentor.MortgageRepaymentCalculator.Controls.NumberFields"
+             xmlns:properties="clr-namespace:FrontendMentor.MortgageRepaymentCalculator.Properties"
+             xmlns:viewModels="clr-namespace:FrontendMentor.MortgageRepaymentCalculator.ViewModels.MortgageRepaymentCalculator"
+             xmlns:views="clr-namespace:FrontendMentor.Core.Views;assembly=FrontendMentor.Core"
+             d:DataContext="{d:DesignInstance viewModels:IMortgageRepaymentCalculatorViewModel}"
+             x:ClassModifier="internal"
+             mc:Ignorable="d">
+
+    <Border Width="1008"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Background="{StaticResource MortgageRepaymentCalculatorView.Form.Background.Brush}"
+            CornerRadius="24"
+            Effect="{StaticResource MortgageRepaymentCalculatorView.Card.DropShadowEffect}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="504" />
+                <ColumnDefinition Width="504" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Margin="40">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Left"
+                               Foreground="{StaticResource MortgageRepaymentCalculatorView.Heading.Foreground.Brush}"
+                               Style="{StaticResource Preset2.TextBlock.Style}"
+                               Text="{x:Static properties:Resources.MortgageRepaymentCalculatorView_TitleTextBlock_Text}" />
+
+                    <Button HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Command="{Binding ClearAllCommand}"
+                            Content="{x:Static properties:Resources.MortgageRepaymentCalculatorView_ClearAllButton_Text}"
+                            DockPanel.Dock="Right"
+                            Style="{StaticResource Link.Button.Style}" />
+                </DockPanel>
+
+                <numberFields:NumberField Margin="0,40,0,0"
+                                          Affix="{x:Static properties:Resources.MortgageRepaymentCalculatorView_MortgageAmountAffix_Text}"
+                                          AffixPlacement="Left"
+                                          Header="{x:Static properties:Resources.MortgageRepaymentCalculatorView_MortgageAmountTextBlock_Text}"
+                                          Text="{Binding MortgageAmount, UpdateSourceTrigger=PropertyChanged}" />
+
+                <Grid Margin="0,24,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="24" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <numberFields:NumberField Grid.Column="0"
+                                              Affix="{x:Static properties:Resources.MortgageRepaymentCalculatorView_MortgageTermAffix_Text}"
+                                              AffixPlacement="Right"
+                                              Header="{x:Static properties:Resources.MortgageRepaymentCalculatorView_MortgageTermTextBlock_Text}"
+                                              Text="{Binding MortgageTerm, UpdateSourceTrigger=PropertyChanged}" />
+
+                    <numberFields:NumberField Grid.Column="2"
+                                              Affix="{x:Static properties:Resources.MortgageRepaymentCalculatorView_InterestRateAffix_Text}"
+                                              AffixPlacement="Right"
+                                              Header="{x:Static properties:Resources.MortgageRepaymentCalculatorView_InterestRateTextBlock_Text}"
+                                              Text="{Binding InterestRate, UpdateSourceTrigger=PropertyChanged}" />
+                </Grid>
+
+                <TextBlock Margin="0,24,0,0"
+                           Foreground="{StaticResource MortgageRepaymentCalculatorView.Label.Foreground.Brush}"
+                           Style="{StaticResource Preset4.TextBlock.Style}"
+                           Text="{x:Static properties:Resources.MortgageRepaymentCalculatorView_MortgageTypeTextBlock_Text}" />
+
+                <RadioButton x:Name="RepaymentRadioButton"
+                             Margin="0,12,0,0"
+                             Content="{x:Static properties:Resources.MortgageRepaymentCalculatorView_RepaymentRadioButton_Text}"
+                             IsChecked="{Binding MortgageType, Converter={converters:EqualityParameterToBooleanConverter}, ConverterParameter={x:Static enums:MortgageType.Repayment}}"
+                             Style="{StaticResource MortgageType.RadioButton.Style}" />
+
+                <RadioButton Margin="0,12,0,0"
+                             Content="{x:Static properties:Resources.MortgageRepaymentCalculatorView_InterestOnlyRadioButton_Text}"
+                             IsChecked="{Binding MortgageType, Converter={converters:EqualityParameterToBooleanConverter}, ConverterParameter={x:Static enums:MortgageType.InterestOnly}}"
+                             Style="{StaticResource MortgageType.RadioButton.Style}" />
+
+                <TextBlock Margin="0,12,0,0"
+                           Style="{StaticResource MortgageRepaymentCalculatorView.ErrorTextBlock.Style}"
+                           Text="{Binding (Validation.Errors)/ErrorContent, ElementName=RepaymentRadioButton}" />
+
+                <Button Margin="0,40,0,0"
+                        Command="{Binding CalculateRepaymentsCommand}"
+                        Content="{x:Static properties:Resources.MortgageRepaymentCalculatorView_CalculateButton_Text}"
+                        Style="{StaticResource Calculate.Button.Style}" />
+            </StackPanel>
+
+            <Border Grid.Column="1"
+                    Padding="40"
+                    Background="{StaticResource MortgageRepaymentCalculatorView.Results.Background.Brush}"
+                    CornerRadius="0,24,24,80">
+                <Grid>
+                    <StackPanel VerticalAlignment="Center" Style="{StaticResource MortgageRepaymentCalculatorView.EmptyResults.StackPanel.Style}">
+                        <Image Width="180"
+                               Height="167.215"
+                               Source="{StaticResource MortgageResults.Image}" />
+
+                        <TextBlock Margin="0,16,0,0"
+                                   Foreground="{StaticResource MortgageRepaymentCalculatorView.ResultsHeading.Foreground.Brush}"
+                                   Style="{StaticResource Preset2.TextBlock.Style}"
+                                   Text="{x:Static properties:Resources.MortgageRepaymentCalculatorView_EmptyResultsTitleTextBlock_Text}"
+                                   TextAlignment="Center" />
+
+                        <TextBlock Margin="0,16,0,0"
+                                   Foreground="{StaticResource MortgageRepaymentCalculatorView.ResultsBody.Foreground.Brush}"
+                                   Style="{StaticResource Preset4.TextBlock.Style}"
+                                   Text="{x:Static properties:Resources.MortgageRepaymentCalculatorView_EmptyResultsTextBlock_Text}"
+                                   TextAlignment="Center"
+                                   TextWrapping="Wrap" />
+                    </StackPanel>
+
+                    <StackPanel VerticalAlignment="Top" Style="{StaticResource MortgageRepaymentCalculatorView.CompletedResults.StackPanel.Style}">
+                        <TextBlock Foreground="{StaticResource MortgageRepaymentCalculatorView.ResultsHeading.Foreground.Brush}"
+                                   Style="{StaticResource Preset2.TextBlock.Style}"
+                                   Text="{x:Static properties:Resources.MortgageRepaymentCalculatorView_ResultsTitleTextBlock_Text}" />
+
+                        <TextBlock Margin="0,16,0,0"
+                                   Foreground="{StaticResource MortgageRepaymentCalculatorView.ResultsBody.Foreground.Brush}"
+                                   Style="{StaticResource Preset4.TextBlock.Style}"
+                                   Text="{x:Static properties:Resources.MortgageRepaymentCalculatorView_ResultsTextBlock_Text}"
+                                   TextWrapping="Wrap" />
+
+                        <Border Margin="0,40,0,0"
+                                Padding="32"
+                                Background="{StaticResource MortgageRepaymentCalculatorView.Summary.Background.Brush}"
+                                BorderBrush="{StaticResource MortgageRepaymentCalculatorView.Summary.BorderBrush.Brush}"
+                                BorderThickness="0,4,0,0"
+                                CornerRadius="8">
+                            <StackPanel>
+                                <TextBlock Foreground="{StaticResource MortgageRepaymentCalculatorView.ResultsBody.Foreground.Brush}"
+                                           Style="{StaticResource Preset4.TextBlock.Style}"
+                                           Text="{x:Static properties:Resources.MortgageRepaymentCalculatorView_MonthlyRepaymentTextBlock_Text}" />
+
+                                <TextBlock Margin="0,8,0,0"
+                                           Foreground="{StaticResource MortgageRepaymentCalculatorView.MonthlyRepayment.Foreground.Brush}"
+                                           Style="{StaticResource Preset1.TextBlock.Style}"
+                                           Text="{Binding MortgageRepayment.MonthlyRepayment, StringFormat={}£{0:N2}}" />
+
+                                <Rectangle Height="1"
+                                           Margin="0,32"
+                                           Fill="{StaticResource MortgageRepaymentCalculatorView.Separator.Fill.Brush}" />
+
+                                <TextBlock Foreground="{StaticResource MortgageRepaymentCalculatorView.ResultsBody.Foreground.Brush}"
+                                           Style="{StaticResource Preset4.TextBlock.Style}"
+                                           Text="{x:Static properties:Resources.MortgageRepaymentCalculatorView_TotalRepaymentTextBlock_Text}" />
+
+                                <TextBlock Margin="0,8,0,0"
+                                           Foreground="{StaticResource MortgageRepaymentCalculatorView.ResultsHeading.Foreground.Brush}"
+                                           Style="{StaticResource Preset2.TextBlock.Style}"
+                                           Text="{Binding MortgageRepayment.TotalRepayment, StringFormat={}£{0:N2}}" />
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
+</views:ViewBase>
