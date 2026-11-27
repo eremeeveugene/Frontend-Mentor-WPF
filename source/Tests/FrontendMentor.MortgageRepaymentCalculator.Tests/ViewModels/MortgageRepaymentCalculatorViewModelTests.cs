@@ -12,6 +12,7 @@
 using FrontendMentor.MortgageRepaymentCalculator.Enums;
 using FrontendMentor.MortgageRepaymentCalculator.Factories.MortgageRepayment;
 using FrontendMentor.MortgageRepaymentCalculator.Services.MortgageRepayments;
+using FrontendMentor.MortgageRepaymentCalculator.Validators.MortgageForm;
 using FrontendMentor.MortgageRepaymentCalculator.ViewModels.MortgageRepaymentCalculator;
 
 namespace FrontendMentor.MortgageRepaymentCalculator.Tests.ViewModels;
@@ -19,13 +20,16 @@ namespace FrontendMentor.MortgageRepaymentCalculator.Tests.ViewModels;
 [TestClass]
 public sealed class MortgageRepaymentCalculatorViewModelTests
 {
+    private List<string?> _changedErrors = null!;
     private MortgageRepaymentCalculatorViewModel _viewModel = null!;
 
     [TestInitialize]
     public void Initialize()
     {
         _viewModel = new MortgageRepaymentCalculatorViewModel(new MortgageRepaymentBindableModelFactory(),
-            new MortgageRepaymentsService());
+            new MortgageRepaymentsService(), new MortgageFormValidator());
+        _changedErrors = [];
+        _viewModel.ErrorsChanged += (_, e) => _changedErrors.Add(e.PropertyName);
     }
 
     [TestMethod]
@@ -35,49 +39,37 @@ public sealed class MortgageRepaymentCalculatorViewModelTests
 
         await CalculateAsync();
 
+        Assert.IsFalse(_viewModel.HasErrors);
         Assert.IsNotNull(_viewModel.MortgageRepayment);
         Assert.AreEqual(1797.74m, _viewModel.MortgageRepayment.MonthlyRepayment);
         Assert.AreEqual(539322.94m, _viewModel.MortgageRepayment.TotalRepayment);
     }
 
     [TestMethod]
-    public async Task CalculateRepaymentsCommand_EmptyForm_RequiresEveryField()
+    public async Task CalculateRepaymentsCommand_EmptyForm_ReportsAnErrorForEveryField()
     {
         await CalculateAsync();
 
-        Assert.AreEqual("The Mortgage Amount field is required.", _viewModel.MortgageAmountError);
-        Assert.AreEqual("The Mortgage Term field is required.", _viewModel.MortgageTermError);
-        Assert.AreEqual("The Interest Rate field is required.", _viewModel.InterestRateError);
-        Assert.AreEqual("The Mortgage Type field is required.", _viewModel.MortgageTypeError);
+        Assert.IsTrue(_viewModel.HasErrors);
+        Assert.AreEqual("The Mortgage Amount field is required.", GetError(nameof(_viewModel.MortgageAmount)));
+        Assert.AreEqual("The Mortgage Type field is required.", GetError(nameof(_viewModel.MortgageType)));
+        CollectionAssert.AreEquivalent(
+            new[] { nameof(_viewModel.MortgageAmount), nameof(_viewModel.MortgageTerm), nameof(_viewModel.InterestRate), nameof(_viewModel.MortgageType) },
+            _changedErrors);
         Assert.IsNull(_viewModel.MortgageRepayment);
     }
 
     [TestMethod]
-    public async Task CalculateRepaymentsCommand_InvalidNumbers_ExplainsTheError()
-    {
-        FillForm();
-        _viewModel.MortgageAmount = "1.2.3";
-        _viewModel.MortgageTerm = "0";
-        _viewModel.InterestRate = "0";
-
-        await CalculateAsync();
-
-        Assert.AreEqual("The Mortgage Amount field must be a number.", _viewModel.MortgageAmountError);
-        Assert.AreEqual("The Mortgage Term field must be greater than zero.", _viewModel.MortgageTermError);
-        Assert.IsNull(_viewModel.InterestRateError, "An interest rate of zero is valid.");
-    }
-
-    [TestMethod]
-    public async Task EditingAField_ClearsItsError()
+    public async Task EditingAField_ClearsOnlyItsError()
     {
         await CalculateAsync();
 
         _viewModel.MortgageAmount = "300000";
         _viewModel.MortgageType = MortgageType.InterestOnly;
 
-        Assert.IsNull(_viewModel.MortgageAmountError);
-        Assert.IsNull(_viewModel.MortgageTypeError);
-        Assert.IsNotNull(_viewModel.MortgageTermError, "Only the edited field is cleared.");
+        Assert.IsNull(GetError(nameof(_viewModel.MortgageAmount)));
+        Assert.IsNull(GetError(nameof(_viewModel.MortgageType)));
+        Assert.IsNotNull(GetError(nameof(_viewModel.MortgageTerm)));
     }
 
     [TestMethod]
@@ -90,16 +82,15 @@ public sealed class MortgageRepaymentCalculatorViewModelTests
         await CalculateAsync();
 
         Assert.IsNull(_viewModel.MortgageRepayment);
+        Assert.AreEqual("The Mortgage Term field is required.", GetError(nameof(_viewModel.MortgageTerm)));
     }
 
     [TestMethod]
     public async Task ClearAllCommand_ClearsTheFormTheErrorsAndTheResult()
     {
-        FillForm();
         await CalculateAsync();
+        FillForm();
         _viewModel.MortgageTerm = string.Empty;
-        await CalculateAsync();
-        FillForm();
         await CalculateAsync();
 
         _viewModel.ClearAllCommand.Execute(null);
@@ -108,8 +99,18 @@ public sealed class MortgageRepaymentCalculatorViewModelTests
         Assert.AreEqual(string.Empty, _viewModel.MortgageTerm);
         Assert.AreEqual(string.Empty, _viewModel.InterestRate);
         Assert.IsNull(_viewModel.MortgageType);
-        Assert.IsNull(_viewModel.MortgageTermError);
+        Assert.IsFalse(_viewModel.HasErrors);
         Assert.IsNull(_viewModel.MortgageRepayment);
+    }
+
+    private string? GetError(string propertyName)
+    {
+        foreach (var error in _viewModel.GetErrors(propertyName))
+        {
+            return (string)error;
+        }
+
+        return null;
     }
 
     private void FillForm()

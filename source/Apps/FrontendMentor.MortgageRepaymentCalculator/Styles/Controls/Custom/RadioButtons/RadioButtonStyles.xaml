@@ -13,6 +13,7 @@
         <Setter Property="BorderBrush" Value="{StaticResource MortgageTypeRadioButton.BorderBrush.Brush}" />
         <Setter Property="Cursor" Value="Hand" />
         <Setter Property="Foreground" Value="{StaticResource MortgageTypeRadioButton.Foreground.Brush}" />
+        <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type RadioButton}">

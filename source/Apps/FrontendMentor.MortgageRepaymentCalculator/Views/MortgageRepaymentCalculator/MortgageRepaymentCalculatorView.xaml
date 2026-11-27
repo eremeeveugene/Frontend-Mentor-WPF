@@ -43,7 +43,6 @@
                 <numberFields:NumberField Margin="0,40,0,0"
                                           Affix="{x:Static properties:Resources.MortgageRepaymentCalculatorView_MortgageAmountAffix_Text}"
                                           AffixPlacement="Left"
-                                          Error="{Binding MortgageAmountError}"
                                           Header="{x:Static properties:Resources.MortgageRepaymentCalculatorView_MortgageAmountTextBlock_Text}"
                                           Text="{Binding MortgageAmount, UpdateSourceTrigger=PropertyChanged}" />
 
@@ -57,14 +56,12 @@
                     <numberFields:NumberField Grid.Column="0"
                                               Affix="{x:Static properties:Resources.MortgageRepaymentCalculatorView_MortgageTermAffix_Text}"
                                               AffixPlacement="Right"
-                                              Error="{Binding MortgageTermError}"
                                               Header="{x:Static properties:Resources.MortgageRepaymentCalculatorView_MortgageTermTextBlock_Text}"
                                               Text="{Binding MortgageTerm, UpdateSourceTrigger=PropertyChanged}" />
 
                     <numberFields:NumberField Grid.Column="2"
                                               Affix="{x:Static properties:Resources.MortgageRepaymentCalculatorView_InterestRateAffix_Text}"
                                               AffixPlacement="Right"
-                                              Error="{Binding InterestRateError}"
                                               Header="{x:Static properties:Resources.MortgageRepaymentCalculatorView_InterestRateTextBlock_Text}"
                                               Text="{Binding InterestRate, UpdateSourceTrigger=PropertyChanged}" />
                 </Grid>
@@ -74,7 +71,8 @@
                            Style="{StaticResource Preset4.TextBlock.Style}"
                            Text="{x:Static properties:Resources.MortgageRepaymentCalculatorView_MortgageTypeTextBlock_Text}" />
 
-                <RadioButton Margin="0,12,0,0"
+                <RadioButton x:Name="RepaymentRadioButton"
+                             Margin="0,12,0,0"
                              Content="{x:Static properties:Resources.MortgageRepaymentCalculatorView_RepaymentRadioButton_Text}"
                              IsChecked="{Binding MortgageType, Converter={converters:EqualityParameterToBooleanConverter}, ConverterParameter={x:Static enums:MortgageType.Repayment}}"
                              Style="{StaticResource MortgageType.RadioButton.Style}" />
@@ -86,7 +84,7 @@
 
                 <TextBlock Margin="0,12,0,0"
                            Style="{StaticResource MortgageRepaymentCalculatorView.ErrorTextBlock.Style}"
-                           Text="{Binding MortgageTypeError}" />
+                           Text="{Binding (Validation.Errors)/ErrorContent, ElementName=RepaymentRadioButton}" />
 
                 <Button Margin="0,40,0,0"
                         Command="{Binding CalculateRepaymentsCommand}"

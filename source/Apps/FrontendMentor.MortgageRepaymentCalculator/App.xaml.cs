@@ -13,6 +13,7 @@ using FrontendMentor.Core.Windows;
 using FrontendMentor.MortgageRepaymentCalculator.Controls.Windows;
 using FrontendMentor.MortgageRepaymentCalculator.Factories.MortgageRepayment;
 using FrontendMentor.MortgageRepaymentCalculator.Services.MortgageRepayments;
+using FrontendMentor.MortgageRepaymentCalculator.Validators.MortgageForm;
 using FrontendMentor.MortgageRepaymentCalculator.ViewModels.MortgageRepaymentCalculator;
 using FrontendMentor.MortgageRepaymentCalculator.Views.MortgageRepaymentCalculator;
 using Microsoft.Extensions.DependencyInjection;
@@ -33,7 +34,8 @@ internal sealed partial class App
             .AddTransient<IMortgageRepaymentCalculatorView, MortgageRepaymentCalculatorView>()
             .AddTransient<IMortgageRepaymentCalculatorViewModel, MortgageRepaymentCalculatorViewModel>()
             .AddSingleton<IMortgageRepaymentsService, MortgageRepaymentsService>()
-            .AddSingleton<IMortgageRepaymentBindableModelFactory, MortgageRepaymentBindableModelFactory>();
+            .AddSingleton<IMortgageRepaymentBindableModelFactory, MortgageRepaymentBindableModelFactory>()
+            .AddSingleton<IMortgageFormValidator, MortgageFormValidator>();
     }
 
     /// <inheritdoc />

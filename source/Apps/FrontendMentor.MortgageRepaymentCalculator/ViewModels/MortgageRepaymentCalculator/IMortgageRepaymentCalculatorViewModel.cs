@@ -12,14 +12,16 @@
 using FrontendMentor.Core.ViewModels;
 using FrontendMentor.MortgageRepaymentCalculator.BindableModels.MortgageRepayment;
 using FrontendMentor.MortgageRepaymentCalculator.Enums;
+using System.ComponentModel;
 using System.Windows.Input;
 
 namespace FrontendMentor.MortgageRepaymentCalculator.ViewModels.MortgageRepaymentCalculator;
 
 /// <summary>
-///     The view model of the mortgage repayment calculator.
+///     The view model of the mortgage repayment calculator. It reports the errors of the form through
+///     <see cref="INotifyDataErrorInfo" /> after <see cref="CalculateRepaymentsCommand" /> validates it.
 /// </summary>
-internal interface IMortgageRepaymentCalculatorViewModel : IViewModel
+internal interface IMortgageRepaymentCalculatorViewModel : IViewModel, INotifyDataErrorInfo
 {
     /// <summary>
     ///     Gets the command that validates the form and calculates the repayments.
@@ -27,7 +29,7 @@ internal interface IMortgageRepaymentCalculatorViewModel : IViewModel
     ICommand CalculateRepaymentsCommand { get; }
 
     /// <summary>
-    ///     Gets the command that clears the form and the repayments.
+    ///     Gets the command that clears the form, its errors and the repayments.
     /// </summary>
     ICommand ClearAllCommand { get; }
 
@@ -50,26 +52,6 @@ internal interface IMortgageRepaymentCalculatorViewModel : IViewModel
     ///     Gets or sets the type of the mortgage, or <c>null</c> when none is chosen.
     /// </summary>
     MortgageType? MortgageType { get; set; }
-
-    /// <summary>
-    ///     Gets the error of the mortgage amount, or <c>null</c> when it is valid.
-    /// </summary>
-    string? MortgageAmountError { get; }
-
-    /// <summary>
-    ///     Gets the error of the mortgage term, or <c>null</c> when it is valid.
-    /// </summary>
-    string? MortgageTermError { get; }
-
-    /// <summary>
-    ///     Gets the error of the interest rate, or <c>null</c> when it is valid.
-    /// </summary>
-    string? InterestRateError { get; }
-
-    /// <summary>
-    ///     Gets the error of the mortgage type, or <c>null</c> when it is valid.
-    /// </summary>
-    string? MortgageTypeError { get; }
 
     /// <summary>
     ///     Gets the repayments of the last calculation, or <c>null</c> until the repayments are calculated.
