@@ -53,10 +53,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="Transparent">
-                        <TextBlock LineHeight="24"
-                                   LineStackingStrategy="BlockLineHeight"
-                                   Text="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}"
-                                   TextDecorations="Underline" />
+                        <TextBlock Text="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" TextDecorations="Underline" />
                     </Border>
                 </ControlTemplate>
             </Setter.Value>

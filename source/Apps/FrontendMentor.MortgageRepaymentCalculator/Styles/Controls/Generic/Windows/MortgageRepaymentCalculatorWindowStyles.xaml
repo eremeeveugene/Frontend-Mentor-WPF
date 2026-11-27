@@ -18,6 +18,7 @@
         <Setter Property="MinHeight" Value="1024" />
         <Setter Property="MinWidth" Value="1440" />
         <Setter Property="Title" Value="{x:Static properties:Resources.MortgageRepaymentCalculatorWindow_Title}" />
+        <Setter Property="UseLayoutRounding" Value="True" />
     </Style>
 
 </ResourceDictionary>

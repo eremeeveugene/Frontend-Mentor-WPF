@@ -28,16 +28,17 @@
                                    Text="{TemplateBinding Header}" />
 
                         <Border x:Name="FieldBorder"
-                                Height="48"
+                                Height="50"
+                                Margin="-1"
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="1"
-                                CornerRadius="4">
+                                CornerRadius="5">
                             <DockPanel>
                                 <Border x:Name="AffixBorder"
                                         Padding="16,0"
                                         Background="{StaticResource NumberField.Affix.Background.Brush}"
-                                        CornerRadius="3,0,0,3"
+                                        CornerRadius="4,0,0,4"
                                         DockPanel.Dock="{TemplateBinding AffixPlacement}">
                                     <TextBlock x:Name="AffixTextBlock"
                                                VerticalAlignment="Center"
@@ -65,7 +66,7 @@
                     </StackPanel>
                     <ControlTemplate.Triggers>
                         <Trigger Property="AffixPlacement" Value="Right">
-                            <Setter TargetName="AffixBorder" Property="CornerRadius" Value="0,3,3,0" />
+                            <Setter TargetName="AffixBorder" Property="CornerRadius" Value="0,4,4,0" />
                         </Trigger>
                         <Trigger SourceName="FieldBorder" Property="IsMouseOver" Value="True">
                             <Setter TargetName="FieldBorder" Property="BorderBrush" Value="{StaticResource NumberField.MouseOver.BorderBrush.Brush}" />
