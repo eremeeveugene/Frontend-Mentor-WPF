@@ -261,6 +261,79 @@ https://www.frontendmentor.io/challenges/github-user-search-app-Q09YOgaH6
 
 </details>
 
+## Mortgage Repayment Calculator
+
+https://www.frontendmentor.io/challenges/mortgage-repayment-calculator-Galx1LXK73
+
+<details>
+    <summary><strong>Screenshots</strong></summary>
+  
+### Expected Result - Empty
+
+![Expected Result - Empty](docs/screenshots/mortgage-repayment-calculator/expected/empty.png)
+
+### Actual Result - Empty (98.37% identical to the expected result)
+
+![Actual Result - Empty](docs/screenshots/mortgage-repayment-calculator/actual/empty.png)
+
+### Expected Result - Completed
+
+![Expected Result - Completed](docs/screenshots/mortgage-repayment-calculator/expected/completed.png)
+
+### Actual Result - Completed (97.79% identical to the expected result)
+
+![Actual Result - Completed](docs/screenshots/mortgage-repayment-calculator/actual/completed.png)
+
+### Expected Result - Error
+
+![Expected Result - Error](docs/screenshots/mortgage-repayment-calculator/expected/error.png)
+
+### Actual Result - Error (98.18% identical to the expected result)
+
+![Actual Result - Error](docs/screenshots/mortgage-repayment-calculator/actual/error.png)
+
+### Expected Result - Mortgage Amount Focus
+
+![Expected Result - Mortgage Amount Focus](docs/screenshots/mortgage-repayment-calculator/expected/focus-mortgage-amount.png)
+
+### Actual Result - Mortgage Amount Focus (98.32% identical to the expected result)
+
+![Actual Result - Mortgage Amount Focus](docs/screenshots/mortgage-repayment-calculator/actual/focus-mortgage-amount.png)
+
+### Expected Result - Clear All Hover
+
+![Expected Result - Clear All Hover](docs/screenshots/mortgage-repayment-calculator/expected/hover-clear-all.png)
+
+### Actual Result - Clear All Hover (98.33% identical to the expected result)
+
+![Actual Result - Clear All Hover](docs/screenshots/mortgage-repayment-calculator/actual/hover-clear-all.png)
+
+### Expected Result - Mortgage Amount Hover
+
+![Expected Result - Mortgage Amount Hover](docs/screenshots/mortgage-repayment-calculator/expected/hover-mortgage-amount.png)
+
+### Actual Result - Mortgage Amount Hover (98.33% identical to the expected result)
+
+![Actual Result - Mortgage Amount Hover](docs/screenshots/mortgage-repayment-calculator/actual/hover-mortgage-amount.png)
+
+### Expected Result - Repayment Hover
+
+![Expected Result - Repayment Hover](docs/screenshots/mortgage-repayment-calculator/expected/hover-repayment.png)
+
+### Actual Result - Repayment Hover (98.33% identical to the expected result)
+
+![Actual Result - Repayment Hover](docs/screenshots/mortgage-repayment-calculator/actual/hover-repayment.png)
+
+### Expected Result - Calculate Button Hover
+
+![Expected Result - Calculate Button Hover](docs/screenshots/mortgage-repayment-calculator/expected/hover-calculate.png)
+
+### Actual Result - Calculate Button Hover (98.37% identical to the expected result)
+
+![Actual Result - Calculate Button Hover](docs/screenshots/mortgage-repayment-calculator/actual/hover-calculate.png)
+
+</details>
+
 ## License
 
 This project is licensed under a custom license. See the [LICENSE](LICENSE) file for details.
