@@ -9,9 +9,9 @@
 
     <DropShadowEffect x:Key="MortgageRepaymentCalculatorView.Card.DropShadowEffect"
                       po:Freeze="True"
-                      BlurRadius="64"
+                      BlurRadius="88"
                       Direction="270"
-                      Opacity="0.1"
+                      Opacity="0.09"
                       ShadowDepth="32"
                       Color="{StaticResource Slate.900.Color}" />
 
