@@ -196,6 +196,71 @@ https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj
 
 </details>
 
+## GitHub User Search App
+
+https://www.frontendmentor.io/challenges/github-user-search-app-Q09YOgaH6
+
+<details>
+    <summary><strong>Screenshots</strong></summary>
+  
+### Expected Result - Light
+
+![Expected Result - Light](docs/screenshots/github-user-search-app/expected/light.png)
+
+### Actual Result - Light
+
+![Actual Result - Light](docs/screenshots/github-user-search-app/actual/light.png)
+
+### Expected Result - Dark
+
+![Expected Result - Dark](docs/screenshots/github-user-search-app/expected/dark.png)
+
+### Actual Result - Dark
+
+![Actual Result - Dark](docs/screenshots/github-user-search-app/actual/dark.png)
+
+### Expected Result - Light - Active
+
+![Expected Result - Light - Active](docs/screenshots/github-user-search-app/expected/light-active.png)
+
+### Actual Result - Light - No Results
+
+![Actual Result - Light - No Results](docs/screenshots/github-user-search-app/actual/light-no-results.png)
+
+### Actual Result - Light - Theme Button Hover
+
+![Actual Result - Light - Theme Button Hover](docs/screenshots/github-user-search-app/actual/light-hover-theme-button.png)
+
+### Actual Result - Light - Search Button Hover
+
+![Actual Result - Light - Search Button Hover](docs/screenshots/github-user-search-app/actual/light-hover-search-button.png)
+
+### Actual Result - Light - Link Hover
+
+![Actual Result - Light - Link Hover](docs/screenshots/github-user-search-app/actual/light-hover-blog-link.png)
+
+### Expected Result - Dark - Active
+
+![Expected Result - Dark - Active](docs/screenshots/github-user-search-app/expected/dark-active.png)
+
+### Actual Result - Dark - No Results
+
+![Actual Result - Dark - No Results](docs/screenshots/github-user-search-app/actual/dark-no-results.png)
+
+### Actual Result - Dark - Theme Button Hover
+
+![Actual Result - Dark - Theme Button Hover](docs/screenshots/github-user-search-app/actual/dark-hover-theme-button.png)
+
+### Actual Result - Dark - Search Button Hover
+
+![Actual Result - Dark - Search Button Hover](docs/screenshots/github-user-search-app/actual/dark-hover-search-button.png)
+
+### Actual Result - Dark - Link Hover
+
+![Actual Result - Dark - Link Hover](docs/screenshots/github-user-search-app/actual/dark-hover-blog-link.png)
+
+</details>
+
 ## License
 
 This project is licensed under a custom license. See the [LICENSE](LICENSE) file for details.
